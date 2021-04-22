@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<item value="UPzynq20_test_design_wrapper.bit" key="UPzynq20_wrapper_hw_platform_0-bitFile"/>
+	<item value="Local" key="UCS_SoC_wrapper_hw_platform_0-target"/>
+	<item value="false" key="UPzynq20_test_design_wrapper_hw_platform_0-partial_bit"/>
+	<item value="" key="UPzynq20_wrapper_hw_platform_0-bmmFile"/>
+	<item value="UCS_SoC_wrapper.bit" key="UCS_SoC_wrapper_hw_platform_0-bitFile"/>
+	<item value="Local" key="UPzynq20_wrapper_hw_platform_0-target"/>
+	<item value="" key="UCS_SoC_wrapper_hw_platform_0-bmmFile"/>
+	<item value="UPzynq20_test_design_wrapper.bit" key="UPzynq20_test_design_wrapper_hw_platform_0-bitFile"/>
+	<item value="Local" key="UPzynq20_test_design_wrapper_hw_platform_0-target"/>
+	<item value="" key="UPzynq20_test_design_wrapper_hw_platform_0-bmmFile"/>
+	<item value="false" key="UCS_SoC_wrapper_hw_platform_0-partial_bit"/>
+	<item value="false" key="UPzynq20_wrapper_hw_platform_0-partial_bit"/>
+	<item value="UPzynq20_wrapper_hw_platform_0" key="programfpga.hwplatform"/>
+	<item value="Auto Detect" key="UCS_SoC_wrapper_hw_platform_0-device"/>
+	<item value="Auto Detect" key="UPzynq20_test_design_wrapper_hw_platform_0-device"/>
+	<item value="Auto Detect" key="UPzynq20_wrapper_hw_platform_0-device"/>
+</section>

@@ -1,0 +1,53 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Mon Apr 20 11:48:45 2020
+# Process ID: 7056
+# Current directory: D:/Projects/XilinxProjects/UPzynq20_test
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent1604 D:\Projects\XilinxProjects\UPzynq20_test\UPzynq20_test.xpr
+# Log file: D:/Projects/XilinxProjects/UPzynq20_test/vivado.log
+# Journal file: D:/Projects/XilinxProjects/UPzynq20_test\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project D:/Projects/XilinxProjects/UPzynq20_test/UPzynq20_test.xpr
+update_compile_order -fileset sources_1
+launch_sdk -workspace D:/Projects/XilinxProjects/UPzynq20_test/UPzynq20_test.sdk -hwspec D:/Projects/XilinxProjects/UPzynq20_test/UPzynq20_test.sdk/UPzynq20_test_design_wrapper.hdf
+open_hw
+connect_hw_server
+open_hw_target
+set_property PROGRAM.FILE {D:/Projects/XilinxProjects/UPzynq20_test/UPzynq20_test.runs/impl_1/UPzynq20_test_design_wrapper.bit} [get_hw_devices xc7z020_1]
+current_hw_device [get_hw_devices xc7z020_1]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7z020_1] 0]
+set_property PROBES.FILE {} [get_hw_devices xc7z020_1]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7z020_1]
+set_property PROGRAM.FILE {D:/Projects/XilinxProjects/UPzynq20_test/UPzynq20_test.runs/impl_1/UPzynq20_test_design_wrapper.bit} [get_hw_devices xc7z020_1]
+program_hw_devices [get_hw_devices xc7z020_1]
+refresh_hw_device [lindex [get_hw_devices xc7z020_1] 0]
+set_property PROBES.FILE {} [get_hw_devices xc7z020_1]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7z020_1]
+set_property PROGRAM.FILE {D:/Projects/XilinxProjects/UPzynq20_test/UPzynq20_test.runs/impl_1/UPzynq20_test_design_wrapper.bit} [get_hw_devices xc7z020_1]
+program_hw_devices [get_hw_devices xc7z020_1]
+refresh_hw_device [lindex [get_hw_devices xc7z020_1] 0]
+refresh_hw_device [lindex [get_hw_devices arm_dap_0] 0]
+set_property PROBES.FILE {} [get_hw_devices xc7z020_1]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7z020_1]
+set_property PROGRAM.FILE {D:/Projects/XilinxProjects/UPzynq20_test/UPzynq20_test.runs/impl_1/UPzynq20_test_design_wrapper.bit} [get_hw_devices xc7z020_1]
+program_hw_devices [get_hw_devices xc7z020_1]
+refresh_hw_device [lindex [get_hw_devices xc7z020_1] 0]
+reset_run impl_1 -prev_step 
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+file copy -force D:/Projects/XilinxProjects/UPzynq20_test/UPzynq20_test.runs/impl_1/UPzynq20_test_design_wrapper.sysdef D:/Projects/XilinxProjects/UPzynq20_test/UPzynq20_test.sdk/UPzynq20_test_design_wrapper.hdf
+
+launch_sdk -workspace D:/Projects/XilinxProjects/UPzynq20_test/UPzynq20_test.sdk -hwspec D:/Projects/XilinxProjects/UPzynq20_test/UPzynq20_test.sdk/UPzynq20_test_design_wrapper.hdf
+set_property PROBES.FILE {} [get_hw_devices xc7z020_1]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7z020_1]
+set_property PROGRAM.FILE {D:/Projects/XilinxProjects/UPzynq20_test/UPzynq20_test.runs/impl_1/UPzynq20_test_design_wrapper.bit} [get_hw_devices xc7z020_1]
+program_hw_devices [get_hw_devices xc7z020_1]
+refresh_hw_device [lindex [get_hw_devices xc7z020_1] 0]
+reset_run impl_1 -prev_step 
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+file copy -force D:/Projects/XilinxProjects/UPzynq20_test/UPzynq20_test.runs/impl_1/UPzynq20_test_design_wrapper.sysdef D:/Projects/XilinxProjects/UPzynq20_test/UPzynq20_test.sdk/UPzynq20_test_design_wrapper.hdf
+
