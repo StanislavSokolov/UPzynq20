@@ -1,4 +1,3 @@
-activeuserprofiles=Stas;Team
+activeuserprofiles=STAS-W10;Team
 eclipse.preferences.version=1
-org.eclipse.rse.systemtype.local.systemType.defaultUserId=stas
-useridperkey=Stas.Local\=stas;
+org.eclipse.rse.systemtype.local.systemType.defaultUserId=stud

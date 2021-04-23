@@ -16,8 +16,41 @@
 -makelib xcelium_lib/xpm \
   "D:/Xilinx/Vivado/2019.1/data/ip/xpm/xpm_VCOMP.vhd" \
 -endlib
+-makelib xcelium_lib/generic_baseblocks_v2_1_0 \
+  "../../../../UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/b752/hdl/generic_baseblocks_v2_1_vl_rfs.v" \
+-endlib
+-makelib xcelium_lib/axi_infrastructure_v1_1_0 \
+  "../../../../UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/ec67/hdl/axi_infrastructure_v1_1_vl_rfs.v" \
+-endlib
+-makelib xcelium_lib/axi_register_slice_v2_1_19 \
+  "../../../../UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/4d88/hdl/axi_register_slice_v2_1_vl_rfs.v" \
+-endlib
+-makelib xcelium_lib/fifo_generator_v13_2_4 \
+  "../../../../UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/1f5a/simulation/fifo_generator_vlog_beh.v" \
+-endlib
+-makelib xcelium_lib/fifo_generator_v13_2_4 \
+  "../../../../UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/1f5a/hdl/fifo_generator_v13_2_rfs.vhd" \
+-endlib
+-makelib xcelium_lib/fifo_generator_v13_2_4 \
+  "../../../../UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/1f5a/hdl/fifo_generator_v13_2_rfs.v" \
+-endlib
+-makelib xcelium_lib/axi_data_fifo_v2_1_18 \
+  "../../../../UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/5b9c/hdl/axi_data_fifo_v2_1_vl_rfs.v" \
+-endlib
+-makelib xcelium_lib/axi_crossbar_v2_1_20 \
+  "../../../../UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/ace7/hdl/axi_crossbar_v2_1_vl_rfs.v" \
+-endlib
 -makelib xcelium_lib/xil_defaultlib \
-  "d:/Projects/XilinxProjects/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ip/UPzynq20_test_design_processing_system7_0_0/UPzynq20_test_design_processing_system7_0_0_sim_netlist.vhdl" \
+  "../../../bd/UPzynq20_test_design/ip/UPzynq20_test_design_xbar_0/sim/UPzynq20_test_design_xbar_0.v" \
+-endlib
+-makelib xcelium_lib/axi_vip_v1_1_5 -sv \
+  "../../../../UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/d4a8/hdl/axi_vip_v1_1_vl_rfs.sv" \
+-endlib
+-makelib xcelium_lib/processing_system7_vip_v1_0_7 -sv \
+  "../../../../UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/8c62/hdl/processing_system7_vip_v1_0_vl_rfs.sv" \
+-endlib
+-makelib xcelium_lib/xil_defaultlib \
+  "../../../bd/UPzynq20_test_design/ip/UPzynq20_test_design_processing_system7_0_0_1/sim/UPzynq20_test_design_processing_system7_0_0.v" \
 -endlib
 -makelib xcelium_lib/axi_lite_ipif_v3_0_4 \
   "../../../../UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd" \
@@ -32,35 +65,33 @@
   "../../../../UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd" \
 -endlib
 -makelib xcelium_lib/xil_defaultlib \
-  "../../../bd/UPzynq20_test_design/ip/UPzynq20_test_design_axi_gpio_0_0/sim/UPzynq20_test_design_axi_gpio_0_0.vhd" \
-  "../../../bd/UPzynq20_test_design/ip/UPzynq20_test_design_axi_gpio_0_1/sim/UPzynq20_test_design_axi_gpio_0_1.vhd" \
-  "../../../bd/UPzynq20_test_design/ip/UPzynq20_test_design_axi_gpio_0_2/sim/UPzynq20_test_design_axi_gpio_0_2.vhd" \
-  "../../../bd/UPzynq20_test_design/ip/UPzynq20_test_design_axi_gpio_2_0/sim/UPzynq20_test_design_axi_gpio_2_0.vhd" \
-  "../../../bd/UPzynq20_test_design/ip/UPzynq20_test_design_xadc_wiz_0_0/proc_common_v3_30_a/hdl/src/vhdl/UPzynq20_test_design_xadc_wiz_0_0_conv_funs_pkg.vhd" \
-  "../../../bd/UPzynq20_test_design/ip/UPzynq20_test_design_xadc_wiz_0_0/proc_common_v3_30_a/hdl/src/vhdl/UPzynq20_test_design_xadc_wiz_0_0_proc_common_pkg.vhd" \
-  "../../../bd/UPzynq20_test_design/ip/UPzynq20_test_design_xadc_wiz_0_0/proc_common_v3_30_a/hdl/src/vhdl/UPzynq20_test_design_xadc_wiz_0_0_ipif_pkg.vhd" \
-  "../../../bd/UPzynq20_test_design/ip/UPzynq20_test_design_xadc_wiz_0_0/proc_common_v3_30_a/hdl/src/vhdl/UPzynq20_test_design_xadc_wiz_0_0_family_support.vhd" \
-  "../../../bd/UPzynq20_test_design/ip/UPzynq20_test_design_xadc_wiz_0_0/proc_common_v3_30_a/hdl/src/vhdl/UPzynq20_test_design_xadc_wiz_0_0_family.vhd" \
-  "../../../bd/UPzynq20_test_design/ip/UPzynq20_test_design_xadc_wiz_0_0/proc_common_v3_30_a/hdl/src/vhdl/UPzynq20_test_design_xadc_wiz_0_0_soft_reset.vhd" \
-  "../../../bd/UPzynq20_test_design/ip/UPzynq20_test_design_xadc_wiz_0_0/proc_common_v3_30_a/hdl/src/vhdl/UPzynq20_test_design_xadc_wiz_0_0_pselect_f.vhd" \
-  "../../../bd/UPzynq20_test_design/ip/UPzynq20_test_design_xadc_wiz_0_0/axi_lite_ipif_v1_01_a/hdl/src/vhdl/UPzynq20_test_design_xadc_wiz_0_0_address_decoder.vhd" \
-  "../../../bd/UPzynq20_test_design/ip/UPzynq20_test_design_xadc_wiz_0_0/axi_lite_ipif_v1_01_a/hdl/src/vhdl/UPzynq20_test_design_xadc_wiz_0_0_slave_attachment.vhd" \
-  "../../../bd/UPzynq20_test_design/ip/UPzynq20_test_design_xadc_wiz_0_0/interrupt_control_v2_01_a/hdl/src/vhdl/UPzynq20_test_design_xadc_wiz_0_0_interrupt_control.vhd" \
-  "../../../bd/UPzynq20_test_design/ip/UPzynq20_test_design_xadc_wiz_0_0/axi_lite_ipif_v1_01_a/hdl/src/vhdl/UPzynq20_test_design_xadc_wiz_0_0_axi_lite_ipif.vhd" \
-  "../../../bd/UPzynq20_test_design/ip/UPzynq20_test_design_xadc_wiz_0_0/UPzynq20_test_design_xadc_wiz_0_0_xadc_core_drp.vhd" \
-  "../../../bd/UPzynq20_test_design/ip/UPzynq20_test_design_xadc_wiz_0_0/UPzynq20_test_design_xadc_wiz_0_0_axi_xadc.vhd" \
-  "../../../bd/UPzynq20_test_design/ip/UPzynq20_test_design_xadc_wiz_0_0/UPzynq20_test_design_xadc_wiz_0_0.vhd" \
-  "../../../bd/UPzynq20_test_design/ip/UPzynq20_test_design_xbar_0/UPzynq20_test_design_xbar_0_sim_netlist.vhdl" \
+  "../../../bd/UPzynq20_test_design/ip/UPzynq20_test_design_axi_gpio_0_0_1/sim/UPzynq20_test_design_axi_gpio_0_0.vhd" \
+  "../../../bd/UPzynq20_test_design/ip/UPzynq20_test_design_axi_gpio_1_0/sim/UPzynq20_test_design_axi_gpio_1_0.vhd" \
+  "../../../bd/UPzynq20_test_design/ip/UPzynq20_test_design_axi_gpio_2_0_1/sim/UPzynq20_test_design_axi_gpio_2_0.vhd" \
+  "../../../bd/UPzynq20_test_design/ip/UPzynq20_test_design_axi_gpio_3_0/sim/UPzynq20_test_design_axi_gpio_3_0.vhd" \
 -endlib
 -makelib xcelium_lib/proc_sys_reset_v5_0_13 \
   "../../../../UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/8842/hdl/proc_sys_reset_v5_0_vh_rfs.vhd" \
 -endlib
 -makelib xcelium_lib/xil_defaultlib \
-  "../../../bd/UPzynq20_test_design/ip/UPzynq20_test_design_rst_ps7_0_50M_0/sim/UPzynq20_test_design_rst_ps7_0_50M_0.vhd" \
-  "../../../bd/UPzynq20_test_design/ipshared/6b1b/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd" \
-  "../../../bd/UPzynq20_test_design/ipshared/6b1b/hdl/IP_AXI_ADC_v1_0.vhd" \
-  "../../../bd/UPzynq20_test_design/ip/UPzynq20_test_design_IP_AXI_ADC_0_1/sim/UPzynq20_test_design_IP_AXI_ADC_0_1.vhd" \
-  "../../../bd/UPzynq20_test_design/ip/UPzynq20_test_design_auto_pc_0/UPzynq20_test_design_auto_pc_0_sim_netlist.vhdl" \
+  "../../../bd/UPzynq20_test_design/ip/UPzynq20_test_design_rst_ps7_0_50M_0_1/sim/UPzynq20_test_design_rst_ps7_0_50M_0.vhd" \
+  "../../../bd/UPzynq20_test_design/ipshared/cc52/hdl/IP_AXI_PWM_v1_0_S00_AXI.vhd" \
+  "../../../bd/UPzynq20_test_design/ipshared/cc52/hdl/IP_AXI_PWM_v1_0.vhd" \
+  "../../../bd/UPzynq20_test_design/ip/UPzynq20_test_design_IP_AXI_PWM_0_0/sim/UPzynq20_test_design_IP_AXI_PWM_0_0.vhd" \
+  "../../../bd/UPzynq20_test_design/ipshared/afe0/hdl/IP_AXI_LEDS_v1_0_S00_AXI.vhd" \
+  "../../../bd/UPzynq20_test_design/ipshared/afe0/hdl/IP_AXI_LEDS_v1_0.vhd" \
+  "../../../bd/UPzynq20_test_design/ip/UPzynq20_test_design_IP_AXI_LEDS_0_0/sim/UPzynq20_test_design_IP_AXI_LEDS_0_0.vhd" \
+  "../../../bd/UPzynq20_test_design/ipshared/75ed/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd" \
+  "../../../bd/UPzynq20_test_design/ipshared/75ed/hdl/IP_AXI_ADC_v1_0.vhd" \
+  "../../../bd/UPzynq20_test_design/ip/UPzynq20_test_design_IP_AXI_ADC_0_0/sim/UPzynq20_test_design_IP_AXI_ADC_0_0.vhd" \
+-endlib
+-makelib xcelium_lib/axi_protocol_converter_v2_1_19 \
+  "../../../../UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v" \
+-endlib
+-makelib xcelium_lib/xil_defaultlib \
+  "../../../bd/UPzynq20_test_design/ip/UPzynq20_test_design_auto_pc_0/sim/UPzynq20_test_design_auto_pc_0.v" \
+-endlib
+-makelib xcelium_lib/xil_defaultlib \
   "../../../bd/UPzynq20_test_design/sim/UPzynq20_test_design.vhd" \
 -endlib
 -makelib xcelium_lib/xil_defaultlib \

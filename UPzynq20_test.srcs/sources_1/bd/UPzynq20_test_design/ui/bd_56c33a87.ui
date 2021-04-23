@@ -49,19 +49,19 @@ preplace netloc IP_AXI_ADC_0_a0 1 3 1 NJ 1100
 preplace netloc IP_AXI_ADC_0_not_cs 1 3 1 NJ 1120
 preplace netloc rst_ps7_0_50M_interconnect_aresetn 1 1 1 440 520n
 preplace netloc axi_gpio_0_GPIO 1 3 1 NJ 210
-preplace netloc ps7_0_axi_periph_M04_AXI 1 2 1 760 60n
 preplace netloc processing_system7_0_M_AXI_GP0 1 1 1 N 480
-preplace netloc ps7_0_axi_periph_M03_AXI 1 2 1 770 660n
-preplace netloc ps7_0_axi_periph_M02_AXI 1 2 1 N 640
 preplace netloc processing_system7_0_DDR 1 1 3 440J 420 820J 580 NJ
+preplace netloc ps7_0_axi_periph_M04_AXI 1 2 1 760 60n
+preplace netloc ps7_0_axi_periph_M02_AXI 1 2 1 N 640
+preplace netloc ps7_0_axi_periph_M03_AXI 1 2 1 770 660n
 preplace netloc processing_system7_0_FIXED_IO 1 1 3 430J 410 780J 920 NJ
-preplace netloc axi_gpio_3_GPIO 1 3 1 NJ 790
 preplace netloc axi_gpio_2_GPIO 1 3 1 NJ 650
+preplace netloc axi_gpio_3_GPIO 1 3 1 NJ 790
 preplace netloc ps7_0_axi_periph_M00_AXI 1 2 1 770 200n
 preplace netloc axi_gpio_1_GPIO 1 3 1 NJ 490
+preplace netloc ps7_0_axi_periph_M05_AXI 1 2 1 760 700n
 preplace netloc ps7_0_axi_periph_M01_AXI 1 2 1 810 480n
 preplace netloc ps7_0_axi_periph_M06_AXI 1 2 1 830 340n
-preplace netloc ps7_0_axi_periph_M05_AXI 1 2 1 760 700n
 levelinfo -pg 1 0 230 610 970 1130
 pagesize -pg 1 -db -bbox -sgen -130 0 1250 1240
 "

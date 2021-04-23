@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Mon Apr 20 13:47:08 2020" VIVADOVERSION="2019.1">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Fri Apr 23 08:54:55 2021" VIVADOVERSION="2019.1">
 
   <SYSTEMINFO ARCH="zynq" DEVICE="7z020" NAME="UPzynq20_test_design" PACKAGE="clg484" SPEEDGRADE="-3"/>
 
@@ -174,14 +174,14 @@
         <CONNECTION INSTANCE="processing_system7_0" PORT="PS_PORB"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="I" LEFT="15" NAME="gpio_rtl_3_tri_i" RIGHT="0" SIGIS="undef" SIGNAME="axi_gpio_3_gpio_io_i">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="axi_gpio_3" PORT="gpio_io_i"/>
-      </CONNECTIONS>
-    </PORT>
     <PORT DIR="I" LEFT="7" NAME="gpio_rtl_2_tri_i" RIGHT="0" SIGIS="undef" SIGNAME="axi_gpio_2_gpio_io_i">
       <CONNECTIONS>
         <CONNECTION INSTANCE="axi_gpio_2" PORT="gpio_io_i"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" LEFT="15" NAME="gpio_rtl_3_tri_i" RIGHT="0" SIGIS="undef" SIGNAME="axi_gpio_3_gpio_io_i">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="axi_gpio_3" PORT="gpio_io_i"/>
       </CONNECTIONS>
     </PORT>
     <PORT DIR="O" LEFT="7" NAME="gpio_rtl_1_tri_o" RIGHT="0" SIGIS="undef" SIGNAME="axi_gpio_1_gpio_io_o">
@@ -3424,7 +3424,7 @@
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="S00_AXI_rdata"/>
           </CONNECTIONS>
         </PORT>
-        <PORT CLKFREQUENCY="50000000" DIR="O" NAME="FCLK_CLK0" SIGIS="clk" SIGNAME="processing_system7_0_FCLK_CLK0">
+        <PORT CLKFREQUENCY="5e+07" DIR="O" NAME="FCLK_CLK0" SIGIS="clk" SIGNAME="processing_system7_0_FCLK_CLK0">
           <CONNECTIONS>
             <CONNECTION INSTANCE="processing_system7_0" PORT="M_AXI_GP0_ACLK"/>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="S00_ACLK"/>

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Root MajorVersion="0" MinorVersion="37">
-  <CompositeFile CompositeFileTopName="UPzynq20_test_design" CanBeSetAsTop="false" CanDisplayChildGraph="true">
+  <CompositeFile CompositeFileTopName="UPzynq20_test_design" CanBeSetAsTop="true" CanDisplayChildGraph="true">
     <Description>Composite Fileset</Description>
-    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1587379628"/>
-    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1587379628"/>
-    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1587379628"/>
-    <Generation Name="HW_HANDOFF" State="GENERATED" Timestamp="1587379628"/>
+    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1619157295"/>
+    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1619157295"/>
+    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1619157295"/>
+    <Generation Name="HW_HANDOFF" State="GENERATED" Timestamp="1619157295"/>
     <FileCollection Name="SOURCES" Type="SOURCES">
       <File Name="ip\UPzynq20_test_design_xbar_0\UPzynq20_test_design_xbar_0.xci" Type="IP">
         <Instance HierarchyPath="ps7_0_axi_periph/xbar"/>
@@ -21,16 +21,6 @@
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>
         <UsedIn Val="IMPLEMENTATION"/>
-        <UsedIn Val="SIMULATION"/>
-      </File>
-      <File Name="synth\UPzynq20_test_design.vhd" Type="VHDL">
-        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
-        <Library Name="xil_defaultlib"/>
-        <UsedIn Val="SYNTHESIS"/>
-      </File>
-      <File Name="sim\UPzynq20_test_design.vhd" Type="VHDL">
-        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
-        <Library Name="xil_defaultlib"/>
         <UsedIn Val="SIMULATION"/>
       </File>
       <File Name="ip\UPzynq20_test_design_processing_system7_0_0_1\UPzynq20_test_design_processing_system7_0_0.xci" Type="IP">
@@ -111,6 +101,16 @@
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>
         <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="synth\UPzynq20_test_design.vhd" Type="VHDL">
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+      </File>
+      <File Name="sim\UPzynq20_test_design.vhd" Type="VHDL">
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
+        <Library Name="xil_defaultlib"/>
         <UsedIn Val="SIMULATION"/>
       </File>
       <File Name="UPzynq20_test_design_ooc.xdc" Type="XDC">

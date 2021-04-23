@@ -67,7 +67,7 @@ set rc [catch {
   create_msg_db write_bitstream.pb
   set_param chipscope.maxJobs 2
   open_checkpoint UPzynq20_test_design_wrapper_routed.dcp
-  set_property webtalk.parent_dir D:/Projects/XilinxProjects/UPzynq20_test/UPzynq20_test.cache/wt [current_project]
+  set_property webtalk.parent_dir D:/GITEA/UPzynq20_test/UPzynq20_test.cache/wt [current_project]
   set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
   catch { write_mem_info -force UPzynq20_test_design_wrapper.mmi }
   write_bitstream -force UPzynq20_test_design_wrapper.bit 

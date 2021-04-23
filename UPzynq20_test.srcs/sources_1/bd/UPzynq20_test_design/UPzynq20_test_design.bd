@@ -4,7 +4,7 @@
       "boundary_crc": "0xEEEA4A07BEB0323C",
       "device": "xc7z020clg484-3",
       "name": "UPzynq20_test_design",
-      "synth_flow_mode": "Hierarchical",
+      "synth_flow_mode": "None",
       "tool_version": "2019.1",
       "validated": "true"
     },
