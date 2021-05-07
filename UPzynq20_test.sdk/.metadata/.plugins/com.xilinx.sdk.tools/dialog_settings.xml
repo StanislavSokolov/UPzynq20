@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<item value="false" key="UPzynq20_test_design_wrapper_hw_platform_0-verifyFlash"/>
+	<item value="false" key="UPzynq20_test_design_wrapper_hw_platform_0-blankCheck"/>
+	<item value="UPzynq20_test_design_wrapper_hw_platform_0" key="programflash.hwplatform"/>
+	<item value="Local" key="UPzynq20_test_design_wrapper_hw_platform_0-target"/>
+	<item value="D:\GITEA\UPzynq20_test\UPzynq20_test.sdk\zynq_fsbl_0\Debug\zynq_fsbl_0.elf" key="UPzynq20_test_design_wrapper_hw_platform_0-fsblFile"/>
+	<item value="nor" key="UPzynq20_test_design_wrapper_hw_platform_0-flashType"/>
+	<item value="" key="UPzynq20_test_design_wrapper_hw_platform_0-offSet"/>
+	<item value="D:\GITEA\UPzynq20_test\UPzynq20_test.sdk\LCUFC_test\bootimage\LCUFC_test.bin" key="UPzynq20_test_design_wrapper_hw_platform_0-imgFile"/>
+	<item value="Auto Detect" key="UPzynq20_test_design_wrapper_hw_platform_0-device"/>
+</section>

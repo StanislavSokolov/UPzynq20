@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7z020clg484-3" LaunchTime="1619157697">
+<GenRun Id="impl_1" LaunchPart="xc7z020clg484-3" LaunchTime="1620293932">
   <File Type="OPT-HWDEF" Name="UPzynq20_test_design_wrapper.hwdef"/>
   <File Type="ROUTE-BUS-SKEW" Name="UPzynq20_test_design_wrapper_bus_skew_routed.rpt"/>
   <File Type="PA-DCP" Name="UPzynq20_test_design_wrapper.dcp"/>

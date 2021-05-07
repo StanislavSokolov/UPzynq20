@@ -65,6 +65,10 @@ void bild_send_buffer(u32 address, u32 data){
 	SendBuffer[address+1] = high_bits;
 }
 
+u32 update_from_terminal(u32 address){
+	return RecvBuffer[address] + (RecvBuffer[address+1])*256;
+}
+
 void terminal_uart_send() {
 	SendBuffer[0] = 4;
 	SendBuffer[1] = 1;
@@ -73,7 +77,6 @@ XUartPs_Send(&UartPs, SendBuffer, TEST_BUFFER_SIZE);
 
 void terminal_uart_recv() {
 XUartPs_Recv(&UartPs, RecvBuffer, TEST_BUFFER_SIZE);
-update_from_terminal(&RecvBuffer);
 }
 
 void initialization_of_UART(){
