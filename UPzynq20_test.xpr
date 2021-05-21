@@ -23,9 +23,7 @@
     <Option Name="ActiveSimSet" Val="sim_1"/>
     <Option Name="DefaultLib" Val="xil_defaultlib"/>
     <Option Name="ProjectType" Val="Default"/>
-    <Option Name="IPRepoPath" Val="$PPRDIR/IP/IP_AXI_ADC/IP_AXI_ADC_1.0"/>
-    <Option Name="IPRepoPath" Val="$PPRDIR/IP/IP_AXI_LEDS/IP_AXI_LEDS_1.0"/>
-    <Option Name="IPRepoPath" Val="$PPRDIR/IP/IP_AXI_PWM/IP_AXI_PWM_1.0"/>
+    <Option Name="IPRepoPath" Val="$PPRDIR/IP"/>
     <Option Name="IPOutputRepo" Val="$PCACHEDIR/ip"/>
     <Option Name="IPCachePermission" Val="read"/>
     <Option Name="IPCachePermission" Val="write"/>

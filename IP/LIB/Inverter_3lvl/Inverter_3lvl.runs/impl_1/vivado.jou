@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Wed Apr 29 12:45:22 2020
+# Process ID: 16136
+# Current directory: D:/Projects/IP/LIB/Inverter_3lvl/Inverter_3lvl.runs/impl_1
+# Command line: vivado.exe -log Inverter_3lvl_wrapper.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source Inverter_3lvl_wrapper.tcl -notrace
+# Log file: D:/Projects/IP/LIB/Inverter_3lvl/Inverter_3lvl.runs/impl_1/Inverter_3lvl_wrapper.vdi
+# Journal file: D:/Projects/IP/LIB/Inverter_3lvl/Inverter_3lvl.runs/impl_1\vivado.jou
+#-----------------------------------------------------------
+source Inverter_3lvl_wrapper.tcl -notrace

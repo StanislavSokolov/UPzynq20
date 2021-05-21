@@ -2,10 +2,10 @@
 <Root MajorVersion="0" MinorVersion="37">
   <CompositeFile CompositeFileTopName="UPzynq20_test_design" CanBeSetAsTop="true" CanDisplayChildGraph="true">
     <Description>Composite Fileset</Description>
-    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1621408539"/>
-    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1621408539"/>
-    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1621408539"/>
-    <Generation Name="HW_HANDOFF" State="GENERATED" Timestamp="1621408539"/>
+    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1621577372"/>
+    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1621577372"/>
+    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1621577372"/>
+    <Generation Name="HW_HANDOFF" State="GENERATED" Timestamp="1621577372"/>
     <FileCollection Name="SOURCES" Type="SOURCES">
       <File Name="ip\UPzynq20_test_design_xbar_0\UPzynq20_test_design_xbar_0.xci" Type="IP">
         <Instance HierarchyPath="ps7_0_axi_periph/xbar"/>
@@ -127,14 +127,6 @@
         <UsedIn Val="IMPLEMENTATION"/>
         <UsedIn Val="SIMULATION"/>
       </File>
-      <File Name="ip\UPzynq20_test_design_auto_pc_0\UPzynq20_test_design_auto_pc_0.xci" Type="IP">
-        <Instance HierarchyPath="ps7_0_axi_periph/s00_couplers/auto_pc"/>
-        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
-        <Library Name="xil_defaultlib"/>
-        <UsedIn Val="SYNTHESIS"/>
-        <UsedIn Val="IMPLEMENTATION"/>
-        <UsedIn Val="SIMULATION"/>
-      </File>
       <File Name="synth\UPzynq20_test_design.vhd" Type="VHDL">
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
         <Library Name="xil_defaultlib"/>
@@ -143,6 +135,22 @@
       <File Name="sim\UPzynq20_test_design.vhd" Type="VHDL">
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
         <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\UPzynq20_test_design_IP_AXI_Encoder_0_0\UPzynq20_test_design_IP_AXI_Encoder_0_0.xci" Type="IP">
+        <Instance HierarchyPath="IP_AXI_Encoder_0"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\UPzynq20_test_design_auto_pc_0\UPzynq20_test_design_auto_pc_0.xci" Type="IP">
+        <Instance HierarchyPath="ps7_0_axi_periph/s00_couplers/auto_pc"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
         <UsedIn Val="SIMULATION"/>
       </File>
       <File Name="UPzynq20_test_design_ooc.xdc" Type="XDC">

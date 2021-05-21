@@ -42,6 +42,17 @@
 
 /******************************************************************/
 
+/* Definitions for driver IP_AXI_ENCODER */
+#define XPAR_IP_AXI_ENCODER_NUM_INSTANCES 1
+
+/* Definitions for peripheral IP_AXI_ENCODER_0 */
+#define XPAR_IP_AXI_ENCODER_0_DEVICE_ID 0
+#define XPAR_IP_AXI_ENCODER_0_S00_AXI_BASEADDR 0x43C30000
+#define XPAR_IP_AXI_ENCODER_0_S00_AXI_HIGHADDR 0x43C3FFFF
+
+
+/******************************************************************/
+
 /* Definitions for driver IP_AXI_LEDS */
 #define XPAR_IP_AXI_LEDS_NUM_INSTANCES 1
 

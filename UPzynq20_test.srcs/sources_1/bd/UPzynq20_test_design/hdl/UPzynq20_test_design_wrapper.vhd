@@ -1,7 +1,7 @@
 --Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
---Date        : Wed May 19 10:15:38 2021
+--Date        : Fri May 21 09:09:30 2021
 --Host        : STAS-W10 running 64-bit major release  (build 9200)
 --Command     : generate_target UPzynq20_test_design_wrapper.bd
 --Design      : UPzynq20_test_design_wrapper
@@ -71,6 +71,18 @@ architecture STRUCTURE of UPzynq20_test_design_wrapper is
     Data_in_a3 : in STD_LOGIC;
     Data_in_b3 : in STD_LOGIC;
     LEDS_0 : out STD_LOGIC;
+    FIXED_IO_mio : inout STD_LOGIC_VECTOR ( 53 downto 0 );
+    FIXED_IO_ddr_vrn : inout STD_LOGIC;
+    FIXED_IO_ddr_vrp : inout STD_LOGIC;
+    FIXED_IO_ps_srstb : inout STD_LOGIC;
+    FIXED_IO_ps_clk : inout STD_LOGIC;
+    FIXED_IO_ps_porb : inout STD_LOGIC;
+    gpio_rtl_2_tri_i : in STD_LOGIC_VECTOR ( 7 downto 0 );
+    gpio_rtl_7_tri_i : in STD_LOGIC_VECTOR ( 15 downto 0 );
+    gpio_rtl_3_tri_i : in STD_LOGIC_VECTOR ( 15 downto 0 );
+    gpio_rtl_4_tri_o : out STD_LOGIC_VECTOR ( 15 downto 0 );
+    gpio_rtl_6_tri_i : in STD_LOGIC_VECTOR ( 15 downto 0 );
+    gpio_rtl_5_tri_o : out STD_LOGIC_VECTOR ( 15 downto 0 );
     gpio_rtl_0_tri_o : out STD_LOGIC_VECTOR ( 15 downto 0 );
     DDR_cas_n : inout STD_LOGIC;
     DDR_cke : inout STD_LOGIC;
@@ -86,19 +98,7 @@ architecture STRUCTURE of UPzynq20_test_design_wrapper is
     DDR_dm : inout STD_LOGIC_VECTOR ( 3 downto 0 );
     DDR_dq : inout STD_LOGIC_VECTOR ( 31 downto 0 );
     DDR_dqs_n : inout STD_LOGIC_VECTOR ( 3 downto 0 );
-    DDR_dqs_p : inout STD_LOGIC_VECTOR ( 3 downto 0 );
-    gpio_rtl_7_tri_i : in STD_LOGIC_VECTOR ( 15 downto 0 );
-    gpio_rtl_2_tri_i : in STD_LOGIC_VECTOR ( 7 downto 0 );
-    gpio_rtl_4_tri_o : out STD_LOGIC_VECTOR ( 15 downto 0 );
-    gpio_rtl_5_tri_o : out STD_LOGIC_VECTOR ( 15 downto 0 );
-    FIXED_IO_mio : inout STD_LOGIC_VECTOR ( 53 downto 0 );
-    FIXED_IO_ddr_vrn : inout STD_LOGIC;
-    FIXED_IO_ddr_vrp : inout STD_LOGIC;
-    FIXED_IO_ps_srstb : inout STD_LOGIC;
-    FIXED_IO_ps_clk : inout STD_LOGIC;
-    FIXED_IO_ps_porb : inout STD_LOGIC;
-    gpio_rtl_3_tri_i : in STD_LOGIC_VECTOR ( 15 downto 0 );
-    gpio_rtl_6_tri_i : in STD_LOGIC_VECTOR ( 15 downto 0 )
+    DDR_dqs_p : inout STD_LOGIC_VECTOR ( 3 downto 0 )
   );
   end component UPzynq20_test_design;
 begin
