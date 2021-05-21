@@ -70,6 +70,8 @@
 #include "module_uart.h"
 
 int Count;
+int Channel;
+int j = 4;
 u32 DataBuf;
 u32 DataBufPrev;
 
@@ -78,7 +80,8 @@ u32 GroupsRegisters = 0;
 
 u32 DataErrWarnInfo = 0;
 
-int latch = 1;
+int latch = 0;
+int latch_start = 0;
 
 int main(void) {
 
@@ -88,16 +91,16 @@ int main(void) {
 
 	while (1) {
 
-		if (Count < 10000000) {
+		if (Count < 100000000) {
 			Count++;
 		} else {
 			if (latch) {
-				Xil_Out32(XPAR_IP_AXI_LEDS_0_S00_AXI_BASEADDR, 0x00000001);
+				Xil_Out32(XPAR_IP_AXI_LEDS_0_S00_AXI_BASEADDR, 0x00000000);
 				latch = 0;
 				//write_out(17);
 				//inverting_the_signal_count_transmitter();
 			} else {
-				Xil_Out32(XPAR_IP_AXI_LEDS_0_S00_AXI_BASEADDR, 0x00000000);
+				Xil_Out32(XPAR_IP_AXI_LEDS_0_S00_AXI_BASEADDR, 0x00000001);
 				latch = 1;
 				//write_out(4);
 				//inverting_the_signal_count_transmitter();
@@ -109,6 +112,11 @@ int main(void) {
 //			bild_send_buffer(8, GroupsRegisters);
 
 			read_in_all();
+			bild_send_buffer(112+Channel*2, Xil_In32(XPAR_IP_AXI_ADC_0_S00_AXI_BASEADDR + (Channel*j)));
+						if (Channel<15) {
+										Channel++;
+									} else { Channel = 0; }
+
 //			bild_send_buffer(22, XGpio_DiscreteRead(&Gpio_6, 1));
 
 //			read_in(&DataBuf);
@@ -118,9 +126,14 @@ int main(void) {
 //			}
 //			DataBufPrev = DataBuf;
 
+			if (latch_start==0) bild_send_buffer(TEST_BUFFER_SIZE-3, 1); else bild_send_buffer(TEST_BUFFER_SIZE-3, 0);
+			latch_start = 1;
 			terminal_uart_send();
-			terminal_uart_recv();
-			update_from_terminal_all(TEST_BUFFER_SIZE);
+
+			if (terminal_uart_recv()==0) {
+				update_from_terminal_all(TEST_BUFFER_SIZE);
+			}
+
 			//write_out(update_from_terminal(26));
 
 		}

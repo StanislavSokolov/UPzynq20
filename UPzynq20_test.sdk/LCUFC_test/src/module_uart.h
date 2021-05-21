@@ -28,13 +28,13 @@
  * The following constant controls the length of the buffers to be sent
  * and received with the UART,
  */
-#define TEST_BUFFER_SIZE	62
+#define TEST_BUFFER_SIZE	200
 
 void inverting_the_signal_count_transmitter();
 void bild_send_buffer(u32 address, u32 data);
 u32 update_from_terminal(u32 address);
 void terminal_uart_send();
-void terminal_uart_recv();
+u32 terminal_uart_recv();
 void initialization_of_UART();
 
 

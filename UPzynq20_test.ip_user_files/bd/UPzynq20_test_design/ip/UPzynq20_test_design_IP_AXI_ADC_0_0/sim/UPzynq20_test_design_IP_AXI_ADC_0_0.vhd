@@ -47,7 +47,7 @@
 -- DO NOT MODIFY THIS FILE.
 
 -- IP VLNV: ssevendenergy.com:user:IP_AXI_ADC:1.0
--- IP Revision: 1
+-- IP Revision: 9
 
 LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
@@ -56,8 +56,6 @@ USE ieee.numeric_std.ALL;
 ENTITY UPzynq20_test_design_IP_AXI_ADC_0_0 IS
   PORT (
     sclk : OUT STD_LOGIC;
-    even_updated : OUT STD_LOGIC;
-    odd_updated : OUT STD_LOGIC;
     a0 : OUT STD_LOGIC;
     not_cs : OUT STD_LOGIC;
     data_in_a0 : IN STD_LOGIC;
@@ -102,8 +100,6 @@ ARCHITECTURE UPzynq20_test_design_IP_AXI_ADC_0_0_arch OF UPzynq20_test_design_IP
     );
     PORT (
       sclk : OUT STD_LOGIC;
-      even_updated : OUT STD_LOGIC;
-      odd_updated : OUT STD_LOGIC;
       a0 : OUT STD_LOGIC;
       not_cs : OUT STD_LOGIC;
       data_in_a0 : IN STD_LOGIC;
@@ -172,8 +168,6 @@ BEGIN
     )
     PORT MAP (
       sclk => sclk,
-      even_updated => even_updated,
-      odd_updated => odd_updated,
       a0 => a0,
       not_cs => not_cs,
       data_in_a0 => data_in_a0,

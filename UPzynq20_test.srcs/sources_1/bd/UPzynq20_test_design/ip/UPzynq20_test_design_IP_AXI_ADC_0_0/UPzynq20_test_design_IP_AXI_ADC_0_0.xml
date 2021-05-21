@@ -581,11 +581,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Fri Apr 23 05:54:54 UTC 2021</spirit:value>
+            <spirit:value>Wed May 19 07:15:38 UTC 2021</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:0dd60dba</spirit:value>
+            <spirit:value>9:4216ab9c</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -596,7 +596,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:0dd60dba</spirit:value>
+            <spirit:value>9:4216ab9c</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -612,11 +612,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Fri Apr 23 05:54:54 UTC 2021</spirit:value>
+            <spirit:value>Wed May 19 07:15:38 UTC 2021</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:0dd60dba</spirit:value>
+            <spirit:value>9:4216ab9c</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -632,11 +632,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Fri Apr 23 05:54:54 UTC 2021</spirit:value>
+            <spirit:value>Wed May 19 07:15:38 UTC 2021</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:f15cac4b</spirit:value>
+            <spirit:value>9:ba20b971</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -652,11 +652,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Fri Apr 23 05:54:54 UTC 2021</spirit:value>
+            <spirit:value>Wed May 19 07:15:38 UTC 2021</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:f15cac4b</spirit:value>
+            <spirit:value>9:ba20b971</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -664,32 +664,6 @@
     <spirit:ports>
       <spirit:port>
         <spirit:name>sclk</spirit:name>
-        <spirit:wire>
-          <spirit:direction>out</spirit:direction>
-          <spirit:wireTypeDefs>
-            <spirit:wireTypeDef>
-              <spirit:typeName>std_logic</spirit:typeName>
-              <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
-              <spirit:viewNameRef>xilinx_vhdlbehavioralsimulation</spirit:viewNameRef>
-            </spirit:wireTypeDef>
-          </spirit:wireTypeDefs>
-        </spirit:wire>
-      </spirit:port>
-      <spirit:port>
-        <spirit:name>even_updated</spirit:name>
-        <spirit:wire>
-          <spirit:direction>out</spirit:direction>
-          <spirit:wireTypeDefs>
-            <spirit:wireTypeDef>
-              <spirit:typeName>std_logic</spirit:typeName>
-              <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
-              <spirit:viewNameRef>xilinx_vhdlbehavioralsimulation</spirit:viewNameRef>
-            </spirit:wireTypeDef>
-          </spirit:wireTypeDefs>
-        </spirit:wire>
-      </spirit:port>
-      <spirit:port>
-        <spirit:name>odd_updated</spirit:name>
         <spirit:wire>
           <spirit:direction>out</spirit:direction>
           <spirit:wireTypeDefs>
@@ -1176,11 +1150,11 @@
     <spirit:fileSet>
       <spirit:name>xilinx_vhdlsynthesis_view_fileset</spirit:name>
       <spirit:file>
-        <spirit:name>../../ipshared/75ed/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd</spirit:name>
+        <spirit:name>../../ipshared/03ac/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/75ed/hdl/IP_AXI_ADC_v1_0.vhd</spirit:name>
+        <spirit:name>../../ipshared/03ac/hdl/IP_AXI_ADC_v1_0.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
     </spirit:fileSet>
@@ -1195,11 +1169,11 @@
     <spirit:fileSet>
       <spirit:name>xilinx_vhdlbehavioralsimulation_view_fileset</spirit:name>
       <spirit:file>
-        <spirit:name>../../ipshared/75ed/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd</spirit:name>
+        <spirit:name>../../ipshared/03ac/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/75ed/hdl/IP_AXI_ADC_v1_0.vhd</spirit:name>
+        <spirit:name>../../ipshared/03ac/hdl/IP_AXI_ADC_v1_0.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
     </spirit:fileSet>
@@ -1272,7 +1246,7 @@
   <spirit:vendorExtensions>
     <xilinx:coreExtensions>
       <xilinx:displayName>IP_AXI_ADC_v1.0</xilinx:displayName>
-      <xilinx:coreRevision>1</xilinx:coreRevision>
+      <xilinx:coreRevision>9</xilinx:coreRevision>
       <xilinx:tags>
         <xilinx:tag xilinx:name="ui.data.coregen.dd@18e5313d_ARCHIVE_LOCATION">d:/Projects/XilinxProjects/UPzynq20_test/IP/IP_AXI_ADC/IP_AXI_ADC_1.0</xilinx:tag>
         <xilinx:tag xilinx:name="ui.data.coregen.dd@6f367eaa_ARCHIVE_LOCATION">d:/Projects/XilinxProjects/UPzynq20_test/IP/IP_AXI_ADC/IP_AXI_ADC_1.0</xilinx:tag>
@@ -1300,6 +1274,66 @@
         <xilinx:tag xilinx:name="ui.data.coregen.dd@1030235d_ARCHIVE_LOCATION">d:/Projects/XilinxProjects/UPzynq20_test/IP/IP_AXI_ADC/IP_AXI_ADC_1.0</xilinx:tag>
         <xilinx:tag xilinx:name="ui.data.coregen.dd@38c8981e_ARCHIVE_LOCATION">d:/Projects/XilinxProjects/UPzynq20_test/IP/IP_AXI_ADC/IP_AXI_ADC_1.0</xilinx:tag>
         <xilinx:tag xilinx:name="ui.data.coregen.dd@1c463b_ARCHIVE_LOCATION">d:/Projects/XilinxProjects/UPzynq20_test/IP/IP_AXI_ADC/IP_AXI_ADC_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@25a9ee0d_ARCHIVE_LOCATION">d:/GITEA/UPzynq20_test/IP/IP_AXI_ADC/IP_AXI_ADC_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3ccf1d70_ARCHIVE_LOCATION">d:/GITEA/UPzynq20_test/IP/IP_AXI_ADC/IP_AXI_ADC_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@568bae1e_ARCHIVE_LOCATION">d:/GITEA/UPzynq20_test/IP/IP_AXI_ADC/IP_AXI_ADC_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@58fa492b_ARCHIVE_LOCATION">d:/GITEA/UPzynq20_test/IP/IP_AXI_ADC/IP_AXI_ADC_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@597adbf7_ARCHIVE_LOCATION">d:/GITEA/UPzynq20_test/IP/IP_AXI_ADC/IP_AXI_ADC_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5747936b_ARCHIVE_LOCATION">d:/GITEA/UPzynq20_test/IP/IP_AXI_ADC/IP_AXI_ADC_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6f1da0ca_ARCHIVE_LOCATION">d:/GITEA/UPzynq20_test/IP/IP_AXI_ADC/IP_AXI_ADC_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@18d00ccc_ARCHIVE_LOCATION">d:/GITEA/UPzynq20_test/IP/IP_AXI_ADC/IP_AXI_ADC_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5563664_ARCHIVE_LOCATION">d:/GITEA/UPzynq20_test/IP/IP_AXI_ADC/IP_AXI_ADC_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6d8590c5_ARCHIVE_LOCATION">d:/GITEA/UPzynq20_test/IP/IP_AXI_ADC/IP_AXI_ADC_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7bb539e1_ARCHIVE_LOCATION">d:/GITEA/UPzynq20_test/IP/IP_AXI_ADC/IP_AXI_ADC_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@60671ed2_ARCHIVE_LOCATION">d:/GITEA/UPzynq20_test/IP/IP_AXI_ADC/IP_AXI_ADC_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@36ec339f_ARCHIVE_LOCATION">d:/GITEA/UPzynq20_test/IP/IP_AXI_ADC/IP_AXI_ADC_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@77a6e23d_ARCHIVE_LOCATION">d:/GITEA/UPzynq20_test/IP/IP_AXI_ADC/IP_AXI_ADC_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7841f7ec_ARCHIVE_LOCATION">d:/GITEA/UPzynq20_test/IP/IP_AXI_ADC/IP_AXI_ADC_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@27499228_ARCHIVE_LOCATION">d:/GITEA/UPzynq20_test/IP/IP_AXI_ADC/IP_AXI_ADC_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6d3c3304_ARCHIVE_LOCATION">d:/GITEA/UPzynq20_test/IP/IP_AXI_ADC/IP_AXI_ADC_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1e6ec543_ARCHIVE_LOCATION">d:/GITEA/UPzynq20_test/IP/IP_AXI_ADC/IP_AXI_ADC_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@41b0395_ARCHIVE_LOCATION">d:/GITEA/UPzynq20_test/IP/IP_AXI_ADC/IP_AXI_ADC_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6f4b419f_ARCHIVE_LOCATION">d:/GITEA/UPzynq20_test/IP/IP_AXI_ADC/IP_AXI_ADC_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5c86b052_ARCHIVE_LOCATION">d:/GITEA/UPzynq20_test/IP/IP_AXI_ADC/IP_AXI_ADC_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@57b58e02_ARCHIVE_LOCATION">d:/GITEA/UPzynq20_test/IP/IP_AXI_ADC/IP_AXI_ADC_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@73a2887b_ARCHIVE_LOCATION">d:/GITEA/UPzynq20_test/IP/IP_AXI_ADC/IP_AXI_ADC_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4aef3bbb_ARCHIVE_LOCATION">d:/GITEA/UPzynq20_test/IP/IP_AXI_ADC/IP_AXI_ADC_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@46b19242_ARCHIVE_LOCATION">d:/GITEA/UPzynq20_test/IP/IP_AXI_ADC/IP_AXI_ADC_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@35e14de2_ARCHIVE_LOCATION">d:/GITEA/UPzynq20_test/IP/IP_AXI_ADC/IP_AXI_ADC_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@41e2c9fd_ARCHIVE_LOCATION">d:/GITEA/UPzynq20_test/IP/IP_AXI_ADC/IP_AXI_ADC_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6c7fc801_ARCHIVE_LOCATION">d:/GITEA/UPzynq20_test/IP/IP_AXI_ADC/IP_AXI_ADC_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@21682e62_ARCHIVE_LOCATION">d:/GITEA/UPzynq20_test/IP/IP_AXI_ADC/IP_AXI_ADC_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7614af7_ARCHIVE_LOCATION">d:/GITEA/UPzynq20_test/IP/IP_AXI_ADC/IP_AXI_ADC_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@24b179d9_ARCHIVE_LOCATION">d:/GITEA/UPzynq20_test/IP/IP_AXI_ADC/IP_AXI_ADC_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5205589_ARCHIVE_LOCATION">d:/GITEA/UPzynq20_test/IP/IP_AXI_ADC/IP_AXI_ADC_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@498f5d7a_ARCHIVE_LOCATION">d:/GITEA/UPzynq20_test/IP/IP_AXI_ADC/IP_AXI_ADC_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@30ebbf5_ARCHIVE_LOCATION">d:/GITEA/UPzynq20_test/IP/IP_AXI_ADC/IP_AXI_ADC_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@678698a5_ARCHIVE_LOCATION">d:/GITEA/UPzynq20_test/IP/IP_AXI_ADC/IP_AXI_ADC_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3d4edb1c_ARCHIVE_LOCATION">d:/GITEA/UPzynq20_test/IP/IP_AXI_ADC/IP_AXI_ADC_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3a5dbfb3_ARCHIVE_LOCATION">d:/GITEA/UPzynq20_test/IP/IP_AXI_ADC/IP_AXI_ADC_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@74cc4cb0_ARCHIVE_LOCATION">d:/GITEA/UPzynq20_test/IP/IP_AXI_ADC/IP_AXI_ADC_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7e8df458_ARCHIVE_LOCATION">d:/GITEA/UPzynq20_test/IP/IP_AXI_ADC/IP_AXI_ADC_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@65c3e02b_ARCHIVE_LOCATION">d:/GITEA/UPzynq20_test/IP/IP_AXI_ADC/IP_AXI_ADC_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@64307f73_ARCHIVE_LOCATION">d:/GITEA/UPzynq20_test/IP/IP_AXI_ADC/IP_AXI_ADC_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@57a836_ARCHIVE_LOCATION">d:/GITEA/UPzynq20_test/IP/IP_AXI_ADC/IP_AXI_ADC_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@62ac8e7c_ARCHIVE_LOCATION">d:/GITEA/UPzynq20_test/IP/IP_AXI_ADC/IP_AXI_ADC_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@36cdbfae_ARCHIVE_LOCATION">d:/GITEA/UPzynq20_test/IP/IP_AXI_ADC/IP_AXI_ADC_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@788e99a2_ARCHIVE_LOCATION">d:/GITEA/UPzynq20_test/IP/IP_AXI_ADC/IP_AXI_ADC_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6d9c2591_ARCHIVE_LOCATION">d:/GITEA/UPzynq20_test/IP/IP_AXI_ADC/IP_AXI_ADC_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3f06a083_ARCHIVE_LOCATION">d:/GITEA/UPzynq20_test/IP/IP_AXI_ADC/IP_AXI_ADC_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@162ae963_ARCHIVE_LOCATION">d:/GITEA/UPzynq20_test/IP/IP_AXI_ADC/IP_AXI_ADC_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@39f37d80_ARCHIVE_LOCATION">d:/GITEA/UPzynq20_test/IP/IP_AXI_ADC/IP_AXI_ADC_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@23998598_ARCHIVE_LOCATION">d:/GITEA/UPzynq20_test/IP/IP_AXI_ADC/IP_AXI_ADC_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4ee2857c_ARCHIVE_LOCATION">d:/GITEA/UPzynq20_test/IP/IP_AXI_ADC/IP_AXI_ADC_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@28e96a99_ARCHIVE_LOCATION">d:/GITEA/UPzynq20_test/IP/IP_AXI_ADC/IP_AXI_ADC_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@35cb14a_ARCHIVE_LOCATION">d:/GITEA/UPzynq20_test/IP/IP_AXI_ADC/IP_AXI_ADC_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2e4ebcc5_ARCHIVE_LOCATION">d:/GITEA/UPzynq20_test/IP/IP_AXI_ADC/IP_AXI_ADC_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2ae327ae_ARCHIVE_LOCATION">d:/GITEA/UPzynq20_test/IP/IP_AXI_ADC/IP_AXI_ADC_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@245056bd_ARCHIVE_LOCATION">d:/GITEA/UPzynq20_test/IP/IP_AXI_ADC/IP_AXI_ADC_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@59e8c77f_ARCHIVE_LOCATION">d:/GITEA/UPzynq20_test/IP/IP_AXI_ADC/IP_AXI_ADC_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@65645eef_ARCHIVE_LOCATION">d:/GITEA/UPzynq20_test/IP/IP_AXI_ADC/IP_AXI_ADC_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@381fbfa9_ARCHIVE_LOCATION">d:/GITEA/UPzynq20_test/IP/IP_AXI_ADC/IP_AXI_ADC_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@49e71141_ARCHIVE_LOCATION">d:/GITEA/UPzynq20_test/IP/IP_AXI_ADC/IP_AXI_ADC_1.0</xilinx:tag>
       </xilinx:tags>
       <xilinx:configElementInfos>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S00_AXI.ADDR_WIDTH" xilinx:valueSource="auto" xilinx:valuePermission="bd"/>
@@ -1332,10 +1366,10 @@
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
       <xilinx:xilinxVersion>2019.1</xilinx:xilinxVersion>
-      <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="add540ec"/>
+      <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="addc58e4"/>
       <xilinx:checksum xilinx:scope="memoryMaps" xilinx:value="ed1368d5"/>
-      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="a2d517c1"/>
-      <xilinx:checksum xilinx:scope="ports" xilinx:value="9070bd79"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="44413e59"/>
+      <xilinx:checksum xilinx:scope="ports" xilinx:value="e4f89d31"/>
       <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="e7b50784"/>
       <xilinx:checksum xilinx:scope="parameters" xilinx:value="a12bdb5d"/>
     </xilinx:packagingInfo>

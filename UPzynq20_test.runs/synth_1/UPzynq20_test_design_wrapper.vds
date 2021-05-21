@@ -2,8 +2,8 @@
 # Vivado v2019.1 (64-bit)
 # SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
 # IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
-# Start of session at: Thu May  6 11:29:16 2021
-# Process ID: 10948
+# Start of session at: Wed May 19 10:18:35 2021
+# Process ID: 10412
 # Current directory: D:/GITEA/UPzynq20_test/UPzynq20_test.runs/synth_1
 # Command line: vivado.exe -log UPzynq20_test_design_wrapper.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source UPzynq20_test_design_wrapper.tcl
 # Log file: D:/GITEA/UPzynq20_test/UPzynq20_test.runs/synth_1/UPzynq20_test_design_wrapper.vds
@@ -21,48 +21,69 @@ Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
 INFO: [Device 21-403] Loading part xc7z020clg484-3
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 14108 
+INFO: Helper process launched with PID 5584 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:10 . Memory (MB): peak = 847.676 ; gain = 177.063
+Starting RTL Elaboration : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 848.277 ; gain = 177.598
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-638] synthesizing module 'UPzynq20_test_design_wrapper' [D:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/hdl/UPzynq20_test_design_wrapper.vhd:60]
-INFO: [Synth 8-3491] module 'UPzynq20_test_design' declared at 'D:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/synth/UPzynq20_test_design.vhd:3260' bound to instance 'UPzynq20_test_design_i' of component 'UPzynq20_test_design' [D:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/hdl/UPzynq20_test_design_wrapper.vhd:107]
-INFO: [Synth 8-638] synthesizing module 'UPzynq20_test_design' [D:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/synth/UPzynq20_test_design.vhd:3310]
-INFO: [Synth 8-3491] module 'UPzynq20_test_design_IP_AXI_ADC_0_0' declared at 'd:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ip/UPzynq20_test_design_IP_AXI_ADC_0_0/synth/UPzynq20_test_design_IP_AXI_ADC_0_0.vhd:56' bound to instance 'IP_AXI_ADC_0' of component 'UPzynq20_test_design_IP_AXI_ADC_0_0' [D:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/synth/UPzynq20_test_design.vhd:4025]
-INFO: [Synth 8-638] synthesizing module 'UPzynq20_test_design_IP_AXI_ADC_0_0' [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ip/UPzynq20_test_design_IP_AXI_ADC_0_0/synth/UPzynq20_test_design_IP_AXI_ADC_0_0.vhd:95]
+INFO: [Synth 8-638] synthesizing module 'UPzynq20_test_design_wrapper' [D:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/hdl/UPzynq20_test_design_wrapper.vhd:59]
+INFO: [Synth 8-3491] module 'UPzynq20_test_design' declared at 'D:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/synth/UPzynq20_test_design.vhd:3260' bound to instance 'UPzynq20_test_design_i' of component 'UPzynq20_test_design' [D:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/hdl/UPzynq20_test_design_wrapper.vhd:105]
+INFO: [Synth 8-638] synthesizing module 'UPzynq20_test_design' [D:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/synth/UPzynq20_test_design.vhd:3309]
+INFO: [Synth 8-3491] module 'UPzynq20_test_design_IP_AXI_ADC_0_0' declared at 'd:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ip/UPzynq20_test_design_IP_AXI_ADC_0_0/synth/UPzynq20_test_design_IP_AXI_ADC_0_0.vhd:56' bound to instance 'IP_AXI_ADC_0' of component 'UPzynq20_test_design_IP_AXI_ADC_0_0' [D:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/synth/UPzynq20_test_design.vhd:4018]
+INFO: [Synth 8-638] synthesizing module 'UPzynq20_test_design_IP_AXI_ADC_0_0' [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ip/UPzynq20_test_design_IP_AXI_ADC_0_0/synth/UPzynq20_test_design_IP_AXI_ADC_0_0.vhd:93]
 	Parameter C_S00_AXI_DATA_WIDTH bound to: 32 - type: integer 
 	Parameter C_S00_AXI_ADDR_WIDTH bound to: 6 - type: integer 
-INFO: [Synth 8-3491] module 'IP_AXI_ADC_v1_0' declared at 'd:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/75ed/hdl/IP_AXI_ADC_v1_0.vhd:5' bound to instance 'U0' of component 'IP_AXI_ADC_v1_0' [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ip/UPzynq20_test_design_IP_AXI_ADC_0_0/synth/UPzynq20_test_design_IP_AXI_ADC_0_0.vhd:172]
-INFO: [Synth 8-638] synthesizing module 'IP_AXI_ADC_v1_0' [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/75ed/hdl/IP_AXI_ADC_v1_0.vhd:62]
+INFO: [Synth 8-3491] module 'IP_AXI_ADC_v1_0' declared at 'd:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/03ac/hdl/IP_AXI_ADC_v1_0.vhd:5' bound to instance 'U0' of component 'IP_AXI_ADC_v1_0' [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ip/UPzynq20_test_design_IP_AXI_ADC_0_0/synth/UPzynq20_test_design_IP_AXI_ADC_0_0.vhd:168]
+INFO: [Synth 8-638] synthesizing module 'IP_AXI_ADC_v1_0' [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/03ac/hdl/IP_AXI_ADC_v1_0.vhd:62]
 	Parameter C_S00_AXI_DATA_WIDTH bound to: 32 - type: integer 
 	Parameter C_S00_AXI_ADDR_WIDTH bound to: 6 - type: integer 
 	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
 	Parameter C_S_AXI_ADDR_WIDTH bound to: 6 - type: integer 
-INFO: [Synth 8-3491] module 'IP_AXI_ADC_v1_0_S00_AXI' declared at 'd:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/75ed/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:6' bound to instance 'IP_AXI_ADC_v1_0_S00_AXI_inst' of component 'IP_AXI_ADC_v1_0_S00_AXI' [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/75ed/hdl/IP_AXI_ADC_v1_0.vhd:112]
-INFO: [Synth 8-638] synthesizing module 'IP_AXI_ADC_v1_0_S00_AXI' [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/75ed/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:101]
+INFO: [Synth 8-3491] module 'IP_AXI_ADC_v1_0_S00_AXI' declared at 'd:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/03ac/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:6' bound to instance 'IP_AXI_ADC_v1_0_S00_AXI_inst' of component 'IP_AXI_ADC_v1_0_S00_AXI' [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/03ac/hdl/IP_AXI_ADC_v1_0.vhd:112]
+INFO: [Synth 8-638] synthesizing module 'IP_AXI_ADC_v1_0_S00_AXI' [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/03ac/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:99]
 	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
 	Parameter C_S_AXI_ADDR_WIDTH bound to: 6 - type: integer 
-INFO: [Synth 8-226] default block is never used [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/75ed/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:266]
-INFO: [Synth 8-226] default block is never used [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/75ed/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:504]
-WARNING: [Synth 8-6014] Unused sequential element loc_addr_reg was removed.  [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/75ed/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:264]
-WARNING: [Synth 8-6014] Unused sequential element receive_data_a0_reg was removed.  [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/75ed/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:584]
-WARNING: [Synth 8-6014] Unused sequential element receive_data_b0_reg was removed.  [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/75ed/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:585]
-WARNING: [Synth 8-6014] Unused sequential element receive_data_a1_reg was removed.  [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/75ed/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:586]
-WARNING: [Synth 8-6014] Unused sequential element receive_data_b1_reg was removed.  [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/75ed/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:587]
-WARNING: [Synth 8-6014] Unused sequential element receive_data_a2_reg was removed.  [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/75ed/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:588]
-WARNING: [Synth 8-6014] Unused sequential element receive_data_b2_reg was removed.  [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/75ed/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:589]
-WARNING: [Synth 8-6014] Unused sequential element receive_data_a3_reg was removed.  [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/75ed/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:590]
-WARNING: [Synth 8-6014] Unused sequential element receive_data_b3_reg was removed.  [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/75ed/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:591]
-WARNING: [Synth 8-6014] Unused sequential element i_reg was removed.  [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/75ed/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:584]
-WARNING: [Synth 8-6014] Unused sequential element a0_sign_reg was removed.  [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/75ed/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:693]
-WARNING: [Synth 8-6014] Unused sequential element not_cs_sign_reg was removed.  [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/75ed/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:696]
-WARNING: [Synth 8-3848] Net sclk in module/entity IP_AXI_ADC_v1_0_S00_AXI does not have driver. [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/75ed/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:21]
-WARNING: [Synth 8-3848] Net a0 in module/entity IP_AXI_ADC_v1_0_S00_AXI does not have driver. [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/75ed/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:24]
-WARNING: [Synth 8-3848] Net not_cs in module/entity IP_AXI_ADC_v1_0_S00_AXI does not have driver. [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/75ed/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:25]
-INFO: [Synth 8-256] done synthesizing module 'IP_AXI_ADC_v1_0_S00_AXI' (1#1) [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/75ed/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:101]
-INFO: [Synth 8-256] done synthesizing module 'IP_AXI_ADC_v1_0' (2#1) [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/75ed/hdl/IP_AXI_ADC_v1_0.vhd:62]
-INFO: [Synth 8-256] done synthesizing module 'UPzynq20_test_design_IP_AXI_ADC_0_0' (3#1) [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ip/UPzynq20_test_design_IP_AXI_ADC_0_0/synth/UPzynq20_test_design_IP_AXI_ADC_0_0.vhd:95]
-INFO: [Synth 8-3491] module 'UPzynq20_test_design_IP_AXI_LEDS_0_0' declared at 'd:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ip/UPzynq20_test_design_IP_AXI_LEDS_0_0/synth/UPzynq20_test_design_IP_AXI_LEDS_0_0.vhd:56' bound to instance 'IP_AXI_LEDS_0' of component 'UPzynq20_test_design_IP_AXI_LEDS_0_0' [D:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/synth/UPzynq20_test_design.vhd:4062]
+INFO: [Synth 8-226] default block is never used [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/03ac/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:283]
+INFO: [Synth 8-226] default block is never used [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/03ac/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:521]
+WARNING: [Synth 8-614] signal 'ch0' is read in the process but is not in the sensitivity list [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/03ac/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:516]
+WARNING: [Synth 8-614] signal 'ch1' is read in the process but is not in the sensitivity list [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/03ac/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:516]
+WARNING: [Synth 8-614] signal 'ch2' is read in the process but is not in the sensitivity list [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/03ac/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:516]
+WARNING: [Synth 8-614] signal 'ch3' is read in the process but is not in the sensitivity list [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/03ac/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:516]
+WARNING: [Synth 8-614] signal 'ch4' is read in the process but is not in the sensitivity list [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/03ac/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:516]
+WARNING: [Synth 8-614] signal 'ch5' is read in the process but is not in the sensitivity list [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/03ac/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:516]
+WARNING: [Synth 8-614] signal 'ch6' is read in the process but is not in the sensitivity list [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/03ac/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:516]
+WARNING: [Synth 8-614] signal 'ch7' is read in the process but is not in the sensitivity list [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/03ac/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:516]
+WARNING: [Synth 8-614] signal 'ch8' is read in the process but is not in the sensitivity list [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/03ac/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:516]
+WARNING: [Synth 8-614] signal 'ch9' is read in the process but is not in the sensitivity list [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/03ac/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:516]
+WARNING: [Synth 8-614] signal 'ch10' is read in the process but is not in the sensitivity list [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/03ac/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:516]
+WARNING: [Synth 8-614] signal 'ch11' is read in the process but is not in the sensitivity list [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/03ac/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:516]
+WARNING: [Synth 8-614] signal 'ch12' is read in the process but is not in the sensitivity list [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/03ac/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:516]
+WARNING: [Synth 8-614] signal 'ch13' is read in the process but is not in the sensitivity list [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/03ac/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:516]
+WARNING: [Synth 8-614] signal 'ch14' is read in the process but is not in the sensitivity list [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/03ac/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:516]
+WARNING: [Synth 8-614] signal 'ch15' is read in the process but is not in the sensitivity list [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/03ac/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:516]
+WARNING: [Synth 8-6014] Unused sequential element axi_awaddr_reg was removed.  [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/03ac/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:216]
+WARNING: [Synth 8-6014] Unused sequential element slv_reg0_reg was removed.  [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/03ac/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:264]
+WARNING: [Synth 8-6014] Unused sequential element slv_reg1_reg was removed.  [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/03ac/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:265]
+WARNING: [Synth 8-6014] Unused sequential element slv_reg2_reg was removed.  [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/03ac/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:266]
+WARNING: [Synth 8-6014] Unused sequential element slv_reg3_reg was removed.  [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/03ac/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:267]
+WARNING: [Synth 8-6014] Unused sequential element slv_reg4_reg was removed.  [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/03ac/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:268]
+WARNING: [Synth 8-6014] Unused sequential element slv_reg5_reg was removed.  [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/03ac/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:269]
+WARNING: [Synth 8-6014] Unused sequential element slv_reg6_reg was removed.  [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/03ac/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:270]
+WARNING: [Synth 8-6014] Unused sequential element slv_reg7_reg was removed.  [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/03ac/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:271]
+WARNING: [Synth 8-6014] Unused sequential element slv_reg8_reg was removed.  [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/03ac/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:272]
+WARNING: [Synth 8-6014] Unused sequential element slv_reg9_reg was removed.  [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/03ac/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:273]
+WARNING: [Synth 8-6014] Unused sequential element slv_reg10_reg was removed.  [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/03ac/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:274]
+WARNING: [Synth 8-6014] Unused sequential element slv_reg11_reg was removed.  [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/03ac/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:275]
+WARNING: [Synth 8-6014] Unused sequential element slv_reg12_reg was removed.  [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/03ac/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:276]
+WARNING: [Synth 8-6014] Unused sequential element slv_reg13_reg was removed.  [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/03ac/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:277]
+WARNING: [Synth 8-6014] Unused sequential element slv_reg14_reg was removed.  [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/03ac/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:278]
+WARNING: [Synth 8-6014] Unused sequential element slv_reg15_reg was removed.  [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/03ac/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:279]
+WARNING: [Synth 8-6014] Unused sequential element loc_addr_reg was removed.  [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/03ac/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:281]
+WARNING: [Synth 8-6014] Unused sequential element odd_updated_reg was removed.  [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/03ac/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:598]
+WARNING: [Synth 8-6014] Unused sequential element even_updated_reg was removed.  [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/03ac/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:641]
+INFO: [Synth 8-256] done synthesizing module 'IP_AXI_ADC_v1_0_S00_AXI' (1#1) [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/03ac/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:99]
+INFO: [Synth 8-256] done synthesizing module 'IP_AXI_ADC_v1_0' (2#1) [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/03ac/hdl/IP_AXI_ADC_v1_0.vhd:62]
+INFO: [Synth 8-256] done synthesizing module 'UPzynq20_test_design_IP_AXI_ADC_0_0' (3#1) [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ip/UPzynq20_test_design_IP_AXI_ADC_0_0/synth/UPzynq20_test_design_IP_AXI_ADC_0_0.vhd:93]
+INFO: [Synth 8-3491] module 'UPzynq20_test_design_IP_AXI_LEDS_0_0' declared at 'd:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ip/UPzynq20_test_design_IP_AXI_LEDS_0_0/synth/UPzynq20_test_design_IP_AXI_LEDS_0_0.vhd:56' bound to instance 'IP_AXI_LEDS_0' of component 'UPzynq20_test_design_IP_AXI_LEDS_0_0' [D:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/synth/UPzynq20_test_design.vhd:4053]
 INFO: [Synth 8-638] synthesizing module 'UPzynq20_test_design_IP_AXI_LEDS_0_0' [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ip/UPzynq20_test_design_IP_AXI_LEDS_0_0/synth/UPzynq20_test_design_IP_AXI_LEDS_0_0.vhd:83]
 	Parameter C_S00_AXI_DATA_WIDTH bound to: 32 - type: integer 
 	Parameter C_S00_AXI_ADDR_WIDTH bound to: 4 - type: integer 
@@ -82,7 +103,7 @@ WARNING: [Synth 8-6014] Unused sequential element loc_addr_reg was removed.  [d:
 INFO: [Synth 8-256] done synthesizing module 'IP_AXI_LEDS_v1_0_S00_AXI' (4#1) [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/afe0/hdl/IP_AXI_LEDS_v1_0_S00_AXI.vhd:86]
 INFO: [Synth 8-256] done synthesizing module 'IP_AXI_LEDS_v1_0' (5#1) [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/afe0/hdl/IP_AXI_LEDS_v1_0.vhd:49]
 INFO: [Synth 8-256] done synthesizing module 'UPzynq20_test_design_IP_AXI_LEDS_0_0' (6#1) [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ip/UPzynq20_test_design_IP_AXI_LEDS_0_0/synth/UPzynq20_test_design_IP_AXI_LEDS_0_0.vhd:83]
-INFO: [Synth 8-3491] module 'UPzynq20_test_design_IP_AXI_PWM_0_0' declared at 'd:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ip/UPzynq20_test_design_IP_AXI_PWM_0_0/synth/UPzynq20_test_design_IP_AXI_PWM_0_0.vhd:56' bound to instance 'IP_AXI_PWM_0' of component 'UPzynq20_test_design_IP_AXI_PWM_0_0' [D:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/synth/UPzynq20_test_design.vhd:4087]
+INFO: [Synth 8-3491] module 'UPzynq20_test_design_IP_AXI_PWM_0_0' declared at 'd:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ip/UPzynq20_test_design_IP_AXI_PWM_0_0/synth/UPzynq20_test_design_IP_AXI_PWM_0_0.vhd:56' bound to instance 'IP_AXI_PWM_0' of component 'UPzynq20_test_design_IP_AXI_PWM_0_0' [D:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/synth/UPzynq20_test_design.vhd:4078]
 INFO: [Synth 8-638] synthesizing module 'UPzynq20_test_design_IP_AXI_PWM_0_0' [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ip/UPzynq20_test_design_IP_AXI_PWM_0_0/synth/UPzynq20_test_design_IP_AXI_PWM_0_0.vhd:83]
 	Parameter C_S00_AXI_DATA_WIDTH bound to: 32 - type: integer 
 	Parameter C_S00_AXI_ADDR_WIDTH bound to: 7 - type: integer 
@@ -100,7 +121,7 @@ WARNING: [Synth 8-6014] Unused sequential element loc_addr_reg was removed.  [d:
 INFO: [Synth 8-256] done synthesizing module 'IP_AXI_PWM_v1_0_S00_AXI' (7#1) [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/cc52/hdl/IP_AXI_PWM_v1_0_S00_AXI.vhd:88]
 INFO: [Synth 8-256] done synthesizing module 'IP_AXI_PWM_v1_0' (8#1) [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/cc52/hdl/IP_AXI_PWM_v1_0.vhd:50]
 INFO: [Synth 8-256] done synthesizing module 'UPzynq20_test_design_IP_AXI_PWM_0_0' (9#1) [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ip/UPzynq20_test_design_IP_AXI_PWM_0_0/synth/UPzynq20_test_design_IP_AXI_PWM_0_0.vhd:83]
-INFO: [Synth 8-3491] module 'UPzynq20_test_design_axi_gpio_0_0' declared at 'd:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ip/UPzynq20_test_design_axi_gpio_0_0_1/synth/UPzynq20_test_design_axi_gpio_0_0.vhd:59' bound to instance 'axi_gpio_0' of component 'UPzynq20_test_design_axi_gpio_0_0' [D:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/synth/UPzynq20_test_design.vhd:4112]
+INFO: [Synth 8-3491] module 'UPzynq20_test_design_axi_gpio_0_0' declared at 'd:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ip/UPzynq20_test_design_axi_gpio_0_0_1/synth/UPzynq20_test_design_axi_gpio_0_0.vhd:59' bound to instance 'axi_gpio_0' of component 'UPzynq20_test_design_axi_gpio_0_0' [D:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/synth/UPzynq20_test_design.vhd:4103]
 INFO: [Synth 8-638] synthesizing module 'UPzynq20_test_design_axi_gpio_0_0' [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ip/UPzynq20_test_design_axi_gpio_0_0_1/synth/UPzynq20_test_design_axi_gpio_0_0.vhd:85]
 	Parameter C_FAMILY bound to: zynq - type: string 
 	Parameter C_S_AXI_ADDR_WIDTH bound to: 9 - type: integer 
@@ -539,7 +560,7 @@ WARNING: [Synth 8-6014] Unused sequential element Not_Dual.ALLOUT_ND.READ_REG_GE
 INFO: [Synth 8-256] done synthesizing module 'GPIO_Core' (16#1) [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:178]
 INFO: [Synth 8-256] done synthesizing module 'axi_gpio' (17#1) [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:1351]
 INFO: [Synth 8-256] done synthesizing module 'UPzynq20_test_design_axi_gpio_0_0' (18#1) [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ip/UPzynq20_test_design_axi_gpio_0_0_1/synth/UPzynq20_test_design_axi_gpio_0_0.vhd:85]
-INFO: [Synth 8-3491] module 'UPzynq20_test_design_axi_gpio_1_0' declared at 'd:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ip/UPzynq20_test_design_axi_gpio_1_0/synth/UPzynq20_test_design_axi_gpio_1_0.vhd:59' bound to instance 'axi_gpio_1' of component 'UPzynq20_test_design_axi_gpio_1_0' [D:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/synth/UPzynq20_test_design.vhd:4136]
+INFO: [Synth 8-3491] module 'UPzynq20_test_design_axi_gpio_1_0' declared at 'd:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ip/UPzynq20_test_design_axi_gpio_1_0/synth/UPzynq20_test_design_axi_gpio_1_0.vhd:59' bound to instance 'axi_gpio_1' of component 'UPzynq20_test_design_axi_gpio_1_0' [D:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/synth/UPzynq20_test_design.vhd:4127]
 INFO: [Synth 8-638] synthesizing module 'UPzynq20_test_design_axi_gpio_1_0' [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ip/UPzynq20_test_design_axi_gpio_1_0/synth/UPzynq20_test_design_axi_gpio_1_0.vhd:85]
 	Parameter C_FAMILY bound to: zynq - type: string 
 	Parameter C_S_AXI_ADDR_WIDTH bound to: 9 - type: integer 
@@ -663,7 +684,7 @@ WARNING: [Synth 8-6014] Unused sequential element Not_Dual.ALLOUT_ND.READ_REG_GE
 INFO: [Synth 8-256] done synthesizing module 'GPIO_Core__parameterized0' (18#1) [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:178]
 INFO: [Synth 8-256] done synthesizing module 'axi_gpio__parameterized1' (18#1) [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:1351]
 INFO: [Synth 8-256] done synthesizing module 'UPzynq20_test_design_axi_gpio_1_0' (19#1) [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ip/UPzynq20_test_design_axi_gpio_1_0/synth/UPzynq20_test_design_axi_gpio_1_0.vhd:85]
-INFO: [Synth 8-3491] module 'UPzynq20_test_design_axi_gpio_2_0' declared at 'd:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ip/UPzynq20_test_design_axi_gpio_2_0_1/synth/UPzynq20_test_design_axi_gpio_2_0.vhd:59' bound to instance 'axi_gpio_2' of component 'UPzynq20_test_design_axi_gpio_2_0' [D:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/synth/UPzynq20_test_design.vhd:4160]
+INFO: [Synth 8-3491] module 'UPzynq20_test_design_axi_gpio_2_0' declared at 'd:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ip/UPzynq20_test_design_axi_gpio_2_0_1/synth/UPzynq20_test_design_axi_gpio_2_0.vhd:59' bound to instance 'axi_gpio_2' of component 'UPzynq20_test_design_axi_gpio_2_0' [D:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/synth/UPzynq20_test_design.vhd:4151]
 INFO: [Synth 8-638] synthesizing module 'UPzynq20_test_design_axi_gpio_2_0' [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ip/UPzynq20_test_design_axi_gpio_2_0_1/synth/UPzynq20_test_design_axi_gpio_2_0.vhd:85]
 	Parameter C_FAMILY bound to: zynq - type: string 
 	Parameter C_S_AXI_ADDR_WIDTH bound to: 9 - type: integer 
@@ -726,7 +747,7 @@ WARNING: [Synth 8-6014] Unused sequential element Not_Dual.ALLIN1_ND.READ_REG_GE
 INFO: [Synth 8-256] done synthesizing module 'GPIO_Core__parameterized1' (19#1) [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:178]
 INFO: [Synth 8-256] done synthesizing module 'axi_gpio__parameterized3' (19#1) [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:1351]
 INFO: [Synth 8-256] done synthesizing module 'UPzynq20_test_design_axi_gpio_2_0' (20#1) [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ip/UPzynq20_test_design_axi_gpio_2_0_1/synth/UPzynq20_test_design_axi_gpio_2_0.vhd:85]
-INFO: [Synth 8-3491] module 'UPzynq20_test_design_axi_gpio_3_0' declared at 'd:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ip/UPzynq20_test_design_axi_gpio_3_0/synth/UPzynq20_test_design_axi_gpio_3_0.vhd:59' bound to instance 'axi_gpio_3' of component 'UPzynq20_test_design_axi_gpio_3_0' [D:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/synth/UPzynq20_test_design.vhd:4184]
+INFO: [Synth 8-3491] module 'UPzynq20_test_design_axi_gpio_3_0' declared at 'd:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ip/UPzynq20_test_design_axi_gpio_3_0/synth/UPzynq20_test_design_axi_gpio_3_0.vhd:59' bound to instance 'axi_gpio_3' of component 'UPzynq20_test_design_axi_gpio_3_0' [D:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/synth/UPzynq20_test_design.vhd:4175]
 INFO: [Synth 8-638] synthesizing module 'UPzynq20_test_design_axi_gpio_3_0' [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ip/UPzynq20_test_design_axi_gpio_3_0/synth/UPzynq20_test_design_axi_gpio_3_0.vhd:85]
 	Parameter C_FAMILY bound to: zynq - type: string 
 	Parameter C_S_AXI_ADDR_WIDTH bound to: 9 - type: integer 
@@ -797,7 +818,7 @@ WARNING: [Synth 8-6014] Unused sequential element Not_Dual.ALLIN1_ND.READ_REG_GE
 INFO: [Synth 8-256] done synthesizing module 'GPIO_Core__parameterized2' (20#1) [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:178]
 INFO: [Synth 8-256] done synthesizing module 'axi_gpio__parameterized5' (20#1) [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:1351]
 INFO: [Synth 8-256] done synthesizing module 'UPzynq20_test_design_axi_gpio_3_0' (21#1) [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ip/UPzynq20_test_design_axi_gpio_3_0/synth/UPzynq20_test_design_axi_gpio_3_0.vhd:85]
-INFO: [Synth 8-3491] module 'UPzynq20_test_design_axi_gpio_3_1' declared at 'd:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ip/UPzynq20_test_design_axi_gpio_3_1/synth/UPzynq20_test_design_axi_gpio_3_1.vhd:59' bound to instance 'axi_gpio_4' of component 'UPzynq20_test_design_axi_gpio_3_1' [D:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/synth/UPzynq20_test_design.vhd:4208]
+INFO: [Synth 8-3491] module 'UPzynq20_test_design_axi_gpio_3_1' declared at 'd:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ip/UPzynq20_test_design_axi_gpio_3_1/synth/UPzynq20_test_design_axi_gpio_3_1.vhd:59' bound to instance 'axi_gpio_4' of component 'UPzynq20_test_design_axi_gpio_3_1' [D:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/synth/UPzynq20_test_design.vhd:4199]
 INFO: [Synth 8-638] synthesizing module 'UPzynq20_test_design_axi_gpio_3_1' [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ip/UPzynq20_test_design_axi_gpio_3_1/synth/UPzynq20_test_design_axi_gpio_3_1.vhd:85]
 	Parameter C_FAMILY bound to: zynq - type: string 
 	Parameter C_S_AXI_ADDR_WIDTH bound to: 9 - type: integer 
@@ -816,7 +837,7 @@ INFO: [Synth 8-638] synthesizing module 'UPzynq20_test_design_axi_gpio_3_1' [d:/
 	Parameter C_TRI_DEFAULT_2 bound to: 32'b11111111111111111111111111111111 
 INFO: [Synth 8-3491] module 'axi_gpio' declared at 'd:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:1265' bound to instance 'U0' of component 'axi_gpio' [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ip/UPzynq20_test_design_axi_gpio_3_1/synth/UPzynq20_test_design_axi_gpio_3_1.vhd:171]
 INFO: [Synth 8-256] done synthesizing module 'UPzynq20_test_design_axi_gpio_3_1' (22#1) [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ip/UPzynq20_test_design_axi_gpio_3_1/synth/UPzynq20_test_design_axi_gpio_3_1.vhd:85]
-INFO: [Synth 8-3491] module 'UPzynq20_test_design_axi_gpio_4_0' declared at 'd:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ip/UPzynq20_test_design_axi_gpio_4_0/synth/UPzynq20_test_design_axi_gpio_4_0.vhd:59' bound to instance 'axi_gpio_5' of component 'UPzynq20_test_design_axi_gpio_4_0' [D:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/synth/UPzynq20_test_design.vhd:4232]
+INFO: [Synth 8-3491] module 'UPzynq20_test_design_axi_gpio_4_0' declared at 'd:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ip/UPzynq20_test_design_axi_gpio_4_0/synth/UPzynq20_test_design_axi_gpio_4_0.vhd:59' bound to instance 'axi_gpio_5' of component 'UPzynq20_test_design_axi_gpio_4_0' [D:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/synth/UPzynq20_test_design.vhd:4223]
 INFO: [Synth 8-638] synthesizing module 'UPzynq20_test_design_axi_gpio_4_0' [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ip/UPzynq20_test_design_axi_gpio_4_0/synth/UPzynq20_test_design_axi_gpio_4_0.vhd:85]
 	Parameter C_FAMILY bound to: zynq - type: string 
 	Parameter C_S_AXI_ADDR_WIDTH bound to: 9 - type: integer 
@@ -835,7 +856,7 @@ INFO: [Synth 8-638] synthesizing module 'UPzynq20_test_design_axi_gpio_4_0' [d:/
 	Parameter C_TRI_DEFAULT_2 bound to: 32'b11111111111111111111111111111111 
 INFO: [Synth 8-3491] module 'axi_gpio' declared at 'd:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:1265' bound to instance 'U0' of component 'axi_gpio' [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ip/UPzynq20_test_design_axi_gpio_4_0/synth/UPzynq20_test_design_axi_gpio_4_0.vhd:171]
 INFO: [Synth 8-256] done synthesizing module 'UPzynq20_test_design_axi_gpio_4_0' (23#1) [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ip/UPzynq20_test_design_axi_gpio_4_0/synth/UPzynq20_test_design_axi_gpio_4_0.vhd:85]
-INFO: [Synth 8-3491] module 'UPzynq20_test_design_axi_gpio_4_1' declared at 'd:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ip/UPzynq20_test_design_axi_gpio_4_1/synth/UPzynq20_test_design_axi_gpio_4_1.vhd:59' bound to instance 'axi_gpio_6' of component 'UPzynq20_test_design_axi_gpio_4_1' [D:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/synth/UPzynq20_test_design.vhd:4256]
+INFO: [Synth 8-3491] module 'UPzynq20_test_design_axi_gpio_4_1' declared at 'd:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ip/UPzynq20_test_design_axi_gpio_4_1/synth/UPzynq20_test_design_axi_gpio_4_1.vhd:59' bound to instance 'axi_gpio_6' of component 'UPzynq20_test_design_axi_gpio_4_1' [D:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/synth/UPzynq20_test_design.vhd:4247]
 INFO: [Synth 8-638] synthesizing module 'UPzynq20_test_design_axi_gpio_4_1' [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ip/UPzynq20_test_design_axi_gpio_4_1/synth/UPzynq20_test_design_axi_gpio_4_1.vhd:85]
 	Parameter C_FAMILY bound to: zynq - type: string 
 	Parameter C_S_AXI_ADDR_WIDTH bound to: 9 - type: integer 
@@ -906,7 +927,7 @@ WARNING: [Synth 8-6014] Unused sequential element Not_Dual.ALLIN1_ND.READ_REG_GE
 INFO: [Synth 8-256] done synthesizing module 'GPIO_Core__parameterized3' (23#1) [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:178]
 INFO: [Synth 8-256] done synthesizing module 'axi_gpio__parameterized8' (23#1) [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:1351]
 INFO: [Synth 8-256] done synthesizing module 'UPzynq20_test_design_axi_gpio_4_1' (24#1) [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ip/UPzynq20_test_design_axi_gpio_4_1/synth/UPzynq20_test_design_axi_gpio_4_1.vhd:85]
-INFO: [Synth 8-3491] module 'UPzynq20_test_design_axi_gpio_6_0' declared at 'd:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ip/UPzynq20_test_design_axi_gpio_6_0/synth/UPzynq20_test_design_axi_gpio_6_0.vhd:59' bound to instance 'axi_gpio_7' of component 'UPzynq20_test_design_axi_gpio_6_0' [D:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/synth/UPzynq20_test_design.vhd:4280]
+INFO: [Synth 8-3491] module 'UPzynq20_test_design_axi_gpio_6_0' declared at 'd:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ip/UPzynq20_test_design_axi_gpio_6_0/synth/UPzynq20_test_design_axi_gpio_6_0.vhd:59' bound to instance 'axi_gpio_7' of component 'UPzynq20_test_design_axi_gpio_6_0' [D:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/synth/UPzynq20_test_design.vhd:4271]
 INFO: [Synth 8-638] synthesizing module 'UPzynq20_test_design_axi_gpio_6_0' [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ip/UPzynq20_test_design_axi_gpio_6_0/synth/UPzynq20_test_design_axi_gpio_6_0.vhd:85]
 	Parameter C_FAMILY bound to: zynq - type: string 
 	Parameter C_S_AXI_ADDR_WIDTH bound to: 9 - type: integer 
@@ -925,9 +946,9 @@ INFO: [Synth 8-638] synthesizing module 'UPzynq20_test_design_axi_gpio_6_0' [d:/
 	Parameter C_TRI_DEFAULT_2 bound to: 32'b11111111111111111111111111111111 
 INFO: [Synth 8-3491] module 'axi_gpio' declared at 'd:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:1265' bound to instance 'U0' of component 'axi_gpio' [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ip/UPzynq20_test_design_axi_gpio_6_0/synth/UPzynq20_test_design_axi_gpio_6_0.vhd:171]
 INFO: [Synth 8-256] done synthesizing module 'UPzynq20_test_design_axi_gpio_6_0' (25#1) [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ip/UPzynq20_test_design_axi_gpio_6_0/synth/UPzynq20_test_design_axi_gpio_6_0.vhd:85]
-INFO: [Synth 8-3491] module 'UPzynq20_test_design_processing_system7_0_0' declared at 'd:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ip/UPzynq20_test_design_processing_system7_0_0_1/synth/UPzynq20_test_design_processing_system7_0_0.v:60' bound to instance 'processing_system7_0' of component 'UPzynq20_test_design_processing_system7_0_0' [D:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/synth/UPzynq20_test_design.vhd:4304]
-INFO: [Synth 8-6157] synthesizing module 'UPzynq20_test_design_processing_system7_0_0' [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ip/UPzynq20_test_design_processing_system7_0_0_1/synth/UPzynq20_test_design_processing_system7_0_0.v:60]
-INFO: [Synth 8-6157] synthesizing module 'processing_system7_v5_5_processing_system7' [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ip/UPzynq20_test_design_processing_system7_0_0_1/hdl/verilog/processing_system7_v5_5_processing_system7.v:161]
+INFO: [Synth 8-3491] module 'UPzynq20_test_design_processing_system7_0_0' declared at 'd:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ip/UPzynq20_test_design_processing_system7_0_0_1/synth/UPzynq20_test_design_processing_system7_0_0.v:57' bound to instance 'processing_system7_0' of component 'UPzynq20_test_design_processing_system7_0_0' [D:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/synth/UPzynq20_test_design.vhd:4295]
+INFO: [Synth 8-6157] synthesizing module 'UPzynq20_test_design_processing_system7_0_0' [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ip/UPzynq20_test_design_processing_system7_0_0_1/synth/UPzynq20_test_design_processing_system7_0_0.v:57]
+INFO: [Synth 8-6157] synthesizing module 'processing_system7_v5_5_processing_system7' [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ip/UPzynq20_test_design_processing_system7_0_0_1/hdl/verilog/processing_system7_v5_5_processing_system7.v:156]
 	Parameter C_USE_DEFAULT_ACP_USER_VAL bound to: 0 - type: integer 
 	Parameter C_S_AXI_ACP_ARUSER_VAL bound to: 31 - type: integer 
 	Parameter C_S_AXI_ACP_AWUSER_VAL bound to: 31 - type: integer 
@@ -984,17 +1005,17 @@ INFO: [Synth 8-6157] synthesizing module 'processing_system7_v5_5_processing_sys
 	Parameter C_USE_S_AXI_ACP bound to: 0 - type: integer 
 	Parameter C_GP0_EN_MODIFIABLE_TXN bound to: 1 - type: integer 
 	Parameter C_GP1_EN_MODIFIABLE_TXN bound to: 1 - type: integer 
-INFO: [Synth 8-5534] Detected attribute (* keep = "true" *) [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ip/UPzynq20_test_design_processing_system7_0_0_1/hdl/verilog/processing_system7_v5_5_processing_system7.v:1347]
-INFO: [Synth 8-5534] Detected attribute (* keep = "true" *) [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ip/UPzynq20_test_design_processing_system7_0_0_1/hdl/verilog/processing_system7_v5_5_processing_system7.v:1348]
+INFO: [Synth 8-5534] Detected attribute (* keep = "true" *) [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ip/UPzynq20_test_design_processing_system7_0_0_1/hdl/verilog/processing_system7_v5_5_processing_system7.v:1342]
+INFO: [Synth 8-5534] Detected attribute (* keep = "true" *) [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ip/UPzynq20_test_design_processing_system7_0_0_1/hdl/verilog/processing_system7_v5_5_processing_system7.v:1343]
 INFO: [Synth 8-6157] synthesizing module 'BUFG' [D:/Xilinx/Vivado/2019.1/scripts/rt/data/unisim_comp.v:1075]
 INFO: [Synth 8-6155] done synthesizing module 'BUFG' (26#1) [D:/Xilinx/Vivado/2019.1/scripts/rt/data/unisim_comp.v:1075]
 INFO: [Synth 8-6157] synthesizing module 'BIBUF' [D:/Xilinx/Vivado/2019.1/scripts/rt/data/unisim_comp.v:722]
 INFO: [Synth 8-6155] done synthesizing module 'BIBUF' (27#1) [D:/Xilinx/Vivado/2019.1/scripts/rt/data/unisim_comp.v:722]
 INFO: [Synth 8-6157] synthesizing module 'PS7' [D:/Xilinx/Vivado/2019.1/scripts/rt/data/unisim_comp.v:61707]
 INFO: [Synth 8-6155] done synthesizing module 'PS7' (28#1) [D:/Xilinx/Vivado/2019.1/scripts/rt/data/unisim_comp.v:61707]
-INFO: [Synth 8-6155] done synthesizing module 'processing_system7_v5_5_processing_system7' (29#1) [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ip/UPzynq20_test_design_processing_system7_0_0_1/hdl/verilog/processing_system7_v5_5_processing_system7.v:161]
-WARNING: [Synth 8-7023] instance 'inst' of module 'processing_system7_v5_5_processing_system7' has 685 connections declared, but only 672 given [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ip/UPzynq20_test_design_processing_system7_0_0_1/synth/UPzynq20_test_design_processing_system7_0_0.v:314]
-INFO: [Synth 8-6155] done synthesizing module 'UPzynq20_test_design_processing_system7_0_0' (30#1) [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ip/UPzynq20_test_design_processing_system7_0_0_1/synth/UPzynq20_test_design_processing_system7_0_0.v:60]
+INFO: [Synth 8-6155] done synthesizing module 'processing_system7_v5_5_processing_system7' (29#1) [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ip/UPzynq20_test_design_processing_system7_0_0_1/hdl/verilog/processing_system7_v5_5_processing_system7.v:156]
+WARNING: [Synth 8-7023] instance 'inst' of module 'processing_system7_v5_5_processing_system7' has 685 connections declared, but only 672 given [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ip/UPzynq20_test_design_processing_system7_0_0_1/synth/UPzynq20_test_design_processing_system7_0_0.v:310]
+INFO: [Synth 8-6155] done synthesizing module 'UPzynq20_test_design_processing_system7_0_0' (30#1) [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ip/UPzynq20_test_design_processing_system7_0_0_1/synth/UPzynq20_test_design_processing_system7_0_0.v:57]
 INFO: [Synth 8-638] synthesizing module 'UPzynq20_test_design_ps7_0_axi_periph_0' [D:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/synth/UPzynq20_test_design.vhd:1733]
 INFO: [Synth 8-638] synthesizing module 'm00_couplers_imp_6SK2AP' [D:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/synth/UPzynq20_test_design.vhd:57]
 INFO: [Synth 8-256] done synthesizing module 'm00_couplers_imp_6SK2AP' (31#1) [D:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/synth/UPzynq20_test_design.vhd:57]
@@ -1793,8 +1814,8 @@ INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_19_b2
 INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_19_axi_protocol_converter' (57#1) [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v:4808]
 INFO: [Synth 8-6155] done synthesizing module 'UPzynq20_test_design_auto_pc_0' (58#1) [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ip/UPzynq20_test_design_auto_pc_0/synth/UPzynq20_test_design_auto_pc_0.v:58]
 INFO: [Synth 8-256] done synthesizing module 's00_couplers_imp_1COS8BN' (59#1) [D:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/synth/UPzynq20_test_design.vhd:1221]
-INFO: [Synth 8-3491] module 'UPzynq20_test_design_xbar_0' declared at 'd:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ip/UPzynq20_test_design_xbar_0/synth/UPzynq20_test_design_xbar_0.v:60' bound to instance 'xbar' of component 'UPzynq20_test_design_xbar_0' [D:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/synth/UPzynq20_test_design.vhd:3034]
-INFO: [Synth 8-6157] synthesizing module 'UPzynq20_test_design_xbar_0' [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ip/UPzynq20_test_design_xbar_0/synth/UPzynq20_test_design_xbar_0.v:60]
+INFO: [Synth 8-3491] module 'UPzynq20_test_design_xbar_0' declared at 'd:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ip/UPzynq20_test_design_xbar_0/synth/UPzynq20_test_design_xbar_0.v:57' bound to instance 'xbar' of component 'UPzynq20_test_design_xbar_0' [D:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/synth/UPzynq20_test_design.vhd:3034]
+INFO: [Synth 8-6157] synthesizing module 'UPzynq20_test_design_xbar_0' [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ip/UPzynq20_test_design_xbar_0/synth/UPzynq20_test_design_xbar_0.v:57]
 INFO: [Synth 8-6157] synthesizing module 'axi_crossbar_v2_1_20_axi_crossbar' [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/ace7/hdl/axi_crossbar_v2_1_vl_rfs.v:4884]
 	Parameter C_FAMILY bound to: zynq - type: string 
 	Parameter C_NUM_SLAVE_SLOTS bound to: 1 - type: integer 
@@ -2069,9 +2090,9 @@ WARNING: [Synth 8-6014] Unused sequential element gen_debug_trans_seq.debug_w_be
 WARNING: [Synth 8-6014] Unused sequential element gen_debug_trans_seq.debug_r_beat_cnt_i_reg was removed.  [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/ace7/hdl/axi_crossbar_v2_1_vl_rfs.v:2091]
 INFO: [Synth 8-6155] done synthesizing module 'axi_crossbar_v2_1_20_crossbar_sasd' (67#1) [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/ace7/hdl/axi_crossbar_v2_1_vl_rfs.v:1240]
 INFO: [Synth 8-6155] done synthesizing module 'axi_crossbar_v2_1_20_axi_crossbar' (68#1) [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/ace7/hdl/axi_crossbar_v2_1_vl_rfs.v:4884]
-INFO: [Synth 8-6155] done synthesizing module 'UPzynq20_test_design_xbar_0' (69#1) [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ip/UPzynq20_test_design_xbar_0/synth/UPzynq20_test_design_xbar_0.v:60]
+INFO: [Synth 8-6155] done synthesizing module 'UPzynq20_test_design_xbar_0' (69#1) [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ip/UPzynq20_test_design_xbar_0/synth/UPzynq20_test_design_xbar_0.v:57]
 INFO: [Synth 8-256] done synthesizing module 'UPzynq20_test_design_ps7_0_axi_periph_0' (70#1) [D:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/synth/UPzynq20_test_design.vhd:1733]
-INFO: [Synth 8-3491] module 'UPzynq20_test_design_rst_ps7_0_50M_0' declared at 'd:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ip/UPzynq20_test_design_rst_ps7_0_50M_0_1/synth/UPzynq20_test_design_rst_ps7_0_50M_0.vhd:59' bound to instance 'rst_ps7_0_50M' of component 'UPzynq20_test_design_rst_ps7_0_50M_0' [D:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/synth/UPzynq20_test_design.vhd:4629]
+INFO: [Synth 8-3491] module 'UPzynq20_test_design_rst_ps7_0_50M_0' declared at 'd:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ip/UPzynq20_test_design_rst_ps7_0_50M_0_1/synth/UPzynq20_test_design_rst_ps7_0_50M_0.vhd:59' bound to instance 'rst_ps7_0_50M' of component 'UPzynq20_test_design_rst_ps7_0_50M_0' [D:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/synth/UPzynq20_test_design.vhd:4620]
 INFO: [Synth 8-638] synthesizing module 'UPzynq20_test_design_rst_ps7_0_50M_0' [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ip/UPzynq20_test_design_rst_ps7_0_50M_0_1/synth/UPzynq20_test_design_rst_ps7_0_50M_0.vhd:74]
 	Parameter C_FAMILY bound to: zynq - type: string 
 	Parameter C_EXT_RST_WIDTH bound to: 4 - type: integer 
@@ -2144,8 +2165,8 @@ INFO: [Synth 8-256] done synthesizing module 'upcnt_n' (73#1) [d:/GITEA/UPzynq20
 INFO: [Synth 8-256] done synthesizing module 'sequence_psr' (74#1) [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/8842/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:301]
 INFO: [Synth 8-256] done synthesizing module 'proc_sys_reset' (75#1) [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/8842/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:1323]
 INFO: [Synth 8-256] done synthesizing module 'UPzynq20_test_design_rst_ps7_0_50M_0' (76#1) [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ip/UPzynq20_test_design_rst_ps7_0_50M_0_1/synth/UPzynq20_test_design_rst_ps7_0_50M_0.vhd:74]
-INFO: [Synth 8-256] done synthesizing module 'UPzynq20_test_design' (77#1) [D:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/synth/UPzynq20_test_design.vhd:3310]
-INFO: [Synth 8-256] done synthesizing module 'UPzynq20_test_design_wrapper' (78#1) [D:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/hdl/UPzynq20_test_design_wrapper.vhd:60]
+INFO: [Synth 8-256] done synthesizing module 'UPzynq20_test_design' (77#1) [D:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/synth/UPzynq20_test_design.vhd:3309]
+INFO: [Synth 8-256] done synthesizing module 'UPzynq20_test_design_wrapper' (78#1) [D:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/hdl/UPzynq20_test_design_wrapper.vhd:59]
 WARNING: [Synth 8-3331] design cdc_sync__parameterized1 has unconnected port prmry_aclk
 WARNING: [Synth 8-3331] design cdc_sync__parameterized1 has unconnected port prmry_resetn
 WARNING: [Synth 8-3331] design cdc_sync__parameterized1 has unconnected port prmry_vect_in[1]
@@ -2248,7 +2269,7 @@ WARNING: [Synth 8-3331] design axi_crossbar_v2_1_20_axi_crossbar has unconnected
 WARNING: [Synth 8-3331] design axi_crossbar_v2_1_20_axi_crossbar has unconnected port m_axi_bid[5]
 INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:40 ; elapsed = 00:00:43 . Memory (MB): peak = 1068.871 ; gain = 398.258
+Finished RTL Elaboration : Time (s): cpu = 00:00:41 ; elapsed = 00:00:43 . Memory (MB): peak = 1070.340 ; gain = 399.660
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -2261,10 +2282,10 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:41 ; elapsed = 00:00:44 . Memory (MB): peak = 1068.871 ; gain = 398.258
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:42 ; elapsed = 00:00:44 . Memory (MB): peak = 1070.340 ; gain = 399.660
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:41 ; elapsed = 00:00:44 . Memory (MB): peak = 1068.871 ; gain = 398.258
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:42 ; elapsed = 00:00:44 . Memory (MB): peak = 1070.340 ; gain = 399.660
 ---------------------------------------------------------------------------------
 INFO: [Netlist 29-17] Analyzing 685 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -2313,6 +2334,45 @@ Finished Parsing XDC File [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/b
 Parsing XDC File [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ip/UPzynq20_test_design_axi_gpio_6_0/UPzynq20_test_design_axi_gpio_6_0.xdc] for cell 'UPzynq20_test_design_i/axi_gpio_7/U0'
 Finished Parsing XDC File [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ip/UPzynq20_test_design_axi_gpio_6_0/UPzynq20_test_design_axi_gpio_6_0.xdc] for cell 'UPzynq20_test_design_i/axi_gpio_7/U0'
 Parsing XDC File [D:/GITEA/UPzynq20_test/UPzynq20_test.srcs/constrs_1/new/pins.xdc]
+WARNING: [Vivado 12-584] No ports matched 'gpio_rtl_1_tri_o[7]'. [D:/GITEA/UPzynq20_test/UPzynq20_test.srcs/constrs_1/new/pins.xdc:42]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/GITEA/UPzynq20_test/UPzynq20_test.srcs/constrs_1/new/pins.xdc:42]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'gpio_rtl_1_tri_o[6]'. [D:/GITEA/UPzynq20_test/UPzynq20_test.srcs/constrs_1/new/pins.xdc:43]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/GITEA/UPzynq20_test/UPzynq20_test.srcs/constrs_1/new/pins.xdc:43]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'gpio_rtl_1_tri_o[5]'. [D:/GITEA/UPzynq20_test/UPzynq20_test.srcs/constrs_1/new/pins.xdc:44]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/GITEA/UPzynq20_test/UPzynq20_test.srcs/constrs_1/new/pins.xdc:44]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'gpio_rtl_1_tri_o[4]'. [D:/GITEA/UPzynq20_test/UPzynq20_test.srcs/constrs_1/new/pins.xdc:45]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/GITEA/UPzynq20_test/UPzynq20_test.srcs/constrs_1/new/pins.xdc:45]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'gpio_rtl_1_tri_o[3]'. [D:/GITEA/UPzynq20_test/UPzynq20_test.srcs/constrs_1/new/pins.xdc:46]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/GITEA/UPzynq20_test/UPzynq20_test.srcs/constrs_1/new/pins.xdc:46]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'gpio_rtl_1_tri_o[2]'. [D:/GITEA/UPzynq20_test/UPzynq20_test.srcs/constrs_1/new/pins.xdc:47]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/GITEA/UPzynq20_test/UPzynq20_test.srcs/constrs_1/new/pins.xdc:47]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'gpio_rtl_1_tri_o[1]'. [D:/GITEA/UPzynq20_test/UPzynq20_test.srcs/constrs_1/new/pins.xdc:48]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/GITEA/UPzynq20_test/UPzynq20_test.srcs/constrs_1/new/pins.xdc:48]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'gpio_rtl_1_tri_o[0]'. [D:/GITEA/UPzynq20_test/UPzynq20_test.srcs/constrs_1/new/pins.xdc:49]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/GITEA/UPzynq20_test/UPzynq20_test.srcs/constrs_1/new/pins.xdc:49]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'gpio_rtl_1_tri_o[2]'. [D:/GITEA/UPzynq20_test/UPzynq20_test.srcs/constrs_1/new/pins.xdc:113]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/GITEA/UPzynq20_test/UPzynq20_test.srcs/constrs_1/new/pins.xdc:113]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'gpio_rtl_1_tri_o[3]'. [D:/GITEA/UPzynq20_test/UPzynq20_test.srcs/constrs_1/new/pins.xdc:114]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/GITEA/UPzynq20_test/UPzynq20_test.srcs/constrs_1/new/pins.xdc:114]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'gpio_rtl_1_tri_o[4]'. [D:/GITEA/UPzynq20_test/UPzynq20_test.srcs/constrs_1/new/pins.xdc:115]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/GITEA/UPzynq20_test/UPzynq20_test.srcs/constrs_1/new/pins.xdc:115]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'gpio_rtl_1_tri_o[6]'. [D:/GITEA/UPzynq20_test/UPzynq20_test.srcs/constrs_1/new/pins.xdc:118]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/GITEA/UPzynq20_test/UPzynq20_test.srcs/constrs_1/new/pins.xdc:118]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'gpio_rtl_1_tri_o[0]'. [D:/GITEA/UPzynq20_test/UPzynq20_test.srcs/constrs_1/new/pins.xdc:124]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/GITEA/UPzynq20_test/UPzynq20_test.srcs/constrs_1/new/pins.xdc:124]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
 Finished Parsing XDC File [D:/GITEA/UPzynq20_test/UPzynq20_test.srcs/constrs_1/new/pins.xdc]
 INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [D:/GITEA/UPzynq20_test/UPzynq20_test.srcs/constrs_1/new/pins.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/UPzynq20_test_design_wrapper_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/UPzynq20_test_design_wrapper_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
@@ -2322,22 +2382,22 @@ INFO: [Project 1-236] Implementation specific constraints were found while readi
 Resolution: To avoid this warning, move constraints listed in [.Xil/UPzynq20_test_design_wrapper_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 1137.914 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 1141.961 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 685 instances were transformed.
   FDR => FDRE: 684 instances
   SRL16 => SRL16E: 1 instances
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.118 . Memory (MB): peak = 1137.914 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.117 . Memory (MB): peak = 1141.961 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:52 ; elapsed = 00:00:55 . Memory (MB): peak = 1137.914 ; gain = 467.301
+Finished Constraint Validation : Time (s): cpu = 00:00:53 ; elapsed = 00:00:56 . Memory (MB): peak = 1141.961 ; gain = 471.281
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z020clg484-3
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:52 ; elapsed = 00:00:55 . Memory (MB): peak = 1137.914 ; gain = 467.301
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:53 ; elapsed = 00:00:56 . Memory (MB): peak = 1141.961 ; gain = 471.281
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -2370,8 +2430,10 @@ Applied set_property DONT_TOUCH = true for UPzynq20_test_design_i/axi_gpio_6. (c
 Applied set_property DONT_TOUCH = true for UPzynq20_test_design_i/axi_gpio_7. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for UPzynq20_test_design_i/ps7_0_axi_periph/s00_couplers/auto_pc. (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:53 ; elapsed = 00:00:56 . Memory (MB): peak = 1137.914 ; gain = 467.301
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:54 ; elapsed = 00:00:56 . Memory (MB): peak = 1141.961 ; gain = 471.281
 ---------------------------------------------------------------------------------
+INFO: [Synth 8-5545] ROM "a0_sign" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "not_cs_sign" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 INFO: [Synth 8-5545] ROM "sclk_sign" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 WARNING: [Synth 8-3936] Found unconnected internal register 'PWMdirection_reg' and it is trimmed from '32' to '16' bits. [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/cc52/hdl/IP_AXI_PWM_v1_0_S00_AXI.vhd:624]
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'slave_attachment'
@@ -2399,7 +2461,7 @@ INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'axi_protocol_converter_v2_1_19_b2s_rd_cmd_fsm'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:57 ; elapsed = 00:01:00 . Memory (MB): peak = 1137.914 ; gain = 467.301
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:58 ; elapsed = 00:01:01 . Memory (MB): peak = 1141.961 ; gain = 471.281
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -2413,7 +2475,7 @@ Start RTL Component Statistics
 Detailed RTL Component Info : 
 +---Adders : 
 	   3 Input     33 Bit       Adders := 1     
-	   2 Input     32 Bit       Adders := 3     
+	   2 Input     32 Bit       Adders := 13    
 	   2 Input     12 Bit       Adders := 8     
 	   2 Input      9 Bit       Adders := 2     
 	   2 Input      8 Bit       Adders := 1     
@@ -2430,14 +2492,14 @@ Detailed RTL Component Info :
 	               64 Bit    Registers := 1     
 	               47 Bit    Registers := 2     
 	               36 Bit    Registers := 2     
-	               32 Bit    Registers := 74    
+	               32 Bit    Registers := 83    
 	               16 Bit    Registers := 26    
 	               14 Bit    Registers := 2     
 	               12 Bit    Registers := 10    
 	                9 Bit    Registers := 10    
 	                8 Bit    Registers := 10    
 	                7 Bit    Registers := 2     
-	                6 Bit    Registers := 3     
+	                6 Bit    Registers := 2     
 	                5 Bit    Registers := 4     
 	                4 Bit    Registers := 17    
 	                3 Bit    Registers := 4     
@@ -2448,11 +2510,10 @@ Detailed RTL Component Info :
 	   2 Input     64 Bit        Muxes := 1     
 	   2 Input     47 Bit        Muxes := 2     
 	   2 Input     36 Bit        Muxes := 2     
-	   2 Input     32 Bit        Muxes := 80    
-	  16 Input     32 Bit        Muxes := 16    
-	   7 Input     32 Bit        Muxes := 1     
+	   2 Input     32 Bit        Muxes := 74    
+	   7 Input     32 Bit        Muxes := 3     
+	   4 Input     32 Bit        Muxes := 13    
 	  12 Input     32 Bit        Muxes := 1     
-	   4 Input     32 Bit        Muxes := 5     
 	  19 Input     32 Bit        Muxes := 18    
 	   5 Input     32 Bit        Muxes := 8     
 	   2 Input     16 Bit        Muxes := 6     
@@ -2465,12 +2526,12 @@ Detailed RTL Component Info :
 	   2 Input      5 Bit        Muxes := 4     
 	   4 Input      4 Bit        Muxes := 8     
 	   2 Input      4 Bit        Muxes := 60    
-	   7 Input      2 Bit        Muxes := 8     
+	   7 Input      2 Bit        Muxes := 16    
 	   2 Input      2 Bit        Muxes := 30    
 	   4 Input      2 Bit        Muxes := 4     
-	   2 Input      1 Bit        Muxes := 391   
+	   2 Input      1 Bit        Muxes := 395   
+	  12 Input      1 Bit        Muxes := 8     
 	   7 Input      1 Bit        Muxes := 3     
-	  12 Input      1 Bit        Muxes := 3     
 	   4 Input      1 Bit        Muxes := 24    
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
@@ -2482,20 +2543,21 @@ Hierarchical RTL Component report
 Module IP_AXI_ADC_v1_0_S00_AXI 
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input     32 Bit       Adders := 2     
+	   2 Input     32 Bit       Adders := 12    
 +---Registers : 
-	               32 Bit    Registers := 17    
-	                6 Bit    Registers := 2     
+	               32 Bit    Registers := 26    
+	                6 Bit    Registers := 1     
 	                2 Bit    Registers := 2     
 	                1 Bit    Registers := 10    
 +---Muxes : 
-	   2 Input     32 Bit        Muxes := 18    
-	  16 Input     32 Bit        Muxes := 16    
-	   7 Input     32 Bit        Muxes := 1     
+	   2 Input     32 Bit        Muxes := 12    
+	   7 Input     32 Bit        Muxes := 3     
+	   4 Input     32 Bit        Muxes := 8     
 	  12 Input     32 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 12    
+	   7 Input      2 Bit        Muxes := 8     
+	   2 Input      1 Bit        Muxes := 16    
+	  12 Input      1 Bit        Muxes := 8     
 	   7 Input      1 Bit        Muxes := 3     
-	  12 Input      1 Bit        Muxes := 3     
 Module IP_AXI_LEDS_v1_0_S00_AXI 
 Detailed RTL Component Info : 
 +---Registers : 
@@ -2952,6 +3014,8 @@ Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 Warning: Parallel synthesis criteria is not met 
 INFO: [Synth 8-5587] ROM size for "sclk_sign" is below threshold of ROM address width. It will be mapped to LUTs
+INFO: [Synth 8-5587] ROM size for "a0_sign" is below threshold of ROM address width. It will be mapped to LUTs
+INFO: [Synth 8-5587] ROM size for "not_cs_sign" is below threshold of ROM address width. It will be mapped to LUTs
 INFO: [Synth 8-4471] merging register 'AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/rst_reg' into 'bus2ip_reset_reg' [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:2493]
 INFO: [Synth 8-4471] merging register 'AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/rst_reg' into 'bus2ip_reset_reg' [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:2493]
 INFO: [Synth 8-4471] merging register 'AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/rst_reg' into 'bus2ip_reset_reg' [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:2493]
@@ -3189,7 +3253,7 @@ INFO: [Synth 8-3332] Sequential element (gpio_core_1/Not_Dual.INPUT_DOUBLE_REGS3
 INFO: [Synth 8-3332] Sequential element (gpio_core_1/Not_Dual.INPUT_DOUBLE_REGS3/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d5[3].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d5) is unused and will be removed from module axi_gpio__parameterized8.
 INFO: [Common 17-14] Message 'Synth 8-3332' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:11 ; elapsed = 00:01:14 . Memory (MB): peak = 1137.914 ; gain = 467.301
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:12 ; elapsed = 00:01:16 . Memory (MB): peak = 1141.961 ; gain = 471.281
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -3201,13 +3265,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:19 ; elapsed = 00:01:23 . Memory (MB): peak = 1212.852 ; gain = 542.238
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:21 ; elapsed = 00:01:25 . Memory (MB): peak = 1213.242 ; gain = 542.563
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:01:23 ; elapsed = 00:01:27 . Memory (MB): peak = 1298.609 ; gain = 627.996
+Finished Timing Optimization : Time (s): cpu = 00:01:25 ; elapsed = 00:01:29 . Memory (MB): peak = 1281.801 ; gain = 611.121
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -3219,7 +3283,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:01:27 ; elapsed = 00:01:32 . Memory (MB): peak = 1298.609 ; gain = 627.996
+Finished Technology Mapping : Time (s): cpu = 00:01:31 ; elapsed = 00:01:35 . Memory (MB): peak = 1290.828 ; gain = 620.148
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -3239,12 +3303,112 @@ Finished Flattening Before IO Insertion
 ---------------------------------------------------------------------------------
 Start Final Netlist Cleanup
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-5365] Flop inst/gen_axilite.gen_b2s_conv.axilite_b2s/SI_REG/ar.ar_pipe/aresetn_d_reg[1] is being inverted and renamed to inst/gen_axilite.gen_b2s_conv.axilite_b2s/SI_REG/ar.ar_pipe/aresetn_d_reg[1]_inv.
+INFO: [Synth 8-5365] Flop U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a0_reg[31] is being inverted and renamed to U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a0_reg[31]_inv.
+INFO: [Synth 8-5365] Flop U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a0_reg[30] is being inverted and renamed to U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a0_reg[30]_inv.
+INFO: [Synth 8-5365] Flop U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a0_reg[29] is being inverted and renamed to U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a0_reg[29]_inv.
+INFO: [Synth 8-5365] Flop U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a0_reg[28] is being inverted and renamed to U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a0_reg[28]_inv.
+INFO: [Synth 8-5365] Flop U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a0_reg[27] is being inverted and renamed to U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a0_reg[27]_inv.
+INFO: [Synth 8-5365] Flop U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a0_reg[26] is being inverted and renamed to U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a0_reg[26]_inv.
+INFO: [Synth 8-5365] Flop U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a0_reg[25] is being inverted and renamed to U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a0_reg[25]_inv.
+INFO: [Synth 8-5365] Flop U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a0_reg[24] is being inverted and renamed to U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a0_reg[24]_inv.
+INFO: [Synth 8-5365] Flop U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a0_reg[23] is being inverted and renamed to U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a0_reg[23]_inv.
+INFO: [Synth 8-5365] Flop U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a0_reg[22] is being inverted and renamed to U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a0_reg[22]_inv.
+INFO: [Synth 8-5365] Flop U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a0_reg[21] is being inverted and renamed to U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a0_reg[21]_inv.
+INFO: [Synth 8-5365] Flop U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a0_reg[20] is being inverted and renamed to U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a0_reg[20]_inv.
+INFO: [Synth 8-5365] Flop U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a0_reg[19] is being inverted and renamed to U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a0_reg[19]_inv.
+INFO: [Synth 8-5365] Flop U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a0_reg[18] is being inverted and renamed to U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a0_reg[18]_inv.
+INFO: [Synth 8-5365] Flop U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a0_reg[17] is being inverted and renamed to U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a0_reg[17]_inv.
+INFO: [Synth 8-5365] Flop U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a0_reg[16] is being inverted and renamed to U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a0_reg[16]_inv.
+INFO: [Synth 8-5365] Flop U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a0_reg[15] is being inverted and renamed to U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a0_reg[15]_inv.
+INFO: [Synth 8-5365] Flop U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a0_reg[14] is being inverted and renamed to U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a0_reg[14]_inv.
+INFO: [Synth 8-5365] Flop U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a0_reg[13] is being inverted and renamed to U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a0_reg[13]_inv.
+INFO: [Synth 8-5365] Flop U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a0_reg[11] is being inverted and renamed to U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a0_reg[11]_inv.
+INFO: [Synth 8-5365] Flop U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_b0_reg[31] is being inverted and renamed to U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_b0_reg[31]_inv.
+INFO: [Synth 8-5365] Flop U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_b0_reg[30] is being inverted and renamed to U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_b0_reg[30]_inv.
+INFO: [Synth 8-5365] Flop U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_b0_reg[29] is being inverted and renamed to U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_b0_reg[29]_inv.
+INFO: [Synth 8-5365] Flop U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_b0_reg[28] is being inverted and renamed to U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_b0_reg[28]_inv.
+INFO: [Synth 8-5365] Flop U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_b0_reg[27] is being inverted and renamed to U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_b0_reg[27]_inv.
+INFO: [Synth 8-5365] Flop U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_b0_reg[26] is being inverted and renamed to U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_b0_reg[26]_inv.
+INFO: [Synth 8-5365] Flop U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_b0_reg[25] is being inverted and renamed to U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_b0_reg[25]_inv.
+INFO: [Synth 8-5365] Flop U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_b0_reg[24] is being inverted and renamed to U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_b0_reg[24]_inv.
+INFO: [Synth 8-5365] Flop U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_b0_reg[23] is being inverted and renamed to U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_b0_reg[23]_inv.
+INFO: [Synth 8-5365] Flop U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_b0_reg[22] is being inverted and renamed to U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_b0_reg[22]_inv.
+INFO: [Synth 8-5365] Flop U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_b0_reg[21] is being inverted and renamed to U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_b0_reg[21]_inv.
+INFO: [Synth 8-5365] Flop U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_b0_reg[20] is being inverted and renamed to U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_b0_reg[20]_inv.
+INFO: [Synth 8-5365] Flop U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_b0_reg[19] is being inverted and renamed to U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_b0_reg[19]_inv.
+INFO: [Synth 8-5365] Flop U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_b0_reg[18] is being inverted and renamed to U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_b0_reg[18]_inv.
+INFO: [Synth 8-5365] Flop U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_b0_reg[17] is being inverted and renamed to U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_b0_reg[17]_inv.
+INFO: [Synth 8-5365] Flop U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_b0_reg[16] is being inverted and renamed to U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_b0_reg[16]_inv.
+INFO: [Synth 8-5365] Flop U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_b0_reg[15] is being inverted and renamed to U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_b0_reg[15]_inv.
+INFO: [Synth 8-5365] Flop U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_b0_reg[14] is being inverted and renamed to U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_b0_reg[14]_inv.
+INFO: [Synth 8-5365] Flop U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_b0_reg[13] is being inverted and renamed to U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_b0_reg[13]_inv.
+INFO: [Synth 8-5365] Flop U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_b0_reg[11] is being inverted and renamed to U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_b0_reg[11]_inv.
+INFO: [Synth 8-5365] Flop U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a1_reg[31] is being inverted and renamed to U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a1_reg[31]_inv.
+INFO: [Synth 8-5365] Flop U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a1_reg[30] is being inverted and renamed to U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a1_reg[30]_inv.
+INFO: [Synth 8-5365] Flop U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a1_reg[29] is being inverted and renamed to U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a1_reg[29]_inv.
+INFO: [Synth 8-5365] Flop U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a1_reg[28] is being inverted and renamed to U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a1_reg[28]_inv.
+INFO: [Synth 8-5365] Flop U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a1_reg[27] is being inverted and renamed to U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a1_reg[27]_inv.
+INFO: [Synth 8-5365] Flop U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a1_reg[26] is being inverted and renamed to U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a1_reg[26]_inv.
+INFO: [Synth 8-5365] Flop U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a1_reg[25] is being inverted and renamed to U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a1_reg[25]_inv.
+INFO: [Synth 8-5365] Flop U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a1_reg[24] is being inverted and renamed to U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a1_reg[24]_inv.
+INFO: [Synth 8-5365] Flop U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a1_reg[23] is being inverted and renamed to U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a1_reg[23]_inv.
+INFO: [Synth 8-5365] Flop U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a1_reg[22] is being inverted and renamed to U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a1_reg[22]_inv.
+INFO: [Synth 8-5365] Flop U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a1_reg[21] is being inverted and renamed to U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a1_reg[21]_inv.
+INFO: [Synth 8-5365] Flop U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a1_reg[20] is being inverted and renamed to U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a1_reg[20]_inv.
+INFO: [Synth 8-5365] Flop U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a1_reg[19] is being inverted and renamed to U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a1_reg[19]_inv.
+INFO: [Synth 8-5365] Flop U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a1_reg[18] is being inverted and renamed to U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a1_reg[18]_inv.
+INFO: [Synth 8-5365] Flop U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a1_reg[17] is being inverted and renamed to U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a1_reg[17]_inv.
+INFO: [Synth 8-5365] Flop U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a1_reg[16] is being inverted and renamed to U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a1_reg[16]_inv.
+INFO: [Synth 8-5365] Flop U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a1_reg[15] is being inverted and renamed to U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a1_reg[15]_inv.
+INFO: [Synth 8-5365] Flop U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a1_reg[14] is being inverted and renamed to U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a1_reg[14]_inv.
+INFO: [Synth 8-5365] Flop U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a1_reg[13] is being inverted and renamed to U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a1_reg[13]_inv.
+INFO: [Synth 8-5365] Flop U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a1_reg[11] is being inverted and renamed to U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a1_reg[11]_inv.
+INFO: [Synth 8-5365] Flop U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_b1_reg[31] is being inverted and renamed to U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_b1_reg[31]_inv.
+INFO: [Synth 8-5365] Flop U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_b1_reg[30] is being inverted and renamed to U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_b1_reg[30]_inv.
+INFO: [Synth 8-5365] Flop U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_b1_reg[29] is being inverted and renamed to U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_b1_reg[29]_inv.
+INFO: [Synth 8-5365] Flop U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_b1_reg[28] is being inverted and renamed to U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_b1_reg[28]_inv.
+INFO: [Synth 8-5365] Flop U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_b1_reg[27] is being inverted and renamed to U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_b1_reg[27]_inv.
+INFO: [Synth 8-5365] Flop U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_b1_reg[26] is being inverted and renamed to U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_b1_reg[26]_inv.
+INFO: [Synth 8-5365] Flop U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_b1_reg[25] is being inverted and renamed to U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_b1_reg[25]_inv.
+INFO: [Synth 8-5365] Flop U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_b1_reg[24] is being inverted and renamed to U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_b1_reg[24]_inv.
+INFO: [Synth 8-5365] Flop U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_b1_reg[23] is being inverted and renamed to U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_b1_reg[23]_inv.
+INFO: [Synth 8-5365] Flop U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_b1_reg[22] is being inverted and renamed to U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_b1_reg[22]_inv.
+INFO: [Synth 8-5365] Flop U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_b1_reg[21] is being inverted and renamed to U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_b1_reg[21]_inv.
+INFO: [Synth 8-5365] Flop U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_b1_reg[20] is being inverted and renamed to U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_b1_reg[20]_inv.
+INFO: [Synth 8-5365] Flop U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_b1_reg[19] is being inverted and renamed to U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_b1_reg[19]_inv.
+INFO: [Synth 8-5365] Flop U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_b1_reg[18] is being inverted and renamed to U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_b1_reg[18]_inv.
+INFO: [Synth 8-5365] Flop U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_b1_reg[17] is being inverted and renamed to U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_b1_reg[17]_inv.
+INFO: [Synth 8-5365] Flop U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_b1_reg[16] is being inverted and renamed to U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_b1_reg[16]_inv.
+INFO: [Synth 8-5365] Flop U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_b1_reg[15] is being inverted and renamed to U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_b1_reg[15]_inv.
+INFO: [Synth 8-5365] Flop U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_b1_reg[14] is being inverted and renamed to U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_b1_reg[14]_inv.
+INFO: [Synth 8-5365] Flop U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_b1_reg[13] is being inverted and renamed to U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_b1_reg[13]_inv.
+INFO: [Synth 8-5365] Flop U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_b1_reg[11] is being inverted and renamed to U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_b1_reg[11]_inv.
+INFO: [Synth 8-5365] Flop U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a2_reg[31] is being inverted and renamed to U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a2_reg[31]_inv.
+INFO: [Synth 8-5365] Flop U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a2_reg[30] is being inverted and renamed to U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a2_reg[30]_inv.
+INFO: [Synth 8-5365] Flop U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a2_reg[29] is being inverted and renamed to U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a2_reg[29]_inv.
+INFO: [Synth 8-5365] Flop U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a2_reg[28] is being inverted and renamed to U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a2_reg[28]_inv.
+INFO: [Synth 8-5365] Flop U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a2_reg[27] is being inverted and renamed to U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a2_reg[27]_inv.
+INFO: [Synth 8-5365] Flop U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a2_reg[26] is being inverted and renamed to U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a2_reg[26]_inv.
+INFO: [Synth 8-5365] Flop U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a2_reg[25] is being inverted and renamed to U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a2_reg[25]_inv.
+INFO: [Synth 8-5365] Flop U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a2_reg[24] is being inverted and renamed to U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a2_reg[24]_inv.
+INFO: [Synth 8-5365] Flop U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a2_reg[23] is being inverted and renamed to U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a2_reg[23]_inv.
+INFO: [Synth 8-5365] Flop U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a2_reg[22] is being inverted and renamed to U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a2_reg[22]_inv.
+INFO: [Synth 8-5365] Flop U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a2_reg[21] is being inverted and renamed to U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a2_reg[21]_inv.
+INFO: [Synth 8-5365] Flop U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a2_reg[20] is being inverted and renamed to U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a2_reg[20]_inv.
+INFO: [Synth 8-5365] Flop U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a2_reg[19] is being inverted and renamed to U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a2_reg[19]_inv.
+INFO: [Synth 8-5365] Flop U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a2_reg[18] is being inverted and renamed to U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a2_reg[18]_inv.
+INFO: [Synth 8-5365] Flop U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a2_reg[17] is being inverted and renamed to U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a2_reg[17]_inv.
+INFO: [Synth 8-5365] Flop U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a2_reg[16] is being inverted and renamed to U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a2_reg[16]_inv.
+INFO: [Synth 8-5365] Flop U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a2_reg[15] is being inverted and renamed to U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a2_reg[15]_inv.
+INFO: [Synth 8-5365] Flop U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a2_reg[14] is being inverted and renamed to U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a2_reg[14]_inv.
+INFO: [Synth 8-5365] Flop U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a2_reg[13] is being inverted and renamed to U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a2_reg[13]_inv.
+INFO: [Synth 8-5365] Flop U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a2_reg[11] is being inverted and renamed to U0/IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a2_reg[11]_inv.
+INFO: [Common 17-14] Message 'Synth 8-5365' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:01:30 ; elapsed = 00:01:34 . Memory (MB): peak = 1298.609 ; gain = 627.996
+Finished IO Insertion : Time (s): cpu = 00:01:34 ; elapsed = 00:01:38 . Memory (MB): peak = 1291.648 ; gain = 620.969
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -3257,7 +3421,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:01:30 ; elapsed = 00:01:34 . Memory (MB): peak = 1298.609 ; gain = 627.996
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:34 ; elapsed = 00:01:38 . Memory (MB): peak = 1291.648 ; gain = 620.969
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -3269,25 +3433,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:31 ; elapsed = 00:01:35 . Memory (MB): peak = 1298.609 ; gain = 627.996
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:35 ; elapsed = 00:01:39 . Memory (MB): peak = 1291.648 ; gain = 620.969
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:01:31 ; elapsed = 00:01:35 . Memory (MB): peak = 1298.609 ; gain = 627.996
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:35 ; elapsed = 00:01:39 . Memory (MB): peak = 1291.648 ; gain = 620.969
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:01:31 ; elapsed = 00:01:35 . Memory (MB): peak = 1298.609 ; gain = 627.996
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:35 ; elapsed = 00:01:39 . Memory (MB): peak = 1291.648 ; gain = 620.969
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:01:31 ; elapsed = 00:01:35 . Memory (MB): peak = 1298.609 ; gain = 627.996
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:35 ; elapsed = 00:01:39 . Memory (MB): peak = 1291.648 ; gain = 620.969
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -3322,13 +3486,13 @@ Report Cell Usage:
 +------+--------+------+
 |1     |BIBUF   |   130|
 |2     |BUFG    |     2|
-|3     |CARRY4  |   138|
-|4     |LUT1    |   194|
-|5     |LUT2    |   271|
-|6     |LUT3    |   433|
-|7     |LUT4    |   876|
-|8     |LUT5    |   520|
-|9     |LUT6    |  1062|
+|3     |CARRY4  |   202|
+|4     |LUT1    |   305|
+|5     |LUT2    |   246|
+|6     |LUT3    |   466|
+|7     |LUT4    |   877|
+|8     |LUT5    |   538|
+|9     |LUT6    |  1283|
 |10    |MUXF7   |   128|
 |11    |MUXF8   |    32|
 |12    |PS7     |     1|
@@ -3336,22 +3500,21 @@ Report Cell Usage:
 |14    |SRL16E  |    18|
 |15    |SRLC32E |    47|
 |16    |FDR     |   456|
-|17    |FDRE    |  3860|
-|18    |FDSE    |   241|
-|19    |IBUF    |    56|
-|20    |OBUF    |    57|
-|21    |OBUFT   |     3|
+|17    |FDRE    |  3973|
+|18    |FDSE    |   401|
+|19    |IBUF    |    64|
+|20    |OBUF    |    52|
 +------+--------+------+
 
 Report Instance Areas: 
 +------+---------------------------------------------------+---------------------------------------------------------------+------+
 |      |Instance                                           |Module                                                         |Cells |
 +------+---------------------------------------------------+---------------------------------------------------------------+------+
-|1     |top                                                |                                                               |  8526|
-|2     |  UPzynq20_test_design_i                           |UPzynq20_test_design                                           |  8410|
-|3     |    IP_AXI_ADC_0                                   |UPzynq20_test_design_IP_AXI_ADC_0_0                            |  1036|
-|4     |      U0                                           |IP_AXI_ADC_v1_0                                                |  1035|
-|5     |        IP_AXI_ADC_v1_0_S00_AXI_inst               |IP_AXI_ADC_v1_0_S00_AXI                                        |  1027|
+|1     |top                                                |                                                               |  9222|
+|2     |  UPzynq20_test_design_i                           |UPzynq20_test_design                                           |  9106|
+|3     |    IP_AXI_ADC_0                                   |UPzynq20_test_design_IP_AXI_ADC_0_0                            |  1752|
+|4     |      U0                                           |IP_AXI_ADC_v1_0                                                |  1751|
+|5     |        IP_AXI_ADC_v1_0_S00_AXI_inst               |IP_AXI_ADC_v1_0_S00_AXI                                        |  1745|
 |6     |    IP_AXI_LEDS_0                                  |UPzynq20_test_design_IP_AXI_LEDS_0_0                           |   231|
 |7     |      U0                                           |IP_AXI_LEDS_v1_0                                               |   231|
 |8     |        IP_AXI_LEDS_v1_0_S00_AXI_inst              |IP_AXI_LEDS_v1_0_S00_AXI                                       |   231|
@@ -3424,7 +3587,7 @@ Report Instance Areas:
 |75    |          \Not_Dual.INPUT_DOUBLE_REGS3             |cdc_sync                                                       |    80|
 |76    |    processing_system7_0                           |UPzynq20_test_design_processing_system7_0_0                    |   244|
 |77    |      inst                                         |processing_system7_v5_5_processing_system7                     |   244|
-|78    |    ps7_0_axi_periph                               |UPzynq20_test_design_ps7_0_axi_periph_0                        |  1744|
+|78    |    ps7_0_axi_periph                               |UPzynq20_test_design_ps7_0_axi_periph_0                        |  1724|
 |79    |      xbar                                         |UPzynq20_test_design_xbar_0                                    |   595|
 |80    |        inst                                       |axi_crossbar_v2_1_20_axi_crossbar                              |   595|
 |81    |          \gen_sasd.crossbar_sasd_0                |axi_crossbar_v2_1_20_crossbar_sasd                             |   595|
@@ -3433,31 +3596,31 @@ Report Instance Areas:
 |84    |            reg_slice_r                            |axi_register_slice_v2_1_19_axic_register_slice__parameterized7 |   341|
 |85    |            splitter_ar                            |axi_crossbar_v2_1_20_splitter__parameterized0                  |     4|
 |86    |            splitter_aw                            |axi_crossbar_v2_1_20_splitter                                  |    22|
-|87    |      s00_couplers                                 |s00_couplers_imp_1COS8BN                                       |  1149|
-|88    |        auto_pc                                    |UPzynq20_test_design_auto_pc_0                                 |  1149|
-|89    |          inst                                     |axi_protocol_converter_v2_1_19_axi_protocol_converter          |  1149|
-|90    |            \gen_axilite.gen_b2s_conv.axilite_b2s  |axi_protocol_converter_v2_1_19_b2s                             |  1149|
-|91    |              \RD.ar_channel_0                     |axi_protocol_converter_v2_1_19_b2s_ar_channel                  |   184|
-|92    |                ar_cmd_fsm_0                       |axi_protocol_converter_v2_1_19_b2s_rd_cmd_fsm                  |    30|
-|93    |                cmd_translator_0                   |axi_protocol_converter_v2_1_19_b2s_cmd_translator_2            |   142|
-|94    |                  incr_cmd_0                       |axi_protocol_converter_v2_1_19_b2s_incr_cmd_3                  |    75|
-|95    |                  wrap_cmd_0                       |axi_protocol_converter_v2_1_19_b2s_wrap_cmd_4                  |    62|
-|96    |              \RD.r_channel_0                      |axi_protocol_converter_v2_1_19_b2s_r_channel                   |    93|
-|97    |                rd_data_fifo_0                     |axi_protocol_converter_v2_1_19_b2s_simple_fifo__parameterized1 |    49|
-|98    |                transaction_fifo_0                 |axi_protocol_converter_v2_1_19_b2s_simple_fifo__parameterized2 |    30|
-|99    |              SI_REG                               |axi_register_slice_v2_1_19_axi_register_slice                  |   625|
-|100   |                \ar.ar_pipe                        |axi_register_slice_v2_1_19_axic_register_slice                 |   214|
-|101   |                \aw.aw_pipe                        |axi_register_slice_v2_1_19_axic_register_slice_1               |   218|
-|102   |                \b.b_pipe                          |axi_register_slice_v2_1_19_axic_register_slice__parameterized1 |    47|
-|103   |                \r.r_pipe                          |axi_register_slice_v2_1_19_axic_register_slice__parameterized2 |   146|
-|104   |              \WR.aw_channel_0                     |axi_protocol_converter_v2_1_19_b2s_aw_channel                  |   184|
-|105   |                aw_cmd_fsm_0                       |axi_protocol_converter_v2_1_19_b2s_wr_cmd_fsm                  |    16|
-|106   |                cmd_translator_0                   |axi_protocol_converter_v2_1_19_b2s_cmd_translator              |   152|
-|107   |                  incr_cmd_0                       |axi_protocol_converter_v2_1_19_b2s_incr_cmd                    |    76|
-|108   |                  wrap_cmd_0                       |axi_protocol_converter_v2_1_19_b2s_wrap_cmd                    |    72|
-|109   |              \WR.b_channel_0                      |axi_protocol_converter_v2_1_19_b2s_b_channel                   |    61|
-|110   |                bid_fifo_0                         |axi_protocol_converter_v2_1_19_b2s_simple_fifo                 |    27|
-|111   |                bresp_fifo_0                       |axi_protocol_converter_v2_1_19_b2s_simple_fifo__parameterized0 |     9|
+|87    |      s00_couplers                                 |s00_couplers_imp_1COS8BN                                       |  1129|
+|88    |        auto_pc                                    |UPzynq20_test_design_auto_pc_0                                 |  1129|
+|89    |          inst                                     |axi_protocol_converter_v2_1_19_axi_protocol_converter          |  1129|
+|90    |            \gen_axilite.gen_b2s_conv.axilite_b2s  |axi_protocol_converter_v2_1_19_b2s                             |  1129|
+|91    |              \RD.ar_channel_0                     |axi_protocol_converter_v2_1_19_b2s_ar_channel                  |   177|
+|92    |                ar_cmd_fsm_0                       |axi_protocol_converter_v2_1_19_b2s_rd_cmd_fsm                  |    35|
+|93    |                cmd_translator_0                   |axi_protocol_converter_v2_1_19_b2s_cmd_translator_2            |   130|
+|94    |                  incr_cmd_0                       |axi_protocol_converter_v2_1_19_b2s_incr_cmd_3                  |    54|
+|95    |                  wrap_cmd_0                       |axi_protocol_converter_v2_1_19_b2s_wrap_cmd_4                  |    71|
+|96    |              \RD.r_channel_0                      |axi_protocol_converter_v2_1_19_b2s_r_channel                   |    92|
+|97    |                rd_data_fifo_0                     |axi_protocol_converter_v2_1_19_b2s_simple_fifo__parameterized1 |    52|
+|98    |                transaction_fifo_0                 |axi_protocol_converter_v2_1_19_b2s_simple_fifo__parameterized2 |    26|
+|99    |              SI_REG                               |axi_register_slice_v2_1_19_axi_register_slice                  |   615|
+|100   |                \ar.ar_pipe                        |axi_register_slice_v2_1_19_axic_register_slice                 |   208|
+|101   |                \aw.aw_pipe                        |axi_register_slice_v2_1_19_axic_register_slice_1               |   212|
+|102   |                \b.b_pipe                          |axi_register_slice_v2_1_19_axic_register_slice__parameterized1 |    48|
+|103   |                \r.r_pipe                          |axi_register_slice_v2_1_19_axic_register_slice__parameterized2 |   147|
+|104   |              \WR.aw_channel_0                     |axi_protocol_converter_v2_1_19_b2s_aw_channel                  |   178|
+|105   |                aw_cmd_fsm_0                       |axi_protocol_converter_v2_1_19_b2s_wr_cmd_fsm                  |    33|
+|106   |                cmd_translator_0                   |axi_protocol_converter_v2_1_19_b2s_cmd_translator              |   129|
+|107   |                  incr_cmd_0                       |axi_protocol_converter_v2_1_19_b2s_incr_cmd                    |    56|
+|108   |                  wrap_cmd_0                       |axi_protocol_converter_v2_1_19_b2s_wrap_cmd                    |    69|
+|109   |              \WR.b_channel_0                      |axi_protocol_converter_v2_1_19_b2s_b_channel                   |    65|
+|110   |                bid_fifo_0                         |axi_protocol_converter_v2_1_19_b2s_simple_fifo                 |    33|
+|111   |                bresp_fifo_0                       |axi_protocol_converter_v2_1_19_b2s_simple_fifo__parameterized0 |     8|
 |112   |    rst_ps7_0_50M                                  |UPzynq20_test_design_rst_ps7_0_50M_0                           |    66|
 |113   |      U0                                           |proc_sys_reset                                                 |    66|
 |114   |        EXT_LPF                                    |lpf                                                            |    23|
@@ -3467,29 +3630,29 @@ Report Instance Areas:
 |118   |          SEQ_COUNTER                              |upcnt_n                                                        |    13|
 +------+---------------------------------------------------+---------------------------------------------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:01:31 ; elapsed = 00:01:35 . Memory (MB): peak = 1298.609 ; gain = 627.996
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:35 ; elapsed = 00:01:39 . Memory (MB): peak = 1291.648 ; gain = 620.969
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 348 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:42 ; elapsed = 00:01:28 . Memory (MB): peak = 1298.609 ; gain = 558.953
-Synthesis Optimization Complete : Time (s): cpu = 00:01:31 ; elapsed = 00:01:36 . Memory (MB): peak = 1298.609 ; gain = 627.996
+Synthesis finished with 0 errors, 0 critical warnings and 379 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:46 ; elapsed = 00:01:32 . Memory (MB): peak = 1291.648 ; gain = 549.348
+Synthesis Optimization Complete : Time (s): cpu = 00:01:35 ; elapsed = 00:01:39 . Memory (MB): peak = 1291.648 ; gain = 620.969
 INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 755 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 819 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1310.469 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 1303.738 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 457 instances were transformed.
   FDR => FDRE: 456 instances
   SRL16 => SRL16E: 1 instances
 
 INFO: [Common 17-83] Releasing license: Synthesis
-690 Infos, 191 Warnings, 0 Critical Warnings and 0 Errors encountered.
+794 Infos, 225 Warnings, 13 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:01:40 ; elapsed = 00:01:45 . Memory (MB): peak = 1310.469 ; gain = 917.578
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1310.469 ; gain = 0.000
+synth_design: Time (s): cpu = 00:01:44 ; elapsed = 00:01:49 . Memory (MB): peak = 1303.738 ; gain = 911.129
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1303.738 ; gain = 0.000
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
 INFO: [Common 17-1381] The checkpoint 'D:/GITEA/UPzynq20_test/UPzynq20_test.runs/synth_1/UPzynq20_test_design_wrapper.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file UPzynq20_test_design_wrapper_utilization_synth.rpt -pb UPzynq20_test_design_wrapper_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Thu May  6 11:31:10 2021...
+INFO: [Common 17-206] Exiting Vivado at Wed May 19 10:20:33 2021...

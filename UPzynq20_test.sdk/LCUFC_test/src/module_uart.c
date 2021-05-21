@@ -72,11 +72,16 @@ u32 update_from_terminal(u32 address){
 void terminal_uart_send() {
 	SendBuffer[0] = 4;
 	SendBuffer[1] = 1;
-XUartPs_Send(&UartPs, SendBuffer, TEST_BUFFER_SIZE);
+	XUartPs_Send(&UartPs, SendBuffer, TEST_BUFFER_SIZE);
+
+	     while(UartPs.SendBuffer.RemainingBytes!=0)
+	     {
+	    	 XUartPs_Send(&UartPs, UartPs.SendBuffer.NextBytePtr, UartPs.SendBuffer.RemainingBytes);
+	     }
 }
 
-void terminal_uart_recv() {
-XUartPs_Recv(&UartPs, RecvBuffer, TEST_BUFFER_SIZE);
+u32 terminal_uart_recv() {
+	return XUartPs_Recv(&UartPs, RecvBuffer, TEST_BUFFER_SIZE);
 }
 
 void initialization_of_UART(){
@@ -236,11 +241,11 @@ int UartPsIntrExample(INTC *IntcInstPtr, XUartPs *UartInstPtr,
 //	}
 //	xil_printf("point five\r\n");
 	/* Verify the entire receive buffer was successfully received */
-	for (Index = 0; Index < TEST_BUFFER_SIZE; Index++) {
-		if (RecvBuffer[Index] != SendBuffer[Index]) {
-			BadByteCount++;
-		}
-	}
+//	for (Index = 0; Index < TEST_BUFFER_SIZE; Index++) {
+//		if (RecvBuffer[Index] != SendBuffer[Index]) {
+//			BadByteCount++;
+//		}
+//	}
 
 
 

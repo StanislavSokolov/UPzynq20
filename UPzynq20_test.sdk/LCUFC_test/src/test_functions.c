@@ -56,11 +56,11 @@ void read_in_all(){
 
 
 void update_from_terminal_all(u8 buffer){
-	XGpio_DiscreteWrite(&Gpio_4, LED_CHANNEL, update_from_terminal(16));
-	XGpio_DiscreteWrite(&Gpio_5, LED_CHANNEL, update_from_terminal(18));
+	XGpio_DiscreteWrite(&Gpio_4, LED_CHANNEL, 65535-update_from_terminal(16));
+	XGpio_DiscreteWrite(&Gpio_5, LED_CHANNEL, 65535-update_from_terminal(18));
 
-	XGpio_DiscreteWrite(&Gpio_0, LED_CHANNEL, update_from_terminal(26));
-	XGpio_DiscreteWrite(&Gpio_1, LED_CHANNEL, update_from_terminal(28));
+	XGpio_DiscreteWrite(&Gpio_0, LED_CHANNEL, 65535-update_from_terminal(26));
+	XGpio_DiscreteWrite(&Gpio_1, LED_CHANNEL, 65535-update_from_terminal(28));
 
 }
 
