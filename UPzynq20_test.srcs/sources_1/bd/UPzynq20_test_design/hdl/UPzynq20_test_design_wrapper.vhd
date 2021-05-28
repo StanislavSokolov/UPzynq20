@@ -1,7 +1,7 @@
 --Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
---Date        : Fri May 21 09:09:30 2021
+--Date        : Thu May 27 15:49:09 2021
 --Host        : STAS-W10 running 64-bit major release  (build 9200)
 --Command     : generate_target UPzynq20_test_design_wrapper.bd
 --Design      : UPzynq20_test_design_wrapper
@@ -45,11 +45,17 @@ entity UPzynq20_test_design_wrapper is
     FIXED_IO_ps_porb : inout STD_LOGIC;
     FIXED_IO_ps_srstb : inout STD_LOGIC;
     LEDS_0 : out STD_LOGIC;
+    PWM_OUT_0 : out STD_LOGIC_VECTOR ( 15 downto 0 );
+    S0 : in STD_LOGIC;
+    S0_inv : in STD_LOGIC;
+    S1 : in STD_LOGIC;
+    S1_inv : in STD_LOGIC;
+    S2 : in STD_LOGIC;
+    S2_inv : in STD_LOGIC;
     SCLK : out STD_LOGIC;
     gpio_rtl_0_tri_o : out STD_LOGIC_VECTOR ( 15 downto 0 );
     gpio_rtl_2_tri_i : in STD_LOGIC_VECTOR ( 7 downto 0 );
     gpio_rtl_3_tri_i : in STD_LOGIC_VECTOR ( 15 downto 0 );
-    gpio_rtl_4_tri_o : out STD_LOGIC_VECTOR ( 15 downto 0 );
     gpio_rtl_5_tri_o : out STD_LOGIC_VECTOR ( 15 downto 0 );
     gpio_rtl_6_tri_i : in STD_LOGIC_VECTOR ( 15 downto 0 );
     gpio_rtl_7_tri_i : in STD_LOGIC_VECTOR ( 15 downto 0 )
@@ -71,19 +77,14 @@ architecture STRUCTURE of UPzynq20_test_design_wrapper is
     Data_in_a3 : in STD_LOGIC;
     Data_in_b3 : in STD_LOGIC;
     LEDS_0 : out STD_LOGIC;
-    FIXED_IO_mio : inout STD_LOGIC_VECTOR ( 53 downto 0 );
-    FIXED_IO_ddr_vrn : inout STD_LOGIC;
-    FIXED_IO_ddr_vrp : inout STD_LOGIC;
-    FIXED_IO_ps_srstb : inout STD_LOGIC;
-    FIXED_IO_ps_clk : inout STD_LOGIC;
-    FIXED_IO_ps_porb : inout STD_LOGIC;
-    gpio_rtl_2_tri_i : in STD_LOGIC_VECTOR ( 7 downto 0 );
-    gpio_rtl_7_tri_i : in STD_LOGIC_VECTOR ( 15 downto 0 );
-    gpio_rtl_3_tri_i : in STD_LOGIC_VECTOR ( 15 downto 0 );
-    gpio_rtl_4_tri_o : out STD_LOGIC_VECTOR ( 15 downto 0 );
-    gpio_rtl_6_tri_i : in STD_LOGIC_VECTOR ( 15 downto 0 );
-    gpio_rtl_5_tri_o : out STD_LOGIC_VECTOR ( 15 downto 0 );
+    S0 : in STD_LOGIC;
+    S0_inv : in STD_LOGIC;
+    S1 : in STD_LOGIC;
+    S1_inv : in STD_LOGIC;
+    S2 : in STD_LOGIC;
+    S2_inv : in STD_LOGIC;
     gpio_rtl_0_tri_o : out STD_LOGIC_VECTOR ( 15 downto 0 );
+    gpio_rtl_5_tri_o : out STD_LOGIC_VECTOR ( 15 downto 0 );
     DDR_cas_n : inout STD_LOGIC;
     DDR_cke : inout STD_LOGIC;
     DDR_ck_n : inout STD_LOGIC;
@@ -98,7 +99,18 @@ architecture STRUCTURE of UPzynq20_test_design_wrapper is
     DDR_dm : inout STD_LOGIC_VECTOR ( 3 downto 0 );
     DDR_dq : inout STD_LOGIC_VECTOR ( 31 downto 0 );
     DDR_dqs_n : inout STD_LOGIC_VECTOR ( 3 downto 0 );
-    DDR_dqs_p : inout STD_LOGIC_VECTOR ( 3 downto 0 )
+    DDR_dqs_p : inout STD_LOGIC_VECTOR ( 3 downto 0 );
+    gpio_rtl_6_tri_i : in STD_LOGIC_VECTOR ( 15 downto 0 );
+    gpio_rtl_7_tri_i : in STD_LOGIC_VECTOR ( 15 downto 0 );
+    FIXED_IO_mio : inout STD_LOGIC_VECTOR ( 53 downto 0 );
+    FIXED_IO_ddr_vrn : inout STD_LOGIC;
+    FIXED_IO_ddr_vrp : inout STD_LOGIC;
+    FIXED_IO_ps_srstb : inout STD_LOGIC;
+    FIXED_IO_ps_clk : inout STD_LOGIC;
+    FIXED_IO_ps_porb : inout STD_LOGIC;
+    gpio_rtl_3_tri_i : in STD_LOGIC_VECTOR ( 15 downto 0 );
+    gpio_rtl_2_tri_i : in STD_LOGIC_VECTOR ( 7 downto 0 );
+    PWM_OUT_0 : out STD_LOGIC_VECTOR ( 15 downto 0 )
   );
   end component UPzynq20_test_design;
 begin
@@ -136,11 +148,17 @@ UPzynq20_test_design_i: component UPzynq20_test_design
       FIXED_IO_ps_porb => FIXED_IO_ps_porb,
       FIXED_IO_ps_srstb => FIXED_IO_ps_srstb,
       LEDS_0 => LEDS_0,
+      PWM_OUT_0(15 downto 0) => PWM_OUT_0(15 downto 0),
+      S0 => S0,
+      S0_inv => S0_inv,
+      S1 => S1,
+      S1_inv => S1_inv,
+      S2 => S2,
+      S2_inv => S2_inv,
       SCLK => SCLK,
       gpio_rtl_0_tri_o(15 downto 0) => gpio_rtl_0_tri_o(15 downto 0),
       gpio_rtl_2_tri_i(7 downto 0) => gpio_rtl_2_tri_i(7 downto 0),
       gpio_rtl_3_tri_i(15 downto 0) => gpio_rtl_3_tri_i(15 downto 0),
-      gpio_rtl_4_tri_o(15 downto 0) => gpio_rtl_4_tri_o(15 downto 0),
       gpio_rtl_5_tri_o(15 downto 0) => gpio_rtl_5_tri_o(15 downto 0),
       gpio_rtl_6_tri_i(15 downto 0) => gpio_rtl_6_tri_i(15 downto 0),
       gpio_rtl_7_tri_i(15 downto 0) => gpio_rtl_7_tri_i(15 downto 0)

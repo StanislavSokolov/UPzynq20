@@ -1,7 +1,7 @@
 --Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
---Date        : Fri May 21 09:09:30 2021
+--Date        : Thu May 27 15:49:09 2021
 --Host        : STAS-W10 running 64-bit major release  (build 9200)
 --Command     : generate_target UPzynq20_test_design.bd
 --Design      : UPzynq20_test_design
@@ -3548,17 +3548,23 @@ entity UPzynq20_test_design is
     FIXED_IO_ps_porb : inout STD_LOGIC;
     FIXED_IO_ps_srstb : inout STD_LOGIC;
     LEDS_0 : out STD_LOGIC;
+    PWM_OUT_0 : out STD_LOGIC_VECTOR ( 15 downto 0 );
+    S0 : in STD_LOGIC;
+    S0_inv : in STD_LOGIC;
+    S1 : in STD_LOGIC;
+    S1_inv : in STD_LOGIC;
+    S2 : in STD_LOGIC;
+    S2_inv : in STD_LOGIC;
     SCLK : out STD_LOGIC;
     gpio_rtl_0_tri_o : out STD_LOGIC_VECTOR ( 15 downto 0 );
     gpio_rtl_2_tri_i : in STD_LOGIC_VECTOR ( 7 downto 0 );
     gpio_rtl_3_tri_i : in STD_LOGIC_VECTOR ( 15 downto 0 );
-    gpio_rtl_4_tri_o : out STD_LOGIC_VECTOR ( 15 downto 0 );
     gpio_rtl_5_tri_o : out STD_LOGIC_VECTOR ( 15 downto 0 );
     gpio_rtl_6_tri_i : in STD_LOGIC_VECTOR ( 15 downto 0 );
     gpio_rtl_7_tri_i : in STD_LOGIC_VECTOR ( 15 downto 0 )
   );
   attribute CORE_GENERATION_INFO : string;
-  attribute CORE_GENERATION_INFO of UPzynq20_test_design : entity is "UPzynq20_test_design,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=UPzynq20_test_design,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=30,numReposBlks=16,numNonXlnxBlks=4,numHierBlks=14,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=16,da_board_cnt=15,da_clkrst_cnt=1,da_ps7_cnt=2,synth_mode=Global}";
+  attribute CORE_GENERATION_INFO of UPzynq20_test_design : entity is "UPzynq20_test_design,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=UPzynq20_test_design,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=30,numReposBlks=16,numNonXlnxBlks=4,numHierBlks=14,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=18,da_board_cnt=15,da_clkrst_cnt=1,da_ps7_cnt=2,synth_mode=Global}";
   attribute HW_HANDOFF : string;
   attribute HW_HANDOFF of UPzynq20_test_design : entity is "UPzynq20_test_design.hwdef";
 end UPzynq20_test_design;
@@ -3719,32 +3725,6 @@ architecture STRUCTURE of UPzynq20_test_design is
     peripheral_aresetn : out STD_LOGIC_VECTOR ( 0 to 0 )
   );
   end component UPzynq20_test_design_rst_ps7_0_50M_0;
-  component UPzynq20_test_design_IP_AXI_PWM_0_0 is
-  port (
-    PWM_OUT : out STD_LOGIC_VECTOR ( 15 downto 0 );
-    s00_axi_awaddr : in STD_LOGIC_VECTOR ( 6 downto 0 );
-    s00_axi_awprot : in STD_LOGIC_VECTOR ( 2 downto 0 );
-    s00_axi_awvalid : in STD_LOGIC;
-    s00_axi_awready : out STD_LOGIC;
-    s00_axi_wdata : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    s00_axi_wstrb : in STD_LOGIC_VECTOR ( 3 downto 0 );
-    s00_axi_wvalid : in STD_LOGIC;
-    s00_axi_wready : out STD_LOGIC;
-    s00_axi_bresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
-    s00_axi_bvalid : out STD_LOGIC;
-    s00_axi_bready : in STD_LOGIC;
-    s00_axi_araddr : in STD_LOGIC_VECTOR ( 6 downto 0 );
-    s00_axi_arprot : in STD_LOGIC_VECTOR ( 2 downto 0 );
-    s00_axi_arvalid : in STD_LOGIC;
-    s00_axi_arready : out STD_LOGIC;
-    s00_axi_rdata : out STD_LOGIC_VECTOR ( 31 downto 0 );
-    s00_axi_rresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
-    s00_axi_rvalid : out STD_LOGIC;
-    s00_axi_rready : in STD_LOGIC;
-    s00_axi_aclk : in STD_LOGIC;
-    s00_axi_aresetn : in STD_LOGIC
-  );
-  end component UPzynq20_test_design_IP_AXI_PWM_0_0;
   component UPzynq20_test_design_axi_gpio_1_0 is
   port (
     s_axi_aclk : in STD_LOGIC;
@@ -3963,6 +3943,33 @@ architecture STRUCTURE of UPzynq20_test_design is
     s00_axi_aresetn : in STD_LOGIC
   );
   end component UPzynq20_test_design_IP_AXI_Encoder_0_0;
+  component UPzynq20_test_design_IP_AXI_PWM_0_0 is
+  port (
+    PWM_interrupt : out STD_LOGIC;
+    PWM_OUT : out STD_LOGIC_VECTOR ( 15 downto 0 );
+    s00_axi_awaddr : in STD_LOGIC_VECTOR ( 6 downto 0 );
+    s00_axi_awprot : in STD_LOGIC_VECTOR ( 2 downto 0 );
+    s00_axi_awvalid : in STD_LOGIC;
+    s00_axi_awready : out STD_LOGIC;
+    s00_axi_wdata : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    s00_axi_wstrb : in STD_LOGIC_VECTOR ( 3 downto 0 );
+    s00_axi_wvalid : in STD_LOGIC;
+    s00_axi_wready : out STD_LOGIC;
+    s00_axi_bresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
+    s00_axi_bvalid : out STD_LOGIC;
+    s00_axi_bready : in STD_LOGIC;
+    s00_axi_araddr : in STD_LOGIC_VECTOR ( 6 downto 0 );
+    s00_axi_arprot : in STD_LOGIC_VECTOR ( 2 downto 0 );
+    s00_axi_arvalid : in STD_LOGIC;
+    s00_axi_arready : out STD_LOGIC;
+    s00_axi_rdata : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    s00_axi_rresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
+    s00_axi_rvalid : out STD_LOGIC;
+    s00_axi_rready : in STD_LOGIC;
+    s00_axi_aclk : in STD_LOGIC;
+    s00_axi_aresetn : in STD_LOGIC
+  );
+  end component UPzynq20_test_design_IP_AXI_PWM_0_0;
   signal Data_in_a0_1 : STD_LOGIC;
   signal Data_in_a1_1 : STD_LOGIC;
   signal Data_in_a2_1 : STD_LOGIC;
@@ -3975,10 +3982,16 @@ architecture STRUCTURE of UPzynq20_test_design is
   signal IP_AXI_ADC_0_not_cs : STD_LOGIC;
   signal IP_AXI_ADC_0_sclk : STD_LOGIC;
   signal IP_AXI_LEDS_0_LEDS : STD_LOGIC;
+  signal IP_AXI_PWM_0_PWM_OUT : STD_LOGIC_VECTOR ( 15 downto 0 );
+  signal S0_0_1 : STD_LOGIC;
+  signal S0_inv_0_1 : STD_LOGIC;
+  signal S1_0_1 : STD_LOGIC;
+  signal S1_inv_0_1 : STD_LOGIC;
+  signal S2_0_1 : STD_LOGIC;
+  signal S2_inv_0_1 : STD_LOGIC;
   signal axi_gpio_0_GPIO_TRI_O : STD_LOGIC_VECTOR ( 15 downto 0 );
   signal axi_gpio_2_GPIO_TRI_I : STD_LOGIC_VECTOR ( 7 downto 0 );
   signal axi_gpio_3_GPIO_TRI_I : STD_LOGIC_VECTOR ( 15 downto 0 );
-  signal axi_gpio_4_GPIO_TRI_O : STD_LOGIC_VECTOR ( 15 downto 0 );
   signal axi_gpio_5_GPIO_TRI_O : STD_LOGIC_VECTOR ( 15 downto 0 );
   signal axi_gpio_6_GPIO_TRI_I : STD_LOGIC_VECTOR ( 15 downto 0 );
   signal axi_gpio_7_GPIO_TRI_I : STD_LOGIC_VECTOR ( 15 downto 0 );
@@ -4257,13 +4270,14 @@ architecture STRUCTURE of UPzynq20_test_design is
   signal ps7_0_axi_periph_M11_AXI_WVALID : STD_LOGIC;
   signal rst_ps7_0_50M_interconnect_aresetn : STD_LOGIC_VECTOR ( 0 to 0 );
   signal rst_ps7_0_50M_peripheral_aresetn : STD_LOGIC_VECTOR ( 0 to 0 );
-  signal NLW_IP_AXI_PWM_0_PWM_OUT_UNCONNECTED : STD_LOGIC_VECTOR ( 15 downto 0 );
+  signal NLW_IP_AXI_PWM_0_PWM_interrupt_UNCONNECTED : STD_LOGIC;
   signal NLW_axi_gpio_0_ip2intc_irpt_UNCONNECTED : STD_LOGIC;
   signal NLW_axi_gpio_1_ip2intc_irpt_UNCONNECTED : STD_LOGIC;
   signal NLW_axi_gpio_1_gpio_io_o_UNCONNECTED : STD_LOGIC_VECTOR ( 7 downto 0 );
   signal NLW_axi_gpio_2_ip2intc_irpt_UNCONNECTED : STD_LOGIC;
   signal NLW_axi_gpio_3_ip2intc_irpt_UNCONNECTED : STD_LOGIC;
   signal NLW_axi_gpio_4_ip2intc_irpt_UNCONNECTED : STD_LOGIC;
+  signal NLW_axi_gpio_4_gpio_io_o_UNCONNECTED : STD_LOGIC_VECTOR ( 15 downto 0 );
   signal NLW_axi_gpio_5_ip2intc_irpt_UNCONNECTED : STD_LOGIC;
   signal NLW_axi_gpio_6_ip2intc_irpt_UNCONNECTED : STD_LOGIC;
   signal NLW_axi_gpio_7_ip2intc_irpt_UNCONNECTED : STD_LOGIC;
@@ -4298,7 +4312,6 @@ architecture STRUCTURE of UPzynq20_test_design is
   attribute X_INTERFACE_INFO of gpio_rtl_0_tri_o : signal is "xilinx.com:interface:gpio:1.0 gpio_rtl_0 TRI_O";
   attribute X_INTERFACE_INFO of gpio_rtl_2_tri_i : signal is "xilinx.com:interface:gpio:1.0 gpio_rtl_2 TRI_I";
   attribute X_INTERFACE_INFO of gpio_rtl_3_tri_i : signal is "xilinx.com:interface:gpio:1.0 gpio_rtl_3 TRI_I";
-  attribute X_INTERFACE_INFO of gpio_rtl_4_tri_o : signal is "xilinx.com:interface:gpio:1.0 gpio_rtl_4 TRI_O";
   attribute X_INTERFACE_INFO of gpio_rtl_5_tri_o : signal is "xilinx.com:interface:gpio:1.0 gpio_rtl_5 TRI_O";
   attribute X_INTERFACE_INFO of gpio_rtl_6_tri_i : signal is "xilinx.com:interface:gpio:1.0 gpio_rtl_6 TRI_I";
   attribute X_INTERFACE_INFO of gpio_rtl_7_tri_i : signal is "xilinx.com:interface:gpio:1.0 gpio_rtl_7 TRI_I";
@@ -4314,13 +4327,19 @@ begin
   Data_in_b2_1 <= Data_in_b2;
   Data_in_b3_1 <= Data_in_b3;
   LEDS_0 <= IP_AXI_LEDS_0_LEDS;
+  PWM_OUT_0(15 downto 0) <= IP_AXI_PWM_0_PWM_OUT(15 downto 0);
+  S0_0_1 <= S0;
+  S0_inv_0_1 <= S0_inv;
+  S1_0_1 <= S1;
+  S1_inv_0_1 <= S1_inv;
+  S2_0_1 <= S2;
+  S2_inv_0_1 <= S2_inv;
   SCLK <= IP_AXI_ADC_0_sclk;
   axi_gpio_2_GPIO_TRI_I(7 downto 0) <= gpio_rtl_2_tri_i(7 downto 0);
   axi_gpio_3_GPIO_TRI_I(15 downto 0) <= gpio_rtl_3_tri_i(15 downto 0);
   axi_gpio_6_GPIO_TRI_I(15 downto 0) <= gpio_rtl_6_tri_i(15 downto 0);
   axi_gpio_7_GPIO_TRI_I(15 downto 0) <= gpio_rtl_7_tri_i(15 downto 0);
   gpio_rtl_0_tri_o(15 downto 0) <= axi_gpio_0_GPIO_TRI_O(15 downto 0);
-  gpio_rtl_4_tri_o(15 downto 0) <= axi_gpio_4_GPIO_TRI_O(15 downto 0);
   gpio_rtl_5_tri_o(15 downto 0) <= axi_gpio_5_GPIO_TRI_O(15 downto 0);
 IP_AXI_ADC_0: component UPzynq20_test_design_IP_AXI_ADC_0_0
      port map (
@@ -4359,12 +4378,12 @@ IP_AXI_ADC_0: component UPzynq20_test_design_IP_AXI_ADC_0_0
     );
 IP_AXI_Encoder_0: component UPzynq20_test_design_IP_AXI_Encoder_0_0
      port map (
-      S0 => '0',
-      S0_inv => '0',
-      S1 => '0',
-      S1_inv => '0',
-      S2 => '0',
-      S2_inv => '0',
+      S0 => S0_0_1,
+      S0_inv => S0_inv_0_1,
+      S1 => S1_0_1,
+      S1_inv => S1_inv_0_1,
+      S2 => S2_0_1,
+      S2_inv => S2_inv_0_1,
       s00_axi_aclk => processing_system7_0_FCLK_CLK0,
       s00_axi_araddr(4 downto 0) => ps7_0_axi_periph_M11_AXI_ARADDR(4 downto 0),
       s00_axi_aresetn => rst_ps7_0_50M_peripheral_aresetn(0),
@@ -4414,7 +4433,8 @@ IP_AXI_LEDS_0: component UPzynq20_test_design_IP_AXI_LEDS_0_0
     );
 IP_AXI_PWM_0: component UPzynq20_test_design_IP_AXI_PWM_0_0
      port map (
-      PWM_OUT(15 downto 0) => NLW_IP_AXI_PWM_0_PWM_OUT_UNCONNECTED(15 downto 0),
+      PWM_OUT(15 downto 0) => IP_AXI_PWM_0_PWM_OUT(15 downto 0),
+      PWM_interrupt => NLW_IP_AXI_PWM_0_PWM_interrupt_UNCONNECTED,
       s00_axi_aclk => processing_system7_0_FCLK_CLK0,
       s00_axi_araddr(6 downto 0) => ps7_0_axi_periph_M06_AXI_ARADDR(6 downto 0),
       s00_axi_aresetn => rst_ps7_0_50M_peripheral_aresetn(0),
@@ -4535,7 +4555,7 @@ axi_gpio_3: component UPzynq20_test_design_axi_gpio_3_0
     );
 axi_gpio_4: component UPzynq20_test_design_axi_gpio_3_1
      port map (
-      gpio_io_o(15 downto 0) => axi_gpio_4_GPIO_TRI_O(15 downto 0),
+      gpio_io_o(15 downto 0) => NLW_axi_gpio_4_gpio_io_o_UNCONNECTED(15 downto 0),
       ip2intc_irpt => NLW_axi_gpio_4_ip2intc_irpt_UNCONNECTED,
       s_axi_aclk => processing_system7_0_FCLK_CLK0,
       s_axi_araddr(8 downto 0) => ps7_0_axi_periph_M07_AXI_ARADDR(8 downto 0),

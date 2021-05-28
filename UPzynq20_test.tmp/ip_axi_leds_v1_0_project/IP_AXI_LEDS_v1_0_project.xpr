@@ -6,7 +6,7 @@
 <Project Version="7" Minor="40" Path="d:/gitea/upzynq20_test/upzynq20_test.tmp/ip_axi_leds_v1_0_project/IP_AXI_LEDS_v1_0_project.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
-    <Option Name="Id" Val="bfcb661f1fad4ba1bd09290669bdade8"/>
+    <Option Name="Id" Val="955d0408595e421b979e85a8aa1c6117"/>
     <Option Name="Part" Val="xc7z020clg484-3"/>
     <Option Name="CompiledLibDir" Val="$PCACHEDIR/compile_simlib"/>
     <Option Name="CompiledLibDirXSim" Val=""/>
@@ -23,9 +23,7 @@
     <Option Name="ActiveSimSet" Val="sim_1"/>
     <Option Name="DefaultLib" Val="xil_defaultlib"/>
     <Option Name="ProjectType" Val="Default"/>
-    <Option Name="IPRepoPath" Val="$PPRDIR/../../../../GITEA/UPzynq20_test/IP/IP_AXI_ADC/IP_AXI_ADC_1.0"/>
-    <Option Name="IPRepoPath" Val="$PPRDIR/../../../../GITEA/UPzynq20_test/IP/IP_AXI_LEDS/IP_AXI_LEDS_1.0"/>
-    <Option Name="IPRepoPath" Val="$PPRDIR/../../../../GITEA/UPzynq20_test/IP/IP_AXI_PWM/IP_AXI_PWM_1.0"/>
+    <Option Name="IPRepoPath" Val="$PPRDIR/../../../../GITEA/UPzynq20_test/IP"/>
     <Option Name="IPOutputRepo" Val="$PCACHEDIR/ip"/>
     <Option Name="IPCachePermission" Val="read"/>
     <Option Name="IPCachePermission" Val="write"/>

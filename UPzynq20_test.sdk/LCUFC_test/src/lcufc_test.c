@@ -69,8 +69,11 @@
 #include "test_functions.h"
 #include "module_uart.h"
 
-int Count;
-int Channel;
+int Count;						// общий счеткчик
+int Channel_0;					// счетчик аналоговых сигналов для каналов 0-15
+int Channel_1;					// счетчик аналоговых сигналов для каналов 16-31
+int Channel_2 = 0;					// счетчик регистров ШИМ
+u32 PWM = 0;
 int j = 4;
 u32 DataBuf;
 u32 DataBufPrev;
@@ -91,7 +94,7 @@ int main(void) {
 
 	while (1) {
 
-		if (Count < 100000000) {
+		if (Count < 10000000) {
 			Count++;
 		} else {
 			if (latch) {
@@ -112,10 +115,64 @@ int main(void) {
 //			bild_send_buffer(8, GroupsRegisters);
 
 			read_in_all();
-			bild_send_buffer(112+Channel*2, Xil_In32(XPAR_IP_AXI_ADC_0_S00_AXI_BASEADDR + (Channel*j)));
-						if (Channel<15) {
-										Channel++;
-									} else { Channel = 0; }
+			bild_send_buffer(112+Channel_0*2, Xil_In32(XPAR_IP_AXI_ADC_0_S00_AXI_BASEADDR + (Channel_0*j)));
+			if (Channel_0<15) Channel_0++; else Channel_0 = 0;
+//			bild_send_buffer(144+Channel_1*2, Xil_In32(XPAR_IP_AXI_ENCODER_0_S00_AXI_BASEADDR + (Channel_1*j)));
+//			if (Channel_1<5) Channel_1++; else Channel_1 = 0;
+			bild_send_buffer(144+Channel_1*2, Xil_In32(XPAR_IP_AXI_ENCODER_0_S00_AXI_BASEADDR + (Channel_1*j)));
+//			bild_send_buffer(154+Channel_1*2, (Xil_In32(XPAR_IP_AXI_ENCODER_0_S00_AXI_BASEADDR + (Channel_1*j)))/65534);
+			if (Channel_1<7) Channel_1++; else Channel_1 = 0;
+
+
+			Xil_Out32(XPAR_IP_AXI_PWM_0_S00_AXI_BASEADDR + (Channel_2*j), 0x00FFFFFF);
+			Channel_2++;
+			Xil_Out32(XPAR_IP_AXI_PWM_0_S00_AXI_BASEADDR + (Channel_2*j), 0x00EFFFFF);
+			Channel_2++;
+			Xil_Out32(XPAR_IP_AXI_PWM_0_S00_AXI_BASEADDR + (Channel_2*j), 0x00DFFFFF);
+			Channel_2++;
+			Xil_Out32(XPAR_IP_AXI_PWM_0_S00_AXI_BASEADDR + (Channel_2*j), 0x00CFFFFF);
+			Channel_2++;
+			Xil_Out32(XPAR_IP_AXI_PWM_0_S00_AXI_BASEADDR + (Channel_2*j), 0x00BFFFFF);
+			Channel_2++;
+			Xil_Out32(XPAR_IP_AXI_PWM_0_S00_AXI_BASEADDR + (Channel_2*j), 0x00AFFFFF);
+			Channel_2++;
+			Xil_Out32(XPAR_IP_AXI_PWM_0_S00_AXI_BASEADDR + (Channel_2*j), 0x009FFFFF);
+			Channel_2++;
+			Xil_Out32(XPAR_IP_AXI_PWM_0_S00_AXI_BASEADDR + (Channel_2*j), 0x008FFFFF);
+			Channel_2++;
+
+			Xil_Out32(XPAR_IP_AXI_PWM_0_S00_AXI_BASEADDR + (Channel_2*j), 0x007FFFFF);
+			Channel_2++;
+			Xil_Out32(XPAR_IP_AXI_PWM_0_S00_AXI_BASEADDR + (Channel_2*j), 0x006FFFFF);
+			Channel_2++;
+			Xil_Out32(XPAR_IP_AXI_PWM_0_S00_AXI_BASEADDR + (Channel_2*j), 0x005FFFFF);
+			Channel_2++;
+			Xil_Out32(XPAR_IP_AXI_PWM_0_S00_AXI_BASEADDR + (Channel_2*j), 0x004FFFFF);
+			Channel_2++;
+			Xil_Out32(XPAR_IP_AXI_PWM_0_S00_AXI_BASEADDR + (Channel_2*j), 0x003FFFFF);
+			Channel_2++;
+			Xil_Out32(XPAR_IP_AXI_PWM_0_S00_AXI_BASEADDR + (Channel_2*j), 0x002FFFFF);
+			Channel_2++;
+			Xil_Out32(XPAR_IP_AXI_PWM_0_S00_AXI_BASEADDR + (Channel_2*j), 0x001FFFFF);
+			Channel_2++;
+			Xil_Out32(XPAR_IP_AXI_PWM_0_S00_AXI_BASEADDR + (Channel_2*j), 0x000FFFFF);
+			Channel_2++;
+
+			Xil_Out32(XPAR_IP_AXI_PWM_0_S00_AXI_BASEADDR + (Channel_2*j), 0x00000000);
+			Channel_2++;
+			Xil_Out32(XPAR_IP_AXI_PWM_0_S00_AXI_BASEADDR + (Channel_2*j), 0x01000000);
+			Channel_2++;
+			Xil_Out32(XPAR_IP_AXI_PWM_0_S00_AXI_BASEADDR + (Channel_2*j), 0x00000000);
+			Channel_2++;
+			Xil_Out32(XPAR_IP_AXI_PWM_0_S00_AXI_BASEADDR + (Channel_2*j), 0x00000000);
+			Channel_2++;
+			Xil_Out32(XPAR_IP_AXI_PWM_0_S00_AXI_BASEADDR + (Channel_2*j), PWM);
+			Channel_2++;
+			PWM++;
+			Xil_Out32(XPAR_IP_AXI_PWM_0_S00_AXI_BASEADDR + (Channel_2*j), 0xFFFF0000);
+			Channel_2++;
+			Xil_Out32(XPAR_IP_AXI_PWM_0_S00_AXI_BASEADDR + (Channel_2*j), 0x00000001);
+			Channel_2 = 0;
 
 //			bild_send_buffer(22, XGpio_DiscreteRead(&Gpio_6, 1));
 
@@ -129,10 +186,12 @@ int main(void) {
 			if (latch_start==0) bild_send_buffer(TEST_BUFFER_SIZE-3, 1); else bild_send_buffer(TEST_BUFFER_SIZE-3, 0);
 			latch_start = 1;
 			terminal_uart_send();
+			terminal_uart_recv();
+			update_from_terminal_all(TEST_BUFFER_SIZE);
 
-			if (terminal_uart_recv()==0) {
-				update_from_terminal_all(TEST_BUFFER_SIZE);
-			}
+//			if (terminal_uart_recv()==0) {
+//				update_from_terminal_all(TEST_BUFFER_SIZE);
+//			}
 
 			//write_out(update_from_terminal(26));
 

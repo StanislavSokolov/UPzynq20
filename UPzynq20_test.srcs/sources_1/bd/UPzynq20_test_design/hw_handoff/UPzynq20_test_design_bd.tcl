@@ -165,8 +165,6 @@ proc create_root_design { parentCell } {
 
   set gpio_rtl_3 [ create_bd_intf_port -mode Master -vlnv xilinx.com:interface:gpio_rtl:1.0 gpio_rtl_3 ]
 
-  set gpio_rtl_4 [ create_bd_intf_port -mode Master -vlnv xilinx.com:interface:gpio_rtl:1.0 gpio_rtl_4 ]
-
   set gpio_rtl_5 [ create_bd_intf_port -mode Master -vlnv xilinx.com:interface:gpio_rtl:1.0 gpio_rtl_5 ]
 
   set gpio_rtl_6 [ create_bd_intf_port -mode Master -vlnv xilinx.com:interface:gpio_rtl:1.0 gpio_rtl_6 ]
@@ -186,6 +184,13 @@ proc create_root_design { parentCell } {
   set Data_in_b2 [ create_bd_port -dir I Data_in_b2 ]
   set Data_in_b3 [ create_bd_port -dir I Data_in_b3 ]
   set LEDS_0 [ create_bd_port -dir O LEDS_0 ]
+  set PWM_OUT_0 [ create_bd_port -dir O -from 15 -to 0 PWM_OUT_0 ]
+  set S0 [ create_bd_port -dir I S0 ]
+  set S0_inv [ create_bd_port -dir I S0_inv ]
+  set S1 [ create_bd_port -dir I S1 ]
+  set S1_inv [ create_bd_port -dir I S1_inv ]
+  set S2 [ create_bd_port -dir I S2 ]
+  set S2_inv [ create_bd_port -dir I S2_inv ]
   set SCLK [ create_bd_port -dir O SCLK ]
 
   # Create instance: IP_AXI_ADC_0, and set properties
@@ -198,7 +203,7 @@ proc create_root_design { parentCell } {
   set IP_AXI_LEDS_0 [ create_bd_cell -type ip -vlnv ssevendenergy.com:user:IP_AXI_LEDS:1.0 IP_AXI_LEDS_0 ]
 
   # Create instance: IP_AXI_PWM_0, and set properties
-  set IP_AXI_PWM_0 [ create_bd_cell -type ip -vlnv ssevendenergy.com:user:IP_AXI_PWM:1.0 IP_AXI_PWM_0 ]
+  set IP_AXI_PWM_0 [ create_bd_cell -type ip -vlnv setcorp:user:IP_AXI_PWM:1.0 IP_AXI_PWM_0 ]
 
   # Create instance: axi_gpio_0, and set properties
   set axi_gpio_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_gpio:2.0 axi_gpio_0 ]
@@ -656,7 +661,6 @@ proc create_root_design { parentCell } {
   connect_bd_intf_net -intf_net axi_gpio_0_GPIO [get_bd_intf_ports gpio_rtl_0] [get_bd_intf_pins axi_gpio_0/GPIO]
   connect_bd_intf_net -intf_net axi_gpio_2_GPIO [get_bd_intf_ports gpio_rtl_2] [get_bd_intf_pins axi_gpio_2/GPIO]
   connect_bd_intf_net -intf_net axi_gpio_3_GPIO [get_bd_intf_ports gpio_rtl_3] [get_bd_intf_pins axi_gpio_3/GPIO]
-  connect_bd_intf_net -intf_net axi_gpio_4_GPIO [get_bd_intf_ports gpio_rtl_4] [get_bd_intf_pins axi_gpio_4/GPIO]
   connect_bd_intf_net -intf_net axi_gpio_5_GPIO [get_bd_intf_ports gpio_rtl_5] [get_bd_intf_pins axi_gpio_5/GPIO]
   connect_bd_intf_net -intf_net axi_gpio_6_GPIO [get_bd_intf_ports gpio_rtl_6] [get_bd_intf_pins axi_gpio_6/GPIO]
   connect_bd_intf_net -intf_net axi_gpio_7_GPIO [get_bd_intf_ports gpio_rtl_7] [get_bd_intf_pins axi_gpio_7/GPIO]
@@ -689,6 +693,13 @@ proc create_root_design { parentCell } {
   connect_bd_net -net IP_AXI_ADC_0_not_cs [get_bd_ports CS] [get_bd_pins IP_AXI_ADC_0/not_cs]
   connect_bd_net -net IP_AXI_ADC_0_sclk [get_bd_ports SCLK] [get_bd_pins IP_AXI_ADC_0/sclk]
   connect_bd_net -net IP_AXI_LEDS_0_LEDS [get_bd_ports LEDS_0] [get_bd_pins IP_AXI_LEDS_0/LEDS]
+  connect_bd_net -net IP_AXI_PWM_0_PWM_OUT [get_bd_ports PWM_OUT_0] [get_bd_pins IP_AXI_PWM_0/PWM_OUT]
+  connect_bd_net -net S0_0_1 [get_bd_ports S0] [get_bd_pins IP_AXI_Encoder_0/S0]
+  connect_bd_net -net S0_inv_0_1 [get_bd_ports S0_inv] [get_bd_pins IP_AXI_Encoder_0/S0_inv]
+  connect_bd_net -net S1_0_1 [get_bd_ports S1] [get_bd_pins IP_AXI_Encoder_0/S1]
+  connect_bd_net -net S1_inv_0_1 [get_bd_ports S1_inv] [get_bd_pins IP_AXI_Encoder_0/S1_inv]
+  connect_bd_net -net S2_0_1 [get_bd_ports S2] [get_bd_pins IP_AXI_Encoder_0/S2]
+  connect_bd_net -net S2_inv_0_1 [get_bd_ports S2_inv] [get_bd_pins IP_AXI_Encoder_0/S2_inv]
   connect_bd_net -net processing_system7_0_FCLK_CLK0 [get_bd_pins IP_AXI_ADC_0/s00_axi_aclk] [get_bd_pins IP_AXI_Encoder_0/s00_axi_aclk] [get_bd_pins IP_AXI_LEDS_0/s00_axi_aclk] [get_bd_pins IP_AXI_PWM_0/s00_axi_aclk] [get_bd_pins axi_gpio_0/s_axi_aclk] [get_bd_pins axi_gpio_1/s_axi_aclk] [get_bd_pins axi_gpio_2/s_axi_aclk] [get_bd_pins axi_gpio_3/s_axi_aclk] [get_bd_pins axi_gpio_4/s_axi_aclk] [get_bd_pins axi_gpio_5/s_axi_aclk] [get_bd_pins axi_gpio_6/s_axi_aclk] [get_bd_pins axi_gpio_7/s_axi_aclk] [get_bd_pins processing_system7_0/FCLK_CLK0] [get_bd_pins processing_system7_0/M_AXI_GP0_ACLK] [get_bd_pins ps7_0_axi_periph/ACLK] [get_bd_pins ps7_0_axi_periph/M00_ACLK] [get_bd_pins ps7_0_axi_periph/M01_ACLK] [get_bd_pins ps7_0_axi_periph/M02_ACLK] [get_bd_pins ps7_0_axi_periph/M03_ACLK] [get_bd_pins ps7_0_axi_periph/M04_ACLK] [get_bd_pins ps7_0_axi_periph/M05_ACLK] [get_bd_pins ps7_0_axi_periph/M06_ACLK] [get_bd_pins ps7_0_axi_periph/M07_ACLK] [get_bd_pins ps7_0_axi_periph/M08_ACLK] [get_bd_pins ps7_0_axi_periph/M09_ACLK] [get_bd_pins ps7_0_axi_periph/M10_ACLK] [get_bd_pins ps7_0_axi_periph/M11_ACLK] [get_bd_pins ps7_0_axi_periph/S00_ACLK] [get_bd_pins rst_ps7_0_50M/slowest_sync_clk]
   connect_bd_net -net processing_system7_0_FCLK_RESET0_N [get_bd_pins processing_system7_0/FCLK_RESET0_N] [get_bd_pins rst_ps7_0_50M/ext_reset_in]
   connect_bd_net -net rst_ps7_0_50M_interconnect_aresetn [get_bd_pins ps7_0_axi_periph/ARESETN] [get_bd_pins rst_ps7_0_50M/interconnect_aresetn]

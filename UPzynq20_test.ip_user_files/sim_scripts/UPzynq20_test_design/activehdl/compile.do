@@ -114,19 +114,22 @@ vcom -work proc_sys_reset_v5_0_13 -93 \
 
 vcom -work xil_defaultlib -93 \
 "../../../bd/UPzynq20_test_design/ip/UPzynq20_test_design_rst_ps7_0_50M_0_1/sim/UPzynq20_test_design_rst_ps7_0_50M_0.vhd" \
-"../../../bd/UPzynq20_test_design/ipshared/cc52/hdl/IP_AXI_PWM_v1_0_S00_AXI.vhd" \
-"../../../bd/UPzynq20_test_design/ipshared/cc52/hdl/IP_AXI_PWM_v1_0.vhd" \
-"../../../bd/UPzynq20_test_design/ip/UPzynq20_test_design_IP_AXI_PWM_0_0/sim/UPzynq20_test_design_IP_AXI_PWM_0_0.vhd" \
 "../../../bd/UPzynq20_test_design/ipshared/afe0/hdl/IP_AXI_LEDS_v1_0_S00_AXI.vhd" \
 "../../../bd/UPzynq20_test_design/ipshared/afe0/hdl/IP_AXI_LEDS_v1_0.vhd" \
 "../../../bd/UPzynq20_test_design/ip/UPzynq20_test_design_IP_AXI_LEDS_0_0/sim/UPzynq20_test_design_IP_AXI_LEDS_0_0.vhd" \
-"../../../bd/UPzynq20_test_design/ipshared/03ac/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd" \
-"../../../bd/UPzynq20_test_design/ipshared/03ac/hdl/IP_AXI_ADC_v1_0.vhd" \
+"../../../bd/UPzynq20_test_design/ipshared/f556/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd" \
+"../../../bd/UPzynq20_test_design/ipshared/f556/hdl/IP_AXI_ADC_v1_0.vhd" \
 "../../../bd/UPzynq20_test_design/ip/UPzynq20_test_design_IP_AXI_ADC_0_0/sim/UPzynq20_test_design_IP_AXI_ADC_0_0.vhd" \
 "../../../bd/UPzynq20_test_design/ip/UPzynq20_test_design_axi_gpio_3_1/sim/UPzynq20_test_design_axi_gpio_3_1.vhd" \
 "../../../bd/UPzynq20_test_design/ip/UPzynq20_test_design_axi_gpio_4_0/sim/UPzynq20_test_design_axi_gpio_4_0.vhd" \
 "../../../bd/UPzynq20_test_design/ip/UPzynq20_test_design_axi_gpio_4_1/sim/UPzynq20_test_design_axi_gpio_4_1.vhd" \
 "../../../bd/UPzynq20_test_design/ip/UPzynq20_test_design_axi_gpio_6_0/sim/UPzynq20_test_design_axi_gpio_6_0.vhd" \
+"../../../bd/UPzynq20_test_design/ipshared/317c/hdl/IP_AXI_Encoder_v1_0_S00_AXI.vhd" \
+"../../../bd/UPzynq20_test_design/ipshared/317c/hdl/IP_AXI_Encoder_v1_0.vhd" \
+"../../../bd/UPzynq20_test_design/ip/UPzynq20_test_design_IP_AXI_Encoder_0_0/sim/UPzynq20_test_design_IP_AXI_Encoder_0_0.vhd" \
+"../../../bd/UPzynq20_test_design/ipshared/95fa/hdl/IP_AXI_PWM_v1_0_S00_AXI.vhd" \
+"../../../bd/UPzynq20_test_design/ipshared/95fa/hdl/IP_AXI_PWM_v1_0.vhd" \
+"../../../bd/UPzynq20_test_design/ip/UPzynq20_test_design_IP_AXI_PWM_0_0/sim/UPzynq20_test_design_IP_AXI_PWM_0_0.vhd" \
 
 vlog -work axi_protocol_converter_v2_1_19  -v2k5 "+incdir+../../../../UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/ec67/hdl" "+incdir+../../../../UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/8c62/hdl" "+incdir+../../../../UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ip/UPzynq20_test_design_processing_system7_0_0_1" "+incdir+D:/Xilinx/Vivado/2019.1/data/xilinx_vip/include" \
 "../../../../UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v" \

@@ -30,9 +30,6 @@ set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==UPzynq20_test_d
 # IP: bd/UPzynq20_test_design/ip/UPzynq20_test_design_rst_ps7_0_50M_0_1/UPzynq20_test_design_rst_ps7_0_50M_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==UPzynq20_test_design_rst_ps7_0_50M_0 || ORIG_REF_NAME==UPzynq20_test_design_rst_ps7_0_50M_0} -quiet] -quiet
 
-# IP: bd/UPzynq20_test_design/ip/UPzynq20_test_design_IP_AXI_PWM_0_0/UPzynq20_test_design_IP_AXI_PWM_0_0.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==UPzynq20_test_design_IP_AXI_PWM_0_0 || ORIG_REF_NAME==UPzynq20_test_design_IP_AXI_PWM_0_0} -quiet] -quiet
-
 # IP: bd/UPzynq20_test_design/ip/UPzynq20_test_design_IP_AXI_LEDS_0_0/UPzynq20_test_design_IP_AXI_LEDS_0_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==UPzynq20_test_design_IP_AXI_LEDS_0_0 || ORIG_REF_NAME==UPzynq20_test_design_IP_AXI_LEDS_0_0} -quiet] -quiet
 
@@ -53,6 +50,9 @@ set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==UPzynq20_test_d
 
 # IP: bd/UPzynq20_test_design/ip/UPzynq20_test_design_IP_AXI_Encoder_0_0/UPzynq20_test_design_IP_AXI_Encoder_0_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==UPzynq20_test_design_IP_AXI_Encoder_0_0 || ORIG_REF_NAME==UPzynq20_test_design_IP_AXI_Encoder_0_0} -quiet] -quiet
+
+# IP: bd/UPzynq20_test_design/ip/UPzynq20_test_design_IP_AXI_PWM_0_0/UPzynq20_test_design_IP_AXI_PWM_0_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==UPzynq20_test_design_IP_AXI_PWM_0_0 || ORIG_REF_NAME==UPzynq20_test_design_IP_AXI_PWM_0_0} -quiet] -quiet
 
 # IP: bd/UPzynq20_test_design/ip/UPzynq20_test_design_auto_pc_0/UPzynq20_test_design_auto_pc_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==UPzynq20_test_design_auto_pc_0 || ORIG_REF_NAME==UPzynq20_test_design_auto_pc_0} -quiet] -quiet
