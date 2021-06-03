@@ -53,6 +53,17 @@
 
 /******************************************************************/
 
+/* Definitions for driver IP_AXI_INVERTER */
+#define XPAR_IP_AXI_INVERTER_NUM_INSTANCES 1
+
+/* Definitions for peripheral IP_AXI_INVERTER_0 */
+#define XPAR_IP_AXI_INVERTER_0_DEVICE_ID 0
+#define XPAR_IP_AXI_INVERTER_0_S00_AXI_BASEADDR 0x43C50000
+#define XPAR_IP_AXI_INVERTER_0_S00_AXI_HIGHADDR 0x43C5FFFF
+
+
+/******************************************************************/
+
 /* Definitions for driver IP_AXI_LEDS */
 #define XPAR_IP_AXI_LEDS_NUM_INSTANCES 1
 
@@ -60,6 +71,17 @@
 #define XPAR_IP_AXI_LEDS_0_DEVICE_ID 0
 #define XPAR_IP_AXI_LEDS_0_S00_AXI_BASEADDR 0x43C00000
 #define XPAR_IP_AXI_LEDS_0_S00_AXI_HIGHADDR 0x43C0FFFF
+
+
+/******************************************************************/
+
+/* Definitions for driver IP_AXI_OPTICALBUS */
+#define XPAR_IP_AXI_OPTICALBUS_NUM_INSTANCES 1
+
+/* Definitions for peripheral IP_AXI_OPTICALBUS_0 */
+#define XPAR_IP_AXI_OPTICALBUS_0_DEVICE_ID 0
+#define XPAR_IP_AXI_OPTICALBUS_0_S00_AXI_BASEADDR 0x43C40000
+#define XPAR_IP_AXI_OPTICALBUS_0_S00_AXI_HIGHADDR 0x43C4FFFF
 
 
 /******************************************************************/
@@ -454,6 +476,39 @@
 #define XPAR_SCUWDT_0_DEVICE_ID XPAR_PS7_SCUWDT_0_DEVICE_ID
 #define XPAR_SCUWDT_0_BASEADDR 0xF8F00620
 #define XPAR_SCUWDT_0_HIGHADDR 0xF8F006FF
+
+
+/******************************************************************/
+
+/* Definitions for driver SDPS */
+#define XPAR_XSDPS_NUM_INSTANCES 1
+
+/* Definitions for peripheral PS7_SD_0 */
+#define XPAR_PS7_SD_0_DEVICE_ID 0
+#define XPAR_PS7_SD_0_BASEADDR 0xE0100000
+#define XPAR_PS7_SD_0_HIGHADDR 0xE0100FFF
+#define XPAR_PS7_SD_0_SDIO_CLK_FREQ_HZ 100000000
+#define XPAR_PS7_SD_0_HAS_CD 0
+#define XPAR_PS7_SD_0_HAS_WP 0
+#define XPAR_PS7_SD_0_BUS_WIDTH 0
+#define XPAR_PS7_SD_0_MIO_BANK 0
+#define XPAR_PS7_SD_0_HAS_EMIO 0
+
+
+/******************************************************************/
+
+#define XPAR_PS7_SD_0_IS_CACHE_COHERENT 0
+/* Canonical definitions for peripheral PS7_SD_0 */
+#define XPAR_XSDPS_0_DEVICE_ID XPAR_PS7_SD_0_DEVICE_ID
+#define XPAR_XSDPS_0_BASEADDR 0xE0100000
+#define XPAR_XSDPS_0_HIGHADDR 0xE0100FFF
+#define XPAR_XSDPS_0_SDIO_CLK_FREQ_HZ 100000000
+#define XPAR_XSDPS_0_HAS_CD 0
+#define XPAR_XSDPS_0_HAS_WP 0
+#define XPAR_XSDPS_0_BUS_WIDTH 0
+#define XPAR_XSDPS_0_MIO_BANK 0
+#define XPAR_XSDPS_0_HAS_EMIO 0
+#define XPAR_XSDPS_0_IS_CACHE_COHERENT 0
 
 
 /******************************************************************/

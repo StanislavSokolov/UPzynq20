@@ -1,0 +1,687 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<spirit:component xmlns:xilinx="http://www.xilinx.com" xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <spirit:vendor>ssevendenergy.com</spirit:vendor>
+  <spirit:library>customized_ip</spirit:library>
+  <spirit:name>UPzynq20_test_design_Inverter_3lvl_wrapper_0_0</spirit:name>
+  <spirit:version>1.0</spirit:version>
+  <spirit:busInterfaces>
+    <spirit:busInterface>
+      <spirit:name>reset_0</spirit:name>
+      <spirit:busType spirit:vendor="xilinx.com" spirit:library="signal" spirit:name="reset" spirit:version="1.0"/>
+      <spirit:abstractionType spirit:vendor="xilinx.com" spirit:library="signal" spirit:name="reset_rtl" spirit:version="1.0"/>
+      <spirit:slave/>
+      <spirit:portMaps>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>RST</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>reset_0</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+      </spirit:portMaps>
+      <spirit:parameters>
+        <spirit:parameter>
+          <spirit:name>POLARITY</spirit:name>
+          <spirit:value spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.RESET_0.POLARITY">ACTIVE_LOW</spirit:value>
+          <spirit:vendorExtensions>
+            <xilinx:parameterInfo>
+              <xilinx:parameterUsage>none</xilinx:parameterUsage>
+            </xilinx:parameterInfo>
+          </spirit:vendorExtensions>
+        </spirit:parameter>
+        <spirit:parameter>
+          <spirit:name>INSERT_VIP</spirit:name>
+          <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="BUSIFPARAM_VALUE.RESET_0.INSERT_VIP">0</spirit:value>
+          <spirit:vendorExtensions>
+            <xilinx:parameterInfo>
+              <xilinx:parameterUsage>simulation.rtl</xilinx:parameterUsage>
+            </xilinx:parameterInfo>
+          </spirit:vendorExtensions>
+        </spirit:parameter>
+      </spirit:parameters>
+    </spirit:busInterface>
+  </spirit:busInterfaces>
+  <spirit:model>
+    <spirit:views>
+      <spirit:view>
+        <spirit:name>xilinx_anylanguagesynthesis</spirit:name>
+        <spirit:displayName>Synthesis</spirit:displayName>
+        <spirit:envIdentifier>:vivado.xilinx.com:synthesis</spirit:envIdentifier>
+        <spirit:modelName>Inverter_3lvl_wrapper</spirit:modelName>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_anylanguagesynthesis_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:parameters>
+          <spirit:parameter>
+            <spirit:name>GENtimestamp</spirit:name>
+            <spirit:value>Wed Jun 02 07:04:32 UTC 2021</spirit:value>
+          </spirit:parameter>
+          <spirit:parameter>
+            <spirit:name>outputProductCRC</spirit:name>
+            <spirit:value>9:1cb7e4ea</spirit:value>
+          </spirit:parameter>
+        </spirit:parameters>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>xilinx_synthesisconstraints</spirit:name>
+        <spirit:displayName>Synthesis Constraints</spirit:displayName>
+        <spirit:envIdentifier>:vivado.xilinx.com:synthesis.constraints</spirit:envIdentifier>
+        <spirit:parameters>
+          <spirit:parameter>
+            <spirit:name>outputProductCRC</spirit:name>
+            <spirit:value>9:1cb7e4ea</spirit:value>
+          </spirit:parameter>
+        </spirit:parameters>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>xilinx_vhdlsynthesiswrapper</spirit:name>
+        <spirit:displayName>VHDL Synthesis Wrapper</spirit:displayName>
+        <spirit:envIdentifier>vhdlSource:vivado.xilinx.com:synthesis.wrapper</spirit:envIdentifier>
+        <spirit:language>vhdl</spirit:language>
+        <spirit:modelName>UPzynq20_test_design_Inverter_3lvl_wrapper_0_0</spirit:modelName>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_vhdlsynthesiswrapper_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:parameters>
+          <spirit:parameter>
+            <spirit:name>GENtimestamp</spirit:name>
+            <spirit:value>Wed Jun 02 07:04:32 UTC 2021</spirit:value>
+          </spirit:parameter>
+          <spirit:parameter>
+            <spirit:name>outputProductCRC</spirit:name>
+            <spirit:value>9:1cb7e4ea</spirit:value>
+          </spirit:parameter>
+        </spirit:parameters>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>xilinx_anylanguagebehavioralsimulation</spirit:name>
+        <spirit:displayName>Simulation</spirit:displayName>
+        <spirit:envIdentifier>:vivado.xilinx.com:simulation</spirit:envIdentifier>
+        <spirit:modelName>Inverter_3lvl_wrapper</spirit:modelName>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_anylanguagebehavioralsimulation_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:parameters>
+          <spirit:parameter>
+            <spirit:name>GENtimestamp</spirit:name>
+            <spirit:value>Wed Jun 02 07:04:32 UTC 2021</spirit:value>
+          </spirit:parameter>
+          <spirit:parameter>
+            <spirit:name>outputProductCRC</spirit:name>
+            <spirit:value>9:92f71202</spirit:value>
+          </spirit:parameter>
+        </spirit:parameters>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>xilinx_vhdlsimulationwrapper</spirit:name>
+        <spirit:displayName>VHDL Simulation Wrapper</spirit:displayName>
+        <spirit:envIdentifier>vhdlSource:vivado.xilinx.com:simulation.wrapper</spirit:envIdentifier>
+        <spirit:language>vhdl</spirit:language>
+        <spirit:modelName>UPzynq20_test_design_Inverter_3lvl_wrapper_0_0</spirit:modelName>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_vhdlsimulationwrapper_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:parameters>
+          <spirit:parameter>
+            <spirit:name>GENtimestamp</spirit:name>
+            <spirit:value>Wed Jun 02 07:04:32 UTC 2021</spirit:value>
+          </spirit:parameter>
+          <spirit:parameter>
+            <spirit:name>outputProductCRC</spirit:name>
+            <spirit:value>9:92f71202</spirit:value>
+          </spirit:parameter>
+        </spirit:parameters>
+      </spirit:view>
+    </spirit:views>
+    <spirit:ports>
+      <spirit:port>
+        <spirit:name>BreakingEnable</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">15</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>STD_LOGIC_VECTOR</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>ChGroup0</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">15</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>STD_LOGIC_VECTOR</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>ChGroup1</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">15</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>STD_LOGIC_VECTOR</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>Clk_0</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>STD_LOGIC</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>MaskChGroup0</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">15</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>STD_LOGIC_VECTOR</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>MaskChGroup1</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">15</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>STD_LOGIC_VECTOR</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>MaskMinTimeError</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">15</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>STD_LOGIC_VECTOR</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>MinTimeError</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">15</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>STD_LOGIC_VECTOR</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>PWM</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">15</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>STD_LOGIC_VECTOR</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>deadTime_0</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">31</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>STD_LOGIC_VECTOR</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>er_0</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>STD_LOGIC</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>minTime_0</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">31</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>STD_LOGIC_VECTOR</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>minTime_En_0</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>STD_LOGIC</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>ready_0</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>STD_LOGIC</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>reset_0</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>STD_LOGIC</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+    </spirit:ports>
+  </spirit:model>
+  <spirit:fileSets>
+    <spirit:fileSet>
+      <spirit:name>xilinx_anylanguagesynthesis_view_fileset</spirit:name>
+      <spirit:file>
+        <spirit:name>ip/Inverter_3lvl_P0N_3lvl_0_2/Inverter_3lvl_P0N_3lvl_0_2.xci</spirit:name>
+        <spirit:userFileType>xci</spirit:userFileType>
+        <spirit:userFileType>CELL_NAME_P0N_3lvl_4</spirit:userFileType>
+        <spirit:define>
+          <spirit:name>processing_order</spirit:name>
+          <spirit:value>early</spirit:value>
+        </spirit:define>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>ip/Inverter_3lvl_P0N_3lvl_0_0/Inverter_3lvl_P0N_3lvl_0_0.xci</spirit:name>
+        <spirit:userFileType>xci</spirit:userFileType>
+        <spirit:userFileType>CELL_NAME_P0N_3lvl_0</spirit:userFileType>
+        <spirit:define>
+          <spirit:name>processing_order</spirit:name>
+          <spirit:value>early</spirit:value>
+        </spirit:define>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>ip/Inverter_3lvl_P0N_3lvl_0_1/Inverter_3lvl_P0N_3lvl_0_1.xci</spirit:name>
+        <spirit:userFileType>xci</spirit:userFileType>
+        <spirit:userFileType>CELL_NAME_P0N_3lvl_3</spirit:userFileType>
+        <spirit:define>
+          <spirit:name>processing_order</spirit:name>
+          <spirit:value>early</spirit:value>
+        </spirit:define>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>ip/Inverter_3lvl_P0N_3lvl_0_4/Inverter_3lvl_P0N_3lvl_0_4.xci</spirit:name>
+        <spirit:userFileType>xci</spirit:userFileType>
+        <spirit:userFileType>CELL_NAME_P0N_3lvl_6</spirit:userFileType>
+        <spirit:define>
+          <spirit:name>processing_order</spirit:name>
+          <spirit:value>early</spirit:value>
+        </spirit:define>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>ip/Inverter_3lvl_P0N_3lvl_0_5/Inverter_3lvl_P0N_3lvl_0_5.xci</spirit:name>
+        <spirit:userFileType>xci</spirit:userFileType>
+        <spirit:userFileType>CELL_NAME_P0N_3lvl_7</spirit:userFileType>
+        <spirit:define>
+          <spirit:name>processing_order</spirit:name>
+          <spirit:value>early</spirit:value>
+        </spirit:define>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>ip/Inverter_3lvl_P0N_3lvl_0_3/Inverter_3lvl_P0N_3lvl_0_3.xci</spirit:name>
+        <spirit:userFileType>xci</spirit:userFileType>
+        <spirit:userFileType>CELL_NAME_P0N_3lvl_5</spirit:userFileType>
+        <spirit:define>
+          <spirit:name>processing_order</spirit:name>
+          <spirit:value>early</spirit:value>
+        </spirit:define>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>ip/Inverter_3lvl_P0N_3lvl_1_1/Inverter_3lvl_P0N_3lvl_1_1.xci</spirit:name>
+        <spirit:userFileType>xci</spirit:userFileType>
+        <spirit:userFileType>CELL_NAME_P0N_3lvl_2</spirit:userFileType>
+        <spirit:define>
+          <spirit:name>processing_order</spirit:name>
+          <spirit:value>early</spirit:value>
+        </spirit:define>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>ip/Inverter_3lvl_P0N_3lvl_1_0/Inverter_3lvl_P0N_3lvl_1_0.xci</spirit:name>
+        <spirit:userFileType>xci</spirit:userFileType>
+        <spirit:userFileType>CELL_NAME_P0N_3lvl_1</spirit:userFileType>
+        <spirit:define>
+          <spirit:name>processing_order</spirit:name>
+          <spirit:value>early</spirit:value>
+        </spirit:define>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>ip/Inverter_3lvl_BUS_16IN_0_0/Inverter_3lvl_BUS_16IN_0_0.xci</spirit:name>
+        <spirit:userFileType>xci</spirit:userFileType>
+        <spirit:userFileType>CELL_NAME_BUS_16IN_0</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>ip/Inverter_3lvl_BUS_16OUT_0_0/Inverter_3lvl_BUS_16OUT_0_0.xci</spirit:name>
+        <spirit:userFileType>xci</spirit:userFileType>
+        <spirit:userFileType>CELL_NAME_BUS_16OUT_0</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>ip/Inverter_3lvl_BUS_16OUT_0_1/Inverter_3lvl_BUS_16OUT_0_1.xci</spirit:name>
+        <spirit:userFileType>xci</spirit:userFileType>
+        <spirit:userFileType>CELL_NAME_BUS_16OUT_1</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>ip/Inverter_3lvl_BUS_16OUT_1_0/Inverter_3lvl_BUS_16OUT_1_0.xci</spirit:name>
+        <spirit:userFileType>xci</spirit:userFileType>
+        <spirit:userFileType>CELL_NAME_BUS_16OUT_2</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>../../ipshared/d0c6/synth/Inverter_3lvl.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>ip/Inverter_3lvl_BUS_16IN_1_0/Inverter_3lvl_BUS_16IN_1_0.xci</spirit:name>
+        <spirit:userFileType>xci</spirit:userFileType>
+        <spirit:userFileType>CELL_NAME_BUS_16IN_1</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>Inverter_3lvl_ooc.xdc</spirit:name>
+        <spirit:userFileType>xdc</spirit:userFileType>
+        <spirit:userFileType>SCOPED_TO_REF_Inverter_3lvl</spirit:userFileType>
+        <spirit:userFileType>USED_IN_out_of_context</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>../../ipshared/d0c6/hdl/Inverter_3lvl_wrapper.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+      </spirit:file>
+    </spirit:fileSet>
+    <spirit:fileSet>
+      <spirit:name>xilinx_vhdlsynthesiswrapper_view_fileset</spirit:name>
+      <spirit:file>
+        <spirit:name>synth/UPzynq20_test_design_Inverter_3lvl_wrapper_0_0.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:logicalName>xil_defaultlib</spirit:logicalName>
+      </spirit:file>
+    </spirit:fileSet>
+    <spirit:fileSet>
+      <spirit:name>xilinx_anylanguagebehavioralsimulation_view_fileset</spirit:name>
+      <spirit:file>
+        <spirit:name>ip/Inverter_3lvl_P0N_3lvl_0_2/Inverter_3lvl_P0N_3lvl_0_2.xci</spirit:name>
+        <spirit:userFileType>xci</spirit:userFileType>
+        <spirit:userFileType>CELL_NAME_P0N_3lvl_4</spirit:userFileType>
+        <spirit:define>
+          <spirit:name>processing_order</spirit:name>
+          <spirit:value>early</spirit:value>
+        </spirit:define>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>ip/Inverter_3lvl_P0N_3lvl_0_0/Inverter_3lvl_P0N_3lvl_0_0.xci</spirit:name>
+        <spirit:userFileType>xci</spirit:userFileType>
+        <spirit:userFileType>CELL_NAME_P0N_3lvl_0</spirit:userFileType>
+        <spirit:define>
+          <spirit:name>processing_order</spirit:name>
+          <spirit:value>early</spirit:value>
+        </spirit:define>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>ip/Inverter_3lvl_P0N_3lvl_0_1/Inverter_3lvl_P0N_3lvl_0_1.xci</spirit:name>
+        <spirit:userFileType>xci</spirit:userFileType>
+        <spirit:userFileType>CELL_NAME_P0N_3lvl_3</spirit:userFileType>
+        <spirit:define>
+          <spirit:name>processing_order</spirit:name>
+          <spirit:value>early</spirit:value>
+        </spirit:define>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>ip/Inverter_3lvl_P0N_3lvl_0_4/Inverter_3lvl_P0N_3lvl_0_4.xci</spirit:name>
+        <spirit:userFileType>xci</spirit:userFileType>
+        <spirit:userFileType>CELL_NAME_P0N_3lvl_6</spirit:userFileType>
+        <spirit:define>
+          <spirit:name>processing_order</spirit:name>
+          <spirit:value>early</spirit:value>
+        </spirit:define>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>ip/Inverter_3lvl_P0N_3lvl_0_5/Inverter_3lvl_P0N_3lvl_0_5.xci</spirit:name>
+        <spirit:userFileType>xci</spirit:userFileType>
+        <spirit:userFileType>CELL_NAME_P0N_3lvl_7</spirit:userFileType>
+        <spirit:define>
+          <spirit:name>processing_order</spirit:name>
+          <spirit:value>early</spirit:value>
+        </spirit:define>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>ip/Inverter_3lvl_P0N_3lvl_0_3/Inverter_3lvl_P0N_3lvl_0_3.xci</spirit:name>
+        <spirit:userFileType>xci</spirit:userFileType>
+        <spirit:userFileType>CELL_NAME_P0N_3lvl_5</spirit:userFileType>
+        <spirit:define>
+          <spirit:name>processing_order</spirit:name>
+          <spirit:value>early</spirit:value>
+        </spirit:define>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>ip/Inverter_3lvl_P0N_3lvl_1_1/Inverter_3lvl_P0N_3lvl_1_1.xci</spirit:name>
+        <spirit:userFileType>xci</spirit:userFileType>
+        <spirit:userFileType>CELL_NAME_P0N_3lvl_2</spirit:userFileType>
+        <spirit:define>
+          <spirit:name>processing_order</spirit:name>
+          <spirit:value>early</spirit:value>
+        </spirit:define>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>ip/Inverter_3lvl_P0N_3lvl_1_0/Inverter_3lvl_P0N_3lvl_1_0.xci</spirit:name>
+        <spirit:userFileType>xci</spirit:userFileType>
+        <spirit:userFileType>CELL_NAME_P0N_3lvl_1</spirit:userFileType>
+        <spirit:define>
+          <spirit:name>processing_order</spirit:name>
+          <spirit:value>early</spirit:value>
+        </spirit:define>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>ip/Inverter_3lvl_BUS_16IN_0_0/Inverter_3lvl_BUS_16IN_0_0.xci</spirit:name>
+        <spirit:userFileType>xci</spirit:userFileType>
+        <spirit:userFileType>CELL_NAME_BUS_16IN_0</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>ip/Inverter_3lvl_BUS_16OUT_0_0/Inverter_3lvl_BUS_16OUT_0_0.xci</spirit:name>
+        <spirit:userFileType>xci</spirit:userFileType>
+        <spirit:userFileType>CELL_NAME_BUS_16OUT_0</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>ip/Inverter_3lvl_BUS_16OUT_0_1/Inverter_3lvl_BUS_16OUT_0_1.xci</spirit:name>
+        <spirit:userFileType>xci</spirit:userFileType>
+        <spirit:userFileType>CELL_NAME_BUS_16OUT_1</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>ip/Inverter_3lvl_BUS_16OUT_1_0/Inverter_3lvl_BUS_16OUT_1_0.xci</spirit:name>
+        <spirit:userFileType>xci</spirit:userFileType>
+        <spirit:userFileType>CELL_NAME_BUS_16OUT_2</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>../../ipshared/d0c6/sim/Inverter_3lvl.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>ip/Inverter_3lvl_BUS_16IN_1_0/Inverter_3lvl_BUS_16IN_1_0.xci</spirit:name>
+        <spirit:userFileType>xci</spirit:userFileType>
+        <spirit:userFileType>CELL_NAME_BUS_16IN_1</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>sim/Inverter_3lvl.protoinst</spirit:name>
+        <spirit:fileType>unknown</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>../../ipshared/d0c6/hdl/Inverter_3lvl_wrapper.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+      </spirit:file>
+    </spirit:fileSet>
+    <spirit:fileSet>
+      <spirit:name>xilinx_vhdlsimulationwrapper_view_fileset</spirit:name>
+      <spirit:file>
+        <spirit:name>sim/UPzynq20_test_design_Inverter_3lvl_wrapper_0_0.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:logicalName>xil_defaultlib</spirit:logicalName>
+      </spirit:file>
+    </spirit:fileSet>
+  </spirit:fileSets>
+  <spirit:description>Inverter_3lvl_wrapper_v1_0</spirit:description>
+  <spirit:parameters>
+    <spirit:parameter>
+      <spirit:name>Component_Name</spirit:name>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.Component_Name" spirit:order="1">UPzynq20_test_design_Inverter_3lvl_wrapper_0_0</spirit:value>
+    </spirit:parameter>
+  </spirit:parameters>
+  <spirit:vendorExtensions>
+    <xilinx:coreExtensions>
+      <xilinx:displayName>Inverter_3lvl_wrapper_v1_0</xilinx:displayName>
+      <xilinx:definitionSource>package_project</xilinx:definitionSource>
+      <xilinx:coreRevision>5</xilinx:coreRevision>
+      <xilinx:tags>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@78d63ea6_ARCHIVE_LOCATION">d:/projects/ip/lib/inverter_3lvl/inverter_3lvl.srcs/sources_1/bd/inverter_3lvl</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@30ed9834_ARCHIVE_LOCATION">d:/projects/ip/lib/inverter_3lvl/inverter_3lvl.srcs/sources_1/bd/inverter_3lvl</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4cdc8251_ARCHIVE_LOCATION">d:/projects/ip/lib/inverter_3lvl/inverter_3lvl.srcs/sources_1/bd/inverter_3lvl</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2cd89c67_ARCHIVE_LOCATION">d:/projects/ip/lib/inverter_3lvl/inverter_3lvl.srcs/sources_1/bd/inverter_3lvl</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6c0fb422_ARCHIVE_LOCATION">d:/projects/ip/lib/inverter_3lvl/inverter_3lvl.srcs/sources_1/bd/inverter_3lvl</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7e39e350_ARCHIVE_LOCATION">d:/projects/ip/lib/inverter_3lvl/inverter_3lvl.srcs/sources_1/bd/inverter_3lvl</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7b381aee_ARCHIVE_LOCATION">d:/projects/ip/lib/inverter_3lvl/inverter_3lvl.srcs/sources_1/bd/inverter_3lvl</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7f5af51b_ARCHIVE_LOCATION">d:/projects/ip/lib/inverter_3lvl/inverter_3lvl.srcs/sources_1/bd/inverter_3lvl</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4ef4bff_ARCHIVE_LOCATION">d:/projects/ip/lib/inverter_3lvl/inverter_3lvl.srcs/sources_1/bd/inverter_3lvl</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@674da339_ARCHIVE_LOCATION">d:/projects/ip/lib/inverter_3lvl/inverter_3lvl.srcs/sources_1/bd/inverter_3lvl</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@43456c78_ARCHIVE_LOCATION">d:/projects/ip/lib/inverter_3lvl/inverter_3lvl.srcs/sources_1/bd/inverter_3lvl</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@c323c02_ARCHIVE_LOCATION">d:/Projects/IP/LIB/Inverter_3lvl/Inverter_3lvl.srcs/sources_1/bd/inverter_3lvl</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@9ef9dd4_ARCHIVE_LOCATION">d:/Projects/IP/LIB/Inverter_3lvl/Inverter_3lvl.srcs/sources_1/bd/inverter_3lvl</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@754dad06_ARCHIVE_LOCATION">d:/Projects/IP/LIB/Inverter_3lvl/Inverter_3lvl.srcs/sources_1/bd/inverter_3lvl</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@21e0c974_ARCHIVE_LOCATION">d:/Projects/IP/LIB/Inverter_3lvl/Inverter_3lvl.srcs/sources_1/bd/inverter_3lvl</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@caca618_ARCHIVE_LOCATION">d:/Projects/IP/LIB/Inverter_3lvl/Inverter_3lvl.srcs/sources_1/bd/inverter_3lvl</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@15cc1eac_ARCHIVE_LOCATION">d:/Projects/IP/LIB/Inverter_3lvl/Inverter_3lvl.srcs/sources_1/bd/inverter_3lvl</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@23f6db69_ARCHIVE_LOCATION">d:/Projects/IP/LIB/Inverter_3lvl/Inverter_3lvl.srcs/sources_1/bd/inverter_3lvl</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@59d770a0_ARCHIVE_LOCATION">d:/Projects/IP/LIB/Inverter_3lvl/Inverter_3lvl.srcs/sources_1/bd/inverter_3lvl</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@cb6326c_ARCHIVE_LOCATION">d:/Projects/IP/LIB/Inverter_3lvl/Inverter_3lvl.srcs/sources_1/bd/inverter_3lvl</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@52784056_ARCHIVE_LOCATION">d:/Projects/IP/LIB/Inverter_3lvl/Inverter_3lvl.srcs/sources_1/bd/inverter_3lvl</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@470abec5_ARCHIVE_LOCATION">d:/Projects/IP/LIB/Inverter_3lvl/Inverter_3lvl.srcs/sources_1/bd/inverter_3lvl</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3e65d56a_ARCHIVE_LOCATION">d:/Projects/IP/LIB/Inverter_3lvl/Inverter_3lvl.srcs/sources_1/bd/inverter_3lvl</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2bc0b113_ARCHIVE_LOCATION">d:/Projects/IP/LIB/Inverter_3lvl/Inverter_3lvl.srcs/sources_1/bd/inverter_3lvl</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5f387fbf_ARCHIVE_LOCATION">d:/Projects/IP/LIB/Inverter_3lvl/Inverter_3lvl.srcs/sources_1/bd/inverter_3lvl</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@363f9dee_ARCHIVE_LOCATION">d:/Projects/IP/LIB/Inverter_3lvl/Inverter_3lvl.srcs/sources_1/bd/inverter_3lvl</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@15a78988_ARCHIVE_LOCATION">d:/Projects/IP/LIB/Inverter_3lvl/Inverter_3lvl.srcs/sources_1/bd/inverter_3lvl</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@42f1e76c_ARCHIVE_LOCATION">d:/Projects/IP/LIB/Inverter_3lvl/Inverter_3lvl.srcs/sources_1/bd/inverter_3lvl</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@704a1a82_ARCHIVE_LOCATION">d:/Projects/IP/LIB/Inverter_3lvl/Inverter_3lvl.srcs/sources_1/bd/inverter_3lvl</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@187f47af_ARCHIVE_LOCATION">d:/Projects/IP/LIB/Inverter_3lvl/Inverter_3lvl.srcs/sources_1/bd/inverter_3lvl</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7eecf995_ARCHIVE_LOCATION">d:/Projects/IP/LIB/Inverter_3lvl/Inverter_3lvl.srcs/sources_1/bd/inverter_3lvl</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1b34dc82_ARCHIVE_LOCATION">d:/Projects/IP/LIB/Inverter_3lvl/Inverter_3lvl.srcs/sources_1/bd/inverter_3lvl</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1927474b_ARCHIVE_LOCATION">d:/Projects/IP/LIB/Inverter_3lvl/Inverter_3lvl.srcs/sources_1/bd/inverter_3lvl</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7ae53361_ARCHIVE_LOCATION">d:/Projects/IP/LIB/Inverter_3lvl/Inverter_3lvl.srcs/sources_1/bd/inverter_3lvl</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3ab512f1_ARCHIVE_LOCATION">d:/Projects/IP/LIB/Inverter_3lvl/Inverter_3lvl.srcs/sources_1/bd/inverter_3lvl</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4b21d769_ARCHIVE_LOCATION">d:/Projects/IP/LIB/Inverter_3lvl/Inverter_3lvl.srcs/sources_1/bd/inverter_3lvl</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@58b6b29d_ARCHIVE_LOCATION">d:/Projects/IP/LIB/Inverter_3lvl/Inverter_3lvl.srcs/sources_1/bd/inverter_3lvl</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4c7d69f3_ARCHIVE_LOCATION">d:/Projects/IP/LIB/Inverter_3lvl/Inverter_3lvl.srcs/sources_1/bd/inverter_3lvl</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@197e11f7_ARCHIVE_LOCATION">d:/Projects/IP/LIB/Inverter_3lvl/Inverter_3lvl.srcs/sources_1/bd/inverter_3lvl</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2bebd494_ARCHIVE_LOCATION">d:/Projects/IP/LIB/Inverter_3lvl/Inverter_3lvl.srcs/sources_1/bd/inverter_3lvl</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@51e97834_ARCHIVE_LOCATION">d:/Projects/IP/LIB/Inverter_3lvl/Inverter_3lvl.srcs/sources_1/bd/inverter_3lvl</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5db9fbe7_ARCHIVE_LOCATION">d:/Projects/IP/LIB/Inverter_3lvl/Inverter_3lvl.srcs/sources_1/bd/inverter_3lvl</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@745a77e1_ARCHIVE_LOCATION">d:/Projects/IP/LIB/Inverter_3lvl/Inverter_3lvl.srcs/sources_1/bd/inverter_3lvl</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4e1b1065_ARCHIVE_LOCATION">d:/Projects/IP/LIB/Inverter_3lvl/Inverter_3lvl.srcs/sources_1/bd/inverter_3lvl</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@315e0ddb_ARCHIVE_LOCATION">d:/Projects/IP/LIB/Inverter_3lvl/Inverter_3lvl.srcs/sources_1/bd/inverter_3lvl</xilinx:tag>
+      </xilinx:tags>
+    </xilinx:coreExtensions>
+    <xilinx:packagingInfo>
+      <xilinx:xilinxVersion>2019.1</xilinx:xilinxVersion>
+      <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="4a616d1e"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="c1ef384b"/>
+      <xilinx:checksum xilinx:scope="ports" xilinx:value="cdd6cea2"/>
+      <xilinx:checksum xilinx:scope="parameters" xilinx:value="c429d1f0"/>
+    </xilinx:packagingInfo>
+  </spirit:vendorExtensions>
+</spirit:component>

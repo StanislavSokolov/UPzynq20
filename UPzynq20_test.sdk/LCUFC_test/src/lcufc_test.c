@@ -73,6 +73,7 @@ int Count;						// общий счеткчик
 int Channel_0;					// счетчик аналоговых сигналов для каналов 0-15
 int Channel_1;					// счетчик аналоговых сигналов для каналов 16-31
 int Channel_2 = 0;					// счетчик регистров ШИМ
+int Channel_3 = 5;					// счетчик регистров ШИМ
 u32 PWM = 0;
 int j = 4;
 u32 DataBuf;
@@ -94,7 +95,7 @@ int main(void) {
 
 	while (1) {
 
-		if (Count < 10000000) {
+		if (Count < 1000000) {
 			Count++;
 		} else {
 			if (latch) {
@@ -108,11 +109,24 @@ int main(void) {
 				//write_out(4);
 				//inverting_the_signal_count_transmitter();
 			}
+
+
+
+
+
 			Count = 0;
 			inverting_the_signal_count_transmitter();
 			bild_send_buffer(TEST_BUFFER_SIZE-1, 100);
 //			GroupsRegisters++;
 //			bild_send_buffer(8, GroupsRegisters);
+
+
+
+
+			bild_send_buffer(162, Xil_In32(XPAR_IP_AXI_OPTICALBUS_0_S00_AXI_BASEADDR + 20));
+
+
+
 
 			read_in_all();
 			bild_send_buffer(112+Channel_0*2, Xil_In32(XPAR_IP_AXI_ADC_0_S00_AXI_BASEADDR + (Channel_0*j)));
@@ -122,6 +136,8 @@ int main(void) {
 			bild_send_buffer(144+Channel_1*2, Xil_In32(XPAR_IP_AXI_ENCODER_0_S00_AXI_BASEADDR + (Channel_1*j)));
 //			bild_send_buffer(154+Channel_1*2, (Xil_In32(XPAR_IP_AXI_ENCODER_0_S00_AXI_BASEADDR + (Channel_1*j)))/65534);
 			if (Channel_1<7) Channel_1++; else Channel_1 = 0;
+
+
 
 
 			Xil_Out32(XPAR_IP_AXI_PWM_0_S00_AXI_BASEADDR + (Channel_2*j), 0x00FFFFFF);
@@ -173,6 +189,21 @@ int main(void) {
 			Channel_2++;
 			Xil_Out32(XPAR_IP_AXI_PWM_0_S00_AXI_BASEADDR + (Channel_2*j), 0x00000001);
 			Channel_2 = 0;
+
+
+			Xil_Out32(XPAR_IP_AXI_OPTICALBUS_0_S00_AXI_BASEADDR + (Channel_3*j), 0x00000000);
+			Channel_3 = 0;
+			Xil_Out32(XPAR_IP_AXI_OPTICALBUS_0_S00_AXI_BASEADDR + (Channel_3*j), 0x70F07750);
+			Channel_3++;
+			Xil_Out32(XPAR_IP_AXI_OPTICALBUS_0_S00_AXI_BASEADDR + (Channel_3*j), 0x70F00000);
+			Channel_3++;
+			Xil_Out32(XPAR_IP_AXI_OPTICALBUS_0_S00_AXI_BASEADDR + (Channel_3*j), 0x70F03200);
+			Channel_3++;
+			Xil_Out32(XPAR_IP_AXI_OPTICALBUS_0_S00_AXI_BASEADDR + (Channel_3*j), 0x00FFFF00);
+			Channel_3++;
+			Xil_Out32(XPAR_IP_AXI_OPTICALBUS_0_S00_AXI_BASEADDR + (Channel_3*j), PWM);
+			Channel_3++;
+			Xil_Out32(XPAR_IP_AXI_OPTICALBUS_0_S00_AXI_BASEADDR + (Channel_3*j), 0x00000001);
 
 //			bild_send_buffer(22, XGpio_DiscreteRead(&Gpio_6, 1));
 

@@ -1,0 +1,449 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Mon May 31 11:00:48 2021
+# Process ID: 3184
+# Current directory: d:/GITEA/UPzynq20_test/IP/IP_AXI_OpticalBus/edit_IP_AXI_OpticalBus_v1_0.runs/synth_1
+# Command line: vivado.exe -log IP_AXI_OpticalBus_v1_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source IP_AXI_OpticalBus_v1_0.tcl
+# Log file: d:/GITEA/UPzynq20_test/IP/IP_AXI_OpticalBus/edit_IP_AXI_OpticalBus_v1_0.runs/synth_1/IP_AXI_OpticalBus_v1_0.vds
+# Journal file: d:/GITEA/UPzynq20_test/IP/IP_AXI_OpticalBus/edit_IP_AXI_OpticalBus_v1_0.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source IP_AXI_OpticalBus_v1_0.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+WARNING: [IP_Flow 19-3685] Ignored loading user repository 'd:/GITEA/UPzynq20_test/IP/IP_AXI_OpticalBus/IP_AXI_OpticalBus_1.0'. The path is contained within another repository.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/GITEA/UPzynq20_test/IP'.
+WARNING: [IP_Flow 19-3656] If you move the project, the path for repository 'd:/GITEA/UPzynq20_test/IP' may become invalid. A better location for the repository would be in a path adjacent to the project. (Current project location is 'd:/GITEA/UPzynq20_test/IP/IP_AXI_OpticalBus/edit_IP_AXI_OpticalBus_v1_0.runs/synth_1'.)
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Xilinx/Vivado/2019.1/data/ip'.
+Command: synth_design -top IP_AXI_OpticalBus_v1_0 -part xc7z020clg484-3
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 4968 
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 574.613 ; gain = 187.969
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'IP_AXI_OpticalBus_v1_0' [d:/GITEA/UPzynq20_test/IP/IP_AXI_OpticalBus/IP_AXI_OpticalBus_1.0/hdl/IP_AXI_OpticalBus_v1_0.vhd:59]
+	Parameter C_S00_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_S00_AXI_ADDR_WIDTH bound to: 6 - type: integer 
+	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_S_AXI_ADDR_WIDTH bound to: 6 - type: integer 
+INFO: [Synth 8-3491] module 'IP_AXI_OpticalBus_v1_0_S00_AXI' declared at 'd:/GITEA/UPzynq20_test/IP/IP_AXI_OpticalBus/IP_AXI_OpticalBus_1.0/hdl/IP_AXI_OpticalBus_v1_0_S00_AXI.vhd:6' bound to instance 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst' of component 'IP_AXI_OpticalBus_v1_0_S00_AXI' [d:/GITEA/UPzynq20_test/IP/IP_AXI_OpticalBus/IP_AXI_OpticalBus_1.0/hdl/IP_AXI_OpticalBus_v1_0.vhd:107]
+INFO: [Synth 8-638] synthesizing module 'IP_AXI_OpticalBus_v1_0_S00_AXI' [d:/GITEA/UPzynq20_test/IP/IP_AXI_OpticalBus/IP_AXI_OpticalBus_1.0/hdl/IP_AXI_OpticalBus_v1_0_S00_AXI.vhd:98]
+	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_S_AXI_ADDR_WIDTH bound to: 6 - type: integer 
+INFO: [Synth 8-226] default block is never used [d:/GITEA/UPzynq20_test/IP/IP_AXI_OpticalBus/IP_AXI_OpticalBus_1.0/hdl/IP_AXI_OpticalBus_v1_0_S00_AXI.vhd:303]
+INFO: [Synth 8-226] default block is never used [d:/GITEA/UPzynq20_test/IP/IP_AXI_OpticalBus/IP_AXI_OpticalBus_1.0/hdl/IP_AXI_OpticalBus_v1_0_S00_AXI.vhd:541]
+WARNING: [Synth 8-614] signal 'MessageCounter' is read in the process but is not in the sensitivity list [d:/GITEA/UPzynq20_test/IP/IP_AXI_OpticalBus/IP_AXI_OpticalBus_1.0/hdl/IP_AXI_OpticalBus_v1_0_S00_AXI.vhd:536]
+WARNING: [Synth 8-614] signal 'RegisterData0' is read in the process but is not in the sensitivity list [d:/GITEA/UPzynq20_test/IP/IP_AXI_OpticalBus/IP_AXI_OpticalBus_1.0/hdl/IP_AXI_OpticalBus_v1_0_S00_AXI.vhd:536]
+WARNING: [Synth 8-614] signal 'RegisterData1' is read in the process but is not in the sensitivity list [d:/GITEA/UPzynq20_test/IP/IP_AXI_OpticalBus/IP_AXI_OpticalBus_1.0/hdl/IP_AXI_OpticalBus_v1_0_S00_AXI.vhd:536]
+WARNING: [Synth 8-614] signal 'RegisterData2' is read in the process but is not in the sensitivity list [d:/GITEA/UPzynq20_test/IP/IP_AXI_OpticalBus/IP_AXI_OpticalBus_1.0/hdl/IP_AXI_OpticalBus_v1_0_S00_AXI.vhd:536]
+WARNING: [Synth 8-614] signal 'RegisterData3' is read in the process but is not in the sensitivity list [d:/GITEA/UPzynq20_test/IP/IP_AXI_OpticalBus/IP_AXI_OpticalBus_1.0/hdl/IP_AXI_OpticalBus_v1_0_S00_AXI.vhd:536]
+WARNING: [Synth 8-614] signal 'ControlCRCtoCPU' is read in the process but is not in the sensitivity list [d:/GITEA/UPzynq20_test/IP/IP_AXI_OpticalBus/IP_AXI_OpticalBus_1.0/hdl/IP_AXI_OpticalBus_v1_0_S00_AXI.vhd:536]
+WARNING: [Synth 8-614] signal 'ErrorToCPU' is read in the process but is not in the sensitivity list [d:/GITEA/UPzynq20_test/IP/IP_AXI_OpticalBus/IP_AXI_OpticalBus_1.0/hdl/IP_AXI_OpticalBus_v1_0_S00_AXI.vhd:536]
+WARNING: [Synth 8-614] signal 'ReceivingLineBusy' is read in the process but is not in the sensitivity list [d:/GITEA/UPzynq20_test/IP/IP_AXI_OpticalBus/IP_AXI_OpticalBus_1.0/hdl/IP_AXI_OpticalBus_v1_0_S00_AXI.vhd:536]
+WARNING: [Synth 8-614] signal 'TrancmitingLineBusy' is read in the process but is not in the sensitivity list [d:/GITEA/UPzynq20_test/IP/IP_AXI_OpticalBus/IP_AXI_OpticalBus_1.0/hdl/IP_AXI_OpticalBus_v1_0_S00_AXI.vhd:536]
+INFO: [Synth 8-226] default block is never used [d:/GITEA/UPzynq20_test/IP/IP_AXI_OpticalBus/IP_AXI_OpticalBus_1.0/hdl/IP_AXI_OpticalBus_v1_0_S00_AXI.vhd:613]
+WARNING: [Synth 8-6014] Unused sequential element slv_reg0_reg was removed.  [d:/GITEA/UPzynq20_test/IP/IP_AXI_OpticalBus/IP_AXI_OpticalBus_1.0/hdl/IP_AXI_OpticalBus_v1_0_S00_AXI.vhd:284]
+WARNING: [Synth 8-6014] Unused sequential element slv_reg1_reg was removed.  [d:/GITEA/UPzynq20_test/IP/IP_AXI_OpticalBus/IP_AXI_OpticalBus_1.0/hdl/IP_AXI_OpticalBus_v1_0_S00_AXI.vhd:285]
+WARNING: [Synth 8-6014] Unused sequential element slv_reg2_reg was removed.  [d:/GITEA/UPzynq20_test/IP/IP_AXI_OpticalBus/IP_AXI_OpticalBus_1.0/hdl/IP_AXI_OpticalBus_v1_0_S00_AXI.vhd:286]
+WARNING: [Synth 8-6014] Unused sequential element slv_reg3_reg was removed.  [d:/GITEA/UPzynq20_test/IP/IP_AXI_OpticalBus/IP_AXI_OpticalBus_1.0/hdl/IP_AXI_OpticalBus_v1_0_S00_AXI.vhd:287]
+WARNING: [Synth 8-6014] Unused sequential element slv_reg4_reg was removed.  [d:/GITEA/UPzynq20_test/IP/IP_AXI_OpticalBus/IP_AXI_OpticalBus_1.0/hdl/IP_AXI_OpticalBus_v1_0_S00_AXI.vhd:288]
+WARNING: [Synth 8-6014] Unused sequential element slv_reg5_reg was removed.  [d:/GITEA/UPzynq20_test/IP/IP_AXI_OpticalBus/IP_AXI_OpticalBus_1.0/hdl/IP_AXI_OpticalBus_v1_0_S00_AXI.vhd:289]
+WARNING: [Synth 8-6014] Unused sequential element slv_reg6_reg was removed.  [d:/GITEA/UPzynq20_test/IP/IP_AXI_OpticalBus/IP_AXI_OpticalBus_1.0/hdl/IP_AXI_OpticalBus_v1_0_S00_AXI.vhd:290]
+WARNING: [Synth 8-6014] Unused sequential element slv_reg7_reg was removed.  [d:/GITEA/UPzynq20_test/IP/IP_AXI_OpticalBus/IP_AXI_OpticalBus_1.0/hdl/IP_AXI_OpticalBus_v1_0_S00_AXI.vhd:291]
+WARNING: [Synth 8-6014] Unused sequential element slv_reg8_reg was removed.  [d:/GITEA/UPzynq20_test/IP/IP_AXI_OpticalBus/IP_AXI_OpticalBus_1.0/hdl/IP_AXI_OpticalBus_v1_0_S00_AXI.vhd:292]
+WARNING: [Synth 8-6014] Unused sequential element slv_reg9_reg was removed.  [d:/GITEA/UPzynq20_test/IP/IP_AXI_OpticalBus/IP_AXI_OpticalBus_1.0/hdl/IP_AXI_OpticalBus_v1_0_S00_AXI.vhd:293]
+WARNING: [Synth 8-6014] Unused sequential element loc_addr_reg was removed.  [d:/GITEA/UPzynq20_test/IP/IP_AXI_OpticalBus/IP_AXI_OpticalBus_1.0/hdl/IP_AXI_OpticalBus_v1_0_S00_AXI.vhd:301]
+WARNING: [Synth 8-3848] Net MessageCounter in module/entity IP_AXI_OpticalBus_v1_0_S00_AXI does not have driver. [d:/GITEA/UPzynq20_test/IP/IP_AXI_OpticalBus/IP_AXI_OpticalBus_1.0/hdl/IP_AXI_OpticalBus_v1_0_S00_AXI.vhd:121]
+WARNING: [Synth 8-3848] Net ReceivingLineBusy in module/entity IP_AXI_OpticalBus_v1_0_S00_AXI does not have driver. [d:/GITEA/UPzynq20_test/IP/IP_AXI_OpticalBus/IP_AXI_OpticalBus_1.0/hdl/IP_AXI_OpticalBus_v1_0_S00_AXI.vhd:128]
+WARNING: [Synth 8-3848] Net TrancmitingLineBusy in module/entity IP_AXI_OpticalBus_v1_0_S00_AXI does not have driver. [d:/GITEA/UPzynq20_test/IP/IP_AXI_OpticalBus/IP_AXI_OpticalBus_1.0/hdl/IP_AXI_OpticalBus_v1_0_S00_AXI.vhd:129]
+INFO: [Synth 8-256] done synthesizing module 'IP_AXI_OpticalBus_v1_0_S00_AXI' (1#1) [d:/GITEA/UPzynq20_test/IP/IP_AXI_OpticalBus/IP_AXI_OpticalBus_1.0/hdl/IP_AXI_OpticalBus_v1_0_S00_AXI.vhd:98]
+INFO: [Synth 8-256] done synthesizing module 'IP_AXI_OpticalBus_v1_0' (2#1) [d:/GITEA/UPzynq20_test/IP/IP_AXI_OpticalBus/IP_AXI_OpticalBus_1.0/hdl/IP_AXI_OpticalBus_v1_0.vhd:59]
+WARNING: [Synth 8-3331] design IP_AXI_OpticalBus_v1_0_S00_AXI has unconnected port ERROR_external
+WARNING: [Synth 8-3331] design IP_AXI_OpticalBus_v1_0_S00_AXI has unconnected port SYN_external
+WARNING: [Synth 8-3331] design IP_AXI_OpticalBus_v1_0_S00_AXI has unconnected port S_AXI_AWPROT[2]
+WARNING: [Synth 8-3331] design IP_AXI_OpticalBus_v1_0_S00_AXI has unconnected port S_AXI_AWPROT[1]
+WARNING: [Synth 8-3331] design IP_AXI_OpticalBus_v1_0_S00_AXI has unconnected port S_AXI_AWPROT[0]
+WARNING: [Synth 8-3331] design IP_AXI_OpticalBus_v1_0_S00_AXI has unconnected port S_AXI_ARPROT[2]
+WARNING: [Synth 8-3331] design IP_AXI_OpticalBus_v1_0_S00_AXI has unconnected port S_AXI_ARPROT[1]
+WARNING: [Synth 8-3331] design IP_AXI_OpticalBus_v1_0_S00_AXI has unconnected port S_AXI_ARPROT[0]
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 638.559 ; gain = 251.914
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 638.559 ; gain = 251.914
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z020clg484-3
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 638.559 ; gain = 251.914
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7z020clg484-3
+INFO: [Synth 8-802] inferred FSM for state register 'ReceiveState_reg' in module 'IP_AXI_OpticalBus_v1_0_S00_AXI'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+          receivewaiting |                               00 |                               00
+             receivedata |                               01 |                               01
+              receivecrc |                               10 |                               10
+                checkcrc |                               11 |                               11
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'ReceiveState_reg' using encoding 'sequential' in module 'IP_AXI_OpticalBus_v1_0_S00_AXI'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:07 . Memory (MB): peak = 638.559 ; gain = 251.914
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+No constraint files found.
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      6 Bit       Adders := 2     
++---XORs : 
+	   2 Input      1 Bit         XORs := 12    
++---Registers : 
+	               32 Bit    Registers := 25    
+	                8 Bit    Registers := 4     
+	                6 Bit    Registers := 4     
+	                2 Bit    Registers := 2     
+	                1 Bit    Registers := 9     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 14    
+	   4 Input     32 Bit        Muxes := 3     
+	  16 Input     32 Bit        Muxes := 6     
+	   2 Input      8 Bit        Muxes := 8     
+	   2 Input      6 Bit        Muxes := 3     
+	   3 Input      6 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 1     
+	   4 Input      4 Bit        Muxes := 1     
+	   4 Input      2 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 3     
+	   2 Input      1 Bit        Muxes := 16    
+	   4 Input      1 Bit        Muxes := 7     
+	   3 Input      1 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module IP_AXI_OpticalBus_v1_0_S00_AXI 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      6 Bit       Adders := 2     
++---XORs : 
+	   2 Input      1 Bit         XORs := 12    
++---Registers : 
+	               32 Bit    Registers := 25    
+	                8 Bit    Registers := 4     
+	                6 Bit    Registers := 4     
+	                2 Bit    Registers := 2     
+	                1 Bit    Registers := 9     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 14    
+	   4 Input     32 Bit        Muxes := 3     
+	  16 Input     32 Bit        Muxes := 6     
+	   2 Input      8 Bit        Muxes := 8     
+	   2 Input      6 Bit        Muxes := 3     
+	   3 Input      6 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 1     
+	   4 Input      4 Bit        Muxes := 1     
+	   4 Input      2 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 3     
+	   2 Input      1 Bit        Muxes := 16    
+	   4 Input      1 Bit        Muxes := 7     
+	   3 Input      1 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 220 (col length:60)
+BRAMs: 280 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+WARNING: [Synth 8-3331] design IP_AXI_OpticalBus_v1_0_S00_AXI has unconnected port ERROR_external
+WARNING: [Synth 8-3331] design IP_AXI_OpticalBus_v1_0_S00_AXI has unconnected port SYN_external
+WARNING: [Synth 8-3331] design IP_AXI_OpticalBus_v1_0_S00_AXI has unconnected port S_AXI_AWPROT[2]
+WARNING: [Synth 8-3331] design IP_AXI_OpticalBus_v1_0_S00_AXI has unconnected port S_AXI_AWPROT[1]
+WARNING: [Synth 8-3331] design IP_AXI_OpticalBus_v1_0_S00_AXI has unconnected port S_AXI_AWPROT[0]
+WARNING: [Synth 8-3331] design IP_AXI_OpticalBus_v1_0_S00_AXI has unconnected port S_AXI_ARPROT[2]
+WARNING: [Synth 8-3331] design IP_AXI_OpticalBus_v1_0_S00_AXI has unconnected port S_AXI_ARPROT[1]
+WARNING: [Synth 8-3331] design IP_AXI_OpticalBus_v1_0_S00_AXI has unconnected port S_AXI_ARPROT[0]
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\IP_AXI_OpticalBus_v1_0_S00_AXI_inst/ErrorToCPU_reg[0] )
+INFO: [Synth 8-3886] merging instance 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/axi_rresp_reg[0]' (FDRE) to 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/axi_rresp_reg[1]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\IP_AXI_OpticalBus_v1_0_S00_AXI_inst/axi_rresp_reg[1] )
+INFO: [Synth 8-3886] merging instance 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/axi_bresp_reg[0]' (FDRE) to 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/axi_bresp_reg[1]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\IP_AXI_OpticalBus_v1_0_S00_AXI_inst/axi_bresp_reg[1] )
+INFO: [Synth 8-3886] merging instance 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf3_reg[8]' (FDE) to 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf3_reg[31]'
+INFO: [Synth 8-3886] merging instance 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf3_reg[10]' (FDE) to 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf3_reg[31]'
+INFO: [Synth 8-3886] merging instance 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf3_reg[11]' (FDE) to 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf3_reg[31]'
+INFO: [Synth 8-3886] merging instance 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf3_reg[9]' (FDE) to 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf3_reg[31]'
+INFO: [Synth 8-3886] merging instance 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf3_reg[13]' (FDE) to 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf3_reg[31]'
+INFO: [Synth 8-3886] merging instance 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf3_reg[14]' (FDE) to 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf3_reg[31]'
+INFO: [Synth 8-3886] merging instance 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf3_reg[12]' (FDE) to 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf3_reg[31]'
+INFO: [Synth 8-3886] merging instance 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf3_reg[16]' (FDE) to 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf3_reg[31]'
+INFO: [Synth 8-3886] merging instance 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf3_reg[17]' (FDE) to 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf3_reg[31]'
+INFO: [Synth 8-3886] merging instance 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf3_reg[15]' (FDE) to 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf3_reg[31]'
+INFO: [Synth 8-3886] merging instance 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf3_reg[19]' (FDE) to 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf3_reg[31]'
+INFO: [Synth 8-3886] merging instance 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf3_reg[20]' (FDE) to 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf3_reg[31]'
+INFO: [Synth 8-3886] merging instance 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf3_reg[18]' (FDE) to 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf3_reg[31]'
+INFO: [Synth 8-3886] merging instance 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf3_reg[22]' (FDE) to 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf3_reg[31]'
+INFO: [Synth 8-3886] merging instance 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf3_reg[23]' (FDE) to 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf3_reg[31]'
+INFO: [Synth 8-3886] merging instance 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf3_reg[21]' (FDE) to 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf3_reg[31]'
+INFO: [Synth 8-3886] merging instance 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf3_reg[25]' (FDE) to 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf3_reg[31]'
+INFO: [Synth 8-3886] merging instance 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf3_reg[26]' (FDE) to 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf3_reg[31]'
+INFO: [Synth 8-3886] merging instance 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf3_reg[24]' (FDE) to 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf3_reg[31]'
+INFO: [Synth 8-3886] merging instance 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf3_reg[28]' (FDE) to 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf3_reg[31]'
+INFO: [Synth 8-3886] merging instance 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf3_reg[29]' (FDE) to 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf3_reg[31]'
+INFO: [Synth 8-3886] merging instance 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf3_reg[27]' (FDE) to 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf3_reg[31]'
+INFO: [Synth 8-3886] merging instance 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf3_reg[30]' (FDE) to 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf3_reg[31]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf3_reg[31] )
+INFO: [Synth 8-3886] merging instance 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf2_reg[8]' (FDE) to 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf2_reg[31]'
+INFO: [Synth 8-3886] merging instance 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf2_reg[10]' (FDE) to 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf2_reg[31]'
+INFO: [Synth 8-3886] merging instance 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf2_reg[11]' (FDE) to 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf2_reg[31]'
+INFO: [Synth 8-3886] merging instance 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf2_reg[9]' (FDE) to 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf2_reg[31]'
+INFO: [Synth 8-3886] merging instance 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf2_reg[13]' (FDE) to 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf2_reg[31]'
+INFO: [Synth 8-3886] merging instance 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf2_reg[14]' (FDE) to 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf2_reg[31]'
+INFO: [Synth 8-3886] merging instance 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf2_reg[12]' (FDE) to 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf2_reg[31]'
+INFO: [Synth 8-3886] merging instance 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf2_reg[16]' (FDE) to 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf2_reg[31]'
+INFO: [Synth 8-3886] merging instance 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf2_reg[17]' (FDE) to 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf2_reg[31]'
+INFO: [Synth 8-3886] merging instance 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf2_reg[15]' (FDE) to 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf2_reg[31]'
+INFO: [Synth 8-3886] merging instance 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf2_reg[19]' (FDE) to 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf2_reg[31]'
+INFO: [Synth 8-3886] merging instance 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf2_reg[20]' (FDE) to 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf2_reg[31]'
+INFO: [Synth 8-3886] merging instance 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf2_reg[18]' (FDE) to 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf2_reg[31]'
+INFO: [Synth 8-3886] merging instance 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf2_reg[22]' (FDE) to 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf2_reg[31]'
+INFO: [Synth 8-3886] merging instance 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf2_reg[23]' (FDE) to 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf2_reg[31]'
+INFO: [Synth 8-3886] merging instance 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf2_reg[21]' (FDE) to 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf2_reg[31]'
+INFO: [Synth 8-3886] merging instance 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf2_reg[25]' (FDE) to 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf2_reg[31]'
+INFO: [Synth 8-3886] merging instance 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf2_reg[26]' (FDE) to 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf2_reg[31]'
+INFO: [Synth 8-3886] merging instance 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf2_reg[24]' (FDE) to 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf2_reg[31]'
+INFO: [Synth 8-3886] merging instance 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf2_reg[28]' (FDE) to 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf2_reg[31]'
+INFO: [Synth 8-3886] merging instance 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf2_reg[29]' (FDE) to 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf2_reg[31]'
+INFO: [Synth 8-3886] merging instance 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf2_reg[27]' (FDE) to 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf2_reg[31]'
+INFO: [Synth 8-3886] merging instance 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf2_reg[30]' (FDE) to 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf2_reg[31]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf2_reg[31] )
+INFO: [Synth 8-3886] merging instance 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf1_reg[8]' (FDE) to 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf1_reg[31]'
+INFO: [Synth 8-3886] merging instance 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf1_reg[10]' (FDE) to 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf1_reg[31]'
+INFO: [Synth 8-3886] merging instance 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf1_reg[11]' (FDE) to 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf1_reg[31]'
+INFO: [Synth 8-3886] merging instance 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf1_reg[9]' (FDE) to 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf1_reg[31]'
+INFO: [Synth 8-3886] merging instance 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf1_reg[13]' (FDE) to 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf1_reg[31]'
+INFO: [Synth 8-3886] merging instance 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf1_reg[14]' (FDE) to 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf1_reg[31]'
+INFO: [Synth 8-3886] merging instance 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf1_reg[12]' (FDE) to 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf1_reg[31]'
+INFO: [Synth 8-3886] merging instance 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf1_reg[16]' (FDE) to 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf1_reg[31]'
+INFO: [Synth 8-3886] merging instance 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf1_reg[17]' (FDE) to 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf1_reg[31]'
+INFO: [Synth 8-3886] merging instance 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf1_reg[15]' (FDE) to 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf1_reg[31]'
+INFO: [Synth 8-3886] merging instance 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf1_reg[19]' (FDE) to 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf1_reg[31]'
+INFO: [Synth 8-3886] merging instance 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf1_reg[20]' (FDE) to 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf1_reg[31]'
+INFO: [Synth 8-3886] merging instance 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf1_reg[18]' (FDE) to 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf1_reg[31]'
+INFO: [Synth 8-3886] merging instance 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf1_reg[22]' (FDE) to 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf1_reg[31]'
+INFO: [Synth 8-3886] merging instance 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf1_reg[23]' (FDE) to 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf1_reg[31]'
+INFO: [Synth 8-3886] merging instance 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf1_reg[21]' (FDE) to 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf1_reg[31]'
+INFO: [Synth 8-3886] merging instance 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf1_reg[25]' (FDE) to 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf1_reg[31]'
+INFO: [Synth 8-3886] merging instance 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf1_reg[26]' (FDE) to 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf1_reg[31]'
+INFO: [Synth 8-3886] merging instance 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf1_reg[24]' (FDE) to 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf1_reg[31]'
+INFO: [Synth 8-3886] merging instance 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf1_reg[28]' (FDE) to 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf1_reg[31]'
+INFO: [Synth 8-3886] merging instance 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf1_reg[29]' (FDE) to 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf1_reg[31]'
+INFO: [Synth 8-3886] merging instance 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf1_reg[27]' (FDE) to 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf1_reg[31]'
+INFO: [Synth 8-3886] merging instance 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf1_reg[30]' (FDE) to 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf1_reg[31]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf1_reg[31] )
+INFO: [Synth 8-3886] merging instance 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf0_reg[8]' (FDE) to 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf0_reg[31]'
+INFO: [Synth 8-3886] merging instance 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf0_reg[10]' (FDE) to 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf0_reg[31]'
+INFO: [Synth 8-3886] merging instance 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf0_reg[11]' (FDE) to 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf0_reg[31]'
+INFO: [Synth 8-3886] merging instance 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf0_reg[9]' (FDE) to 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf0_reg[31]'
+INFO: [Synth 8-3886] merging instance 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf0_reg[13]' (FDE) to 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf0_reg[31]'
+INFO: [Synth 8-3886] merging instance 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf0_reg[14]' (FDE) to 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf0_reg[31]'
+INFO: [Synth 8-3886] merging instance 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf0_reg[12]' (FDE) to 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf0_reg[31]'
+INFO: [Synth 8-3886] merging instance 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf0_reg[16]' (FDE) to 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf0_reg[31]'
+INFO: [Synth 8-3886] merging instance 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf0_reg[17]' (FDE) to 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf0_reg[31]'
+INFO: [Synth 8-3886] merging instance 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf0_reg[15]' (FDE) to 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf0_reg[31]'
+INFO: [Synth 8-3886] merging instance 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf0_reg[19]' (FDE) to 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf0_reg[31]'
+INFO: [Synth 8-3886] merging instance 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf0_reg[20]' (FDE) to 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf0_reg[31]'
+INFO: [Synth 8-3886] merging instance 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf0_reg[18]' (FDE) to 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf0_reg[31]'
+INFO: [Synth 8-3886] merging instance 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf0_reg[22]' (FDE) to 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf0_reg[31]'
+INFO: [Synth 8-3886] merging instance 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf0_reg[23]' (FDE) to 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf0_reg[31]'
+INFO: [Synth 8-3886] merging instance 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf0_reg[21]' (FDE) to 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf0_reg[31]'
+INFO: [Synth 8-3886] merging instance 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf0_reg[25]' (FDE) to 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf0_reg[31]'
+INFO: [Synth 8-3886] merging instance 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf0_reg[26]' (FDE) to 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf0_reg[31]'
+INFO: [Synth 8-3886] merging instance 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf0_reg[24]' (FDE) to 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf0_reg[31]'
+INFO: [Synth 8-3886] merging instance 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf0_reg[28]' (FDE) to 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf0_reg[31]'
+INFO: [Synth 8-3886] merging instance 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf0_reg[29]' (FDE) to 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf0_reg[31]'
+INFO: [Synth 8-3886] merging instance 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf0_reg[27]' (FDE) to 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf0_reg[31]'
+INFO: [Synth 8-3886] merging instance 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf0_reg[30]' (FDE) to 'IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf0_reg[31]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\IP_AXI_OpticalBus_v1_0_S00_AXI_inst/RegisterCRCBuf0_reg[31] )
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:09 ; elapsed = 00:00:13 . Memory (MB): peak = 813.680 ; gain = 427.035
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:09 ; elapsed = 00:00:13 . Memory (MB): peak = 818.508 ; gain = 431.863
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:10 ; elapsed = 00:00:13 . Memory (MB): peak = 818.688 ; gain = 432.043
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:12 ; elapsed = 00:00:15 . Memory (MB): peak = 818.688 ; gain = 432.043
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:12 ; elapsed = 00:00:15 . Memory (MB): peak = 818.688 ; gain = 432.043
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:12 ; elapsed = 00:00:15 . Memory (MB): peak = 818.688 ; gain = 432.043
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:12 ; elapsed = 00:00:15 . Memory (MB): peak = 818.688 ; gain = 432.043
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:12 ; elapsed = 00:00:15 . Memory (MB): peak = 818.688 ; gain = 432.043
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:12 ; elapsed = 00:00:15 . Memory (MB): peak = 818.688 ; gain = 432.043
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |BUFG   |     1|
+|2     |CARRY4 |     8|
+|3     |LUT1   |     6|
+|4     |LUT2   |    19|
+|5     |LUT3   |   134|
+|6     |LUT4   |    24|
+|7     |LUT5   |    69|
+|8     |LUT6   |   146|
+|9     |MUXF7  |    32|
+|10    |FDRE   |   685|
+|11    |FDSE   |    37|
+|12    |IBUF   |    57|
+|13    |OBUF   |    49|
++------+-------+------+
+
+Report Instance Areas: 
++------+--------------------------------------+-------------------------------+------+
+|      |Instance                              |Module                         |Cells |
++------+--------------------------------------+-------------------------------+------+
+|1     |top                                   |                               |  1267|
+|2     |  IP_AXI_OpticalBus_v1_0_S00_AXI_inst |IP_AXI_OpticalBus_v1_0_S00_AXI |  1160|
++------+--------------------------------------+-------------------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:12 ; elapsed = 00:00:15 . Memory (MB): peak = 818.688 ; gain = 432.043
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 39 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:12 ; elapsed = 00:00:15 . Memory (MB): peak = 818.688 ; gain = 432.043
+Synthesis Optimization Complete : Time (s): cpu = 00:00:12 ; elapsed = 00:00:15 . Memory (MB): peak = 818.688 ; gain = 432.043
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 40 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 1 CPU seconds
+WARNING: [Netlist 29-101] Netlist 'IP_AXI_OpticalBus_v1_0' is not ideal for floorplanning, since the cellview 'IP_AXI_OpticalBus_v1_0_S00_AXI' contains a large number of primitives.  Please consider enabling hierarchy in synthesis if you want to do floorplanning.
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 930.426 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+123 Infos, 42 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:16 ; elapsed = 00:00:24 . Memory (MB): peak = 930.426 ; gain = 551.637
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 930.426 ; gain = 0.000
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+INFO: [Common 17-1381] The checkpoint 'd:/GITEA/UPzynq20_test/IP/IP_AXI_OpticalBus/edit_IP_AXI_OpticalBus_v1_0.runs/synth_1/IP_AXI_OpticalBus_v1_0.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file IP_AXI_OpticalBus_v1_0_utilization_synth.rpt -pb IP_AXI_OpticalBus_v1_0_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Mon May 31 11:01:21 2021...
