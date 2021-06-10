@@ -237,6 +237,9 @@ set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==AckChecker_BusB
 # IP: bd/UPzynq20_test_design/ip/UPzynq20_test_design_IP_AXI_INVERTER_0_0/UPzynq20_test_design_IP_AXI_INVERTER_0_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==UPzynq20_test_design_IP_AXI_INVERTER_0_0 || ORIG_REF_NAME==UPzynq20_test_design_IP_AXI_INVERTER_0_0} -quiet] -quiet
 
+# IP: bd/UPzynq20_test_design/ip/UPzynq20_test_design_IP_AXI_LEDS_0_1/UPzynq20_test_design_IP_AXI_LEDS_0_1.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==UPzynq20_test_design_IP_AXI_LEDS_0_1 || ORIG_REF_NAME==UPzynq20_test_design_IP_AXI_LEDS_0_1} -quiet] -quiet
+
 # IP: bd/UPzynq20_test_design/ip/UPzynq20_test_design_auto_pc_0/UPzynq20_test_design_auto_pc_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==UPzynq20_test_design_auto_pc_0 || ORIG_REF_NAME==UPzynq20_test_design_auto_pc_0} -quiet] -quiet
 
