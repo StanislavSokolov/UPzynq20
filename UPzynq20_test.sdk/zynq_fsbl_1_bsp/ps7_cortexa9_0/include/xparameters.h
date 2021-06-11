@@ -104,17 +104,10 @@
 /******************************************************************/
 
 /* Definitions for driver CANPS */
-#define XPAR_XCANPS_NUM_INSTANCES 2
-
-/* Definitions for peripheral PS7_CAN_0 */
-#define XPAR_PS7_CAN_0_DEVICE_ID 0
-#define XPAR_PS7_CAN_0_BASEADDR 0xE0008000
-#define XPAR_PS7_CAN_0_HIGHADDR 0xE0008FFF
-#define XPAR_PS7_CAN_0_CAN_CLK_FREQ_HZ 100000000
-
+#define XPAR_XCANPS_NUM_INSTANCES 1
 
 /* Definitions for peripheral PS7_CAN_1 */
-#define XPAR_PS7_CAN_1_DEVICE_ID 1
+#define XPAR_PS7_CAN_1_DEVICE_ID 0
 #define XPAR_PS7_CAN_1_BASEADDR 0xE0009000
 #define XPAR_PS7_CAN_1_HIGHADDR 0xE0009FFF
 #define XPAR_PS7_CAN_1_CAN_CLK_FREQ_HZ 100000000
@@ -122,17 +115,11 @@
 
 /******************************************************************/
 
-/* Canonical definitions for peripheral PS7_CAN_0 */
-#define XPAR_XCANPS_0_DEVICE_ID XPAR_PS7_CAN_0_DEVICE_ID
-#define XPAR_XCANPS_0_BASEADDR 0xE0008000
-#define XPAR_XCANPS_0_HIGHADDR 0xE0008FFF
-#define XPAR_XCANPS_0_CAN_CLK_FREQ_HZ 100000000
-
 /* Canonical definitions for peripheral PS7_CAN_1 */
-#define XPAR_XCANPS_1_DEVICE_ID XPAR_PS7_CAN_1_DEVICE_ID
-#define XPAR_XCANPS_1_BASEADDR 0xE0009000
-#define XPAR_XCANPS_1_HIGHADDR 0xE0009FFF
-#define XPAR_XCANPS_1_CAN_CLK_FREQ_HZ 100000000
+#define XPAR_XCANPS_0_DEVICE_ID XPAR_PS7_CAN_1_DEVICE_ID
+#define XPAR_XCANPS_0_BASEADDR 0xE0009000
+#define XPAR_XCANPS_0_HIGHADDR 0xE0009FFF
+#define XPAR_XCANPS_0_CAN_CLK_FREQ_HZ 100000000
 
 
 /******************************************************************/

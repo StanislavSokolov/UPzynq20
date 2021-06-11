@@ -1,10 +1,10 @@
 -- Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
--- Date        : Wed Apr 29 12:29:50 2020
--- Host        : Stas running 64-bit major release  (build 9200)
+-- Date        : Fri Jun 11 07:49:57 2021
+-- Host        : STAS-W10 running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode synth_stub
---               d:/Projects/IP/LIB/Inverter_3lvl/Inverter_3lvl.srcs/sources_1/bd/Inverter_3lvl/ip/Inverter_3lvl_BUS_16IN_0_0/Inverter_3lvl_BUS_16IN_0_0_stub.vhdl
+--               D:/GITEA/UPzynq20_test/IP/LIB/Inverter_3lvl/Inverter_3lvl.srcs/sources_1/bd/Inverter_3lvl/ip/Inverter_3lvl_BUS_16IN_0_0/Inverter_3lvl_BUS_16IN_0_0_stub.vhdl
 -- Design      : Inverter_3lvl_BUS_16IN_0_0
 -- Purpose     : Stub declaration of top-level module interface
 -- Device      : xc7z020clg484-3

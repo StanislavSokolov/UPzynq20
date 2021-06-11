@@ -17,6 +17,7 @@ proc create_report { reportName command } {
     send_msg_id runtcl-5 warning "$msg"
   }
 }
+set_param chipscope.maxJobs 2
 create_project -in_memory -part xc7z020clg484-3
 
 set_param project.singleFileAddWarning.threshold 0
@@ -61,8 +62,8 @@ set_property used_in_implementation false [get_files -all d:/GITEA/UPzynq20_test
 set_property used_in_implementation false [get_files -all d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ip/UPzynq20_test_design_axi_gpio_6_0/UPzynq20_test_design_axi_gpio_6_0_board.xdc]
 set_property used_in_implementation false [get_files -all d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ip/UPzynq20_test_design_axi_gpio_6_0/UPzynq20_test_design_axi_gpio_6_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ip/UPzynq20_test_design_axi_gpio_6_0/UPzynq20_test_design_axi_gpio_6_0.xdc]
-set_property used_in_implementation false [get_files -all d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ip/UPzynq20_test_design_Inverter_3lvl_wrapper_0_0/Inverter_3lvl_ooc.xdc]
 set_property used_in_implementation false [get_files -all d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ip/UPzynq20_test_design_AckChecker_wrapper_0_0/AckChecker_ooc.xdc]
+set_property used_in_implementation false [get_files -all d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ip/UPzynq20_test_design_Inverter_3lvl_wrapper_0_1/Inverter_3lvl_ooc.xdc]
 set_property used_in_implementation false [get_files -all d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ip/UPzynq20_test_design_auto_pc_0/UPzynq20_test_design_auto_pc_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all D:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/UPzynq20_test_design_ooc.xdc]
 

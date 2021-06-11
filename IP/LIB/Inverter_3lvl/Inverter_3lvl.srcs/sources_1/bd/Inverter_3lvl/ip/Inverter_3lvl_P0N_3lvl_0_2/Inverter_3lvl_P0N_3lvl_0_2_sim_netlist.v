@@ -1,22 +1,22 @@
 // Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
-// Date        : Tue Apr 28 16:30:48 2020
-// Host        : Stas running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode funcsim
-//               D:/Projects/IP/LIB/Inverter_3lvl/Inverter_3lvl.srcs/sources_1/bd/Inverter_3lvl/ip/Inverter_3lvl_P0N_3lvl_0_2/Inverter_3lvl_P0N_3lvl_0_2_sim_netlist.v
-// Design      : Inverter_3lvl_P0N_3lvl_0_2
+// Date        : Fri Jun 11 07:49:57 2021
+// Host        : STAS-W10 running 64-bit major release  (build 9200)
+// Command     : write_verilog -force -mode funcsim -rename_top Inverter_3lvl_P0N_3lvl_0_2 -prefix
+//               Inverter_3lvl_P0N_3lvl_0_2_ Inverter_3lvl_P0N_3lvl_0_4_sim_netlist.v
+// Design      : Inverter_3lvl_P0N_3lvl_0_4
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
 // Device      : xc7z020clg484-3
 // --------------------------------------------------------------------------------
 `timescale 1 ps / 1 ps
 
-(* CHECK_LICENSE_TYPE = "Inverter_3lvl_P0N_3lvl_0_2,P0N_3lvl,{}" *) (* downgradeipidentifiedwarnings = "yes" *) (* ip_definition_source = "package_project" *) 
+(* CHECK_LICENSE_TYPE = "Inverter_3lvl_P0N_3lvl_0_4,P0N_3lvl,{}" *) (* downgradeipidentifiedwarnings = "yes" *) (* ip_definition_source = "package_project" *) 
 (* x_core_info = "P0N_3lvl,Vivado 2019.1" *) 
 (* NotValidForBitStream *)
 module Inverter_3lvl_P0N_3lvl_0_2
-   (Clk,
+   (externalCLK,
     ready,
     reset,
     deadTime,
@@ -31,7 +31,7 @@ module Inverter_3lvl_P0N_3lvl_0_2
     PWM_out_1,
     PWM_out_2,
     PWM_out_3);
-  (* x_interface_info = "xilinx.com:signal:clock:1.0 Clk CLK" *) (* x_interface_parameter = "XIL_INTERFACENAME Clk, ASSOCIATED_RESET reset, FREQ_HZ 100000000, PHASE 0.000, CLK_DOMAIN Inverter_3lvl_Clk_0, INSERT_VIP 0" *) input Clk;
+  input externalCLK;
   input ready;
   (* x_interface_info = "xilinx.com:signal:reset:1.0 reset RST" *) (* x_interface_parameter = "XIL_INTERFACENAME reset, POLARITY ACTIVE_LOW, INSERT_VIP 0" *) input reset;
   input [31:0]deadTime;
@@ -47,7 +47,6 @@ module Inverter_3lvl_P0N_3lvl_0_2
   output PWM_out_2;
   output PWM_out_3;
 
-  wire Clk;
   wire PWM_out_0;
   wire PWM_out_1;
   wire PWM_out_2;
@@ -57,6 +56,7 @@ module Inverter_3lvl_P0N_3lvl_0_2
   wire breaking_en;
   wire [31:0]deadTime;
   wire er;
+  wire externalCLK;
   wire [31:0]minTime;
   wire minTimeEr;
   wire minTime_En;
@@ -64,8 +64,7 @@ module Inverter_3lvl_P0N_3lvl_0_2
   wire reset;
 
   Inverter_3lvl_P0N_3lvl_0_2_P0N_3lvl U0
-       (.Clk(Clk),
-        .PWM_out_0(PWM_out_0),
+       (.PWM_out_0(PWM_out_0),
         .PWM_out_1(PWM_out_1),
         .PWM_out_2(PWM_out_2),
         .PWM_out_3(PWM_out_3),
@@ -74,6 +73,7 @@ module Inverter_3lvl_P0N_3lvl_0_2
         .breaking_en(breaking_en),
         .deadTime(deadTime),
         .er(er),
+        .externalCLK(externalCLK),
         .minTime(minTime),
         .minTimeEr_reg_0(minTimeEr),
         .minTime_En(minTime_En),
@@ -81,7 +81,6 @@ module Inverter_3lvl_P0N_3lvl_0_2
         .reset(reset));
 endmodule
 
-(* ORIG_REF_NAME = "P0N_3lvl" *) 
 module Inverter_3lvl_P0N_3lvl_0_2_P0N_3lvl
    (minTimeEr_reg_0,
     PWM_out_0,
@@ -89,7 +88,7 @@ module Inverter_3lvl_P0N_3lvl_0_2_P0N_3lvl
     PWM_out_2,
     PWM_out_3,
     reset,
-    Clk,
+    externalCLK,
     TKin0,
     TKin1,
     breaking_en,
@@ -104,7 +103,7 @@ module Inverter_3lvl_P0N_3lvl_0_2_P0N_3lvl
   output PWM_out_2;
   output PWM_out_3;
   input reset;
-  input Clk;
+  input externalCLK;
   input TKin0;
   input TKin1;
   input breaking_en;
@@ -114,7 +113,6 @@ module Inverter_3lvl_P0N_3lvl_0_2_P0N_3lvl
   input [31:0]deadTime;
   input [31:0]minTime;
 
-  wire Clk;
   wire \FSM_onehot_lineconfig[0]_i_1_n_0 ;
   wire \FSM_onehot_lineconfig[0]_i_2_n_0 ;
   wire \FSM_onehot_lineconfig[1]_i_1_n_0 ;
@@ -231,6 +229,7 @@ module Inverter_3lvl_P0N_3lvl_0_2_P0N_3lvl
   wire deadTimeOK;
   wire deadTimeOK_i_1_n_0;
   wire er;
+  wire externalCLK;
   wire key1_i_1_n_0;
   wire key1_i_2_n_0;
   wire key1_prev;
@@ -709,7 +708,7 @@ module Inverter_3lvl_P0N_3lvl_0_2_P0N_3lvl
   FDSE #(
     .INIT(1'b1)) 
     \FSM_onehot_lineconfig_reg[0] 
-       (.C(Clk),
+       (.C(externalCLK),
         .CE(\FSM_onehot_lineconfig[6]_i_1_n_0 ),
         .D(\FSM_onehot_lineconfig[0]_i_1_n_0 ),
         .Q(\FSM_onehot_lineconfig_reg_n_0_[0] ),
@@ -718,7 +717,7 @@ module Inverter_3lvl_P0N_3lvl_0_2_P0N_3lvl
   FDRE #(
     .INIT(1'b0)) 
     \FSM_onehot_lineconfig_reg[1] 
-       (.C(Clk),
+       (.C(externalCLK),
         .CE(\FSM_onehot_lineconfig[6]_i_1_n_0 ),
         .D(\FSM_onehot_lineconfig[1]_i_1_n_0 ),
         .Q(\FSM_onehot_lineconfig_reg_n_0_[1] ),
@@ -727,7 +726,7 @@ module Inverter_3lvl_P0N_3lvl_0_2_P0N_3lvl
   FDRE #(
     .INIT(1'b0)) 
     \FSM_onehot_lineconfig_reg[2] 
-       (.C(Clk),
+       (.C(externalCLK),
         .CE(\FSM_onehot_lineconfig[6]_i_1_n_0 ),
         .D(\FSM_onehot_lineconfig[2]_i_1_n_0 ),
         .Q(\FSM_onehot_lineconfig_reg_n_0_[2] ),
@@ -736,7 +735,7 @@ module Inverter_3lvl_P0N_3lvl_0_2_P0N_3lvl
   FDRE #(
     .INIT(1'b0)) 
     \FSM_onehot_lineconfig_reg[3] 
-       (.C(Clk),
+       (.C(externalCLK),
         .CE(\FSM_onehot_lineconfig[6]_i_1_n_0 ),
         .D(\FSM_onehot_lineconfig[3]_i_1_n_0 ),
         .Q(\FSM_onehot_lineconfig_reg_n_0_[3] ),
@@ -745,7 +744,7 @@ module Inverter_3lvl_P0N_3lvl_0_2_P0N_3lvl
   FDRE #(
     .INIT(1'b0)) 
     \FSM_onehot_lineconfig_reg[4] 
-       (.C(Clk),
+       (.C(externalCLK),
         .CE(\FSM_onehot_lineconfig[6]_i_1_n_0 ),
         .D(\FSM_onehot_lineconfig[4]_i_1_n_0 ),
         .Q(\FSM_onehot_lineconfig_reg_n_0_[4] ),
@@ -754,7 +753,7 @@ module Inverter_3lvl_P0N_3lvl_0_2_P0N_3lvl
   FDRE #(
     .INIT(1'b0)) 
     \FSM_onehot_lineconfig_reg[5] 
-       (.C(Clk),
+       (.C(externalCLK),
         .CE(\FSM_onehot_lineconfig[6]_i_1_n_0 ),
         .D(\FSM_onehot_lineconfig[5]_i_1_n_0 ),
         .Q(\FSM_onehot_lineconfig_reg_n_0_[5] ),
@@ -763,7 +762,7 @@ module Inverter_3lvl_P0N_3lvl_0_2_P0N_3lvl
   FDRE #(
     .INIT(1'b0)) 
     \FSM_onehot_lineconfig_reg[6] 
-       (.C(Clk),
+       (.C(externalCLK),
         .CE(\FSM_onehot_lineconfig[6]_i_1_n_0 ),
         .D(\FSM_onehot_lineconfig[6]_i_2_n_0 ),
         .Q(\FSM_onehot_lineconfig_reg_n_0_[6] ),
@@ -780,7 +779,7 @@ module Inverter_3lvl_P0N_3lvl_0_2_P0N_3lvl
   FDRE #(
     .INIT(1'b1)) 
     PWM_out_0_reg
-       (.C(Clk),
+       (.C(externalCLK),
         .CE(1'b1),
         .D(PWM_out_0_i_1_n_0),
         .Q(PWM_out_0),
@@ -797,7 +796,7 @@ module Inverter_3lvl_P0N_3lvl_0_2_P0N_3lvl
   FDRE #(
     .INIT(1'b1)) 
     PWM_out_1_reg
-       (.C(Clk),
+       (.C(externalCLK),
         .CE(1'b1),
         .D(PWM_out_1_i_1_n_0),
         .Q(PWM_out_1),
@@ -814,7 +813,7 @@ module Inverter_3lvl_P0N_3lvl_0_2_P0N_3lvl
   FDRE #(
     .INIT(1'b1)) 
     PWM_out_2_reg
-       (.C(Clk),
+       (.C(externalCLK),
         .CE(1'b1),
         .D(PWM_out_2_i_1_n_0),
         .Q(PWM_out_2),
@@ -831,7 +830,7 @@ module Inverter_3lvl_P0N_3lvl_0_2_P0N_3lvl
   FDRE #(
     .INIT(1'b1)) 
     PWM_out_3_reg
-       (.C(Clk),
+       (.C(externalCLK),
         .CE(1'b1),
         .D(PWM_out_3_i_1_n_0),
         .Q(PWM_out_3),
@@ -849,7 +848,7 @@ module Inverter_3lvl_P0N_3lvl_0_2_P0N_3lvl
   FDRE #(
     .INIT(1'b1)) 
     TKin0_triggered_reg
-       (.C(Clk),
+       (.C(externalCLK),
         .CE(1'b1),
         .D(TKin0_triggered_i_1_n_0),
         .Q(TKin0_triggered),
@@ -877,7 +876,7 @@ module Inverter_3lvl_P0N_3lvl_0_2_P0N_3lvl
   FDRE #(
     .INIT(1'b1)) 
     TKin1_triggered_reg
-       (.C(Clk),
+       (.C(externalCLK),
         .CE(1'b1),
         .D(TKin1_triggered_i_1_n_0),
         .Q(TKin1_triggered),
@@ -890,7 +889,7 @@ module Inverter_3lvl_P0N_3lvl_0_2_P0N_3lvl
   FDRE #(
     .INIT(1'b0)) 
     \TimeCounter_reg[0] 
-       (.C(Clk),
+       (.C(externalCLK),
         .CE(sel),
         .D(\TimeCounter_reg[0]_i_1_n_7 ),
         .Q(TimeCounter_reg[0]),
@@ -905,7 +904,7 @@ module Inverter_3lvl_P0N_3lvl_0_2_P0N_3lvl
   FDRE #(
     .INIT(1'b0)) 
     \TimeCounter_reg[10] 
-       (.C(Clk),
+       (.C(externalCLK),
         .CE(sel),
         .D(\TimeCounter_reg[8]_i_1_n_5 ),
         .Q(TimeCounter_reg[10]),
@@ -913,7 +912,7 @@ module Inverter_3lvl_P0N_3lvl_0_2_P0N_3lvl
   FDRE #(
     .INIT(1'b0)) 
     \TimeCounter_reg[11] 
-       (.C(Clk),
+       (.C(externalCLK),
         .CE(sel),
         .D(\TimeCounter_reg[8]_i_1_n_4 ),
         .Q(TimeCounter_reg[11]),
@@ -921,7 +920,7 @@ module Inverter_3lvl_P0N_3lvl_0_2_P0N_3lvl
   FDRE #(
     .INIT(1'b0)) 
     \TimeCounter_reg[12] 
-       (.C(Clk),
+       (.C(externalCLK),
         .CE(sel),
         .D(\TimeCounter_reg[12]_i_1_n_7 ),
         .Q(TimeCounter_reg[12]),
@@ -936,7 +935,7 @@ module Inverter_3lvl_P0N_3lvl_0_2_P0N_3lvl
   FDRE #(
     .INIT(1'b0)) 
     \TimeCounter_reg[13] 
-       (.C(Clk),
+       (.C(externalCLK),
         .CE(sel),
         .D(\TimeCounter_reg[12]_i_1_n_6 ),
         .Q(TimeCounter_reg[13]),
@@ -944,7 +943,7 @@ module Inverter_3lvl_P0N_3lvl_0_2_P0N_3lvl
   FDRE #(
     .INIT(1'b0)) 
     \TimeCounter_reg[14] 
-       (.C(Clk),
+       (.C(externalCLK),
         .CE(sel),
         .D(\TimeCounter_reg[12]_i_1_n_5 ),
         .Q(TimeCounter_reg[14]),
@@ -952,7 +951,7 @@ module Inverter_3lvl_P0N_3lvl_0_2_P0N_3lvl
   FDRE #(
     .INIT(1'b0)) 
     \TimeCounter_reg[15] 
-       (.C(Clk),
+       (.C(externalCLK),
         .CE(sel),
         .D(\TimeCounter_reg[12]_i_1_n_4 ),
         .Q(TimeCounter_reg[15]),
@@ -960,7 +959,7 @@ module Inverter_3lvl_P0N_3lvl_0_2_P0N_3lvl
   FDRE #(
     .INIT(1'b0)) 
     \TimeCounter_reg[16] 
-       (.C(Clk),
+       (.C(externalCLK),
         .CE(sel),
         .D(\TimeCounter_reg[16]_i_1_n_7 ),
         .Q(TimeCounter_reg[16]),
@@ -975,7 +974,7 @@ module Inverter_3lvl_P0N_3lvl_0_2_P0N_3lvl
   FDRE #(
     .INIT(1'b0)) 
     \TimeCounter_reg[17] 
-       (.C(Clk),
+       (.C(externalCLK),
         .CE(sel),
         .D(\TimeCounter_reg[16]_i_1_n_6 ),
         .Q(TimeCounter_reg[17]),
@@ -983,7 +982,7 @@ module Inverter_3lvl_P0N_3lvl_0_2_P0N_3lvl
   FDRE #(
     .INIT(1'b0)) 
     \TimeCounter_reg[18] 
-       (.C(Clk),
+       (.C(externalCLK),
         .CE(sel),
         .D(\TimeCounter_reg[16]_i_1_n_5 ),
         .Q(TimeCounter_reg[18]),
@@ -991,7 +990,7 @@ module Inverter_3lvl_P0N_3lvl_0_2_P0N_3lvl
   FDRE #(
     .INIT(1'b0)) 
     \TimeCounter_reg[19] 
-       (.C(Clk),
+       (.C(externalCLK),
         .CE(sel),
         .D(\TimeCounter_reg[16]_i_1_n_4 ),
         .Q(TimeCounter_reg[19]),
@@ -999,7 +998,7 @@ module Inverter_3lvl_P0N_3lvl_0_2_P0N_3lvl
   FDRE #(
     .INIT(1'b0)) 
     \TimeCounter_reg[1] 
-       (.C(Clk),
+       (.C(externalCLK),
         .CE(sel),
         .D(\TimeCounter_reg[0]_i_1_n_6 ),
         .Q(TimeCounter_reg[1]),
@@ -1007,7 +1006,7 @@ module Inverter_3lvl_P0N_3lvl_0_2_P0N_3lvl
   FDRE #(
     .INIT(1'b0)) 
     \TimeCounter_reg[20] 
-       (.C(Clk),
+       (.C(externalCLK),
         .CE(sel),
         .D(\TimeCounter_reg[20]_i_1_n_7 ),
         .Q(TimeCounter_reg[20]),
@@ -1022,7 +1021,7 @@ module Inverter_3lvl_P0N_3lvl_0_2_P0N_3lvl
   FDRE #(
     .INIT(1'b0)) 
     \TimeCounter_reg[21] 
-       (.C(Clk),
+       (.C(externalCLK),
         .CE(sel),
         .D(\TimeCounter_reg[20]_i_1_n_6 ),
         .Q(TimeCounter_reg[21]),
@@ -1030,7 +1029,7 @@ module Inverter_3lvl_P0N_3lvl_0_2_P0N_3lvl
   FDRE #(
     .INIT(1'b0)) 
     \TimeCounter_reg[22] 
-       (.C(Clk),
+       (.C(externalCLK),
         .CE(sel),
         .D(\TimeCounter_reg[20]_i_1_n_5 ),
         .Q(TimeCounter_reg[22]),
@@ -1038,7 +1037,7 @@ module Inverter_3lvl_P0N_3lvl_0_2_P0N_3lvl
   FDRE #(
     .INIT(1'b0)) 
     \TimeCounter_reg[23] 
-       (.C(Clk),
+       (.C(externalCLK),
         .CE(sel),
         .D(\TimeCounter_reg[20]_i_1_n_4 ),
         .Q(TimeCounter_reg[23]),
@@ -1046,7 +1045,7 @@ module Inverter_3lvl_P0N_3lvl_0_2_P0N_3lvl
   FDRE #(
     .INIT(1'b0)) 
     \TimeCounter_reg[24] 
-       (.C(Clk),
+       (.C(externalCLK),
         .CE(sel),
         .D(\TimeCounter_reg[24]_i_1_n_7 ),
         .Q(TimeCounter_reg[24]),
@@ -1061,7 +1060,7 @@ module Inverter_3lvl_P0N_3lvl_0_2_P0N_3lvl
   FDRE #(
     .INIT(1'b0)) 
     \TimeCounter_reg[25] 
-       (.C(Clk),
+       (.C(externalCLK),
         .CE(sel),
         .D(\TimeCounter_reg[24]_i_1_n_6 ),
         .Q(TimeCounter_reg[25]),
@@ -1069,7 +1068,7 @@ module Inverter_3lvl_P0N_3lvl_0_2_P0N_3lvl
   FDRE #(
     .INIT(1'b0)) 
     \TimeCounter_reg[26] 
-       (.C(Clk),
+       (.C(externalCLK),
         .CE(sel),
         .D(\TimeCounter_reg[24]_i_1_n_5 ),
         .Q(TimeCounter_reg[26]),
@@ -1077,7 +1076,7 @@ module Inverter_3lvl_P0N_3lvl_0_2_P0N_3lvl
   FDRE #(
     .INIT(1'b0)) 
     \TimeCounter_reg[27] 
-       (.C(Clk),
+       (.C(externalCLK),
         .CE(sel),
         .D(\TimeCounter_reg[24]_i_1_n_4 ),
         .Q(TimeCounter_reg[27]),
@@ -1085,7 +1084,7 @@ module Inverter_3lvl_P0N_3lvl_0_2_P0N_3lvl
   FDRE #(
     .INIT(1'b0)) 
     \TimeCounter_reg[28] 
-       (.C(Clk),
+       (.C(externalCLK),
         .CE(sel),
         .D(\TimeCounter_reg[28]_i_1_n_7 ),
         .Q(TimeCounter_reg[28]),
@@ -1100,7 +1099,7 @@ module Inverter_3lvl_P0N_3lvl_0_2_P0N_3lvl
   FDRE #(
     .INIT(1'b0)) 
     \TimeCounter_reg[29] 
-       (.C(Clk),
+       (.C(externalCLK),
         .CE(sel),
         .D(\TimeCounter_reg[28]_i_1_n_6 ),
         .Q(TimeCounter_reg[29]),
@@ -1108,7 +1107,7 @@ module Inverter_3lvl_P0N_3lvl_0_2_P0N_3lvl
   FDRE #(
     .INIT(1'b0)) 
     \TimeCounter_reg[2] 
-       (.C(Clk),
+       (.C(externalCLK),
         .CE(sel),
         .D(\TimeCounter_reg[0]_i_1_n_5 ),
         .Q(TimeCounter_reg[2]),
@@ -1116,7 +1115,7 @@ module Inverter_3lvl_P0N_3lvl_0_2_P0N_3lvl
   FDRE #(
     .INIT(1'b0)) 
     \TimeCounter_reg[30] 
-       (.C(Clk),
+       (.C(externalCLK),
         .CE(sel),
         .D(\TimeCounter_reg[28]_i_1_n_5 ),
         .Q(TimeCounter_reg[30]),
@@ -1124,7 +1123,7 @@ module Inverter_3lvl_P0N_3lvl_0_2_P0N_3lvl
   FDRE #(
     .INIT(1'b0)) 
     \TimeCounter_reg[31] 
-       (.C(Clk),
+       (.C(externalCLK),
         .CE(sel),
         .D(\TimeCounter_reg[28]_i_1_n_4 ),
         .Q(TimeCounter_reg[31]),
@@ -1132,7 +1131,7 @@ module Inverter_3lvl_P0N_3lvl_0_2_P0N_3lvl
   FDRE #(
     .INIT(1'b0)) 
     \TimeCounter_reg[3] 
-       (.C(Clk),
+       (.C(externalCLK),
         .CE(sel),
         .D(\TimeCounter_reg[0]_i_1_n_4 ),
         .Q(TimeCounter_reg[3]),
@@ -1140,7 +1139,7 @@ module Inverter_3lvl_P0N_3lvl_0_2_P0N_3lvl
   FDRE #(
     .INIT(1'b0)) 
     \TimeCounter_reg[4] 
-       (.C(Clk),
+       (.C(externalCLK),
         .CE(sel),
         .D(\TimeCounter_reg[4]_i_1_n_7 ),
         .Q(TimeCounter_reg[4]),
@@ -1155,7 +1154,7 @@ module Inverter_3lvl_P0N_3lvl_0_2_P0N_3lvl
   FDRE #(
     .INIT(1'b0)) 
     \TimeCounter_reg[5] 
-       (.C(Clk),
+       (.C(externalCLK),
         .CE(sel),
         .D(\TimeCounter_reg[4]_i_1_n_6 ),
         .Q(TimeCounter_reg[5]),
@@ -1163,7 +1162,7 @@ module Inverter_3lvl_P0N_3lvl_0_2_P0N_3lvl
   FDRE #(
     .INIT(1'b0)) 
     \TimeCounter_reg[6] 
-       (.C(Clk),
+       (.C(externalCLK),
         .CE(sel),
         .D(\TimeCounter_reg[4]_i_1_n_5 ),
         .Q(TimeCounter_reg[6]),
@@ -1171,7 +1170,7 @@ module Inverter_3lvl_P0N_3lvl_0_2_P0N_3lvl
   FDRE #(
     .INIT(1'b0)) 
     \TimeCounter_reg[7] 
-       (.C(Clk),
+       (.C(externalCLK),
         .CE(sel),
         .D(\TimeCounter_reg[4]_i_1_n_4 ),
         .Q(TimeCounter_reg[7]),
@@ -1179,7 +1178,7 @@ module Inverter_3lvl_P0N_3lvl_0_2_P0N_3lvl
   FDRE #(
     .INIT(1'b0)) 
     \TimeCounter_reg[8] 
-       (.C(Clk),
+       (.C(externalCLK),
         .CE(sel),
         .D(\TimeCounter_reg[8]_i_1_n_7 ),
         .Q(TimeCounter_reg[8]),
@@ -1194,7 +1193,7 @@ module Inverter_3lvl_P0N_3lvl_0_2_P0N_3lvl
   FDRE #(
     .INIT(1'b0)) 
     \TimeCounter_reg[9] 
-       (.C(Clk),
+       (.C(externalCLK),
         .CE(sel),
         .D(\TimeCounter_reg[8]_i_1_n_6 ),
         .Q(TimeCounter_reg[9]),
@@ -1267,7 +1266,7 @@ module Inverter_3lvl_P0N_3lvl_0_2_P0N_3lvl
   FDRE #(
     .INIT(1'b0)) 
     deadTimeCounterReset_reg
-       (.C(Clk),
+       (.C(externalCLK),
         .CE(1'b1),
         .D(deadTimeCounterReset_i_1_n_0),
         .Q(deadTimeCounterReset_reg_n_0),
@@ -1283,7 +1282,7 @@ module Inverter_3lvl_P0N_3lvl_0_2_P0N_3lvl
   FDRE #(
     .INIT(1'b1)) 
     deadTimeOK_reg
-       (.C(Clk),
+       (.C(externalCLK),
         .CE(1'b1),
         .D(deadTimeOK_i_1_n_0),
         .Q(deadTimeOK),
@@ -1310,7 +1309,7 @@ module Inverter_3lvl_P0N_3lvl_0_2_P0N_3lvl
   FDRE #(
     .INIT(1'b1)) 
     key1_prev_reg
-       (.C(Clk),
+       (.C(externalCLK),
         .CE(p_0_in),
         .D(key1_reg_n_0),
         .Q(key1_prev),
@@ -1318,7 +1317,7 @@ module Inverter_3lvl_P0N_3lvl_0_2_P0N_3lvl
   FDRE #(
     .INIT(1'b1)) 
     key1_reg
-       (.C(Clk),
+       (.C(externalCLK),
         .CE(p_0_in),
         .D(key1_i_1_n_0),
         .Q(key1_reg_n_0),
@@ -1341,7 +1340,7 @@ module Inverter_3lvl_P0N_3lvl_0_2_P0N_3lvl
   FDRE #(
     .INIT(1'b1)) 
     key2_prev_reg
-       (.C(Clk),
+       (.C(externalCLK),
         .CE(p_0_in),
         .D(key2_reg_n_0),
         .Q(key2_prev),
@@ -1349,7 +1348,7 @@ module Inverter_3lvl_P0N_3lvl_0_2_P0N_3lvl
   FDRE #(
     .INIT(1'b1)) 
     key2_reg
-       (.C(Clk),
+       (.C(externalCLK),
         .CE(p_0_in),
         .D(key2_i_2_n_0),
         .Q(key2_reg_n_0),
@@ -1367,7 +1366,7 @@ module Inverter_3lvl_P0N_3lvl_0_2_P0N_3lvl
   FDRE #(
     .INIT(1'b1)) 
     key3_prev_reg
-       (.C(Clk),
+       (.C(externalCLK),
         .CE(p_0_in),
         .D(key3_reg_n_0),
         .Q(key3_prev),
@@ -1375,7 +1374,7 @@ module Inverter_3lvl_P0N_3lvl_0_2_P0N_3lvl
   FDRE #(
     .INIT(1'b1)) 
     key3_reg
-       (.C(Clk),
+       (.C(externalCLK),
         .CE(1'b1),
         .D(key3_i_1_n_0),
         .Q(key3_reg_n_0),
@@ -1401,7 +1400,7 @@ module Inverter_3lvl_P0N_3lvl_0_2_P0N_3lvl
   FDRE #(
     .INIT(1'b1)) 
     key4_prev_reg
-       (.C(Clk),
+       (.C(externalCLK),
         .CE(p_0_in),
         .D(key4_reg_n_0),
         .Q(key4_prev),
@@ -1409,7 +1408,7 @@ module Inverter_3lvl_P0N_3lvl_0_2_P0N_3lvl
   FDRE #(
     .INIT(1'b1)) 
     key4_reg
-       (.C(Clk),
+       (.C(externalCLK),
         .CE(1'b1),
         .D(key4_i_1_n_0),
         .Q(key4_reg_n_0),
@@ -2290,7 +2289,7 @@ module Inverter_3lvl_P0N_3lvl_0_2_P0N_3lvl
   FDRE #(
     .INIT(1'b0)) 
     \minTimeCounter_high_reg[0] 
-       (.C(Clk),
+       (.C(externalCLK),
         .CE(minTimeCounter_high),
         .D(\minTimeCounter_high_reg[0]_i_3_n_7 ),
         .Q(minTimeCounter_high_reg[0]),
@@ -2305,7 +2304,7 @@ module Inverter_3lvl_P0N_3lvl_0_2_P0N_3lvl
   FDRE #(
     .INIT(1'b0)) 
     \minTimeCounter_high_reg[10] 
-       (.C(Clk),
+       (.C(externalCLK),
         .CE(minTimeCounter_high),
         .D(\minTimeCounter_high_reg[8]_i_1_n_5 ),
         .Q(minTimeCounter_high_reg[10]),
@@ -2313,7 +2312,7 @@ module Inverter_3lvl_P0N_3lvl_0_2_P0N_3lvl
   FDRE #(
     .INIT(1'b0)) 
     \minTimeCounter_high_reg[11] 
-       (.C(Clk),
+       (.C(externalCLK),
         .CE(minTimeCounter_high),
         .D(\minTimeCounter_high_reg[8]_i_1_n_4 ),
         .Q(minTimeCounter_high_reg[11]),
@@ -2321,7 +2320,7 @@ module Inverter_3lvl_P0N_3lvl_0_2_P0N_3lvl
   FDRE #(
     .INIT(1'b0)) 
     \minTimeCounter_high_reg[12] 
-       (.C(Clk),
+       (.C(externalCLK),
         .CE(minTimeCounter_high),
         .D(\minTimeCounter_high_reg[12]_i_1_n_7 ),
         .Q(minTimeCounter_high_reg[12]),
@@ -2336,7 +2335,7 @@ module Inverter_3lvl_P0N_3lvl_0_2_P0N_3lvl
   FDRE #(
     .INIT(1'b0)) 
     \minTimeCounter_high_reg[13] 
-       (.C(Clk),
+       (.C(externalCLK),
         .CE(minTimeCounter_high),
         .D(\minTimeCounter_high_reg[12]_i_1_n_6 ),
         .Q(minTimeCounter_high_reg[13]),
@@ -2344,7 +2343,7 @@ module Inverter_3lvl_P0N_3lvl_0_2_P0N_3lvl
   FDRE #(
     .INIT(1'b0)) 
     \minTimeCounter_high_reg[14] 
-       (.C(Clk),
+       (.C(externalCLK),
         .CE(minTimeCounter_high),
         .D(\minTimeCounter_high_reg[12]_i_1_n_5 ),
         .Q(minTimeCounter_high_reg[14]),
@@ -2352,7 +2351,7 @@ module Inverter_3lvl_P0N_3lvl_0_2_P0N_3lvl
   FDRE #(
     .INIT(1'b0)) 
     \minTimeCounter_high_reg[15] 
-       (.C(Clk),
+       (.C(externalCLK),
         .CE(minTimeCounter_high),
         .D(\minTimeCounter_high_reg[12]_i_1_n_4 ),
         .Q(minTimeCounter_high_reg[15]),
@@ -2360,7 +2359,7 @@ module Inverter_3lvl_P0N_3lvl_0_2_P0N_3lvl
   FDRE #(
     .INIT(1'b0)) 
     \minTimeCounter_high_reg[16] 
-       (.C(Clk),
+       (.C(externalCLK),
         .CE(minTimeCounter_high),
         .D(\minTimeCounter_high_reg[16]_i_1_n_7 ),
         .Q(minTimeCounter_high_reg[16]),
@@ -2375,7 +2374,7 @@ module Inverter_3lvl_P0N_3lvl_0_2_P0N_3lvl
   FDRE #(
     .INIT(1'b0)) 
     \minTimeCounter_high_reg[17] 
-       (.C(Clk),
+       (.C(externalCLK),
         .CE(minTimeCounter_high),
         .D(\minTimeCounter_high_reg[16]_i_1_n_6 ),
         .Q(minTimeCounter_high_reg[17]),
@@ -2383,7 +2382,7 @@ module Inverter_3lvl_P0N_3lvl_0_2_P0N_3lvl
   FDRE #(
     .INIT(1'b0)) 
     \minTimeCounter_high_reg[18] 
-       (.C(Clk),
+       (.C(externalCLK),
         .CE(minTimeCounter_high),
         .D(\minTimeCounter_high_reg[16]_i_1_n_5 ),
         .Q(minTimeCounter_high_reg[18]),
@@ -2391,7 +2390,7 @@ module Inverter_3lvl_P0N_3lvl_0_2_P0N_3lvl
   FDRE #(
     .INIT(1'b0)) 
     \minTimeCounter_high_reg[19] 
-       (.C(Clk),
+       (.C(externalCLK),
         .CE(minTimeCounter_high),
         .D(\minTimeCounter_high_reg[16]_i_1_n_4 ),
         .Q(minTimeCounter_high_reg[19]),
@@ -2399,7 +2398,7 @@ module Inverter_3lvl_P0N_3lvl_0_2_P0N_3lvl
   FDRE #(
     .INIT(1'b0)) 
     \minTimeCounter_high_reg[1] 
-       (.C(Clk),
+       (.C(externalCLK),
         .CE(minTimeCounter_high),
         .D(\minTimeCounter_high_reg[0]_i_3_n_6 ),
         .Q(minTimeCounter_high_reg[1]),
@@ -2407,7 +2406,7 @@ module Inverter_3lvl_P0N_3lvl_0_2_P0N_3lvl
   FDRE #(
     .INIT(1'b0)) 
     \minTimeCounter_high_reg[20] 
-       (.C(Clk),
+       (.C(externalCLK),
         .CE(minTimeCounter_high),
         .D(\minTimeCounter_high_reg[20]_i_1_n_7 ),
         .Q(minTimeCounter_high_reg[20]),
@@ -2422,7 +2421,7 @@ module Inverter_3lvl_P0N_3lvl_0_2_P0N_3lvl
   FDRE #(
     .INIT(1'b0)) 
     \minTimeCounter_high_reg[21] 
-       (.C(Clk),
+       (.C(externalCLK),
         .CE(minTimeCounter_high),
         .D(\minTimeCounter_high_reg[20]_i_1_n_6 ),
         .Q(minTimeCounter_high_reg[21]),
@@ -2430,7 +2429,7 @@ module Inverter_3lvl_P0N_3lvl_0_2_P0N_3lvl
   FDRE #(
     .INIT(1'b0)) 
     \minTimeCounter_high_reg[22] 
-       (.C(Clk),
+       (.C(externalCLK),
         .CE(minTimeCounter_high),
         .D(\minTimeCounter_high_reg[20]_i_1_n_5 ),
         .Q(minTimeCounter_high_reg[22]),
@@ -2438,7 +2437,7 @@ module Inverter_3lvl_P0N_3lvl_0_2_P0N_3lvl
   FDRE #(
     .INIT(1'b0)) 
     \minTimeCounter_high_reg[23] 
-       (.C(Clk),
+       (.C(externalCLK),
         .CE(minTimeCounter_high),
         .D(\minTimeCounter_high_reg[20]_i_1_n_4 ),
         .Q(minTimeCounter_high_reg[23]),
@@ -2446,7 +2445,7 @@ module Inverter_3lvl_P0N_3lvl_0_2_P0N_3lvl
   FDRE #(
     .INIT(1'b0)) 
     \minTimeCounter_high_reg[24] 
-       (.C(Clk),
+       (.C(externalCLK),
         .CE(minTimeCounter_high),
         .D(\minTimeCounter_high_reg[24]_i_1_n_7 ),
         .Q(minTimeCounter_high_reg[24]),
@@ -2461,7 +2460,7 @@ module Inverter_3lvl_P0N_3lvl_0_2_P0N_3lvl
   FDRE #(
     .INIT(1'b0)) 
     \minTimeCounter_high_reg[25] 
-       (.C(Clk),
+       (.C(externalCLK),
         .CE(minTimeCounter_high),
         .D(\minTimeCounter_high_reg[24]_i_1_n_6 ),
         .Q(minTimeCounter_high_reg[25]),
@@ -2469,7 +2468,7 @@ module Inverter_3lvl_P0N_3lvl_0_2_P0N_3lvl
   FDRE #(
     .INIT(1'b0)) 
     \minTimeCounter_high_reg[26] 
-       (.C(Clk),
+       (.C(externalCLK),
         .CE(minTimeCounter_high),
         .D(\minTimeCounter_high_reg[24]_i_1_n_5 ),
         .Q(minTimeCounter_high_reg[26]),
@@ -2477,7 +2476,7 @@ module Inverter_3lvl_P0N_3lvl_0_2_P0N_3lvl
   FDRE #(
     .INIT(1'b0)) 
     \minTimeCounter_high_reg[27] 
-       (.C(Clk),
+       (.C(externalCLK),
         .CE(minTimeCounter_high),
         .D(\minTimeCounter_high_reg[24]_i_1_n_4 ),
         .Q(minTimeCounter_high_reg[27]),
@@ -2485,7 +2484,7 @@ module Inverter_3lvl_P0N_3lvl_0_2_P0N_3lvl
   FDRE #(
     .INIT(1'b0)) 
     \minTimeCounter_high_reg[28] 
-       (.C(Clk),
+       (.C(externalCLK),
         .CE(minTimeCounter_high),
         .D(\minTimeCounter_high_reg[28]_i_1_n_7 ),
         .Q(minTimeCounter_high_reg[28]),
@@ -2500,7 +2499,7 @@ module Inverter_3lvl_P0N_3lvl_0_2_P0N_3lvl
   FDRE #(
     .INIT(1'b0)) 
     \minTimeCounter_high_reg[29] 
-       (.C(Clk),
+       (.C(externalCLK),
         .CE(minTimeCounter_high),
         .D(\minTimeCounter_high_reg[28]_i_1_n_6 ),
         .Q(minTimeCounter_high_reg[29]),
@@ -2508,7 +2507,7 @@ module Inverter_3lvl_P0N_3lvl_0_2_P0N_3lvl
   FDRE #(
     .INIT(1'b0)) 
     \minTimeCounter_high_reg[2] 
-       (.C(Clk),
+       (.C(externalCLK),
         .CE(minTimeCounter_high),
         .D(\minTimeCounter_high_reg[0]_i_3_n_5 ),
         .Q(minTimeCounter_high_reg[2]),
@@ -2516,7 +2515,7 @@ module Inverter_3lvl_P0N_3lvl_0_2_P0N_3lvl
   FDRE #(
     .INIT(1'b0)) 
     \minTimeCounter_high_reg[30] 
-       (.C(Clk),
+       (.C(externalCLK),
         .CE(minTimeCounter_high),
         .D(\minTimeCounter_high_reg[28]_i_1_n_5 ),
         .Q(minTimeCounter_high_reg[30]),
@@ -2524,7 +2523,7 @@ module Inverter_3lvl_P0N_3lvl_0_2_P0N_3lvl
   FDRE #(
     .INIT(1'b0)) 
     \minTimeCounter_high_reg[31] 
-       (.C(Clk),
+       (.C(externalCLK),
         .CE(minTimeCounter_high),
         .D(\minTimeCounter_high_reg[28]_i_1_n_4 ),
         .Q(minTimeCounter_high_reg[31]),
@@ -2532,7 +2531,7 @@ module Inverter_3lvl_P0N_3lvl_0_2_P0N_3lvl
   FDRE #(
     .INIT(1'b0)) 
     \minTimeCounter_high_reg[3] 
-       (.C(Clk),
+       (.C(externalCLK),
         .CE(minTimeCounter_high),
         .D(\minTimeCounter_high_reg[0]_i_3_n_4 ),
         .Q(minTimeCounter_high_reg[3]),
@@ -2540,7 +2539,7 @@ module Inverter_3lvl_P0N_3lvl_0_2_P0N_3lvl
   FDRE #(
     .INIT(1'b0)) 
     \minTimeCounter_high_reg[4] 
-       (.C(Clk),
+       (.C(externalCLK),
         .CE(minTimeCounter_high),
         .D(\minTimeCounter_high_reg[4]_i_1_n_7 ),
         .Q(minTimeCounter_high_reg[4]),
@@ -2555,7 +2554,7 @@ module Inverter_3lvl_P0N_3lvl_0_2_P0N_3lvl
   FDRE #(
     .INIT(1'b0)) 
     \minTimeCounter_high_reg[5] 
-       (.C(Clk),
+       (.C(externalCLK),
         .CE(minTimeCounter_high),
         .D(\minTimeCounter_high_reg[4]_i_1_n_6 ),
         .Q(minTimeCounter_high_reg[5]),
@@ -2563,7 +2562,7 @@ module Inverter_3lvl_P0N_3lvl_0_2_P0N_3lvl
   FDRE #(
     .INIT(1'b0)) 
     \minTimeCounter_high_reg[6] 
-       (.C(Clk),
+       (.C(externalCLK),
         .CE(minTimeCounter_high),
         .D(\minTimeCounter_high_reg[4]_i_1_n_5 ),
         .Q(minTimeCounter_high_reg[6]),
@@ -2571,7 +2570,7 @@ module Inverter_3lvl_P0N_3lvl_0_2_P0N_3lvl
   FDRE #(
     .INIT(1'b0)) 
     \minTimeCounter_high_reg[7] 
-       (.C(Clk),
+       (.C(externalCLK),
         .CE(minTimeCounter_high),
         .D(\minTimeCounter_high_reg[4]_i_1_n_4 ),
         .Q(minTimeCounter_high_reg[7]),
@@ -2579,7 +2578,7 @@ module Inverter_3lvl_P0N_3lvl_0_2_P0N_3lvl
   FDRE #(
     .INIT(1'b0)) 
     \minTimeCounter_high_reg[8] 
-       (.C(Clk),
+       (.C(externalCLK),
         .CE(minTimeCounter_high),
         .D(\minTimeCounter_high_reg[8]_i_1_n_7 ),
         .Q(minTimeCounter_high_reg[8]),
@@ -2594,7 +2593,7 @@ module Inverter_3lvl_P0N_3lvl_0_2_P0N_3lvl
   FDRE #(
     .INIT(1'b0)) 
     \minTimeCounter_high_reg[9] 
-       (.C(Clk),
+       (.C(externalCLK),
         .CE(minTimeCounter_high),
         .D(\minTimeCounter_high_reg[8]_i_1_n_6 ),
         .Q(minTimeCounter_high_reg[9]),
@@ -2630,7 +2629,7 @@ module Inverter_3lvl_P0N_3lvl_0_2_P0N_3lvl
   FDRE #(
     .INIT(1'b0)) 
     \minTimeCounter_low_reg[0] 
-       (.C(Clk),
+       (.C(externalCLK),
         .CE(minTimeCounter_low),
         .D(\minTimeCounter_low_reg[0]_i_3_n_7 ),
         .Q(minTimeCounter_low_reg[0]),
@@ -2645,7 +2644,7 @@ module Inverter_3lvl_P0N_3lvl_0_2_P0N_3lvl
   FDRE #(
     .INIT(1'b0)) 
     \minTimeCounter_low_reg[10] 
-       (.C(Clk),
+       (.C(externalCLK),
         .CE(minTimeCounter_low),
         .D(\minTimeCounter_low_reg[8]_i_1_n_5 ),
         .Q(minTimeCounter_low_reg[10]),
@@ -2653,7 +2652,7 @@ module Inverter_3lvl_P0N_3lvl_0_2_P0N_3lvl
   FDRE #(
     .INIT(1'b0)) 
     \minTimeCounter_low_reg[11] 
-       (.C(Clk),
+       (.C(externalCLK),
         .CE(minTimeCounter_low),
         .D(\minTimeCounter_low_reg[8]_i_1_n_4 ),
         .Q(minTimeCounter_low_reg[11]),
@@ -2661,7 +2660,7 @@ module Inverter_3lvl_P0N_3lvl_0_2_P0N_3lvl
   FDRE #(
     .INIT(1'b0)) 
     \minTimeCounter_low_reg[12] 
-       (.C(Clk),
+       (.C(externalCLK),
         .CE(minTimeCounter_low),
         .D(\minTimeCounter_low_reg[12]_i_1_n_7 ),
         .Q(minTimeCounter_low_reg[12]),
@@ -2676,7 +2675,7 @@ module Inverter_3lvl_P0N_3lvl_0_2_P0N_3lvl
   FDRE #(
     .INIT(1'b0)) 
     \minTimeCounter_low_reg[13] 
-       (.C(Clk),
+       (.C(externalCLK),
         .CE(minTimeCounter_low),
         .D(\minTimeCounter_low_reg[12]_i_1_n_6 ),
         .Q(minTimeCounter_low_reg[13]),
@@ -2684,7 +2683,7 @@ module Inverter_3lvl_P0N_3lvl_0_2_P0N_3lvl
   FDRE #(
     .INIT(1'b0)) 
     \minTimeCounter_low_reg[14] 
-       (.C(Clk),
+       (.C(externalCLK),
         .CE(minTimeCounter_low),
         .D(\minTimeCounter_low_reg[12]_i_1_n_5 ),
         .Q(minTimeCounter_low_reg[14]),
@@ -2692,7 +2691,7 @@ module Inverter_3lvl_P0N_3lvl_0_2_P0N_3lvl
   FDRE #(
     .INIT(1'b0)) 
     \minTimeCounter_low_reg[15] 
-       (.C(Clk),
+       (.C(externalCLK),
         .CE(minTimeCounter_low),
         .D(\minTimeCounter_low_reg[12]_i_1_n_4 ),
         .Q(minTimeCounter_low_reg[15]),
@@ -2700,7 +2699,7 @@ module Inverter_3lvl_P0N_3lvl_0_2_P0N_3lvl
   FDRE #(
     .INIT(1'b0)) 
     \minTimeCounter_low_reg[16] 
-       (.C(Clk),
+       (.C(externalCLK),
         .CE(minTimeCounter_low),
         .D(\minTimeCounter_low_reg[16]_i_1_n_7 ),
         .Q(minTimeCounter_low_reg[16]),
@@ -2715,7 +2714,7 @@ module Inverter_3lvl_P0N_3lvl_0_2_P0N_3lvl
   FDRE #(
     .INIT(1'b0)) 
     \minTimeCounter_low_reg[17] 
-       (.C(Clk),
+       (.C(externalCLK),
         .CE(minTimeCounter_low),
         .D(\minTimeCounter_low_reg[16]_i_1_n_6 ),
         .Q(minTimeCounter_low_reg[17]),
@@ -2723,7 +2722,7 @@ module Inverter_3lvl_P0N_3lvl_0_2_P0N_3lvl
   FDRE #(
     .INIT(1'b0)) 
     \minTimeCounter_low_reg[18] 
-       (.C(Clk),
+       (.C(externalCLK),
         .CE(minTimeCounter_low),
         .D(\minTimeCounter_low_reg[16]_i_1_n_5 ),
         .Q(minTimeCounter_low_reg[18]),
@@ -2731,7 +2730,7 @@ module Inverter_3lvl_P0N_3lvl_0_2_P0N_3lvl
   FDRE #(
     .INIT(1'b0)) 
     \minTimeCounter_low_reg[19] 
-       (.C(Clk),
+       (.C(externalCLK),
         .CE(minTimeCounter_low),
         .D(\minTimeCounter_low_reg[16]_i_1_n_4 ),
         .Q(minTimeCounter_low_reg[19]),
@@ -2739,7 +2738,7 @@ module Inverter_3lvl_P0N_3lvl_0_2_P0N_3lvl
   FDRE #(
     .INIT(1'b0)) 
     \minTimeCounter_low_reg[1] 
-       (.C(Clk),
+       (.C(externalCLK),
         .CE(minTimeCounter_low),
         .D(\minTimeCounter_low_reg[0]_i_3_n_6 ),
         .Q(minTimeCounter_low_reg[1]),
@@ -2747,7 +2746,7 @@ module Inverter_3lvl_P0N_3lvl_0_2_P0N_3lvl
   FDRE #(
     .INIT(1'b0)) 
     \minTimeCounter_low_reg[20] 
-       (.C(Clk),
+       (.C(externalCLK),
         .CE(minTimeCounter_low),
         .D(\minTimeCounter_low_reg[20]_i_1_n_7 ),
         .Q(minTimeCounter_low_reg[20]),
@@ -2762,7 +2761,7 @@ module Inverter_3lvl_P0N_3lvl_0_2_P0N_3lvl
   FDRE #(
     .INIT(1'b0)) 
     \minTimeCounter_low_reg[21] 
-       (.C(Clk),
+       (.C(externalCLK),
         .CE(minTimeCounter_low),
         .D(\minTimeCounter_low_reg[20]_i_1_n_6 ),
         .Q(minTimeCounter_low_reg[21]),
@@ -2770,7 +2769,7 @@ module Inverter_3lvl_P0N_3lvl_0_2_P0N_3lvl
   FDRE #(
     .INIT(1'b0)) 
     \minTimeCounter_low_reg[22] 
-       (.C(Clk),
+       (.C(externalCLK),
         .CE(minTimeCounter_low),
         .D(\minTimeCounter_low_reg[20]_i_1_n_5 ),
         .Q(minTimeCounter_low_reg[22]),
@@ -2778,7 +2777,7 @@ module Inverter_3lvl_P0N_3lvl_0_2_P0N_3lvl
   FDRE #(
     .INIT(1'b0)) 
     \minTimeCounter_low_reg[23] 
-       (.C(Clk),
+       (.C(externalCLK),
         .CE(minTimeCounter_low),
         .D(\minTimeCounter_low_reg[20]_i_1_n_4 ),
         .Q(minTimeCounter_low_reg[23]),
@@ -2786,7 +2785,7 @@ module Inverter_3lvl_P0N_3lvl_0_2_P0N_3lvl
   FDRE #(
     .INIT(1'b0)) 
     \minTimeCounter_low_reg[24] 
-       (.C(Clk),
+       (.C(externalCLK),
         .CE(minTimeCounter_low),
         .D(\minTimeCounter_low_reg[24]_i_1_n_7 ),
         .Q(minTimeCounter_low_reg[24]),
@@ -2801,7 +2800,7 @@ module Inverter_3lvl_P0N_3lvl_0_2_P0N_3lvl
   FDRE #(
     .INIT(1'b0)) 
     \minTimeCounter_low_reg[25] 
-       (.C(Clk),
+       (.C(externalCLK),
         .CE(minTimeCounter_low),
         .D(\minTimeCounter_low_reg[24]_i_1_n_6 ),
         .Q(minTimeCounter_low_reg[25]),
@@ -2809,7 +2808,7 @@ module Inverter_3lvl_P0N_3lvl_0_2_P0N_3lvl
   FDRE #(
     .INIT(1'b0)) 
     \minTimeCounter_low_reg[26] 
-       (.C(Clk),
+       (.C(externalCLK),
         .CE(minTimeCounter_low),
         .D(\minTimeCounter_low_reg[24]_i_1_n_5 ),
         .Q(minTimeCounter_low_reg[26]),
@@ -2817,7 +2816,7 @@ module Inverter_3lvl_P0N_3lvl_0_2_P0N_3lvl
   FDRE #(
     .INIT(1'b0)) 
     \minTimeCounter_low_reg[27] 
-       (.C(Clk),
+       (.C(externalCLK),
         .CE(minTimeCounter_low),
         .D(\minTimeCounter_low_reg[24]_i_1_n_4 ),
         .Q(minTimeCounter_low_reg[27]),
@@ -2825,7 +2824,7 @@ module Inverter_3lvl_P0N_3lvl_0_2_P0N_3lvl
   FDRE #(
     .INIT(1'b0)) 
     \minTimeCounter_low_reg[28] 
-       (.C(Clk),
+       (.C(externalCLK),
         .CE(minTimeCounter_low),
         .D(\minTimeCounter_low_reg[28]_i_1_n_7 ),
         .Q(minTimeCounter_low_reg[28]),
@@ -2840,7 +2839,7 @@ module Inverter_3lvl_P0N_3lvl_0_2_P0N_3lvl
   FDRE #(
     .INIT(1'b0)) 
     \minTimeCounter_low_reg[29] 
-       (.C(Clk),
+       (.C(externalCLK),
         .CE(minTimeCounter_low),
         .D(\minTimeCounter_low_reg[28]_i_1_n_6 ),
         .Q(minTimeCounter_low_reg[29]),
@@ -2848,7 +2847,7 @@ module Inverter_3lvl_P0N_3lvl_0_2_P0N_3lvl
   FDRE #(
     .INIT(1'b0)) 
     \minTimeCounter_low_reg[2] 
-       (.C(Clk),
+       (.C(externalCLK),
         .CE(minTimeCounter_low),
         .D(\minTimeCounter_low_reg[0]_i_3_n_5 ),
         .Q(minTimeCounter_low_reg[2]),
@@ -2856,7 +2855,7 @@ module Inverter_3lvl_P0N_3lvl_0_2_P0N_3lvl
   FDRE #(
     .INIT(1'b0)) 
     \minTimeCounter_low_reg[30] 
-       (.C(Clk),
+       (.C(externalCLK),
         .CE(minTimeCounter_low),
         .D(\minTimeCounter_low_reg[28]_i_1_n_5 ),
         .Q(minTimeCounter_low_reg[30]),
@@ -2864,7 +2863,7 @@ module Inverter_3lvl_P0N_3lvl_0_2_P0N_3lvl
   FDRE #(
     .INIT(1'b0)) 
     \minTimeCounter_low_reg[31] 
-       (.C(Clk),
+       (.C(externalCLK),
         .CE(minTimeCounter_low),
         .D(\minTimeCounter_low_reg[28]_i_1_n_4 ),
         .Q(minTimeCounter_low_reg[31]),
@@ -2872,7 +2871,7 @@ module Inverter_3lvl_P0N_3lvl_0_2_P0N_3lvl
   FDRE #(
     .INIT(1'b0)) 
     \minTimeCounter_low_reg[3] 
-       (.C(Clk),
+       (.C(externalCLK),
         .CE(minTimeCounter_low),
         .D(\minTimeCounter_low_reg[0]_i_3_n_4 ),
         .Q(minTimeCounter_low_reg[3]),
@@ -2880,7 +2879,7 @@ module Inverter_3lvl_P0N_3lvl_0_2_P0N_3lvl
   FDRE #(
     .INIT(1'b0)) 
     \minTimeCounter_low_reg[4] 
-       (.C(Clk),
+       (.C(externalCLK),
         .CE(minTimeCounter_low),
         .D(\minTimeCounter_low_reg[4]_i_1_n_7 ),
         .Q(minTimeCounter_low_reg[4]),
@@ -2895,7 +2894,7 @@ module Inverter_3lvl_P0N_3lvl_0_2_P0N_3lvl
   FDRE #(
     .INIT(1'b0)) 
     \minTimeCounter_low_reg[5] 
-       (.C(Clk),
+       (.C(externalCLK),
         .CE(minTimeCounter_low),
         .D(\minTimeCounter_low_reg[4]_i_1_n_6 ),
         .Q(minTimeCounter_low_reg[5]),
@@ -2903,7 +2902,7 @@ module Inverter_3lvl_P0N_3lvl_0_2_P0N_3lvl
   FDRE #(
     .INIT(1'b0)) 
     \minTimeCounter_low_reg[6] 
-       (.C(Clk),
+       (.C(externalCLK),
         .CE(minTimeCounter_low),
         .D(\minTimeCounter_low_reg[4]_i_1_n_5 ),
         .Q(minTimeCounter_low_reg[6]),
@@ -2911,7 +2910,7 @@ module Inverter_3lvl_P0N_3lvl_0_2_P0N_3lvl
   FDRE #(
     .INIT(1'b0)) 
     \minTimeCounter_low_reg[7] 
-       (.C(Clk),
+       (.C(externalCLK),
         .CE(minTimeCounter_low),
         .D(\minTimeCounter_low_reg[4]_i_1_n_4 ),
         .Q(minTimeCounter_low_reg[7]),
@@ -2919,7 +2918,7 @@ module Inverter_3lvl_P0N_3lvl_0_2_P0N_3lvl
   FDRE #(
     .INIT(1'b0)) 
     \minTimeCounter_low_reg[8] 
-       (.C(Clk),
+       (.C(externalCLK),
         .CE(minTimeCounter_low),
         .D(\minTimeCounter_low_reg[8]_i_1_n_7 ),
         .Q(minTimeCounter_low_reg[8]),
@@ -2934,7 +2933,7 @@ module Inverter_3lvl_P0N_3lvl_0_2_P0N_3lvl
   FDRE #(
     .INIT(1'b0)) 
     \minTimeCounter_low_reg[9] 
-       (.C(Clk),
+       (.C(externalCLK),
         .CE(minTimeCounter_low),
         .D(\minTimeCounter_low_reg[8]_i_1_n_6 ),
         .Q(minTimeCounter_low_reg[9]),
@@ -3020,7 +3019,7 @@ module Inverter_3lvl_P0N_3lvl_0_2_P0N_3lvl
   FDRE #(
     .INIT(1'b0)) 
     minTimeEr_reg
-       (.C(Clk),
+       (.C(externalCLK),
         .CE(1'b1),
         .D(minTimeEr_i_1_n_0),
         .Q(minTimeEr_reg_0),
@@ -3037,7 +3036,7 @@ module Inverter_3lvl_P0N_3lvl_0_2_P0N_3lvl
   FDRE #(
     .INIT(1'b1)) 
     minTimeOK_high_reg
-       (.C(Clk),
+       (.C(externalCLK),
         .CE(1'b1),
         .D(minTimeOK_high_i_1_n_0),
         .Q(minTimeOK_high),
@@ -3054,7 +3053,7 @@ module Inverter_3lvl_P0N_3lvl_0_2_P0N_3lvl
   FDRE #(
     .INIT(1'b1)) 
     minTimeOK_low_reg
-       (.C(Clk),
+       (.C(externalCLK),
         .CE(1'b1),
         .D(minTimeOK_low_i_1_n_0),
         .Q(minTimeOK_low),

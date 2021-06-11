@@ -215,42 +215,6 @@ int main ()
       }
    }
 
-
-
-   {
-      int Status;
-
-      print("\r\n Running CanPsPolledExample() for ps7_can_0...\r\n");
-
-      Status = CanPsPolledExample(XPAR_PS7_CAN_0_DEVICE_ID);
-
-      if (Status == 0) {
-         print("CanPsPolledExample PASSED\r\n");
-      }
-      else {
-         print("CanPsPolledExample FAILED\r\n");
-      }
-   }
-   {
-      int Status;
-
-      print("\r\n Running Interrupt Test  for ps7_can_0...\r\n");
-
-      Status = CanPsIntrExample(&intc, &ps7_can_0, \
-                                 XPAR_PS7_CAN_0_DEVICE_ID, \
-                                 XPAR_PS7_CAN_0_INTR);
-
-      if (Status == 0) {
-         print("CanPsIntrExample PASSED\r\n");
-      }
-      else {
-         print("CanPsIntrExample FAILED\r\n");
-      }
-
-   }
-
-
-
    {
       int Status;
 

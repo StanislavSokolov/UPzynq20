@@ -7,3 +7,7 @@
 1623225995823	Delete resource 'LCUFC_test'
 1623226056102	Delete resource 'zynq_fsbl_0_bsp'
 1623226064873	Delete resource 'zynq_fsbl_0'
+1623302688362	Delete resource 'LCUFC_test_new/test_function_PS_MIO'
+1623304042166	Delete resource 'standalone_bsp_1_xgpiops_polled_example_1'
+1623304048409	Delete resource 'standalone_bsp_1_xgpiops_intr_example_1'
+1623306178562	Delete resource 'standalone_bsp_1_xqspips_selftest_example_1'

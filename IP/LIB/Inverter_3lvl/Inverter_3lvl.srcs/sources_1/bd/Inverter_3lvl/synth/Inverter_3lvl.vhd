@@ -1,8 +1,8 @@
 --Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
---Date        : Wed Apr 29 12:43:54 2020
---Host        : Stas running 64-bit major release  (build 9200)
+--Date        : Fri Jun 11 07:48:53 2021
+--Host        : STAS-W10 running 64-bit major release  (build 9200)
 --Command     : generate_target Inverter_3lvl.bd
 --Design      : Inverter_3lvl
 --Purpose     : IP block netlist
@@ -16,7 +16,6 @@ entity Inverter_3lvl is
     BreakingEnable : in STD_LOGIC_VECTOR ( 15 downto 0 );
     ChGroup0 : out STD_LOGIC_VECTOR ( 15 downto 0 );
     ChGroup1 : out STD_LOGIC_VECTOR ( 15 downto 0 );
-    Clk_0 : in STD_LOGIC;
     MaskChGroup0 : in STD_LOGIC_VECTOR ( 15 downto 0 );
     MaskChGroup1 : in STD_LOGIC_VECTOR ( 15 downto 0 );
     MaskMinTimeError : in STD_LOGIC_VECTOR ( 15 downto 0 );
@@ -24,6 +23,7 @@ entity Inverter_3lvl is
     PWM : in STD_LOGIC_VECTOR ( 15 downto 0 );
     deadTime_0 : in STD_LOGIC_VECTOR ( 31 downto 0 );
     er_0 : in STD_LOGIC;
+    externalCLK_0 : in STD_LOGIC;
     minTime_0 : in STD_LOGIC_VECTOR ( 31 downto 0 );
     minTime_En_0 : in STD_LOGIC;
     ready_0 : in STD_LOGIC;
@@ -36,200 +36,6 @@ entity Inverter_3lvl is
 end Inverter_3lvl;
 
 architecture STRUCTURE of Inverter_3lvl is
-  component Inverter_3lvl_P0N_3lvl_0_0 is
-  port (
-    Clk : in STD_LOGIC;
-    ready : in STD_LOGIC;
-    reset : in STD_LOGIC;
-    deadTime : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    minTime : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    er : in STD_LOGIC;
-    minTime_En : in STD_LOGIC;
-    minTimeEr : out STD_LOGIC;
-    TKin0 : in STD_LOGIC;
-    TKin1 : in STD_LOGIC;
-    breaking_en : in STD_LOGIC;
-    PWM_out_0 : out STD_LOGIC;
-    PWM_out_1 : out STD_LOGIC;
-    PWM_out_2 : out STD_LOGIC;
-    PWM_out_3 : out STD_LOGIC
-  );
-  end component Inverter_3lvl_P0N_3lvl_0_0;
-  component Inverter_3lvl_P0N_3lvl_1_0 is
-  port (
-    Clk : in STD_LOGIC;
-    ready : in STD_LOGIC;
-    reset : in STD_LOGIC;
-    deadTime : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    minTime : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    er : in STD_LOGIC;
-    minTime_En : in STD_LOGIC;
-    minTimeEr : out STD_LOGIC;
-    TKin0 : in STD_LOGIC;
-    TKin1 : in STD_LOGIC;
-    breaking_en : in STD_LOGIC;
-    PWM_out_0 : out STD_LOGIC;
-    PWM_out_1 : out STD_LOGIC;
-    PWM_out_2 : out STD_LOGIC;
-    PWM_out_3 : out STD_LOGIC
-  );
-  end component Inverter_3lvl_P0N_3lvl_1_0;
-  component Inverter_3lvl_P0N_3lvl_1_1 is
-  port (
-    Clk : in STD_LOGIC;
-    ready : in STD_LOGIC;
-    reset : in STD_LOGIC;
-    deadTime : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    minTime : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    er : in STD_LOGIC;
-    minTime_En : in STD_LOGIC;
-    minTimeEr : out STD_LOGIC;
-    TKin0 : in STD_LOGIC;
-    TKin1 : in STD_LOGIC;
-    breaking_en : in STD_LOGIC;
-    PWM_out_0 : out STD_LOGIC;
-    PWM_out_1 : out STD_LOGIC;
-    PWM_out_2 : out STD_LOGIC;
-    PWM_out_3 : out STD_LOGIC
-  );
-  end component Inverter_3lvl_P0N_3lvl_1_1;
-  component Inverter_3lvl_P0N_3lvl_0_1 is
-  port (
-    Clk : in STD_LOGIC;
-    ready : in STD_LOGIC;
-    reset : in STD_LOGIC;
-    deadTime : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    minTime : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    er : in STD_LOGIC;
-    minTime_En : in STD_LOGIC;
-    minTimeEr : out STD_LOGIC;
-    TKin0 : in STD_LOGIC;
-    TKin1 : in STD_LOGIC;
-    breaking_en : in STD_LOGIC;
-    PWM_out_0 : out STD_LOGIC;
-    PWM_out_1 : out STD_LOGIC;
-    PWM_out_2 : out STD_LOGIC;
-    PWM_out_3 : out STD_LOGIC
-  );
-  end component Inverter_3lvl_P0N_3lvl_0_1;
-  component Inverter_3lvl_P0N_3lvl_0_2 is
-  port (
-    Clk : in STD_LOGIC;
-    ready : in STD_LOGIC;
-    reset : in STD_LOGIC;
-    deadTime : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    minTime : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    er : in STD_LOGIC;
-    minTime_En : in STD_LOGIC;
-    minTimeEr : out STD_LOGIC;
-    TKin0 : in STD_LOGIC;
-    TKin1 : in STD_LOGIC;
-    breaking_en : in STD_LOGIC;
-    PWM_out_0 : out STD_LOGIC;
-    PWM_out_1 : out STD_LOGIC;
-    PWM_out_2 : out STD_LOGIC;
-    PWM_out_3 : out STD_LOGIC
-  );
-  end component Inverter_3lvl_P0N_3lvl_0_2;
-  component Inverter_3lvl_P0N_3lvl_0_3 is
-  port (
-    Clk : in STD_LOGIC;
-    ready : in STD_LOGIC;
-    reset : in STD_LOGIC;
-    deadTime : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    minTime : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    er : in STD_LOGIC;
-    minTime_En : in STD_LOGIC;
-    minTimeEr : out STD_LOGIC;
-    TKin0 : in STD_LOGIC;
-    TKin1 : in STD_LOGIC;
-    breaking_en : in STD_LOGIC;
-    PWM_out_0 : out STD_LOGIC;
-    PWM_out_1 : out STD_LOGIC;
-    PWM_out_2 : out STD_LOGIC;
-    PWM_out_3 : out STD_LOGIC
-  );
-  end component Inverter_3lvl_P0N_3lvl_0_3;
-  component Inverter_3lvl_P0N_3lvl_0_4 is
-  port (
-    Clk : in STD_LOGIC;
-    ready : in STD_LOGIC;
-    reset : in STD_LOGIC;
-    deadTime : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    minTime : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    er : in STD_LOGIC;
-    minTime_En : in STD_LOGIC;
-    minTimeEr : out STD_LOGIC;
-    TKin0 : in STD_LOGIC;
-    TKin1 : in STD_LOGIC;
-    breaking_en : in STD_LOGIC;
-    PWM_out_0 : out STD_LOGIC;
-    PWM_out_1 : out STD_LOGIC;
-    PWM_out_2 : out STD_LOGIC;
-    PWM_out_3 : out STD_LOGIC
-  );
-  end component Inverter_3lvl_P0N_3lvl_0_4;
-  component Inverter_3lvl_P0N_3lvl_0_5 is
-  port (
-    Clk : in STD_LOGIC;
-    ready : in STD_LOGIC;
-    reset : in STD_LOGIC;
-    deadTime : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    minTime : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    er : in STD_LOGIC;
-    minTime_En : in STD_LOGIC;
-    minTimeEr : out STD_LOGIC;
-    TKin0 : in STD_LOGIC;
-    TKin1 : in STD_LOGIC;
-    breaking_en : in STD_LOGIC;
-    PWM_out_0 : out STD_LOGIC;
-    PWM_out_1 : out STD_LOGIC;
-    PWM_out_2 : out STD_LOGIC;
-    PWM_out_3 : out STD_LOGIC
-  );
-  end component Inverter_3lvl_P0N_3lvl_0_5;
-  component Inverter_3lvl_BUS_16IN_0_0 is
-  port (
-    BusBlock16IN : in STD_LOGIC_VECTOR ( 15 downto 0 );
-    Out0 : out STD_LOGIC;
-    Out1 : out STD_LOGIC;
-    Out2 : out STD_LOGIC;
-    Out3 : out STD_LOGIC;
-    Out4 : out STD_LOGIC;
-    Out5 : out STD_LOGIC;
-    Out6 : out STD_LOGIC;
-    Out7 : out STD_LOGIC;
-    Out8 : out STD_LOGIC;
-    Out9 : out STD_LOGIC;
-    Out10 : out STD_LOGIC;
-    Out11 : out STD_LOGIC;
-    Out12 : out STD_LOGIC;
-    Out13 : out STD_LOGIC;
-    Out14 : out STD_LOGIC;
-    Out15 : out STD_LOGIC
-  );
-  end component Inverter_3lvl_BUS_16IN_0_0;
-  component Inverter_3lvl_BUS_16IN_1_0 is
-  port (
-    BusBlock16IN : in STD_LOGIC_VECTOR ( 15 downto 0 );
-    Out0 : out STD_LOGIC;
-    Out1 : out STD_LOGIC;
-    Out2 : out STD_LOGIC;
-    Out3 : out STD_LOGIC;
-    Out4 : out STD_LOGIC;
-    Out5 : out STD_LOGIC;
-    Out6 : out STD_LOGIC;
-    Out7 : out STD_LOGIC;
-    Out8 : out STD_LOGIC;
-    Out9 : out STD_LOGIC;
-    Out10 : out STD_LOGIC;
-    Out11 : out STD_LOGIC;
-    Out12 : out STD_LOGIC;
-    Out13 : out STD_LOGIC;
-    Out14 : out STD_LOGIC;
-    Out15 : out STD_LOGIC
-  );
-  end component Inverter_3lvl_BUS_16IN_1_0;
   component Inverter_3lvl_BUS_16OUT_0_0 is
   port (
     BusBlock16OUT : out STD_LOGIC_VECTOR ( 15 downto 0 );
@@ -296,6 +102,200 @@ architecture STRUCTURE of Inverter_3lvl is
     Mask : in STD_LOGIC_VECTOR ( 15 downto 0 )
   );
   end component Inverter_3lvl_BUS_16OUT_1_0;
+  component Inverter_3lvl_BUS_16IN_0_0 is
+  port (
+    BusBlock16IN : in STD_LOGIC_VECTOR ( 15 downto 0 );
+    Out0 : out STD_LOGIC;
+    Out1 : out STD_LOGIC;
+    Out2 : out STD_LOGIC;
+    Out3 : out STD_LOGIC;
+    Out4 : out STD_LOGIC;
+    Out5 : out STD_LOGIC;
+    Out6 : out STD_LOGIC;
+    Out7 : out STD_LOGIC;
+    Out8 : out STD_LOGIC;
+    Out9 : out STD_LOGIC;
+    Out10 : out STD_LOGIC;
+    Out11 : out STD_LOGIC;
+    Out12 : out STD_LOGIC;
+    Out13 : out STD_LOGIC;
+    Out14 : out STD_LOGIC;
+    Out15 : out STD_LOGIC
+  );
+  end component Inverter_3lvl_BUS_16IN_0_0;
+  component Inverter_3lvl_BUS_16IN_1_0 is
+  port (
+    BusBlock16IN : in STD_LOGIC_VECTOR ( 15 downto 0 );
+    Out0 : out STD_LOGIC;
+    Out1 : out STD_LOGIC;
+    Out2 : out STD_LOGIC;
+    Out3 : out STD_LOGIC;
+    Out4 : out STD_LOGIC;
+    Out5 : out STD_LOGIC;
+    Out6 : out STD_LOGIC;
+    Out7 : out STD_LOGIC;
+    Out8 : out STD_LOGIC;
+    Out9 : out STD_LOGIC;
+    Out10 : out STD_LOGIC;
+    Out11 : out STD_LOGIC;
+    Out12 : out STD_LOGIC;
+    Out13 : out STD_LOGIC;
+    Out14 : out STD_LOGIC;
+    Out15 : out STD_LOGIC
+  );
+  end component Inverter_3lvl_BUS_16IN_1_0;
+  component Inverter_3lvl_P0N_3lvl_0_0 is
+  port (
+    externalCLK : in STD_LOGIC;
+    ready : in STD_LOGIC;
+    reset : in STD_LOGIC;
+    deadTime : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    minTime : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    er : in STD_LOGIC;
+    minTime_En : in STD_LOGIC;
+    minTimeEr : out STD_LOGIC;
+    TKin0 : in STD_LOGIC;
+    TKin1 : in STD_LOGIC;
+    breaking_en : in STD_LOGIC;
+    PWM_out_0 : out STD_LOGIC;
+    PWM_out_1 : out STD_LOGIC;
+    PWM_out_2 : out STD_LOGIC;
+    PWM_out_3 : out STD_LOGIC
+  );
+  end component Inverter_3lvl_P0N_3lvl_0_0;
+  component Inverter_3lvl_P0N_3lvl_0_1 is
+  port (
+    externalCLK : in STD_LOGIC;
+    ready : in STD_LOGIC;
+    reset : in STD_LOGIC;
+    deadTime : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    minTime : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    er : in STD_LOGIC;
+    minTime_En : in STD_LOGIC;
+    minTimeEr : out STD_LOGIC;
+    TKin0 : in STD_LOGIC;
+    TKin1 : in STD_LOGIC;
+    breaking_en : in STD_LOGIC;
+    PWM_out_0 : out STD_LOGIC;
+    PWM_out_1 : out STD_LOGIC;
+    PWM_out_2 : out STD_LOGIC;
+    PWM_out_3 : out STD_LOGIC
+  );
+  end component Inverter_3lvl_P0N_3lvl_0_1;
+  component Inverter_3lvl_P0N_3lvl_0_2 is
+  port (
+    externalCLK : in STD_LOGIC;
+    ready : in STD_LOGIC;
+    reset : in STD_LOGIC;
+    deadTime : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    minTime : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    er : in STD_LOGIC;
+    minTime_En : in STD_LOGIC;
+    minTimeEr : out STD_LOGIC;
+    TKin0 : in STD_LOGIC;
+    TKin1 : in STD_LOGIC;
+    breaking_en : in STD_LOGIC;
+    PWM_out_0 : out STD_LOGIC;
+    PWM_out_1 : out STD_LOGIC;
+    PWM_out_2 : out STD_LOGIC;
+    PWM_out_3 : out STD_LOGIC
+  );
+  end component Inverter_3lvl_P0N_3lvl_0_2;
+  component Inverter_3lvl_P0N_3lvl_0_3 is
+  port (
+    externalCLK : in STD_LOGIC;
+    ready : in STD_LOGIC;
+    reset : in STD_LOGIC;
+    deadTime : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    minTime : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    er : in STD_LOGIC;
+    minTime_En : in STD_LOGIC;
+    minTimeEr : out STD_LOGIC;
+    TKin0 : in STD_LOGIC;
+    TKin1 : in STD_LOGIC;
+    breaking_en : in STD_LOGIC;
+    PWM_out_0 : out STD_LOGIC;
+    PWM_out_1 : out STD_LOGIC;
+    PWM_out_2 : out STD_LOGIC;
+    PWM_out_3 : out STD_LOGIC
+  );
+  end component Inverter_3lvl_P0N_3lvl_0_3;
+  component Inverter_3lvl_P0N_3lvl_0_4 is
+  port (
+    externalCLK : in STD_LOGIC;
+    ready : in STD_LOGIC;
+    reset : in STD_LOGIC;
+    deadTime : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    minTime : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    er : in STD_LOGIC;
+    minTime_En : in STD_LOGIC;
+    minTimeEr : out STD_LOGIC;
+    TKin0 : in STD_LOGIC;
+    TKin1 : in STD_LOGIC;
+    breaking_en : in STD_LOGIC;
+    PWM_out_0 : out STD_LOGIC;
+    PWM_out_1 : out STD_LOGIC;
+    PWM_out_2 : out STD_LOGIC;
+    PWM_out_3 : out STD_LOGIC
+  );
+  end component Inverter_3lvl_P0N_3lvl_0_4;
+  component Inverter_3lvl_P0N_3lvl_0_5 is
+  port (
+    externalCLK : in STD_LOGIC;
+    ready : in STD_LOGIC;
+    reset : in STD_LOGIC;
+    deadTime : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    minTime : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    er : in STD_LOGIC;
+    minTime_En : in STD_LOGIC;
+    minTimeEr : out STD_LOGIC;
+    TKin0 : in STD_LOGIC;
+    TKin1 : in STD_LOGIC;
+    breaking_en : in STD_LOGIC;
+    PWM_out_0 : out STD_LOGIC;
+    PWM_out_1 : out STD_LOGIC;
+    PWM_out_2 : out STD_LOGIC;
+    PWM_out_3 : out STD_LOGIC
+  );
+  end component Inverter_3lvl_P0N_3lvl_0_5;
+  component Inverter_3lvl_P0N_3lvl_1_0 is
+  port (
+    externalCLK : in STD_LOGIC;
+    ready : in STD_LOGIC;
+    reset : in STD_LOGIC;
+    deadTime : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    minTime : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    er : in STD_LOGIC;
+    minTime_En : in STD_LOGIC;
+    minTimeEr : out STD_LOGIC;
+    TKin0 : in STD_LOGIC;
+    TKin1 : in STD_LOGIC;
+    breaking_en : in STD_LOGIC;
+    PWM_out_0 : out STD_LOGIC;
+    PWM_out_1 : out STD_LOGIC;
+    PWM_out_2 : out STD_LOGIC;
+    PWM_out_3 : out STD_LOGIC
+  );
+  end component Inverter_3lvl_P0N_3lvl_1_0;
+  component Inverter_3lvl_P0N_3lvl_1_1 is
+  port (
+    externalCLK : in STD_LOGIC;
+    ready : in STD_LOGIC;
+    reset : in STD_LOGIC;
+    deadTime : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    minTime : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    er : in STD_LOGIC;
+    minTime_En : in STD_LOGIC;
+    minTimeEr : out STD_LOGIC;
+    TKin0 : in STD_LOGIC;
+    TKin1 : in STD_LOGIC;
+    breaking_en : in STD_LOGIC;
+    PWM_out_0 : out STD_LOGIC;
+    PWM_out_1 : out STD_LOGIC;
+    PWM_out_2 : out STD_LOGIC;
+    PWM_out_3 : out STD_LOGIC
+  );
+  end component Inverter_3lvl_P0N_3lvl_1_1;
   signal BUS_16IN_0_Out0 : STD_LOGIC;
   signal BUS_16IN_0_Out1 : STD_LOGIC;
   signal BUS_16IN_0_Out10 : STD_LOGIC;
@@ -324,7 +324,6 @@ architecture STRUCTURE of Inverter_3lvl is
   signal BUS_16OUT_1_BusBlock16OUT : STD_LOGIC_VECTOR ( 15 downto 0 );
   signal BUS_16OUT_2_BusBlock16OUT : STD_LOGIC_VECTOR ( 15 downto 0 );
   signal BreakingEnable_1 : STD_LOGIC_VECTOR ( 15 downto 0 );
-  signal Clk_0_1 : STD_LOGIC;
   signal MaskChGroup0_1 : STD_LOGIC_VECTOR ( 15 downto 0 );
   signal MaskChGroup1_1 : STD_LOGIC_VECTOR ( 15 downto 0 );
   signal MaskMinTimeError_1 : STD_LOGIC_VECTOR ( 15 downto 0 );
@@ -371,6 +370,7 @@ architecture STRUCTURE of Inverter_3lvl is
   signal PWM_1 : STD_LOGIC_VECTOR ( 15 downto 0 );
   signal deadTime_0_1 : STD_LOGIC_VECTOR ( 31 downto 0 );
   signal er_0_1 : STD_LOGIC;
+  signal externalCLK_0_1 : STD_LOGIC;
   signal minTime_0_1 : STD_LOGIC_VECTOR ( 31 downto 0 );
   signal minTime_En_0_1 : STD_LOGIC;
   signal ready_0_1 : STD_LOGIC;
@@ -384,10 +384,8 @@ architecture STRUCTURE of Inverter_3lvl is
   signal NLW_BUS_16IN_1_Out8_UNCONNECTED : STD_LOGIC;
   signal NLW_BUS_16IN_1_Out9_UNCONNECTED : STD_LOGIC;
   attribute X_INTERFACE_INFO : string;
-  attribute X_INTERFACE_INFO of Clk_0 : signal is "xilinx.com:signal:clock:1.0 CLK.CLK_0 CLK";
-  attribute X_INTERFACE_PARAMETER : string;
-  attribute X_INTERFACE_PARAMETER of Clk_0 : signal is "XIL_INTERFACENAME CLK.CLK_0, ASSOCIATED_RESET reset_0, CLK_DOMAIN Inverter_3lvl_Clk_0, FREQ_HZ 100000000, INSERT_VIP 0, PHASE 0.000";
   attribute X_INTERFACE_INFO of reset_0 : signal is "xilinx.com:signal:reset:1.0 RST.RESET_0 RST";
+  attribute X_INTERFACE_PARAMETER : string;
   attribute X_INTERFACE_PARAMETER of reset_0 : signal is "XIL_INTERFACENAME RST.RESET_0, INSERT_VIP 0, POLARITY ACTIVE_LOW";
   attribute X_INTERFACE_INFO of BreakingEnable : signal is "xilinx.com:signal:data:1.0 DATA.BREAKINGENABLE DATA";
   attribute X_INTERFACE_PARAMETER of BreakingEnable : signal is "XIL_INTERFACENAME DATA.BREAKINGENABLE, LAYERED_METADATA undef";
@@ -403,7 +401,6 @@ begin
   BreakingEnable_1(15 downto 0) <= BreakingEnable(15 downto 0);
   ChGroup0(15 downto 0) <= BUS_16OUT_0_BusBlock16OUT(15 downto 0);
   ChGroup1(15 downto 0) <= BUS_16OUT_1_BusBlock16OUT(15 downto 0);
-  Clk_0_1 <= Clk_0;
   MaskChGroup0_1(15 downto 0) <= MaskChGroup0(15 downto 0);
   MaskChGroup1_1(15 downto 0) <= MaskChGroup1(15 downto 0);
   MaskMinTimeError_1(15 downto 0) <= MaskMinTimeError(15 downto 0);
@@ -411,6 +408,7 @@ begin
   PWM_1(15 downto 0) <= PWM(15 downto 0);
   deadTime_0_1(31 downto 0) <= deadTime_0(31 downto 0);
   er_0_1 <= er_0;
+  externalCLK_0_1 <= externalCLK_0;
   minTime_0_1(31 downto 0) <= minTime_0(31 downto 0);
   minTime_En_0_1 <= minTime_En_0;
   ready_0_1 <= ready_0;
@@ -520,7 +518,6 @@ BUS_16OUT_2: component Inverter_3lvl_BUS_16OUT_1_0
     );
 P0N_3lvl_0: component Inverter_3lvl_P0N_3lvl_0_0
      port map (
-      Clk => Clk_0_1,
       PWM_out_0 => P0N_3lvl_0_PWM_out_0,
       PWM_out_1 => P0N_3lvl_0_PWM_out_1,
       PWM_out_2 => P0N_3lvl_0_PWM_out_2,
@@ -530,6 +527,7 @@ P0N_3lvl_0: component Inverter_3lvl_P0N_3lvl_0_0
       breaking_en => BUS_16IN_1_Out0,
       deadTime(31 downto 0) => deadTime_0_1(31 downto 0),
       er => er_0_1,
+      externalCLK => externalCLK_0_1,
       minTime(31 downto 0) => minTime_0_1(31 downto 0),
       minTimeEr => P0N_3lvl_0_minTimeEr,
       minTime_En => minTime_En_0_1,
@@ -538,7 +536,6 @@ P0N_3lvl_0: component Inverter_3lvl_P0N_3lvl_0_0
     );
 P0N_3lvl_1: component Inverter_3lvl_P0N_3lvl_1_0
      port map (
-      Clk => Clk_0_1,
       PWM_out_0 => P0N_3lvl_1_PWM_out_0,
       PWM_out_1 => P0N_3lvl_1_PWM_out_1,
       PWM_out_2 => P0N_3lvl_1_PWM_out_2,
@@ -548,6 +545,7 @@ P0N_3lvl_1: component Inverter_3lvl_P0N_3lvl_1_0
       breaking_en => BUS_16IN_1_Out1,
       deadTime(31 downto 0) => deadTime_0_1(31 downto 0),
       er => er_0_1,
+      externalCLK => externalCLK_0_1,
       minTime(31 downto 0) => minTime_0_1(31 downto 0),
       minTimeEr => P0N_3lvl_1_minTimeEr,
       minTime_En => minTime_En_0_1,
@@ -556,7 +554,6 @@ P0N_3lvl_1: component Inverter_3lvl_P0N_3lvl_1_0
     );
 P0N_3lvl_2: component Inverter_3lvl_P0N_3lvl_1_1
      port map (
-      Clk => Clk_0_1,
       PWM_out_0 => P0N_3lvl_2_PWM_out_0,
       PWM_out_1 => P0N_3lvl_2_PWM_out_1,
       PWM_out_2 => P0N_3lvl_2_PWM_out_2,
@@ -566,6 +563,7 @@ P0N_3lvl_2: component Inverter_3lvl_P0N_3lvl_1_1
       breaking_en => BUS_16IN_1_Out2,
       deadTime(31 downto 0) => deadTime_0_1(31 downto 0),
       er => er_0_1,
+      externalCLK => externalCLK_0_1,
       minTime(31 downto 0) => minTime_0_1(31 downto 0),
       minTimeEr => P0N_3lvl_2_minTimeEr,
       minTime_En => minTime_En_0_1,
@@ -574,7 +572,6 @@ P0N_3lvl_2: component Inverter_3lvl_P0N_3lvl_1_1
     );
 P0N_3lvl_3: component Inverter_3lvl_P0N_3lvl_0_1
      port map (
-      Clk => Clk_0_1,
       PWM_out_0 => P0N_3lvl_3_PWM_out_0,
       PWM_out_1 => P0N_3lvl_3_PWM_out_1,
       PWM_out_2 => P0N_3lvl_3_PWM_out_2,
@@ -584,6 +581,7 @@ P0N_3lvl_3: component Inverter_3lvl_P0N_3lvl_0_1
       breaking_en => BUS_16IN_1_Out3,
       deadTime(31 downto 0) => deadTime_0_1(31 downto 0),
       er => er_0_1,
+      externalCLK => externalCLK_0_1,
       minTime(31 downto 0) => minTime_0_1(31 downto 0),
       minTimeEr => P0N_3lvl_3_minTimeEr,
       minTime_En => minTime_En_0_1,
@@ -592,7 +590,6 @@ P0N_3lvl_3: component Inverter_3lvl_P0N_3lvl_0_1
     );
 P0N_3lvl_4: component Inverter_3lvl_P0N_3lvl_0_2
      port map (
-      Clk => Clk_0_1,
       PWM_out_0 => P0N_3lvl_4_PWM_out_0,
       PWM_out_1 => P0N_3lvl_4_PWM_out_1,
       PWM_out_2 => P0N_3lvl_4_PWM_out_2,
@@ -602,6 +599,7 @@ P0N_3lvl_4: component Inverter_3lvl_P0N_3lvl_0_2
       breaking_en => BUS_16IN_1_Out4,
       deadTime(31 downto 0) => deadTime_0_1(31 downto 0),
       er => er_0_1,
+      externalCLK => externalCLK_0_1,
       minTime(31 downto 0) => minTime_0_1(31 downto 0),
       minTimeEr => P0N_3lvl_4_minTimeEr,
       minTime_En => minTime_En_0_1,
@@ -610,7 +608,6 @@ P0N_3lvl_4: component Inverter_3lvl_P0N_3lvl_0_2
     );
 P0N_3lvl_5: component Inverter_3lvl_P0N_3lvl_0_3
      port map (
-      Clk => Clk_0_1,
       PWM_out_0 => P0N_3lvl_5_PWM_out_0,
       PWM_out_1 => P0N_3lvl_5_PWM_out_1,
       PWM_out_2 => P0N_3lvl_5_PWM_out_2,
@@ -620,6 +617,7 @@ P0N_3lvl_5: component Inverter_3lvl_P0N_3lvl_0_3
       breaking_en => BUS_16IN_1_Out5,
       deadTime(31 downto 0) => deadTime_0_1(31 downto 0),
       er => er_0_1,
+      externalCLK => externalCLK_0_1,
       minTime(31 downto 0) => minTime_0_1(31 downto 0),
       minTimeEr => P0N_3lvl_5_minTimeEr,
       minTime_En => minTime_En_0_1,
@@ -628,7 +626,6 @@ P0N_3lvl_5: component Inverter_3lvl_P0N_3lvl_0_3
     );
 P0N_3lvl_6: component Inverter_3lvl_P0N_3lvl_0_4
      port map (
-      Clk => Clk_0_1,
       PWM_out_0 => P0N_3lvl_6_PWM_out_0,
       PWM_out_1 => P0N_3lvl_6_PWM_out_1,
       PWM_out_2 => P0N_3lvl_6_PWM_out_2,
@@ -638,6 +635,7 @@ P0N_3lvl_6: component Inverter_3lvl_P0N_3lvl_0_4
       breaking_en => BUS_16IN_1_Out6,
       deadTime(31 downto 0) => deadTime_0_1(31 downto 0),
       er => er_0_1,
+      externalCLK => externalCLK_0_1,
       minTime(31 downto 0) => minTime_0_1(31 downto 0),
       minTimeEr => P0N_3lvl_6_minTimeEr,
       minTime_En => minTime_En_0_1,
@@ -646,7 +644,6 @@ P0N_3lvl_6: component Inverter_3lvl_P0N_3lvl_0_4
     );
 P0N_3lvl_7: component Inverter_3lvl_P0N_3lvl_0_5
      port map (
-      Clk => Clk_0_1,
       PWM_out_0 => P0N_3lvl_7_PWM_out_0,
       PWM_out_1 => P0N_3lvl_7_PWM_out_1,
       PWM_out_2 => P0N_3lvl_7_PWM_out_2,
@@ -656,6 +653,7 @@ P0N_3lvl_7: component Inverter_3lvl_P0N_3lvl_0_5
       breaking_en => BUS_16IN_1_Out7,
       deadTime(31 downto 0) => deadTime_0_1(31 downto 0),
       er => er_0_1,
+      externalCLK => externalCLK_0_1,
       minTime(31 downto 0) => minTime_0_1(31 downto 0),
       minTimeEr => P0N_3lvl_7_minTimeEr,
       minTime_En => minTime_En_0_1,

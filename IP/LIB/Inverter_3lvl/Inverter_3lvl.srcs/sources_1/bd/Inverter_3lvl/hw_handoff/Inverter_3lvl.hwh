@@ -1,91 +1,79 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Wed Apr 29 12:43:55 2020" VIVADOVERSION="2019.1">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Fri Jun 11 07:48:54 2021" VIVADOVERSION="2019.1">
 
   <SYSTEMINFO ARCH="zynq" DEVICE="7z020" NAME="Inverter_3lvl" PACKAGE="clg484" SPEEDGRADE="-3"/>
 
   <EXTERNALPORTS>
-    <PORT CLKFREQUENCY="100000000" DIR="I" NAME="Clk_0" SIGIS="clk" SIGNAME="External_Ports_Clk_0">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="P0N_3lvl_0" PORT="Clk"/>
-        <CONNECTION INSTANCE="P0N_3lvl_3" PORT="Clk"/>
-        <CONNECTION INSTANCE="P0N_3lvl_6" PORT="Clk"/>
-        <CONNECTION INSTANCE="P0N_3lvl_1" PORT="Clk"/>
-        <CONNECTION INSTANCE="P0N_3lvl_2" PORT="Clk"/>
-        <CONNECTION INSTANCE="P0N_3lvl_4" PORT="Clk"/>
-        <CONNECTION INSTANCE="P0N_3lvl_5" PORT="Clk"/>
-        <CONNECTION INSTANCE="P0N_3lvl_7" PORT="Clk"/>
-      </CONNECTIONS>
-    </PORT>
     <PORT DIR="I" NAME="ready_0" SIGIS="undef" SIGNAME="External_Ports_ready_0">
       <CONNECTIONS>
         <CONNECTION INSTANCE="P0N_3lvl_0" PORT="ready"/>
-        <CONNECTION INSTANCE="P0N_3lvl_1" PORT="ready"/>
         <CONNECTION INSTANCE="P0N_3lvl_3" PORT="ready"/>
-        <CONNECTION INSTANCE="P0N_3lvl_6" PORT="ready"/>
         <CONNECTION INSTANCE="P0N_3lvl_4" PORT="ready"/>
-        <CONNECTION INSTANCE="P0N_3lvl_7" PORT="ready"/>
-        <CONNECTION INSTANCE="P0N_3lvl_2" PORT="ready"/>
         <CONNECTION INSTANCE="P0N_3lvl_5" PORT="ready"/>
+        <CONNECTION INSTANCE="P0N_3lvl_6" PORT="ready"/>
+        <CONNECTION INSTANCE="P0N_3lvl_7" PORT="ready"/>
+        <CONNECTION INSTANCE="P0N_3lvl_1" PORT="ready"/>
+        <CONNECTION INSTANCE="P0N_3lvl_2" PORT="ready"/>
       </CONNECTIONS>
     </PORT>
     <PORT DIR="I" NAME="reset_0" SIGIS="rst" SIGNAME="External_Ports_reset_0">
       <CONNECTIONS>
         <CONNECTION INSTANCE="P0N_3lvl_0" PORT="reset"/>
-        <CONNECTION INSTANCE="P0N_3lvl_1" PORT="reset"/>
         <CONNECTION INSTANCE="P0N_3lvl_3" PORT="reset"/>
-        <CONNECTION INSTANCE="P0N_3lvl_2" PORT="reset"/>
         <CONNECTION INSTANCE="P0N_3lvl_4" PORT="reset"/>
         <CONNECTION INSTANCE="P0N_3lvl_5" PORT="reset"/>
         <CONNECTION INSTANCE="P0N_3lvl_6" PORT="reset"/>
         <CONNECTION INSTANCE="P0N_3lvl_7" PORT="reset"/>
+        <CONNECTION INSTANCE="P0N_3lvl_1" PORT="reset"/>
+        <CONNECTION INSTANCE="P0N_3lvl_2" PORT="reset"/>
       </CONNECTIONS>
     </PORT>
     <PORT DIR="I" LEFT="31" NAME="deadTime_0" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_deadTime_0">
       <CONNECTIONS>
         <CONNECTION INSTANCE="P0N_3lvl_0" PORT="deadTime"/>
-        <CONNECTION INSTANCE="P0N_3lvl_1" PORT="deadTime"/>
         <CONNECTION INSTANCE="P0N_3lvl_3" PORT="deadTime"/>
-        <CONNECTION INSTANCE="P0N_3lvl_2" PORT="deadTime"/>
         <CONNECTION INSTANCE="P0N_3lvl_4" PORT="deadTime"/>
         <CONNECTION INSTANCE="P0N_3lvl_5" PORT="deadTime"/>
         <CONNECTION INSTANCE="P0N_3lvl_6" PORT="deadTime"/>
         <CONNECTION INSTANCE="P0N_3lvl_7" PORT="deadTime"/>
+        <CONNECTION INSTANCE="P0N_3lvl_1" PORT="deadTime"/>
+        <CONNECTION INSTANCE="P0N_3lvl_2" PORT="deadTime"/>
       </CONNECTIONS>
     </PORT>
     <PORT DIR="I" LEFT="31" NAME="minTime_0" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_minTime_0">
       <CONNECTIONS>
         <CONNECTION INSTANCE="P0N_3lvl_0" PORT="minTime"/>
-        <CONNECTION INSTANCE="P0N_3lvl_1" PORT="minTime"/>
         <CONNECTION INSTANCE="P0N_3lvl_3" PORT="minTime"/>
-        <CONNECTION INSTANCE="P0N_3lvl_6" PORT="minTime"/>
         <CONNECTION INSTANCE="P0N_3lvl_4" PORT="minTime"/>
-        <CONNECTION INSTANCE="P0N_3lvl_7" PORT="minTime"/>
-        <CONNECTION INSTANCE="P0N_3lvl_2" PORT="minTime"/>
         <CONNECTION INSTANCE="P0N_3lvl_5" PORT="minTime"/>
+        <CONNECTION INSTANCE="P0N_3lvl_6" PORT="minTime"/>
+        <CONNECTION INSTANCE="P0N_3lvl_7" PORT="minTime"/>
+        <CONNECTION INSTANCE="P0N_3lvl_1" PORT="minTime"/>
+        <CONNECTION INSTANCE="P0N_3lvl_2" PORT="minTime"/>
       </CONNECTIONS>
     </PORT>
     <PORT DIR="I" NAME="er_0" SIGIS="undef" SIGNAME="External_Ports_er_0">
       <CONNECTIONS>
         <CONNECTION INSTANCE="P0N_3lvl_0" PORT="er"/>
+        <CONNECTION INSTANCE="P0N_3lvl_3" PORT="er"/>
         <CONNECTION INSTANCE="P0N_3lvl_4" PORT="er"/>
-        <CONNECTION INSTANCE="P0N_3lvl_1" PORT="er"/>
         <CONNECTION INSTANCE="P0N_3lvl_5" PORT="er"/>
         <CONNECTION INSTANCE="P0N_3lvl_6" PORT="er"/>
-        <CONNECTION INSTANCE="P0N_3lvl_2" PORT="er"/>
-        <CONNECTION INSTANCE="P0N_3lvl_3" PORT="er"/>
         <CONNECTION INSTANCE="P0N_3lvl_7" PORT="er"/>
+        <CONNECTION INSTANCE="P0N_3lvl_1" PORT="er"/>
+        <CONNECTION INSTANCE="P0N_3lvl_2" PORT="er"/>
       </CONNECTIONS>
     </PORT>
     <PORT DIR="I" NAME="minTime_En_0" SIGIS="undef" SIGNAME="External_Ports_minTime_En_0">
       <CONNECTIONS>
         <CONNECTION INSTANCE="P0N_3lvl_0" PORT="minTime_En"/>
-        <CONNECTION INSTANCE="P0N_3lvl_1" PORT="minTime_En"/>
+        <CONNECTION INSTANCE="P0N_3lvl_3" PORT="minTime_En"/>
         <CONNECTION INSTANCE="P0N_3lvl_4" PORT="minTime_En"/>
         <CONNECTION INSTANCE="P0N_3lvl_5" PORT="minTime_En"/>
-        <CONNECTION INSTANCE="P0N_3lvl_2" PORT="minTime_En"/>
         <CONNECTION INSTANCE="P0N_3lvl_6" PORT="minTime_En"/>
-        <CONNECTION INSTANCE="P0N_3lvl_3" PORT="minTime_En"/>
         <CONNECTION INSTANCE="P0N_3lvl_7" PORT="minTime_En"/>
+        <CONNECTION INSTANCE="P0N_3lvl_1" PORT="minTime_En"/>
+        <CONNECTION INSTANCE="P0N_3lvl_2" PORT="minTime_En"/>
       </CONNECTIONS>
     </PORT>
     <PORT DIR="I" LEFT="15" NAME="BreakingEnable" RIGHT="0" SIGIS="data" SIGNAME="External_Ports_BreakingEnable">
@@ -128,12 +116,24 @@
         <CONNECTION INSTANCE="BUS_16OUT_0" PORT="Mask"/>
       </CONNECTIONS>
     </PORT>
+    <PORT DIR="I" NAME="externalCLK_0" SIGIS="undef" SIGNAME="External_Ports_externalCLK_0">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="P0N_3lvl_0" PORT="externalCLK"/>
+        <CONNECTION INSTANCE="P0N_3lvl_3" PORT="externalCLK"/>
+        <CONNECTION INSTANCE="P0N_3lvl_4" PORT="externalCLK"/>
+        <CONNECTION INSTANCE="P0N_3lvl_5" PORT="externalCLK"/>
+        <CONNECTION INSTANCE="P0N_3lvl_6" PORT="externalCLK"/>
+        <CONNECTION INSTANCE="P0N_3lvl_7" PORT="externalCLK"/>
+        <CONNECTION INSTANCE="P0N_3lvl_1" PORT="externalCLK"/>
+        <CONNECTION INSTANCE="P0N_3lvl_2" PORT="externalCLK"/>
+      </CONNECTIONS>
+    </PORT>
   </EXTERNALPORTS>
 
   <EXTERNALINTERFACES/>
 
   <MODULES>
-    <MODULE COREREVISION="3" FULLNAME="/BUS_16IN_0" HWVERSION="1.0" INSTANCE="BUS_16IN_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="BUS_16IN" VLNV="setcorp:user:BUS_16IN:1.0">
+    <MODULE COREREVISION="4" FULLNAME="/BUS_16IN_0" HWVERSION="1.0" INSTANCE="BUS_16IN_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="BUS_16IN" VLNV="setcorp:user:BUS_16IN:1.0">
       <DOCUMENTS/>
       <PARAMETERS>
         <PARAMETER NAME="Component_Name" VALUE="Inverter_3lvl_BUS_16IN_0_0"/>
@@ -228,7 +228,7 @@
       </PORTS>
       <BUSINTERFACES/>
     </MODULE>
-    <MODULE COREREVISION="3" FULLNAME="/BUS_16IN_1" HWVERSION="1.0" INSTANCE="BUS_16IN_1" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="BUS_16IN" VLNV="setcorp:user:BUS_16IN:1.0">
+    <MODULE COREREVISION="4" FULLNAME="/BUS_16IN_1" HWVERSION="1.0" INSTANCE="BUS_16IN_1" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="BUS_16IN" VLNV="setcorp:user:BUS_16IN:1.0">
       <DOCUMENTS/>
       <PARAMETERS>
         <PARAMETER NAME="Component_Name" VALUE="Inverter_3lvl_BUS_16IN_1_0"/>
@@ -291,7 +291,7 @@
       </PORTS>
       <BUSINTERFACES/>
     </MODULE>
-    <MODULE COREREVISION="2" FULLNAME="/BUS_16OUT_0" HWVERSION="1.0" INSTANCE="BUS_16OUT_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="BUS_16OUT" VLNV="setcorp:user:BUS_16OUT:1.0">
+    <MODULE COREREVISION="3" FULLNAME="/BUS_16OUT_0" HWVERSION="1.0" INSTANCE="BUS_16OUT_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="BUS_16OUT" VLNV="setcorp:user:BUS_16OUT:1.0">
       <DOCUMENTS/>
       <PARAMETERS>
         <PARAMETER NAME="Component_Name" VALUE="Inverter_3lvl_BUS_16OUT_0_0"/>
@@ -391,7 +391,7 @@
       </PORTS>
       <BUSINTERFACES/>
     </MODULE>
-    <MODULE COREREVISION="2" FULLNAME="/BUS_16OUT_1" HWVERSION="1.0" INSTANCE="BUS_16OUT_1" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="BUS_16OUT" VLNV="setcorp:user:BUS_16OUT:1.0">
+    <MODULE COREREVISION="3" FULLNAME="/BUS_16OUT_1" HWVERSION="1.0" INSTANCE="BUS_16OUT_1" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="BUS_16OUT" VLNV="setcorp:user:BUS_16OUT:1.0">
       <DOCUMENTS/>
       <PARAMETERS>
         <PARAMETER NAME="Component_Name" VALUE="Inverter_3lvl_BUS_16OUT_0_1"/>
@@ -491,7 +491,7 @@
       </PORTS>
       <BUSINTERFACES/>
     </MODULE>
-    <MODULE COREREVISION="2" FULLNAME="/BUS_16OUT_2" HWVERSION="1.0" INSTANCE="BUS_16OUT_2" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="BUS_16OUT" VLNV="setcorp:user:BUS_16OUT:1.0">
+    <MODULE COREREVISION="3" FULLNAME="/BUS_16OUT_2" HWVERSION="1.0" INSTANCE="BUS_16OUT_2" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="BUS_16OUT" VLNV="setcorp:user:BUS_16OUT:1.0">
       <DOCUMENTS/>
       <PARAMETERS>
         <PARAMETER NAME="Component_Name" VALUE="Inverter_3lvl_BUS_16OUT_1_0"/>
@@ -559,16 +559,16 @@
       </PORTS>
       <BUSINTERFACES/>
     </MODULE>
-    <MODULE COREREVISION="2" FULLNAME="/P0N_3lvl_0" HWVERSION="1.0" INSTANCE="P0N_3lvl_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="P0N_3lvl" VLNV="ssevendenergy.com:user:P0N_3lvl:1.0">
+    <MODULE COREREVISION="4" FULLNAME="/P0N_3lvl_0" HWVERSION="1.0" INSTANCE="P0N_3lvl_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="P0N_3lvl" VLNV="ssevendenergy.com:user:P0N_3lvl:1.0">
       <DOCUMENTS/>
       <PARAMETERS>
         <PARAMETER NAME="Component_Name" VALUE="Inverter_3lvl_P0N_3lvl_0_0"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
-        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="Clk" SIGIS="clk" SIGNAME="External_Ports_Clk_0">
+        <PORT DIR="I" NAME="externalCLK" SIGIS="undef" SIGNAME="External_Ports_externalCLK_0">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="External_Ports" PORT="Clk_0"/>
+            <CONNECTION INSTANCE="External_Ports" PORT="externalCLK_0"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" NAME="ready" SIGIS="undef" SIGNAME="External_Ports_ready_0">
@@ -644,16 +644,16 @@
       </PORTS>
       <BUSINTERFACES/>
     </MODULE>
-    <MODULE COREREVISION="2" FULLNAME="/P0N_3lvl_1" HWVERSION="1.0" INSTANCE="P0N_3lvl_1" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="P0N_3lvl" VLNV="ssevendenergy.com:user:P0N_3lvl:1.0">
+    <MODULE COREREVISION="4" FULLNAME="/P0N_3lvl_1" HWVERSION="1.0" INSTANCE="P0N_3lvl_1" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="P0N_3lvl" VLNV="ssevendenergy.com:user:P0N_3lvl:1.0">
       <DOCUMENTS/>
       <PARAMETERS>
         <PARAMETER NAME="Component_Name" VALUE="Inverter_3lvl_P0N_3lvl_1_0"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
-        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="Clk" SIGIS="clk" SIGNAME="External_Ports_Clk_0">
+        <PORT DIR="I" NAME="externalCLK" SIGIS="undef" SIGNAME="External_Ports_externalCLK_0">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="External_Ports" PORT="Clk_0"/>
+            <CONNECTION INSTANCE="External_Ports" PORT="externalCLK_0"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" NAME="ready" SIGIS="undef" SIGNAME="External_Ports_ready_0">
@@ -729,16 +729,16 @@
       </PORTS>
       <BUSINTERFACES/>
     </MODULE>
-    <MODULE COREREVISION="2" FULLNAME="/P0N_3lvl_2" HWVERSION="1.0" INSTANCE="P0N_3lvl_2" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="P0N_3lvl" VLNV="ssevendenergy.com:user:P0N_3lvl:1.0">
+    <MODULE COREREVISION="4" FULLNAME="/P0N_3lvl_2" HWVERSION="1.0" INSTANCE="P0N_3lvl_2" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="P0N_3lvl" VLNV="ssevendenergy.com:user:P0N_3lvl:1.0">
       <DOCUMENTS/>
       <PARAMETERS>
         <PARAMETER NAME="Component_Name" VALUE="Inverter_3lvl_P0N_3lvl_1_1"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
-        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="Clk" SIGIS="clk" SIGNAME="External_Ports_Clk_0">
+        <PORT DIR="I" NAME="externalCLK" SIGIS="undef" SIGNAME="External_Ports_externalCLK_0">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="External_Ports" PORT="Clk_0"/>
+            <CONNECTION INSTANCE="External_Ports" PORT="externalCLK_0"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" NAME="ready" SIGIS="undef" SIGNAME="External_Ports_ready_0">
@@ -814,16 +814,16 @@
       </PORTS>
       <BUSINTERFACES/>
     </MODULE>
-    <MODULE COREREVISION="2" FULLNAME="/P0N_3lvl_3" HWVERSION="1.0" INSTANCE="P0N_3lvl_3" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="P0N_3lvl" VLNV="ssevendenergy.com:user:P0N_3lvl:1.0">
+    <MODULE COREREVISION="4" FULLNAME="/P0N_3lvl_3" HWVERSION="1.0" INSTANCE="P0N_3lvl_3" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="P0N_3lvl" VLNV="ssevendenergy.com:user:P0N_3lvl:1.0">
       <DOCUMENTS/>
       <PARAMETERS>
         <PARAMETER NAME="Component_Name" VALUE="Inverter_3lvl_P0N_3lvl_0_1"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
-        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="Clk" SIGIS="clk" SIGNAME="External_Ports_Clk_0">
+        <PORT DIR="I" NAME="externalCLK" SIGIS="undef" SIGNAME="External_Ports_externalCLK_0">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="External_Ports" PORT="Clk_0"/>
+            <CONNECTION INSTANCE="External_Ports" PORT="externalCLK_0"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" NAME="ready" SIGIS="undef" SIGNAME="External_Ports_ready_0">
@@ -899,16 +899,16 @@
       </PORTS>
       <BUSINTERFACES/>
     </MODULE>
-    <MODULE COREREVISION="2" FULLNAME="/P0N_3lvl_4" HWVERSION="1.0" INSTANCE="P0N_3lvl_4" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="P0N_3lvl" VLNV="ssevendenergy.com:user:P0N_3lvl:1.0">
+    <MODULE COREREVISION="4" FULLNAME="/P0N_3lvl_4" HWVERSION="1.0" INSTANCE="P0N_3lvl_4" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="P0N_3lvl" VLNV="ssevendenergy.com:user:P0N_3lvl:1.0">
       <DOCUMENTS/>
       <PARAMETERS>
         <PARAMETER NAME="Component_Name" VALUE="Inverter_3lvl_P0N_3lvl_0_2"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
-        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="Clk" SIGIS="clk" SIGNAME="External_Ports_Clk_0">
+        <PORT DIR="I" NAME="externalCLK" SIGIS="undef" SIGNAME="External_Ports_externalCLK_0">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="External_Ports" PORT="Clk_0"/>
+            <CONNECTION INSTANCE="External_Ports" PORT="externalCLK_0"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" NAME="ready" SIGIS="undef" SIGNAME="External_Ports_ready_0">
@@ -984,16 +984,16 @@
       </PORTS>
       <BUSINTERFACES/>
     </MODULE>
-    <MODULE COREREVISION="2" FULLNAME="/P0N_3lvl_5" HWVERSION="1.0" INSTANCE="P0N_3lvl_5" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="P0N_3lvl" VLNV="ssevendenergy.com:user:P0N_3lvl:1.0">
+    <MODULE COREREVISION="4" FULLNAME="/P0N_3lvl_5" HWVERSION="1.0" INSTANCE="P0N_3lvl_5" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="P0N_3lvl" VLNV="ssevendenergy.com:user:P0N_3lvl:1.0">
       <DOCUMENTS/>
       <PARAMETERS>
         <PARAMETER NAME="Component_Name" VALUE="Inverter_3lvl_P0N_3lvl_0_3"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
-        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="Clk" SIGIS="clk" SIGNAME="External_Ports_Clk_0">
+        <PORT DIR="I" NAME="externalCLK" SIGIS="undef" SIGNAME="External_Ports_externalCLK_0">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="External_Ports" PORT="Clk_0"/>
+            <CONNECTION INSTANCE="External_Ports" PORT="externalCLK_0"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" NAME="ready" SIGIS="undef" SIGNAME="External_Ports_ready_0">
@@ -1069,16 +1069,16 @@
       </PORTS>
       <BUSINTERFACES/>
     </MODULE>
-    <MODULE COREREVISION="2" FULLNAME="/P0N_3lvl_6" HWVERSION="1.0" INSTANCE="P0N_3lvl_6" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="P0N_3lvl" VLNV="ssevendenergy.com:user:P0N_3lvl:1.0">
+    <MODULE COREREVISION="4" FULLNAME="/P0N_3lvl_6" HWVERSION="1.0" INSTANCE="P0N_3lvl_6" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="P0N_3lvl" VLNV="ssevendenergy.com:user:P0N_3lvl:1.0">
       <DOCUMENTS/>
       <PARAMETERS>
         <PARAMETER NAME="Component_Name" VALUE="Inverter_3lvl_P0N_3lvl_0_4"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
-        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="Clk" SIGIS="clk" SIGNAME="External_Ports_Clk_0">
+        <PORT DIR="I" NAME="externalCLK" SIGIS="undef" SIGNAME="External_Ports_externalCLK_0">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="External_Ports" PORT="Clk_0"/>
+            <CONNECTION INSTANCE="External_Ports" PORT="externalCLK_0"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" NAME="ready" SIGIS="undef" SIGNAME="External_Ports_ready_0">
@@ -1154,16 +1154,16 @@
       </PORTS>
       <BUSINTERFACES/>
     </MODULE>
-    <MODULE COREREVISION="2" FULLNAME="/P0N_3lvl_7" HWVERSION="1.0" INSTANCE="P0N_3lvl_7" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="P0N_3lvl" VLNV="ssevendenergy.com:user:P0N_3lvl:1.0">
+    <MODULE COREREVISION="4" FULLNAME="/P0N_3lvl_7" HWVERSION="1.0" INSTANCE="P0N_3lvl_7" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="P0N_3lvl" VLNV="ssevendenergy.com:user:P0N_3lvl:1.0">
       <DOCUMENTS/>
       <PARAMETERS>
         <PARAMETER NAME="Component_Name" VALUE="Inverter_3lvl_P0N_3lvl_0_5"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
-        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="Clk" SIGIS="clk" SIGNAME="External_Ports_Clk_0">
+        <PORT DIR="I" NAME="externalCLK" SIGIS="undef" SIGNAME="External_Ports_externalCLK_0">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="External_Ports" PORT="Clk_0"/>
+            <CONNECTION INSTANCE="External_Ports" PORT="externalCLK_0"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" NAME="ready" SIGIS="undef" SIGNAME="External_Ports_ready_0">

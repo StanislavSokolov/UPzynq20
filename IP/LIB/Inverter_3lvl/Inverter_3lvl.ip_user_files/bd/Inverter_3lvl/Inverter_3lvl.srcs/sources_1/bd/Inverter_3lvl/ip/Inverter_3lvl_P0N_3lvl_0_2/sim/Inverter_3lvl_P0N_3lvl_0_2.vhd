@@ -1,4 +1,4 @@
--- (c) Copyright 1995-2020 Xilinx, Inc. All rights reserved.
+-- (c) Copyright 1995-2021 Xilinx, Inc. All rights reserved.
 -- 
 -- This file contains confidential and proprietary information
 -- of Xilinx, Inc. and is protected under U.S. and
@@ -47,7 +47,7 @@
 -- DO NOT MODIFY THIS FILE.
 
 -- IP VLNV: ssevendenergy.com:user:P0N_3lvl:1.0
--- IP Revision: 2
+-- IP Revision: 4
 
 LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
@@ -55,7 +55,7 @@ USE ieee.numeric_std.ALL;
 
 ENTITY Inverter_3lvl_P0N_3lvl_0_2 IS
   PORT (
-    Clk : IN STD_LOGIC;
+    externalCLK : IN STD_LOGIC;
     ready : IN STD_LOGIC;
     reset : IN STD_LOGIC;
     deadTime : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
@@ -78,7 +78,7 @@ ARCHITECTURE Inverter_3lvl_P0N_3lvl_0_2_arch OF Inverter_3lvl_P0N_3lvl_0_2 IS
   ATTRIBUTE DowngradeIPIdentifiedWarnings OF Inverter_3lvl_P0N_3lvl_0_2_arch: ARCHITECTURE IS "yes";
   COMPONENT P0N_3lvl IS
     PORT (
-      Clk : IN STD_LOGIC;
+      externalCLK : IN STD_LOGIC;
       ready : IN STD_LOGIC;
       reset : IN STD_LOGIC;
       deadTime : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
@@ -101,12 +101,10 @@ ARCHITECTURE Inverter_3lvl_P0N_3lvl_0_2_arch OF Inverter_3lvl_P0N_3lvl_0_2 IS
   ATTRIBUTE X_INTERFACE_PARAMETER : STRING;
   ATTRIBUTE X_INTERFACE_PARAMETER OF reset: SIGNAL IS "XIL_INTERFACENAME reset, POLARITY ACTIVE_LOW, INSERT_VIP 0";
   ATTRIBUTE X_INTERFACE_INFO OF reset: SIGNAL IS "xilinx.com:signal:reset:1.0 reset RST";
-  ATTRIBUTE X_INTERFACE_PARAMETER OF Clk: SIGNAL IS "XIL_INTERFACENAME Clk, ASSOCIATED_RESET reset, FREQ_HZ 100000000, PHASE 0.000, CLK_DOMAIN Inverter_3lvl_Clk_0, INSERT_VIP 0";
-  ATTRIBUTE X_INTERFACE_INFO OF Clk: SIGNAL IS "xilinx.com:signal:clock:1.0 Clk CLK";
 BEGIN
   U0 : P0N_3lvl
     PORT MAP (
-      Clk => Clk,
+      externalCLK => externalCLK,
       ready => ready,
       reset => reset,
       deadTime => deadTime,

@@ -1,7 +1,7 @@
 --Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
---Date        : Wed Jun  9 08:28:22 2021
+--Date        : Fri Jun 11 08:16:04 2021
 --Host        : STAS-W10 running 64-bit major release  (build 9200)
 --Command     : generate_target UPzynq20_test_design.bd
 --Design      : UPzynq20_test_design
@@ -4342,10 +4342,10 @@ entity UPzynq20_test_design is
     gpio_rtl_2_tri_i : in STD_LOGIC_VECTOR ( 7 downto 0 );
     gpio_rtl_3_tri_i : in STD_LOGIC_VECTOR ( 15 downto 0 )
   );
-  attribute core_generation_info : string;
-  attribute core_generation_info of UPzynq20_test_design : entity is "UPzynq20_test_design,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=UPzynq20_test_design,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=38,numReposBlks=21,numNonXlnxBlks=9,numHierBlks=17,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=22,da_board_cnt=15,da_clkrst_cnt=1,da_ps7_cnt=2,synth_mode=Global}";
-  attribute hw_handoff : string;
-  attribute hw_handoff of UPzynq20_test_design : entity is "UPzynq20_test_design.hwdef";
+  attribute CORE_GENERATION_INFO : string;
+  attribute CORE_GENERATION_INFO of UPzynq20_test_design : entity is "UPzynq20_test_design,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=UPzynq20_test_design,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=38,numReposBlks=21,numNonXlnxBlks=9,numHierBlks=17,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=22,da_board_cnt=15,da_clkrst_cnt=1,da_ps7_cnt=2,synth_mode=Global}";
+  attribute HW_HANDOFF : string;
+  attribute HW_HANDOFF of UPzynq20_test_design : entity is "UPzynq20_test_design.hwdef";
 end UPzynq20_test_design;
 
 architecture STRUCTURE of UPzynq20_test_design is
@@ -4784,25 +4784,6 @@ architecture STRUCTURE of UPzynq20_test_design is
     s00_axi_aresetn : in STD_LOGIC
   );
   end component UPzynq20_test_design_IP_AXI_OpticalBus_0_0;
-  component UPzynq20_test_design_Inverter_3lvl_wrapper_0_0 is
-  port (
-    BreakingEnable : in STD_LOGIC_VECTOR ( 15 downto 0 );
-    ChGroup0 : out STD_LOGIC_VECTOR ( 15 downto 0 );
-    ChGroup1 : out STD_LOGIC_VECTOR ( 15 downto 0 );
-    Clk_0 : in STD_LOGIC;
-    MaskChGroup0 : in STD_LOGIC_VECTOR ( 15 downto 0 );
-    MaskChGroup1 : in STD_LOGIC_VECTOR ( 15 downto 0 );
-    MaskMinTimeError : in STD_LOGIC_VECTOR ( 15 downto 0 );
-    MinTimeError : out STD_LOGIC_VECTOR ( 15 downto 0 );
-    PWM : in STD_LOGIC_VECTOR ( 15 downto 0 );
-    deadTime_0 : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    er_0 : in STD_LOGIC;
-    minTime_0 : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    minTime_En_0 : in STD_LOGIC;
-    ready_0 : in STD_LOGIC;
-    reset_0 : in STD_LOGIC
-  );
-  end component UPzynq20_test_design_Inverter_3lvl_wrapper_0_0;
   component UPzynq20_test_design_AckChecker_wrapper_0_0 is
   port (
     AcknowledgeErrorGroup0 : out STD_LOGIC_VECTOR ( 15 downto 0 );
@@ -4827,6 +4808,32 @@ architecture STRUCTURE of UPzynq20_test_design is
     reset_0 : in STD_LOGIC
   );
   end component UPzynq20_test_design_AckChecker_wrapper_0_0;
+  component UPzynq20_test_design_IP_AXI_LEDS_0_1 is
+  port (
+    LEDS : out STD_LOGIC;
+    s00_axi_awaddr : in STD_LOGIC_VECTOR ( 3 downto 0 );
+    s00_axi_awprot : in STD_LOGIC_VECTOR ( 2 downto 0 );
+    s00_axi_awvalid : in STD_LOGIC;
+    s00_axi_awready : out STD_LOGIC;
+    s00_axi_wdata : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    s00_axi_wstrb : in STD_LOGIC_VECTOR ( 3 downto 0 );
+    s00_axi_wvalid : in STD_LOGIC;
+    s00_axi_wready : out STD_LOGIC;
+    s00_axi_bresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
+    s00_axi_bvalid : out STD_LOGIC;
+    s00_axi_bready : in STD_LOGIC;
+    s00_axi_araddr : in STD_LOGIC_VECTOR ( 3 downto 0 );
+    s00_axi_arprot : in STD_LOGIC_VECTOR ( 2 downto 0 );
+    s00_axi_arvalid : in STD_LOGIC;
+    s00_axi_arready : out STD_LOGIC;
+    s00_axi_rdata : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    s00_axi_rresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
+    s00_axi_rvalid : out STD_LOGIC;
+    s00_axi_rready : in STD_LOGIC;
+    s00_axi_aclk : in STD_LOGIC;
+    s00_axi_aresetn : in STD_LOGIC
+  );
+  end component UPzynq20_test_design_IP_AXI_LEDS_0_1;
   component UPzynq20_test_design_IP_AXI_INVERTER_0_0 is
   port (
     MinTimeErrorGroup0 : in STD_LOGIC_VECTOR ( 15 downto 0 );
@@ -4890,32 +4897,25 @@ architecture STRUCTURE of UPzynq20_test_design is
     s00_axi_aresetn : in STD_LOGIC
   );
   end component UPzynq20_test_design_IP_AXI_INVERTER_0_0;
-  component UPzynq20_test_design_IP_AXI_LEDS_0_1 is
+  component UPzynq20_test_design_Inverter_3lvl_wrapper_0_1 is
   port (
-    LEDS : out STD_LOGIC;
-    s00_axi_awaddr : in STD_LOGIC_VECTOR ( 3 downto 0 );
-    s00_axi_awprot : in STD_LOGIC_VECTOR ( 2 downto 0 );
-    s00_axi_awvalid : in STD_LOGIC;
-    s00_axi_awready : out STD_LOGIC;
-    s00_axi_wdata : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    s00_axi_wstrb : in STD_LOGIC_VECTOR ( 3 downto 0 );
-    s00_axi_wvalid : in STD_LOGIC;
-    s00_axi_wready : out STD_LOGIC;
-    s00_axi_bresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
-    s00_axi_bvalid : out STD_LOGIC;
-    s00_axi_bready : in STD_LOGIC;
-    s00_axi_araddr : in STD_LOGIC_VECTOR ( 3 downto 0 );
-    s00_axi_arprot : in STD_LOGIC_VECTOR ( 2 downto 0 );
-    s00_axi_arvalid : in STD_LOGIC;
-    s00_axi_arready : out STD_LOGIC;
-    s00_axi_rdata : out STD_LOGIC_VECTOR ( 31 downto 0 );
-    s00_axi_rresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
-    s00_axi_rvalid : out STD_LOGIC;
-    s00_axi_rready : in STD_LOGIC;
-    s00_axi_aclk : in STD_LOGIC;
-    s00_axi_aresetn : in STD_LOGIC
+    BreakingEnable : in STD_LOGIC_VECTOR ( 15 downto 0 );
+    ChGroup0 : out STD_LOGIC_VECTOR ( 15 downto 0 );
+    ChGroup1 : out STD_LOGIC_VECTOR ( 15 downto 0 );
+    MaskChGroup0 : in STD_LOGIC_VECTOR ( 15 downto 0 );
+    MaskChGroup1 : in STD_LOGIC_VECTOR ( 15 downto 0 );
+    MaskMinTimeError : in STD_LOGIC_VECTOR ( 15 downto 0 );
+    MinTimeError : out STD_LOGIC_VECTOR ( 15 downto 0 );
+    PWM : in STD_LOGIC_VECTOR ( 15 downto 0 );
+    deadTime_0 : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    er_0 : in STD_LOGIC;
+    externalCLK_0 : in STD_LOGIC;
+    minTime_0 : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    minTime_En_0 : in STD_LOGIC;
+    ready_0 : in STD_LOGIC;
+    reset_0 : in STD_LOGIC
   );
-  end component UPzynq20_test_design_IP_AXI_LEDS_0_1;
+  end component UPzynq20_test_design_Inverter_3lvl_wrapper_0_1;
   signal AckChecker_wrapper_0_AcknowledgeErrorGroup0 : STD_LOGIC_VECTOR ( 15 downto 0 );
   signal AckChecker_wrapper_0_AcknowledgeErrorGroup1 : STD_LOGIC_VECTOR ( 15 downto 0 );
   signal AckChecker_wrapper_0_CurrentErrorGroup0 : STD_LOGIC_VECTOR ( 15 downto 0 );
@@ -4946,7 +4946,6 @@ architecture STRUCTURE of UPzynq20_test_design is
   signal IP_AXI_INVERTER_0_MaskAcknowledgeGroup0 : STD_LOGIC_VECTOR ( 15 downto 0 );
   signal IP_AXI_INVERTER_0_MaskAcknowledgeGroup1 : STD_LOGIC_VECTOR ( 15 downto 0 );
   signal IP_AXI_INVERTER_0_MaskChGroup0 : STD_LOGIC_VECTOR ( 15 downto 0 );
-  signal IP_AXI_INVERTER_0_MaskChGroup1 : STD_LOGIC_VECTOR ( 15 downto 0 );
   signal IP_AXI_INVERTER_0_MaskCurrentGroup0 : STD_LOGIC_VECTOR ( 15 downto 0 );
   signal IP_AXI_INVERTER_0_MaskCurrentGroup1 : STD_LOGIC_VECTOR ( 15 downto 0 );
   signal IP_AXI_INVERTER_0_MaskMinTimeErrorGroup0 : STD_LOGIC_VECTOR ( 15 downto 0 );
@@ -5311,6 +5310,7 @@ architecture STRUCTURE of UPzynq20_test_design is
   signal NLW_IP_AXI_INVERTER_0_CurrentProtectionEnableGroup2_UNCONNECTED : STD_LOGIC_VECTOR ( 15 downto 0 );
   signal NLW_IP_AXI_INVERTER_0_DeadTimeGroup1_UNCONNECTED : STD_LOGIC_VECTOR ( 31 downto 0 );
   signal NLW_IP_AXI_INVERTER_0_MaskAcknowledgeGroup2_UNCONNECTED : STD_LOGIC_VECTOR ( 15 downto 0 );
+  signal NLW_IP_AXI_INVERTER_0_MaskChGroup1_UNCONNECTED : STD_LOGIC_VECTOR ( 15 downto 0 );
   signal NLW_IP_AXI_INVERTER_0_MaskChGroup2_UNCONNECTED : STD_LOGIC_VECTOR ( 15 downto 0 );
   signal NLW_IP_AXI_INVERTER_0_MaskCurrentGroup2_UNCONNECTED : STD_LOGIC_VECTOR ( 15 downto 0 );
   signal NLW_IP_AXI_INVERTER_0_MaskMinTimeErrorGroup1_UNCONNECTED : STD_LOGIC_VECTOR ( 15 downto 0 );
@@ -5334,36 +5334,36 @@ architecture STRUCTURE of UPzynq20_test_design is
   signal NLW_rst_ps7_0_50M_mb_reset_UNCONNECTED : STD_LOGIC;
   signal NLW_rst_ps7_0_50M_bus_struct_reset_UNCONNECTED : STD_LOGIC_VECTOR ( 0 to 0 );
   signal NLW_rst_ps7_0_50M_peripheral_reset_UNCONNECTED : STD_LOGIC_VECTOR ( 0 to 0 );
-  attribute x_interface_info : string;
-  attribute x_interface_info of CLK_out_0 : signal is "xilinx.com:signal:data:1.0 DATA.CLK_OUT_0 DATA";
-  attribute x_interface_parameter : string;
-  attribute x_interface_parameter of CLK_out_0 : signal is "XIL_INTERFACENAME DATA.CLK_OUT_0, LAYERED_METADATA undef";
-  attribute x_interface_info of DDR_cas_n : signal is "xilinx.com:interface:ddrx:1.0 DDR CAS_N";
-  attribute x_interface_info of DDR_ck_n : signal is "xilinx.com:interface:ddrx:1.0 DDR CK_N";
-  attribute x_interface_info of DDR_ck_p : signal is "xilinx.com:interface:ddrx:1.0 DDR CK_P";
-  attribute x_interface_info of DDR_cke : signal is "xilinx.com:interface:ddrx:1.0 DDR CKE";
-  attribute x_interface_info of DDR_cs_n : signal is "xilinx.com:interface:ddrx:1.0 DDR CS_N";
-  attribute x_interface_info of DDR_odt : signal is "xilinx.com:interface:ddrx:1.0 DDR ODT";
-  attribute x_interface_info of DDR_ras_n : signal is "xilinx.com:interface:ddrx:1.0 DDR RAS_N";
-  attribute x_interface_info of DDR_reset_n : signal is "xilinx.com:interface:ddrx:1.0 DDR RESET_N";
-  attribute x_interface_info of DDR_we_n : signal is "xilinx.com:interface:ddrx:1.0 DDR WE_N";
-  attribute x_interface_info of FIXED_IO_ddr_vrn : signal is "xilinx.com:display_processing_system7:fixedio:1.0 FIXED_IO DDR_VRN";
-  attribute x_interface_parameter of FIXED_IO_ddr_vrn : signal is "XIL_INTERFACENAME FIXED_IO, CAN_DEBUG false";
-  attribute x_interface_info of FIXED_IO_ddr_vrp : signal is "xilinx.com:display_processing_system7:fixedio:1.0 FIXED_IO DDR_VRP";
-  attribute x_interface_info of FIXED_IO_ps_clk : signal is "xilinx.com:display_processing_system7:fixedio:1.0 FIXED_IO PS_CLK";
-  attribute x_interface_info of FIXED_IO_ps_porb : signal is "xilinx.com:display_processing_system7:fixedio:1.0 FIXED_IO PS_PORB";
-  attribute x_interface_info of FIXED_IO_ps_srstb : signal is "xilinx.com:display_processing_system7:fixedio:1.0 FIXED_IO PS_SRSTB";
-  attribute x_interface_info of DDR_addr : signal is "xilinx.com:interface:ddrx:1.0 DDR ADDR";
-  attribute x_interface_parameter of DDR_addr : signal is "XIL_INTERFACENAME DDR, AXI_ARBITRATION_SCHEME TDM, BURST_LENGTH 8, CAN_DEBUG false, CAS_LATENCY 11, CAS_WRITE_LATENCY 11, CS_ENABLED true, DATA_MASK_ENABLED true, DATA_WIDTH 8, MEMORY_TYPE COMPONENTS, MEM_ADDR_MAP ROW_COLUMN_BANK, SLOT Single, TIMEPERIOD_PS 1250";
-  attribute x_interface_info of DDR_ba : signal is "xilinx.com:interface:ddrx:1.0 DDR BA";
-  attribute x_interface_info of DDR_dm : signal is "xilinx.com:interface:ddrx:1.0 DDR DM";
-  attribute x_interface_info of DDR_dq : signal is "xilinx.com:interface:ddrx:1.0 DDR DQ";
-  attribute x_interface_info of DDR_dqs_n : signal is "xilinx.com:interface:ddrx:1.0 DDR DQS_N";
-  attribute x_interface_info of DDR_dqs_p : signal is "xilinx.com:interface:ddrx:1.0 DDR DQS_P";
-  attribute x_interface_info of FIXED_IO_mio : signal is "xilinx.com:display_processing_system7:fixedio:1.0 FIXED_IO MIO";
-  attribute x_interface_info of gpio_rtl_0_tri_o : signal is "xilinx.com:interface:gpio:1.0 gpio_rtl_0 TRI_O";
-  attribute x_interface_info of gpio_rtl_2_tri_i : signal is "xilinx.com:interface:gpio:1.0 gpio_rtl_2 TRI_I";
-  attribute x_interface_info of gpio_rtl_3_tri_i : signal is "xilinx.com:interface:gpio:1.0 gpio_rtl_3 TRI_I";
+  attribute X_INTERFACE_INFO : string;
+  attribute X_INTERFACE_INFO of CLK_out_0 : signal is "xilinx.com:signal:data:1.0 DATA.CLK_OUT_0 DATA";
+  attribute X_INTERFACE_PARAMETER : string;
+  attribute X_INTERFACE_PARAMETER of CLK_out_0 : signal is "XIL_INTERFACENAME DATA.CLK_OUT_0, LAYERED_METADATA undef";
+  attribute X_INTERFACE_INFO of DDR_cas_n : signal is "xilinx.com:interface:ddrx:1.0 DDR CAS_N";
+  attribute X_INTERFACE_INFO of DDR_ck_n : signal is "xilinx.com:interface:ddrx:1.0 DDR CK_N";
+  attribute X_INTERFACE_INFO of DDR_ck_p : signal is "xilinx.com:interface:ddrx:1.0 DDR CK_P";
+  attribute X_INTERFACE_INFO of DDR_cke : signal is "xilinx.com:interface:ddrx:1.0 DDR CKE";
+  attribute X_INTERFACE_INFO of DDR_cs_n : signal is "xilinx.com:interface:ddrx:1.0 DDR CS_N";
+  attribute X_INTERFACE_INFO of DDR_odt : signal is "xilinx.com:interface:ddrx:1.0 DDR ODT";
+  attribute X_INTERFACE_INFO of DDR_ras_n : signal is "xilinx.com:interface:ddrx:1.0 DDR RAS_N";
+  attribute X_INTERFACE_INFO of DDR_reset_n : signal is "xilinx.com:interface:ddrx:1.0 DDR RESET_N";
+  attribute X_INTERFACE_INFO of DDR_we_n : signal is "xilinx.com:interface:ddrx:1.0 DDR WE_N";
+  attribute X_INTERFACE_INFO of FIXED_IO_ddr_vrn : signal is "xilinx.com:display_processing_system7:fixedio:1.0 FIXED_IO DDR_VRN";
+  attribute X_INTERFACE_PARAMETER of FIXED_IO_ddr_vrn : signal is "XIL_INTERFACENAME FIXED_IO, CAN_DEBUG false";
+  attribute X_INTERFACE_INFO of FIXED_IO_ddr_vrp : signal is "xilinx.com:display_processing_system7:fixedio:1.0 FIXED_IO DDR_VRP";
+  attribute X_INTERFACE_INFO of FIXED_IO_ps_clk : signal is "xilinx.com:display_processing_system7:fixedio:1.0 FIXED_IO PS_CLK";
+  attribute X_INTERFACE_INFO of FIXED_IO_ps_porb : signal is "xilinx.com:display_processing_system7:fixedio:1.0 FIXED_IO PS_PORB";
+  attribute X_INTERFACE_INFO of FIXED_IO_ps_srstb : signal is "xilinx.com:display_processing_system7:fixedio:1.0 FIXED_IO PS_SRSTB";
+  attribute X_INTERFACE_INFO of DDR_addr : signal is "xilinx.com:interface:ddrx:1.0 DDR ADDR";
+  attribute X_INTERFACE_PARAMETER of DDR_addr : signal is "XIL_INTERFACENAME DDR, AXI_ARBITRATION_SCHEME TDM, BURST_LENGTH 8, CAN_DEBUG false, CAS_LATENCY 11, CAS_WRITE_LATENCY 11, CS_ENABLED true, DATA_MASK_ENABLED true, DATA_WIDTH 8, MEMORY_TYPE COMPONENTS, MEM_ADDR_MAP ROW_COLUMN_BANK, SLOT Single, TIMEPERIOD_PS 1250";
+  attribute X_INTERFACE_INFO of DDR_ba : signal is "xilinx.com:interface:ddrx:1.0 DDR BA";
+  attribute X_INTERFACE_INFO of DDR_dm : signal is "xilinx.com:interface:ddrx:1.0 DDR DM";
+  attribute X_INTERFACE_INFO of DDR_dq : signal is "xilinx.com:interface:ddrx:1.0 DDR DQ";
+  attribute X_INTERFACE_INFO of DDR_dqs_n : signal is "xilinx.com:interface:ddrx:1.0 DDR DQS_N";
+  attribute X_INTERFACE_INFO of DDR_dqs_p : signal is "xilinx.com:interface:ddrx:1.0 DDR DQS_P";
+  attribute X_INTERFACE_INFO of FIXED_IO_mio : signal is "xilinx.com:display_processing_system7:fixedio:1.0 FIXED_IO MIO";
+  attribute X_INTERFACE_INFO of gpio_rtl_0_tri_o : signal is "xilinx.com:interface:gpio:1.0 gpio_rtl_0 TRI_O";
+  attribute X_INTERFACE_INFO of gpio_rtl_2_tri_i : signal is "xilinx.com:interface:gpio:1.0 gpio_rtl_2 TRI_I";
+  attribute X_INTERFACE_INFO of gpio_rtl_3_tri_i : signal is "xilinx.com:interface:gpio:1.0 gpio_rtl_3 TRI_I";
 begin
   A0 <= IP_AXI_ADC_0_a0;
   CE_0 <= IP_AXI_OpticalBus_0_CE;
@@ -5416,7 +5416,7 @@ AckChecker_wrapper_0: component UPzynq20_test_design_AckChecker_wrapper_0_0
       Ready_0 => IP_AXI_INVERTER_0_Ready,
       ReceiverGroup0(15 downto 0) => ReceiverGroup0_0_1(15 downto 0),
       ReceiverGroup1(15 downto 0) => B"0000000000000000",
-      TransmitterGroup0(15 downto 0) => Inverter_3lvl_wrapper_0_ChGroup0(15 downto 0),
+      TransmitterGroup0(15 downto 0) => B"0000000000000000",
       TransmitterGroup1(15 downto 0) => B"0000000000000000",
       ackTime_0(31 downto 0) => IP_AXI_INVERTER_0_AcknowledgeTimeGroup0(31 downto 0),
       reset_0 => IP_AXI_INVERTER_0_Reset
@@ -5510,7 +5510,7 @@ IP_AXI_INVERTER_0: component UPzynq20_test_design_IP_AXI_INVERTER_0_0
       MaskAcknowledgeGroup1(15 downto 0) => IP_AXI_INVERTER_0_MaskAcknowledgeGroup1(15 downto 0),
       MaskAcknowledgeGroup2(15 downto 0) => NLW_IP_AXI_INVERTER_0_MaskAcknowledgeGroup2_UNCONNECTED(15 downto 0),
       MaskChGroup0(15 downto 0) => IP_AXI_INVERTER_0_MaskChGroup0(15 downto 0),
-      MaskChGroup1(15 downto 0) => IP_AXI_INVERTER_0_MaskChGroup1(15 downto 0),
+      MaskChGroup1(15 downto 0) => NLW_IP_AXI_INVERTER_0_MaskChGroup1_UNCONNECTED(15 downto 0),
       MaskChGroup2(15 downto 0) => NLW_IP_AXI_INVERTER_0_MaskChGroup2_UNCONNECTED(15 downto 0),
       MaskCurrentGroup0(15 downto 0) => IP_AXI_INVERTER_0_MaskCurrentGroup0(15 downto 0),
       MaskCurrentGroup1(15 downto 0) => IP_AXI_INVERTER_0_MaskCurrentGroup1(15 downto 0),
@@ -5658,19 +5658,19 @@ IP_AXI_PWM_0: component UPzynq20_test_design_IP_AXI_PWM_0_0
       s00_axi_wstrb(3 downto 0) => ps7_0_axi_periph_M06_AXI_WSTRB(3 downto 0),
       s00_axi_wvalid => ps7_0_axi_periph_M06_AXI_WVALID
     );
-Inverter_3lvl_wrapper_0: component UPzynq20_test_design_Inverter_3lvl_wrapper_0_0
+Inverter_3lvl_wrapper_0: component UPzynq20_test_design_Inverter_3lvl_wrapper_0_1
      port map (
       BreakingEnable(15 downto 0) => IP_AXI_INVERTER_0_BreakingEnable(15 downto 0),
       ChGroup0(15 downto 0) => Inverter_3lvl_wrapper_0_ChGroup0(15 downto 0),
       ChGroup1(15 downto 0) => NLW_Inverter_3lvl_wrapper_0_ChGroup1_UNCONNECTED(15 downto 0),
-      Clk_0 => processing_system7_0_FCLK_CLK0,
       MaskChGroup0(15 downto 0) => IP_AXI_INVERTER_0_MaskChGroup0(15 downto 0),
-      MaskChGroup1(15 downto 0) => IP_AXI_INVERTER_0_MaskChGroup1(15 downto 0),
+      MaskChGroup1(15 downto 0) => B"0000000000000000",
       MaskMinTimeError(15 downto 0) => IP_AXI_INVERTER_0_MaskMinTimeErrorGroup0(15 downto 0),
       MinTimeError(15 downto 0) => Inverter_3lvl_wrapper_0_MinTimeError(15 downto 0),
       PWM(15 downto 0) => IP_AXI_PWM_0_PWM_OUT(15 downto 0),
       deadTime_0(31 downto 0) => IP_AXI_INVERTER_0_DeadTimeGroup0(31 downto 0),
       er_0 => IP_AXI_INVERTER_0_Error,
+      externalCLK_0 => processing_system7_0_FCLK_CLK0,
       minTime_0(31 downto 0) => IP_AXI_INVERTER_0_MinTimeGroup0(31 downto 0),
       minTime_En_0 => IP_AXI_INVERTER_0_MinTimeEnable,
       ready_0 => IP_AXI_INVERTER_0_Ready,

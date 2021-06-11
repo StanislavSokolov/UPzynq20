@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
-| Date             : Wed Jun  9 08:34:18 2021
+| Date             : Fri Jun 11 08:21:43 2021
 | Host             : STAS-W10 running 64-bit major release  (build 9200)
 | Command          : report_power -file UPzynq20_test_design_wrapper_power_routed.rpt -pb UPzynq20_test_design_wrapper_power_summary_routed.pb -rpx UPzynq20_test_design_wrapper_power_routed.rpx
 | Design           : UPzynq20_test_design_wrapper
@@ -33,7 +33,7 @@ Table of Contents
 | Total On-Chip Power (W)  | 1.810        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 1.663        |
+| Dynamic (W)              | 1.662        |
 | Device Static (W)        | 0.148        |
 | Effective TJA (C/W)      | 11.5         |
 | Max Ambient (C)          | 79.1         |
@@ -52,18 +52,18 @@ Table of Contents
 +-------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                 | Power (W) | Used     | Available | Utilization (%) |
 +-------------------------+-----------+----------+-----------+-----------------+
-| Clocks                  |     0.015 |        3 |       --- |             --- |
-| Slice Logic             |     0.004 |    18953 |       --- |             --- |
-|   LUT as Logic          |     0.004 |     6009 |     53200 |           11.30 |
+| Clocks                  |     0.013 |        3 |       --- |             --- |
+| Slice Logic             |     0.005 |    18928 |       --- |             --- |
+|   LUT as Logic          |     0.004 |     6002 |     53200 |           11.28 |
 |   CARRY4                |    <0.001 |      688 |     13300 |            5.17 |
-|   Register              |    <0.001 |     9515 |    106400 |            8.94 |
+|   Register              |    <0.001 |     9516 |    106400 |            8.94 |
 |   BUFG                  |    <0.001 |        2 |        32 |            6.25 |
 |   F7/F8 Muxes           |    <0.001 |      370 |     53200 |            0.70 |
 |   LUT as Shift Register |    <0.001 |       62 |     17400 |            0.36 |
 |   Others                |     0.000 |      374 |       --- |             --- |
-| Signals                 |     0.006 |    13219 |       --- |             --- |
+| Signals                 |     0.006 |    13202 |       --- |             --- |
 | I/O                     |     0.003 |      104 |       200 |           52.00 |
-| PS7                     |     1.635 |        1 |       --- |             --- |
+| PS7                     |     1.634 |        1 |       --- |             --- |
 | Static Power            |     0.148 |          |           |                 |
 | Total                   |     1.810 |          |           |                 |
 +-------------------------+-----------+----------+-----------+-----------------+
@@ -75,7 +75,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.041 |       0.025 |      0.016 |
+| Vccint    |       1.000 |     0.040 |       0.025 |      0.016 |
 | Vccaux    |       1.800 |     0.016 |       0.000 |      0.016 |
 | Vcco33    |       3.300 |     0.002 |       0.001 |      0.001 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
@@ -151,21 +151,21 @@ Table of Contents
 +------------------------------+-----------+
 | Name                         | Power (W) |
 +------------------------------+-----------+
-| UPzynq20_test_design_wrapper |     1.663 |
-|   UPzynq20_test_design_i     |     1.659 |
-|     AckChecker_wrapper_0     |     0.001 |
-|       U0                     |     0.001 |
+| UPzynq20_test_design_wrapper |     1.662 |
+|   UPzynq20_test_design_i     |     1.658 |
+|     AckChecker_wrapper_0     |     0.002 |
+|       U0                     |     0.002 |
 |     IP_AXI_INVERTER_0        |     0.002 |
 |       U0                     |     0.002 |
 |     IP_AXI_OpticalBus_0      |     0.002 |
 |       U0                     |     0.002 |
 |     IP_AXI_PWM_0             |     0.005 |
 |       U0                     |     0.005 |
-|     Inverter_3lvl_wrapper_0  |     0.004 |
-|       U0                     |     0.004 |
+|     Inverter_3lvl_wrapper_0  |     0.003 |
+|       U0                     |     0.003 |
 |     processing_system7_0     |     1.636 |
 |       inst                   |     1.636 |
-|     ps7_0_axi_periph         |     0.003 |
+|     ps7_0_axi_periph         |     0.002 |
 |       s00_couplers           |     0.002 |
 +------------------------------+-----------+
 

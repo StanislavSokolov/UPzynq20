@@ -1,8 +1,8 @@
 -- Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
--- Date        : Wed Apr 29 12:44:25 2020
--- Host        : Stas running 64-bit major release  (build 9200)
+-- Date        : Thu Jun 10 15:31:51 2021
+-- Host        : STAS-W10 running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode synth_stub -rename_top Inverter_3lvl_BUS_16OUT_0_1 -prefix
 --               Inverter_3lvl_BUS_16OUT_0_1_ Inverter_3lvl_BUS_16OUT_0_0_stub.vhdl
 -- Design      : Inverter_3lvl_BUS_16OUT_0_0

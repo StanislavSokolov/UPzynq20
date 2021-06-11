@@ -24,7 +24,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='D:/Projects/IP/LIB/Inverter_3lvl/Inverter_3lvl.runs/Inverter_3lvl_P0N_3lvl_0_1_synth_1'
+HD_PWD='D:/GITEA/UPzynq20_test/IP/LIB/Inverter_3lvl/Inverter_3lvl.runs/Inverter_3lvl_P0N_3lvl_0_1_synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log

@@ -68,8 +68,7 @@
 #include "project_parameters.h"
 #include "test_functions.h"
 #include "module_uart.h"
-#include "xgpiops.h"
-
+#include "test_functions_PS_MIO.h"
 
 int Count;						// общий счеткчик
 int Channel_0;					// счетчик аналоговых сигналов дл€ каналов 0-15
@@ -89,29 +88,18 @@ u32 DataErrWarnInfo = 0;
 int latch = 0;
 int latch_start = 0;
 
-XGpioPs Gpio;
-
-XGpioPs_Config *ConfigPtr;
-
-
 int main(void) {
 
-	initialization_of_project(0, 0); // A0 - SYSTEM_DESIGN, A1 - PROJECT_NUMBER
-	initialization_of_UART(); 		// инициализируем UART
-	//initial_action(2);
-	ConfigPtr = XGpioPs_LookupConfig(XPAR_XGPIOPS_0_DEVICE_ID);
-
-	XGpioPs_CfgInitialize(&Gpio, ConfigPtr, ConfigPtr->BaseAddr);
-
-	XGpioPs_SetDirectionPin(&Gpio, 0, 1);
-	XGpioPs_SetDirectionPin(&Gpio, 7, 1);
-	XGpioPs_SetOutputEnablePin(&Gpio, 0, 1);
-
-
+	initialization_of_project(0, 0);    // A0 - SYSTEM_DESIGN, A1 - PROJECT_NUMBER
+	initialization_of_MIO();			// »ницилизируем PSGPIO
+	SetOutputEnablePinPSGPIO(0, 1);		// –азрешаем подт€жку MIO0, нельз€ подт€нуть MIO7
+	SetDirectionPinPSGPIO(0, 1);		// ¬ыбираем направление MIO0
+	SetDirectionPinPSGPIO(7, 1);		// ¬ыбираем направление MIO7
+	initialization_of_UART(); 			// инициализируем UART
 
 	while (1) {
 
-		if (Count < 10000000) {
+		if (Count < 1000000) {
 			Count++;
 		} else {
 			if (latch) {
@@ -119,16 +107,16 @@ int main(void) {
 				latch = 0;
 				//write_out(17);
 				//inverting_the_signal_count_transmitter();
-				XGpioPs_WritePin(&Gpio, 0, 0x0);
-				XGpioPs_WritePin(&Gpio, 7, 0x1);
+				WritePinPSGPIO (0, 1);
+				WritePinPSGPIO (7, 0);
 			} else {
 				Xil_Out32(XPAR_IP_AXI_LEDS_0_S00_AXI_BASEADDR, 0x00000001);
 				latch = 1;
 				//write_out(4);
 				//inverting_the_signal_count_transmitter();
 //				XGpioPs_WritePin(&gpio_instance, 0, 0);
-				XGpioPs_WritePin(&Gpio, 0, 0x1);
-				XGpioPs_WritePin(&Gpio, 7, 0x0);
+				WritePinPSGPIO (0, 0);
+				WritePinPSGPIO (7, 1);
 			}
 
 
@@ -159,6 +147,13 @@ int main(void) {
 			if (Channel_1<7) Channel_1++; else Channel_1 = 0;
 
 
+			Xil_Out32(XPAR_IP_AXI_INVERTER_0_S00_AXI_BASEADDR + 1*j, 0x0000FFFF);			// –азрешение работы тормозных резисторов
+			Xil_Out32(XPAR_IP_AXI_INVERTER_0_S00_AXI_BASEADDR + 2*j, 0x00000000);			// маска на выходе Inverter_3lvl_wrapper_0
+			Xil_Out32(XPAR_IP_AXI_INVERTER_0_S00_AXI_BASEADDR + 0*j, 0x80000004);			// Error0 <= slv_reg0(0);
+																							// MinTimeEnable <= slv_reg0(1);
+																							// Ready <= slv_reg0(2);
+																							// Reset <= slv_reg0(3);
+																							// start <= slv_reg0(31); изменени€ вступают в силу после установки этого бита
 
 
 			Xil_Out32(XPAR_IP_AXI_PWM_0_S00_AXI_BASEADDR + (Channel_2*j), 0x00FFFFFF);
@@ -195,6 +190,40 @@ int main(void) {
 			Xil_Out32(XPAR_IP_AXI_PWM_0_S00_AXI_BASEADDR + (Channel_2*j), 0x000FFFFF);
 			Channel_2++;
 
+//			Xil_Out32(XPAR_IP_AXI_PWM_0_S00_AXI_BASEADDR + (Channel_2*j), 0x000FFFFF);
+//						Channel_2++;
+//						Xil_Out32(XPAR_IP_AXI_PWM_0_S00_AXI_BASEADDR + (Channel_2*j), 0x000EFFFF);
+//						Channel_2++;
+//						Xil_Out32(XPAR_IP_AXI_PWM_0_S00_AXI_BASEADDR + (Channel_2*j), 0x000DFFFF);
+//						Channel_2++;
+//						Xil_Out32(XPAR_IP_AXI_PWM_0_S00_AXI_BASEADDR + (Channel_2*j), 0x000CFFFF);
+//						Channel_2++;
+//						Xil_Out32(XPAR_IP_AXI_PWM_0_S00_AXI_BASEADDR + (Channel_2*j), 0x000BFFFF);
+//						Channel_2++;
+//						Xil_Out32(XPAR_IP_AXI_PWM_0_S00_AXI_BASEADDR + (Channel_2*j), 0x000AFFFF);
+//						Channel_2++;
+//						Xil_Out32(XPAR_IP_AXI_PWM_0_S00_AXI_BASEADDR + (Channel_2*j), 0x0009FFFF);
+//						Channel_2++;
+//						Xil_Out32(XPAR_IP_AXI_PWM_0_S00_AXI_BASEADDR + (Channel_2*j), 0x0008FFFF);
+//						Channel_2++;
+//
+//						Xil_Out32(XPAR_IP_AXI_PWM_0_S00_AXI_BASEADDR + (Channel_2*j), 0x0007FFFF);
+//						Channel_2++;
+//						Xil_Out32(XPAR_IP_AXI_PWM_0_S00_AXI_BASEADDR + (Channel_2*j), 0x0006FFFF);
+//						Channel_2++;
+//						Xil_Out32(XPAR_IP_AXI_PWM_0_S00_AXI_BASEADDR + (Channel_2*j), 0x0005FFFF);
+//						Channel_2++;
+//						Xil_Out32(XPAR_IP_AXI_PWM_0_S00_AXI_BASEADDR + (Channel_2*j), 0x0004FFFF);
+//						Channel_2++;
+//						Xil_Out32(XPAR_IP_AXI_PWM_0_S00_AXI_BASEADDR + (Channel_2*j), 0x0003FFFF);
+//						Channel_2++;
+//						Xil_Out32(XPAR_IP_AXI_PWM_0_S00_AXI_BASEADDR + (Channel_2*j), 0x0002FFFF);
+//						Channel_2++;
+//						Xil_Out32(XPAR_IP_AXI_PWM_0_S00_AXI_BASEADDR + (Channel_2*j), 0x0001FFFF);
+//						Channel_2++;
+//						Xil_Out32(XPAR_IP_AXI_PWM_0_S00_AXI_BASEADDR + (Channel_2*j), 0x0000FFFF);
+//						Channel_2++;
+
 			Xil_Out32(XPAR_IP_AXI_PWM_0_S00_AXI_BASEADDR + (Channel_2*j), 0x00000000);
 			Channel_2++;
 			Xil_Out32(XPAR_IP_AXI_PWM_0_S00_AXI_BASEADDR + (Channel_2*j), 0x01000000);
@@ -214,7 +243,7 @@ int main(void) {
 
 			Xil_Out32(XPAR_IP_AXI_OPTICALBUS_0_S00_AXI_BASEADDR + (Channel_3*j), 0x00000000);
 			Channel_3 = 0;
-			Xil_Out32(XPAR_IP_AXI_OPTICALBUS_0_S00_AXI_BASEADDR + (Channel_3*j), 0x70F07750);
+			Xil_Out32(XPAR_IP_AXI_OPTICALBUS_0_S00_AXI_BASEADDR + (Channel_3*j), 0x70F07751);
 			Channel_3++;
 			Xil_Out32(XPAR_IP_AXI_OPTICALBUS_0_S00_AXI_BASEADDR + (Channel_3*j), 0x70F00000);
 			Channel_3++;
@@ -249,88 +278,5 @@ int main(void) {
 
 		}
 	}
-
-
-	// инициализируем проект, пока только количество входов и выходов
-	//initialization_of_project(0, 0); // A0 - SYSTEM_DESIGN, A1 - PROJECT_NUMBER
-	//initialization_of_UART(); 		// инициализируем UART
-
-	//initial_action(7);								// the LEDs during the start
-	//while (exit_programm()) {					// attempt to exit the program
-//		while (0) {
-//
-//		//read_in(&DataBuf);
-////		if (DataBufPrev != DataBuf) {
-////			write_out(DataBuf);
-////		}
-//		//if (DataBufPrev != DataBuf) {
-//		//	bild_send_buffer(24, DataBuf);
-//			//bild_send_buffer(30, DataBuf);
-//		//}
-//		//DataBufPrev = DataBuf;
-//		//control_from_MPU();
-//		//bild_send_buffer(43, GroupsRegisters);
-//
-//		if (Count < 1000000) {
-//			Count++;
-//		} else {
-//			Count = 0;
-//			inverting_the_signal_count_transmitter();
-//			bild_send_buffer(CountErrWarnInfo, 10);
-//			//DataErrWarnInfo++;
-//			terminal_uart_send();
-//			terminal_uart_recv();
-////			if (latch) {
-////				Xil_Out32(XPAR_IP_AXI_LEDS_0_S00_AXI_BASEADDR, 0x0000000F);
-////				latch = 0;
-////			} else {
-////			Xil_Out32(XPAR_IP_AXI_LEDS_0_S00_AXI_BASEADDR, 0x00000000);
-////			latch = 1;
-////			}
-//		}
-
-
-
-	//}
-	//initial_action(5);								// check
-
 }
 
-//	initial_action(5);
-
-//		u32 DataRead = 0;
-//		u32 DataReadPrev = 0;
-//		SendBuffer[0] = 4;
-//		SendBuffer[1] = 1;
-
-//		while (XGpio_DiscreteRead(&Gpio_1, 1) != 1) {
-//			DataReadPrev = DataRead;
-//			DataRead = TestINdigital(&Gpio_0);
-////			XUartPs_Recv(&UartPs, RecvBuffer, TEST_BUFFER_SIZE);
-////			XGpio_DiscreteWrite(&Gpio_0, LED_CHANNEL, RecvBuffer[1]);
-////			XGpio_DiscreteWrite(&Gpio_0, LED_CHANNEL, DataRead);
-//			XGpio_DiscreteWrite(&Gpio_0, LED_CHANNEL, RecvBuffer[30]);
-//			if (DataReadPrev != DataRead) {
-//				SendBuffer[24] = DataRead;
-//				if (DataRead > 100) SendBuffer[30] = 6;
-//				else SendBuffer[30] = 0;
-//				SendBuffer[112] = DataRead;
-//				SendBuffer[115] = DataRead;
-//				SendBuffer[116] = DataRead;
-//				SendBuffer[117] = DataRead;
-////				XGpio_DiscreteWrite(&Gpio_0, LED_CHANNEL, DataRead);
-//			}
-
-
-
-
-//static int GpioInputExample(u32 *DataRead)
-//{
-//
-//	/* Set the direction for the specified pin to be input. */
-//	XGpioPs_SetDirectionPin(&Gpio, Input_Pin, 0x0);
-//	/* Read the state of the data so that it can be  verified. */
-//	*DataRead = XGpioPs_ReadPin(&Gpio, Input_Pin);
-//
-//	return XST_SUCCESS;
-//}

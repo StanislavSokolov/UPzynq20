@@ -1,11 +1,11 @@
 -- Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
--- Date        : Tue Apr 28 16:30:48 2020
--- Host        : Stas running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode funcsim -rename_top Inverter_3lvl_P0N_3lvl_0_3 -prefix
---               Inverter_3lvl_P0N_3lvl_0_3_ Inverter_3lvl_P0N_3lvl_0_2_sim_netlist.vhdl
--- Design      : Inverter_3lvl_P0N_3lvl_0_2
+-- Date        : Fri Jun 11 07:49:58 2021
+-- Host        : STAS-W10 running 64-bit major release  (build 9200)
+-- Command     : write_vhdl -force -mode funcsim
+--               D:/GITEA/UPzynq20_test/IP/LIB/Inverter_3lvl/Inverter_3lvl.srcs/sources_1/bd/Inverter_3lvl/ip/Inverter_3lvl_P0N_3lvl_0_3/Inverter_3lvl_P0N_3lvl_0_3_sim_netlist.vhdl
+-- Design      : Inverter_3lvl_P0N_3lvl_0_3
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
 -- Device      : xc7z020clg484-3
@@ -22,7 +22,7 @@ entity Inverter_3lvl_P0N_3lvl_0_3_P0N_3lvl is
     PWM_out_2 : out STD_LOGIC;
     PWM_out_3 : out STD_LOGIC;
     reset : in STD_LOGIC;
-    Clk : in STD_LOGIC;
+    externalCLK : in STD_LOGIC;
     TKin0 : in STD_LOGIC;
     TKin1 : in STD_LOGIC;
     breaking_en : in STD_LOGIC;
@@ -32,6 +32,8 @@ entity Inverter_3lvl_P0N_3lvl_0_3_P0N_3lvl is
     deadTime : in STD_LOGIC_VECTOR ( 31 downto 0 );
     minTime : in STD_LOGIC_VECTOR ( 31 downto 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of Inverter_3lvl_P0N_3lvl_0_3_P0N_3lvl : entity is "P0N_3lvl";
 end Inverter_3lvl_P0N_3lvl_0_3_P0N_3lvl;
 
 architecture STRUCTURE of Inverter_3lvl_P0N_3lvl_0_3_P0N_3lvl is
@@ -686,7 +688,7 @@ begin
       INIT => '1'
     )
         port map (
-      C => Clk,
+      C => externalCLK,
       CE => \FSM_onehot_lineconfig[6]_i_1_n_0\,
       D => \FSM_onehot_lineconfig[0]_i_1_n_0\,
       Q => \FSM_onehot_lineconfig_reg_n_0_[0]\,
@@ -697,7 +699,7 @@ begin
       INIT => '0'
     )
         port map (
-      C => Clk,
+      C => externalCLK,
       CE => \FSM_onehot_lineconfig[6]_i_1_n_0\,
       D => \FSM_onehot_lineconfig[1]_i_1_n_0\,
       Q => \FSM_onehot_lineconfig_reg_n_0_[1]\,
@@ -708,7 +710,7 @@ begin
       INIT => '0'
     )
         port map (
-      C => Clk,
+      C => externalCLK,
       CE => \FSM_onehot_lineconfig[6]_i_1_n_0\,
       D => \FSM_onehot_lineconfig[2]_i_1_n_0\,
       Q => \FSM_onehot_lineconfig_reg_n_0_[2]\,
@@ -719,7 +721,7 @@ begin
       INIT => '0'
     )
         port map (
-      C => Clk,
+      C => externalCLK,
       CE => \FSM_onehot_lineconfig[6]_i_1_n_0\,
       D => \FSM_onehot_lineconfig[3]_i_1_n_0\,
       Q => \FSM_onehot_lineconfig_reg_n_0_[3]\,
@@ -730,7 +732,7 @@ begin
       INIT => '0'
     )
         port map (
-      C => Clk,
+      C => externalCLK,
       CE => \FSM_onehot_lineconfig[6]_i_1_n_0\,
       D => \FSM_onehot_lineconfig[4]_i_1_n_0\,
       Q => \FSM_onehot_lineconfig_reg_n_0_[4]\,
@@ -741,7 +743,7 @@ begin
       INIT => '0'
     )
         port map (
-      C => Clk,
+      C => externalCLK,
       CE => \FSM_onehot_lineconfig[6]_i_1_n_0\,
       D => \FSM_onehot_lineconfig[5]_i_1_n_0\,
       Q => \FSM_onehot_lineconfig_reg_n_0_[5]\,
@@ -752,7 +754,7 @@ begin
       INIT => '0'
     )
         port map (
-      C => Clk,
+      C => externalCLK,
       CE => \FSM_onehot_lineconfig[6]_i_1_n_0\,
       D => \FSM_onehot_lineconfig[6]_i_2_n_0\,
       Q => \FSM_onehot_lineconfig_reg_n_0_[6]\,
@@ -774,7 +776,7 @@ PWM_out_0_reg: unisim.vcomponents.FDRE
       INIT => '1'
     )
         port map (
-      C => Clk,
+      C => externalCLK,
       CE => '1',
       D => PWM_out_0_i_1_n_0,
       Q => PWM_out_0,
@@ -796,7 +798,7 @@ PWM_out_1_reg: unisim.vcomponents.FDRE
       INIT => '1'
     )
         port map (
-      C => Clk,
+      C => externalCLK,
       CE => '1',
       D => PWM_out_1_i_1_n_0,
       Q => PWM_out_1,
@@ -819,7 +821,7 @@ PWM_out_2_reg: unisim.vcomponents.FDRE
       INIT => '1'
     )
         port map (
-      C => Clk,
+      C => externalCLK,
       CE => '1',
       D => PWM_out_2_i_1_n_0,
       Q => PWM_out_2,
@@ -842,7 +844,7 @@ PWM_out_3_reg: unisim.vcomponents.FDRE
       INIT => '1'
     )
         port map (
-      C => Clk,
+      C => externalCLK,
       CE => '1',
       D => PWM_out_3_i_1_n_0,
       Q => PWM_out_3,
@@ -866,7 +868,7 @@ TKin0_triggered_reg: unisim.vcomponents.FDRE
       INIT => '1'
     )
         port map (
-      C => Clk,
+      C => externalCLK,
       CE => '1',
       D => TKin0_triggered_i_1_n_0,
       Q => TKin0_triggered,
@@ -903,7 +905,7 @@ TKin1_triggered_reg: unisim.vcomponents.FDRE
       INIT => '1'
     )
         port map (
-      C => Clk,
+      C => externalCLK,
       CE => '1',
       D => TKin1_triggered_i_1_n_0,
       Q => TKin1_triggered,
@@ -922,7 +924,7 @@ TKin1_triggered_reg: unisim.vcomponents.FDRE
       INIT => '0'
     )
         port map (
-      C => Clk,
+      C => externalCLK,
       CE => sel,
       D => \TimeCounter_reg[0]_i_1_n_7\,
       Q => TimeCounter_reg(0),
@@ -949,7 +951,7 @@ TKin1_triggered_reg: unisim.vcomponents.FDRE
       INIT => '0'
     )
         port map (
-      C => Clk,
+      C => externalCLK,
       CE => sel,
       D => \TimeCounter_reg[8]_i_1_n_5\,
       Q => TimeCounter_reg(10),
@@ -960,7 +962,7 @@ TKin1_triggered_reg: unisim.vcomponents.FDRE
       INIT => '0'
     )
         port map (
-      C => Clk,
+      C => externalCLK,
       CE => sel,
       D => \TimeCounter_reg[8]_i_1_n_4\,
       Q => TimeCounter_reg(11),
@@ -971,7 +973,7 @@ TKin1_triggered_reg: unisim.vcomponents.FDRE
       INIT => '0'
     )
         port map (
-      C => Clk,
+      C => externalCLK,
       CE => sel,
       D => \TimeCounter_reg[12]_i_1_n_7\,
       Q => TimeCounter_reg(12),
@@ -997,7 +999,7 @@ TKin1_triggered_reg: unisim.vcomponents.FDRE
       INIT => '0'
     )
         port map (
-      C => Clk,
+      C => externalCLK,
       CE => sel,
       D => \TimeCounter_reg[12]_i_1_n_6\,
       Q => TimeCounter_reg(13),
@@ -1008,7 +1010,7 @@ TKin1_triggered_reg: unisim.vcomponents.FDRE
       INIT => '0'
     )
         port map (
-      C => Clk,
+      C => externalCLK,
       CE => sel,
       D => \TimeCounter_reg[12]_i_1_n_5\,
       Q => TimeCounter_reg(14),
@@ -1019,7 +1021,7 @@ TKin1_triggered_reg: unisim.vcomponents.FDRE
       INIT => '0'
     )
         port map (
-      C => Clk,
+      C => externalCLK,
       CE => sel,
       D => \TimeCounter_reg[12]_i_1_n_4\,
       Q => TimeCounter_reg(15),
@@ -1030,7 +1032,7 @@ TKin1_triggered_reg: unisim.vcomponents.FDRE
       INIT => '0'
     )
         port map (
-      C => Clk,
+      C => externalCLK,
       CE => sel,
       D => \TimeCounter_reg[16]_i_1_n_7\,
       Q => TimeCounter_reg(16),
@@ -1056,7 +1058,7 @@ TKin1_triggered_reg: unisim.vcomponents.FDRE
       INIT => '0'
     )
         port map (
-      C => Clk,
+      C => externalCLK,
       CE => sel,
       D => \TimeCounter_reg[16]_i_1_n_6\,
       Q => TimeCounter_reg(17),
@@ -1067,7 +1069,7 @@ TKin1_triggered_reg: unisim.vcomponents.FDRE
       INIT => '0'
     )
         port map (
-      C => Clk,
+      C => externalCLK,
       CE => sel,
       D => \TimeCounter_reg[16]_i_1_n_5\,
       Q => TimeCounter_reg(18),
@@ -1078,7 +1080,7 @@ TKin1_triggered_reg: unisim.vcomponents.FDRE
       INIT => '0'
     )
         port map (
-      C => Clk,
+      C => externalCLK,
       CE => sel,
       D => \TimeCounter_reg[16]_i_1_n_4\,
       Q => TimeCounter_reg(19),
@@ -1089,7 +1091,7 @@ TKin1_triggered_reg: unisim.vcomponents.FDRE
       INIT => '0'
     )
         port map (
-      C => Clk,
+      C => externalCLK,
       CE => sel,
       D => \TimeCounter_reg[0]_i_1_n_6\,
       Q => TimeCounter_reg(1),
@@ -1100,7 +1102,7 @@ TKin1_triggered_reg: unisim.vcomponents.FDRE
       INIT => '0'
     )
         port map (
-      C => Clk,
+      C => externalCLK,
       CE => sel,
       D => \TimeCounter_reg[20]_i_1_n_7\,
       Q => TimeCounter_reg(20),
@@ -1126,7 +1128,7 @@ TKin1_triggered_reg: unisim.vcomponents.FDRE
       INIT => '0'
     )
         port map (
-      C => Clk,
+      C => externalCLK,
       CE => sel,
       D => \TimeCounter_reg[20]_i_1_n_6\,
       Q => TimeCounter_reg(21),
@@ -1137,7 +1139,7 @@ TKin1_triggered_reg: unisim.vcomponents.FDRE
       INIT => '0'
     )
         port map (
-      C => Clk,
+      C => externalCLK,
       CE => sel,
       D => \TimeCounter_reg[20]_i_1_n_5\,
       Q => TimeCounter_reg(22),
@@ -1148,7 +1150,7 @@ TKin1_triggered_reg: unisim.vcomponents.FDRE
       INIT => '0'
     )
         port map (
-      C => Clk,
+      C => externalCLK,
       CE => sel,
       D => \TimeCounter_reg[20]_i_1_n_4\,
       Q => TimeCounter_reg(23),
@@ -1159,7 +1161,7 @@ TKin1_triggered_reg: unisim.vcomponents.FDRE
       INIT => '0'
     )
         port map (
-      C => Clk,
+      C => externalCLK,
       CE => sel,
       D => \TimeCounter_reg[24]_i_1_n_7\,
       Q => TimeCounter_reg(24),
@@ -1185,7 +1187,7 @@ TKin1_triggered_reg: unisim.vcomponents.FDRE
       INIT => '0'
     )
         port map (
-      C => Clk,
+      C => externalCLK,
       CE => sel,
       D => \TimeCounter_reg[24]_i_1_n_6\,
       Q => TimeCounter_reg(25),
@@ -1196,7 +1198,7 @@ TKin1_triggered_reg: unisim.vcomponents.FDRE
       INIT => '0'
     )
         port map (
-      C => Clk,
+      C => externalCLK,
       CE => sel,
       D => \TimeCounter_reg[24]_i_1_n_5\,
       Q => TimeCounter_reg(26),
@@ -1207,7 +1209,7 @@ TKin1_triggered_reg: unisim.vcomponents.FDRE
       INIT => '0'
     )
         port map (
-      C => Clk,
+      C => externalCLK,
       CE => sel,
       D => \TimeCounter_reg[24]_i_1_n_4\,
       Q => TimeCounter_reg(27),
@@ -1218,7 +1220,7 @@ TKin1_triggered_reg: unisim.vcomponents.FDRE
       INIT => '0'
     )
         port map (
-      C => Clk,
+      C => externalCLK,
       CE => sel,
       D => \TimeCounter_reg[28]_i_1_n_7\,
       Q => TimeCounter_reg(28),
@@ -1244,7 +1246,7 @@ TKin1_triggered_reg: unisim.vcomponents.FDRE
       INIT => '0'
     )
         port map (
-      C => Clk,
+      C => externalCLK,
       CE => sel,
       D => \TimeCounter_reg[28]_i_1_n_6\,
       Q => TimeCounter_reg(29),
@@ -1255,7 +1257,7 @@ TKin1_triggered_reg: unisim.vcomponents.FDRE
       INIT => '0'
     )
         port map (
-      C => Clk,
+      C => externalCLK,
       CE => sel,
       D => \TimeCounter_reg[0]_i_1_n_5\,
       Q => TimeCounter_reg(2),
@@ -1266,7 +1268,7 @@ TKin1_triggered_reg: unisim.vcomponents.FDRE
       INIT => '0'
     )
         port map (
-      C => Clk,
+      C => externalCLK,
       CE => sel,
       D => \TimeCounter_reg[28]_i_1_n_5\,
       Q => TimeCounter_reg(30),
@@ -1277,7 +1279,7 @@ TKin1_triggered_reg: unisim.vcomponents.FDRE
       INIT => '0'
     )
         port map (
-      C => Clk,
+      C => externalCLK,
       CE => sel,
       D => \TimeCounter_reg[28]_i_1_n_4\,
       Q => TimeCounter_reg(31),
@@ -1288,7 +1290,7 @@ TKin1_triggered_reg: unisim.vcomponents.FDRE
       INIT => '0'
     )
         port map (
-      C => Clk,
+      C => externalCLK,
       CE => sel,
       D => \TimeCounter_reg[0]_i_1_n_4\,
       Q => TimeCounter_reg(3),
@@ -1299,7 +1301,7 @@ TKin1_triggered_reg: unisim.vcomponents.FDRE
       INIT => '0'
     )
         port map (
-      C => Clk,
+      C => externalCLK,
       CE => sel,
       D => \TimeCounter_reg[4]_i_1_n_7\,
       Q => TimeCounter_reg(4),
@@ -1325,7 +1327,7 @@ TKin1_triggered_reg: unisim.vcomponents.FDRE
       INIT => '0'
     )
         port map (
-      C => Clk,
+      C => externalCLK,
       CE => sel,
       D => \TimeCounter_reg[4]_i_1_n_6\,
       Q => TimeCounter_reg(5),
@@ -1336,7 +1338,7 @@ TKin1_triggered_reg: unisim.vcomponents.FDRE
       INIT => '0'
     )
         port map (
-      C => Clk,
+      C => externalCLK,
       CE => sel,
       D => \TimeCounter_reg[4]_i_1_n_5\,
       Q => TimeCounter_reg(6),
@@ -1347,7 +1349,7 @@ TKin1_triggered_reg: unisim.vcomponents.FDRE
       INIT => '0'
     )
         port map (
-      C => Clk,
+      C => externalCLK,
       CE => sel,
       D => \TimeCounter_reg[4]_i_1_n_4\,
       Q => TimeCounter_reg(7),
@@ -1358,7 +1360,7 @@ TKin1_triggered_reg: unisim.vcomponents.FDRE
       INIT => '0'
     )
         port map (
-      C => Clk,
+      C => externalCLK,
       CE => sel,
       D => \TimeCounter_reg[8]_i_1_n_7\,
       Q => TimeCounter_reg(8),
@@ -1384,7 +1386,7 @@ TKin1_triggered_reg: unisim.vcomponents.FDRE
       INIT => '0'
     )
         port map (
-      C => Clk,
+      C => externalCLK,
       CE => sel,
       D => \TimeCounter_reg[8]_i_1_n_6\,
       Q => TimeCounter_reg(9),
@@ -1478,7 +1480,7 @@ deadTimeCounterReset_reg: unisim.vcomponents.FDRE
       INIT => '0'
     )
         port map (
-      C => Clk,
+      C => externalCLK,
       CE => '1',
       D => deadTimeCounterReset_i_1_n_0,
       Q => deadTimeCounterReset_reg_n_0,
@@ -1499,7 +1501,7 @@ deadTimeOK_reg: unisim.vcomponents.FDRE
       INIT => '1'
     )
         port map (
-      C => Clk,
+      C => externalCLK,
       CE => '1',
       D => deadTimeOK_i_1_n_0,
       Q => deadTimeOK,
@@ -1534,7 +1536,7 @@ key1_prev_reg: unisim.vcomponents.FDRE
       INIT => '1'
     )
         port map (
-      C => Clk,
+      C => externalCLK,
       CE => p_0_in,
       D => key1_reg_n_0,
       Q => key1_prev,
@@ -1545,7 +1547,7 @@ key1_reg: unisim.vcomponents.FDRE
       INIT => '1'
     )
         port map (
-      C => Clk,
+      C => externalCLK,
       CE => p_0_in,
       D => key1_i_1_n_0,
       Q => key1_reg_n_0,
@@ -1577,7 +1579,7 @@ key2_prev_reg: unisim.vcomponents.FDRE
       INIT => '1'
     )
         port map (
-      C => Clk,
+      C => externalCLK,
       CE => p_0_in,
       D => key2_reg_n_0,
       Q => key2_prev,
@@ -1588,7 +1590,7 @@ key2_reg: unisim.vcomponents.FDRE
       INIT => '1'
     )
         port map (
-      C => Clk,
+      C => externalCLK,
       CE => p_0_in,
       D => key2_i_2_n_0,
       Q => key2_reg_n_0,
@@ -1612,7 +1614,7 @@ key3_prev_reg: unisim.vcomponents.FDRE
       INIT => '1'
     )
         port map (
-      C => Clk,
+      C => externalCLK,
       CE => p_0_in,
       D => key3_reg_n_0,
       Q => key3_prev,
@@ -1623,7 +1625,7 @@ key3_reg: unisim.vcomponents.FDRE
       INIT => '1'
     )
         port map (
-      C => Clk,
+      C => externalCLK,
       CE => '1',
       D => key3_i_1_n_0,
       Q => key3_reg_n_0,
@@ -1658,7 +1660,7 @@ key4_prev_reg: unisim.vcomponents.FDRE
       INIT => '1'
     )
         port map (
-      C => Clk,
+      C => externalCLK,
       CE => p_0_in,
       D => key4_reg_n_0,
       Q => key4_prev,
@@ -1669,7 +1671,7 @@ key4_reg: unisim.vcomponents.FDRE
       INIT => '1'
     )
         port map (
-      C => Clk,
+      C => externalCLK,
       CE => '1',
       D => key4_i_1_n_0,
       Q => key4_reg_n_0,
@@ -2982,7 +2984,7 @@ ltOp_carry_i_8: unisim.vcomponents.LUT4
       INIT => '0'
     )
         port map (
-      C => Clk,
+      C => externalCLK,
       CE => minTimeCounter_high,
       D => \minTimeCounter_high_reg[0]_i_3_n_7\,
       Q => minTimeCounter_high_reg(0),
@@ -3009,7 +3011,7 @@ ltOp_carry_i_8: unisim.vcomponents.LUT4
       INIT => '0'
     )
         port map (
-      C => Clk,
+      C => externalCLK,
       CE => minTimeCounter_high,
       D => \minTimeCounter_high_reg[8]_i_1_n_5\,
       Q => minTimeCounter_high_reg(10),
@@ -3020,7 +3022,7 @@ ltOp_carry_i_8: unisim.vcomponents.LUT4
       INIT => '0'
     )
         port map (
-      C => Clk,
+      C => externalCLK,
       CE => minTimeCounter_high,
       D => \minTimeCounter_high_reg[8]_i_1_n_4\,
       Q => minTimeCounter_high_reg(11),
@@ -3031,7 +3033,7 @@ ltOp_carry_i_8: unisim.vcomponents.LUT4
       INIT => '0'
     )
         port map (
-      C => Clk,
+      C => externalCLK,
       CE => minTimeCounter_high,
       D => \minTimeCounter_high_reg[12]_i_1_n_7\,
       Q => minTimeCounter_high_reg(12),
@@ -3057,7 +3059,7 @@ ltOp_carry_i_8: unisim.vcomponents.LUT4
       INIT => '0'
     )
         port map (
-      C => Clk,
+      C => externalCLK,
       CE => minTimeCounter_high,
       D => \minTimeCounter_high_reg[12]_i_1_n_6\,
       Q => minTimeCounter_high_reg(13),
@@ -3068,7 +3070,7 @@ ltOp_carry_i_8: unisim.vcomponents.LUT4
       INIT => '0'
     )
         port map (
-      C => Clk,
+      C => externalCLK,
       CE => minTimeCounter_high,
       D => \minTimeCounter_high_reg[12]_i_1_n_5\,
       Q => minTimeCounter_high_reg(14),
@@ -3079,7 +3081,7 @@ ltOp_carry_i_8: unisim.vcomponents.LUT4
       INIT => '0'
     )
         port map (
-      C => Clk,
+      C => externalCLK,
       CE => minTimeCounter_high,
       D => \minTimeCounter_high_reg[12]_i_1_n_4\,
       Q => minTimeCounter_high_reg(15),
@@ -3090,7 +3092,7 @@ ltOp_carry_i_8: unisim.vcomponents.LUT4
       INIT => '0'
     )
         port map (
-      C => Clk,
+      C => externalCLK,
       CE => minTimeCounter_high,
       D => \minTimeCounter_high_reg[16]_i_1_n_7\,
       Q => minTimeCounter_high_reg(16),
@@ -3116,7 +3118,7 @@ ltOp_carry_i_8: unisim.vcomponents.LUT4
       INIT => '0'
     )
         port map (
-      C => Clk,
+      C => externalCLK,
       CE => minTimeCounter_high,
       D => \minTimeCounter_high_reg[16]_i_1_n_6\,
       Q => minTimeCounter_high_reg(17),
@@ -3127,7 +3129,7 @@ ltOp_carry_i_8: unisim.vcomponents.LUT4
       INIT => '0'
     )
         port map (
-      C => Clk,
+      C => externalCLK,
       CE => minTimeCounter_high,
       D => \minTimeCounter_high_reg[16]_i_1_n_5\,
       Q => minTimeCounter_high_reg(18),
@@ -3138,7 +3140,7 @@ ltOp_carry_i_8: unisim.vcomponents.LUT4
       INIT => '0'
     )
         port map (
-      C => Clk,
+      C => externalCLK,
       CE => minTimeCounter_high,
       D => \minTimeCounter_high_reg[16]_i_1_n_4\,
       Q => minTimeCounter_high_reg(19),
@@ -3149,7 +3151,7 @@ ltOp_carry_i_8: unisim.vcomponents.LUT4
       INIT => '0'
     )
         port map (
-      C => Clk,
+      C => externalCLK,
       CE => minTimeCounter_high,
       D => \minTimeCounter_high_reg[0]_i_3_n_6\,
       Q => minTimeCounter_high_reg(1),
@@ -3160,7 +3162,7 @@ ltOp_carry_i_8: unisim.vcomponents.LUT4
       INIT => '0'
     )
         port map (
-      C => Clk,
+      C => externalCLK,
       CE => minTimeCounter_high,
       D => \minTimeCounter_high_reg[20]_i_1_n_7\,
       Q => minTimeCounter_high_reg(20),
@@ -3186,7 +3188,7 @@ ltOp_carry_i_8: unisim.vcomponents.LUT4
       INIT => '0'
     )
         port map (
-      C => Clk,
+      C => externalCLK,
       CE => minTimeCounter_high,
       D => \minTimeCounter_high_reg[20]_i_1_n_6\,
       Q => minTimeCounter_high_reg(21),
@@ -3197,7 +3199,7 @@ ltOp_carry_i_8: unisim.vcomponents.LUT4
       INIT => '0'
     )
         port map (
-      C => Clk,
+      C => externalCLK,
       CE => minTimeCounter_high,
       D => \minTimeCounter_high_reg[20]_i_1_n_5\,
       Q => minTimeCounter_high_reg(22),
@@ -3208,7 +3210,7 @@ ltOp_carry_i_8: unisim.vcomponents.LUT4
       INIT => '0'
     )
         port map (
-      C => Clk,
+      C => externalCLK,
       CE => minTimeCounter_high,
       D => \minTimeCounter_high_reg[20]_i_1_n_4\,
       Q => minTimeCounter_high_reg(23),
@@ -3219,7 +3221,7 @@ ltOp_carry_i_8: unisim.vcomponents.LUT4
       INIT => '0'
     )
         port map (
-      C => Clk,
+      C => externalCLK,
       CE => minTimeCounter_high,
       D => \minTimeCounter_high_reg[24]_i_1_n_7\,
       Q => minTimeCounter_high_reg(24),
@@ -3245,7 +3247,7 @@ ltOp_carry_i_8: unisim.vcomponents.LUT4
       INIT => '0'
     )
         port map (
-      C => Clk,
+      C => externalCLK,
       CE => minTimeCounter_high,
       D => \minTimeCounter_high_reg[24]_i_1_n_6\,
       Q => minTimeCounter_high_reg(25),
@@ -3256,7 +3258,7 @@ ltOp_carry_i_8: unisim.vcomponents.LUT4
       INIT => '0'
     )
         port map (
-      C => Clk,
+      C => externalCLK,
       CE => minTimeCounter_high,
       D => \minTimeCounter_high_reg[24]_i_1_n_5\,
       Q => minTimeCounter_high_reg(26),
@@ -3267,7 +3269,7 @@ ltOp_carry_i_8: unisim.vcomponents.LUT4
       INIT => '0'
     )
         port map (
-      C => Clk,
+      C => externalCLK,
       CE => minTimeCounter_high,
       D => \minTimeCounter_high_reg[24]_i_1_n_4\,
       Q => minTimeCounter_high_reg(27),
@@ -3278,7 +3280,7 @@ ltOp_carry_i_8: unisim.vcomponents.LUT4
       INIT => '0'
     )
         port map (
-      C => Clk,
+      C => externalCLK,
       CE => minTimeCounter_high,
       D => \minTimeCounter_high_reg[28]_i_1_n_7\,
       Q => minTimeCounter_high_reg(28),
@@ -3304,7 +3306,7 @@ ltOp_carry_i_8: unisim.vcomponents.LUT4
       INIT => '0'
     )
         port map (
-      C => Clk,
+      C => externalCLK,
       CE => minTimeCounter_high,
       D => \minTimeCounter_high_reg[28]_i_1_n_6\,
       Q => minTimeCounter_high_reg(29),
@@ -3315,7 +3317,7 @@ ltOp_carry_i_8: unisim.vcomponents.LUT4
       INIT => '0'
     )
         port map (
-      C => Clk,
+      C => externalCLK,
       CE => minTimeCounter_high,
       D => \minTimeCounter_high_reg[0]_i_3_n_5\,
       Q => minTimeCounter_high_reg(2),
@@ -3326,7 +3328,7 @@ ltOp_carry_i_8: unisim.vcomponents.LUT4
       INIT => '0'
     )
         port map (
-      C => Clk,
+      C => externalCLK,
       CE => minTimeCounter_high,
       D => \minTimeCounter_high_reg[28]_i_1_n_5\,
       Q => minTimeCounter_high_reg(30),
@@ -3337,7 +3339,7 @@ ltOp_carry_i_8: unisim.vcomponents.LUT4
       INIT => '0'
     )
         port map (
-      C => Clk,
+      C => externalCLK,
       CE => minTimeCounter_high,
       D => \minTimeCounter_high_reg[28]_i_1_n_4\,
       Q => minTimeCounter_high_reg(31),
@@ -3348,7 +3350,7 @@ ltOp_carry_i_8: unisim.vcomponents.LUT4
       INIT => '0'
     )
         port map (
-      C => Clk,
+      C => externalCLK,
       CE => minTimeCounter_high,
       D => \minTimeCounter_high_reg[0]_i_3_n_4\,
       Q => minTimeCounter_high_reg(3),
@@ -3359,7 +3361,7 @@ ltOp_carry_i_8: unisim.vcomponents.LUT4
       INIT => '0'
     )
         port map (
-      C => Clk,
+      C => externalCLK,
       CE => minTimeCounter_high,
       D => \minTimeCounter_high_reg[4]_i_1_n_7\,
       Q => minTimeCounter_high_reg(4),
@@ -3385,7 +3387,7 @@ ltOp_carry_i_8: unisim.vcomponents.LUT4
       INIT => '0'
     )
         port map (
-      C => Clk,
+      C => externalCLK,
       CE => minTimeCounter_high,
       D => \minTimeCounter_high_reg[4]_i_1_n_6\,
       Q => minTimeCounter_high_reg(5),
@@ -3396,7 +3398,7 @@ ltOp_carry_i_8: unisim.vcomponents.LUT4
       INIT => '0'
     )
         port map (
-      C => Clk,
+      C => externalCLK,
       CE => minTimeCounter_high,
       D => \minTimeCounter_high_reg[4]_i_1_n_5\,
       Q => minTimeCounter_high_reg(6),
@@ -3407,7 +3409,7 @@ ltOp_carry_i_8: unisim.vcomponents.LUT4
       INIT => '0'
     )
         port map (
-      C => Clk,
+      C => externalCLK,
       CE => minTimeCounter_high,
       D => \minTimeCounter_high_reg[4]_i_1_n_4\,
       Q => minTimeCounter_high_reg(7),
@@ -3418,7 +3420,7 @@ ltOp_carry_i_8: unisim.vcomponents.LUT4
       INIT => '0'
     )
         port map (
-      C => Clk,
+      C => externalCLK,
       CE => minTimeCounter_high,
       D => \minTimeCounter_high_reg[8]_i_1_n_7\,
       Q => minTimeCounter_high_reg(8),
@@ -3444,7 +3446,7 @@ ltOp_carry_i_8: unisim.vcomponents.LUT4
       INIT => '0'
     )
         port map (
-      C => Clk,
+      C => externalCLK,
       CE => minTimeCounter_high,
       D => \minTimeCounter_high_reg[8]_i_1_n_6\,
       Q => minTimeCounter_high_reg(9),
@@ -3495,7 +3497,7 @@ ltOp_carry_i_8: unisim.vcomponents.LUT4
       INIT => '0'
     )
         port map (
-      C => Clk,
+      C => externalCLK,
       CE => minTimeCounter_low,
       D => \minTimeCounter_low_reg[0]_i_3_n_7\,
       Q => minTimeCounter_low_reg(0),
@@ -3522,7 +3524,7 @@ ltOp_carry_i_8: unisim.vcomponents.LUT4
       INIT => '0'
     )
         port map (
-      C => Clk,
+      C => externalCLK,
       CE => minTimeCounter_low,
       D => \minTimeCounter_low_reg[8]_i_1_n_5\,
       Q => minTimeCounter_low_reg(10),
@@ -3533,7 +3535,7 @@ ltOp_carry_i_8: unisim.vcomponents.LUT4
       INIT => '0'
     )
         port map (
-      C => Clk,
+      C => externalCLK,
       CE => minTimeCounter_low,
       D => \minTimeCounter_low_reg[8]_i_1_n_4\,
       Q => minTimeCounter_low_reg(11),
@@ -3544,7 +3546,7 @@ ltOp_carry_i_8: unisim.vcomponents.LUT4
       INIT => '0'
     )
         port map (
-      C => Clk,
+      C => externalCLK,
       CE => minTimeCounter_low,
       D => \minTimeCounter_low_reg[12]_i_1_n_7\,
       Q => minTimeCounter_low_reg(12),
@@ -3570,7 +3572,7 @@ ltOp_carry_i_8: unisim.vcomponents.LUT4
       INIT => '0'
     )
         port map (
-      C => Clk,
+      C => externalCLK,
       CE => minTimeCounter_low,
       D => \minTimeCounter_low_reg[12]_i_1_n_6\,
       Q => minTimeCounter_low_reg(13),
@@ -3581,7 +3583,7 @@ ltOp_carry_i_8: unisim.vcomponents.LUT4
       INIT => '0'
     )
         port map (
-      C => Clk,
+      C => externalCLK,
       CE => minTimeCounter_low,
       D => \minTimeCounter_low_reg[12]_i_1_n_5\,
       Q => minTimeCounter_low_reg(14),
@@ -3592,7 +3594,7 @@ ltOp_carry_i_8: unisim.vcomponents.LUT4
       INIT => '0'
     )
         port map (
-      C => Clk,
+      C => externalCLK,
       CE => minTimeCounter_low,
       D => \minTimeCounter_low_reg[12]_i_1_n_4\,
       Q => minTimeCounter_low_reg(15),
@@ -3603,7 +3605,7 @@ ltOp_carry_i_8: unisim.vcomponents.LUT4
       INIT => '0'
     )
         port map (
-      C => Clk,
+      C => externalCLK,
       CE => minTimeCounter_low,
       D => \minTimeCounter_low_reg[16]_i_1_n_7\,
       Q => minTimeCounter_low_reg(16),
@@ -3629,7 +3631,7 @@ ltOp_carry_i_8: unisim.vcomponents.LUT4
       INIT => '0'
     )
         port map (
-      C => Clk,
+      C => externalCLK,
       CE => minTimeCounter_low,
       D => \minTimeCounter_low_reg[16]_i_1_n_6\,
       Q => minTimeCounter_low_reg(17),
@@ -3640,7 +3642,7 @@ ltOp_carry_i_8: unisim.vcomponents.LUT4
       INIT => '0'
     )
         port map (
-      C => Clk,
+      C => externalCLK,
       CE => minTimeCounter_low,
       D => \minTimeCounter_low_reg[16]_i_1_n_5\,
       Q => minTimeCounter_low_reg(18),
@@ -3651,7 +3653,7 @@ ltOp_carry_i_8: unisim.vcomponents.LUT4
       INIT => '0'
     )
         port map (
-      C => Clk,
+      C => externalCLK,
       CE => minTimeCounter_low,
       D => \minTimeCounter_low_reg[16]_i_1_n_4\,
       Q => minTimeCounter_low_reg(19),
@@ -3662,7 +3664,7 @@ ltOp_carry_i_8: unisim.vcomponents.LUT4
       INIT => '0'
     )
         port map (
-      C => Clk,
+      C => externalCLK,
       CE => minTimeCounter_low,
       D => \minTimeCounter_low_reg[0]_i_3_n_6\,
       Q => minTimeCounter_low_reg(1),
@@ -3673,7 +3675,7 @@ ltOp_carry_i_8: unisim.vcomponents.LUT4
       INIT => '0'
     )
         port map (
-      C => Clk,
+      C => externalCLK,
       CE => minTimeCounter_low,
       D => \minTimeCounter_low_reg[20]_i_1_n_7\,
       Q => minTimeCounter_low_reg(20),
@@ -3699,7 +3701,7 @@ ltOp_carry_i_8: unisim.vcomponents.LUT4
       INIT => '0'
     )
         port map (
-      C => Clk,
+      C => externalCLK,
       CE => minTimeCounter_low,
       D => \minTimeCounter_low_reg[20]_i_1_n_6\,
       Q => minTimeCounter_low_reg(21),
@@ -3710,7 +3712,7 @@ ltOp_carry_i_8: unisim.vcomponents.LUT4
       INIT => '0'
     )
         port map (
-      C => Clk,
+      C => externalCLK,
       CE => minTimeCounter_low,
       D => \minTimeCounter_low_reg[20]_i_1_n_5\,
       Q => minTimeCounter_low_reg(22),
@@ -3721,7 +3723,7 @@ ltOp_carry_i_8: unisim.vcomponents.LUT4
       INIT => '0'
     )
         port map (
-      C => Clk,
+      C => externalCLK,
       CE => minTimeCounter_low,
       D => \minTimeCounter_low_reg[20]_i_1_n_4\,
       Q => minTimeCounter_low_reg(23),
@@ -3732,7 +3734,7 @@ ltOp_carry_i_8: unisim.vcomponents.LUT4
       INIT => '0'
     )
         port map (
-      C => Clk,
+      C => externalCLK,
       CE => minTimeCounter_low,
       D => \minTimeCounter_low_reg[24]_i_1_n_7\,
       Q => minTimeCounter_low_reg(24),
@@ -3758,7 +3760,7 @@ ltOp_carry_i_8: unisim.vcomponents.LUT4
       INIT => '0'
     )
         port map (
-      C => Clk,
+      C => externalCLK,
       CE => minTimeCounter_low,
       D => \minTimeCounter_low_reg[24]_i_1_n_6\,
       Q => minTimeCounter_low_reg(25),
@@ -3769,7 +3771,7 @@ ltOp_carry_i_8: unisim.vcomponents.LUT4
       INIT => '0'
     )
         port map (
-      C => Clk,
+      C => externalCLK,
       CE => minTimeCounter_low,
       D => \minTimeCounter_low_reg[24]_i_1_n_5\,
       Q => minTimeCounter_low_reg(26),
@@ -3780,7 +3782,7 @@ ltOp_carry_i_8: unisim.vcomponents.LUT4
       INIT => '0'
     )
         port map (
-      C => Clk,
+      C => externalCLK,
       CE => minTimeCounter_low,
       D => \minTimeCounter_low_reg[24]_i_1_n_4\,
       Q => minTimeCounter_low_reg(27),
@@ -3791,7 +3793,7 @@ ltOp_carry_i_8: unisim.vcomponents.LUT4
       INIT => '0'
     )
         port map (
-      C => Clk,
+      C => externalCLK,
       CE => minTimeCounter_low,
       D => \minTimeCounter_low_reg[28]_i_1_n_7\,
       Q => minTimeCounter_low_reg(28),
@@ -3817,7 +3819,7 @@ ltOp_carry_i_8: unisim.vcomponents.LUT4
       INIT => '0'
     )
         port map (
-      C => Clk,
+      C => externalCLK,
       CE => minTimeCounter_low,
       D => \minTimeCounter_low_reg[28]_i_1_n_6\,
       Q => minTimeCounter_low_reg(29),
@@ -3828,7 +3830,7 @@ ltOp_carry_i_8: unisim.vcomponents.LUT4
       INIT => '0'
     )
         port map (
-      C => Clk,
+      C => externalCLK,
       CE => minTimeCounter_low,
       D => \minTimeCounter_low_reg[0]_i_3_n_5\,
       Q => minTimeCounter_low_reg(2),
@@ -3839,7 +3841,7 @@ ltOp_carry_i_8: unisim.vcomponents.LUT4
       INIT => '0'
     )
         port map (
-      C => Clk,
+      C => externalCLK,
       CE => minTimeCounter_low,
       D => \minTimeCounter_low_reg[28]_i_1_n_5\,
       Q => minTimeCounter_low_reg(30),
@@ -3850,7 +3852,7 @@ ltOp_carry_i_8: unisim.vcomponents.LUT4
       INIT => '0'
     )
         port map (
-      C => Clk,
+      C => externalCLK,
       CE => minTimeCounter_low,
       D => \minTimeCounter_low_reg[28]_i_1_n_4\,
       Q => minTimeCounter_low_reg(31),
@@ -3861,7 +3863,7 @@ ltOp_carry_i_8: unisim.vcomponents.LUT4
       INIT => '0'
     )
         port map (
-      C => Clk,
+      C => externalCLK,
       CE => minTimeCounter_low,
       D => \minTimeCounter_low_reg[0]_i_3_n_4\,
       Q => minTimeCounter_low_reg(3),
@@ -3872,7 +3874,7 @@ ltOp_carry_i_8: unisim.vcomponents.LUT4
       INIT => '0'
     )
         port map (
-      C => Clk,
+      C => externalCLK,
       CE => minTimeCounter_low,
       D => \minTimeCounter_low_reg[4]_i_1_n_7\,
       Q => minTimeCounter_low_reg(4),
@@ -3898,7 +3900,7 @@ ltOp_carry_i_8: unisim.vcomponents.LUT4
       INIT => '0'
     )
         port map (
-      C => Clk,
+      C => externalCLK,
       CE => minTimeCounter_low,
       D => \minTimeCounter_low_reg[4]_i_1_n_6\,
       Q => minTimeCounter_low_reg(5),
@@ -3909,7 +3911,7 @@ ltOp_carry_i_8: unisim.vcomponents.LUT4
       INIT => '0'
     )
         port map (
-      C => Clk,
+      C => externalCLK,
       CE => minTimeCounter_low,
       D => \minTimeCounter_low_reg[4]_i_1_n_5\,
       Q => minTimeCounter_low_reg(6),
@@ -3920,7 +3922,7 @@ ltOp_carry_i_8: unisim.vcomponents.LUT4
       INIT => '0'
     )
         port map (
-      C => Clk,
+      C => externalCLK,
       CE => minTimeCounter_low,
       D => \minTimeCounter_low_reg[4]_i_1_n_4\,
       Q => minTimeCounter_low_reg(7),
@@ -3931,7 +3933,7 @@ ltOp_carry_i_8: unisim.vcomponents.LUT4
       INIT => '0'
     )
         port map (
-      C => Clk,
+      C => externalCLK,
       CE => minTimeCounter_low,
       D => \minTimeCounter_low_reg[8]_i_1_n_7\,
       Q => minTimeCounter_low_reg(8),
@@ -3957,7 +3959,7 @@ ltOp_carry_i_8: unisim.vcomponents.LUT4
       INIT => '0'
     )
         port map (
-      C => Clk,
+      C => externalCLK,
       CE => minTimeCounter_low,
       D => \minTimeCounter_low_reg[8]_i_1_n_6\,
       Q => minTimeCounter_low_reg(9),
@@ -4071,7 +4073,7 @@ minTimeEr_reg: unisim.vcomponents.FDRE
       INIT => '0'
     )
         port map (
-      C => Clk,
+      C => externalCLK,
       CE => '1',
       D => minTimeEr_i_1_n_0,
       Q => \^mintimeer_reg_0\,
@@ -4093,7 +4095,7 @@ minTimeOK_high_reg: unisim.vcomponents.FDRE
       INIT => '1'
     )
         port map (
-      C => Clk,
+      C => externalCLK,
       CE => '1',
       D => minTimeOK_high_i_1_n_0,
       Q => minTimeOK_high,
@@ -4115,7 +4117,7 @@ minTimeOK_low_reg: unisim.vcomponents.FDRE
       INIT => '1'
     )
         port map (
-      C => Clk,
+      C => externalCLK,
       CE => '1',
       D => minTimeOK_low_i_1_n_0,
       Q => minTimeOK_low,
@@ -4128,7 +4130,7 @@ library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
 entity Inverter_3lvl_P0N_3lvl_0_3 is
   port (
-    Clk : in STD_LOGIC;
+    externalCLK : in STD_LOGIC;
     ready : in STD_LOGIC;
     reset : in STD_LOGIC;
     deadTime : in STD_LOGIC_VECTOR ( 31 downto 0 );
@@ -4147,7 +4149,7 @@ entity Inverter_3lvl_P0N_3lvl_0_3 is
   attribute NotValidForBitStream : boolean;
   attribute NotValidForBitStream of Inverter_3lvl_P0N_3lvl_0_3 : entity is true;
   attribute CHECK_LICENSE_TYPE : string;
-  attribute CHECK_LICENSE_TYPE of Inverter_3lvl_P0N_3lvl_0_3 : entity is "Inverter_3lvl_P0N_3lvl_0_2,P0N_3lvl,{}";
+  attribute CHECK_LICENSE_TYPE of Inverter_3lvl_P0N_3lvl_0_3 : entity is "Inverter_3lvl_P0N_3lvl_0_3,P0N_3lvl,{}";
   attribute downgradeipidentifiedwarnings : string;
   attribute downgradeipidentifiedwarnings of Inverter_3lvl_P0N_3lvl_0_3 : entity is "yes";
   attribute ip_definition_source : string;
@@ -4158,15 +4160,12 @@ end Inverter_3lvl_P0N_3lvl_0_3;
 
 architecture STRUCTURE of Inverter_3lvl_P0N_3lvl_0_3 is
   attribute x_interface_info : string;
-  attribute x_interface_info of Clk : signal is "xilinx.com:signal:clock:1.0 Clk CLK";
-  attribute x_interface_parameter : string;
-  attribute x_interface_parameter of Clk : signal is "XIL_INTERFACENAME Clk, ASSOCIATED_RESET reset, FREQ_HZ 100000000, PHASE 0.000, CLK_DOMAIN Inverter_3lvl_Clk_0, INSERT_VIP 0";
   attribute x_interface_info of reset : signal is "xilinx.com:signal:reset:1.0 reset RST";
+  attribute x_interface_parameter : string;
   attribute x_interface_parameter of reset : signal is "XIL_INTERFACENAME reset, POLARITY ACTIVE_LOW, INSERT_VIP 0";
 begin
 U0: entity work.Inverter_3lvl_P0N_3lvl_0_3_P0N_3lvl
      port map (
-      Clk => Clk,
       PWM_out_0 => PWM_out_0,
       PWM_out_1 => PWM_out_1,
       PWM_out_2 => PWM_out_2,
@@ -4176,6 +4175,7 @@ U0: entity work.Inverter_3lvl_P0N_3lvl_0_3_P0N_3lvl
       breaking_en => breaking_en,
       deadTime(31 downto 0) => deadTime(31 downto 0),
       er => er,
+      externalCLK => externalCLK,
       minTime(31 downto 0) => minTime(31 downto 0),
       minTimeEr_reg_0 => minTimeEr,
       minTime_En => minTime_En,

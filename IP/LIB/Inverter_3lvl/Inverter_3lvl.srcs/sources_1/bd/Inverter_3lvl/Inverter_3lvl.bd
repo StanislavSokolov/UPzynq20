@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0x3D3BCC0FC6F48939",
+      "boundary_crc": "0x7D932C1EE271F213",
       "device": "xc7z020clg484-3",
       "name": "Inverter_3lvl",
       "synth_flow_mode": "Hierarchical",
@@ -9,47 +9,21 @@
       "validated": "true"
     },
     "design_tree": {
+      "BUS_16OUT_0": "",
+      "BUS_16OUT_1": "",
+      "BUS_16OUT_2": "",
+      "BUS_16IN_0": "",
+      "BUS_16IN_1": "",
       "P0N_3lvl_0": "",
-      "P0N_3lvl_1": "",
-      "P0N_3lvl_2": "",
       "P0N_3lvl_3": "",
       "P0N_3lvl_4": "",
       "P0N_3lvl_5": "",
       "P0N_3lvl_6": "",
       "P0N_3lvl_7": "",
-      "BUS_16IN_0": "",
-      "BUS_16IN_1": "",
-      "BUS_16OUT_0": "",
-      "BUS_16OUT_1": "",
-      "BUS_16OUT_2": ""
+      "P0N_3lvl_1": "",
+      "P0N_3lvl_2": ""
     },
     "ports": {
-      "Clk_0": {
-        "type": "clk",
-        "direction": "I",
-        "parameters": {
-          "ASSOCIATED_RESET": {
-            "value": "reset_0",
-            "value_src": "default"
-          },
-          "CLK_DOMAIN": {
-            "value": "Inverter_3lvl_Clk_0",
-            "value_src": "default"
-          },
-          "FREQ_HZ": {
-            "value": "100000000",
-            "value_src": "default"
-          },
-          "INSERT_VIP": {
-            "value": "0",
-            "value_src": "default"
-          },
-          "PHASE": {
-            "value": "0.000",
-            "value_src": "default"
-          }
-        }
-      },
       "ready_0": {
         "direction": "I"
       },
@@ -157,20 +131,49 @@
         "direction": "I",
         "left": "15",
         "right": "0"
+      },
+      "externalCLK_0": {
+        "direction": "I",
+        "parameters": {
+          "CLK_DOMAIN": {
+            "value": "Inverter_3lvl_Clk_0",
+            "value_src": "default_prop"
+          },
+          "FREQ_HZ": {
+            "value": "100000000",
+            "value_src": "default_prop"
+          },
+          "PHASE": {
+            "value": "0.000",
+            "value_src": "default_prop"
+          }
+        }
       }
     },
     "components": {
+      "BUS_16OUT_0": {
+        "vlnv": "setcorp:user:BUS_16OUT:1.0",
+        "xci_name": "Inverter_3lvl_BUS_16OUT_0_0"
+      },
+      "BUS_16OUT_1": {
+        "vlnv": "setcorp:user:BUS_16OUT:1.0",
+        "xci_name": "Inverter_3lvl_BUS_16OUT_0_1"
+      },
+      "BUS_16OUT_2": {
+        "vlnv": "setcorp:user:BUS_16OUT:1.0",
+        "xci_name": "Inverter_3lvl_BUS_16OUT_1_0"
+      },
+      "BUS_16IN_0": {
+        "vlnv": "setcorp:user:BUS_16IN:1.0",
+        "xci_name": "Inverter_3lvl_BUS_16IN_0_0"
+      },
+      "BUS_16IN_1": {
+        "vlnv": "setcorp:user:BUS_16IN:1.0",
+        "xci_name": "Inverter_3lvl_BUS_16IN_1_0"
+      },
       "P0N_3lvl_0": {
         "vlnv": "ssevendenergy.com:user:P0N_3lvl:1.0",
         "xci_name": "Inverter_3lvl_P0N_3lvl_0_0"
-      },
-      "P0N_3lvl_1": {
-        "vlnv": "ssevendenergy.com:user:P0N_3lvl:1.0",
-        "xci_name": "Inverter_3lvl_P0N_3lvl_1_0"
-      },
-      "P0N_3lvl_2": {
-        "vlnv": "ssevendenergy.com:user:P0N_3lvl:1.0",
-        "xci_name": "Inverter_3lvl_P0N_3lvl_1_1"
       },
       "P0N_3lvl_3": {
         "vlnv": "ssevendenergy.com:user:P0N_3lvl:1.0",
@@ -192,117 +195,92 @@
         "vlnv": "ssevendenergy.com:user:P0N_3lvl:1.0",
         "xci_name": "Inverter_3lvl_P0N_3lvl_0_5"
       },
-      "BUS_16IN_0": {
-        "vlnv": "setcorp:user:BUS_16IN:1.0",
-        "xci_name": "Inverter_3lvl_BUS_16IN_0_0"
+      "P0N_3lvl_1": {
+        "vlnv": "ssevendenergy.com:user:P0N_3lvl:1.0",
+        "xci_name": "Inverter_3lvl_P0N_3lvl_1_0"
       },
-      "BUS_16IN_1": {
-        "vlnv": "setcorp:user:BUS_16IN:1.0",
-        "xci_name": "Inverter_3lvl_BUS_16IN_1_0"
-      },
-      "BUS_16OUT_0": {
-        "vlnv": "setcorp:user:BUS_16OUT:1.0",
-        "xci_name": "Inverter_3lvl_BUS_16OUT_0_0"
-      },
-      "BUS_16OUT_1": {
-        "vlnv": "setcorp:user:BUS_16OUT:1.0",
-        "xci_name": "Inverter_3lvl_BUS_16OUT_0_1"
-      },
-      "BUS_16OUT_2": {
-        "vlnv": "setcorp:user:BUS_16OUT:1.0",
-        "xci_name": "Inverter_3lvl_BUS_16OUT_1_0"
+      "P0N_3lvl_2": {
+        "vlnv": "ssevendenergy.com:user:P0N_3lvl:1.0",
+        "xci_name": "Inverter_3lvl_P0N_3lvl_1_1"
       }
     },
     "nets": {
-      "Clk_0_1": {
-        "ports": [
-          "Clk_0",
-          "P0N_3lvl_0/Clk",
-          "P0N_3lvl_3/Clk",
-          "P0N_3lvl_6/Clk",
-          "P0N_3lvl_1/Clk",
-          "P0N_3lvl_2/Clk",
-          "P0N_3lvl_4/Clk",
-          "P0N_3lvl_5/Clk",
-          "P0N_3lvl_7/Clk"
-        ]
-      },
       "ready_0_1": {
         "ports": [
           "ready_0",
           "P0N_3lvl_0/ready",
-          "P0N_3lvl_1/ready",
           "P0N_3lvl_3/ready",
-          "P0N_3lvl_6/ready",
           "P0N_3lvl_4/ready",
+          "P0N_3lvl_5/ready",
+          "P0N_3lvl_6/ready",
           "P0N_3lvl_7/ready",
-          "P0N_3lvl_2/ready",
-          "P0N_3lvl_5/ready"
+          "P0N_3lvl_1/ready",
+          "P0N_3lvl_2/ready"
         ]
       },
       "reset_0_1": {
         "ports": [
           "reset_0",
           "P0N_3lvl_0/reset",
-          "P0N_3lvl_1/reset",
           "P0N_3lvl_3/reset",
-          "P0N_3lvl_2/reset",
           "P0N_3lvl_4/reset",
           "P0N_3lvl_5/reset",
           "P0N_3lvl_6/reset",
-          "P0N_3lvl_7/reset"
+          "P0N_3lvl_7/reset",
+          "P0N_3lvl_1/reset",
+          "P0N_3lvl_2/reset"
         ]
       },
       "deadTime_0_1": {
         "ports": [
           "deadTime_0",
           "P0N_3lvl_0/deadTime",
-          "P0N_3lvl_1/deadTime",
           "P0N_3lvl_3/deadTime",
-          "P0N_3lvl_2/deadTime",
           "P0N_3lvl_4/deadTime",
           "P0N_3lvl_5/deadTime",
           "P0N_3lvl_6/deadTime",
-          "P0N_3lvl_7/deadTime"
+          "P0N_3lvl_7/deadTime",
+          "P0N_3lvl_1/deadTime",
+          "P0N_3lvl_2/deadTime"
         ]
       },
       "minTime_0_1": {
         "ports": [
           "minTime_0",
           "P0N_3lvl_0/minTime",
-          "P0N_3lvl_1/minTime",
           "P0N_3lvl_3/minTime",
-          "P0N_3lvl_6/minTime",
           "P0N_3lvl_4/minTime",
+          "P0N_3lvl_5/minTime",
+          "P0N_3lvl_6/minTime",
           "P0N_3lvl_7/minTime",
-          "P0N_3lvl_2/minTime",
-          "P0N_3lvl_5/minTime"
+          "P0N_3lvl_1/minTime",
+          "P0N_3lvl_2/minTime"
         ]
       },
       "er_0_1": {
         "ports": [
           "er_0",
           "P0N_3lvl_0/er",
+          "P0N_3lvl_3/er",
           "P0N_3lvl_4/er",
-          "P0N_3lvl_1/er",
           "P0N_3lvl_5/er",
           "P0N_3lvl_6/er",
-          "P0N_3lvl_2/er",
-          "P0N_3lvl_3/er",
-          "P0N_3lvl_7/er"
+          "P0N_3lvl_7/er",
+          "P0N_3lvl_1/er",
+          "P0N_3lvl_2/er"
         ]
       },
       "minTime_En_0_1": {
         "ports": [
           "minTime_En_0",
           "P0N_3lvl_0/minTime_En",
-          "P0N_3lvl_1/minTime_En",
+          "P0N_3lvl_3/minTime_En",
           "P0N_3lvl_4/minTime_En",
           "P0N_3lvl_5/minTime_En",
-          "P0N_3lvl_2/minTime_En",
           "P0N_3lvl_6/minTime_En",
-          "P0N_3lvl_3/minTime_En",
-          "P0N_3lvl_7/minTime_En"
+          "P0N_3lvl_7/minTime_En",
+          "P0N_3lvl_1/minTime_En",
+          "P0N_3lvl_2/minTime_En"
         ]
       },
       "PWM_1": {
@@ -735,6 +713,19 @@
         "ports": [
           "MaskMinTimeError",
           "BUS_16OUT_2/Mask"
+        ]
+      },
+      "externalCLK_0_1": {
+        "ports": [
+          "externalCLK_0",
+          "P0N_3lvl_0/externalCLK",
+          "P0N_3lvl_3/externalCLK",
+          "P0N_3lvl_4/externalCLK",
+          "P0N_3lvl_5/externalCLK",
+          "P0N_3lvl_6/externalCLK",
+          "P0N_3lvl_7/externalCLK",
+          "P0N_3lvl_1/externalCLK",
+          "P0N_3lvl_2/externalCLK"
         ]
       }
     }
