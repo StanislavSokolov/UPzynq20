@@ -18,9 +18,12 @@
 <includePath path="#undef __ARM_FEATURE_CLZ" removed="true"/>
 <includePath path="#undef __ARM_FEATURE_DOTPROD" removed="true"/>
 <includePath path="d:\xilinx\sdk\2019.1\gnu\aarch32\nt\gcc-arm-none-eabi\bin\../arm-none-eabi/libc/usr/include"/>
+<includePath path="#undef __THUMBEL__" removed="true"/>
 <includePath path="#undef __ARM_FEATURE_NUMERIC_MAXMIN" removed="true"/>
 <includePath path="#undef __ARM_FEATURE_CMSE" removed="true"/>
 <includePath path="#undef __ARM_ARCH" removed="true"/>
+<includePath path="#undef __thumb__" removed="true"/>
+<includePath path="#undef __thumb2__" removed="true"/>
 <definedSymbol symbol="__STDC__=1"/>
 <definedSymbol symbol="__STDC_VERSION__=201710L"/>
 <definedSymbol symbol="__STDC_UTF_16__=1"/>

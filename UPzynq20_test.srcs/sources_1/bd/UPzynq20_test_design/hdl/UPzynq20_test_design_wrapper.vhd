@@ -1,7 +1,7 @@
 --Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
---Date        : Fri Jun 11 08:16:05 2021
+--Date        : Mon Jun 28 15:37:24 2021
 --Host        : STAS-W10 running 64-bit major release  (build 9200)
 --Command     : generate_target UPzynq20_test_design_wrapper.bd
 --Design      : UPzynq20_test_design_wrapper
@@ -124,8 +124,8 @@ architecture STRUCTURE of UPzynq20_test_design_wrapper is
     FIXED_IO_ps_srstb : inout STD_LOGIC;
     FIXED_IO_ps_clk : inout STD_LOGIC;
     FIXED_IO_ps_porb : inout STD_LOGIC;
-    gpio_rtl_3_tri_i : in STD_LOGIC_VECTOR ( 15 downto 0 );
     gpio_rtl_0_tri_o : out STD_LOGIC_VECTOR ( 15 downto 0 );
+    gpio_rtl_3_tri_i : in STD_LOGIC_VECTOR ( 15 downto 0 );
     gpio_rtl_2_tri_i : in STD_LOGIC_VECTOR ( 7 downto 0 )
   );
   end component UPzynq20_test_design;

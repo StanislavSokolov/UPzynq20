@@ -1420,7 +1420,7 @@ Enable DDR Controller of Zynq PS
 <B>Memory Part</B>
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
-MT41J128M8 JP-125
+MT41K256M16 RE-125
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
 
@@ -1497,7 +1497,7 @@ Select the operating temparature
 <B>DRAM IC bus width</B>
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
-8 Bits
+16 Bits
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
 Provide the width of the DRAM chip
@@ -1508,7 +1508,7 @@ Provide the width of the DRAM chip
 <B>DRAM Device Capacity</B>
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
-1024 MBits
+4096 MBits
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
 
@@ -1541,7 +1541,7 @@ Defines the bank to which an active an ACTIVE, READ, WRITE, or Precharge Command
 <B>ROW Address Count</B>
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
-14
+15
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
 Provide the Row address for ACTIVE commands
@@ -1629,7 +1629,7 @@ tRASmin (ns) is the minimum number of clock cycles required between an Active co
 <B>tFAW</B>
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
-30.0
+40.0
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
 It restricts the number of activates that can be done within a certain window of time
@@ -10524,10 +10524,10 @@ ddrc_ctrl
 <B>3fc0</B>
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
-<B>3b</B>
+<B>a1</B>
 </TD>
 <TD width=15% BGCOLOR=#FBF5EF>
-<B>ec0</B>
+<B>2840</B>
 </TD>
 <TD width=35% BGCOLOR=#FBF5EF>
 <B>tRFC(min) - Minimum time from refresh to refresh or activate (spec: 75nS to 195nS). DRAM Related. Default value is set for DDR3. Dynamic Bit Field.</B>
@@ -10567,7 +10567,7 @@ ddrc_ctrl
 <B></B>
 </TD>
 <TD width=15% BGCOLOR=#C0C0C0>
-<B>40edb</B>
+<B>4285b</B>
 </TD>
 <TD width=35% BGCOLOR=#C0C0C0>
 <B>DRAM Parameters 0</B>
@@ -10691,10 +10691,10 @@ ddrc_ctrl
 <B>fc00</B>
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
-<B>11</B>
+<B>16</B>
 </TD>
 <TD width=15% BGCOLOR=#FBF5EF>
-<B>4400</B>
+<B>5800</B>
 </TD>
 <TD width=35% BGCOLOR=#FBF5EF>
 <B>tFAW - At most 4 banks must be activated in a rolling window of tFAW cycles. Unit: clocks. DRAM Related.</B>
@@ -10774,7 +10774,7 @@ ddrc_ctrl
 <B></B>
 </TD>
 <TD width=15% BGCOLOR=#C0C0C0>
-<B>44e444d3</B>
+<B>44e458d3</B>
 </TD>
 <TD width=35% BGCOLOR=#C0C0C0>
 <B>DRAM Parameters 1</B>
@@ -11105,10 +11105,10 @@ ddrc_ctrl
 <B>e0</B>
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
-<B>5</B>
+<B>6</B>
 </TD>
 <TD width=15% BGCOLOR=#FBF5EF>
-<B>a0</B>
+<B>c0</B>
 </TD>
 <TD width=35% BGCOLOR=#FBF5EF>
 <B>tRRD - Minimum time between activates from bank A to bank B. (spec: 10ns or less) DRAM RELATED</B>
@@ -11288,7 +11288,7 @@ ddrc_ctrl
 <B></B>
 </TD>
 <TD width=15% BGCOLOR=#C0C0C0>
-<B>270872b0</B>
+<B>270872d0</B>
 </TD>
 <TD width=35% BGCOLOR=#C0C0C0>
 <B>DRAM Parameters 3</B>
@@ -12848,10 +12848,10 @@ ddrc_ctrl
 <B>f00000</B>
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
-<B>f</B>
+<B>6</B>
 </TD>
 <TD width=15% BGCOLOR=#FBF5EF>
-<B>f00000</B>
+<B>600000</B>
 </TD>
 <TD width=35% BGCOLOR=#FBF5EF>
 <B>Selects theAXI address bit used as row address bit 14. Valid Range: 0 to 6, Internal Base: 23 The selected address bit is determined by adding the Internal Base to the value of this field. If set to 15, row address bit 14 is set to 0.</B>
@@ -12891,7 +12891,7 @@ ddrc_ctrl
 <B></B>
 </TD>
 <TD width=15% BGCOLOR=#C0C0C0>
-<B>ff66666</B>
+<B>f666666</B>
 </TD>
 <TD width=35% BGCOLOR=#C0C0C0>
 <B>Select DRAM row address bits</B>
@@ -56161,10 +56161,10 @@ ddrc_ctrl
 <B>3fc0</B>
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
-<B>3b</B>
+<B>a1</B>
 </TD>
 <TD width=15% BGCOLOR=#FBF5EF>
-<B>ec0</B>
+<B>2840</B>
 </TD>
 <TD width=35% BGCOLOR=#FBF5EF>
 <B>tRFC(min) - Minimum time from refresh to refresh or activate (spec: 75nS to 195nS). DRAM Related. Default value is set for DDR3. Dynamic Bit Field.</B>
@@ -56204,7 +56204,7 @@ ddrc_ctrl
 <B></B>
 </TD>
 <TD width=15% BGCOLOR=#C0C0C0>
-<B>40edb</B>
+<B>4285b</B>
 </TD>
 <TD width=35% BGCOLOR=#C0C0C0>
 <B>DRAM Parameters 0</B>
@@ -56328,10 +56328,10 @@ ddrc_ctrl
 <B>fc00</B>
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
-<B>11</B>
+<B>16</B>
 </TD>
 <TD width=15% BGCOLOR=#FBF5EF>
-<B>4400</B>
+<B>5800</B>
 </TD>
 <TD width=35% BGCOLOR=#FBF5EF>
 <B>tFAW - At most 4 banks must be activated in a rolling window of tFAW cycles. Unit: clocks. DRAM Related.</B>
@@ -56411,7 +56411,7 @@ ddrc_ctrl
 <B></B>
 </TD>
 <TD width=15% BGCOLOR=#C0C0C0>
-<B>44e444d3</B>
+<B>44e458d3</B>
 </TD>
 <TD width=35% BGCOLOR=#C0C0C0>
 <B>DRAM Parameters 1</B>
@@ -56742,10 +56742,10 @@ ddrc_ctrl
 <B>e0</B>
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
-<B>5</B>
+<B>6</B>
 </TD>
 <TD width=15% BGCOLOR=#FBF5EF>
-<B>a0</B>
+<B>c0</B>
 </TD>
 <TD width=35% BGCOLOR=#FBF5EF>
 <B>tRRD - Minimum time between activates from bank A to bank B. (spec: 10ns or less) DRAM RELATED</B>
@@ -56965,7 +56965,7 @@ ddrc_ctrl
 <B></B>
 </TD>
 <TD width=15% BGCOLOR=#C0C0C0>
-<B>272872b0</B>
+<B>272872d0</B>
 </TD>
 <TD width=35% BGCOLOR=#C0C0C0>
 <B>DRAM Parameters 3</B>
@@ -58625,10 +58625,10 @@ ddrc_ctrl
 <B>f00000</B>
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
-<B>f</B>
+<B>6</B>
 </TD>
 <TD width=15% BGCOLOR=#FBF5EF>
-<B>f00000</B>
+<B>600000</B>
 </TD>
 <TD width=35% BGCOLOR=#FBF5EF>
 <B>Selects theAXI address bit used as row address bit 14. Valid Range: 0 to 11, and 15 Internal Base: 23 The selected address bit is determined by adding the Internal Base to the value of this field. If set to 15, row address bit 14 is set to 0.</B>
@@ -58668,7 +58668,7 @@ ddrc_ctrl
 <B></B>
 </TD>
 <TD width=15% BGCOLOR=#C0C0C0>
-<B>ff66666</B>
+<B>f666666</B>
 </TD>
 <TD width=35% BGCOLOR=#C0C0C0>
 <B>Select DRAM row address bits</B>
@@ -102800,10 +102800,10 @@ ddrc_ctrl
 <B>3fc0</B>
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
-<B>3b</B>
+<B>a1</B>
 </TD>
 <TD width=15% BGCOLOR=#FBF5EF>
-<B>ec0</B>
+<B>2840</B>
 </TD>
 <TD width=35% BGCOLOR=#FBF5EF>
 <B>tRFC(min) - Minimum time from refresh to refresh or activate (spec: 75ns to 195ns). DRAM RELATED. Default value is set for DDR3.</B>
@@ -102843,7 +102843,7 @@ ddrc_ctrl
 <B></B>
 </TD>
 <TD width=15% BGCOLOR=#C0C0C0>
-<B>40edb</B>
+<B>4285b</B>
 </TD>
 <TD width=35% BGCOLOR=#C0C0C0>
 <B>DRAM Parameters register 0</B>
@@ -102967,10 +102967,10 @@ ddrc_ctrl
 <B>fc00</B>
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
-<B>11</B>
+<B>16</B>
 </TD>
 <TD width=15% BGCOLOR=#FBF5EF>
-<B>4400</B>
+<B>5800</B>
 </TD>
 <TD width=35% BGCOLOR=#FBF5EF>
 <B>tFAW - At most 4 banks must be activated in a rolling window of tFAW cycles. Unit: clocks DRAM RELATED.</B>
@@ -103050,7 +103050,7 @@ ddrc_ctrl
 <B></B>
 </TD>
 <TD width=15% BGCOLOR=#C0C0C0>
-<B>44e444d3</B>
+<B>44e458d3</B>
 </TD>
 <TD width=35% BGCOLOR=#C0C0C0>
 <B>DRAM Parameters register 1</B>
@@ -103381,10 +103381,10 @@ ddrc_ctrl
 <B>e0</B>
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
-<B>5</B>
+<B>6</B>
 </TD>
 <TD width=15% BGCOLOR=#FBF5EF>
-<B>a0</B>
+<B>c0</B>
 </TD>
 <TD width=35% BGCOLOR=#FBF5EF>
 <B>tRRD - Minimum time between activates from bank a to bank b. (spec: 10ns or less) DRAM RELATED</B>
@@ -103604,7 +103604,7 @@ ddrc_ctrl
 <B></B>
 </TD>
 <TD width=15% BGCOLOR=#C0C0C0>
-<B>272872b0</B>
+<B>272872d0</B>
 </TD>
 <TD width=35% BGCOLOR=#C0C0C0>
 <B>DRAM Parameters register 3</B>
@@ -105264,10 +105264,10 @@ ddrc_ctrl
 <B>f00000</B>
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
-<B>f</B>
+<B>6</B>
 </TD>
 <TD width=15% BGCOLOR=#FBF5EF>
-<B>f00000</B>
+<B>600000</B>
 </TD>
 <TD width=35% BGCOLOR=#FBF5EF>
 <B>Selects theAXI address bit used as row address bit 14. Valid Range: 0 to 11, and 15 Internal Base: 23 The selected address bit is determined by adding the Internal Base to the value of this field. If set to 15, row address bit 14 is set to 0.</B>
@@ -105307,7 +105307,7 @@ ddrc_ctrl
 <B></B>
 </TD>
 <TD width=15% BGCOLOR=#C0C0C0>
-<B>ff66666</B>
+<B>f666666</B>
 </TD>
 <TD width=35% BGCOLOR=#C0C0C0>
 <B>Selects the address bits used as DRAM row address bits</B>

@@ -68,6 +68,7 @@
 #include "project_parameters.h"
 #include "test_functions.h"
 #include "module_uart.h"
+#include "module_uart_RS485.h"
 #include "test_functions_PS_MIO.h"
 
 int Count;						// общий счеткчик
@@ -90,12 +91,15 @@ int latch_start = 0;
 
 int main(void) {
 
-	initialization_of_project(0, 0);    // A0 - SYSTEM_DESIGN, A1 - PROJECT_NUMBER
-	initialization_of_MIO();			// Иницилизируем PSGPIO
-	SetOutputEnablePinPSGPIO(0, 1);		// Разрешаем подтяжку MIO0, нельзя подтянуть MIO7
-	SetDirectionPinPSGPIO(0, 1);		// Выбираем направление MIO0
-	SetDirectionPinPSGPIO(7, 1);		// Выбираем направление MIO7
-	initialization_of_UART(); 			// инициализируем UART
+	initialization_of_project(0, 0);    	// A0 - SYSTEM_DESIGN, A1 - PROJECT_NUMBER
+	initialization_of_MIO();				// Иницилизируем PSGPIO
+	SetOutputEnablePinPSGPIO(0, 1);			// Разрешаем подтяжку MIO0, нельзя подтянуть MIO7
+	SetOutputEnablePinPSGPIO(15, 1);		// Разрешаем подтяжку MIO15 для управления направлением RS-485 преобразователем
+	SetDirectionPinPSGPIO(0, 1);			// Выбираем направление MIO0
+	SetDirectionPinPSGPIO(7, 1);			// Выбираем направление MIO7
+	SetDirectionPinPSGPIO(15, 1);			// Выбираем направление MIO15
+	initialization_of_UART(); 				// инициализируем UART
+	initialization_of_UART_RS485(); 		// инициализируем UART-RS485
 
 	while (1) {
 
@@ -264,11 +268,18 @@ int main(void) {
 //			}
 //			DataBufPrev = DataBuf;
 
+
+
+
 			if (latch_start==0) bild_send_buffer(TEST_BUFFER_SIZE-3, 1); else bild_send_buffer(TEST_BUFFER_SIZE-3, 0);
 			latch_start = 1;
 			terminal_uart_send();
 			terminal_uart_recv();
 			update_from_terminal_all(TEST_BUFFER_SIZE);
+
+
+
+			terminal_uart_send_RS485();
 
 //			if (terminal_uart_recv()==0) {
 //				update_from_terminal_all(TEST_BUFFER_SIZE);
