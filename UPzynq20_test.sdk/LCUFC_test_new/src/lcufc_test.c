@@ -67,8 +67,8 @@
 #include "xil_printf.h"
 #include "project_parameters.h"
 #include "test_functions.h"
-#include "module_uart.h"
 #include "module_uart_RS485.h"
+#include "module_uart_SET12.h"
 #include "test_functions_PS_MIO.h"
 
 int Count;						// общий счеткчик
@@ -98,12 +98,19 @@ int main(void) {
 	SetDirectionPinPSGPIO(0, 1);			// Выбираем направление MIO0
 	SetDirectionPinPSGPIO(7, 1);			// Выбираем направление MIO7
 	SetDirectionPinPSGPIO(15, 1);			// Выбираем направление MIO15
-	initialization_of_UART(); 				// инициализируем UART
+
+	SetDirectionPinPSGPIO(46, 0);			// Выбираем направление MIO46
+	SetDirectionPinPSGPIO(47, 0);			// Выбираем направление MIO47
+	SetDirectionPinPSGPIO(48, 0);			// Выбираем направление MIO48
+	SetDirectionPinPSGPIO(49, 0);			// Выбираем направление MIO49
+
+	initialization_of_UART_SET12(); 				// инициализируем UART
 	initialization_of_UART_RS485(); 		// инициализируем UART-RS485
+//	WritePinPSGPIO (15, 1);
 
 	while (1) {
 
-		if (Count < 1000000) {
+		if (Count < 10000000) {
 			Count++;
 		} else {
 			if (latch) {
@@ -123,32 +130,38 @@ int main(void) {
 				WritePinPSGPIO (7, 1);
 			}
 
+			WritePinPSGPIO(15, 1);
 
+			bild_send_buffer_SET12(144, ReadPinPSGPIO(46));
+			bild_send_buffer_SET12(146, ReadPinPSGPIO(47));
+			bild_send_buffer_SET12(148, ReadPinPSGPIO(48));
+//			bild_send_buffer_SET12(150, ReadPinPSGPIO(49));
 
+			bild_send_buffer_SET12(150, function_test_CountInt_RS485());
 
 
 			Count = 0;
-			inverting_the_signal_count_transmitter();
-			bild_send_buffer(TEST_BUFFER_SIZE-1, 100);
+			inverting_the_signal_count_transmitter_SET12();
+			bild_send_buffer_SET12(TEST_BUFFER_SIZE_SET12-1, 100);
 //			GroupsRegisters++;
 //			bild_send_buffer(8, GroupsRegisters);
 
 
 
 
-			bild_send_buffer(162, Xil_In32(XPAR_IP_AXI_OPTICALBUS_0_S00_AXI_BASEADDR + 20));
+			bild_send_buffer_SET12(162, Xil_In32(XPAR_IP_AXI_OPTICALBUS_0_S00_AXI_BASEADDR + 20));
 
 
 
 
-			read_in_all();
-			bild_send_buffer(112+Channel_0*2, Xil_In32(XPAR_IP_AXI_ADC_0_S00_AXI_BASEADDR + (Channel_0*j)));
+			read_in_all_SET12();
+			bild_send_buffer_SET12(112+Channel_0*2, Xil_In32(XPAR_IP_AXI_ADC_0_S00_AXI_BASEADDR + (Channel_0*j)));
 			if (Channel_0<15) Channel_0++; else Channel_0 = 0;
 //			bild_send_buffer(144+Channel_1*2, Xil_In32(XPAR_IP_AXI_ENCODER_0_S00_AXI_BASEADDR + (Channel_1*j)));
 //			if (Channel_1<5) Channel_1++; else Channel_1 = 0;
-			bild_send_buffer(144+Channel_1*2, Xil_In32(XPAR_IP_AXI_ENCODER_0_S00_AXI_BASEADDR + (Channel_1*j)));
-//			bild_send_buffer(154+Channel_1*2, (Xil_In32(XPAR_IP_AXI_ENCODER_0_S00_AXI_BASEADDR + (Channel_1*j)))/65534);
-			if (Channel_1<7) Channel_1++; else Channel_1 = 0;
+//			bild_send_buffer(144+Channel_1*2, Xil_In32(XPAR_IP_AXI_ENCODER_0_S00_AXI_BASEADDR + (Channel_1*j)));
+////			bild_send_buffer(154+Channel_1*2, (Xil_In32(XPAR_IP_AXI_ENCODER_0_S00_AXI_BASEADDR + (Channel_1*j)))/65534);
+//			if (Channel_1<7) Channel_1++; else Channel_1 = 0;
 
 
 			Xil_Out32(XPAR_IP_AXI_INVERTER_0_S00_AXI_BASEADDR + 1*j, 0x0000FFFF);			// Разрешение работы тормозных резисторов
@@ -268,18 +281,24 @@ int main(void) {
 //			}
 //			DataBufPrev = DataBuf;
 
-
-
-
-			if (latch_start==0) bild_send_buffer(TEST_BUFFER_SIZE-3, 1); else bild_send_buffer(TEST_BUFFER_SIZE-3, 0);
-			latch_start = 1;
-			terminal_uart_send();
-			terminal_uart_recv();
-			update_from_terminal_all(TEST_BUFFER_SIZE);
-
-
-
 			terminal_uart_send_RS485();
+
+
+			if (latch_start==0) bild_send_buffer_SET12(TEST_BUFFER_SIZE_SET12-3, 1); else bild_send_buffer_SET12(TEST_BUFFER_SIZE_SET12-3, 0);
+			latch_start = 1;
+			terminal_uart_send_SET12();
+
+
+
+			terminal_uart_recv_SET12();
+			update_from_terminal_all_SET12(TEST_BUFFER_SIZE_SET12);
+
+
+
+
+			WritePinPSGPIO(15, 0);
+
+//			terminal_uart_recv_RS485();
 
 //			if (terminal_uart_recv()==0) {
 //				update_from_terminal_all(TEST_BUFFER_SIZE);

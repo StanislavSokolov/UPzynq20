@@ -117,8 +117,8 @@ vcom -work xil_defaultlib -64 -93 \
 "../../../bd/UPzynq20_test_design/ipshared/afe0/hdl/IP_AXI_LEDS_v1_0_S00_AXI.vhd" \
 "../../../bd/UPzynq20_test_design/ipshared/afe0/hdl/IP_AXI_LEDS_v1_0.vhd" \
 "../../../bd/UPzynq20_test_design/ip/UPzynq20_test_design_IP_AXI_LEDS_0_0/sim/UPzynq20_test_design_IP_AXI_LEDS_0_0.vhd" \
-"../../../bd/UPzynq20_test_design/ipshared/f556/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd" \
-"../../../bd/UPzynq20_test_design/ipshared/f556/hdl/IP_AXI_ADC_v1_0.vhd" \
+"../../../bd/UPzynq20_test_design/ipshared/cb8f/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd" \
+"../../../bd/UPzynq20_test_design/ipshared/cb8f/hdl/IP_AXI_ADC_v1_0.vhd" \
 "../../../bd/UPzynq20_test_design/ip/UPzynq20_test_design_IP_AXI_ADC_0_0/sim/UPzynq20_test_design_IP_AXI_ADC_0_0.vhd" \
 "../../../bd/UPzynq20_test_design/ip/UPzynq20_test_design_axi_gpio_3_1/sim/UPzynq20_test_design_axi_gpio_3_1.vhd" \
 "../../../bd/UPzynq20_test_design/ip/UPzynq20_test_design_axi_gpio_4_0/sim/UPzynq20_test_design_axi_gpio_4_0.vhd" \

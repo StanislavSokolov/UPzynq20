@@ -2,8 +2,8 @@
 # Vivado v2019.1 (64-bit)
 # SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
 # IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
-# Start of session at: Mon Jun 28 15:37:51 2021
-# Process ID: 17400
+# Start of session at: Wed Jul  7 17:14:16 2021
+# Process ID: 3752
 # Current directory: D:/GITEA/UPzynq20_test/UPzynq20_test.runs/synth_1
 # Command line: vivado.exe -log UPzynq20_test_design_wrapper.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source UPzynq20_test_design_wrapper.tcl
 # Log file: D:/GITEA/UPzynq20_test/UPzynq20_test.runs/synth_1/UPzynq20_test_design_wrapper.vds
@@ -19,9 +19,9 @@ Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
 INFO: [Device 21-403] Loading part xc7z020clg484-3
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 15840 
+INFO: Helper process launched with PID 9200 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 854.031 ; gain = 178.141
+Starting RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:10 . Memory (MB): peak = 853.590 ; gain = 177.871
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'UPzynq20_test_design_wrapper' [D:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/hdl/UPzynq20_test_design_wrapper.vhd:73]
 INFO: [Synth 8-3491] module 'UPzynq20_test_design' declared at 'D:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/synth/UPzynq20_test_design.vhd:4288' bound to instance 'UPzynq20_test_design_i' of component 'UPzynq20_test_design' [D:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/hdl/UPzynq20_test_design_wrapper.vhd:133]
@@ -221,56 +221,56 @@ INFO: [Synth 8-3491] module 'UPzynq20_test_design_IP_AXI_ADC_0_0' declared at 'd
 INFO: [Synth 8-638] synthesizing module 'UPzynq20_test_design_IP_AXI_ADC_0_0' [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ip/UPzynq20_test_design_IP_AXI_ADC_0_0/synth/UPzynq20_test_design_IP_AXI_ADC_0_0.vhd:93]
 	Parameter C_S00_AXI_DATA_WIDTH bound to: 32 - type: integer 
 	Parameter C_S00_AXI_ADDR_WIDTH bound to: 6 - type: integer 
-INFO: [Synth 8-3491] module 'IP_AXI_ADC_v1_0' declared at 'd:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/f556/hdl/IP_AXI_ADC_v1_0.vhd:5' bound to instance 'U0' of component 'IP_AXI_ADC_v1_0' [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ip/UPzynq20_test_design_IP_AXI_ADC_0_0/synth/UPzynq20_test_design_IP_AXI_ADC_0_0.vhd:168]
-INFO: [Synth 8-638] synthesizing module 'IP_AXI_ADC_v1_0' [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/f556/hdl/IP_AXI_ADC_v1_0.vhd:62]
+INFO: [Synth 8-3491] module 'IP_AXI_ADC_v1_0' declared at 'd:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/cb8f/hdl/IP_AXI_ADC_v1_0.vhd:5' bound to instance 'U0' of component 'IP_AXI_ADC_v1_0' [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ip/UPzynq20_test_design_IP_AXI_ADC_0_0/synth/UPzynq20_test_design_IP_AXI_ADC_0_0.vhd:168]
+INFO: [Synth 8-638] synthesizing module 'IP_AXI_ADC_v1_0' [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/cb8f/hdl/IP_AXI_ADC_v1_0.vhd:62]
 	Parameter C_S00_AXI_DATA_WIDTH bound to: 32 - type: integer 
 	Parameter C_S00_AXI_ADDR_WIDTH bound to: 6 - type: integer 
 	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
 	Parameter C_S_AXI_ADDR_WIDTH bound to: 6 - type: integer 
-INFO: [Synth 8-3491] module 'IP_AXI_ADC_v1_0_S00_AXI' declared at 'd:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/f556/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:6' bound to instance 'IP_AXI_ADC_v1_0_S00_AXI_inst' of component 'IP_AXI_ADC_v1_0_S00_AXI' [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/f556/hdl/IP_AXI_ADC_v1_0.vhd:112]
-INFO: [Synth 8-638] synthesizing module 'IP_AXI_ADC_v1_0_S00_AXI' [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/f556/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:99]
+INFO: [Synth 8-3491] module 'IP_AXI_ADC_v1_0_S00_AXI' declared at 'd:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/cb8f/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:6' bound to instance 'IP_AXI_ADC_v1_0_S00_AXI_inst' of component 'IP_AXI_ADC_v1_0_S00_AXI' [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/cb8f/hdl/IP_AXI_ADC_v1_0.vhd:112]
+INFO: [Synth 8-638] synthesizing module 'IP_AXI_ADC_v1_0_S00_AXI' [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/cb8f/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:99]
 	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
 	Parameter C_S_AXI_ADDR_WIDTH bound to: 6 - type: integer 
-INFO: [Synth 8-226] default block is never used [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/f556/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:285]
-INFO: [Synth 8-226] default block is never used [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/f556/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:523]
-WARNING: [Synth 8-614] signal 'ch0' is read in the process but is not in the sensitivity list [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/f556/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:518]
-WARNING: [Synth 8-614] signal 'ch1' is read in the process but is not in the sensitivity list [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/f556/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:518]
-WARNING: [Synth 8-614] signal 'ch2' is read in the process but is not in the sensitivity list [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/f556/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:518]
-WARNING: [Synth 8-614] signal 'ch3' is read in the process but is not in the sensitivity list [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/f556/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:518]
-WARNING: [Synth 8-614] signal 'ch4' is read in the process but is not in the sensitivity list [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/f556/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:518]
-WARNING: [Synth 8-614] signal 'ch5' is read in the process but is not in the sensitivity list [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/f556/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:518]
-WARNING: [Synth 8-614] signal 'ch6' is read in the process but is not in the sensitivity list [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/f556/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:518]
-WARNING: [Synth 8-614] signal 'ch7' is read in the process but is not in the sensitivity list [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/f556/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:518]
-WARNING: [Synth 8-614] signal 'ch8' is read in the process but is not in the sensitivity list [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/f556/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:518]
-WARNING: [Synth 8-614] signal 'ch9' is read in the process but is not in the sensitivity list [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/f556/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:518]
-WARNING: [Synth 8-614] signal 'ch10' is read in the process but is not in the sensitivity list [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/f556/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:518]
-WARNING: [Synth 8-614] signal 'ch11' is read in the process but is not in the sensitivity list [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/f556/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:518]
-WARNING: [Synth 8-614] signal 'ch12' is read in the process but is not in the sensitivity list [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/f556/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:518]
-WARNING: [Synth 8-614] signal 'ch13' is read in the process but is not in the sensitivity list [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/f556/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:518]
-WARNING: [Synth 8-614] signal 'ch14' is read in the process but is not in the sensitivity list [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/f556/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:518]
-WARNING: [Synth 8-614] signal 'ch15' is read in the process but is not in the sensitivity list [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/f556/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:518]
-WARNING: [Synth 8-6014] Unused sequential element axi_awaddr_reg was removed.  [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/f556/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:218]
-WARNING: [Synth 8-6014] Unused sequential element slv_reg0_reg was removed.  [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/f556/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:266]
-WARNING: [Synth 8-6014] Unused sequential element slv_reg1_reg was removed.  [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/f556/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:267]
-WARNING: [Synth 8-6014] Unused sequential element slv_reg2_reg was removed.  [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/f556/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:268]
-WARNING: [Synth 8-6014] Unused sequential element slv_reg3_reg was removed.  [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/f556/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:269]
-WARNING: [Synth 8-6014] Unused sequential element slv_reg4_reg was removed.  [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/f556/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:270]
-WARNING: [Synth 8-6014] Unused sequential element slv_reg5_reg was removed.  [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/f556/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:271]
-WARNING: [Synth 8-6014] Unused sequential element slv_reg6_reg was removed.  [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/f556/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:272]
-WARNING: [Synth 8-6014] Unused sequential element slv_reg7_reg was removed.  [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/f556/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:273]
-WARNING: [Synth 8-6014] Unused sequential element slv_reg8_reg was removed.  [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/f556/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:274]
-WARNING: [Synth 8-6014] Unused sequential element slv_reg9_reg was removed.  [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/f556/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:275]
-WARNING: [Synth 8-6014] Unused sequential element slv_reg10_reg was removed.  [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/f556/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:276]
-WARNING: [Synth 8-6014] Unused sequential element slv_reg11_reg was removed.  [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/f556/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:277]
-WARNING: [Synth 8-6014] Unused sequential element slv_reg12_reg was removed.  [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/f556/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:278]
-WARNING: [Synth 8-6014] Unused sequential element slv_reg13_reg was removed.  [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/f556/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:279]
-WARNING: [Synth 8-6014] Unused sequential element slv_reg14_reg was removed.  [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/f556/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:280]
-WARNING: [Synth 8-6014] Unused sequential element slv_reg15_reg was removed.  [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/f556/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:281]
-WARNING: [Synth 8-6014] Unused sequential element loc_addr_reg was removed.  [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/f556/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:283]
-WARNING: [Synth 8-6014] Unused sequential element odd_updated_reg was removed.  [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/f556/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:600]
-WARNING: [Synth 8-6014] Unused sequential element even_updated_reg was removed.  [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/f556/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:643]
-INFO: [Synth 8-256] done synthesizing module 'IP_AXI_ADC_v1_0_S00_AXI' (51#1) [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/f556/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:99]
-INFO: [Synth 8-256] done synthesizing module 'IP_AXI_ADC_v1_0' (52#1) [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/f556/hdl/IP_AXI_ADC_v1_0.vhd:62]
+INFO: [Synth 8-226] default block is never used [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/cb8f/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:285]
+INFO: [Synth 8-226] default block is never used [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/cb8f/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:523]
+WARNING: [Synth 8-614] signal 'ch0' is read in the process but is not in the sensitivity list [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/cb8f/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:518]
+WARNING: [Synth 8-614] signal 'ch1' is read in the process but is not in the sensitivity list [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/cb8f/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:518]
+WARNING: [Synth 8-614] signal 'ch2' is read in the process but is not in the sensitivity list [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/cb8f/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:518]
+WARNING: [Synth 8-614] signal 'ch3' is read in the process but is not in the sensitivity list [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/cb8f/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:518]
+WARNING: [Synth 8-614] signal 'ch4' is read in the process but is not in the sensitivity list [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/cb8f/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:518]
+WARNING: [Synth 8-614] signal 'ch5' is read in the process but is not in the sensitivity list [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/cb8f/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:518]
+WARNING: [Synth 8-614] signal 'ch6' is read in the process but is not in the sensitivity list [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/cb8f/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:518]
+WARNING: [Synth 8-614] signal 'ch7' is read in the process but is not in the sensitivity list [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/cb8f/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:518]
+WARNING: [Synth 8-614] signal 'ch8' is read in the process but is not in the sensitivity list [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/cb8f/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:518]
+WARNING: [Synth 8-614] signal 'ch9' is read in the process but is not in the sensitivity list [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/cb8f/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:518]
+WARNING: [Synth 8-614] signal 'ch10' is read in the process but is not in the sensitivity list [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/cb8f/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:518]
+WARNING: [Synth 8-614] signal 'ch11' is read in the process but is not in the sensitivity list [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/cb8f/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:518]
+WARNING: [Synth 8-614] signal 'ch12' is read in the process but is not in the sensitivity list [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/cb8f/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:518]
+WARNING: [Synth 8-614] signal 'ch13' is read in the process but is not in the sensitivity list [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/cb8f/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:518]
+WARNING: [Synth 8-614] signal 'ch14' is read in the process but is not in the sensitivity list [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/cb8f/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:518]
+WARNING: [Synth 8-614] signal 'ch15' is read in the process but is not in the sensitivity list [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/cb8f/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:518]
+WARNING: [Synth 8-6014] Unused sequential element axi_awaddr_reg was removed.  [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/cb8f/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:218]
+WARNING: [Synth 8-6014] Unused sequential element slv_reg0_reg was removed.  [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/cb8f/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:266]
+WARNING: [Synth 8-6014] Unused sequential element slv_reg1_reg was removed.  [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/cb8f/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:267]
+WARNING: [Synth 8-6014] Unused sequential element slv_reg2_reg was removed.  [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/cb8f/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:268]
+WARNING: [Synth 8-6014] Unused sequential element slv_reg3_reg was removed.  [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/cb8f/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:269]
+WARNING: [Synth 8-6014] Unused sequential element slv_reg4_reg was removed.  [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/cb8f/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:270]
+WARNING: [Synth 8-6014] Unused sequential element slv_reg5_reg was removed.  [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/cb8f/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:271]
+WARNING: [Synth 8-6014] Unused sequential element slv_reg6_reg was removed.  [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/cb8f/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:272]
+WARNING: [Synth 8-6014] Unused sequential element slv_reg7_reg was removed.  [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/cb8f/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:273]
+WARNING: [Synth 8-6014] Unused sequential element slv_reg8_reg was removed.  [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/cb8f/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:274]
+WARNING: [Synth 8-6014] Unused sequential element slv_reg9_reg was removed.  [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/cb8f/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:275]
+WARNING: [Synth 8-6014] Unused sequential element slv_reg10_reg was removed.  [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/cb8f/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:276]
+WARNING: [Synth 8-6014] Unused sequential element slv_reg11_reg was removed.  [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/cb8f/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:277]
+WARNING: [Synth 8-6014] Unused sequential element slv_reg12_reg was removed.  [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/cb8f/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:278]
+WARNING: [Synth 8-6014] Unused sequential element slv_reg13_reg was removed.  [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/cb8f/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:279]
+WARNING: [Synth 8-6014] Unused sequential element slv_reg14_reg was removed.  [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/cb8f/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:280]
+WARNING: [Synth 8-6014] Unused sequential element slv_reg15_reg was removed.  [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/cb8f/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:281]
+WARNING: [Synth 8-6014] Unused sequential element loc_addr_reg was removed.  [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/cb8f/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:283]
+WARNING: [Synth 8-6014] Unused sequential element odd_updated_reg was removed.  [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/cb8f/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:600]
+WARNING: [Synth 8-6014] Unused sequential element even_updated_reg was removed.  [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/cb8f/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:643]
+INFO: [Synth 8-256] done synthesizing module 'IP_AXI_ADC_v1_0_S00_AXI' (51#1) [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/cb8f/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:99]
+INFO: [Synth 8-256] done synthesizing module 'IP_AXI_ADC_v1_0' (52#1) [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/cb8f/hdl/IP_AXI_ADC_v1_0.vhd:62]
 INFO: [Synth 8-256] done synthesizing module 'UPzynq20_test_design_IP_AXI_ADC_0_0' (53#1) [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ip/UPzynq20_test_design_IP_AXI_ADC_0_0/synth/UPzynq20_test_design_IP_AXI_ADC_0_0.vhd:93]
 INFO: [Synth 8-3491] module 'UPzynq20_test_design_IP_AXI_Encoder_0_0' declared at 'd:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ip/UPzynq20_test_design_IP_AXI_Encoder_0_0/synth/UPzynq20_test_design_IP_AXI_Encoder_0_0.vhd:56' bound to instance 'IP_AXI_Encoder_0' of component 'UPzynq20_test_design_IP_AXI_Encoder_0_0' [D:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/synth/UPzynq20_test_design.vhd:5459]
 INFO: [Synth 8-638] synthesizing module 'UPzynq20_test_design_IP_AXI_Encoder_0_0' [d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ip/UPzynq20_test_design_IP_AXI_Encoder_0_0/synth/UPzynq20_test_design_IP_AXI_Encoder_0_0.vhd:88]
@@ -2573,7 +2573,7 @@ WARNING: [Synth 8-3331] design axi_crossbar_v2_1_20_axi_crossbar has unconnected
 WARNING: [Synth 8-3331] design axi_crossbar_v2_1_20_axi_crossbar has unconnected port s_axi_arqos[1]
 INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:43 ; elapsed = 00:00:47 . Memory (MB): peak = 1127.410 ; gain = 451.520
+Finished RTL Elaboration : Time (s): cpu = 00:00:42 ; elapsed = 00:00:45 . Memory (MB): peak = 1123.848 ; gain = 448.129
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -2586,10 +2586,10 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:44 ; elapsed = 00:00:48 . Memory (MB): peak = 1127.410 ; gain = 451.520
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:43 ; elapsed = 00:00:46 . Memory (MB): peak = 1123.848 ; gain = 448.129
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:44 ; elapsed = 00:00:48 . Memory (MB): peak = 1127.410 ; gain = 451.520
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:43 ; elapsed = 00:00:46 . Memory (MB): peak = 1123.848 ; gain = 448.129
 ---------------------------------------------------------------------------------
 INFO: [Netlist 29-17] Analyzing 685 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -2647,22 +2647,22 @@ INFO: [Project 1-236] Implementation specific constraints were found while readi
 Resolution: To avoid this warning, move constraints listed in [.Xil/UPzynq20_test_design_wrapper_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.009 . Memory (MB): peak = 1211.402 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.009 . Memory (MB): peak = 1230.535 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 685 instances were transformed.
   FDR => FDRE: 684 instances
   SRL16 => SRL16E: 1 instances
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.260 . Memory (MB): peak = 1211.402 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.229 . Memory (MB): peak = 1230.535 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:01:00 ; elapsed = 00:01:06 . Memory (MB): peak = 1211.402 ; gain = 535.512
+Finished Constraint Validation : Time (s): cpu = 00:00:59 ; elapsed = 00:01:02 . Memory (MB): peak = 1230.535 ; gain = 554.816
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z020clg484-3
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:01:00 ; elapsed = 00:01:06 . Memory (MB): peak = 1211.402 ; gain = 535.512
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:59 ; elapsed = 00:01:02 . Memory (MB): peak = 1230.535 ; gain = 554.816
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -2758,7 +2758,7 @@ Applied set_property DONT_TOUCH = true for UPzynq20_test_design_i/Inverter_3lvl_
 Applied set_property DONT_TOUCH = true for UPzynq20_test_design_i/Inverter_3lvl_wrapper_0/U0/Inverter_3lvl_i/BUS_16IN_0. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for UPzynq20_test_design_i/ps7_0_axi_periph/s00_couplers/auto_pc. (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:01:00 ; elapsed = 00:01:07 . Memory (MB): peak = 1211.402 ; gain = 535.512
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:01:00 ; elapsed = 00:01:02 . Memory (MB): peak = 1230.535 ; gain = 554.816
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'acknowledge_reg' in module 'AckCheckerConcept'
 INFO: [Synth 8-5545] ROM "a0_sign" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
@@ -2844,14 +2844,14 @@ INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'axi_protocol_converter_v2_1_19_b2s_rd_cmd_fsm'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:01:07 ; elapsed = 00:01:14 . Memory (MB): peak = 1211.402 ; gain = 535.512
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:01:06 ; elapsed = 00:01:10 . Memory (MB): peak = 1230.535 ; gain = 554.816
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
 +------+--------------------------+------------+----------+
 |      |RTL Partition             |Replication |Instances |
 +------+--------------------------+------------+----------+
-|1     |UPzynq20_test_design__GB0 |           1|     34366|
+|1     |UPzynq20_test_design__GB0 |           1|     34369|
 |2     |UPzynq20_test_design__GB1 |           1|     19994|
 |3     |UPzynq20_test_design__GB2 |           1|     10171|
 +------+--------------------------+------------+----------+
@@ -2868,8 +2868,8 @@ Detailed RTL Component Info :
 	   2 Input      6 Bit       Adders := 4     
 	   2 Input      5 Bit       Adders := 5     
 	   2 Input      4 Bit       Adders := 12    
-	   2 Input      3 Bit       Adders := 1     
-	   2 Input      2 Bit       Adders := 3     
+	   2 Input      3 Bit       Adders := 2     
+	   2 Input      2 Bit       Adders := 2     
 +---XORs : 
 	   2 Input     16 Bit         XORs := 6     
 	   2 Input      8 Bit         XORs := 2     
@@ -2890,8 +2890,8 @@ Detailed RTL Component Info :
 	                6 Bit    Registers := 7     
 	                5 Bit    Registers := 6     
 	                4 Bit    Registers := 20    
-	                3 Bit    Registers := 5     
-	                2 Bit    Registers := 49    
+	                3 Bit    Registers := 6     
+	                2 Bit    Registers := 48    
 	                1 Bit    Registers := 776   
 +---Muxes : 
 	   2 Input     66 Bit        Muxes := 4     
@@ -2941,11 +2941,12 @@ Module IP_AXI_ADC_v1_0_S00_AXI
 Detailed RTL Component Info : 
 +---Adders : 
 	   2 Input     32 Bit       Adders := 12    
-	   2 Input      2 Bit       Adders := 1     
+	   2 Input      3 Bit       Adders := 1     
 +---Registers : 
 	               32 Bit    Registers := 26    
 	                6 Bit    Registers := 1     
-	                2 Bit    Registers := 3     
+	                3 Bit    Registers := 1     
+	                2 Bit    Registers := 2     
 	                1 Bit    Registers := 11    
 +---Muxes : 
 	   2 Input     32 Bit        Muxes := 12    
@@ -5216,14 +5217,14 @@ INFO: [Synth 8-3333] propagating constant 0 across sequential element (UPzynq20_
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (UPzynq20_test_design_i/i_2/axi_gpio_1/U0/\AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_bresp_i_reg[1] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (UPzynq20_test_design_i/i_0/IP_AXI_OpticalBus_0/\U0/i_8 /\U0/IP_AXI_OpticalBus_v1_0_S00_AXI_inst/CountDivCLK_reg[7] )
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:46 ; elapsed = 00:01:54 . Memory (MB): peak = 1211.402 ; gain = 535.512
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:49 ; elapsed = 00:01:53 . Memory (MB): peak = 1230.535 ; gain = 554.816
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
 +------+--------------------------+------------+----------+
 |      |RTL Partition             |Replication |Instances |
 +------+--------------------------+------------+----------+
-|1     |UPzynq20_test_design__GB0 |           1|     18527|
+|1     |UPzynq20_test_design__GB0 |           1|     18532|
 |2     |UPzynq20_test_design__GB1 |           1|      9825|
 |3     |UPzynq20_test_design__GB2 |           1|      5690|
 +------+--------------------------+------------+----------+
@@ -5231,26 +5232,26 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:55 ; elapsed = 00:02:03 . Memory (MB): peak = 1269.945 ; gain = 594.055
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:57 ; elapsed = 00:02:02 . Memory (MB): peak = 1278.680 ; gain = 602.961
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:02:14 ; elapsed = 00:02:22 . Memory (MB): peak = 1374.340 ; gain = 698.449
+Finished Timing Optimization : Time (s): cpu = 00:02:17 ; elapsed = 00:02:22 . Memory (MB): peak = 1380.316 ; gain = 704.598
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
 +------+-------------------------+------------+----------+
 |      |RTL Partition            |Replication |Instances |
 +------+-------------------------+------------+----------+
-|1     |UPzynq20_test_design_GT0 |           1|     33810|
+|1     |UPzynq20_test_design_GT0 |           1|     33815|
 +------+-------------------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:02:23 ; elapsed = 00:02:32 . Memory (MB): peak = 1374.340 ; gain = 698.449
+Finished Technology Mapping : Time (s): cpu = 00:02:27 ; elapsed = 00:02:32 . Memory (MB): peak = 1380.316 ; gain = 704.598
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -5375,7 +5376,7 @@ INFO: [Common 17-14] Message 'Synth 8-5365' appears 100 times and further instan
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:02:26 ; elapsed = 00:02:35 . Memory (MB): peak = 1374.340 ; gain = 698.449
+Finished IO Insertion : Time (s): cpu = 00:02:30 ; elapsed = 00:02:35 . Memory (MB): peak = 1380.316 ; gain = 704.598
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -5388,7 +5389,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:02:26 ; elapsed = 00:02:36 . Memory (MB): peak = 1374.340 ; gain = 698.449
+Finished Renaming Generated Instances : Time (s): cpu = 00:02:30 ; elapsed = 00:02:35 . Memory (MB): peak = 1380.316 ; gain = 704.598
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -5400,25 +5401,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:02:28 ; elapsed = 00:02:38 . Memory (MB): peak = 1374.340 ; gain = 698.449
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:02:32 ; elapsed = 00:02:37 . Memory (MB): peak = 1380.316 ; gain = 704.598
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:02:28 ; elapsed = 00:02:38 . Memory (MB): peak = 1374.340 ; gain = 698.449
+Finished Renaming Generated Ports : Time (s): cpu = 00:02:32 ; elapsed = 00:02:37 . Memory (MB): peak = 1380.316 ; gain = 704.598
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:02:29 ; elapsed = 00:02:38 . Memory (MB): peak = 1374.340 ; gain = 698.449
+Finished Handling Custom Attributes : Time (s): cpu = 00:02:32 ; elapsed = 00:02:38 . Memory (MB): peak = 1380.316 ; gain = 704.598
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:02:29 ; elapsed = 00:02:38 . Memory (MB): peak = 1374.340 ; gain = 698.449
+Finished Renaming Generated Nets : Time (s): cpu = 00:02:33 ; elapsed = 00:02:38 . Memory (MB): peak = 1380.316 ; gain = 704.598
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -5455,8 +5456,8 @@ Report Cell Usage:
 |2     |BUFG    |     3|
 |3     |CARRY4  |   688|
 |4     |LUT1    |   362|
-|5     |LUT2    |  1243|
-|6     |LUT3    |   972|
+|5     |LUT2    |  1244|
+|6     |LUT3    |   973|
 |7     |LUT4    |  2402|
 |8     |LUT5    |   917|
 |9     |LUT6    |  2383|
@@ -5467,7 +5468,7 @@ Report Cell Usage:
 |14    |SRL16E  |    18|
 |15    |SRLC32E |    47|
 |16    |FDR     |   456|
-|17    |FDRE    |  9008|
+|17    |FDRE    |  9009|
 |18    |FDSE    |   520|
 |19    |LD      |     3|
 |20    |IBUF    |    60|
@@ -5478,8 +5479,8 @@ Report Instance Areas:
 +------+---------------------------------------------------+---------------------------------------------------------------+------+
 |      |Instance                                           |Module                                                         |Cells |
 +------+---------------------------------------------------+---------------------------------------------------------------+------+
-|1     |top                                                |                                                               | 19628|
-|2     |  UPzynq20_test_design_i                           |UPzynq20_test_design                                           | 19524|
+|1     |top                                                |                                                               | 19631|
+|2     |  UPzynq20_test_design_i                           |UPzynq20_test_design                                           | 19527|
 |3     |    processing_system7_0                           |UPzynq20_test_design_processing_system7_0_0                    |   244|
 |4     |      inst                                         |processing_system7_v5_5_processing_system7                     |   244|
 |5     |    ps7_0_axi_periph                               |UPzynq20_test_design_ps7_0_axi_periph_0                        |  1817|
@@ -5519,9 +5520,9 @@ Report Instance Areas:
 |39    |    IP_AXI_INVERTER_0                              |UPzynq20_test_design_IP_AXI_INVERTER_0_0                       |  1933|
 |40    |      U0                                           |IP_AXI_INVERTER_v1_0                                           |  1895|
 |41    |        IP_AXI_INVERTER_v1_0_S00_AXI_inst          |IP_AXI_INVERTER_v1_0_S00_AXI                                   |  1891|
-|42    |    IP_AXI_ADC_0                                   |UPzynq20_test_design_IP_AXI_ADC_0_0                            |  1758|
-|43    |      U0                                           |IP_AXI_ADC_v1_0                                                |  1756|
-|44    |        IP_AXI_ADC_v1_0_S00_AXI_inst               |IP_AXI_ADC_v1_0_S00_AXI                                        |  1750|
+|42    |    IP_AXI_ADC_0                                   |UPzynq20_test_design_IP_AXI_ADC_0_0                            |  1761|
+|43    |      U0                                           |IP_AXI_ADC_v1_0                                                |  1759|
+|44    |        IP_AXI_ADC_v1_0_S00_AXI_inst               |IP_AXI_ADC_v1_0_S00_AXI                                        |  1753|
 |45    |    IP_AXI_Encoder_0                               |UPzynq20_test_design_IP_AXI_Encoder_0_0                        |   647|
 |46    |      U0                                           |IP_AXI_Encoder_v1_0                                            |   647|
 |47    |        IP_AXI_Encoder_v1_0_S00_AXI_inst           |IP_AXI_Encoder_v1_0_S00_AXI                                    |   647|
@@ -5720,17 +5721,17 @@ Report Instance Areas:
 |240   |          \Not_Dual.INPUT_DOUBLE_REGS3             |cdc_sync__parameterized0                                       |    32|
 +------+---------------------------------------------------+---------------------------------------------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:02:29 ; elapsed = 00:02:38 . Memory (MB): peak = 1374.340 ; gain = 698.449
+Finished Writing Synthesis Report : Time (s): cpu = 00:02:33 ; elapsed = 00:02:38 . Memory (MB): peak = 1380.316 ; gain = 704.598
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 14 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:01:33 ; elapsed = 00:02:24 . Memory (MB): peak = 1374.340 ; gain = 614.457
-Synthesis Optimization Complete : Time (s): cpu = 00:02:29 ; elapsed = 00:02:38 . Memory (MB): peak = 1374.340 ; gain = 698.449
+Synthesis Optimization Runtime : Time (s): cpu = 00:01:38 ; elapsed = 00:02:27 . Memory (MB): peak = 1380.316 ; gain = 597.910
+Synthesis Optimization Complete : Time (s): cpu = 00:02:33 ; elapsed = 00:02:38 . Memory (MB): peak = 1380.316 ; gain = 704.598
 INFO: [Project 1-571] Translating synthesized netlist
 INFO: [Netlist 29-17] Analyzing 1518 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 1374.340 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 1384.008 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 460 instances were transformed.
   FDR => FDRE: 456 instances
@@ -5740,10 +5741,10 @@ INFO: [Project 1-111] Unisim Transformation Summary:
 INFO: [Common 17-83] Releasing license: Synthesis
 1103 Infos, 263 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:02:40 ; elapsed = 00:02:52 . Memory (MB): peak = 1374.340 ; gain = 979.820
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.006 . Memory (MB): peak = 1374.340 ; gain = 0.000
+synth_design: Time (s): cpu = 00:02:43 ; elapsed = 00:02:50 . Memory (MB): peak = 1384.008 ; gain = 990.031
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 1384.008 ; gain = 0.000
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
 INFO: [Common 17-1381] The checkpoint 'D:/GITEA/UPzynq20_test/UPzynq20_test.runs/synth_1/UPzynq20_test_design_wrapper.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file UPzynq20_test_design_wrapper_utilization_synth.rpt -pb UPzynq20_test_design_wrapper_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Mon Jun 28 15:40:55 2021...
+INFO: [Common 17-206] Exiting Vivado at Wed Jul  7 17:17:18 2021...

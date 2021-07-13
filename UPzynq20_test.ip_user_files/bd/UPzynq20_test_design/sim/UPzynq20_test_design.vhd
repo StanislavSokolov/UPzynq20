@@ -1,7 +1,7 @@
 --Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
---Date        : Fri Jun 11 07:52:54 2021
+--Date        : Wed Jul  7 17:13:41 2021
 --Host        : STAS-W10 running 64-bit major release  (build 9200)
 --Command     : generate_target UPzynq20_test_design.bd
 --Design      : UPzynq20_test_design
@@ -4655,42 +4655,6 @@ architecture STRUCTURE of UPzynq20_test_design is
     gpio_io_i : in STD_LOGIC_VECTOR ( 15 downto 0 )
   );
   end component UPzynq20_test_design_axi_gpio_6_0;
-  component UPzynq20_test_design_IP_AXI_ADC_0_0 is
-  port (
-    sclk : out STD_LOGIC;
-    a0 : out STD_LOGIC;
-    not_cs : out STD_LOGIC;
-    data_in_a0 : in STD_LOGIC;
-    data_in_b0 : in STD_LOGIC;
-    data_in_a1 : in STD_LOGIC;
-    data_in_b1 : in STD_LOGIC;
-    data_in_a2 : in STD_LOGIC;
-    data_in_b2 : in STD_LOGIC;
-    data_in_a3 : in STD_LOGIC;
-    data_in_b3 : in STD_LOGIC;
-    s00_axi_awaddr : in STD_LOGIC_VECTOR ( 5 downto 0 );
-    s00_axi_awprot : in STD_LOGIC_VECTOR ( 2 downto 0 );
-    s00_axi_awvalid : in STD_LOGIC;
-    s00_axi_awready : out STD_LOGIC;
-    s00_axi_wdata : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    s00_axi_wstrb : in STD_LOGIC_VECTOR ( 3 downto 0 );
-    s00_axi_wvalid : in STD_LOGIC;
-    s00_axi_wready : out STD_LOGIC;
-    s00_axi_bresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
-    s00_axi_bvalid : out STD_LOGIC;
-    s00_axi_bready : in STD_LOGIC;
-    s00_axi_araddr : in STD_LOGIC_VECTOR ( 5 downto 0 );
-    s00_axi_arprot : in STD_LOGIC_VECTOR ( 2 downto 0 );
-    s00_axi_arvalid : in STD_LOGIC;
-    s00_axi_arready : out STD_LOGIC;
-    s00_axi_rdata : out STD_LOGIC_VECTOR ( 31 downto 0 );
-    s00_axi_rresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
-    s00_axi_rvalid : out STD_LOGIC;
-    s00_axi_rready : in STD_LOGIC;
-    s00_axi_aclk : in STD_LOGIC;
-    s00_axi_aresetn : in STD_LOGIC
-  );
-  end component UPzynq20_test_design_IP_AXI_ADC_0_0;
   component UPzynq20_test_design_IP_AXI_Encoder_0_0 is
   port (
     S0 : in STD_LOGIC;
@@ -4916,6 +4880,42 @@ architecture STRUCTURE of UPzynq20_test_design is
     reset_0 : in STD_LOGIC
   );
   end component UPzynq20_test_design_Inverter_3lvl_wrapper_0_1;
+  component UPzynq20_test_design_IP_AXI_ADC_0_0 is
+  port (
+    sclk : out STD_LOGIC;
+    a0 : out STD_LOGIC;
+    not_cs : out STD_LOGIC;
+    data_in_a0 : in STD_LOGIC;
+    data_in_b0 : in STD_LOGIC;
+    data_in_a1 : in STD_LOGIC;
+    data_in_b1 : in STD_LOGIC;
+    data_in_a2 : in STD_LOGIC;
+    data_in_b2 : in STD_LOGIC;
+    data_in_a3 : in STD_LOGIC;
+    data_in_b3 : in STD_LOGIC;
+    s00_axi_awaddr : in STD_LOGIC_VECTOR ( 5 downto 0 );
+    s00_axi_awprot : in STD_LOGIC_VECTOR ( 2 downto 0 );
+    s00_axi_awvalid : in STD_LOGIC;
+    s00_axi_awready : out STD_LOGIC;
+    s00_axi_wdata : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    s00_axi_wstrb : in STD_LOGIC_VECTOR ( 3 downto 0 );
+    s00_axi_wvalid : in STD_LOGIC;
+    s00_axi_wready : out STD_LOGIC;
+    s00_axi_bresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
+    s00_axi_bvalid : out STD_LOGIC;
+    s00_axi_bready : in STD_LOGIC;
+    s00_axi_araddr : in STD_LOGIC_VECTOR ( 5 downto 0 );
+    s00_axi_arprot : in STD_LOGIC_VECTOR ( 2 downto 0 );
+    s00_axi_arvalid : in STD_LOGIC;
+    s00_axi_arready : out STD_LOGIC;
+    s00_axi_rdata : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    s00_axi_rresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
+    s00_axi_rvalid : out STD_LOGIC;
+    s00_axi_rready : in STD_LOGIC;
+    s00_axi_aclk : in STD_LOGIC;
+    s00_axi_aresetn : in STD_LOGIC
+  );
+  end component UPzynq20_test_design_IP_AXI_ADC_0_0;
   signal AckChecker_wrapper_0_AcknowledgeErrorGroup0 : STD_LOGIC_VECTOR ( 15 downto 0 );
   signal AckChecker_wrapper_0_AcknowledgeErrorGroup1 : STD_LOGIC_VECTOR ( 15 downto 0 );
   signal AckChecker_wrapper_0_CurrentErrorGroup0 : STD_LOGIC_VECTOR ( 15 downto 0 );

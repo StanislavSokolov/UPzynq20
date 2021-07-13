@@ -41,14 +41,14 @@
       "axi_gpio_5": "",
       "axi_gpio_6": "",
       "axi_gpio_7": "",
-      "IP_AXI_ADC_0": "",
       "IP_AXI_Encoder_0": "",
       "IP_AXI_PWM_0": "",
       "IP_AXI_OpticalBus_0": "",
       "AckChecker_wrapper_0": "",
       "IP_AXI_LEDS_1": "",
       "IP_AXI_INVERTER_0": "",
-      "Inverter_3lvl_wrapper_0": ""
+      "Inverter_3lvl_wrapper_0": "",
+      "IP_AXI_ADC_0": ""
     },
     "interface_ports": {
       "DDR": {
@@ -2301,12 +2301,6 @@
               "s00_couplers/S_AXI"
             ]
           },
-          "xbar_to_m01_couplers": {
-            "interface_ports": [
-              "xbar/M01_AXI",
-              "m01_couplers/S_AXI"
-            ]
-          },
           "s00_couplers_to_xbar": {
             "interface_ports": [
               "s00_couplers/M_AXI",
@@ -2319,16 +2313,22 @@
               "m00_couplers/M_AXI"
             ]
           },
+          "xbar_to_m00_couplers": {
+            "interface_ports": [
+              "xbar/M00_AXI",
+              "m00_couplers/S_AXI"
+            ]
+          },
           "m01_couplers_to_ps7_0_axi_periph": {
             "interface_ports": [
               "M01_AXI",
               "m01_couplers/M_AXI"
             ]
           },
-          "xbar_to_m00_couplers": {
+          "xbar_to_m01_couplers": {
             "interface_ports": [
-              "xbar/M00_AXI",
-              "m00_couplers/S_AXI"
+              "xbar/M01_AXI",
+              "m01_couplers/S_AXI"
             ]
           },
           "m02_couplers_to_ps7_0_axi_periph": {
@@ -2349,16 +2349,16 @@
               "m03_couplers/M_AXI"
             ]
           },
-          "xbar_to_m03_couplers": {
-            "interface_ports": [
-              "xbar/M03_AXI",
-              "m03_couplers/S_AXI"
-            ]
-          },
           "m04_couplers_to_ps7_0_axi_periph": {
             "interface_ports": [
               "M04_AXI",
               "m04_couplers/M_AXI"
+            ]
+          },
+          "xbar_to_m03_couplers": {
+            "interface_ports": [
+              "xbar/M03_AXI",
+              "m03_couplers/S_AXI"
             ]
           },
           "xbar_to_m04_couplers": {
@@ -2373,16 +2373,16 @@
               "m05_couplers/M_AXI"
             ]
           },
-          "xbar_to_m05_couplers": {
-            "interface_ports": [
-              "xbar/M05_AXI",
-              "m05_couplers/S_AXI"
-            ]
-          },
           "m06_couplers_to_ps7_0_axi_periph": {
             "interface_ports": [
               "M06_AXI",
               "m06_couplers/M_AXI"
+            ]
+          },
+          "xbar_to_m05_couplers": {
+            "interface_ports": [
+              "xbar/M05_AXI",
+              "m05_couplers/S_AXI"
             ]
           },
           "m07_couplers_to_ps7_0_axi_periph": {
@@ -2457,16 +2457,16 @@
               "m12_couplers/M_AXI"
             ]
           },
-          "m13_couplers_to_ps7_0_axi_periph": {
-            "interface_ports": [
-              "M13_AXI",
-              "m13_couplers/M_AXI"
-            ]
-          },
           "xbar_to_m12_couplers": {
             "interface_ports": [
               "xbar/M12_AXI",
               "m12_couplers/S_AXI"
+            ]
+          },
+          "m13_couplers_to_ps7_0_axi_periph": {
+            "interface_ports": [
+              "M13_AXI",
+              "m13_couplers/M_AXI"
             ]
           },
           "m14_couplers_to_ps7_0_axi_periph": {
@@ -2831,10 +2831,6 @@
           }
         }
       },
-      "IP_AXI_ADC_0": {
-        "vlnv": "ssevendenergy.com:user:IP_AXI_ADC:1.0",
-        "xci_name": "UPzynq20_test_design_IP_AXI_ADC_0_0"
-      },
       "IP_AXI_Encoder_0": {
         "vlnv": "ssevendenergy.com:user:IP_AXI_Encoder:1.0",
         "xci_name": "UPzynq20_test_design_IP_AXI_Encoder_0_0"
@@ -2862,6 +2858,10 @@
       "Inverter_3lvl_wrapper_0": {
         "vlnv": "ssevendenergy.com:user:Inverter_3lvl_wrapper:1.0",
         "xci_name": "UPzynq20_test_design_Inverter_3lvl_wrapper_0_1"
+      },
+      "IP_AXI_ADC_0": {
+        "vlnv": "ssevendenergy.com:user:IP_AXI_ADC:1.0",
+        "xci_name": "UPzynq20_test_design_IP_AXI_ADC_0_0"
       }
     },
     "interface_nets": {
@@ -2871,40 +2871,10 @@
           "processing_system7_0/DDR"
         ]
       },
-      "ps7_0_axi_periph_M04_AXI": {
-        "interface_ports": [
-          "ps7_0_axi_periph/M04_AXI",
-          "IP_AXI_LEDS_0/S00_AXI"
-        ]
-      },
-      "ps7_0_axi_periph_M11_AXI": {
-        "interface_ports": [
-          "ps7_0_axi_periph/M11_AXI",
-          "IP_AXI_Encoder_0/S00_AXI"
-        ]
-      },
       "ps7_0_axi_periph_M02_AXI": {
         "interface_ports": [
           "ps7_0_axi_periph/M02_AXI",
           "axi_gpio_2/S_AXI"
-        ]
-      },
-      "axi_gpio_3_GPIO": {
-        "interface_ports": [
-          "gpio_rtl_3",
-          "axi_gpio_3/GPIO"
-        ]
-      },
-      "ps7_0_axi_periph_M05_AXI": {
-        "interface_ports": [
-          "ps7_0_axi_periph/M05_AXI",
-          "IP_AXI_ADC_0/S00_AXI"
-        ]
-      },
-      "axi_gpio_0_GPIO": {
-        "interface_ports": [
-          "gpio_rtl_0",
-          "axi_gpio_0/GPIO"
         ]
       },
       "ps7_0_axi_periph_M13_AXI": {
@@ -2913,16 +2883,16 @@
           "IP_AXI_INVERTER_0/S00_AXI"
         ]
       },
+      "axi_gpio_3_GPIO": {
+        "interface_ports": [
+          "gpio_rtl_3",
+          "axi_gpio_3/GPIO"
+        ]
+      },
       "ps7_0_axi_periph_M07_AXI": {
         "interface_ports": [
           "ps7_0_axi_periph/M07_AXI",
           "axi_gpio_4/S_AXI"
-        ]
-      },
-      "processing_system7_0_M_AXI_GP0": {
-        "interface_ports": [
-          "processing_system7_0/M_AXI_GP0",
-          "ps7_0_axi_periph/S00_AXI"
         ]
       },
       "ps7_0_axi_periph_M09_AXI": {
@@ -2937,22 +2907,34 @@
           "IP_AXI_LEDS_1/S00_AXI"
         ]
       },
+      "axi_gpio_0_GPIO": {
+        "interface_ports": [
+          "gpio_rtl_0",
+          "axi_gpio_0/GPIO"
+        ]
+      },
+      "processing_system7_0_M_AXI_GP0": {
+        "interface_ports": [
+          "processing_system7_0/M_AXI_GP0",
+          "ps7_0_axi_periph/S00_AXI"
+        ]
+      },
       "ps7_0_axi_periph_M01_AXI": {
         "interface_ports": [
           "ps7_0_axi_periph/M01_AXI",
           "axi_gpio_1/S_AXI"
         ]
       },
-      "ps7_0_axi_periph_M06_AXI": {
-        "interface_ports": [
-          "ps7_0_axi_periph/M06_AXI",
-          "IP_AXI_PWM_0/S00_AXI"
-        ]
-      },
       "axi_gpio_2_GPIO": {
         "interface_ports": [
           "gpio_rtl_2",
           "axi_gpio_2/GPIO"
+        ]
+      },
+      "ps7_0_axi_periph_M06_AXI": {
+        "interface_ports": [
+          "ps7_0_axi_periph/M06_AXI",
+          "IP_AXI_PWM_0/S00_AXI"
         ]
       },
       "ps7_0_axi_periph_M08_AXI": {
@@ -2967,22 +2949,40 @@
           "axi_gpio_0/S_AXI"
         ]
       },
+      "ps7_0_axi_periph_M11_AXI": {
+        "interface_ports": [
+          "ps7_0_axi_periph/M11_AXI",
+          "IP_AXI_Encoder_0/S00_AXI"
+        ]
+      },
+      "ps7_0_axi_periph_M04_AXI": {
+        "interface_ports": [
+          "ps7_0_axi_periph/M04_AXI",
+          "IP_AXI_LEDS_0/S00_AXI"
+        ]
+      },
+      "ps7_0_axi_periph_M05_AXI": {
+        "interface_ports": [
+          "ps7_0_axi_periph/M05_AXI",
+          "IP_AXI_ADC_0/S00_AXI"
+        ]
+      },
       "ps7_0_axi_periph_M10_AXI": {
         "interface_ports": [
           "ps7_0_axi_periph/M10_AXI",
           "axi_gpio_7/S_AXI"
         ]
       },
-      "processing_system7_0_FIXED_IO": {
-        "interface_ports": [
-          "FIXED_IO",
-          "processing_system7_0/FIXED_IO"
-        ]
-      },
       "ps7_0_axi_periph_M12_AXI": {
         "interface_ports": [
           "ps7_0_axi_periph/M12_AXI",
           "IP_AXI_OpticalBus_0/S00_AXI"
+        ]
+      },
+      "processing_system7_0_FIXED_IO": {
+        "interface_ports": [
+          "FIXED_IO",
+          "processing_system7_0/FIXED_IO"
         ]
       },
       "ps7_0_axi_periph_M03_AXI": {
@@ -3021,7 +3021,6 @@
           "axi_gpio_7/s_axi_aclk",
           "ps7_0_axi_periph/M10_ACLK",
           "ps7_0_axi_periph/M11_ACLK",
-          "IP_AXI_ADC_0/s00_axi_aclk",
           "IP_AXI_Encoder_0/s00_axi_aclk",
           "IP_AXI_PWM_0/s00_axi_aclk",
           "ps7_0_axi_periph/M12_ACLK",
@@ -3031,7 +3030,8 @@
           "IP_AXI_LEDS_1/s00_axi_aclk",
           "ps7_0_axi_periph/M14_ACLK",
           "IP_AXI_INVERTER_0/s00_axi_aclk",
-          "Inverter_3lvl_wrapper_0/externalCLK_0"
+          "Inverter_3lvl_wrapper_0/externalCLK_0",
+          "IP_AXI_ADC_0/s00_axi_aclk"
         ]
       },
       "processing_system7_0_FCLK_RESET0_N": {
@@ -3065,7 +3065,6 @@
           "axi_gpio_7/s_axi_aresetn",
           "ps7_0_axi_periph/M10_ARESETN",
           "ps7_0_axi_periph/M11_ARESETN",
-          "IP_AXI_ADC_0/s00_axi_aresetn",
           "IP_AXI_Encoder_0/s00_axi_aresetn",
           "IP_AXI_PWM_0/s00_axi_aresetn",
           "ps7_0_axi_periph/M12_ARESETN",
@@ -3073,7 +3072,8 @@
           "ps7_0_axi_periph/M13_ARESETN",
           "IP_AXI_LEDS_1/s00_axi_aresetn",
           "ps7_0_axi_periph/M14_ARESETN",
-          "IP_AXI_INVERTER_0/s00_axi_aresetn"
+          "IP_AXI_INVERTER_0/s00_axi_aresetn",
+          "IP_AXI_ADC_0/s00_axi_aresetn"
         ]
       },
       "IP_AXI_LEDS_0_LEDS": {

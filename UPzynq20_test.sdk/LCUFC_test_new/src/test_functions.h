@@ -14,11 +14,11 @@
 
 
 void initial_action(int action);
-void read_in(u32 * DataRead);
-void write_out(u32 DataWrite);
-void read_in_all();
+void read_in_SET12(u32 * DataRead);
+void write_out_SET12(u32 DataWrite);
+void read_in_all_SET12();
 int exit_programm();
-void update_from_terminal_all(u8 buffer);
+void update_from_terminal_all_SET12(u8 buffer);
 void control_from_MPU();
 
 u32 AXI_BUS_READ(u32 BASEADDR, u32 Channel);

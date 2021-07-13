@@ -47,7 +47,7 @@
 -- DO NOT MODIFY THIS FILE.
 
 -- IP VLNV: ssevendenergy.com:user:IP_AXI_ADC:1.0
--- IP Revision: 13
+-- IP Revision: 15
 
 LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;

@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;LCUFC_test_new/src/module_uart.c&apos; to &apos;module_uart_SET12.c&apos;" description="Rename resource &apos;module_uart.c&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/module_uart.c" name="module_uart_SET12.c" stamp="1626168528615" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;LCUFC_test_new/src/module_uart.h&apos; to &apos;module_uart_SET12.h&apos;" description="Rename resource &apos;module_uart.h&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/module_uart.h" name="module_uart_SET12.h" stamp="1626168536234" updateReferences="true"/>
+</session>

@@ -15,6 +15,7 @@ int initialization_of_MIO();
 void SetOutputEnablePinPSGPIO(int pin, int data);
 void SetDirectionPinPSGPIO(int pin, int data);
 void WritePinPSGPIO (int pin, int data);
+u32 ReadPinPSGPIO (int pin);
 
 
 

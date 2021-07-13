@@ -36,6 +36,10 @@ void WritePinPSGPIO (int pin, int data){
 	XGpioPs_WritePin(&Gpio, pin, data);
 }
 
+u32 ReadPinPSGPIO (int pin){
+	return XGpioPs_ReadPin(&Gpio, pin);
+}
+
 
 
 

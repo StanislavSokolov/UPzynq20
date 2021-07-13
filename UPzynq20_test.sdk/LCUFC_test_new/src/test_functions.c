@@ -6,8 +6,9 @@
  */
 #include "xgpio.h"
 #include "test_functions.h"
+
+#include "module_uart_SET12.h"
 #include "project_parameters.h"
-#include "module_uart.h"
 
 void initial_action(int action) {
 	volatile int Delay;
@@ -32,22 +33,22 @@ void initial_action(int action) {
 
 }
 
-void read_in(u32 * DataRead){
+void read_in_SET12(u32 * DataRead){
 	u32 Data = XGpio_DiscreteRead(&Gpio_7, 1);
 	* DataRead = Data;
 }
 
-void write_out(u32 DataWrite){
+void write_out_SET12(u32 DataWrite){
 	XGpio_DiscreteWrite(&Gpio_4, LED_CHANNEL, DataWrite);
 }
 
 
 
-void read_in_all(){
-	bild_send_buffer(16, XGpio_DiscreteRead(&Gpio_6, 1));
-	bild_send_buffer(18, XGpio_DiscreteRead(&Gpio_7, 1));
-	bild_send_buffer(22, XGpio_DiscreteRead(&Gpio_2, 1));
-	bild_send_buffer(24, XGpio_DiscreteRead(&Gpio_3, 1));
+void read_in_all_SET12(){
+	bild_send_buffer_SET12(16, XGpio_DiscreteRead(&Gpio_6, 1));
+	bild_send_buffer_SET12(18, XGpio_DiscreteRead(&Gpio_7, 1));
+	bild_send_buffer_SET12(22, XGpio_DiscreteRead(&Gpio_2, 1));
+	bild_send_buffer_SET12(24, XGpio_DiscreteRead(&Gpio_3, 1));
 
 }
 
@@ -55,12 +56,12 @@ void read_in_all(){
 
 
 
-void update_from_terminal_all(u8 buffer){
-	XGpio_DiscreteWrite(&Gpio_4, LED_CHANNEL, 65535-update_from_terminal(16));
-	XGpio_DiscreteWrite(&Gpio_5, LED_CHANNEL, 65535-update_from_terminal(18));
+void update_from_terminal_all_SET12(u8 buffer){
+	XGpio_DiscreteWrite(&Gpio_4, LED_CHANNEL, 65535-update_from_terminal_SET12(16));
+	XGpio_DiscreteWrite(&Gpio_5, LED_CHANNEL, 65535-update_from_terminal_SET12(18));
 
-	XGpio_DiscreteWrite(&Gpio_0, LED_CHANNEL, 65535-update_from_terminal(26));
-	XGpio_DiscreteWrite(&Gpio_1, LED_CHANNEL, 65535-update_from_terminal(28));
+	XGpio_DiscreteWrite(&Gpio_0, LED_CHANNEL, 65535-update_from_terminal_SET12(26));
+	XGpio_DiscreteWrite(&Gpio_1, LED_CHANNEL, 65535-update_from_terminal_SET12(28));
 
 }
 
@@ -82,7 +83,7 @@ void control_from_MPU(){
 		}
 	}
 	else count = 0;
-	bild_send_buffer(114, value);
+	bild_send_buffer_SET12(114, value);
 
 
 }
