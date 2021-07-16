@@ -9,3 +9,6 @@ unsigned char GetCRC8_Dallas1_WireReverse(unsigned char *DataArrIn, unsigned int
 unsigned char GetCRC8_Dallas1_Wire(unsigned char *DataArrIn, unsigned int DataLength);
 
 #endif
+
+
+

@@ -28,15 +28,18 @@
  * The following constant controls the length of the buffers to be sent
  * and received with the UART,
  */
-#define TEST_BUFFER_SIZE_RS485	8
+#define TEST_BUFFER_SIZE_RS485	210
 //#define XUARTPS_DFT_BAUDRATE_RS485  115200U   /* Default baud rate */
 #define XUARTPS_DFT_BAUDRATE_RS485  57600U   /* Default baud rate */
 //int bit_RS485 = 0;
 
 int function_test_CountInt_RS485();
 
+
+
 void bild_send_buffer_RS485(u32 address, u32 data);
 u32 update_from_terminal_RS485(u32 address);
+//unsigned int terminal_uart_send_RS485();
 void terminal_uart_send_RS485();
 u32 terminal_uart_recv_RS485();
 void initialization_of_UART_RS485();

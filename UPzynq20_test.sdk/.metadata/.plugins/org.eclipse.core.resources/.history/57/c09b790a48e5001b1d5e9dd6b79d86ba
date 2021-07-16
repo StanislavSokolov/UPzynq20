@@ -1,0 +1,12 @@
+#ifndef _CRC_FUNCTIONS_H
+#define _CRC_FUNCTIONS_H
+
+typedef unsigned short WORD;
+
+
+
+//unsigned int GetCRC16_B(unsigned int crc,unsigned int *buf,unsigned long size);
+//unsigned char GetCRC8_Dallas1_WireReverse(unsigned char *DataArrIn, unsigned int DataLength);
+//unsigned char GetCRC8_Dallas1_Wire(unsigned char *DataArrIn, unsigned int DataLength);
+
+#endif

@@ -17,6 +17,8 @@ void initial_action(int action);
 void read_in_SET12(u32 * DataRead);
 void write_out_SET12(u32 DataWrite);
 void read_in_all_SET12();
+void read_in_all_RS485();
+void write_multiple_coils(int part);
 int exit_programm();
 void update_from_terminal_all_SET12(u8 buffer);
 void control_from_MPU();

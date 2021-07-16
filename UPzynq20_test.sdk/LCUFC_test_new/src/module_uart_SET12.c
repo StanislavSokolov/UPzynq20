@@ -255,7 +255,7 @@ int UartPsIntrExample_SET12(INTC_SET12 *IntcInstPtr, XUartPs *UartInstPtr,
 
 
 	/* Set the UART in Normal Mode */
-	XUartPs_SetOperMode(UartInstPtr, XUARTPS_OPER_MODE_NORMAL);
+//	XUartPs_SetOperMode(UartInstPtr, XUARTPS_OPER_MODE_NORMAL);
 
 
 	/* If any bytes were not correct, return an error */

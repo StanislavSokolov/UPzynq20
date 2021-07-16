@@ -1,11 +1,11 @@
 #ifndef SRC_MODULE_UART_SET12_H_
 #define SRC_MODULE_UART_SET12_H_
-//
-//#ifdef XPAR_INTC_0_DEVICE_ID
-//#include "xintc.h"
-//#else
+
+#ifdef XPAR_INTC_0_DEVICE_ID
+#include "xintc.h"
+#else
 #include "xscugic.h"
-//#endif
+#endif
 ///************************** Constant Definitions **************************/
 
 /*
@@ -13,17 +13,17 @@
  * xparameters.h file. They are defined here such that a user can easily
  * change all the needed parameters in one place.
  */
-//#ifdef XPAR_INTC_0_DEVICE_ID
-//#define INTC		XIntc
-//#define UART_DEVICE_ID		XPAR_XUARTPS_0_DEVICE_ID
-//#define INTC_DEVICE_ID		XPAR_INTC_0_DEVICE_ID
-//#define UART_INT_IRQ_ID		XPAR_INTC_0_UARTPS_0_VEC_ID
-//#else
-#define INTC_SET12		XScuGic
+#ifdef XPAR_INTC_0_DEVICE_ID
+#define INTC_SET12					XIntc
+#define UART_DEVICE_ID_SET12		XPAR_XUARTPS_0_DEVICE_ID
+#define INTC_DEVICE_ID_SET12		XPAR_INTC_0_DEVICE_ID
+#define UART_INT_IRQ_ID_SET12		XPAR_INTC_0_UARTPS_0_VEC_ID
+#else
+#define INTC_SET12					XScuGic
 #define UART_DEVICE_ID_SET12		XPAR_XUARTPS_0_DEVICE_ID
 #define INTC_DEVICE_ID_SET12		XPAR_SCUGIC_SINGLE_DEVICE_ID
 #define UART_INT_IRQ_ID_SET12		XPAR_XUARTPS_0_INTR
-//#endif
+#endif
 /*
  * The following constant controls the length of the buffers to be sent
  * and received with the UART,

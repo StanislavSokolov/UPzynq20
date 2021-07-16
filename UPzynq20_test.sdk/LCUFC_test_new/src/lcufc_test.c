@@ -78,6 +78,7 @@ int Channel_2 = 0;					// счетчик регистров ШИМ
 int Channel_3 = 5;					// счетчик регистров ШИМ
 u32 PWM = 0;
 int j = 4;
+int count_RS485 = 0;
 u32 DataBuf;
 u32 DataBufPrev;
 
@@ -98,7 +99,7 @@ int main(void) {
 	SetDirectionPinPSGPIO(0, 1);			// Выбираем направление MIO0
 	SetDirectionPinPSGPIO(7, 1);			// Выбираем направление MIO7
 	SetDirectionPinPSGPIO(15, 1);			// Выбираем направление MIO15
-
+//
 	SetDirectionPinPSGPIO(46, 0);			// Выбираем направление MIO46
 	SetDirectionPinPSGPIO(47, 0);			// Выбираем направление MIO47
 	SetDirectionPinPSGPIO(48, 0);			// Выбираем направление MIO48
@@ -106,11 +107,11 @@ int main(void) {
 
 	initialization_of_UART_SET12(); 				// инициализируем UART
 	initialization_of_UART_RS485(); 		// инициализируем UART-RS485
-//	WritePinPSGPIO (15, 1);
+	WritePinPSGPIO (15, 1);
 
 	while (1) {
 
-		if (Count < 10000000) {
+		if (Count < 100000000) {
 			Count++;
 		} else {
 			if (latch) {
@@ -120,6 +121,7 @@ int main(void) {
 				//inverting_the_signal_count_transmitter();
 				WritePinPSGPIO (0, 1);
 				WritePinPSGPIO (7, 0);
+//				bild_send_buffer_RS485(4, 65280);
 			} else {
 				Xil_Out32(XPAR_IP_AXI_LEDS_0_S00_AXI_BASEADDR, 0x00000001);
 				latch = 1;
@@ -128,16 +130,17 @@ int main(void) {
 //				XGpioPs_WritePin(&gpio_instance, 0, 0);
 				WritePinPSGPIO (0, 0);
 				WritePinPSGPIO (7, 1);
+//				bild_send_buffer_RS485(4, 0);
 			}
 
 			WritePinPSGPIO(15, 1);
 
-			bild_send_buffer_SET12(144, ReadPinPSGPIO(46));
-			bild_send_buffer_SET12(146, ReadPinPSGPIO(47));
-			bild_send_buffer_SET12(148, ReadPinPSGPIO(48));
-//			bild_send_buffer_SET12(150, ReadPinPSGPIO(49));
+//			bild_send_buffer_SET12(144, ReadPinPSGPIO(46));
+//			bild_send_buffer_SET12(146, ReadPinPSGPIO(47));
+//			bild_send_buffer_SET12(148, ReadPinPSGPIO(48));
+////			bild_send_buffer_SET12(150, ReadPinPSGPIO(49));
 
-			bild_send_buffer_SET12(150, function_test_CountInt_RS485());
+//			bild_send_buffer_SET12(150, function_test_CountInt_RS485());
 
 
 			Count = 0;
@@ -281,22 +284,45 @@ int main(void) {
 //			}
 //			DataBufPrev = DataBuf;
 
-			terminal_uart_send_RS485();
+//			bild_send_buffer_RS485(0, 517);
+//			bild_send_buffer_RS485(2, 544);
+
+			if (count_RS485 < 5) {
+				write_multiple_coils(count_RS485);
+				terminal_uart_send_RS485();
+				count_RS485++;
+			} else {
+				write_multiple_coils(count_RS485);
+				terminal_uart_send_RS485();
+								count_RS485 = 0;
+			}
+
+
 
 
 			if (latch_start==0) bild_send_buffer_SET12(TEST_BUFFER_SIZE_SET12-3, 1); else bild_send_buffer_SET12(TEST_BUFFER_SIZE_SET12-3, 0);
 			latch_start = 1;
 			terminal_uart_send_SET12();
 
-
+			WritePinPSGPIO(15, 0);
 
 			terminal_uart_recv_SET12();
 			update_from_terminal_all_SET12(TEST_BUFFER_SIZE_SET12);
 
+//			bild_send_buffer_SET12(144, terminal_uart_send_RS485());
+
+			/////
+
+//			bild_send_buffer_SET12(144, update_from_terminal_RS485(0));
+//			bild_send_buffer_SET12(146, update_from_terminal_RS485(1));
+//			bild_send_buffer_SET12(148, update_from_terminal_RS485(2));
+//			bild_send_buffer_SET12(150, update_from_terminal_RS485(3));
+//			bild_send_buffer_SET12(152, update_from_terminal_RS485(4));
+//			bild_send_buffer_SET12(154, update_from_terminal_RS485(5));
+//			bild_send_buffer_SET12(156, update_from_terminal_RS485(6));
+//			bild_send_buffer_SET12(158, update_from_terminal_RS485(7));
 
 
-
-			WritePinPSGPIO(15, 0);
 
 //			terminal_uart_recv_RS485();
 
