@@ -9,6 +9,7 @@
 #include "module_uart_RS485.h"
 //#include "test_functions.h"
 #include "CRC_Functions.h"
+#include "current_system_status.h"
 
 
 
@@ -49,17 +50,83 @@ volatile int TotalSentCount_RS485;
 int TotalErrorCount_RS485;
 int bit_RS485 = 0;
 unsigned int crc_RS485;
-unsigned int SendBuffer_RS485_ToCRC[TEST_BUFFER_SIZE_RS485/2-1];
+
+int mode_RS485 = 0;
+int percentages_RS485 = 0;
+
+
+
+void load_function_RS485(int mode, int percentages){
+	mode_RS485 = mode;
+	percentages_RS485 = percentages;
+}
+
+void preparing_message_RS485(u32 device_address, u32 number_function, u32 number_register, u32 number_elements_to_change, u32 number_bytes_transmitted){
+	SendBuffer_RS485[0] = device_address;
+	SendBuffer_RS485[1] = number_function;
+
+	bild_send_buffer_RS485(2, number_register);
+	bild_send_buffer_RS485(4, number_elements_to_change);
+
+	SendBuffer_RS485[6] = number_bytes_transmitted;
+
+	if (number_function == 15) {
+		bild_send_buffer_RS485(7, array_current_status_get(number_register));
+	}
+
+	if (number_function == 16) {
+//		for (int i=7; i<number_elements_to_change+7; i=i+2){
+//			bild_send_buffer_RS485(i, 0);
+//		}
+	}
+
+//	int group = number_register/200;
+//
+//	switch (group){
+//		case 0:
+//			break;
+//		case 1:
+//			break;
+//		case 2:
+//			for (int i=7; i<number_elements_to_change+7; i=i+2){
+//				bild_send_buffer_RS485(i, 0);
+//			}
+//			break;
+//		case 3:
+//			break;
+//		default:
+//			break;
+//	}
+
+//	bild_send_buffer_RS485(7, 65280);
+
+//	if (mode_RS485) {
+//		bild_send_buffer_RS485(7, 65280);
+//	} else {
+//		bild_send_buffer_RS485(7, 0);
+//	}
+
+//	bild_send_buffer_RS485(7, mode_RS485);
+
+//	bild_send_buffer_RS485(181, percentages_RS485);
+//	bild_send_buffer_RS485(9, 0);
+
+
+	terminal_uart_send_RS485(number_bytes_transmitted+7);
+
+
+
+}
 
 int function_test_CountInt_RS485(){
 	return TotalReceivedCount_RS485;
 }
 
 void bild_send_buffer_RS485(u32 address, u32 data){
-	SendBuffer_RS485_ToCRC[address] = data;
+//	SendBuffer_RS485_ToCRC[address] = data;
 	u32 high_bits = data/256;
-	SendBuffer_RS485[address*2+1] = data - high_bits*256;
-	SendBuffer_RS485[address*2] = high_bits;
+	SendBuffer_RS485[address+1] = data - high_bits*256;
+	SendBuffer_RS485[address] = high_bits;
 }
 
 u32 update_from_terminal_RS485(u32 address){
@@ -67,15 +134,15 @@ u32 update_from_terminal_RS485(u32 address){
 	return RecvBuffer_RS485[address];
 }
 
-void terminal_uart_send_RS485() {
+void terminal_uart_send_RS485(int count_byte) {
 
 		crc_RS485 = 0xffff;
-		crc_RS485 = GetCRC16_B(crc_RS485, SendBuffer_RS485_ToCRC, 101);
+		crc_RS485 = GetCRC16_B_byte(crc_RS485, SendBuffer_RS485, count_byte);
 		u32 high_bits = crc_RS485/256;
-		SendBuffer_RS485[TEST_BUFFER_SIZE_RS485-1] = high_bits;
-		SendBuffer_RS485[TEST_BUFFER_SIZE_RS485-2] = crc_RS485 - high_bits*256;
+		SendBuffer_RS485[count_byte+1] = high_bits;
+		SendBuffer_RS485[count_byte] = crc_RS485 - high_bits*256;
 
-		XUartPs_Send(&UartPs_RS485, SendBuffer_RS485, TEST_BUFFER_SIZE_RS485);
+		XUartPs_Send(&UartPs_RS485, SendBuffer_RS485, count_byte+2);
 
 		while(UartPs_RS485.SendBuffer.RemainingBytes!=0)
 			     {

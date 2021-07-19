@@ -1,4 +1,7 @@
 #include "CRC_Functions.h"
+#include "xstatus.h"
+#include "xuartps.h"
+#include "xil_io.h"
 #pragma DATA_SECTION(crc_16_tab, ".slow_vars")
 WORD crc_16_tab[] = {
  0x0000, 0xc0c1, 0xc181, 0x0140, 0xc301, 0x03c0, 0x0280, 0xc241,
@@ -109,6 +112,45 @@ unsigned long i;
 		{
 			byte = (dword & 0xFF);
 		}
+
+        crc = (crc >> 8) ^ crc_16_tab[ (crc ^ (byte) ) & 0xff ];
+        crc = crc & 0xffff;
+
+//		crc = crc + ((byte) & 0xff);
+
+	}
+
+ return (crc & 0xffff);
+}
+
+
+unsigned int GetCRC16_B_byte(unsigned int crc, u8 *buf,unsigned long size )
+{
+
+unsigned int byte;
+unsigned long i;
+
+
+
+	for (i = 0; i < size; i++)
+	{
+//		x = i % 2;
+//
+//		dword = buf[i/2];
+////		dword = *buf;
+//
+//
+//		if (x == 0)
+//		{
+//			byte = ((dword >> 8)&0xFF);
+//		}
+//
+//		if (x == 1)
+//		{
+//			byte = (dword & 0xFF);
+//		}
+
+		byte = (buf[i] & 0xFF);
 
         crc = (crc >> 8) ^ crc_16_tab[ (crc ^ (byte) ) & 0xff ];
         crc = crc & 0xffff;

@@ -70,8 +70,11 @@
 #include "module_uart_RS485.h"
 #include "module_uart_SET12.h"
 #include "test_functions_PS_MIO.h"
+#include "current_system_status.h"
 
 int Count;						// общий счеткчик
+int Count_Div;						// общий счеткчик
+int Count_Div2;
 int Channel_0;					// счетчик аналоговых сигналов для каналов 0-15
 int Channel_1;					// счетчик аналоговых сигналов для каналов 16-31
 int Channel_2 = 0;					// счетчик регистров ШИМ
@@ -89,6 +92,8 @@ u32 DataErrWarnInfo = 0;
 
 int latch = 0;
 int latch_start = 0;
+
+int i = 0;
 
 int main(void) {
 
@@ -109,9 +114,16 @@ int main(void) {
 	initialization_of_UART_RS485(); 		// инициализируем UART-RS485
 	WritePinPSGPIO (15, 1);
 
+
+	array_current_status_set(544, 0);
+//
+//	array_current_status_set(544, 1);
+
+	preparing_message_RS485(2, 15, 544, 1, 2);
+
 	while (1) {
 
-		if (Count < 100000000) {
+		if (Count < 50000000) {
 			Count++;
 		} else {
 			if (latch) {
@@ -287,15 +299,31 @@ int main(void) {
 //			bild_send_buffer_RS485(0, 517);
 //			bild_send_buffer_RS485(2, 544);
 
-			if (count_RS485 < 5) {
-				write_multiple_coils(count_RS485);
-				terminal_uart_send_RS485();
-				count_RS485++;
+//			if (count_RS485 < 5) {
+//				write_multiple_coils(count_RS485);
+//				terminal_uart_send_RS485();
+//				count_RS485++;
+//			} else {
+//				write_multiple_coils(count_RS485);
+//				terminal_uart_send_RS485();
+//								count_RS485 = 0;
+//			}
+
+
+
+			if (Count_Div2 < 11) {
+				bild_send_buffer_RS485(181, Count_Div2);
+				preparing_message_RS485(2, 16, 1, 100, 200);
+				Count_Div2++;
+				array_current_status_set(544, 0);
 			} else {
-				write_multiple_coils(count_RS485);
-				terminal_uart_send_RS485();
-								count_RS485 = 0;
+				Count_Div2=0;
+				array_current_status_set(544, 1);
+				preparing_message_RS485(2, 15, 544, 1, 2);
 			}
+
+
+
 
 
 
