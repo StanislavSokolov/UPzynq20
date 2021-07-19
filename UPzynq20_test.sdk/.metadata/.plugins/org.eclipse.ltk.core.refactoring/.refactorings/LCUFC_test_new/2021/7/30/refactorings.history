@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;LCUFC_test_new/src/current_system_status.с&apos; to &apos;current_system_status.c&apos;" description="Rename resource &apos;current_system_status.с&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/current_system_status.с" name="current_system_status.c" stamp="1626692088994" updateReferences="true"/>
+</session>
