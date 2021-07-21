@@ -1,7 +1,7 @@
 --Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
---Date        : Wed Jul  7 17:13:41 2021
+--Date        : Wed Jul 21 14:01:51 2021
 --Host        : STAS-W10 running 64-bit major release  (build 9200)
 --Command     : generate_target UPzynq20_test_design.bd
 --Design      : UPzynq20_test_design
@@ -4343,7 +4343,7 @@ entity UPzynq20_test_design is
     gpio_rtl_3_tri_i : in STD_LOGIC_VECTOR ( 15 downto 0 )
   );
   attribute CORE_GENERATION_INFO : string;
-  attribute CORE_GENERATION_INFO of UPzynq20_test_design : entity is "UPzynq20_test_design,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=UPzynq20_test_design,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=38,numReposBlks=21,numNonXlnxBlks=9,numHierBlks=17,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=22,da_board_cnt=15,da_clkrst_cnt=1,da_ps7_cnt=2,synth_mode=Global}";
+  attribute CORE_GENERATION_INFO of UPzynq20_test_design : entity is "UPzynq20_test_design,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=UPzynq20_test_design,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=38,numReposBlks=21,numNonXlnxBlks=9,numHierBlks=17,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=23,da_board_cnt=15,da_clkrst_cnt=1,da_ps7_cnt=2,synth_mode=Global}";
   attribute HW_HANDOFF : string;
   attribute HW_HANDOFF of UPzynq20_test_design : entity is "UPzynq20_test_design.hwdef";
 end UPzynq20_test_design;
@@ -4880,11 +4880,12 @@ architecture STRUCTURE of UPzynq20_test_design is
     reset_0 : in STD_LOGIC
   );
   end component UPzynq20_test_design_Inverter_3lvl_wrapper_0_1;
-  component UPzynq20_test_design_IP_AXI_ADC_0_0 is
+  component UPzynq20_test_design_IP_AXI_ADC_0_1 is
   port (
     sclk : out STD_LOGIC;
     a0 : out STD_LOGIC;
     not_cs : out STD_LOGIC;
+    hardware_protection : out STD_LOGIC;
     data_in_a0 : in STD_LOGIC;
     data_in_b0 : in STD_LOGIC;
     data_in_a1 : in STD_LOGIC;
@@ -4893,7 +4894,7 @@ architecture STRUCTURE of UPzynq20_test_design is
     data_in_b2 : in STD_LOGIC;
     data_in_a3 : in STD_LOGIC;
     data_in_b3 : in STD_LOGIC;
-    s00_axi_awaddr : in STD_LOGIC_VECTOR ( 5 downto 0 );
+    s00_axi_awaddr : in STD_LOGIC_VECTOR ( 6 downto 0 );
     s00_axi_awprot : in STD_LOGIC_VECTOR ( 2 downto 0 );
     s00_axi_awvalid : in STD_LOGIC;
     s00_axi_awready : out STD_LOGIC;
@@ -4904,7 +4905,7 @@ architecture STRUCTURE of UPzynq20_test_design is
     s00_axi_bresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
     s00_axi_bvalid : out STD_LOGIC;
     s00_axi_bready : in STD_LOGIC;
-    s00_axi_araddr : in STD_LOGIC_VECTOR ( 5 downto 0 );
+    s00_axi_araddr : in STD_LOGIC_VECTOR ( 6 downto 0 );
     s00_axi_arprot : in STD_LOGIC_VECTOR ( 2 downto 0 );
     s00_axi_arvalid : in STD_LOGIC;
     s00_axi_arready : out STD_LOGIC;
@@ -4915,7 +4916,7 @@ architecture STRUCTURE of UPzynq20_test_design is
     s00_axi_aclk : in STD_LOGIC;
     s00_axi_aresetn : in STD_LOGIC
   );
-  end component UPzynq20_test_design_IP_AXI_ADC_0_0;
+  end component UPzynq20_test_design_IP_AXI_ADC_0_1;
   signal AckChecker_wrapper_0_AcknowledgeErrorGroup0 : STD_LOGIC_VECTOR ( 15 downto 0 );
   signal AckChecker_wrapper_0_AcknowledgeErrorGroup1 : STD_LOGIC_VECTOR ( 15 downto 0 );
   signal AckChecker_wrapper_0_CurrentErrorGroup0 : STD_LOGIC_VECTOR ( 15 downto 0 );
@@ -5305,6 +5306,7 @@ architecture STRUCTURE of UPzynq20_test_design is
   signal ps7_0_axi_periph_M14_AXI_WVALID : STD_LOGIC;
   signal rst_ps7_0_50M_interconnect_aresetn : STD_LOGIC_VECTOR ( 0 to 0 );
   signal rst_ps7_0_50M_peripheral_aresetn : STD_LOGIC_VECTOR ( 0 to 0 );
+  signal NLW_IP_AXI_ADC_0_hardware_protection_UNCONNECTED : STD_LOGIC;
   signal NLW_IP_AXI_INVERTER_0_AcknowledgeProtectionEnableGroup2_UNCONNECTED : STD_LOGIC_VECTOR ( 15 downto 0 );
   signal NLW_IP_AXI_INVERTER_0_AcknowledgeTimeGroup1_UNCONNECTED : STD_LOGIC_VECTOR ( 31 downto 0 );
   signal NLW_IP_AXI_INVERTER_0_CurrentProtectionEnableGroup2_UNCONNECTED : STD_LOGIC_VECTOR ( 15 downto 0 );
@@ -5421,7 +5423,7 @@ AckChecker_wrapper_0: component UPzynq20_test_design_AckChecker_wrapper_0_0
       ackTime_0(31 downto 0) => IP_AXI_INVERTER_0_AcknowledgeTimeGroup0(31 downto 0),
       reset_0 => IP_AXI_INVERTER_0_Reset
     );
-IP_AXI_ADC_0: component UPzynq20_test_design_IP_AXI_ADC_0_0
+IP_AXI_ADC_0: component UPzynq20_test_design_IP_AXI_ADC_0_1
      port map (
       a0 => IP_AXI_ADC_0_a0,
       data_in_a0 => Data_in_a0_1,
@@ -5432,14 +5434,15 @@ IP_AXI_ADC_0: component UPzynq20_test_design_IP_AXI_ADC_0_0
       data_in_b1 => Data_in_b1_1,
       data_in_b2 => Data_in_b2_1,
       data_in_b3 => Data_in_b3_1,
+      hardware_protection => NLW_IP_AXI_ADC_0_hardware_protection_UNCONNECTED,
       not_cs => IP_AXI_ADC_0_not_cs,
       s00_axi_aclk => processing_system7_0_FCLK_CLK0,
-      s00_axi_araddr(5 downto 0) => ps7_0_axi_periph_M05_AXI_ARADDR(5 downto 0),
+      s00_axi_araddr(6 downto 0) => ps7_0_axi_periph_M05_AXI_ARADDR(6 downto 0),
       s00_axi_aresetn => rst_ps7_0_50M_peripheral_aresetn(0),
       s00_axi_arprot(2 downto 0) => ps7_0_axi_periph_M05_AXI_ARPROT(2 downto 0),
       s00_axi_arready => ps7_0_axi_periph_M05_AXI_ARREADY,
       s00_axi_arvalid => ps7_0_axi_periph_M05_AXI_ARVALID,
-      s00_axi_awaddr(5 downto 0) => ps7_0_axi_periph_M05_AXI_AWADDR(5 downto 0),
+      s00_axi_awaddr(6 downto 0) => ps7_0_axi_periph_M05_AXI_AWADDR(6 downto 0),
       s00_axi_awprot(2 downto 0) => ps7_0_axi_periph_M05_AXI_AWPROT(2 downto 0),
       s00_axi_awready => ps7_0_axi_periph_M05_AXI_AWREADY,
       s00_axi_awvalid => ps7_0_axi_periph_M05_AXI_AWVALID,

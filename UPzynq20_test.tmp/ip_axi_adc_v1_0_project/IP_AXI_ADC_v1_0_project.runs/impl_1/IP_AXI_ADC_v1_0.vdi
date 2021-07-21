@@ -1,0 +1,823 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Wed Jul 21 09:57:51 2021
+# Process ID: 10252
+# Current directory: d:/GITEA/UPzynq20_test/UPzynq20_test.tmp/ip_axi_adc_v1_0_project/IP_AXI_ADC_v1_0_project.runs/impl_1
+# Command line: vivado.exe -log IP_AXI_ADC_v1_0.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source IP_AXI_ADC_v1_0.tcl -notrace
+# Log file: d:/GITEA/UPzynq20_test/UPzynq20_test.tmp/ip_axi_adc_v1_0_project/IP_AXI_ADC_v1_0_project.runs/impl_1/IP_AXI_ADC_v1_0.vdi
+# Journal file: d:/GITEA/UPzynq20_test/UPzynq20_test.tmp/ip_axi_adc_v1_0_project/IP_AXI_ADC_v1_0_project.runs/impl_1\vivado.jou
+#-----------------------------------------------------------
+source IP_AXI_ADC_v1_0.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/GITEA/UPzynq20_test/IP'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Xilinx/Vivado/2019.1/data/ip'.
+WARNING: [IP_Flow 19-4995] The host OS only allows 260 characters in a normal path. The IP cache path is more than 80 characters. If you experience issues with IP caching, please consider changing the IP cache to a location with a shorter path. Alternately consider using the OS subst command to map part of the path to a drive letter. 
+Current IP cache path is d:/gitea/upzynq20_test/upzynq20_test.tmp/ip_axi_adc_v1_0_project/IP_AXI_ADC_v1_0_project.cache/ip 
+Command: link_design -top IP_AXI_ADC_v1_0 -part xc7z020clg484-3
+Design is defaulting to srcset: sources_1
+Design is defaulting to constrset: constrs_1
+INFO: [Device 21-403] Loading part xc7z020clg484-3
+INFO: [Netlist 29-17] Analyzing 176 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+WARNING: [Netlist 29-101] Netlist 'IP_AXI_ADC_v1_0' is not ideal for floorplanning, since the cellview 'IP_AXI_ADC_v1_0_S00_AXI' contains a large number of primitives.  Please consider enabling hierarchy in synthesis if you want to do floorplanning.
+INFO: [Project 1-479] Netlist was created with Vivado 2019.1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 748.938 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+9 Infos, 2 Warnings, 0 Critical Warnings and 0 Errors encountered.
+link_design completed successfully
+link_design: Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 777.781 ; gain = 395.598
+Command: opt_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7z020'
+Running DRC as a precondition to command opt_design
+
+Starting DRC Task
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Project 1-461] DRC finished with 0 Errors
+INFO: [Project 1-462] Please refer to the DRC report (report_drc) for more information.
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.581 . Memory (MB): peak = 801.055 ; gain = 23.273
+
+Starting Cache Timing Information Task
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+Ending Cache Timing Information Task | Checksum: dc262a30
+
+Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 1347.059 ; gain = 546.004
+
+Starting Logic Optimization Task
+
+Phase 1 Retarget
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Opt 31-49] Retargeted 0 cell(s).
+Phase 1 Retarget | Checksum: dc262a30
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.095 . Memory (MB): peak = 1497.066 ; gain = 0.000
+INFO: [Opt 31-389] Phase Retarget created 0 cells and removed 0 cells
+
+Phase 2 Constant propagation
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Phase 2 Constant propagation | Checksum: 15b074df1
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.112 . Memory (MB): peak = 1497.066 ; gain = 0.000
+INFO: [Opt 31-389] Phase Constant propagation created 0 cells and removed 0 cells
+
+Phase 3 Sweep
+Phase 3 Sweep | Checksum: 13d94b785
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.148 . Memory (MB): peak = 1497.066 ; gain = 0.000
+INFO: [Opt 31-389] Phase Sweep created 0 cells and removed 0 cells
+
+Phase 4 BUFG optimization
+Phase 4 BUFG optimization | Checksum: 13d94b785
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.183 . Memory (MB): peak = 1497.066 ; gain = 0.000
+INFO: [Opt 31-662] Phase BUFG optimization created 0 cells of which 0 are BUFGs and removed 0 cells.
+
+Phase 5 Shift Register Optimization
+INFO: [Opt 31-1064] SRL Remap converted 0 SRLs to 0 registers and converted 0 registers of register chains to 0 SRLs
+Phase 5 Shift Register Optimization | Checksum: 13d94b785
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.209 . Memory (MB): peak = 1497.066 ; gain = 0.000
+INFO: [Opt 31-389] Phase Shift Register Optimization created 0 cells and removed 0 cells
+
+Phase 6 Post Processing Netlist
+Phase 6 Post Processing Netlist | Checksum: 13d94b785
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.219 . Memory (MB): peak = 1497.066 ; gain = 0.000
+INFO: [Opt 31-389] Phase Post Processing Netlist created 0 cells and removed 0 cells
+Opt_design Change Summary
+=========================
+
+
+-------------------------------------------------------------------------------------------------------------------------
+|  Phase                        |  #Cells created  |  #Cells Removed  |  #Constrained objects preventing optimizations  |
+-------------------------------------------------------------------------------------------------------------------------
+|  Retarget                     |               0  |               0  |                                              0  |
+|  Constant propagation         |               0  |               0  |                                              0  |
+|  Sweep                        |               0  |               0  |                                              0  |
+|  BUFG optimization            |               0  |               0  |                                              0  |
+|  Shift Register Optimization  |               0  |               0  |                                              0  |
+|  Post Processing Netlist      |               0  |               0  |                                              0  |
+-------------------------------------------------------------------------------------------------------------------------
+
+
+
+Starting Connectivity Check Task
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1497.066 ; gain = 0.000
+Ending Logic Optimization Task | Checksum: 1507215c5
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.265 . Memory (MB): peak = 1497.066 ; gain = 0.000
+
+Starting Power Optimization Task
+INFO: [Pwropt 34-132] Skipping clock gating for clocks with a period < 2.00 ns.
+Ending Power Optimization Task | Checksum: 1507215c5
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.009 . Memory (MB): peak = 1497.066 ; gain = 0.000
+
+Starting Final Cleanup Task
+Ending Final Cleanup Task | Checksum: 1507215c5
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1497.066 ; gain = 0.000
+
+Starting Netlist Obfuscation Task
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1497.066 ; gain = 0.000
+Ending Netlist Obfuscation Task | Checksum: 1507215c5
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1497.066 ; gain = 0.000
+INFO: [Common 17-83] Releasing license: Implementation
+26 Infos, 2 Warnings, 0 Critical Warnings and 0 Errors encountered.
+opt_design completed successfully
+opt_design: Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 1497.066 ; gain = 719.285
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1497.066 ; gain = 0.000
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+INFO: [Common 17-1381] The checkpoint 'd:/GITEA/UPzynq20_test/UPzynq20_test.tmp/ip_axi_adc_v1_0_project/IP_AXI_ADC_v1_0_project.runs/impl_1/IP_AXI_ADC_v1_0_opt.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_drc -file IP_AXI_ADC_v1_0_drc_opted.rpt -pb IP_AXI_ADC_v1_0_drc_opted.pb -rpx IP_AXI_ADC_v1_0_drc_opted.rpx
+Command: report_drc -file IP_AXI_ADC_v1_0_drc_opted.rpt -pb IP_AXI_ADC_v1_0_drc_opted.pb -rpx IP_AXI_ADC_v1_0_drc_opted.rpx
+INFO: [IP_Flow 19-1839] IP Catalog is up to date.
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Coretcl 2-168] The results of DRC are in file d:/GITEA/UPzynq20_test/UPzynq20_test.tmp/ip_axi_adc_v1_0_project/IP_AXI_ADC_v1_0_project.runs/impl_1/IP_AXI_ADC_v1_0_drc_opted.rpt.
+report_drc completed successfully
+Command: place_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7z020'
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+Running DRC as a precondition to command place_design
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+
+Starting Placer Task
+INFO: [Place 30-611] Multithreading enabled for place_design using a maximum of 2 CPUs
+
+Phase 1 Placer Initialization
+
+Phase 1.1 Placer Initialization Netlist Sorting
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1497.066 ; gain = 0.000
+Phase 1.1 Placer Initialization Netlist Sorting | Checksum: 959240fd
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 1497.066 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1497.066 ; gain = 0.000
+
+Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device
+ERROR: [Place 30-58] IO placement is infeasible. Number of unplaced terminals (302) is greater than number of available sites (200).
+The following are banks with available pins: 
+ IO Group: 0 with : SioStd: LVCMOS18   VCCO = 1.8 Termination: 0  TermDir:  Out  RangeId: 1 Drv: 12  has only 200 sites available on device, but needs 302 sites.
+	Term: ch0_1[0]
+	Term: ch0_1[1]
+	Term: ch0_1[2]
+	Term: ch0_1[3]
+	Term: ch0_1[4]
+	Term: ch0_1[5]
+	Term: ch0_1[6]
+	Term: ch0_1[7]
+	Term: ch0_1[8]
+	Term: ch0_1[9]
+	Term: ch0_1[10]
+	Term: ch0_1[11]
+	Term: ch0_1[12]
+	Term: ch0_1[13]
+	Term: ch0_1[14]
+	Term: ch0_1[15]
+	Term: ch0_1[16]
+	Term: ch0_1[17]
+	Term: ch0_1[18]
+	Term: ch0_1[19]
+	Term: ch0_1[20]
+	Term: ch0_1[21]
+	Term: ch0_1[22]
+	Term: ch0_1[23]
+	Term: ch0_1[24]
+	Term: ch0_1[25]
+	Term: ch0_1[26]
+	Term: ch0_1[27]
+	Term: ch0_1[28]
+	Term: ch0_1[29]
+	Term: ch0_1[30]
+	Term: ch0_1[31]
+	Term: ch10_11[0]
+	Term: ch10_11[1]
+	Term: ch10_11[2]
+	Term: ch10_11[3]
+	Term: ch10_11[4]
+	Term: ch10_11[5]
+	Term: ch10_11[6]
+	Term: ch10_11[7]
+	Term: ch10_11[8]
+	Term: ch10_11[9]
+	Term: ch10_11[10]
+	Term: ch10_11[11]
+	Term: ch10_11[12]
+	Term: ch10_11[13]
+	Term: ch10_11[14]
+	Term: ch10_11[15]
+	Term: ch10_11[16]
+	Term: ch10_11[17]
+	Term: ch10_11[18]
+	Term: ch10_11[19]
+	Term: ch10_11[20]
+	Term: ch10_11[21]
+	Term: ch10_11[22]
+	Term: ch10_11[23]
+	Term: ch10_11[24]
+	Term: ch10_11[25]
+	Term: ch10_11[26]
+	Term: ch10_11[27]
+	Term: ch10_11[28]
+	Term: ch10_11[29]
+	Term: ch10_11[30]
+	Term: ch10_11[31]
+	Term: ch12_13[0]
+	Term: ch12_13[1]
+	Term: ch12_13[2]
+	Term: ch12_13[3]
+	Term: ch12_13[4]
+	Term: ch12_13[5]
+	Term: ch12_13[6]
+	Term: ch12_13[7]
+	Term: ch12_13[8]
+	Term: ch12_13[9]
+	Term: ch12_13[10]
+	Term: ch12_13[11]
+	Term: ch12_13[12]
+	Term: ch12_13[13]
+	Term: ch12_13[14]
+	Term: ch12_13[15]
+	Term: ch12_13[16]
+	Term: ch12_13[17]
+	Term: ch12_13[18]
+	Term: ch12_13[19]
+	Term: ch12_13[20]
+	Term: ch12_13[21]
+	Term: ch12_13[22]
+	Term: ch12_13[23]
+	Term: ch12_13[24]
+	Term: ch12_13[25]
+	Term: ch12_13[26]
+	Term: ch12_13[27]
+	Term: ch12_13[28]
+	Term: ch12_13[29]
+	Term: ch12_13[30]
+	Term: ch12_13[31]
+	Term: ch14_15[0]
+	Term: ch14_15[1]
+	Term: ch14_15[2]
+	Term: ch14_15[3]
+	Term: ch14_15[4]
+	Term: ch14_15[5]
+	Term: ch14_15[6]
+	Term: ch14_15[7]
+	Term: ch14_15[8]
+	Term: ch14_15[9]
+	Term: ch14_15[10]
+	Term: ch14_15[11]
+	Term: ch14_15[12]
+	Term: ch14_15[13]
+	Term: ch14_15[14]
+	Term: ch14_15[15]
+	Term: ch14_15[16]
+	Term: ch14_15[17]
+	Term: ch14_15[18]
+	Term: ch14_15[19]
+	Term: ch14_15[20]
+	Term: ch14_15[21]
+	Term: ch14_15[22]
+	Term: ch14_15[23]
+	Term: ch14_15[24]
+	Term: ch14_15[25]
+	Term: ch14_15[26]
+	Term: ch14_15[27]
+	Term: ch14_15[28]
+	Term: ch14_15[29]
+	Term: ch14_15[30]
+	Term: ch14_15[31]
+	Term: ch2_3[0]
+	Term: ch2_3[1]
+	Term: ch2_3[2]
+	Term: ch2_3[3]
+	Term: ch2_3[4]
+	Term: ch2_3[5]
+	Term: ch2_3[6]
+	Term: ch2_3[7]
+	Term: ch2_3[8]
+	Term: ch2_3[9]
+	Term: ch2_3[10]
+	Term: ch2_3[11]
+	Term: ch2_3[12]
+	Term: ch2_3[13]
+	Term: ch2_3[14]
+	Term: ch2_3[15]
+	Term: ch2_3[16]
+	Term: ch2_3[17]
+	Term: ch2_3[18]
+	Term: ch2_3[19]
+	Term: ch2_3[20]
+	Term: ch2_3[21]
+	Term: ch2_3[22]
+	Term: ch2_3[23]
+	Term: ch2_3[24]
+	Term: ch2_3[25]
+	Term: ch2_3[26]
+	Term: ch2_3[27]
+	Term: ch2_3[28]
+	Term: ch2_3[29]
+	Term: ch2_3[30]
+	Term: ch2_3[31]
+	Term: ch4_5[0]
+	Term: ch4_5[1]
+	Term: ch4_5[2]
+	Term: ch4_5[3]
+	Term: ch4_5[4]
+	Term: ch4_5[5]
+	Term: ch4_5[6]
+	Term: ch4_5[7]
+	Term: ch4_5[8]
+	Term: ch4_5[9]
+	Term: ch4_5[10]
+	Term: ch4_5[11]
+	Term: ch4_5[12]
+	Term: ch4_5[13]
+	Term: ch4_5[14]
+	Term: ch4_5[15]
+	Term: ch4_5[16]
+	Term: ch4_5[17]
+	Term: ch4_5[18]
+	Term: ch4_5[19]
+	Term: ch4_5[20]
+	Term: ch4_5[21]
+	Term: ch4_5[22]
+	Term: ch4_5[23]
+	Term: ch4_5[24]
+	Term: ch4_5[25]
+	Term: ch4_5[26]
+	Term: ch4_5[27]
+	Term: ch4_5[28]
+	Term: ch4_5[29]
+	Term: ch4_5[30]
+	Term: ch4_5[31]
+	Term: ch6_7[0]
+	Term: ch6_7[1]
+	Term: ch6_7[2]
+	Term: ch6_7[3]
+	Term: ch6_7[4]
+	Term: ch6_7[5]
+	Term: ch6_7[6]
+	Term: ch6_7[7]
+	Term: ch6_7[8]
+	Term: ch6_7[9]
+	Term: ch6_7[10]
+	Term: ch6_7[11]
+	Term: ch6_7[12]
+	Term: ch6_7[13]
+	Term: ch6_7[14]
+	Term: ch6_7[15]
+	Term: ch6_7[16]
+	Term: ch6_7[17]
+	Term: ch6_7[18]
+	Term: ch6_7[19]
+	Term: ch6_7[20]
+	Term: ch6_7[21]
+	Term: ch6_7[22]
+	Term: ch6_7[23]
+	Term: ch6_7[24]
+	Term: ch6_7[25]
+	Term: ch6_7[26]
+	Term: ch6_7[27]
+	Term: ch6_7[28]
+	Term: ch6_7[29]
+	Term: ch6_7[30]
+	Term: ch6_7[31]
+	Term: ch8_9[0]
+	Term: ch8_9[1]
+	Term: ch8_9[2]
+	Term: ch8_9[3]
+	Term: ch8_9[4]
+	Term: ch8_9[5]
+	Term: ch8_9[6]
+	Term: ch8_9[7]
+	Term: ch8_9[8]
+	Term: ch8_9[9]
+	Term: ch8_9[10]
+	Term: ch8_9[11]
+	Term: ch8_9[12]
+	Term: ch8_9[13]
+	Term: ch8_9[14]
+	Term: ch8_9[15]
+	Term: ch8_9[16]
+	Term: ch8_9[17]
+	Term: ch8_9[18]
+	Term: ch8_9[19]
+	Term: ch8_9[20]
+	Term: ch8_9[21]
+	Term: ch8_9[22]
+	Term: ch8_9[23]
+	Term: ch8_9[24]
+	Term: ch8_9[25]
+	Term: ch8_9[26]
+	Term: ch8_9[27]
+	Term: ch8_9[28]
+	Term: ch8_9[29]
+	Term: ch8_9[30]
+	Term: ch8_9[31]
+	Term: s00_axi_rdata[0]
+	Term: s00_axi_rdata[1]
+	Term: s00_axi_rdata[2]
+	Term: s00_axi_rdata[3]
+	Term: s00_axi_rdata[4]
+	Term: s00_axi_rdata[5]
+	Term: s00_axi_rdata[6]
+	Term: s00_axi_rdata[7]
+	Term: s00_axi_rdata[8]
+	Term: s00_axi_rdata[9]
+	Term: s00_axi_rdata[10]
+	Term: s00_axi_rdata[11]
+	Term: s00_axi_rdata[12]
+	Term: s00_axi_rdata[13]
+	Term: s00_axi_rdata[14]
+	Term: s00_axi_rdata[15]
+	Term: s00_axi_rdata[16]
+	Term: s00_axi_rdata[17]
+	Term: s00_axi_rdata[18]
+	Term: s00_axi_rdata[19]
+	Term: s00_axi_rdata[20]
+	Term: s00_axi_rdata[21]
+	Term: s00_axi_rdata[22]
+	Term: s00_axi_rdata[23]
+	Term: s00_axi_rdata[24]
+	Term: s00_axi_rdata[25]
+	Term: s00_axi_rdata[26]
+	Term: s00_axi_rdata[27]
+	Term: s00_axi_rdata[28]
+	Term: s00_axi_rdata[29]
+	Term: s00_axi_rdata[30]
+	Term: s00_axi_rdata[31]
+	Term: s00_axi_bresp[0]
+	Term: s00_axi_bresp[1]
+	Term: s00_axi_rresp[0]
+	Term: s00_axi_rresp[1]
+	Term: a0
+	Term: even_updated
+	Term: not_cs
+	Term: odd_updated
+	Term: s00_axi_arready
+	Term: s00_axi_awready
+	Term: s00_axi_bvalid
+	Term: s00_axi_rvalid
+	Term: s00_axi_wready
+	Term: sclk
+
+
+ERROR: [Place 30-58] IO placement is infeasible. Number of unplaced terminals (320) is greater than number of available sites (200).
+The following are banks with available pins: 
+ IO Group: 0 with : SioStd: LVCMOS18   VCCO = 1.8 Termination: 0  TermDir:  Out  RangeId: 1 Drv: 12  has only 200 sites available on device, but needs 302 sites.
+	Term: ch0_1[0]
+	Term: ch0_1[1]
+	Term: ch0_1[2]
+	Term: ch0_1[3]
+	Term: ch0_1[4]
+	Term: ch0_1[5]
+	Term: ch0_1[6]
+	Term: ch0_1[7]
+	Term: ch0_1[8]
+	Term: ch0_1[9]
+	Term: ch0_1[10]
+	Term: ch0_1[11]
+	Term: ch0_1[12]
+	Term: ch0_1[13]
+	Term: ch0_1[14]
+	Term: ch0_1[15]
+	Term: ch0_1[16]
+	Term: ch0_1[17]
+	Term: ch0_1[18]
+	Term: ch0_1[19]
+	Term: ch0_1[20]
+	Term: ch0_1[21]
+	Term: ch0_1[22]
+	Term: ch0_1[23]
+	Term: ch0_1[24]
+	Term: ch0_1[25]
+	Term: ch0_1[26]
+	Term: ch0_1[27]
+	Term: ch0_1[28]
+	Term: ch0_1[29]
+	Term: ch0_1[30]
+	Term: ch0_1[31]
+	Term: ch10_11[0]
+	Term: ch10_11[1]
+	Term: ch10_11[2]
+	Term: ch10_11[3]
+	Term: ch10_11[4]
+	Term: ch10_11[5]
+	Term: ch10_11[6]
+	Term: ch10_11[7]
+	Term: ch10_11[8]
+	Term: ch10_11[9]
+	Term: ch10_11[10]
+	Term: ch10_11[11]
+	Term: ch10_11[12]
+	Term: ch10_11[13]
+	Term: ch10_11[14]
+	Term: ch10_11[15]
+	Term: ch10_11[16]
+	Term: ch10_11[17]
+	Term: ch10_11[18]
+	Term: ch10_11[19]
+	Term: ch10_11[20]
+	Term: ch10_11[21]
+	Term: ch10_11[22]
+	Term: ch10_11[23]
+	Term: ch10_11[24]
+	Term: ch10_11[25]
+	Term: ch10_11[26]
+	Term: ch10_11[27]
+	Term: ch10_11[28]
+	Term: ch10_11[29]
+	Term: ch10_11[30]
+	Term: ch10_11[31]
+	Term: ch12_13[0]
+	Term: ch12_13[1]
+	Term: ch12_13[2]
+	Term: ch12_13[3]
+	Term: ch12_13[4]
+	Term: ch12_13[5]
+	Term: ch12_13[6]
+	Term: ch12_13[7]
+	Term: ch12_13[8]
+	Term: ch12_13[9]
+	Term: ch12_13[10]
+	Term: ch12_13[11]
+	Term: ch12_13[12]
+	Term: ch12_13[13]
+	Term: ch12_13[14]
+	Term: ch12_13[15]
+	Term: ch12_13[16]
+	Term: ch12_13[17]
+	Term: ch12_13[18]
+	Term: ch12_13[19]
+	Term: ch12_13[20]
+	Term: ch12_13[21]
+	Term: ch12_13[22]
+	Term: ch12_13[23]
+	Term: ch12_13[24]
+	Term: ch12_13[25]
+	Term: ch12_13[26]
+	Term: ch12_13[27]
+	Term: ch12_13[28]
+	Term: ch12_13[29]
+	Term: ch12_13[30]
+	Term: ch12_13[31]
+	Term: ch14_15[0]
+	Term: ch14_15[1]
+	Term: ch14_15[2]
+	Term: ch14_15[3]
+	Term: ch14_15[4]
+	Term: ch14_15[5]
+	Term: ch14_15[6]
+	Term: ch14_15[7]
+	Term: ch14_15[8]
+	Term: ch14_15[9]
+	Term: ch14_15[10]
+	Term: ch14_15[11]
+	Term: ch14_15[12]
+	Term: ch14_15[13]
+	Term: ch14_15[14]
+	Term: ch14_15[15]
+	Term: ch14_15[16]
+	Term: ch14_15[17]
+	Term: ch14_15[18]
+	Term: ch14_15[19]
+	Term: ch14_15[20]
+	Term: ch14_15[21]
+	Term: ch14_15[22]
+	Term: ch14_15[23]
+	Term: ch14_15[24]
+	Term: ch14_15[25]
+	Term: ch14_15[26]
+	Term: ch14_15[27]
+	Term: ch14_15[28]
+	Term: ch14_15[29]
+	Term: ch14_15[30]
+	Term: ch14_15[31]
+	Term: ch2_3[0]
+	Term: ch2_3[1]
+	Term: ch2_3[2]
+	Term: ch2_3[3]
+	Term: ch2_3[4]
+	Term: ch2_3[5]
+	Term: ch2_3[6]
+	Term: ch2_3[7]
+	Term: ch2_3[8]
+	Term: ch2_3[9]
+	Term: ch2_3[10]
+	Term: ch2_3[11]
+	Term: ch2_3[12]
+	Term: ch2_3[13]
+	Term: ch2_3[14]
+	Term: ch2_3[15]
+	Term: ch2_3[16]
+	Term: ch2_3[17]
+	Term: ch2_3[18]
+	Term: ch2_3[19]
+	Term: ch2_3[20]
+	Term: ch2_3[21]
+	Term: ch2_3[22]
+	Term: ch2_3[23]
+	Term: ch2_3[24]
+	Term: ch2_3[25]
+	Term: ch2_3[26]
+	Term: ch2_3[27]
+	Term: ch2_3[28]
+	Term: ch2_3[29]
+	Term: ch2_3[30]
+	Term: ch2_3[31]
+	Term: ch4_5[0]
+	Term: ch4_5[1]
+	Term: ch4_5[2]
+	Term: ch4_5[3]
+	Term: ch4_5[4]
+	Term: ch4_5[5]
+	Term: ch4_5[6]
+	Term: ch4_5[7]
+	Term: ch4_5[8]
+	Term: ch4_5[9]
+	Term: ch4_5[10]
+	Term: ch4_5[11]
+	Term: ch4_5[12]
+	Term: ch4_5[13]
+	Term: ch4_5[14]
+	Term: ch4_5[15]
+	Term: ch4_5[16]
+	Term: ch4_5[17]
+	Term: ch4_5[18]
+	Term: ch4_5[19]
+	Term: ch4_5[20]
+	Term: ch4_5[21]
+	Term: ch4_5[22]
+	Term: ch4_5[23]
+	Term: ch4_5[24]
+	Term: ch4_5[25]
+	Term: ch4_5[26]
+	Term: ch4_5[27]
+	Term: ch4_5[28]
+	Term: ch4_5[29]
+	Term: ch4_5[30]
+	Term: ch4_5[31]
+	Term: ch6_7[0]
+	Term: ch6_7[1]
+	Term: ch6_7[2]
+	Term: ch6_7[3]
+	Term: ch6_7[4]
+	Term: ch6_7[5]
+	Term: ch6_7[6]
+	Term: ch6_7[7]
+	Term: ch6_7[8]
+	Term: ch6_7[9]
+	Term: ch6_7[10]
+	Term: ch6_7[11]
+	Term: ch6_7[12]
+	Term: ch6_7[13]
+	Term: ch6_7[14]
+	Term: ch6_7[15]
+	Term: ch6_7[16]
+	Term: ch6_7[17]
+	Term: ch6_7[18]
+	Term: ch6_7[19]
+	Term: ch6_7[20]
+	Term: ch6_7[21]
+	Term: ch6_7[22]
+	Term: ch6_7[23]
+	Term: ch6_7[24]
+	Term: ch6_7[25]
+	Term: ch6_7[26]
+	Term: ch6_7[27]
+	Term: ch6_7[28]
+	Term: ch6_7[29]
+	Term: ch6_7[30]
+	Term: ch6_7[31]
+	Term: ch8_9[0]
+	Term: ch8_9[1]
+	Term: ch8_9[2]
+	Term: ch8_9[3]
+	Term: ch8_9[4]
+	Term: ch8_9[5]
+	Term: ch8_9[6]
+	Term: ch8_9[7]
+	Term: ch8_9[8]
+	Term: ch8_9[9]
+	Term: ch8_9[10]
+	Term: ch8_9[11]
+	Term: ch8_9[12]
+	Term: ch8_9[13]
+	Term: ch8_9[14]
+	Term: ch8_9[15]
+	Term: ch8_9[16]
+	Term: ch8_9[17]
+	Term: ch8_9[18]
+	Term: ch8_9[19]
+	Term: ch8_9[20]
+	Term: ch8_9[21]
+	Term: ch8_9[22]
+	Term: ch8_9[23]
+	Term: ch8_9[24]
+	Term: ch8_9[25]
+	Term: ch8_9[26]
+	Term: ch8_9[27]
+	Term: ch8_9[28]
+	Term: ch8_9[29]
+	Term: ch8_9[30]
+	Term: ch8_9[31]
+	Term: s00_axi_rdata[0]
+	Term: s00_axi_rdata[1]
+	Term: s00_axi_rdata[2]
+	Term: s00_axi_rdata[3]
+	Term: s00_axi_rdata[4]
+	Term: s00_axi_rdata[5]
+	Term: s00_axi_rdata[6]
+	Term: s00_axi_rdata[7]
+	Term: s00_axi_rdata[8]
+	Term: s00_axi_rdata[9]
+	Term: s00_axi_rdata[10]
+	Term: s00_axi_rdata[11]
+	Term: s00_axi_rdata[12]
+	Term: s00_axi_rdata[13]
+	Term: s00_axi_rdata[14]
+	Term: s00_axi_rdata[15]
+	Term: s00_axi_rdata[16]
+	Term: s00_axi_rdata[17]
+	Term: s00_axi_rdata[18]
+	Term: s00_axi_rdata[19]
+	Term: s00_axi_rdata[20]
+	Term: s00_axi_rdata[21]
+	Term: s00_axi_rdata[22]
+	Term: s00_axi_rdata[23]
+	Term: s00_axi_rdata[24]
+	Term: s00_axi_rdata[25]
+	Term: s00_axi_rdata[26]
+	Term: s00_axi_rdata[27]
+	Term: s00_axi_rdata[28]
+	Term: s00_axi_rdata[29]
+	Term: s00_axi_rdata[30]
+	Term: s00_axi_rdata[31]
+	Term: s00_axi_bresp[0]
+	Term: s00_axi_bresp[1]
+	Term: s00_axi_rresp[0]
+	Term: s00_axi_rresp[1]
+	Term: a0
+	Term: even_updated
+	Term: not_cs
+	Term: odd_updated
+	Term: s00_axi_arready
+	Term: s00_axi_awready
+	Term: s00_axi_bvalid
+	Term: s00_axi_rvalid
+	Term: s00_axi_wready
+	Term: sclk
+
+
+ERROR: [Place 30-374] IO placer failed to find a solution
+Below is the partial placement that can be analyzed to see if any constraint modifications will make the IO placement problem easier to solve.
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                                     IO Placement : Bank Stats                                                                           |
++----+-------+-------+------------------------------------------------------------------------+------------------------------------------+--------+--------+--------+-----+
+| Id | Pins  | Terms |                               Standards                                |                IDelayCtrls               |  VREF  |  VCCO  |   VR   | DCI |
++----+-------+-------+------------------------------------------------------------------------+------------------------------------------+--------+--------+--------+-----+
+|  0 |     0 |     0 |                                                                        |                                          |        |        |        |     |
+| 13 |    50 |     0 |                                                                        |                                          |        |        |        |     |
+| 33 |    50 |     0 |                                                                        |                                          |        |        |        |     |
+| 34 |    50 |     0 |                                                                        |                                          |        |        |        |     |
+| 35 |    50 |     0 |                                                                        |                                          |        |        |        |     |
++----+-------+-------+------------------------------------------------------------------------+------------------------------------------+--------+--------+--------+-----+
+|    |   200 |     0 |                                                                        |                                          |        |        |        |     |
++----+-------+-------+------------------------------------------------------------------------+------------------------------------------+--------+--------+--------+-----+
+
+IO Placement:
++--------+----------------------+-----------------+----------------------+----------------------+----------------------+
+| BankId |             Terminal | Standard        | Site                 | Pin                  | Attributes           |
++--------+----------------------+-----------------+----------------------+----------------------+----------------------+
+
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device | Checksum: b4fd8e07
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:02 . Memory (MB): peak = 1497.066 ; gain = 0.000
+Phase 1 Placer Initialization | Checksum: b4fd8e07
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:02 . Memory (MB): peak = 1497.066 ; gain = 0.000
+ERROR: [Place 30-99] Placer failed with error: 'IO Clock Placer failed'
+Please review all ERROR, CRITICAL WARNING, and WARNING messages during placement to understand the cause for failure.
+Ending Placer Task | Checksum: b4fd8e07
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:02 . Memory (MB): peak = 1497.066 ; gain = 0.000
+INFO: [Common 17-83] Releasing license: Implementation
+41 Infos, 3 Warnings, 0 Critical Warnings and 5 Errors encountered.
+place_design failed
+ERROR: [Common 17-69] Command failed: Placer could not place all instances
+INFO: [Common 17-206] Exiting Vivado at Wed Jul 21 09:58:21 2021...

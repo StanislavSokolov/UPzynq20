@@ -71,6 +71,8 @@
 #include "module_uart_SET12.h"
 #include "test_functions_PS_MIO.h"
 #include "current_system_status.h"
+#include "adc.h"
+#include "encoder.h"
 
 int Count;						// общий счеткчик
 int Count_Div;						// общий счеткчик
@@ -98,85 +100,90 @@ int i = 0;
 int main(void) {
 
 	initialization_of_project(0, 0);    	// A0 - SYSTEM_DESIGN, A1 - PROJECT_NUMBER
-	initialization_of_MIO();				// Иницилизируем PSGPIO
-	SetOutputEnablePinPSGPIO(0, 1);			// Разрешаем подтяжку MIO0, нельзя подтянуть MIO7
-	SetOutputEnablePinPSGPIO(15, 1);		// Разрешаем подтяжку MIO15 для управления направлением RS-485 преобразователем
-	SetDirectionPinPSGPIO(0, 1);			// Выбираем направление MIO0
-	SetDirectionPinPSGPIO(7, 1);			// Выбираем направление MIO7
-	SetDirectionPinPSGPIO(15, 1);			// Выбираем направление MIO15
-//
-	SetDirectionPinPSGPIO(46, 0);			// Выбираем направление MIO46
-	SetDirectionPinPSGPIO(47, 0);			// Выбираем направление MIO47
-	SetDirectionPinPSGPIO(48, 0);			// Выбираем направление MIO48
-	SetDirectionPinPSGPIO(49, 0);			// Выбираем направление MIO49
+	initialization_of_PSGPIO();				// Иницилизируем PSGPIO
+	set_output_enable_pin_PSGPIO(0, 1);			// Разрешаем подтяжку MIO0, нельзя подтянуть MIO7
+	set_output_enable_pin_PSGPIO(15, 1);		// Разрешаем подтяжку MIO15 для управления направлением RS-485 преобразователем
+	set_direction_pin_PSGPIO(0, 1);			// Выбираем направление MIO0
+	set_direction_pin_PSGPIO(7, 1);			// Выбираем направление MIO7
+	set_direction_pin_PSGPIO(15, 1);			// Выбираем направление MIO15
 
-	initialization_of_UART_SET12(); 				// инициализируем UART
+	set_direction_pin_PSGPIO(46, 0);			// Выбираем направление MIO46
+	set_direction_pin_PSGPIO(47, 0);			// Выбираем направление MIO47
+	set_direction_pin_PSGPIO(48, 0);			// Выбираем направление MIO48
+	set_direction_pin_PSGPIO(49, 0);			// Выбираем направление MIO49
+
+	initialization_of_UART_SET12(); 		// инициализируем UART
 	initialization_of_UART_RS485(); 		// инициализируем UART-RS485
-	WritePinPSGPIO (15, 1);
+	set_current_value_PSGPIO(15, 1);
 
 
 	array_current_status_set(544, 0);
-//
+
 //	array_current_status_set(544, 1);
 
 	preparing_message_RS485(2, 15, 544, 1, 2);
+	set_setpoint_value_adc_table();			// записать уставки аналоговых сигналов в МАЗ
 
 	while (1) {
 
-		if (Count < 50000000) {
+		if (Count < 100000000) {
 			Count++;
 		} else {
 			if (latch) {
 				Xil_Out32(XPAR_IP_AXI_LEDS_0_S00_AXI_BASEADDR, 0x00000000);
 				latch = 0;
-				//write_out(17);
-				//inverting_the_signal_count_transmitter();
-				WritePinPSGPIO (0, 1);
-				WritePinPSGPIO (7, 0);
-//				bild_send_buffer_RS485(4, 65280);
+				set_current_value_PSGPIO(0, 1);
+				set_current_value_PSGPIO(7, 0);
 			} else {
 				Xil_Out32(XPAR_IP_AXI_LEDS_0_S00_AXI_BASEADDR, 0x00000001);
 				latch = 1;
-				//write_out(4);
-				//inverting_the_signal_count_transmitter();
-//				XGpioPs_WritePin(&gpio_instance, 0, 0);
-				WritePinPSGPIO (0, 0);
-				WritePinPSGPIO (7, 1);
-//				bild_send_buffer_RS485(4, 0);
+				set_current_value_PSGPIO(0, 0);
+				set_current_value_PSGPIO(7, 1);
 			}
 
-			WritePinPSGPIO(15, 1);
+			set_current_value_PSGPIO(15, 1);
 
-//			bild_send_buffer_SET12(144, ReadPinPSGPIO(46));
-//			bild_send_buffer_SET12(146, ReadPinPSGPIO(47));
-//			bild_send_buffer_SET12(148, ReadPinPSGPIO(48));
-////			bild_send_buffer_SET12(150, ReadPinPSGPIO(49));
+			read_current_value_PSGPIO();
 
-//			bild_send_buffer_SET12(150, function_test_CountInt_RS485());
+//			get_current_value_speed_sensor_table();
+
+
+			get_current_value_adc_table();
+//			set_reset_error_adc_table();
+
+
+			get_current_value_digital_input_table();
+			set_current_value_digital_output_table();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 			Count = 0;
-			inverting_the_signal_count_transmitter_SET12();
-			bild_send_buffer_SET12(TEST_BUFFER_SIZE_SET12-1, 100);
-//			GroupsRegisters++;
-//			bild_send_buffer(8, GroupsRegisters);
 
 
 
 
-			bild_send_buffer_SET12(162, Xil_In32(XPAR_IP_AXI_OPTICALBUS_0_S00_AXI_BASEADDR + 20));
+
+//			bild_send_buffer_SET12(162, Xil_In32(XPAR_IP_AXI_OPTICALBUS_0_S00_AXI_BASEADDR + 20));
 
 
 
 
-			read_in_all_SET12();
-			bild_send_buffer_SET12(112+Channel_0*2, Xil_In32(XPAR_IP_AXI_ADC_0_S00_AXI_BASEADDR + (Channel_0*j)));
-			if (Channel_0<15) Channel_0++; else Channel_0 = 0;
-//			bild_send_buffer(144+Channel_1*2, Xil_In32(XPAR_IP_AXI_ENCODER_0_S00_AXI_BASEADDR + (Channel_1*j)));
-//			if (Channel_1<5) Channel_1++; else Channel_1 = 0;
-//			bild_send_buffer(144+Channel_1*2, Xil_In32(XPAR_IP_AXI_ENCODER_0_S00_AXI_BASEADDR + (Channel_1*j)));
-////			bild_send_buffer(154+Channel_1*2, (Xil_In32(XPAR_IP_AXI_ENCODER_0_S00_AXI_BASEADDR + (Channel_1*j)))/65534);
-//			if (Channel_1<7) Channel_1++; else Channel_1 = 0;
+//			read_in_all_SET12();
+
 
 
 			Xil_Out32(XPAR_IP_AXI_INVERTER_0_S00_AXI_BASEADDR + 1*j, 0x0000FFFF);			// Разрешение работы тормозных резисторов
@@ -332,10 +339,13 @@ int main(void) {
 			latch_start = 1;
 			terminal_uart_send_SET12();
 
-			WritePinPSGPIO(15, 0);
+			set_current_value_PSGPIO(15, 0);
 
 			terminal_uart_recv_SET12();
-			update_from_terminal_all_SET12(TEST_BUFFER_SIZE_SET12);
+
+			set_current_value_digital_output_table();
+
+//			update_from_terminal_all_SET12(TEST_BUFFER_SIZE_SET12);
 
 //			bild_send_buffer_SET12(144, terminal_uart_send_RS485());
 

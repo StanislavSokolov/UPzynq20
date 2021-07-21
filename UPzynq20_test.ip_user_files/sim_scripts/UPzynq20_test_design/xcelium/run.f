@@ -78,9 +78,6 @@
   "../../../bd/UPzynq20_test_design/ipshared/afe0/hdl/IP_AXI_LEDS_v1_0_S00_AXI.vhd" \
   "../../../bd/UPzynq20_test_design/ipshared/afe0/hdl/IP_AXI_LEDS_v1_0.vhd" \
   "../../../bd/UPzynq20_test_design/ip/UPzynq20_test_design_IP_AXI_LEDS_0_0/sim/UPzynq20_test_design_IP_AXI_LEDS_0_0.vhd" \
-  "../../../bd/UPzynq20_test_design/ipshared/cb8f/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd" \
-  "../../../bd/UPzynq20_test_design/ipshared/cb8f/hdl/IP_AXI_ADC_v1_0.vhd" \
-  "../../../bd/UPzynq20_test_design/ip/UPzynq20_test_design_IP_AXI_ADC_0_0/sim/UPzynq20_test_design_IP_AXI_ADC_0_0.vhd" \
   "../../../bd/UPzynq20_test_design/ip/UPzynq20_test_design_axi_gpio_3_1/sim/UPzynq20_test_design_axi_gpio_3_1.vhd" \
   "../../../bd/UPzynq20_test_design/ip/UPzynq20_test_design_axi_gpio_4_0/sim/UPzynq20_test_design_axi_gpio_4_0.vhd" \
   "../../../bd/UPzynq20_test_design/ip/UPzynq20_test_design_axi_gpio_4_1/sim/UPzynq20_test_design_axi_gpio_4_1.vhd" \
@@ -167,6 +164,9 @@
   "../../../bd/UPzynq20_test_design/ipshared/d81a/sim/Inverter_3lvl.vhd" \
   "../../../bd/UPzynq20_test_design/ipshared/d81a/hdl/Inverter_3lvl_wrapper.vhd" \
   "../../../bd/UPzynq20_test_design/ip/UPzynq20_test_design_Inverter_3lvl_wrapper_0_1/sim/UPzynq20_test_design_Inverter_3lvl_wrapper_0_1.vhd" \
+  "../../../bd/UPzynq20_test_design/ipshared/45da/hdl/IP_AXI_ADC_v2_0_S00_AXI.vhd" \
+  "../../../bd/UPzynq20_test_design/ipshared/45da/hdl/IP_AXI_ADC_v2_0.vhd" \
+  "../../../bd/UPzynq20_test_design/ip/UPzynq20_test_design_IP_AXI_ADC_0_1/sim/UPzynq20_test_design_IP_AXI_ADC_0_1.vhd" \
 -endlib
 -makelib xcelium_lib/axi_protocol_converter_v2_1_19 \
   "../../../../UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v" \

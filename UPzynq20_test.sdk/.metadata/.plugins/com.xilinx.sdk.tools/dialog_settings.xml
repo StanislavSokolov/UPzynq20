@@ -7,6 +7,6 @@
 	<item value="D:\GITEA\UPzynq20_test\UPzynq20_test.sdk\zynq_fsbl_1\Release\zynq_fsbl_1.elf" key="UPzynq20_test_design_wrapper_hw_platform_0-fsblFile"/>
 	<item value="qspi-x4-single" key="UPzynq20_test_design_wrapper_hw_platform_0-flashType"/>
 	<item value="" key="UPzynq20_test_design_wrapper_hw_platform_0-offSet"/>
-	<item value="D:\GITEA\UPzynq20_test\UPzynq20_test.sdk\LCUFC_test_new\bootimage\LCUFC_test_new.mcs" key="UPzynq20_test_design_wrapper_hw_platform_0-imgFile"/>
+	<item value="D:\GITEA\UPzynq20_test\UPzynq20_test.sdk\LCUFC_test_new\bootimage\BOOT.mcs" key="UPzynq20_test_design_wrapper_hw_platform_0-imgFile"/>
 	<item value="Auto Detect" key="UPzynq20_test_design_wrapper_hw_platform_0-device"/>
 </section>

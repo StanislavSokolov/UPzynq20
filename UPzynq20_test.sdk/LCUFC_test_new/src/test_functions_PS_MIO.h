@@ -10,12 +10,13 @@
 
 
 
-int initialization_of_MIO();
+int initialization_of_PSGPIO();
 
-void SetOutputEnablePinPSGPIO(int pin, int data);
-void SetDirectionPinPSGPIO(int pin, int data);
-void WritePinPSGPIO (int pin, int data);
-u32 ReadPinPSGPIO (int pin);
+void set_output_enable_pin_PSGPIO(int pin, int data);
+void set_direction_pin_PSGPIO(int pin, int data);
+void set_current_value_PSGPIO (int pin, int data);
+u32 get_current_value_PSGPIO (int pin);
+int read_current_value_PSGPIO();
 
 
 

@@ -18,26 +18,38 @@
 XGpioPs Gpio;
 XGpioPs_Config *ConfigPtr;
 
-int initialization_of_MIO(int x, int y) {
+int PinPSGPIO46 = 0;
+int PinPSGPIO47 = 0;
+int PinPSGPIO48 = 0;
+int PinPSGPIO49 = 0;
+
+int initialization_of_PSGPIO(int x, int y) {
 	ConfigPtr = XGpioPs_LookupConfig(XPAR_XGPIOPS_0_DEVICE_ID);
 	XGpioPs_CfgInitialize(&Gpio, ConfigPtr, ConfigPtr->BaseAddr);
 	return 0;
 }
 
-void SetOutputEnablePinPSGPIO(int pin, int data){
+void set_output_enable_pin_PSGPIO(int pin, int data){
 	XGpioPs_SetOutputEnablePin(&Gpio, pin, data);
 }
 
-void SetDirectionPinPSGPIO(int pin, int data){
+void set_direction_pin_PSGPIO(int pin, int data){
 	XGpioPs_SetDirectionPin(&Gpio, pin, data);
 }
 
-void WritePinPSGPIO (int pin, int data){
+void set_current_value_PSGPIO (int pin, int data){
 	XGpioPs_WritePin(&Gpio, pin, data);
 }
 
-u32 ReadPinPSGPIO (int pin){
+u32 get_current_value_PSGPIO (int pin){
 	return XGpioPs_ReadPin(&Gpio, pin);
+}
+
+int read_current_value_PSGPIO(){
+	PinPSGPIO46 = get_current_value_PSGPIO(46);
+	PinPSGPIO47 = get_current_value_PSGPIO(47);
+	PinPSGPIO48 = get_current_value_PSGPIO(48);
+	PinPSGPIO49 = get_current_value_PSGPIO(49);
 }
 
 

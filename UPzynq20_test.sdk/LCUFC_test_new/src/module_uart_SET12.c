@@ -2,6 +2,7 @@
 /***************************** Include Files *******************************/
 
 #include "module_uart_SET12.h"
+#include "adc.h"
 
 #include "xparameters.h"
 #include "xplatform_info.h"
@@ -48,6 +49,8 @@ volatile int TotalReceivedCount_SET12;
 volatile int TotalSentCount_SET12;
 int TotalErrorCount_SET12;
 int bit_SET12 = 0;
+int count_send = 0;
+int count_send2 = 0;
 
 int function_test_CountInt_SET12(){
 	return TotalReceivedCount_SET12;
@@ -75,8 +78,64 @@ u32 update_from_terminal_SET12(u32 address){
 }
 
 void terminal_uart_send_SET12() {
-	SendBuffer_SET12[0] = 4;
-	SendBuffer_SET12[1] = 1;
+	SendBuffer_SET12[0] = 4;										// определение начала передачи bit0
+	SendBuffer_SET12[1] = 1;										// определение начала передачи bit1
+
+	inverting_the_signal_count_transmitter_SET12();					// инвертирование сигнала для диагностики
+
+
+	bild_send_buffer_SET12(22, get_value_digital_input_8());
+	bild_send_buffer_SET12(24, get_value_digital_input_16());
+
+
+
+	u32 negative_errors = get_value_errors_adc_table();						// подготовка регистра ошибок АЦП
+	u32 positive_errors = negative_errors/65356;					// подготовка регистра ошибок АЦП
+	bild_send_buffer_SET12(30, negative_errors | positive_errors);
+
+	for (int i = 0; i<16; i++) {
+		bild_send_buffer_SET12(112+i*2, get_value_adc_channel(i));	// заполнение АЦП
+	}
+
+	// тестовые функции
+	for (int i = 0; i<16; i++) {
+		if (count_send == 0) {
+			Xil_Out32(XPAR_IP_AXI_ADC_0_S00_AXI_BASEADDR + 12, 1);
+			bild_send_buffer_SET12(144+i*2, Xil_In32(XPAR_IP_AXI_ADC_0_S00_AXI_BASEADDR + i*4 + 64));
+		} else if (count_send == 1) {
+			Xil_Out32(XPAR_IP_AXI_ADC_0_S00_AXI_BASEADDR + 12, 2);
+			bild_send_buffer_SET12(144+i*2, Xil_In32(XPAR_IP_AXI_ADC_0_S00_AXI_BASEADDR + i*4 + 64));
+		} else if (count_send == 2) {
+			Xil_Out32(XPAR_IP_AXI_ADC_0_S00_AXI_BASEADDR + 12, 4);
+			bild_send_buffer_SET12(144+i*2, Xil_In32(XPAR_IP_AXI_ADC_0_S00_AXI_BASEADDR + i*4 + 64));
+		} else if (count_send == 3) {
+			Xil_Out32(XPAR_IP_AXI_ADC_0_S00_AXI_BASEADDR + 12, 8);
+			bild_send_buffer_SET12(144+i*2, Xil_In32(XPAR_IP_AXI_ADC_0_S00_AXI_BASEADDR + i*4 + 64));
+		}
+
+	}
+
+	if (count_send < 3) {
+		count_send++;
+	} else {
+		count_send = 0;
+		count_send2++;
+	}
+
+	if (count_send2 < 5) {
+//			count_send2++;
+			Xil_Out32(XPAR_IP_AXI_ADC_0_S00_AXI_BASEADDR + 16, 0x00000000);
+		} else {
+			count_send2 = 0;
+			Xil_Out32(XPAR_IP_AXI_ADC_0_S00_AXI_BASEADDR + 16, 0x00000001);
+		}
+
+
+
+
+
+	bild_send_buffer_SET12(TEST_BUFFER_SIZE_SET12-1, 100);				// вместо CRC
+
 	XUartPs_Send(&UartPs_SET12, SendBuffer_SET12, TEST_BUFFER_SIZE_SET12);
 
 	     while(UartPs_SET12.SendBuffer.RemainingBytes!=0)

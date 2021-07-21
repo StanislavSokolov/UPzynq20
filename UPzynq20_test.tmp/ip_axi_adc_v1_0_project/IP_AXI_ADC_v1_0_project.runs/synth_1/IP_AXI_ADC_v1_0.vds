@@ -1,0 +1,530 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Wed Jul 21 09:52:09 2021
+# Process ID: 14128
+# Current directory: d:/GITEA/UPzynq20_test/UPzynq20_test.tmp/ip_axi_adc_v1_0_project/IP_AXI_ADC_v1_0_project.runs/synth_1
+# Command line: vivado.exe -log IP_AXI_ADC_v1_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source IP_AXI_ADC_v1_0.tcl
+# Log file: d:/GITEA/UPzynq20_test/UPzynq20_test.tmp/ip_axi_adc_v1_0_project/IP_AXI_ADC_v1_0_project.runs/synth_1/IP_AXI_ADC_v1_0.vds
+# Journal file: d:/GITEA/UPzynq20_test/UPzynq20_test.tmp/ip_axi_adc_v1_0_project/IP_AXI_ADC_v1_0_project.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source IP_AXI_ADC_v1_0.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/GITEA/UPzynq20_test/IP'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Xilinx/Vivado/2019.1/data/ip'.
+WARNING: [IP_Flow 19-4995] The host OS only allows 260 characters in a normal path. The IP cache path is more than 80 characters. If you experience issues with IP caching, please consider changing the IP cache to a location with a shorter path. Alternately consider using the OS subst command to map part of the path to a drive letter. 
+Current IP cache path is d:/gitea/upzynq20_test/upzynq20_test.tmp/ip_axi_adc_v1_0_project/IP_AXI_ADC_v1_0_project.cache/ip 
+Command: synth_design -top IP_AXI_ADC_v1_0 -part xc7z020clg484-3
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 9760 
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 574.805 ; gain = 187.059
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'IP_AXI_ADC_v1_0' [d:/GITEA/UPzynq20_test/IP/IP_AXI_ADC/IP_AXI_ADC_1.0/hdl/IP_AXI_ADC_v1_0.vhd:72]
+	Parameter C_S00_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_S00_AXI_ADDR_WIDTH bound to: 6 - type: integer 
+	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_S_AXI_ADDR_WIDTH bound to: 6 - type: integer 
+INFO: [Synth 8-3491] module 'IP_AXI_ADC_v1_0_S00_AXI' declared at 'd:/GITEA/UPzynq20_test/IP/IP_AXI_ADC/IP_AXI_ADC_1.0/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:6' bound to instance 'IP_AXI_ADC_v1_0_S00_AXI_inst' of component 'IP_AXI_ADC_v1_0_S00_AXI' [d:/GITEA/UPzynq20_test/IP/IP_AXI_ADC/IP_AXI_ADC_1.0/hdl/IP_AXI_ADC_v1_0.vhd:132]
+INFO: [Synth 8-638] synthesizing module 'IP_AXI_ADC_v1_0_S00_AXI' [d:/GITEA/UPzynq20_test/IP/IP_AXI_ADC/IP_AXI_ADC_1.0/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:112]
+	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_S_AXI_ADDR_WIDTH bound to: 6 - type: integer 
+INFO: [Synth 8-226] default block is never used [d:/GITEA/UPzynq20_test/IP/IP_AXI_ADC/IP_AXI_ADC_1.0/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:298]
+INFO: [Synth 8-226] default block is never used [d:/GITEA/UPzynq20_test/IP/IP_AXI_ADC/IP_AXI_ADC_1.0/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:536]
+WARNING: [Synth 8-614] signal 'ch0' is read in the process but is not in the sensitivity list [d:/GITEA/UPzynq20_test/IP/IP_AXI_ADC/IP_AXI_ADC_1.0/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:531]
+WARNING: [Synth 8-614] signal 'ch1' is read in the process but is not in the sensitivity list [d:/GITEA/UPzynq20_test/IP/IP_AXI_ADC/IP_AXI_ADC_1.0/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:531]
+WARNING: [Synth 8-614] signal 'ch2' is read in the process but is not in the sensitivity list [d:/GITEA/UPzynq20_test/IP/IP_AXI_ADC/IP_AXI_ADC_1.0/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:531]
+WARNING: [Synth 8-614] signal 'ch3' is read in the process but is not in the sensitivity list [d:/GITEA/UPzynq20_test/IP/IP_AXI_ADC/IP_AXI_ADC_1.0/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:531]
+WARNING: [Synth 8-614] signal 'ch4' is read in the process but is not in the sensitivity list [d:/GITEA/UPzynq20_test/IP/IP_AXI_ADC/IP_AXI_ADC_1.0/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:531]
+WARNING: [Synth 8-614] signal 'ch5' is read in the process but is not in the sensitivity list [d:/GITEA/UPzynq20_test/IP/IP_AXI_ADC/IP_AXI_ADC_1.0/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:531]
+WARNING: [Synth 8-614] signal 'ch6' is read in the process but is not in the sensitivity list [d:/GITEA/UPzynq20_test/IP/IP_AXI_ADC/IP_AXI_ADC_1.0/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:531]
+WARNING: [Synth 8-614] signal 'ch7' is read in the process but is not in the sensitivity list [d:/GITEA/UPzynq20_test/IP/IP_AXI_ADC/IP_AXI_ADC_1.0/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:531]
+WARNING: [Synth 8-614] signal 'ch8' is read in the process but is not in the sensitivity list [d:/GITEA/UPzynq20_test/IP/IP_AXI_ADC/IP_AXI_ADC_1.0/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:531]
+WARNING: [Synth 8-614] signal 'ch9' is read in the process but is not in the sensitivity list [d:/GITEA/UPzynq20_test/IP/IP_AXI_ADC/IP_AXI_ADC_1.0/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:531]
+WARNING: [Synth 8-614] signal 'ch10' is read in the process but is not in the sensitivity list [d:/GITEA/UPzynq20_test/IP/IP_AXI_ADC/IP_AXI_ADC_1.0/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:531]
+WARNING: [Synth 8-614] signal 'ch11' is read in the process but is not in the sensitivity list [d:/GITEA/UPzynq20_test/IP/IP_AXI_ADC/IP_AXI_ADC_1.0/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:531]
+WARNING: [Synth 8-614] signal 'ch12' is read in the process but is not in the sensitivity list [d:/GITEA/UPzynq20_test/IP/IP_AXI_ADC/IP_AXI_ADC_1.0/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:531]
+WARNING: [Synth 8-614] signal 'ch13' is read in the process but is not in the sensitivity list [d:/GITEA/UPzynq20_test/IP/IP_AXI_ADC/IP_AXI_ADC_1.0/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:531]
+WARNING: [Synth 8-614] signal 'ch14' is read in the process but is not in the sensitivity list [d:/GITEA/UPzynq20_test/IP/IP_AXI_ADC/IP_AXI_ADC_1.0/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:531]
+WARNING: [Synth 8-614] signal 'ch15' is read in the process but is not in the sensitivity list [d:/GITEA/UPzynq20_test/IP/IP_AXI_ADC/IP_AXI_ADC_1.0/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:531]
+WARNING: [Synth 8-6014] Unused sequential element axi_awaddr_reg was removed.  [d:/GITEA/UPzynq20_test/IP/IP_AXI_ADC/IP_AXI_ADC_1.0/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:231]
+WARNING: [Synth 8-6014] Unused sequential element slv_reg0_reg was removed.  [d:/GITEA/UPzynq20_test/IP/IP_AXI_ADC/IP_AXI_ADC_1.0/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:279]
+WARNING: [Synth 8-6014] Unused sequential element slv_reg1_reg was removed.  [d:/GITEA/UPzynq20_test/IP/IP_AXI_ADC/IP_AXI_ADC_1.0/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:280]
+WARNING: [Synth 8-6014] Unused sequential element slv_reg2_reg was removed.  [d:/GITEA/UPzynq20_test/IP/IP_AXI_ADC/IP_AXI_ADC_1.0/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:281]
+WARNING: [Synth 8-6014] Unused sequential element slv_reg3_reg was removed.  [d:/GITEA/UPzynq20_test/IP/IP_AXI_ADC/IP_AXI_ADC_1.0/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:282]
+WARNING: [Synth 8-6014] Unused sequential element slv_reg4_reg was removed.  [d:/GITEA/UPzynq20_test/IP/IP_AXI_ADC/IP_AXI_ADC_1.0/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:283]
+WARNING: [Synth 8-6014] Unused sequential element slv_reg5_reg was removed.  [d:/GITEA/UPzynq20_test/IP/IP_AXI_ADC/IP_AXI_ADC_1.0/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:284]
+WARNING: [Synth 8-6014] Unused sequential element slv_reg6_reg was removed.  [d:/GITEA/UPzynq20_test/IP/IP_AXI_ADC/IP_AXI_ADC_1.0/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:285]
+WARNING: [Synth 8-6014] Unused sequential element slv_reg7_reg was removed.  [d:/GITEA/UPzynq20_test/IP/IP_AXI_ADC/IP_AXI_ADC_1.0/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:286]
+WARNING: [Synth 8-6014] Unused sequential element slv_reg8_reg was removed.  [d:/GITEA/UPzynq20_test/IP/IP_AXI_ADC/IP_AXI_ADC_1.0/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:287]
+WARNING: [Synth 8-6014] Unused sequential element slv_reg9_reg was removed.  [d:/GITEA/UPzynq20_test/IP/IP_AXI_ADC/IP_AXI_ADC_1.0/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:288]
+WARNING: [Synth 8-6014] Unused sequential element slv_reg10_reg was removed.  [d:/GITEA/UPzynq20_test/IP/IP_AXI_ADC/IP_AXI_ADC_1.0/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:289]
+WARNING: [Synth 8-6014] Unused sequential element slv_reg11_reg was removed.  [d:/GITEA/UPzynq20_test/IP/IP_AXI_ADC/IP_AXI_ADC_1.0/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:290]
+WARNING: [Synth 8-6014] Unused sequential element slv_reg12_reg was removed.  [d:/GITEA/UPzynq20_test/IP/IP_AXI_ADC/IP_AXI_ADC_1.0/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:291]
+WARNING: [Synth 8-6014] Unused sequential element slv_reg13_reg was removed.  [d:/GITEA/UPzynq20_test/IP/IP_AXI_ADC/IP_AXI_ADC_1.0/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:292]
+WARNING: [Synth 8-6014] Unused sequential element slv_reg14_reg was removed.  [d:/GITEA/UPzynq20_test/IP/IP_AXI_ADC/IP_AXI_ADC_1.0/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:293]
+WARNING: [Synth 8-6014] Unused sequential element slv_reg15_reg was removed.  [d:/GITEA/UPzynq20_test/IP/IP_AXI_ADC/IP_AXI_ADC_1.0/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:294]
+WARNING: [Synth 8-6014] Unused sequential element loc_addr_reg was removed.  [d:/GITEA/UPzynq20_test/IP/IP_AXI_ADC/IP_AXI_ADC_1.0/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:296]
+WARNING: [Synth 8-6014] Unused sequential element odd_reg was removed.  [d:/GITEA/UPzynq20_test/IP/IP_AXI_ADC/IP_AXI_ADC_1.0/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:614]
+WARNING: [Synth 8-6014] Unused sequential element even_reg was removed.  [d:/GITEA/UPzynq20_test/IP/IP_AXI_ADC/IP_AXI_ADC_1.0/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:667]
+INFO: [Synth 8-256] done synthesizing module 'IP_AXI_ADC_v1_0_S00_AXI' (1#1) [d:/GITEA/UPzynq20_test/IP/IP_AXI_ADC/IP_AXI_ADC_1.0/hdl/IP_AXI_ADC_v1_0_S00_AXI.vhd:112]
+INFO: [Synth 8-256] done synthesizing module 'IP_AXI_ADC_v1_0' (2#1) [d:/GITEA/UPzynq20_test/IP/IP_AXI_ADC/IP_AXI_ADC_1.0/hdl/IP_AXI_ADC_v1_0.vhd:72]
+WARNING: [Synth 8-3331] design IP_AXI_ADC_v1_0_S00_AXI has unconnected port S_AXI_AWADDR[5]
+WARNING: [Synth 8-3331] design IP_AXI_ADC_v1_0_S00_AXI has unconnected port S_AXI_AWADDR[4]
+WARNING: [Synth 8-3331] design IP_AXI_ADC_v1_0_S00_AXI has unconnected port S_AXI_AWADDR[3]
+WARNING: [Synth 8-3331] design IP_AXI_ADC_v1_0_S00_AXI has unconnected port S_AXI_AWADDR[2]
+WARNING: [Synth 8-3331] design IP_AXI_ADC_v1_0_S00_AXI has unconnected port S_AXI_AWADDR[1]
+WARNING: [Synth 8-3331] design IP_AXI_ADC_v1_0_S00_AXI has unconnected port S_AXI_AWADDR[0]
+WARNING: [Synth 8-3331] design IP_AXI_ADC_v1_0_S00_AXI has unconnected port S_AXI_AWPROT[2]
+WARNING: [Synth 8-3331] design IP_AXI_ADC_v1_0_S00_AXI has unconnected port S_AXI_AWPROT[1]
+WARNING: [Synth 8-3331] design IP_AXI_ADC_v1_0_S00_AXI has unconnected port S_AXI_AWPROT[0]
+WARNING: [Synth 8-3331] design IP_AXI_ADC_v1_0_S00_AXI has unconnected port S_AXI_WDATA[31]
+WARNING: [Synth 8-3331] design IP_AXI_ADC_v1_0_S00_AXI has unconnected port S_AXI_WDATA[30]
+WARNING: [Synth 8-3331] design IP_AXI_ADC_v1_0_S00_AXI has unconnected port S_AXI_WDATA[29]
+WARNING: [Synth 8-3331] design IP_AXI_ADC_v1_0_S00_AXI has unconnected port S_AXI_WDATA[28]
+WARNING: [Synth 8-3331] design IP_AXI_ADC_v1_0_S00_AXI has unconnected port S_AXI_WDATA[27]
+WARNING: [Synth 8-3331] design IP_AXI_ADC_v1_0_S00_AXI has unconnected port S_AXI_WDATA[26]
+WARNING: [Synth 8-3331] design IP_AXI_ADC_v1_0_S00_AXI has unconnected port S_AXI_WDATA[25]
+WARNING: [Synth 8-3331] design IP_AXI_ADC_v1_0_S00_AXI has unconnected port S_AXI_WDATA[24]
+WARNING: [Synth 8-3331] design IP_AXI_ADC_v1_0_S00_AXI has unconnected port S_AXI_WDATA[23]
+WARNING: [Synth 8-3331] design IP_AXI_ADC_v1_0_S00_AXI has unconnected port S_AXI_WDATA[22]
+WARNING: [Synth 8-3331] design IP_AXI_ADC_v1_0_S00_AXI has unconnected port S_AXI_WDATA[21]
+WARNING: [Synth 8-3331] design IP_AXI_ADC_v1_0_S00_AXI has unconnected port S_AXI_WDATA[20]
+WARNING: [Synth 8-3331] design IP_AXI_ADC_v1_0_S00_AXI has unconnected port S_AXI_WDATA[19]
+WARNING: [Synth 8-3331] design IP_AXI_ADC_v1_0_S00_AXI has unconnected port S_AXI_WDATA[18]
+WARNING: [Synth 8-3331] design IP_AXI_ADC_v1_0_S00_AXI has unconnected port S_AXI_WDATA[17]
+WARNING: [Synth 8-3331] design IP_AXI_ADC_v1_0_S00_AXI has unconnected port S_AXI_WDATA[16]
+WARNING: [Synth 8-3331] design IP_AXI_ADC_v1_0_S00_AXI has unconnected port S_AXI_WDATA[15]
+WARNING: [Synth 8-3331] design IP_AXI_ADC_v1_0_S00_AXI has unconnected port S_AXI_WDATA[14]
+WARNING: [Synth 8-3331] design IP_AXI_ADC_v1_0_S00_AXI has unconnected port S_AXI_WDATA[13]
+WARNING: [Synth 8-3331] design IP_AXI_ADC_v1_0_S00_AXI has unconnected port S_AXI_WDATA[12]
+WARNING: [Synth 8-3331] design IP_AXI_ADC_v1_0_S00_AXI has unconnected port S_AXI_WDATA[11]
+WARNING: [Synth 8-3331] design IP_AXI_ADC_v1_0_S00_AXI has unconnected port S_AXI_WDATA[10]
+WARNING: [Synth 8-3331] design IP_AXI_ADC_v1_0_S00_AXI has unconnected port S_AXI_WDATA[9]
+WARNING: [Synth 8-3331] design IP_AXI_ADC_v1_0_S00_AXI has unconnected port S_AXI_WDATA[8]
+WARNING: [Synth 8-3331] design IP_AXI_ADC_v1_0_S00_AXI has unconnected port S_AXI_WDATA[7]
+WARNING: [Synth 8-3331] design IP_AXI_ADC_v1_0_S00_AXI has unconnected port S_AXI_WDATA[6]
+WARNING: [Synth 8-3331] design IP_AXI_ADC_v1_0_S00_AXI has unconnected port S_AXI_WDATA[5]
+WARNING: [Synth 8-3331] design IP_AXI_ADC_v1_0_S00_AXI has unconnected port S_AXI_WDATA[4]
+WARNING: [Synth 8-3331] design IP_AXI_ADC_v1_0_S00_AXI has unconnected port S_AXI_WDATA[3]
+WARNING: [Synth 8-3331] design IP_AXI_ADC_v1_0_S00_AXI has unconnected port S_AXI_WDATA[2]
+WARNING: [Synth 8-3331] design IP_AXI_ADC_v1_0_S00_AXI has unconnected port S_AXI_WDATA[1]
+WARNING: [Synth 8-3331] design IP_AXI_ADC_v1_0_S00_AXI has unconnected port S_AXI_WDATA[0]
+WARNING: [Synth 8-3331] design IP_AXI_ADC_v1_0_S00_AXI has unconnected port S_AXI_WSTRB[3]
+WARNING: [Synth 8-3331] design IP_AXI_ADC_v1_0_S00_AXI has unconnected port S_AXI_WSTRB[2]
+WARNING: [Synth 8-3331] design IP_AXI_ADC_v1_0_S00_AXI has unconnected port S_AXI_WSTRB[1]
+WARNING: [Synth 8-3331] design IP_AXI_ADC_v1_0_S00_AXI has unconnected port S_AXI_WSTRB[0]
+WARNING: [Synth 8-3331] design IP_AXI_ADC_v1_0_S00_AXI has unconnected port S_AXI_ARPROT[2]
+WARNING: [Synth 8-3331] design IP_AXI_ADC_v1_0_S00_AXI has unconnected port S_AXI_ARPROT[1]
+WARNING: [Synth 8-3331] design IP_AXI_ADC_v1_0_S00_AXI has unconnected port S_AXI_ARPROT[0]
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 639.523 ; gain = 251.777
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 639.523 ; gain = 251.777
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z020clg484-3
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 639.523 ; gain = 251.777
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7z020clg484-3
+INFO: [Synth 8-5545] ROM "a0_sign" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "not_cs_sign" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "sclk_sign" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 651.250 ; gain = 263.504
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+No constraint files found.
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 12    
+	   2 Input      3 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 34    
+	                6 Bit    Registers := 1     
+	                3 Bit    Registers := 1     
+	                2 Bit    Registers := 2     
+	                1 Bit    Registers := 13    
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 12    
+	   7 Input     32 Bit        Muxes := 3     
+	   4 Input     32 Bit        Muxes := 8     
+	  12 Input     32 Bit        Muxes := 1     
+	   7 Input      2 Bit        Muxes := 8     
+	   2 Input      1 Bit        Muxes := 20    
+	  12 Input      1 Bit        Muxes := 8     
+	   7 Input      1 Bit        Muxes := 7     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module IP_AXI_ADC_v1_0_S00_AXI 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 12    
+	   2 Input      3 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 34    
+	                6 Bit    Registers := 1     
+	                3 Bit    Registers := 1     
+	                2 Bit    Registers := 2     
+	                1 Bit    Registers := 13    
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 12    
+	   7 Input     32 Bit        Muxes := 3     
+	   4 Input     32 Bit        Muxes := 8     
+	  12 Input     32 Bit        Muxes := 1     
+	   7 Input      2 Bit        Muxes := 8     
+	   2 Input      1 Bit        Muxes := 20    
+	  12 Input      1 Bit        Muxes := 8     
+	   7 Input      1 Bit        Muxes := 7     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 220 (col length:60)
+BRAMs: 280 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+INFO: [Synth 8-5587] ROM size for "sclk_sign" is below threshold of ROM address width. It will be mapped to LUTs
+INFO: [Synth 8-5587] ROM size for "a0_sign" is below threshold of ROM address width. It will be mapped to LUTs
+INFO: [Synth 8-5587] ROM size for "not_cs_sign" is below threshold of ROM address width. It will be mapped to LUTs
+WARNING: [Synth 8-3331] design IP_AXI_ADC_v1_0_S00_AXI has unconnected port S_AXI_AWADDR[5]
+WARNING: [Synth 8-3331] design IP_AXI_ADC_v1_0_S00_AXI has unconnected port S_AXI_AWADDR[4]
+WARNING: [Synth 8-3331] design IP_AXI_ADC_v1_0_S00_AXI has unconnected port S_AXI_AWADDR[3]
+WARNING: [Synth 8-3331] design IP_AXI_ADC_v1_0_S00_AXI has unconnected port S_AXI_AWADDR[2]
+WARNING: [Synth 8-3331] design IP_AXI_ADC_v1_0_S00_AXI has unconnected port S_AXI_AWADDR[1]
+WARNING: [Synth 8-3331] design IP_AXI_ADC_v1_0_S00_AXI has unconnected port S_AXI_AWADDR[0]
+WARNING: [Synth 8-3331] design IP_AXI_ADC_v1_0_S00_AXI has unconnected port S_AXI_AWPROT[2]
+WARNING: [Synth 8-3331] design IP_AXI_ADC_v1_0_S00_AXI has unconnected port S_AXI_AWPROT[1]
+WARNING: [Synth 8-3331] design IP_AXI_ADC_v1_0_S00_AXI has unconnected port S_AXI_AWPROT[0]
+WARNING: [Synth 8-3331] design IP_AXI_ADC_v1_0_S00_AXI has unconnected port S_AXI_WDATA[31]
+WARNING: [Synth 8-3331] design IP_AXI_ADC_v1_0_S00_AXI has unconnected port S_AXI_WDATA[30]
+WARNING: [Synth 8-3331] design IP_AXI_ADC_v1_0_S00_AXI has unconnected port S_AXI_WDATA[29]
+WARNING: [Synth 8-3331] design IP_AXI_ADC_v1_0_S00_AXI has unconnected port S_AXI_WDATA[28]
+WARNING: [Synth 8-3331] design IP_AXI_ADC_v1_0_S00_AXI has unconnected port S_AXI_WDATA[27]
+WARNING: [Synth 8-3331] design IP_AXI_ADC_v1_0_S00_AXI has unconnected port S_AXI_WDATA[26]
+WARNING: [Synth 8-3331] design IP_AXI_ADC_v1_0_S00_AXI has unconnected port S_AXI_WDATA[25]
+WARNING: [Synth 8-3331] design IP_AXI_ADC_v1_0_S00_AXI has unconnected port S_AXI_WDATA[24]
+WARNING: [Synth 8-3331] design IP_AXI_ADC_v1_0_S00_AXI has unconnected port S_AXI_WDATA[23]
+WARNING: [Synth 8-3331] design IP_AXI_ADC_v1_0_S00_AXI has unconnected port S_AXI_WDATA[22]
+WARNING: [Synth 8-3331] design IP_AXI_ADC_v1_0_S00_AXI has unconnected port S_AXI_WDATA[21]
+WARNING: [Synth 8-3331] design IP_AXI_ADC_v1_0_S00_AXI has unconnected port S_AXI_WDATA[20]
+WARNING: [Synth 8-3331] design IP_AXI_ADC_v1_0_S00_AXI has unconnected port S_AXI_WDATA[19]
+WARNING: [Synth 8-3331] design IP_AXI_ADC_v1_0_S00_AXI has unconnected port S_AXI_WDATA[18]
+WARNING: [Synth 8-3331] design IP_AXI_ADC_v1_0_S00_AXI has unconnected port S_AXI_WDATA[17]
+WARNING: [Synth 8-3331] design IP_AXI_ADC_v1_0_S00_AXI has unconnected port S_AXI_WDATA[16]
+WARNING: [Synth 8-3331] design IP_AXI_ADC_v1_0_S00_AXI has unconnected port S_AXI_WDATA[15]
+WARNING: [Synth 8-3331] design IP_AXI_ADC_v1_0_S00_AXI has unconnected port S_AXI_WDATA[14]
+WARNING: [Synth 8-3331] design IP_AXI_ADC_v1_0_S00_AXI has unconnected port S_AXI_WDATA[13]
+WARNING: [Synth 8-3331] design IP_AXI_ADC_v1_0_S00_AXI has unconnected port S_AXI_WDATA[12]
+WARNING: [Synth 8-3331] design IP_AXI_ADC_v1_0_S00_AXI has unconnected port S_AXI_WDATA[11]
+WARNING: [Synth 8-3331] design IP_AXI_ADC_v1_0_S00_AXI has unconnected port S_AXI_WDATA[10]
+WARNING: [Synth 8-3331] design IP_AXI_ADC_v1_0_S00_AXI has unconnected port S_AXI_WDATA[9]
+WARNING: [Synth 8-3331] design IP_AXI_ADC_v1_0_S00_AXI has unconnected port S_AXI_WDATA[8]
+WARNING: [Synth 8-3331] design IP_AXI_ADC_v1_0_S00_AXI has unconnected port S_AXI_WDATA[7]
+WARNING: [Synth 8-3331] design IP_AXI_ADC_v1_0_S00_AXI has unconnected port S_AXI_WDATA[6]
+WARNING: [Synth 8-3331] design IP_AXI_ADC_v1_0_S00_AXI has unconnected port S_AXI_WDATA[5]
+WARNING: [Synth 8-3331] design IP_AXI_ADC_v1_0_S00_AXI has unconnected port S_AXI_WDATA[4]
+WARNING: [Synth 8-3331] design IP_AXI_ADC_v1_0_S00_AXI has unconnected port S_AXI_WDATA[3]
+WARNING: [Synth 8-3331] design IP_AXI_ADC_v1_0_S00_AXI has unconnected port S_AXI_WDATA[2]
+WARNING: [Synth 8-3331] design IP_AXI_ADC_v1_0_S00_AXI has unconnected port S_AXI_WDATA[1]
+WARNING: [Synth 8-3331] design IP_AXI_ADC_v1_0_S00_AXI has unconnected port S_AXI_WDATA[0]
+WARNING: [Synth 8-3331] design IP_AXI_ADC_v1_0_S00_AXI has unconnected port S_AXI_WSTRB[3]
+WARNING: [Synth 8-3331] design IP_AXI_ADC_v1_0_S00_AXI has unconnected port S_AXI_WSTRB[2]
+WARNING: [Synth 8-3331] design IP_AXI_ADC_v1_0_S00_AXI has unconnected port S_AXI_WSTRB[1]
+WARNING: [Synth 8-3331] design IP_AXI_ADC_v1_0_S00_AXI has unconnected port S_AXI_WSTRB[0]
+WARNING: [Synth 8-3331] design IP_AXI_ADC_v1_0_S00_AXI has unconnected port S_AXI_ARPROT[2]
+WARNING: [Synth 8-3331] design IP_AXI_ADC_v1_0_S00_AXI has unconnected port S_AXI_ARPROT[1]
+WARNING: [Synth 8-3331] design IP_AXI_ADC_v1_0_S00_AXI has unconnected port S_AXI_ARPROT[0]
+INFO: [Synth 8-3886] merging instance 'IP_AXI_ADC_v1_0_S00_AXI_inst/axi_rresp_reg[0]' (FDRE) to 'IP_AXI_ADC_v1_0_S00_AXI_inst/axi_rresp_reg[1]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\IP_AXI_ADC_v1_0_S00_AXI_inst/axi_rresp_reg[1] )
+INFO: [Synth 8-3886] merging instance 'IP_AXI_ADC_v1_0_S00_AXI_inst/axi_bresp_reg[0]' (FDRE) to 'IP_AXI_ADC_v1_0_S00_AXI_inst/axi_bresp_reg[1]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\IP_AXI_ADC_v1_0_S00_AXI_inst/axi_bresp_reg[1] )
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 833.129 ; gain = 445.383
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 837.570 ; gain = 449.824
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 837.750 ; gain = 450.004
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5365] Flop IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a0_reg[11] is being inverted and renamed to IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a0_reg[11]_inv.
+INFO: [Synth 8-5365] Flop IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a0_reg[13] is being inverted and renamed to IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a0_reg[13]_inv.
+INFO: [Synth 8-5365] Flop IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a0_reg[14] is being inverted and renamed to IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a0_reg[14]_inv.
+INFO: [Synth 8-5365] Flop IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a0_reg[15] is being inverted and renamed to IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a0_reg[15]_inv.
+INFO: [Synth 8-5365] Flop IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a0_reg[16] is being inverted and renamed to IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a0_reg[16]_inv.
+INFO: [Synth 8-5365] Flop IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a0_reg[17] is being inverted and renamed to IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a0_reg[17]_inv.
+INFO: [Synth 8-5365] Flop IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a0_reg[18] is being inverted and renamed to IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a0_reg[18]_inv.
+INFO: [Synth 8-5365] Flop IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a0_reg[19] is being inverted and renamed to IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a0_reg[19]_inv.
+INFO: [Synth 8-5365] Flop IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a0_reg[20] is being inverted and renamed to IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a0_reg[20]_inv.
+INFO: [Synth 8-5365] Flop IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a0_reg[21] is being inverted and renamed to IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a0_reg[21]_inv.
+INFO: [Synth 8-5365] Flop IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a0_reg[22] is being inverted and renamed to IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a0_reg[22]_inv.
+INFO: [Synth 8-5365] Flop IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a0_reg[23] is being inverted and renamed to IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a0_reg[23]_inv.
+INFO: [Synth 8-5365] Flop IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a0_reg[24] is being inverted and renamed to IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a0_reg[24]_inv.
+INFO: [Synth 8-5365] Flop IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a0_reg[25] is being inverted and renamed to IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a0_reg[25]_inv.
+INFO: [Synth 8-5365] Flop IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a0_reg[26] is being inverted and renamed to IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a0_reg[26]_inv.
+INFO: [Synth 8-5365] Flop IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a0_reg[27] is being inverted and renamed to IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a0_reg[27]_inv.
+INFO: [Synth 8-5365] Flop IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a0_reg[28] is being inverted and renamed to IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a0_reg[28]_inv.
+INFO: [Synth 8-5365] Flop IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a0_reg[29] is being inverted and renamed to IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a0_reg[29]_inv.
+INFO: [Synth 8-5365] Flop IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a0_reg[30] is being inverted and renamed to IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a0_reg[30]_inv.
+INFO: [Synth 8-5365] Flop IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a0_reg[31] is being inverted and renamed to IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a0_reg[31]_inv.
+INFO: [Synth 8-5365] Flop IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_b0_reg[11] is being inverted and renamed to IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_b0_reg[11]_inv.
+INFO: [Synth 8-5365] Flop IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_b0_reg[13] is being inverted and renamed to IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_b0_reg[13]_inv.
+INFO: [Synth 8-5365] Flop IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_b0_reg[14] is being inverted and renamed to IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_b0_reg[14]_inv.
+INFO: [Synth 8-5365] Flop IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_b0_reg[15] is being inverted and renamed to IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_b0_reg[15]_inv.
+INFO: [Synth 8-5365] Flop IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_b0_reg[16] is being inverted and renamed to IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_b0_reg[16]_inv.
+INFO: [Synth 8-5365] Flop IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_b0_reg[17] is being inverted and renamed to IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_b0_reg[17]_inv.
+INFO: [Synth 8-5365] Flop IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_b0_reg[18] is being inverted and renamed to IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_b0_reg[18]_inv.
+INFO: [Synth 8-5365] Flop IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_b0_reg[19] is being inverted and renamed to IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_b0_reg[19]_inv.
+INFO: [Synth 8-5365] Flop IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_b0_reg[20] is being inverted and renamed to IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_b0_reg[20]_inv.
+INFO: [Synth 8-5365] Flop IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_b0_reg[21] is being inverted and renamed to IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_b0_reg[21]_inv.
+INFO: [Synth 8-5365] Flop IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_b0_reg[22] is being inverted and renamed to IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_b0_reg[22]_inv.
+INFO: [Synth 8-5365] Flop IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_b0_reg[23] is being inverted and renamed to IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_b0_reg[23]_inv.
+INFO: [Synth 8-5365] Flop IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_b0_reg[24] is being inverted and renamed to IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_b0_reg[24]_inv.
+INFO: [Synth 8-5365] Flop IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_b0_reg[25] is being inverted and renamed to IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_b0_reg[25]_inv.
+INFO: [Synth 8-5365] Flop IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_b0_reg[26] is being inverted and renamed to IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_b0_reg[26]_inv.
+INFO: [Synth 8-5365] Flop IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_b0_reg[27] is being inverted and renamed to IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_b0_reg[27]_inv.
+INFO: [Synth 8-5365] Flop IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_b0_reg[28] is being inverted and renamed to IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_b0_reg[28]_inv.
+INFO: [Synth 8-5365] Flop IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_b0_reg[29] is being inverted and renamed to IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_b0_reg[29]_inv.
+INFO: [Synth 8-5365] Flop IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_b0_reg[30] is being inverted and renamed to IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_b0_reg[30]_inv.
+INFO: [Synth 8-5365] Flop IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_b0_reg[31] is being inverted and renamed to IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_b0_reg[31]_inv.
+INFO: [Synth 8-5365] Flop IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a1_reg[11] is being inverted and renamed to IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a1_reg[11]_inv.
+INFO: [Synth 8-5365] Flop IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a1_reg[13] is being inverted and renamed to IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a1_reg[13]_inv.
+INFO: [Synth 8-5365] Flop IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a1_reg[14] is being inverted and renamed to IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a1_reg[14]_inv.
+INFO: [Synth 8-5365] Flop IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a1_reg[15] is being inverted and renamed to IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a1_reg[15]_inv.
+INFO: [Synth 8-5365] Flop IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a1_reg[16] is being inverted and renamed to IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a1_reg[16]_inv.
+INFO: [Synth 8-5365] Flop IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a1_reg[17] is being inverted and renamed to IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a1_reg[17]_inv.
+INFO: [Synth 8-5365] Flop IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a1_reg[18] is being inverted and renamed to IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a1_reg[18]_inv.
+INFO: [Synth 8-5365] Flop IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a1_reg[19] is being inverted and renamed to IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a1_reg[19]_inv.
+INFO: [Synth 8-5365] Flop IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a1_reg[20] is being inverted and renamed to IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a1_reg[20]_inv.
+INFO: [Synth 8-5365] Flop IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a1_reg[21] is being inverted and renamed to IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a1_reg[21]_inv.
+INFO: [Synth 8-5365] Flop IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a1_reg[22] is being inverted and renamed to IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a1_reg[22]_inv.
+INFO: [Synth 8-5365] Flop IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a1_reg[23] is being inverted and renamed to IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a1_reg[23]_inv.
+INFO: [Synth 8-5365] Flop IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a1_reg[24] is being inverted and renamed to IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a1_reg[24]_inv.
+INFO: [Synth 8-5365] Flop IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a1_reg[25] is being inverted and renamed to IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a1_reg[25]_inv.
+INFO: [Synth 8-5365] Flop IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a1_reg[26] is being inverted and renamed to IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a1_reg[26]_inv.
+INFO: [Synth 8-5365] Flop IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a1_reg[27] is being inverted and renamed to IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a1_reg[27]_inv.
+INFO: [Synth 8-5365] Flop IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a1_reg[28] is being inverted and renamed to IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a1_reg[28]_inv.
+INFO: [Synth 8-5365] Flop IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a1_reg[29] is being inverted and renamed to IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a1_reg[29]_inv.
+INFO: [Synth 8-5365] Flop IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a1_reg[30] is being inverted and renamed to IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a1_reg[30]_inv.
+INFO: [Synth 8-5365] Flop IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a1_reg[31] is being inverted and renamed to IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a1_reg[31]_inv.
+INFO: [Synth 8-5365] Flop IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_b1_reg[11] is being inverted and renamed to IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_b1_reg[11]_inv.
+INFO: [Synth 8-5365] Flop IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_b1_reg[13] is being inverted and renamed to IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_b1_reg[13]_inv.
+INFO: [Synth 8-5365] Flop IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_b1_reg[14] is being inverted and renamed to IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_b1_reg[14]_inv.
+INFO: [Synth 8-5365] Flop IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_b1_reg[15] is being inverted and renamed to IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_b1_reg[15]_inv.
+INFO: [Synth 8-5365] Flop IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_b1_reg[16] is being inverted and renamed to IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_b1_reg[16]_inv.
+INFO: [Synth 8-5365] Flop IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_b1_reg[17] is being inverted and renamed to IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_b1_reg[17]_inv.
+INFO: [Synth 8-5365] Flop IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_b1_reg[18] is being inverted and renamed to IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_b1_reg[18]_inv.
+INFO: [Synth 8-5365] Flop IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_b1_reg[19] is being inverted and renamed to IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_b1_reg[19]_inv.
+INFO: [Synth 8-5365] Flop IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_b1_reg[20] is being inverted and renamed to IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_b1_reg[20]_inv.
+INFO: [Synth 8-5365] Flop IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_b1_reg[21] is being inverted and renamed to IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_b1_reg[21]_inv.
+INFO: [Synth 8-5365] Flop IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_b1_reg[22] is being inverted and renamed to IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_b1_reg[22]_inv.
+INFO: [Synth 8-5365] Flop IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_b1_reg[23] is being inverted and renamed to IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_b1_reg[23]_inv.
+INFO: [Synth 8-5365] Flop IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_b1_reg[24] is being inverted and renamed to IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_b1_reg[24]_inv.
+INFO: [Synth 8-5365] Flop IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_b1_reg[25] is being inverted and renamed to IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_b1_reg[25]_inv.
+INFO: [Synth 8-5365] Flop IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_b1_reg[26] is being inverted and renamed to IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_b1_reg[26]_inv.
+INFO: [Synth 8-5365] Flop IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_b1_reg[27] is being inverted and renamed to IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_b1_reg[27]_inv.
+INFO: [Synth 8-5365] Flop IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_b1_reg[28] is being inverted and renamed to IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_b1_reg[28]_inv.
+INFO: [Synth 8-5365] Flop IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_b1_reg[29] is being inverted and renamed to IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_b1_reg[29]_inv.
+INFO: [Synth 8-5365] Flop IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_b1_reg[30] is being inverted and renamed to IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_b1_reg[30]_inv.
+INFO: [Synth 8-5365] Flop IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_b1_reg[31] is being inverted and renamed to IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_b1_reg[31]_inv.
+INFO: [Synth 8-5365] Flop IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a2_reg[11] is being inverted and renamed to IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a2_reg[11]_inv.
+INFO: [Synth 8-5365] Flop IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a2_reg[13] is being inverted and renamed to IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a2_reg[13]_inv.
+INFO: [Synth 8-5365] Flop IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a2_reg[14] is being inverted and renamed to IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a2_reg[14]_inv.
+INFO: [Synth 8-5365] Flop IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a2_reg[15] is being inverted and renamed to IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a2_reg[15]_inv.
+INFO: [Synth 8-5365] Flop IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a2_reg[16] is being inverted and renamed to IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a2_reg[16]_inv.
+INFO: [Synth 8-5365] Flop IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a2_reg[17] is being inverted and renamed to IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a2_reg[17]_inv.
+INFO: [Synth 8-5365] Flop IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a2_reg[18] is being inverted and renamed to IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a2_reg[18]_inv.
+INFO: [Synth 8-5365] Flop IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a2_reg[19] is being inverted and renamed to IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a2_reg[19]_inv.
+INFO: [Synth 8-5365] Flop IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a2_reg[20] is being inverted and renamed to IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a2_reg[20]_inv.
+INFO: [Synth 8-5365] Flop IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a2_reg[21] is being inverted and renamed to IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a2_reg[21]_inv.
+INFO: [Synth 8-5365] Flop IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a2_reg[22] is being inverted and renamed to IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a2_reg[22]_inv.
+INFO: [Synth 8-5365] Flop IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a2_reg[23] is being inverted and renamed to IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a2_reg[23]_inv.
+INFO: [Synth 8-5365] Flop IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a2_reg[24] is being inverted and renamed to IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a2_reg[24]_inv.
+INFO: [Synth 8-5365] Flop IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a2_reg[25] is being inverted and renamed to IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a2_reg[25]_inv.
+INFO: [Synth 8-5365] Flop IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a2_reg[26] is being inverted and renamed to IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a2_reg[26]_inv.
+INFO: [Synth 8-5365] Flop IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a2_reg[27] is being inverted and renamed to IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a2_reg[27]_inv.
+INFO: [Synth 8-5365] Flop IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a2_reg[28] is being inverted and renamed to IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a2_reg[28]_inv.
+INFO: [Synth 8-5365] Flop IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a2_reg[29] is being inverted and renamed to IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a2_reg[29]_inv.
+INFO: [Synth 8-5365] Flop IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a2_reg[30] is being inverted and renamed to IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a2_reg[30]_inv.
+INFO: [Synth 8-5365] Flop IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a2_reg[31] is being inverted and renamed to IP_AXI_ADC_v1_0_S00_AXI_inst/receive_data_a2_reg[31]_inv.
+INFO: [Common 17-14] Message 'Synth 8-5365' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 837.750 ; gain = 450.004
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 837.750 ; gain = 450.004
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 837.750 ; gain = 450.004
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 837.750 ; gain = 450.004
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 837.750 ; gain = 450.004
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 837.750 ; gain = 450.004
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |BUFG   |     3|
+|2     |CARRY4 |    80|
+|3     |LUT1   |   134|
+|4     |LUT2   |     8|
+|5     |LUT3   |    39|
+|6     |LUT4   |    17|
+|7     |LUT5   |   115|
+|8     |LUT6   |   402|
+|9     |MUXF7  |    64|
+|10    |MUXF8  |    32|
+|11    |FDRE   |  1008|
+|12    |FDSE   |   165|
+|13    |IBUF   |    19|
+|14    |OBUF   |   302|
++------+-------+------+
+
+Report Instance Areas: 
++------+-------------------------------+------------------------+------+
+|      |Instance                       |Module                  |Cells |
++------+-------------------------------+------------------------+------+
+|1     |top                            |                        |  2388|
+|2     |  IP_AXI_ADC_v1_0_S00_AXI_inst |IP_AXI_ADC_v1_0_S00_AXI |  2064|
++------+-------------------------------+------------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 837.750 ; gain = 450.004
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 132 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 837.750 ; gain = 450.004
+Synthesis Optimization Complete : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 837.750 ; gain = 450.004
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 176 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+WARNING: [Netlist 29-101] Netlist 'IP_AXI_ADC_v1_0' is not ideal for floorplanning, since the cellview 'IP_AXI_ADC_v1_0_S00_AXI' contains a large number of primitives.  Please consider enabling hierarchy in synthesis if you want to do floorplanning.
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 938.824 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+130 Infos, 134 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 938.824 ; gain = 558.586
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 938.824 ; gain = 0.000
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+INFO: [Common 17-1381] The checkpoint 'd:/GITEA/UPzynq20_test/UPzynq20_test.tmp/ip_axi_adc_v1_0_project/IP_AXI_ADC_v1_0_project.runs/synth_1/IP_AXI_ADC_v1_0.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file IP_AXI_ADC_v1_0_utilization_synth.rpt -pb IP_AXI_ADC_v1_0_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Wed Jul 21 09:52:35 2021...

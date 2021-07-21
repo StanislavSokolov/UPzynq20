@@ -33,9 +33,6 @@ set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==UPzynq20_test_d
 # IP: bd/UPzynq20_test_design/ip/UPzynq20_test_design_IP_AXI_LEDS_0_0/UPzynq20_test_design_IP_AXI_LEDS_0_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==UPzynq20_test_design_IP_AXI_LEDS_0_0 || ORIG_REF_NAME==UPzynq20_test_design_IP_AXI_LEDS_0_0} -quiet] -quiet
 
-# IP: bd/UPzynq20_test_design/ip/UPzynq20_test_design_IP_AXI_ADC_0_0/UPzynq20_test_design_IP_AXI_ADC_0_0.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==UPzynq20_test_design_IP_AXI_ADC_0_0 || ORIG_REF_NAME==UPzynq20_test_design_IP_AXI_ADC_0_0} -quiet] -quiet
-
 # IP: bd/UPzynq20_test_design/ip/UPzynq20_test_design_axi_gpio_3_1/UPzynq20_test_design_axi_gpio_3_1.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==UPzynq20_test_design_axi_gpio_3_1 || ORIG_REF_NAME==UPzynq20_test_design_axi_gpio_3_1} -quiet] -quiet
 
@@ -239,6 +236,9 @@ set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==Inverter_3lvl_B
 
 # IP: bd/UPzynq20_test_design/ip/UPzynq20_test_design_Inverter_3lvl_wrapper_0_1/ip/Inverter_3lvl_BUS_16IN_0_0/Inverter_3lvl_BUS_16IN_0_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==Inverter_3lvl_BUS_16IN_0_0 || ORIG_REF_NAME==Inverter_3lvl_BUS_16IN_0_0} -quiet] -quiet
+
+# IP: bd/UPzynq20_test_design/ip/UPzynq20_test_design_IP_AXI_ADC_0_1/UPzynq20_test_design_IP_AXI_ADC_0_1.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==UPzynq20_test_design_IP_AXI_ADC_0_1 || ORIG_REF_NAME==UPzynq20_test_design_IP_AXI_ADC_0_1} -quiet] -quiet
 
 # IP: bd/UPzynq20_test_design/ip/UPzynq20_test_design_auto_pc_0/UPzynq20_test_design_auto_pc_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==UPzynq20_test_design_auto_pc_0 || ORIG_REF_NAME==UPzynq20_test_design_auto_pc_0} -quiet] -quiet

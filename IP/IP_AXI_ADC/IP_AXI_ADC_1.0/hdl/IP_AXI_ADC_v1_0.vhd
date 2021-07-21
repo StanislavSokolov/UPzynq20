@@ -17,10 +17,20 @@ entity IP_AXI_ADC_v1_0 is
 	port (
 		-- Users to add ports here
         sclk : out std_logic; 
-		--even_updated : out std_logic;	
-		--odd_updated : out std_logic;
+		even_updated : out std_logic;	
+		odd_updated : out std_logic;
 		a0 : out std_logic;
 		not_cs : out std_logic;
+		
+		ch0_1 : out std_logic_vector (11 downto 0) := (others => '0');
+		ch2_3 : out std_logic_vector (11 downto 0) := (others => '0');
+		ch4_5 : out std_logic_vector (11 downto 0) := (others => '0');
+		ch6_7 : out std_logic_vector (11 downto 0) := (others => '0');
+		ch8_9 : out std_logic_vector (11 downto 0) := (others => '0');
+		ch10_11 : out std_logic_vector (11 downto 0) := (others => '0');
+		ch12_13 : out std_logic_vector (11 downto 0) := (others => '0');
+		ch14_15 : out std_logic_vector (11 downto 0) := (others => '0');
+		
         data_in_a0 : in std_logic; -- IO_L24N_T3_13
 		data_in_b0 : in std_logic; -- IO_L24P_T3_13
 		data_in_a1 : in std_logic; -- IO_L22N_T3_13
@@ -69,10 +79,20 @@ architecture arch_imp of IP_AXI_ADC_v1_0 is
 		);
 		port (
 		sclk : out std_logic; 
-		--even_updated : out std_logic;	
-		--odd_updated : out std_logic;
+		even_updated : out std_logic;	
+		odd_updated : out std_logic;
 		a0 : out std_logic;
 		not_cs : out std_logic;
+		
+		ch0_1 : out std_logic_vector (11 downto 0) := (others => '0');
+		ch2_3 : out std_logic_vector (11 downto 0) := (others => '0');
+		ch4_5 : out std_logic_vector (11 downto 0) := (others => '0');
+		ch6_7 : out std_logic_vector (11 downto 0) := (others => '0');
+		ch8_9 : out std_logic_vector (11 downto 0) := (others => '0');
+		ch10_11 : out std_logic_vector (11 downto 0) := (others => '0');
+		ch12_13 : out std_logic_vector (11 downto 0) := (others => '0');
+		ch14_15 : out std_logic_vector (11 downto 0) := (others => '0');
+		
         data_in_a0 : in std_logic; -- IO_L24N_T3_13
 		data_in_b0 : in std_logic; -- IO_L24P_T3_13
 		data_in_a1 : in std_logic; -- IO_L22N_T3_13
@@ -116,10 +136,20 @@ IP_AXI_ADC_v1_0_S00_AXI_inst : IP_AXI_ADC_v1_0_S00_AXI
 	)
 	port map (
 	    sclk => sclk, 
-		--even_updated =>	even_updated,
-		--odd_updated => odd_updated,
+		even_updated =>	even_updated,
+		odd_updated => odd_updated,
 		a0 => a0,
 		not_cs => not_cs,
+		
+		ch0_1 => ch0_1,
+		ch2_3 => ch2_3,
+		ch4_5 => ch4_5,
+		ch6_7 => ch6_7,
+		ch8_9 => ch8_9,
+		ch10_11 => ch10_11,
+		ch12_13 => ch12_13,
+		ch14_15 => ch14_15,
+		
         data_in_a0 => data_in_a0, -- IO_L24N_T3_13
 		data_in_b0 => data_in_b0, -- IO_L24P_T3_13
 		data_in_a1 => data_in_a1, -- IO_L22N_T3_13

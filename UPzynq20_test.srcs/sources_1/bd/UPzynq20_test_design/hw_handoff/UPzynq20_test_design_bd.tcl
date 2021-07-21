@@ -202,7 +202,7 @@ proc create_root_design { parentCell } {
   set AckChecker_wrapper_0 [ create_bd_cell -type ip -vlnv ssevendenergy.com:user:AckChecker_wrapper:1.0 AckChecker_wrapper_0 ]
 
   # Create instance: IP_AXI_ADC_0, and set properties
-  set IP_AXI_ADC_0 [ create_bd_cell -type ip -vlnv ssevendenergy.com:user:IP_AXI_ADC:1.0 IP_AXI_ADC_0 ]
+  set IP_AXI_ADC_0 [ create_bd_cell -type ip -vlnv setcorp:user:IP_AXI_ADC:2.0 IP_AXI_ADC_0 ]
 
   # Create instance: IP_AXI_Encoder_0, and set properties
   set IP_AXI_Encoder_0 [ create_bd_cell -type ip -vlnv ssevendenergy.com:user:IP_AXI_Encoder:1.0 IP_AXI_Encoder_0 ]

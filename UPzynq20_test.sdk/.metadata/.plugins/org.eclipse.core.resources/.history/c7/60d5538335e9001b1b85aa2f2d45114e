@@ -1,0 +1,18 @@
+/*
+ * adc.h
+ *
+ *  Created on: 19 èþë. 2021 ã.
+ *      Author: stud
+ */
+
+#ifndef SRC_ADC_H_
+#define SRC_ADC_H_
+
+#define ADC_VOLTAGE 1250000;
+
+
+u32 get_current_value_adc_channel(u32 channel);
+
+void get_current_value_adc_table();
+
+#endif /* SRC_ADC_H_ */

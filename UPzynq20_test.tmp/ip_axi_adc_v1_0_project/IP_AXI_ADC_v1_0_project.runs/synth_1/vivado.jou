@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Wed Jul 21 09:52:09 2021
+# Process ID: 14128
+# Current directory: d:/GITEA/UPzynq20_test/UPzynq20_test.tmp/ip_axi_adc_v1_0_project/IP_AXI_ADC_v1_0_project.runs/synth_1
+# Command line: vivado.exe -log IP_AXI_ADC_v1_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source IP_AXI_ADC_v1_0.tcl
+# Log file: d:/GITEA/UPzynq20_test/UPzynq20_test.tmp/ip_axi_adc_v1_0_project/IP_AXI_ADC_v1_0_project.runs/synth_1/IP_AXI_ADC_v1_0.vds
+# Journal file: d:/GITEA/UPzynq20_test/UPzynq20_test.tmp/ip_axi_adc_v1_0_project/IP_AXI_ADC_v1_0_project.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source IP_AXI_ADC_v1_0.tcl -notrace

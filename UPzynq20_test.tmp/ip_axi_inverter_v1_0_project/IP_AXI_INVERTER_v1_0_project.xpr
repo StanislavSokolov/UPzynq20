@@ -6,7 +6,7 @@
 <Project Version="7" Minor="40" Path="d:/gitea/upzynq20_test/upzynq20_test.tmp/ip_axi_inverter_v1_0_project/IP_AXI_INVERTER_v1_0_project.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
-    <Option Name="Id" Val="1161b3b96e01473193d3e22f28c963a5"/>
+    <Option Name="Id" Val="dfc47e252ec9430094a257c93b7c90bf"/>
     <Option Name="Part" Val="xc7z020clg484-3"/>
     <Option Name="CompiledLibDir" Val="$PCACHEDIR/compile_simlib"/>
     <Option Name="CompiledLibDirXSim" Val=""/>
@@ -23,6 +23,7 @@
     <Option Name="ActiveSimSet" Val="sim_1"/>
     <Option Name="DefaultLib" Val="xil_defaultlib"/>
     <Option Name="ProjectType" Val="Default"/>
+    <Option Name="IPRepoPath" Val="$PPRDIR/../../../../GITEA/IP/IP_AXI_ADC/IP_AXI_ADC_2.0"/>
     <Option Name="IPRepoPath" Val="$PPRDIR/../../../../GITEA/UPzynq20_test/IP"/>
     <Option Name="IPOutputRepo" Val="$PCACHEDIR/ip"/>
     <Option Name="IPCachePermission" Val="read"/>

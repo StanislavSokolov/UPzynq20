@@ -21,6 +21,19 @@ entity IP_AXI_ADC_v1_0_S00_AXI is
 		sclk : out std_logic := '0'; 
 		a0 : out std_logic := '0';
 		not_cs : out std_logic := '0';
+		
+		even_updated : out std_logic := '0';	
+		odd_updated : out std_logic := '0';
+		
+		ch0_1 : out std_logic_vector (11 downto 0) := (others => '0');
+		ch2_3 : out std_logic_vector (11 downto 0) := (others => '0');
+		ch4_5 : out std_logic_vector (11 downto 0) := (others => '0');
+		ch6_7 : out std_logic_vector (11 downto 0) := (others => '0');
+		ch8_9 : out std_logic_vector (11 downto 0) := (others => '0');
+		ch10_11 : out std_logic_vector (11 downto 0) := (others => '0');
+		ch12_13 : out std_logic_vector (11 downto 0) := (others => '0');
+		ch14_15 : out std_logic_vector (11 downto 0) := (others => '0');
+		
         data_in_a0 : in std_logic; -- IO_L24N_T3_13
 		data_in_b0 : in std_logic; -- IO_L24P_T3_13
 		data_in_a1 : in std_logic; -- IO_L22N_T3_13
@@ -122,8 +135,8 @@ architecture arch_imp of IP_AXI_ADC_v1_0_S00_AXI is
 	signal sclk_sign : std_logic := '1';
     signal not_cs_sign : std_logic := '1';
     signal a0_sign : std_logic := '1';
-    signal odd_updated : std_logic := '0';
-    signal even_updated : std_logic := '0';
+    signal odd : std_logic := '0';
+    signal even : std_logic := '0';
     signal clk_div :std_logic_vector(2 downto 0);
     signal clk_sign : std_logic := '0';
     
@@ -515,7 +528,7 @@ begin
 	-- and the slave is ready to accept the read address.
 	slv_reg_rden <= axi_arready and S_AXI_ARVALID and (not axi_rvalid) ;
 
-	process (odd_updated, even_updated, axi_araddr, S_AXI_ARESETN, slv_reg_rden)
+	process (odd, even, axi_araddr, S_AXI_ARESETN, slv_reg_rden)
 	variable loc_addr :std_logic_vector(OPT_MEM_ADDR_BITS downto 0);
 	begin
 	    -- Address decoding for reading registers
@@ -598,6 +611,7 @@ begin
             case state is
                 when 0 to 3 =>	   
                     odd_updated <= '0';
+                    odd <= '0';
                     state := state + 1;
                 when 4 to 14 =>
                     receive_data_a0(11 - i) := data_in_a0;
@@ -638,11 +652,22 @@ begin
                     ch13 <= receive_data_a3;
                     ch15 <= receive_data_b3;
                     
+                    ch0_1 <= receive_data_a0(11 downto 0);
+                    ch2_3 <= receive_data_b0(11 downto 0);-- - 6;
+                    ch4_5 <= receive_data_a1(11 downto 0);
+                    ch6_7 <= receive_data_b1(11 downto 0);-- - 27;--37;--15;--5;--17;
+                    ch8_9 <= receive_data_a2(11 downto 0);-- + 1;
+                    ch10_11 <= receive_data_b2(11 downto 0);-- + 7;
+                    ch12_13 <= receive_data_a3(11 downto 0);
+                    ch14_15 <= receive_data_b3(11 downto 0);
+                    
                     i := 0;
                     state := 16;
                     even_updated <= '1';
+                    even <= '1';
                 when 16 to 19 =>
                     even_updated <= '0';
+                    even <= '0';
                     state := state + 1;
                 when 20 to 30 =>
                     receive_data_a0(11 - i) := data_in_a0;
@@ -684,9 +709,19 @@ begin
                     ch12 <= receive_data_a3;
                     ch14 <= receive_data_b3;
                     
+                    ch0_1 <= receive_data_a0(11 downto 0);
+                    ch2_3 <= receive_data_b0(11 downto 0);-- - 6;
+                    ch4_5 <= receive_data_a1(11 downto 0);
+                    ch6_7 <= receive_data_b1(11 downto 0);-- - 27;--37;--15;--5;--17;
+                    ch8_9 <= receive_data_a2(11 downto 0);-- + 1;
+                    ch10_11 <= receive_data_b2(11 downto 0);-- + 7;
+                    ch12_13 <= receive_data_a3(11 downto 0);
+                    ch14_15 <= receive_data_b3(11 downto 0);
+                    
                     i := 0;
                     state := 0;	
                     odd_updated <= '1';
+                    odd <= '1';
                 when others =>
                     receive_data_a0 := x"00000000";
                     receive_data_b0 := x"00000000";
