@@ -1,0 +1,16 @@
+/*
+ * current_system_status.h
+ *
+ *  Created on: 19 èþë. 2021 ã.
+ *      Author: stud
+ */
+
+#ifndef SRC_CURRENT_SYSTEM_STATUS_H_
+#define SRC_CURRENT_SYSTEM_STATUS_H_
+
+#define BUFFER_SIZE_ARRAY_CURRENT_STATUS 600
+
+int array_current_status_get(int number);
+void array_current_status_set(int number, int status);
+
+#endif /* SRC_CURRENT_SYSTEM_STATUS_H_ */

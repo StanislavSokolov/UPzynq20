@@ -52,6 +52,71 @@ int bit_SET12 = 0;
 int count_send = 0;
 int count_send2 = 0;
 
+void preparing_message_SET12(){
+		SendBuffer_SET12[0] = 4;										// определение начала передачи bit0
+		SendBuffer_SET12[1] = 1;										// определение начала передачи bit1
+
+		inverting_the_signal_count_transmitter_SET12();					// инвертирование сигнала для диагностики
+
+
+		bild_send_buffer_SET12(22, get_value_digital_input0_8());
+		bild_send_buffer_SET12(24, get_value_digital_input1_16());
+
+
+
+//		u32 negative_errors = get_value_errors_adc_table();						// подготовка регистра ошибок АЦП
+//		u32 positive_errors = negative_errors/65356;					// подготовка регистра ошибок АЦП
+		bild_send_buffer_SET12(30, get_value_errors_negative_positive_adc_table(2));
+
+		for (int i = 0; i<16; i++) {
+			bild_send_buffer_SET12(112+i*2, get_value_adc_channel(i));	// заполнение АЦП
+		}
+
+		// тестовые функции
+//		for (int i = 0; i<16; i++) {
+//			if (count_send == 0) {
+//				Xil_Out32(XPAR_IP_AXI_ADC_0_S00_AXI_BASEADDR + 12, 1);
+//				bild_send_buffer_SET12(144+i*2, Xil_In32(XPAR_IP_AXI_ADC_0_S00_AXI_BASEADDR + i*4 + 64));
+//			} else if (count_send == 1) {
+//				Xil_Out32(XPAR_IP_AXI_ADC_0_S00_AXI_BASEADDR + 12, 2);
+//				bild_send_buffer_SET12(144+i*2, Xil_In32(XPAR_IP_AXI_ADC_0_S00_AXI_BASEADDR + i*4 + 64));
+//			} else if (count_send == 2) {
+//				Xil_Out32(XPAR_IP_AXI_ADC_0_S00_AXI_BASEADDR + 12, 4);
+//				bild_send_buffer_SET12(144+i*2, Xil_In32(XPAR_IP_AXI_ADC_0_S00_AXI_BASEADDR + i*4 + 64));
+//			} else if (count_send == 3) {
+//				Xil_Out32(XPAR_IP_AXI_ADC_0_S00_AXI_BASEADDR + 12, 8);
+//				bild_send_buffer_SET12(144+i*2, Xil_In32(XPAR_IP_AXI_ADC_0_S00_AXI_BASEADDR + i*4 + 64));
+//			}
+//
+//		}
+
+		if (count_send < 3) {
+			count_send++;
+		} else {
+			count_send = 0;
+			count_send2++;
+		}
+
+
+		// сброс ошибки аналоговой с задержкой
+		if (count_send2 < 5) {
+	//			count_send2++;
+				Xil_Out32(XPAR_IP_AXI_ADC_0_S00_AXI_BASEADDR + 16, 0x00000000);
+			} else {
+				count_send2 = 0;
+				Xil_Out32(XPAR_IP_AXI_ADC_0_S00_AXI_BASEADDR + 16, 0x00000001);
+			}
+
+
+
+
+
+		bild_send_buffer_SET12(TEST_BUFFER_SIZE_SET12-1, 100);				// вместо CRC
+
+
+		terminal_uart_send_SET12();
+}
+
 int function_test_CountInt_SET12(){
 	return TotalReceivedCount_SET12;
 }
@@ -78,63 +143,6 @@ u32 update_from_terminal_SET12(u32 address){
 }
 
 void terminal_uart_send_SET12() {
-	SendBuffer_SET12[0] = 4;										// определение начала передачи bit0
-	SendBuffer_SET12[1] = 1;										// определение начала передачи bit1
-
-	inverting_the_signal_count_transmitter_SET12();					// инвертирование сигнала для диагностики
-
-
-	bild_send_buffer_SET12(22, get_value_digital_input_8());
-	bild_send_buffer_SET12(24, get_value_digital_input_16());
-
-
-
-	u32 negative_errors = get_value_errors_adc_table();						// подготовка регистра ошибок АЦП
-	u32 positive_errors = negative_errors/65356;					// подготовка регистра ошибок АЦП
-	bild_send_buffer_SET12(30, negative_errors | positive_errors);
-
-	for (int i = 0; i<16; i++) {
-		bild_send_buffer_SET12(112+i*2, get_value_adc_channel(i));	// заполнение АЦП
-	}
-
-	// тестовые функции
-	for (int i = 0; i<16; i++) {
-		if (count_send == 0) {
-			Xil_Out32(XPAR_IP_AXI_ADC_0_S00_AXI_BASEADDR + 12, 1);
-			bild_send_buffer_SET12(144+i*2, Xil_In32(XPAR_IP_AXI_ADC_0_S00_AXI_BASEADDR + i*4 + 64));
-		} else if (count_send == 1) {
-			Xil_Out32(XPAR_IP_AXI_ADC_0_S00_AXI_BASEADDR + 12, 2);
-			bild_send_buffer_SET12(144+i*2, Xil_In32(XPAR_IP_AXI_ADC_0_S00_AXI_BASEADDR + i*4 + 64));
-		} else if (count_send == 2) {
-			Xil_Out32(XPAR_IP_AXI_ADC_0_S00_AXI_BASEADDR + 12, 4);
-			bild_send_buffer_SET12(144+i*2, Xil_In32(XPAR_IP_AXI_ADC_0_S00_AXI_BASEADDR + i*4 + 64));
-		} else if (count_send == 3) {
-			Xil_Out32(XPAR_IP_AXI_ADC_0_S00_AXI_BASEADDR + 12, 8);
-			bild_send_buffer_SET12(144+i*2, Xil_In32(XPAR_IP_AXI_ADC_0_S00_AXI_BASEADDR + i*4 + 64));
-		}
-
-	}
-
-	if (count_send < 3) {
-		count_send++;
-	} else {
-		count_send = 0;
-		count_send2++;
-	}
-
-	if (count_send2 < 5) {
-//			count_send2++;
-			Xil_Out32(XPAR_IP_AXI_ADC_0_S00_AXI_BASEADDR + 16, 0x00000000);
-		} else {
-			count_send2 = 0;
-			Xil_Out32(XPAR_IP_AXI_ADC_0_S00_AXI_BASEADDR + 16, 0x00000001);
-		}
-
-
-
-
-
-	bild_send_buffer_SET12(TEST_BUFFER_SIZE_SET12-1, 100);				// вместо CRC
 
 	XUartPs_Send(&UartPs_SET12, SendBuffer_SET12, TEST_BUFFER_SIZE_SET12);
 
@@ -148,7 +156,7 @@ u32 terminal_uart_recv_SET12() {
 	return XUartPs_Recv(&UartPs_SET12, RecvBuffer_SET12, TEST_BUFFER_SIZE_SET12);
 }
 
-void initialization_of_UART_SET12(){
+void initialization_UART_SET12(){
 	UartPsIntrExample_SET12(&InterruptController_SET12, &UartPs_SET12,
 			UART_DEVICE_ID_SET12, UART_INT_IRQ_ID_SET12);
 }

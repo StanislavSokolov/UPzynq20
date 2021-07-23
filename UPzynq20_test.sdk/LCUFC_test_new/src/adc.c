@@ -15,9 +15,12 @@ u32 adc_channel[] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
 //u32 adc_channel[15];
 u32 load_resistances[] = {2500, 1000, 1000, 1000, 2500, 1000, 1000, 1000, 2500, 1000, 1000, 1000, 2500, 1000, 1000, 1000}; // в мќм
 u32 sensor_coefficients[] = {1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000};
-u32 setpoint_channel_up[] = {3000, 3000, 3000, 3000, 3000, 3000, 3000, 3000, 3000, 3000, 3000, 3000, 3000, 3000, 3000, 3000};
+u32 setpoint_channel_up[] = {2080, 3000, 3000, 3000, 3000, 3000, 3000, 3000, 3000, 3000, 3000, 3000, 3000, 3000, 3000, 3000};
 u32 setpoint_channel_down[] = {1500, 1500, 1500, 1500, 1500, 1500, 1500, 1500, 1500, 1500, 1500, 1500, 1500, 1500, 1500, 1500};
 
+u32 negative_errors = 0;
+u32 positive_errors = 0;
+u32 generalized_errors = 0;
 
 u32 get_current_value_adc_channel(u32 channel){
 	return Xil_In32(XPAR_IP_AXI_ADC_0_S00_AXI_BASEADDR + channel*4);
@@ -61,6 +64,21 @@ void set_reset_error_adc_table(){
 	Xil_Out32(XPAR_IP_AXI_ADC_0_S00_AXI_BASEADDR + 16, 0x00000001);
 	for (int i = 0; i < 100; i++){
 		//
+	}
+}
+
+u32 get_value_errors_negative_positive_adc_table(int value){
+	negative_errors = get_value_errors_adc_table();						// подготовка регистра ошибок ј÷ѕ
+	positive_errors = negative_errors/65356;
+	generalized_errors = negative_errors | positive_errors;
+	if (value == 0) {
+		return negative_errors;
+	}
+	if (value == 1) {
+		return positive_errors;
+	}
+	if (value == 2) {
+		return generalized_errors;
 	}
 }
 

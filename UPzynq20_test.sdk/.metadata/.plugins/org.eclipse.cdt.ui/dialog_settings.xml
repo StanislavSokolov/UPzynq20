@@ -19,6 +19,10 @@
 		<item value="false" key="caseSensitive"/>
 		<item value="227191" key="searchFlags"/>
 		<list key="previousPatterns">
+			<item value="get_array_current_status_bool"/>
+			<item value="positive_errors"/>
+			<item value="latch_start"/>
+			<item value="load_function"/>
 			<item value="bild_send_buffer_SET12"/>
 			<item value="set_reset_error_adc_table"/>
 			<item value="EventData"/>

@@ -10,6 +10,7 @@
 //#include "test_functions.h"
 #include "CRC_Functions.h"
 #include "current_system_status.h"
+#include "adc.h"
 
 
 
@@ -56,10 +57,7 @@ int percentages_RS485 = 0;
 
 
 
-void load_function_RS485(int mode, int percentages){
-	mode_RS485 = mode;
-	percentages_RS485 = percentages;
-}
+
 
 void preparing_message_RS485(u32 device_address, u32 number_function, u32 number_register, u32 number_elements_to_change, u32 number_bytes_transmitted){
 	SendBuffer_RS485[0] = device_address;
@@ -71,13 +69,35 @@ void preparing_message_RS485(u32 device_address, u32 number_function, u32 number
 	SendBuffer_RS485[6] = number_bytes_transmitted;
 
 	if (number_function == 15) {
-		bild_send_buffer_RS485(7, array_current_status_get(number_register));
+		inverting_the_signal_count_transmitter_RS485();
+		u32 count_word = 0;
+		for (int j = 0; j < number_bytes_transmitted; j++) {
+			u32 word = 0;
+			for (int i = 0; i < 16; i++) {
+				word = ((get_array_current_status_bool(i+count_word*16) & 1) << i) | word;
+//				word = get_array_current_status_bool(i*count_word) + word;
+//				word++;
+			}
+			bild_send_buffer_RS485(7 + j*2, word);
+			count_word++;
+		}
+//			bild_send_buffer_RS485(7, 7);
+//		bild_send_buffer_RS485(5 + number_register*2, get_array_current_status_bool(number_register));
 	}
 
 	if (number_function == 16) {
-//		for (int i=7; i<number_elements_to_change+7; i=i+2){
-//			bild_send_buffer_RS485(i, 0);
-//		}
+		int count_byte = 7;
+		///////////////////////////////////////////////////////
+		for (int i = 0; i < 190; i++) {
+			bild_send_buffer_RS485(count_byte + i*2, get_array_current_status_int(i));
+		}
+		///////////////////////////////////////////////////////
+
+		u32 channel = 0;
+		for (u32 i = 65 ; i < 65 + 32; i=i+2){
+			bild_send_buffer_RS485(i, get_value_adc_channel(channel));
+			channel++;
+		}
 	}
 
 //	int group = number_register/200;
@@ -116,6 +136,30 @@ void preparing_message_RS485(u32 device_address, u32 number_function, u32 number
 
 
 
+}
+
+void inverting_the_signal_count_transmitter_RS485() {
+	if (bit_RS485 == 0) {
+		for (int i = 0; i < 550; i++){
+			set_array_current_status_bool(i, 1);
+		}
+		bit_RS485 = 1;
+	} else {
+		for (int i = 0; i < 550; i++){
+					set_array_current_status_bool(i, 0);
+				}
+		bit_RS485 = 0;
+	}
+
+
+
+
+//	set_array_current_status_bool(513, 1);
+}
+
+void load_function_RS485(int mode, int percentages){
+	mode_RS485 = mode;
+	percentages_RS485 = percentages;
 }
 
 int function_test_CountInt_RS485(){
@@ -197,7 +241,7 @@ u32 terminal_uart_recv_RS485() {
 	return XUartPs_Recv(&UartPs_RS485, RecvBuffer_RS485, TEST_BUFFER_SIZE_RS485);
 }
 
-void initialization_of_UART_RS485(){
+void initialization_UART_RS485(){
 	UartPsIntrExample_RS485(&InterruptController_RS485, &UartPs_RS485,
 			UART_DEVICE_ID_RS485, UART_INT_IRQ_ID_RS485);
 }

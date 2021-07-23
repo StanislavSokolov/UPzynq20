@@ -33,16 +33,18 @@
 #define XUARTPS_DFT_BAUDRATE_RS485  57600U   /* Default baud rate */
 //int bit_RS485 = 0;
 
+void initialization_UART_RS485();
+
 int function_test_CountInt_RS485();
 
-
+void inverting_the_signal_count_transmitter_RS485();
 
 void bild_send_buffer_RS485(u32 address, u32 data);
 u32 update_from_terminal_RS485(u32 address);
 //unsigned int terminal_uart_send_RS485();
 void terminal_uart_send_RS485(int count_byte);
 u32 terminal_uart_recv_RS485();
-void initialization_of_UART_RS485();
+
 
 void preparing_message_RS485(u32 device_address, u32 number_function, u32 number_register, u32 number_elements_to_change, u32 number_bytes_transmitted);
 

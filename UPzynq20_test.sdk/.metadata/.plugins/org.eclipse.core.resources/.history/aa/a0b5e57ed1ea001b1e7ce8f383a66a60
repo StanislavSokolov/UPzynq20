@@ -1,0 +1,35 @@
+/*
+ * logical_functions.c
+ *
+ *  Created on: 22 èþë. 2021 ã.
+ *      Author: stud
+ */
+
+#include "logical_functions.h"
+
+
+int latch_start = 0;
+
+void load_function(int count){
+	if (count == 0) {
+		set_array_current_status_int(87, 0);
+		preparing_message_RS485(2, 16, 1, 100, 200);
+		set_array_current_status_bool(544, 0);
+		preparing_message_RS485(2, 15, 544, 1, 2);
+	}
+	else {
+		if (latch_start == 0) {
+			if (count < 11) {
+				set_array_current_status_bool(544, 0);
+				preparing_message_RS485(2, 15, 544, 1, 2);
+				set_array_current_status_int(87, count);
+				preparing_message_RS485(2, 16, 1, 100, 200);
+			}
+			else {
+				latch_start = 1;
+			}
+		}
+	}
+}
+
+

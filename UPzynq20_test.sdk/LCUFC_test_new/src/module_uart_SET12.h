@@ -31,14 +31,15 @@
 #define TEST_BUFFER_SIZE_SET12	200
 #define XUARTPS_DFT_BAUDRATE_SET12  115200U   /* Default baud rate */
 
+void initialization_UART_SET12();
 
-
+void preparing_message_SET12();
 void inverting_the_signal_count_transmitter_SET12();
 void bild_send_buffer_SET12(u32 address, u32 data);
 u32 update_from_terminal_SET12(u32 address);
 void terminal_uart_send_SET12();
 u32 terminal_uart_recv_SET12();
-void initialization_of_UART_SET12();
+
 int function_test_CountInt_SET12();
 
 

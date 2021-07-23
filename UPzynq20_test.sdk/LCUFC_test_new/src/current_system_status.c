@@ -2,13 +2,49 @@
 
 
 
-int Array_current_status[BUFFER_SIZE_ARRAY_CURRENT_STATUS];
+int Array_current_status_bool[BUFFER_SIZE_ARRAY_CURRENT_STATUS_BOOL];
+int Array_current_status_int[BUFFER_SIZE_ARRAY_CURRENT_STATUS_INT];
 
+///////////////////////////////////////////////////////////
 
-int array_current_status_get(int number){
-	if (Array_current_status[number] == 0) return 0; else return 65280;
+//int get_array_current_status_bool(int number){
+//	if (Array_current_status_bool[number] == 0) return 0; else return 65280;
+//}
+
+int get_array_current_status_bool(int number){
+	return Array_current_status_bool[number];
 }
 
-void array_current_status_set(int number, int status){
-	Array_current_status[number] = status;
+void set_array_current_status_bool(int number, int status){
+	Array_current_status_bool[number] = status;
 }
+
+///////////////////////////////////////////////////////////
+
+int get_array_current_status_int(int number){
+	return Array_current_status_int[number];
+}
+
+void set_array_current_status_int(int number, int status){
+	Array_current_status_int[number] = status;
+}
+
+///////////////////////////////////////////////////////////
+
+
+
+//int get_current_state(){
+//	return Current_state;
+//}
+//
+//void set_current_state(int state){
+//	Current_state = state;
+//}
+//
+//int get_current_state_color(){
+//	return Current_state_color;
+//}
+//
+//void set_current_state_color(int state){
+//	Current_state_color = state;
+//}

@@ -3,9 +3,9 @@
 <!--The data in this file is primarily intended for consumption by Xilinx tools.
 The structure and the elements are likely to change over the next few releases.
 This means code written to parse this file will need to be revisited each subsequent release.-->
-<application name="pa" timeStamp="Tue Jul 20 08:55:19 2021">
+<application name="pa" timeStamp="Fri Jul 23 09:08:00 2021">
 <section name="Project Information" visible="false">
-<property name="ProjectID" value="0bfd59a7b5dd4b8082c9f1a25285095a" type="ProjectID"/>
+<property name="ProjectID" value="0e379609e11047388df0ec49ddce278f" type="ProjectID"/>
 <property name="ProjectIteration" value="1" type="ProjectIteration"/>
 </section>
 <section name="PlanAhead Usage" visible="true">
@@ -18,37 +18,31 @@ This means code written to parse this file will need to be revisited each subseq
 </item>
 <item name="Java Command Handlers">
 <property name="CloseProject" value="1" type="JavaHandler"/>
-<property name="CustomizeRSBBlock" value="2" type="JavaHandler"/>
-<property name="EditInIPPackagerHandler" value="2" type="JavaHandler"/>
-<property name="IPPackagerHandler" value="2" type="JavaHandler"/>
+<property name="EditInIPPackagerHandler" value="1" type="JavaHandler"/>
+<property name="IPPackagerHandler" value="1" type="JavaHandler"/>
 <property name="NewLaunchHardware" value="1" type="JavaHandler"/>
 <property name="OpenBlockDesign" value="1" type="JavaHandler"/>
-<property name="OpenProject" value="2" type="JavaHandler"/>
 </item>
 <item name="Gui Handlers">
-<property name="BaseDialog_OK" value="4" type="GuiHandlerData"/>
-<property name="FileSetPanel_FILE_SET_PANEL_TREE" value="6" type="GuiHandlerData"/>
+<property name="BaseDialog_OK" value="3" type="GuiHandlerData"/>
+<property name="FileSetPanel_FILE_SET_PANEL_TREE" value="2" type="GuiHandlerData"/>
 <property name="FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE" value="1" type="GuiHandlerData"/>
 <property name="MainMenuMgr_CHECKPOINT" value="1" type="GuiHandlerData"/>
 <property name="MainMenuMgr_EXPORT" value="1" type="GuiHandlerData"/>
-<property name="MainMenuMgr_FILE" value="6" type="GuiHandlerData"/>
+<property name="MainMenuMgr_FILE" value="2" type="GuiHandlerData"/>
 <property name="MainMenuMgr_IP" value="1" type="GuiHandlerData"/>
-<property name="MainMenuMgr_PROJECT" value="4" type="GuiHandlerData"/>
+<property name="MainMenuMgr_PROJECT" value="1" type="GuiHandlerData"/>
 <property name="MainMenuMgr_TEXT_EDITOR" value="1" type="GuiHandlerData"/>
-<property name="PACommandNames_EDIT_IN_IP_PACKAGER" value="2" type="GuiHandlerData"/>
+<property name="PACommandNames_EDIT_IN_IP_PACKAGER" value="1" type="GuiHandlerData"/>
 <property name="PACommandNames_LAUNCH_HARDWARE" value="1" type="GuiHandlerData"/>
-<property name="PACommandNames_OPEN_PROJECT" value="2" type="GuiHandlerData"/>
-<property name="PAViews_CODE" value="1" type="GuiHandlerData"/>
-<property name="PAViews_PACKAGE_IP" value="2" type="GuiHandlerData"/>
 <property name="PAViews_PROJECT_SUMMARY" value="1" type="GuiHandlerData"/>
-<property name="PackagerStepsPanel_PACKAGER_STEPS_LIST" value="2" type="GuiHandlerData"/>
 <property name="SyntheticaGettingStartedView_RECENT_PROJECTS" value="1" type="GuiHandlerData"/>
-<property name="SystemBuilderMenu_IP_DOCUMENTATION" value="2" type="GuiHandlerData"/>
+<property name="SystemBuilderMenu_IP_DOCUMENTATION" value="1" type="GuiHandlerData"/>
 </item>
 <item name="Other">
-<property name="GuiMode" value="187" type="GuiMode"/>
+<property name="GuiMode" value="190" type="GuiMode"/>
 <property name="BatchMode" value="0" type="BatchMode"/>
-<property name="TclMode" value="165" type="TclMode"/>
+<property name="TclMode" value="167" type="TclMode"/>
 </item>
 </section>
 </application>

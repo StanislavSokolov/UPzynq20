@@ -8,9 +8,13 @@
 #ifndef SRC_CURRENT_SYSTEM_STATUS_H_
 #define SRC_CURRENT_SYSTEM_STATUS_H_
 
-#define BUFFER_SIZE_ARRAY_CURRENT_STATUS 600
+#define BUFFER_SIZE_ARRAY_CURRENT_STATUS_BOOL 600
+#define BUFFER_SIZE_ARRAY_CURRENT_STATUS_INT 200
 
-int array_current_status_get(int number);
-void array_current_status_set(int number, int status);
+int get_array_current_status_bool(int number);
+void set_array_current_status_bool(int number, int status);
+
+int get_array_current_status_int(int number);
+void set_array_current_status_int(int number, int status);
 
 #endif /* SRC_CURRENT_SYSTEM_STATUS_H_ */
