@@ -99,6 +99,9 @@ int loading_control_panel(int count){
 		if (count == 0) {
 			set_array_current_status_int(87, 0);
 			preparing_message_RS485(2, 16, 1, 100, 200);
+
+
+
 		}
 		else if (count == 1) {
 				set_array_current_status_bool(544, 0);
@@ -106,7 +109,7 @@ int loading_control_panel(int count){
 		}
 		else {
 
-				if ((1 < count) && (count < 11)) {
+				if (1 < count < 11) {
 					set_array_current_status_int(87, count);
 					preparing_message_RS485(2, 16, 1, 100, 200);
 				}

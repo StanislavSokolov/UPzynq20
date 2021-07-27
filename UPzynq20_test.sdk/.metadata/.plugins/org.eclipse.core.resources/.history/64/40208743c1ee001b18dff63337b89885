@@ -109,7 +109,7 @@ int main(void) {
 
 //	loading_control_panel(Count_Div);
 	while (1) {
-		if (Count < 100000000) {
+		if (Count < 500000000) {
 			Count++;
 		} else {
 			if (latch) {

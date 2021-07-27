@@ -109,23 +109,23 @@ int main(void) {
 
 //	loading_control_panel(Count_Div);
 	while (1) {
-		if (Count < 100000000) {
+		if (Count < 500000000) {
 			Count++;
 		} else {
 			if (latch) {
 				Xil_Out32(XPAR_IP_AXI_LEDS_0_S00_AXI_BASEADDR, 0x00000000);
 				latch = 0;
-//				set_current_value_PSGPIO(0, 1);
-//				set_current_value_PSGPIO(7, 0);
-//				set_current_value_PSGPIO(15, 1);
+				set_current_value_PSGPIO(0, 1);
+				set_current_value_PSGPIO(7, 0);
+				set_current_value_PSGPIO(15, 1);
 //				preparing_message_RS485(2, 15, 1, 576, 72);
 //				preparing_message_RS485(2, 15, 533, 16, 2);
 //				preparing_message_RS485(2, 15, 513, 16, 2);
 			} else {
 				Xil_Out32(XPAR_IP_AXI_LEDS_0_S00_AXI_BASEADDR, 0x00000001);
 				latch = 1;
-//				set_current_value_PSGPIO(0, 0);
-//				set_current_value_PSGPIO(7, 1);
+				set_current_value_PSGPIO(0, 0);
+				set_current_value_PSGPIO(7, 1);
 //				set_current_value_PSGPIO(15, 1);
 //				preparing_message_RS485(2, 15, 515, 1, 2);
 //				preparing_message_RS485(2, 16, 1, 100, 200);

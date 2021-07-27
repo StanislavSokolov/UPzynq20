@@ -109,38 +109,33 @@ int main(void) {
 
 //	loading_control_panel(Count_Div);
 	while (1) {
-		if (Count < 100000000) {
+		if (Count < 500000000) {
 			Count++;
 		} else {
 			if (latch) {
 				Xil_Out32(XPAR_IP_AXI_LEDS_0_S00_AXI_BASEADDR, 0x00000000);
 				latch = 0;
-//				set_current_value_PSGPIO(0, 1);
-//				set_current_value_PSGPIO(7, 0);
-//				set_current_value_PSGPIO(15, 1);
+				set_current_value_PSGPIO(0, 1);
+				set_current_value_PSGPIO(7, 0);
+				set_current_value_PSGPIO(15, 1);
 //				preparing_message_RS485(2, 15, 1, 576, 72);
 //				preparing_message_RS485(2, 15, 533, 16, 2);
 //				preparing_message_RS485(2, 15, 513, 16, 2);
 			} else {
 				Xil_Out32(XPAR_IP_AXI_LEDS_0_S00_AXI_BASEADDR, 0x00000001);
 				latch = 1;
-//				set_current_value_PSGPIO(0, 0);
-//				set_current_value_PSGPIO(7, 1);
+				set_current_value_PSGPIO(0, 0);
+				set_current_value_PSGPIO(7, 1);
 //				set_current_value_PSGPIO(15, 1);
 //				preparing_message_RS485(2, 15, 515, 1, 2);
-//				preparing_message_RS485(2, 16, 1, 100, 200);
+				preparing_message_RS485(2, 16, 1, 100, 200);
 			}
 			Count = 0;
 
 //			set_current_value_PSGPIO(15, 1);
 
-
-//			if (loading_control_panel(Count_Div) == 0) {
-//				Count_Div++;
-//			} else {
-//				set_current_value_PSGPIO(15, 1);
-//				preparing_message_RS485(2, 16, 1, 100, 200);
-//			}
+			Count_Div++;
+//			loading_control_panel(Count_Div);
 //			set_array_current_status_bool(544, 1);
 
 			set_array_current_status_int(0, 1);
@@ -197,12 +192,50 @@ int main(void) {
 
 			if (latch_start==0) bild_send_buffer_SET12(TEST_BUFFER_SIZE_SET12-3, 1); else bild_send_buffer_SET12(TEST_BUFFER_SIZE_SET12-3, 0);
 			latch_start = 1;
+
+//			if (latch_start_PMU == 0) {
+//				preparing_message_RS485(2, 16, 1, 100, 200);
+//			} else {
+//				if (Channel_0 < 549) {
+//								if (Channel_0 < 548) {
+//									preparing_message_RS485(2, 15, Channel_0+1, 1, 2);
+//								} else preparing_message_RS485(2, 16, 1, 100, 200);
+//								Channel_0++;
+//							} else Channel_0 = 0;
+////			}
+//
+//			set_current_value_PSGPIO(15, 1);
+//
+//			preparing_message_RS485(2, 15, 515, 1, 2);
+//			terminal_uart_recv_RS485();
+//			preparing_message_RS485(2, 16, 1, 100, 200);
+//			terminal_uart_recv_RS485();
+
 			preparing_message_SET12();
+//			set_current_value_PSGPIO(15, 0);
+
+
 			terminal_uart_recv_SET12();
+//			preparing_message_RS485(2, 15, 514, 1, 2);
 //			terminal_uart_recv_RS485();
 			set_current_value_PSGPIO(15, 0);
 
 		}
+//		if (Channel_0 < 10000000) {
+//			Channel_0++;
+//		} else {
+//			Count_Div++;
+//			loading_control_panel(Count_Div);
+////			if (loading_control_panel(Count_Div) == 1) {
+////
+////			} else {
+////				preparing_message_RS485(2, 16, 1, 100, 200);
+////			}
+//			Channel_0=0;
+//			set_current_value_PSGPIO(15, 0);
+//		}
+//		preparing_message_RS485(2, 16, 1, 100, 200);
+
 	}
 }
 
