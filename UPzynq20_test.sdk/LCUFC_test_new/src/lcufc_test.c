@@ -77,7 +77,7 @@
 
 int Count;						// общий счеткчик
 int Count_Div = 0;						// общий счеткчик
-int Count_Div2;
+int Count_Div2 = 0;
 int Channel_0 = 0;					// счетчик аналоговых сигналов для каналов 0-15
 int Channel_1 = 12000;					// счетчик аналоговых сигналов для каналов 16-31
 int Channel_2 = 0;					// счетчик регистров ШИМ
@@ -109,48 +109,68 @@ int main(void) {
 
 //	loading_control_panel(Count_Div);
 	while (1) {
-		if (Count < 100000000) {
+		if (Count < 50000000) {
 			Count++;
 		} else {
 			if (latch) {
 				Xil_Out32(XPAR_IP_AXI_LEDS_0_S00_AXI_BASEADDR, 0x00000000);
 				latch = 0;
-//				set_current_value_PSGPIO(0, 1);
-//				set_current_value_PSGPIO(7, 0);
-//				set_current_value_PSGPIO(15, 1);
+				set_current_value_PSGPIO(0, 1);
+				set_current_value_PSGPIO(7, 0);
+				set_current_value_PSGPIO(15, 1);
+//				set_array_current_status_bool(544, 0);
 //				preparing_message_RS485(2, 15, 1, 576, 72);
 //				preparing_message_RS485(2, 15, 533, 16, 2);
 //				preparing_message_RS485(2, 15, 513, 16, 2);
 			} else {
 				Xil_Out32(XPAR_IP_AXI_LEDS_0_S00_AXI_BASEADDR, 0x00000001);
 				latch = 1;
-//				set_current_value_PSGPIO(0, 0);
-//				set_current_value_PSGPIO(7, 1);
+				set_current_value_PSGPIO(0, 0);
+				set_current_value_PSGPIO(7, 1);
 //				set_current_value_PSGPIO(15, 1);
+//				preparing_message_RS485(2, 15, 533, 16, 2);
 //				preparing_message_RS485(2, 15, 515, 1, 2);
 //				preparing_message_RS485(2, 16, 1, 100, 200);
 			}
 			Count = 0;
 
-//			set_current_value_PSGPIO(15, 1);
+			if (loading_control_panel(Count_Div) == 0) {
+				Count_Div++;
+			} else {
+				set_current_value_PSGPIO(15, 1);
+				switch (Count_Div2){
+				case 0:
+					preparing_message_RS485(2, 16, 1, 100, 200);
+					break;
+				case 1:
+					preparing_message_RS485(2, 15, 513, 16, 2);
+					break;
+				case 2:
+					inverting_the_signal_count_transmitter_RS485();
+					preparing_message_RS485(2, 15, 1, 256, 32);
+					break;
+				case 3:
+					preparing_message_RS485(2, 15, 113, 256, 32);
+					break;
+				case 4:
+					preparing_message_RS485(2, 15, 225, 256, 32);
+					break;
+				case 5:
+					preparing_message_RS485(2, 15, 337, 256, 32);
+					break;
 
+				default:
+					break;
+				}
+				if (Count_Div2 < 5) Count_Div2++; else Count_Div2=0;
 
-//			if (loading_control_panel(Count_Div) == 0) {
-//				Count_Div++;
-//			} else {
-//				set_current_value_PSGPIO(15, 1);
-//				preparing_message_RS485(2, 16, 1, 100, 200);
-//			}
-//			set_array_current_status_bool(544, 1);
-
-			set_array_current_status_int(0, 1);
-			set_array_current_status_int(1, 1);
-
-			u32 Status_ADC = get_value_errors_negative_positive_adc_table(2);
-
-			for (int i = 10; i < 23; i++){
-				set_array_current_status_int(i, (Status_ADC >> i) & 1);
 			}
+
+//			u32 Status_ADC = get_value_errors_negative_positive_adc_table(2);
+//
+//			for (int i = 10; i < 30; i++){
+//				set_array_current_status_bool(i, (Status_ADC >> i) & 1);
+//			}
 
 
 

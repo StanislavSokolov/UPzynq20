@@ -1,0 +1,13 @@
+/*
+ * control_transistor_keys.h
+ *
+ *  Created on: 29 èþë. 2021 ã.
+ *      Author: stud
+ */
+
+#ifndef SRC_CONTROL_TRANSISTOR_KEYS_H_
+#define SRC_CONTROL_TRANSISTOR_KEYS_H_
+
+void set_initial_values_control_transistor_keys();
+
+#endif /* SRC_CONTROL_TRANSISTOR_KEYS_H_ */

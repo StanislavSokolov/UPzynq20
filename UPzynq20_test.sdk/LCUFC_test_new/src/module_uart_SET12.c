@@ -62,11 +62,7 @@ void preparing_message_SET12(){
 		bild_send_buffer_SET12(22, get_value_digital_input0_8());
 		bild_send_buffer_SET12(24, get_value_digital_input1_16());
 
-
-
-//		u32 negative_errors = get_value_errors_adc_table();						// подготовка регистра ошибок АЦП
-//		u32 positive_errors = negative_errors/65356;					// подготовка регистра ошибок АЦП
-		bild_send_buffer_SET12(30, get_value_errors_negative_positive_adc_table(2));
+		bild_send_buffer_SET12(30, get_value_errors_negative_positive_adc(2));
 
 		for (int i = 0; i<16; i++) {
 			bild_send_buffer_SET12(112+i*2, get_value_adc_channel(i));	// заполнение АЦП
@@ -99,7 +95,7 @@ void preparing_message_SET12(){
 
 
 		// сброс ошибки аналоговой с задержкой
-		if (count_send2 < 5) {
+		if (count_send2 < 10) {
 	//			count_send2++;
 				Xil_Out32(XPAR_IP_AXI_ADC_0_S00_AXI_BASEADDR + 16, 0x00000000);
 			} else {

@@ -2,20 +2,20 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="Channel_1" key="selection"/>
+		<item value="Count_Div2" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="Count_Div2"/>
+			<item value="Count_Div"/>
 			<item value="Channel_1"/>
 			<item value="Channel_2"/>
 			<item value="Channel_0"/>
 			<item value="load_function"/>
-			<item value="Count_Div"/>
 			<item value="read_in_all_RS485"/>
 			<item value="bild_send_buffer_SET12(150"/>
-			<item value="XPAR_INTC_0_DEVICE_ID"/>
 		</list>
 		<list key="replacehistory">
 		</list>
