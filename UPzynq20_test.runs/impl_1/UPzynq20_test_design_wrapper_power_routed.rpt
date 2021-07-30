@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
-| Date             : Wed Jul 21 14:08:58 2021
+| Date             : Fri Jul 30 16:38:29 2021
 | Host             : STAS-W10 running 64-bit major release  (build 9200)
 | Command          : report_power -file UPzynq20_test_design_wrapper_power_routed.rpt -pb UPzynq20_test_design_wrapper_power_summary_routed.pb -rpx UPzynq20_test_design_wrapper_power_routed.rpx
 | Design           : UPzynq20_test_design_wrapper
@@ -53,15 +53,15 @@ Table of Contents
 | On-Chip                 | Power (W) | Used     | Available | Utilization (%) |
 +-------------------------+-----------+----------+-----------+-----------------+
 | Clocks                  |     0.014 |        3 |       --- |             --- |
-| Slice Logic             |     0.005 |    21929 |       --- |             --- |
-|   LUT as Logic          |     0.004 |     7207 |     53200 |           13.55 |
-|   CARRY4                |    <0.001 |      816 |     13300 |            6.14 |
-|   Register              |    <0.001 |    10683 |    106400 |           10.04 |
+| Slice Logic             |     0.005 |    21949 |       --- |             --- |
+|   LUT as Logic          |     0.004 |     7214 |     53200 |           13.56 |
+|   CARRY4                |    <0.001 |      818 |     13300 |            6.15 |
+|   Register              |    <0.001 |    10694 |    106400 |           10.05 |
 |   BUFG                  |    <0.001 |        3 |        32 |            9.38 |
 |   F7/F8 Muxes           |    <0.001 |      357 |     53200 |            0.67 |
 |   LUT as Shift Register |    <0.001 |       62 |     17400 |            0.36 |
 |   Others                |     0.000 |      376 |       --- |             --- |
-| Signals                 |     0.006 |    15204 |       --- |             --- |
+| Signals                 |     0.006 |    15226 |       --- |             --- |
 | I/O                     |     0.003 |      104 |       200 |           52.00 |
 | PS7                     |     1.634 |        1 |       --- |             --- |
 | Static Power            |     0.148 |          |           |                 |

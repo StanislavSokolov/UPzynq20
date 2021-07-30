@@ -1,7 +1,7 @@
 --Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
---Date        : Wed Jul 21 14:01:51 2021
+--Date        : Fri Jul 30 16:31:29 2021
 --Host        : STAS-W10 running 64-bit major release  (build 9200)
 --Command     : generate_target UPzynq20_test_design.bd
 --Design      : UPzynq20_test_design
@@ -4713,41 +4713,6 @@ architecture STRUCTURE of UPzynq20_test_design is
     s00_axi_aresetn : in STD_LOGIC
   );
   end component UPzynq20_test_design_IP_AXI_PWM_0_0;
-  component UPzynq20_test_design_IP_AXI_OpticalBus_0_0 is
-  port (
-    CE_external : in STD_LOGIC;
-    CLK_external : in STD_LOGIC;
-    DATA_external : in STD_LOGIC_VECTOR ( 3 downto 0 );
-    ERROR_external : in STD_LOGIC;
-    SYN_external : in STD_LOGIC;
-    CE : out STD_LOGIC;
-    CLK_out : out STD_LOGIC;
-    DATA : out STD_LOGIC_VECTOR ( 3 downto 0 );
-    ERROR : out STD_LOGIC;
-    SYN : out STD_LOGIC;
-    s00_axi_awaddr : in STD_LOGIC_VECTOR ( 5 downto 0 );
-    s00_axi_awprot : in STD_LOGIC_VECTOR ( 2 downto 0 );
-    s00_axi_awvalid : in STD_LOGIC;
-    s00_axi_awready : out STD_LOGIC;
-    s00_axi_wdata : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    s00_axi_wstrb : in STD_LOGIC_VECTOR ( 3 downto 0 );
-    s00_axi_wvalid : in STD_LOGIC;
-    s00_axi_wready : out STD_LOGIC;
-    s00_axi_bresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
-    s00_axi_bvalid : out STD_LOGIC;
-    s00_axi_bready : in STD_LOGIC;
-    s00_axi_araddr : in STD_LOGIC_VECTOR ( 5 downto 0 );
-    s00_axi_arprot : in STD_LOGIC_VECTOR ( 2 downto 0 );
-    s00_axi_arvalid : in STD_LOGIC;
-    s00_axi_arready : out STD_LOGIC;
-    s00_axi_rdata : out STD_LOGIC_VECTOR ( 31 downto 0 );
-    s00_axi_rresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
-    s00_axi_rvalid : out STD_LOGIC;
-    s00_axi_rready : in STD_LOGIC;
-    s00_axi_aclk : in STD_LOGIC;
-    s00_axi_aresetn : in STD_LOGIC
-  );
-  end component UPzynq20_test_design_IP_AXI_OpticalBus_0_0;
   component UPzynq20_test_design_AckChecker_wrapper_0_0 is
   port (
     AcknowledgeErrorGroup0 : out STD_LOGIC_VECTOR ( 15 downto 0 );
@@ -4917,6 +4882,41 @@ architecture STRUCTURE of UPzynq20_test_design is
     s00_axi_aresetn : in STD_LOGIC
   );
   end component UPzynq20_test_design_IP_AXI_ADC_0_1;
+  component UPzynq20_test_design_IP_AXI_OpticalBus_0_0 is
+  port (
+    CE_external : in STD_LOGIC;
+    CLK_external : in STD_LOGIC;
+    DATA_external : in STD_LOGIC_VECTOR ( 3 downto 0 );
+    ERROR_external : in STD_LOGIC;
+    SYN_external : in STD_LOGIC;
+    CE : out STD_LOGIC;
+    CLK_out : out STD_LOGIC;
+    DATA : out STD_LOGIC_VECTOR ( 3 downto 0 );
+    ERROR : out STD_LOGIC;
+    SYN : out STD_LOGIC;
+    s00_axi_awaddr : in STD_LOGIC_VECTOR ( 5 downto 0 );
+    s00_axi_awprot : in STD_LOGIC_VECTOR ( 2 downto 0 );
+    s00_axi_awvalid : in STD_LOGIC;
+    s00_axi_awready : out STD_LOGIC;
+    s00_axi_wdata : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    s00_axi_wstrb : in STD_LOGIC_VECTOR ( 3 downto 0 );
+    s00_axi_wvalid : in STD_LOGIC;
+    s00_axi_wready : out STD_LOGIC;
+    s00_axi_bresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
+    s00_axi_bvalid : out STD_LOGIC;
+    s00_axi_bready : in STD_LOGIC;
+    s00_axi_araddr : in STD_LOGIC_VECTOR ( 5 downto 0 );
+    s00_axi_arprot : in STD_LOGIC_VECTOR ( 2 downto 0 );
+    s00_axi_arvalid : in STD_LOGIC;
+    s00_axi_arready : out STD_LOGIC;
+    s00_axi_rdata : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    s00_axi_rresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
+    s00_axi_rvalid : out STD_LOGIC;
+    s00_axi_rready : in STD_LOGIC;
+    s00_axi_aclk : in STD_LOGIC;
+    s00_axi_aresetn : in STD_LOGIC
+  );
+  end component UPzynq20_test_design_IP_AXI_OpticalBus_0_0;
   signal AckChecker_wrapper_0_AcknowledgeErrorGroup0 : STD_LOGIC_VECTOR ( 15 downto 0 );
   signal AckChecker_wrapper_0_AcknowledgeErrorGroup1 : STD_LOGIC_VECTOR ( 15 downto 0 );
   signal AckChecker_wrapper_0_CurrentErrorGroup0 : STD_LOGIC_VECTOR ( 15 downto 0 );

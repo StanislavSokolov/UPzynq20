@@ -104,7 +104,7 @@ int main(void) {
 	initialization_initial_values();						// считывание начальных значений
 
 	while (1) {
-		if (Count < 50000000) {
+		if (Count < 30000000) {
 			Count++;
 		} else {
 			if (latch) {
@@ -166,7 +166,7 @@ int main(void) {
 
 
 
-
+			bild_send_buffer_SET12(162, Xil_In32(XPAR_IP_AXI_OPTICALBUS_0_S00_AXI_BASEADDR + 20));
 
 
 
@@ -220,7 +220,7 @@ int main(void) {
 			latch_start = 1;
 			preparing_message_SET12();
 			terminal_uart_recv_SET12();
-//			terminal_uart_recv_RS485();
+			terminal_uart_recv_RS485();
 			set_current_value_PSGPIO(15, 0);
 
 		}

@@ -127,8 +127,8 @@ vcom -work xil_defaultlib -64 -93 \
 "../../../bd/UPzynq20_test_design/ipshared/95fa/hdl/IP_AXI_PWM_v1_0_S00_AXI.vhd" \
 "../../../bd/UPzynq20_test_design/ipshared/95fa/hdl/IP_AXI_PWM_v1_0.vhd" \
 "../../../bd/UPzynq20_test_design/ip/UPzynq20_test_design_IP_AXI_PWM_0_0/sim/UPzynq20_test_design_IP_AXI_PWM_0_0.vhd" \
-"../../../bd/UPzynq20_test_design/ipshared/9477/hdl/IP_AXI_OpticalBus_v1_0_S00_AXI.vhd" \
-"../../../bd/UPzynq20_test_design/ipshared/9477/hdl/IP_AXI_OpticalBus_v1_0.vhd" \
+"../../../bd/UPzynq20_test_design/ipshared/9c69/hdl/IP_AXI_OpticalBus_v1_0_S00_AXI.vhd" \
+"../../../bd/UPzynq20_test_design/ipshared/9c69/hdl/IP_AXI_OpticalBus_v1_0.vhd" \
 "../../../bd/UPzynq20_test_design/ip/UPzynq20_test_design_IP_AXI_OpticalBus_0_0/sim/UPzynq20_test_design_IP_AXI_OpticalBus_0_0.vhd" \
 "../../../bd/UPzynq20_test_design/ip/UPzynq20_test_design_AckChecker_wrapper_0_0/ipshared/d6cf/AckCheckerConcept.vhd" \
 "../../../bd/UPzynq20_test_design/ip/UPzynq20_test_design_AckChecker_wrapper_0_0/ip/AckChecker_AckCheckerConcept_0_0/sim/AckChecker_AckCheckerConcept_0_0.vhd" \
