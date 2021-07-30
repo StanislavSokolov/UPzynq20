@@ -1,8 +1,8 @@
 --Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
---Date        : Fri Jul 30 16:31:30 2021
---Host        : STAS-W10 running 64-bit major release  (build 9200)
+--Date        : Fri Jul 30 19:16:11 2021
+--Host        : Stas running 64-bit major release  (build 9200)
 --Command     : generate_target UPzynq20_test_design_wrapper.bd
 --Design      : UPzynq20_test_design_wrapper
 --Purpose     : IP block netlist
@@ -124,9 +124,9 @@ architecture STRUCTURE of UPzynq20_test_design_wrapper is
     DDR_dq : inout STD_LOGIC_VECTOR ( 31 downto 0 );
     DDR_dqs_n : inout STD_LOGIC_VECTOR ( 3 downto 0 );
     DDR_dqs_p : inout STD_LOGIC_VECTOR ( 3 downto 0 );
+    gpio_rtl_0_tri_o : out STD_LOGIC_VECTOR ( 15 downto 0 );
     gpio_rtl_2_tri_i : in STD_LOGIC_VECTOR ( 7 downto 0 );
-    gpio_rtl_3_tri_i : in STD_LOGIC_VECTOR ( 15 downto 0 );
-    gpio_rtl_0_tri_o : out STD_LOGIC_VECTOR ( 15 downto 0 )
+    gpio_rtl_3_tri_i : in STD_LOGIC_VECTOR ( 15 downto 0 )
   );
   end component UPzynq20_test_design;
 begin

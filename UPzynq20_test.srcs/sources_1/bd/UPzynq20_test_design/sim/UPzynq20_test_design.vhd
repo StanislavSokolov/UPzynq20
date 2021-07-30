@@ -1,8 +1,8 @@
 --Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
---Date        : Fri Jul 30 16:31:29 2021
---Host        : STAS-W10 running 64-bit major release  (build 9200)
+--Date        : Fri Jul 30 19:16:11 2021
+--Host        : Stas running 64-bit major release  (build 9200)
 --Command     : generate_target UPzynq20_test_design.bd
 --Design      : UPzynq20_test_design
 --Purpose     : IP block netlist
