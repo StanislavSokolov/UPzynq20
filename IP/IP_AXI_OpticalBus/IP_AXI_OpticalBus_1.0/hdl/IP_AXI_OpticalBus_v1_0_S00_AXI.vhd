@@ -191,8 +191,10 @@ architecture arch_imp of IP_AXI_OpticalBus_v1_0_S00_AXI is
 	signal TransmitCntCRCKey : integer range 0 to 39 := 0;                                  -- счетчик битов при подсчете CRC
 	
 	signal CountDivCLK : std_logic_vector(7 downto 0) := x"00";                        -- счетчик делителя 
-	signal CountDivCLKconst : std_logic_vector(7 downto 0) := x"07";                   -- значение, до которого считает счетчик делителя
+	signal CountDivCLKconst : std_logic_vector(7 downto 0) := x"09";                   -- значение, до которого считает счетчик делителя
 	signal CLKsignal : std_logic := '1';                                               -- защелка для тактирования протокола
+	
+	signal ErrorTimeOut : std_logic := '1'; 
 	--------------------------------------------------
 	---- Number of Slave Registers 16
 	signal slv_reg0	:std_logic_vector(C_S_AXI_DATA_WIDTH-1 downto 0);
@@ -637,8 +639,11 @@ begin
 	       if CLK_external_prev = CLK_external then 
 				if ReceiveResetCnt < 32000 then
 				   ReceiveResetCnt <= ReceiveResetCnt + 1;
+				   ErrorTimeOut <= '0';
 				else 
 			       ReceiveState <= ReceiveWaiting;
+			       ErrorTimeOut <= '1';
+			       ControlCRCtoCPU(3 downto 0) <= x"F";
 			    end if;	  
 		   else 			
 			   ReceiveResetCnt <= 0;
@@ -841,7 +846,7 @@ begin
 	process( S_AXI_ACLK ) is
 	begin
 	  if (rising_edge (S_AXI_ACLK)) then
-	       if ControlCRCtoCPU /= x"00000000" then
+	       if ControlCRCtoCPU /= x"00000000" or ErrorTimeOut = '1' then
 	           ErrorToCPU(0) <= '1';
 	           ERROR <= '1';
 	       else

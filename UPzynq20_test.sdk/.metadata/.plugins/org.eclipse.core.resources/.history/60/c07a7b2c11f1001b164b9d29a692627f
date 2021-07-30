@@ -95,24 +95,66 @@ void preparing_message_RS485(u32 device_address, u32 number_function, u32 number
 		}
 	}
 
+//	int group = number_register/200;
+//
+//	switch (group){
+//		case 0:
+//			break;
+//		case 1:
+//			break;
+//		case 2:
+//			for (int i=7; i<number_elements_to_change+7; i=i+2){
+//				bild_send_buffer_RS485(i, 0);
+//			}
+//			break;
+//		case 3:
+//			break;
+//		default:
+//			break;
+//	}
+
+//	bild_send_buffer_RS485(7, 65280);
+
+//	if (mode_RS485) {
+//		bild_send_buffer_RS485(7, 65280);
+//	} else {
+//		bild_send_buffer_RS485(7, 0);
+//	}
+
+//	bild_send_buffer_RS485(7, mode_RS485);
+
+//	bild_send_buffer_RS485(181, percentages_RS485);
+//	bild_send_buffer_RS485(9, 0);
+
+
 	terminal_uart_send_RS485(number_bytes_transmitted+7);
 
 
 
 }
 
+//u32 check_array_changes(int * Check_Array){
+//
+//}
+
 void inverting_the_signal_count_transmitter_RS485() {
 	if (bit_RS485 == 0) {
 		set_array_current_status_bool(515, 1);
-		set_array_current_status_bool(541, 1);
+//		set_array_current_status_bool(25, 1);
 		bit_RS485 = 1;
 	} else {
 		set_array_current_status_bool(515, 0);
-		set_array_current_status_bool(541, 0);
+//		set_array_current_status_bool(25, 0);
 		bit_RS485 = 0;
 	}
 
 }
+
+
+
+
+//	set_array_current_status_bool(513, 1);
+//}
 
 void load_function_RS485(int mode, int percentages){
 	mode_RS485 = mode;
@@ -150,6 +192,49 @@ void terminal_uart_send_RS485(int count_byte) {
 			    	 XUartPs_Send(&UartPs_RS485, UartPs_RS485.SendBuffer.NextBytePtr, UartPs_RS485.SendBuffer.RemainingBytes);
 			     }
 }
+
+//void terminal_uart_send_RS485() {
+//		SendBuffer_RS485[0] = 2;
+//		SendBuffer_RS485[1] = 5;
+//		SendBuffer_RS485[2] = 2;
+//		SendBuffer_RS485[3] = 32;
+//		if (bit_RS485) {
+//			SendBuffer_RS485[4] = 255;
+//	//		SendBuffer_RS485[6] = 140;
+//	//		SendBuffer_RS485[7] = 123;
+//			bit_RS485 = 0;
+//		} else {
+//			SendBuffer_RS485[4] = 0;
+//	//		SendBuffer_RS485[6] = 205;
+//	//		SendBuffer_RS485[7] = 139;
+//			bit_RS485 = 1;
+//		}
+////		SendBuffer_RS485[4] = 0;
+//		SendBuffer_RS485[5] = 0;
+//
+//		int i = 0;
+//		int j = 0;
+//		while (i < TEST_BUFFER_SIZE_RS485/2-1) {
+//			SendBuffer_RS485_UNS[i] = SendBuffer_RS485[j+1] + (SendBuffer_RS485[j])*256;
+//			i++;
+//			j=j+2;
+//		}
+//
+//
+////		SendBuffer_RS485_UNS[0] = SendBuffer_RS485[1] + (SendBuffer_RS485[0])*256;
+////		SendBuffer_RS485_UNS[1] = SendBuffer_RS485[3] + (SendBuffer_RS485[2])*256;
+////		SendBuffer_RS485_UNS[2] = SendBuffer_RS485[5] + (SendBuffer_RS485[4])*256;
+//
+//
+//		crc_RS485 = 0xffff;
+//		crc_RS485 = GetCRC16_B(crc_RS485, SendBuffer_RS485_UNS, 6);
+//		u32 high_bits = crc_RS485/256;
+//		SendBuffer_RS485[7] = high_bits;
+//		SendBuffer_RS485[6] = crc_RS485 - high_bits*256;
+//
+//		XUartPs_Send(&UartPs_RS485, SendBuffer_RS485, TEST_BUFFER_SIZE_RS485);
+//
+//}
 
 u32 terminal_uart_recv_RS485() {
 	return XUartPs_Recv(&UartPs_RS485, RecvBuffer_RS485, TEST_BUFFER_SIZE_RS485);

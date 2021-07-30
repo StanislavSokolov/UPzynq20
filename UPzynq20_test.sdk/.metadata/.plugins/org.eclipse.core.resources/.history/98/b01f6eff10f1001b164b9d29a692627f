@@ -103,6 +103,11 @@ int main(void) {
 	initialization_system_design_and_project(0, 0);    		// A0 - SYSTEM_DESIGN, A1 - PROJECT_NUMBER
 	initialization_initial_values();						// считывание начальных значений
 
+//	for (int i = 1; i < 16; i++) {
+//		bild_send_buffer_SET12(174-i*2, (Channel_1 >> i) & 1);
+//	}
+
+//	loading_control_panel(Count_Div);
 	while (1) {
 		if (Count < 50000000) {
 			Count++;
@@ -112,11 +117,20 @@ int main(void) {
 				latch = 0;
 				set_current_value_PSGPIO(0, 1);
 				set_current_value_PSGPIO(7, 0);
+//				set_current_value_PSGPIO(15, 1);
+//				set_array_current_status_bool(544, 0);
+//				preparing_message_RS485(2, 15, 1, 576, 72);
+//				preparing_message_RS485(2, 15, 533, 16, 2);
+//				preparing_message_RS485(2, 15, 513, 16, 2);
 			} else {
 				Xil_Out32(XPAR_IP_AXI_LEDS_0_S00_AXI_BASEADDR, 0x00000001);
 				latch = 1;
 				set_current_value_PSGPIO(0, 0);
 				set_current_value_PSGPIO(7, 1);
+//				set_current_value_PSGPIO(15, 1);
+//				preparing_message_RS485(2, 15, 533, 16, 2);
+//				preparing_message_RS485(2, 15, 515, 1, 2);
+//				preparing_message_RS485(2, 16, 1, 100, 200);
 			}
 			Count = 0;
 
@@ -194,26 +208,12 @@ int main(void) {
 
 			filling_in_the_system_status_data();
 
-			set_array_current_status_bool(514, (get_value_digital_input0_8() >> 0) & 1);
-			set_array_current_status_bool(516, (get_value_digital_input0_8() >> 1) & 1);
-			set_array_current_status_bool(517, (get_value_digital_input0_8() >> 2) & 1);
-			set_array_current_status_bool(518, (get_value_digital_input0_8() >> 3) & 1);
-			set_array_current_status_bool(519, (get_value_digital_input0_8() >> 4) & 1);
-			set_array_current_status_bool(520, (get_value_digital_input0_8() >> 5) & 1);
-
-			set_array_current_status_bool(539, (get_value_digital_input1_16() >> 0) & 1);
-			set_array_current_status_bool(540, (get_value_digital_input1_16() >> 1) & 1);
-
-			set_array_current_status_bool(542, (get_value_digital_input1_16() >> 2) & 1);
-			set_array_current_status_bool(543, (get_current_value_PSGPIO(46) >> 0) & 1);
-//			set_array_current_status_bool(544, (get_value_digital_input1_16() >> 2) & 1);
-			set_array_current_status_bool(545, (get_value_digital_input1_16() >> 3) & 1);
-			set_array_current_status_bool(546, (get_value_digital_input1_16() >> 4) & 1);
-			set_array_current_status_bool(547, (get_value_digital_input1_16() >> 5) & 1);
-			set_array_current_status_bool(548, (get_value_digital_input1_16() >> 6) & 1);
+			set_array_current_status_bool(513, 0);
 
 
-			set_array_current_status_int(89, (Xil_In32(XPAR_IP_AXI_OPTICALBUS_0_S00_AXI_BASEADDR + 6*j) >> 0) & 1);
+
+
+
 
 
 			if (latch_start==0) bild_send_buffer_SET12(TEST_BUFFER_SIZE_SET12-3, 1); else bild_send_buffer_SET12(TEST_BUFFER_SIZE_SET12-3, 0);

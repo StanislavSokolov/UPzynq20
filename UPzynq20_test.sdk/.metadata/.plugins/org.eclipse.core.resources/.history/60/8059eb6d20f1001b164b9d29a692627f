@@ -189,7 +189,7 @@ int main(void) {
 			Xil_Out32(XPAR_IP_AXI_OPTICALBUS_0_S00_AXI_BASEADDR + (Channel_3*j), PWM);
 			PWM++;
 			Channel_3++;
-			Xil_Out32(XPAR_IP_AXI_OPTICALBUS_0_S00_AXI_BASEADDR + (Channel_3*j), 0x00000001);
+//			Xil_Out32(XPAR_IP_AXI_OPTICALBUS_0_S00_AXI_BASEADDR + (Channel_3*j), 0x00000001);
 
 
 			filling_in_the_system_status_data();

@@ -104,7 +104,7 @@ int main(void) {
 	initialization_initial_values();						// считывание начальных значений
 
 	while (1) {
-		if (Count < 50000000) {
+		if (Count < 200000000) {
 			Count++;
 		} else {
 			if (latch) {

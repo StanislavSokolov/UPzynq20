@@ -203,7 +203,8 @@ int main(void) {
 
 			set_array_current_status_bool(539, (get_value_digital_input1_16() >> 0) & 1);
 			set_array_current_status_bool(540, (get_value_digital_input1_16() >> 1) & 1);
-
+			set_array_current_status_bool(541, (Xil_In32(XPAR_IP_AXI_OPTICALBUS_0_S00_AXI_BASEADDR + 7*j) >> 0) & 1);
+			set_array_current_status_bool(541, 1);
 			set_array_current_status_bool(542, (get_value_digital_input1_16() >> 2) & 1);
 			set_array_current_status_bool(543, (get_current_value_PSGPIO(46) >> 0) & 1);
 //			set_array_current_status_bool(544, (get_value_digital_input1_16() >> 2) & 1);
@@ -211,10 +212,6 @@ int main(void) {
 			set_array_current_status_bool(546, (get_value_digital_input1_16() >> 4) & 1);
 			set_array_current_status_bool(547, (get_value_digital_input1_16() >> 5) & 1);
 			set_array_current_status_bool(548, (get_value_digital_input1_16() >> 6) & 1);
-
-
-			set_array_current_status_int(89, (Xil_In32(XPAR_IP_AXI_OPTICALBUS_0_S00_AXI_BASEADDR + 6*j) >> 0) & 1);
-
 
 			if (latch_start==0) bild_send_buffer_SET12(TEST_BUFFER_SIZE_SET12-3, 1); else bild_send_buffer_SET12(TEST_BUFFER_SIZE_SET12-3, 0);
 			latch_start = 1;

@@ -104,11 +104,9 @@ void preparing_message_RS485(u32 device_address, u32 number_function, u32 number
 void inverting_the_signal_count_transmitter_RS485() {
 	if (bit_RS485 == 0) {
 		set_array_current_status_bool(515, 1);
-		set_array_current_status_bool(541, 1);
 		bit_RS485 = 1;
 	} else {
 		set_array_current_status_bool(515, 0);
-		set_array_current_status_bool(541, 0);
 		bit_RS485 = 0;
 	}
 

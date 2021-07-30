@@ -212,8 +212,7 @@ int main(void) {
 			set_array_current_status_bool(547, (get_value_digital_input1_16() >> 5) & 1);
 			set_array_current_status_bool(548, (get_value_digital_input1_16() >> 6) & 1);
 
-
-			set_array_current_status_int(89, (Xil_In32(XPAR_IP_AXI_OPTICALBUS_0_S00_AXI_BASEADDR + 6*j) >> 0) & 1);
+			set_array_current_status_int(89, 1);
 
 
 			if (latch_start==0) bild_send_buffer_SET12(TEST_BUFFER_SIZE_SET12-3, 1); else bild_send_buffer_SET12(TEST_BUFFER_SIZE_SET12-3, 0);
