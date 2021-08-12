@@ -26,6 +26,7 @@ void set_setpoint_value_adc_table();
 void set_reset_error_adc_table();
 void get_value_errors_negative_positive_adc_table();
 u32 get_value_errors_negative_positive_adc(int value);
+void reset_errors_adc_channels(u32 data);
 
 
 

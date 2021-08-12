@@ -21,6 +21,7 @@
 #include "encoder.h"
 #include "logical_functions.h"
 #include "control_transistor_keys.h"
+#include "optical_bus.h"
 
 
 int latch_start_PMU = 0;										// защелка для функции загрузки пульта управления ((0) - начальное окно -> прогрес бар -> (1) - основное окно)
@@ -78,10 +79,40 @@ int loading_control_panel(int count){
 	return latch_start_PMU;
 }
 
-	// функция заполнения пространства состояний системы
+// функция получения всех значений от ПЛИС
+
+void get_system_status_data(){
+		get_current_value_adc_table();								// получить значения АЦП (записываем массив adc_channel[] в adc.c)
+		get_value_errors_negative_positive_adc_table();				// получить знаяения ошибок АЦП (заполняем поля в adc.c)
+
+		get_value_min_time_error_group_table();						// получить текущие значения ошибок работы ключей (заполняем поля в control_transistor_keys.c)
+		get_value_acknowledge_error_group_table();
+		get_value_current_error_group_table();
+
+		get_current_value_digital_input_table();					// получить текущие значения входов (заполняем поля в test_functions.c)
+		get_current_value_speed_sensor_table();						// получить текущие значения с датчика положения (заполняем поля в encoder.c)
+
+//		set_current_value_digital_output_table();					// установить выходы
+
+		//	u32 status = get_value_errors_adc_table()/65536;
+	//	for (int i = 1; i < 16; i++) {
+	//		bild_send_buffer_SET12(174-i*2, (status >> i) & 1);
+	//	}
+	//	set_array_current_status_bool(int number, int status)
+
+}
+
+// функция заполнения пространства состояний системы
 void filling_in_the_system_status_data(){
-	get_current_value_adc_table();								// получить значения АЦП (записываем массив adc_channel[] в adc.c)
-	get_value_errors_negative_positive_adc_table();				// получить знаяения ошибок АЦП (заполняем поля в adc.c)
+
+	// кнопка квитирование сбрасывает ошибки оптической шины и каналов АЦП
+	if (((get_value_digital_input0_8() >> 0) & 1) == 0) {
+		reset_errors_optical_bus(1);
+		reset_errors_adc_channels(1);
+
+		reset_errors_current_system_status();
+	}
+	// состояние системы в зависимости от ошибок АЦП
 	if ((get_value_errors_negative_positive_adc(2) == 0) && (get_value_acknowledge_error_group(0) == 0)){
 		set_array_current_status_int(0, 1);
 		set_array_current_status_int(1, 1);
@@ -89,22 +120,143 @@ void filling_in_the_system_status_data(){
 		set_array_current_status_int(0, 6);
 		set_array_current_status_int(1, 3);
 	}
+	// состояние оптической шины в зависисмости от регистра ошибок этого блока
+	if (get_data_optical_bus(6) != 0) {
+		set_array_current_status_int(89, 1);
+	} else set_array_current_status_int(89, 0);
 
-	get_value_min_time_error_group_table();						// получить текущие значения ошибок работы ключей (заполняем поля в control_transistor_keys.c)
-	get_value_acknowledge_error_group_table();
-	get_value_current_error_group_table();
 
-	get_current_value_digital_input_table();					// получить текущие значения входов (заполняем поля в test_functions.c)
-	get_current_value_speed_sensor_table();						// получить текущие значения с датчика положения (заполняем поля в encoder.c)
+//	set_array_current_status_bool(115, (get_value_digital_input1_16() >> 0) & 1);
+//	set_array_current_status_bool(117, (get_value_digital_input1_16() >> 1) & 1);
+//	set_array_current_status_bool(136, (get_value_digital_input1_16() >> 2) & 1);
+//	set_array_current_status_bool(162, (get_value_digital_input1_16() >> 3) & 1);
+//	set_array_current_status_bool(163, (get_value_digital_input1_16() >> 4) & 1);
+//	set_array_current_status_bool(169, (get_value_digital_input1_16() >> 5) & 1);
+//	set_array_current_status_bool(170, (get_value_digital_input1_16() >> 6) & 1);
+//	set_array_current_status_bool(171, (get_value_digital_input1_16() >> 7) & 1);
+//	set_array_current_status_bool(172, (get_value_digital_input1_16() >> 8) & 1);
+//	set_array_current_status_bool(173, (get_value_digital_input1_16() >> 9) & 1);
+//	set_array_current_status_bool(176, (get_value_digital_input1_16() >> 10) & 1);
 
-	set_current_value_digital_output_table();					// установить выходы
+	set_array_current_status_bool(177, (get_value_errors_negative_positive_adc(1) >> 0) & 1);
+	set_array_current_status_bool(178, (get_value_errors_negative_positive_adc(1) >> 1) & 1);
+	set_array_current_status_bool(179, (get_value_errors_negative_positive_adc(0) >> 0) & 1);
+	set_array_current_status_bool(180, (get_value_errors_negative_positive_adc(0) >> 1) & 1);
 
-	//	u32 status = get_value_errors_adc_table()/65536;
-//	for (int i = 1; i < 16; i++) {
-//		bild_send_buffer_SET12(174-i*2, (status >> i) & 1);
-//	}
-//	set_array_current_status_bool(int number, int status)
+	set_array_current_status_bool(181, (get_value_errors_negative_positive_adc(1) >> 2) & 1);
+	set_array_current_status_bool(182, (get_value_errors_negative_positive_adc(1) >> 3) & 1);
+	set_array_current_status_bool(183, (get_value_errors_negative_positive_adc(1) >> 4) & 1);
+	set_array_current_status_bool(184, (get_value_errors_negative_positive_adc(1) >> 5) & 1);
 
-	}
+	set_array_current_status_bool(185, (get_value_errors_negative_positive_adc(0) >> 2) & 1);
+	set_array_current_status_bool(186, (get_value_errors_negative_positive_adc(0) >> 3) & 1);
+	set_array_current_status_bool(187, (get_value_errors_negative_positive_adc(0) >> 4) & 1);
+	set_array_current_status_bool(188, (get_value_errors_negative_positive_adc(0) >> 5) & 1);
+
+	set_array_current_status_bool(193, (get_value_errors_negative_positive_adc(2) >> 6) & 1);
+	set_array_current_status_bool(194, (get_value_errors_negative_positive_adc(2) >> 7) & 1);
+	set_array_current_status_bool(195, (get_value_errors_negative_positive_adc(2) >> 8) & 1);
+	set_array_current_status_bool(196, (get_value_errors_negative_positive_adc(2) >> 9) & 1);
+	set_array_current_status_bool(197, (get_value_errors_negative_positive_adc(2) >> 10) & 1);
+	set_array_current_status_bool(198, (get_value_errors_negative_positive_adc(2) >> 11) & 1);
+
+	set_array_current_status_bool(199, (get_value_errors_negative_positive_adc(2) >> 12) & 1);
+	set_array_current_status_bool(200, (get_value_errors_negative_positive_adc(2) >> 13) & 1);
+
+	set_array_current_status_bool(201, (get_value_errors_negative_positive_adc(1) >> 14) & 1);
+	set_array_current_status_bool(202, (get_value_errors_negative_positive_adc(2) >> 15) & 1);
+
+	set_array_current_status_bool(225, (get_value_errors_negative_positive_adc(2) >> 0) & 1);
+	set_array_current_status_bool(226, (get_value_errors_negative_positive_adc(2) >> 1) & 1);
+
+	set_array_current_status_bool(227, (get_value_errors_negative_positive_adc(1) >> 6) & 1);
+	set_array_current_status_bool(228, (get_value_errors_negative_positive_adc(1) >> 7) & 1);
+	set_array_current_status_bool(229, (get_value_errors_negative_positive_adc(1) >> 8) & 1);
+	set_array_current_status_bool(230, (get_value_errors_negative_positive_adc(1) >> 9) & 1);
+	set_array_current_status_bool(231, (get_value_errors_negative_positive_adc(1) >> 10) & 1);
+	set_array_current_status_bool(232, (get_value_errors_negative_positive_adc(1) >> 11) & 1);
+
+	set_array_current_status_bool(234, (get_value_errors_negative_positive_adc(1) >> 15) & 1);
+
+	set_array_current_status_bool(235, (get_value_errors_negative_positive_adc(1) >> 2) & 1);
+	set_array_current_status_bool(236, (get_value_errors_negative_positive_adc(1) >> 3) & 1);
+	set_array_current_status_bool(237, (get_value_errors_negative_positive_adc(1) >> 4) & 1);
+	set_array_current_status_bool(238, (get_value_errors_negative_positive_adc(1) >> 5) & 1);
+
+	set_array_current_status_bool(239, (get_value_errors_negative_positive_adc(1) >> 12) & 1);
+	set_array_current_status_bool(240, (get_value_errors_negative_positive_adc(1) >> 13) & 1);
+
+	set_array_current_status_bool(243, (get_value_errors_negative_positive_adc(0) >> 6) & 1);
+	set_array_current_status_bool(244, (get_value_errors_negative_positive_adc(0) >> 7) & 1);
+	set_array_current_status_bool(245, (get_value_errors_negative_positive_adc(0) >> 8) & 1);
+	set_array_current_status_bool(246, (get_value_errors_negative_positive_adc(0) >> 9) & 1);
+	set_array_current_status_bool(247, (get_value_errors_negative_positive_adc(0) >> 10) & 1);
+	set_array_current_status_bool(248, (get_value_errors_negative_positive_adc(0) >> 11) & 1);
+
+	set_array_current_status_bool(250, (get_value_errors_negative_positive_adc(0) >> 15) & 1);
+
+	set_array_current_status_bool(251, (get_value_errors_negative_positive_adc(0) >> 2) & 1);
+	set_array_current_status_bool(252, (get_value_errors_negative_positive_adc(0) >> 3) & 1);
+	set_array_current_status_bool(253, (get_value_errors_negative_positive_adc(0) >> 4) & 1);
+	set_array_current_status_bool(254, (get_value_errors_negative_positive_adc(0) >> 5) & 1);
+
+	set_array_current_status_bool(255, (get_value_errors_negative_positive_adc(0) >> 12) & 1);
+	set_array_current_status_bool(256, (get_value_errors_negative_positive_adc(0) >> 13) & 1);
+
+
+	if (((get_value_errors_negative_positive_adc(2) >> 0) & 1) != 0) {
+		set_array_current_status_int(9, 3);
+	} else set_array_current_status_int(9, 0);
+
+	if ((((get_value_errors_negative_positive_adc(2) >> 12) & 1) != 0) || (((get_value_errors_negative_positive_adc(2) >> 13) & 1) != 0)) {
+		set_array_current_status_int(12, 3);
+	} else set_array_current_status_int(12, 0);
+
+	if (((get_value_errors_negative_positive_adc(2) >> 6) & 1) != 0) {
+		set_array_current_status_int(13, 3);
+	} else set_array_current_status_int(13, 0);
+	if (((get_value_errors_negative_positive_adc(2) >> 7) & 1) != 0) {
+		set_array_current_status_int(14, 3);
+	} else set_array_current_status_int(14, 0);
+	if (((get_value_errors_negative_positive_adc(2) >> 8) & 1) != 0) {
+		set_array_current_status_int(15, 3);
+	} else set_array_current_status_int(15, 0);
+	if (((get_value_errors_negative_positive_adc(2) >> 9) & 1) != 0) {
+		set_array_current_status_int(16, 3);
+	} else set_array_current_status_int(16, 0);
+	if (((get_value_errors_negative_positive_adc(2) >> 10) & 1) != 0) {
+		set_array_current_status_int(17, 3);
+	} else set_array_current_status_int(17, 0);
+	if (((get_value_errors_negative_positive_adc(2) >> 11) & 1) != 0) {
+		set_array_current_status_int(18, 3);
+	} else set_array_current_status_int(18, 0);
+
+
+
+
+
+	set_array_current_status_bool(514, (get_value_digital_input0_8() >> 0) & 1);
+	set_array_current_status_bool(516, (get_value_digital_input0_8() >> 1) & 1);
+	set_array_current_status_bool(517, (get_value_digital_input0_8() >> 2) & 1);
+	set_array_current_status_bool(518, (get_value_digital_input0_8() >> 3) & 1);
+	set_array_current_status_bool(519, (get_value_digital_input0_8() >> 4) & 1);
+	set_array_current_status_bool(520, (get_value_digital_input0_8() >> 5) & 1);
+
+	set_array_current_status_bool(539, (get_value_digital_input1_16() >> 0) & 1);
+	set_array_current_status_bool(540, (get_value_digital_input1_16() >> 1) & 1);
+
+	set_array_current_status_bool(542, (get_value_digital_input1_16() >> 2) & 1);
+	set_array_current_status_bool(543, (get_current_value_PSGPIO(46) >> 0) & 1);
+	// set_array_current_status_bool(544, (get_value_digital_input1_16() >> 2) & 1);
+	set_array_current_status_bool(545, (get_value_digital_input1_16() >> 3) & 1);
+	set_array_current_status_bool(546, (get_value_digital_input1_16() >> 4) & 1);
+	set_array_current_status_bool(547, (get_value_digital_input1_16() >> 5) & 1);
+	set_array_current_status_bool(548, (get_value_digital_input1_16() >> 6) & 1);
+
+	// возвращаем все регистры сбросов в ноль, так как это нельзя делать в двух строках подряд - очень быстро для плис
+
+	reset_errors_optical_bus(0);
+	reset_errors_adc_channels(0);
+}
 
 

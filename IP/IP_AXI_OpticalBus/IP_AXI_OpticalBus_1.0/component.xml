@@ -979,8 +979,8 @@
         <xilinx:taxonomy>AXI_Peripheral</xilinx:taxonomy>
       </xilinx:taxonomies>
       <xilinx:displayName>IP_AXI_OpticalBus_v1.0</xilinx:displayName>
-      <xilinx:coreRevision>15</xilinx:coreRevision>
-      <xilinx:coreCreationDateTime>2021-07-30T16:15:50Z</xilinx:coreCreationDateTime>
+      <xilinx:coreRevision>16</xilinx:coreRevision>
+      <xilinx:coreCreationDateTime>2021-08-02T08:25:47Z</xilinx:coreCreationDateTime>
       <xilinx:tags>
         <xilinx:tag xilinx:name="ui.data.coregen.dd@57d0cfd2_ARCHIVE_LOCATION">d:/GITEA/UPzynq20_test/IP/IP_AXI_OpticalBus/IP_AXI_OpticalBus_1.0</xilinx:tag>
         <xilinx:tag xilinx:name="ui.data.coregen.dd@36d8268c_ARCHIVE_LOCATION">d:/GITEA/UPzynq20_test/IP/IP_AXI_OpticalBus/IP_AXI_OpticalBus_1.0</xilinx:tag>
@@ -1100,6 +1100,11 @@
         <xilinx:tag xilinx:name="ui.data.coregen.dd@2df26a31_ARCHIVE_LOCATION">d:/GITEA/UPzynq20_test/IP/IP_AXI_OpticalBus/IP_AXI_OpticalBus_1.0</xilinx:tag>
         <xilinx:tag xilinx:name="ui.data.coregen.dd@7f84d394_ARCHIVE_LOCATION">d:/GITEA/UPzynq20_test/IP/IP_AXI_OpticalBus/IP_AXI_OpticalBus_1.0</xilinx:tag>
         <xilinx:tag xilinx:name="ui.data.coregen.dd@4c83ac47_ARCHIVE_LOCATION">d:/GITEA/UPzynq20_test/IP/IP_AXI_OpticalBus/IP_AXI_OpticalBus_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@40216b5e_ARCHIVE_LOCATION">d:/GITEA/UPzynq20_test/IP/IP_AXI_OpticalBus/IP_AXI_OpticalBus_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@11f92e3a_ARCHIVE_LOCATION">d:/GITEA/UPzynq20_test/IP/IP_AXI_OpticalBus/IP_AXI_OpticalBus_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@263c3f09_ARCHIVE_LOCATION">d:/GITEA/UPzynq20_test/IP/IP_AXI_OpticalBus/IP_AXI_OpticalBus_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2cd8e788_ARCHIVE_LOCATION">d:/GITEA/UPzynq20_test/IP/IP_AXI_OpticalBus/IP_AXI_OpticalBus_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@65898c16_ARCHIVE_LOCATION">d:/GITEA/UPzynq20_test/IP/IP_AXI_OpticalBus/IP_AXI_OpticalBus_1.0</xilinx:tag>
       </xilinx:tags>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>

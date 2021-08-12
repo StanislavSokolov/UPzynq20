@@ -47,7 +47,7 @@
 -- DO NOT MODIFY THIS FILE.
 
 -- IP VLNV: setcorp:user:IP_AXI_ADC:2.0
--- IP Revision: 10
+-- IP Revision: 13
 
 LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
@@ -58,7 +58,7 @@ ENTITY UPzynq20_test_design_IP_AXI_ADC_0_1 IS
     sclk : OUT STD_LOGIC;
     a0 : OUT STD_LOGIC;
     not_cs : OUT STD_LOGIC;
-    hardware_protection : OUT STD_LOGIC;
+    hwp_interrupt : OUT STD_LOGIC;
     data_in_a0 : IN STD_LOGIC;
     data_in_b0 : IN STD_LOGIC;
     data_in_a1 : IN STD_LOGIC;
@@ -103,7 +103,7 @@ ARCHITECTURE UPzynq20_test_design_IP_AXI_ADC_0_1_arch OF UPzynq20_test_design_IP
       sclk : OUT STD_LOGIC;
       a0 : OUT STD_LOGIC;
       not_cs : OUT STD_LOGIC;
-      hardware_protection : OUT STD_LOGIC;
+      hwp_interrupt : OUT STD_LOGIC;
       data_in_a0 : IN STD_LOGIC;
       data_in_b0 : IN STD_LOGIC;
       data_in_a1 : IN STD_LOGIC;
@@ -166,6 +166,8 @@ ARCHITECTURE UPzynq20_test_design_IP_AXI_ADC_0_1_arch OF UPzynq20_test_design_IP
   ATTRIBUTE X_INTERFACE_PARAMETER OF s00_axi_awaddr: SIGNAL IS "XIL_INTERFACENAME S00_AXI, WIZ_DATA_WIDTH 32, WIZ_NUM_REG 32, SUPPORTS_NARROW_BURST 0, DATA_WIDTH 32, PROTOCOL AXI4LITE, FREQ_HZ 50000000, ID_WIDTH 0, ADDR_WIDTH 7, AWUSER_WIDTH 0, ARUSER_WIDTH 0, WUSER_WIDTH 0, RUSER_WIDTH 0, BUSER_WIDTH 0, READ_WRITE_MODE READ_WRITE, HAS_BURST 0, HAS_LOCK 0, HAS_PROT 1, HAS_CACHE 0, HAS_QOS 0, HAS_REGION 0, HAS_WSTRB 1, HAS_BRESP 1, HAS_RRESP 1, NUM_READ_OUTSTANDING 1, NUM_WRITE_OUTSTANDING 1, MAX_BURST_LENGTH 1, PHASE 0.000, CLK_DOMAIN UPzynq20_test_design_pr" & 
 "ocessing_system7_0_0_FCLK_CLK0, NUM_READ_THREADS 1, NUM_WRITE_THREADS 1, RUSER_BITS_PER_BYTE 0, WUSER_BITS_PER_BYTE 0, INSERT_VIP 0";
   ATTRIBUTE X_INTERFACE_INFO OF s00_axi_awaddr: SIGNAL IS "xilinx.com:interface:aximm:1.0 S00_AXI AWADDR";
+  ATTRIBUTE X_INTERFACE_PARAMETER OF hwp_interrupt: SIGNAL IS "XIL_INTERFACENAME hwp_interrupt, SENSITIVITY LEVEL_HIGH, PortWidth 1";
+  ATTRIBUTE X_INTERFACE_INFO OF hwp_interrupt: SIGNAL IS "xilinx.com:signal:interrupt:1.0 hwp_interrupt INTERRUPT";
 BEGIN
   U0 : IP_AXI_ADC_v2_0
     GENERIC MAP (
@@ -176,7 +178,7 @@ BEGIN
       sclk => sclk,
       a0 => a0,
       not_cs => not_cs,
-      hardware_protection => hardware_protection,
+      hwp_interrupt => hwp_interrupt,
       data_in_a0 => data_in_a0,
       data_in_b0 => data_in_b0,
       data_in_a1 => data_in_a1,

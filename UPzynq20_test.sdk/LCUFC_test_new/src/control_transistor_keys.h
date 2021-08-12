@@ -18,4 +18,7 @@ u32 get_value_min_time_error_group(u32 value);
 u32 get_value_acknowledge_error_group(u32 value);
 u32 get_value_current_error_group(u32 value);
 
+void set_stop_PWM();
+void set_start_PWM();
+
 #endif /* SRC_CONTROL_TRANSISTOR_KEYS_H_ */

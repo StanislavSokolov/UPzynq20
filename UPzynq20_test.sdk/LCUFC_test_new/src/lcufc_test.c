@@ -74,6 +74,21 @@
 #include "adc.h"
 #include "encoder.h"
 #include "logical_functions.h"
+#include "PWM_tools.h"
+
+
+#include "xscugic.h"
+#include "xil_exception.h"
+
+// Parameter definitions
+#define INTC_DEVICE_ID 				XPAR_PS7_SCUGIC_0_DEVICE_ID
+#define INTC_GPIO_INTERRUPT_ID 		XPAR_FABRIC_IP_AXI_PWM_0_VEC_ID
+
+XScuGic INTCInst;
+
+static void BTN_Intr_Handler(void *baseaddr_p);
+static int InterruptSystemSetup(XScuGic *XScuGicInstancePtr);
+static int IntcInitFunction(u16 DeviceId);
 
 int Count;						// общий счеткчик
 int Count_Div = 0;						// общий счеткчик
@@ -84,14 +99,8 @@ int Channel_2 = 0;					// счетчик регистров ШИМ
 int Channel_3 = 5;					// счетчик регистров ШИМ
 u32 PWM = 0;
 int j = 4;
-int count_RS485 = 0;
-u32 DataBuf;
-u32 DataBufPrev;
 
-u32 CountErrWarnInfo = 48;
-u32 GroupsRegisters = 0;
-
-u32 DataErrWarnInfo = 0;
+volatile u32 CountInt = 48;
 
 int latch = 0;
 int latch_start = 0;
@@ -103,8 +112,10 @@ int main(void) {
 	initialization_system_design_and_project(0, 0);    		// A0 - SYSTEM_DESIGN, A1 - PROJECT_NUMBER
 	initialization_initial_values();						// считывание начальных значений
 
+	IntcInitFunction(INTC_DEVICE_ID);
+
 	while (1) {
-		if (Count < 30000000) {
+		if (Count < 50000000) {
 			Count++;
 		} else {
 			if (latch) {
@@ -118,6 +129,8 @@ int main(void) {
 				set_current_value_PSGPIO(0, 0);
 				set_current_value_PSGPIO(7, 1);
 			}
+
+			bild_send_buffer_SET12(144, CountInt);
 			Count = 0;
 
 			if (loading_control_panel(Count_Div) == 0) {
@@ -152,82 +165,69 @@ int main(void) {
 
 			}
 
-//			u32 Status_ADC = get_value_errors_negative_positive_adc_table(2);
-//
-//			for (int i = 10; i < 30; i++){
-//				set_array_current_status_bool(i, (Status_ADC >> i) & 1);
-//			}
-
-
-
-
-
-
-
-
-
-			bild_send_buffer_SET12(162, Xil_In32(XPAR_IP_AXI_OPTICALBUS_0_S00_AXI_BASEADDR + 20));
-
-
-
-
-
-
-
-
-
-			Xil_Out32(XPAR_IP_AXI_OPTICALBUS_0_S00_AXI_BASEADDR + (Channel_3*j), 0x00000000);
-			Channel_3 = 0;
-			Xil_Out32(XPAR_IP_AXI_OPTICALBUS_0_S00_AXI_BASEADDR + (Channel_3*j), 0x70F07751);
-			Channel_3++;
-			Xil_Out32(XPAR_IP_AXI_OPTICALBUS_0_S00_AXI_BASEADDR + (Channel_3*j), 0x70F00000);
-			Channel_3++;
-			Xil_Out32(XPAR_IP_AXI_OPTICALBUS_0_S00_AXI_BASEADDR + (Channel_3*j), 0x70F03200);
-			Channel_3++;
-			Xil_Out32(XPAR_IP_AXI_OPTICALBUS_0_S00_AXI_BASEADDR + (Channel_3*j), 0x00FFFF00);
-			Channel_3++;
-			Xil_Out32(XPAR_IP_AXI_OPTICALBUS_0_S00_AXI_BASEADDR + (Channel_3*j), PWM);
-			PWM++;
-			Channel_3++;
-			Xil_Out32(XPAR_IP_AXI_OPTICALBUS_0_S00_AXI_BASEADDR + (Channel_3*j), 0x00000001);
-
-
+			get_system_status_data();
 			filling_in_the_system_status_data();
 
-			set_array_current_status_bool(514, (get_value_digital_input0_8() >> 0) & 1);
-			set_array_current_status_bool(516, (get_value_digital_input0_8() >> 1) & 1);
-			set_array_current_status_bool(517, (get_value_digital_input0_8() >> 2) & 1);
-			set_array_current_status_bool(518, (get_value_digital_input0_8() >> 3) & 1);
-			set_array_current_status_bool(519, (get_value_digital_input0_8() >> 4) & 1);
-			set_array_current_status_bool(520, (get_value_digital_input0_8() >> 5) & 1);
-
-			set_array_current_status_bool(539, (get_value_digital_input1_16() >> 0) & 1);
-			set_array_current_status_bool(540, (get_value_digital_input1_16() >> 1) & 1);
-
-			set_array_current_status_bool(542, (get_value_digital_input1_16() >> 2) & 1);
-			set_array_current_status_bool(543, (get_current_value_PSGPIO(46) >> 0) & 1);
-//			set_array_current_status_bool(544, (get_value_digital_input1_16() >> 2) & 1);
-			set_array_current_status_bool(545, (get_value_digital_input1_16() >> 3) & 1);
-			set_array_current_status_bool(546, (get_value_digital_input1_16() >> 4) & 1);
-			set_array_current_status_bool(547, (get_value_digital_input1_16() >> 5) & 1);
-			set_array_current_status_bool(548, (get_value_digital_input1_16() >> 6) & 1);
-
-
-			set_array_current_status_int(89, (Xil_In32(XPAR_IP_AXI_OPTICALBUS_0_S00_AXI_BASEADDR + 6*j) >> 0) & 1);
 
 
 			if (latch_start==0) bild_send_buffer_SET12(TEST_BUFFER_SIZE_SET12-3, 1); else bild_send_buffer_SET12(TEST_BUFFER_SIZE_SET12-3, 0);
 			latch_start = 1;
 			preparing_message_SET12();
 			terminal_uart_recv_SET12();
-			terminal_uart_recv_RS485();
+
 			set_current_value_PSGPIO(15, 0);
 
+			terminal_uart_recv_RS485();
 		}
 	}
 }
 
 
+void BTN_Intr_Handler(void *InstancePtr)
+{
+	CountInt++;
+	bild_send_buffer_SET12(146, 15);
+}
+
+int InterruptSystemSetup(XScuGic *XScuGicInstancePtr)
+{
+	Xil_ExceptionRegisterHandler(XIL_EXCEPTION_ID_INT,
+			 	 	 	 	 	 (Xil_ExceptionHandler)XScuGic_InterruptHandler,
+			 	 	 	 	 	 XScuGicInstancePtr);
+	Xil_ExceptionEnable();
+	return XST_SUCCESS;
+
+}
+
+int IntcInitFunction(u16 DeviceId)
+{
+	XScuGic_Config *IntcConfig;
+	int status;
+
+	// Interrupt controller initialisation
+	IntcConfig = XScuGic_LookupConfig(DeviceId);
+	status = XScuGic_CfgInitialize(&INTCInst, IntcConfig, IntcConfig->CpuBaseAddress);
+	if(status != XST_SUCCESS) return XST_FAILURE;
+	// Call to interrupt setup
+	status = InterruptSystemSetup(&INTCInst);
+	if(status != XST_SUCCESS) return XST_FAILURE;
+
+	// Connect GPIO interrupt to handler
+	status = XScuGic_Connect(&INTCInst,
+					  	  	 INTC_GPIO_INTERRUPT_ID,
+					  	  	 (Xil_ExceptionHandler)BTN_Intr_Handler,
+					  	  	 0);
+	if(status != XST_SUCCESS) return XST_FAILURE;
+
+	// Enable GPIO interrupts interrupt
+//	XGpio_InterruptEnable(GpioInstancePtr, 1);
+//	XGpio_InterruptGlobalEnable(GpioInstancePtr);
+
+	// Enable GPIO and timer interrupts in the controller
+	XScuGic_Enable(&INTCInst, INTC_GPIO_INTERRUPT_ID);
+
+	return XST_SUCCESS;
+}
 
 
 

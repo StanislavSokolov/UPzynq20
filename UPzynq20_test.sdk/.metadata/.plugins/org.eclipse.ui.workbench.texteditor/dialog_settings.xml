@@ -2,20 +2,20 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="Count_Div2" key="selection"/>
+		<item value="INTC_PWM_INTERRUPT_ID" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
-			<item value="Count_Div2"/>
-			<item value="Count_Div"/>
-			<item value="Channel_1"/>
-			<item value="Channel_2"/>
-			<item value="Channel_0"/>
-			<item value="load_function"/>
-			<item value="read_in_all_RS485"/>
-			<item value="bild_send_buffer_SET12(150"/>
+			<item value="INTC_PWM_INTERRUPT_ID"/>
+			<item value="XPAR_FABRIC_IP_AXI_PWM_0_PWM_INTERRUPT_INTR"/>
+			<item value="i"/>
+			<item value="count_RS485"/>
+			<item value="DataBufPre"/>
+			<item value="CountErrWarnInfo"/>
+			<item value="GroupsRegisters"/>
+			<item value="Xil_ExceptionInit();"/>
 		</list>
 		<list key="replacehistory">
 		</list>
@@ -24,7 +24,7 @@
 		<item value="269" key="DIALOG_WIDTH"/>
 		<item value="1|Tahoma|8.25|0|WINDOWS|1|-11|0|0|0|400|0|0|0|1|0|0|0|0|Tahoma" key="DIALOG_FONT_NAME"/>
 		<item value="373" key="DIALOG_HEIGHT"/>
-		<item value="1046" key="DIALOG_X_ORIGIN"/>
-		<item value="244" key="DIALOG_Y_ORIGIN"/>
+		<item value="673" key="DIALOG_X_ORIGIN"/>
+		<item value="215" key="DIALOG_Y_ORIGIN"/>
 	</section>
 </section>

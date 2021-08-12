@@ -129,4 +129,21 @@ u32 get_value_current_error_group(u32 value){
 		}
 }
 
+void set_stop_PWM(){
+	Xil_Out32(XPAR_IP_AXI_PWM_0_S00_AXI_BASEADDR + 22*coef, 0x00000000);		// остановить ШИМ
+	Xil_Out32(XPAR_IP_AXI_INVERTER_0_S00_AXI_BASEADDR, 0x0000000B);
+
+	// обнуляем тайминги для ШИМ
+	for (int i = 0; i < 16; i++) {
+		Xil_Out32(XPAR_IP_AXI_PWM_0_S00_AXI_BASEADDR + i*coef, 0x00000000);			// нулевые значения счетчиков для IP_AXI_PWM (регистры 0-15)
+	}
+
+	// обнуляем счетчик для ШИМ
+		Xil_Out32(XPAR_IP_AXI_PWM_0_S00_AXI_BASEADDR + 17*coef, 0x00000000);				// счетчик пилы для IP_AXI_PWM (PWMcounterMax)
+}
+
+void set_start_PWM(){
+//	Xil_Out32(XPAR_IP_AXI_PWM_0_S00_AXI_BASEADDR + 22*coef, 0x00000001);
+}
+
 

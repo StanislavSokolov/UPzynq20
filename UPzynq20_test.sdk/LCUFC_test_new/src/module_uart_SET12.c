@@ -49,7 +49,7 @@ volatile int TotalReceivedCount_SET12;
 volatile int TotalSentCount_SET12;
 int TotalErrorCount_SET12;
 int bit_SET12 = 0;
-int count_send = 0;
+volatile int count_send = 0;
 int count_send2 = 0;
 
 void preparing_message_SET12(){
@@ -85,26 +85,6 @@ void preparing_message_SET12(){
 //			}
 //
 //		}
-
-		if (count_send < 3) {
-			count_send++;
-		} else {
-			count_send = 0;
-			count_send2++;
-		}
-
-
-		// сброс ошибки аналоговой с задержкой
-		if (count_send2 < 10) {
-	//			count_send2++;
-				Xil_Out32(XPAR_IP_AXI_ADC_0_S00_AXI_BASEADDR + 16, 0x00000000);
-			} else {
-				count_send2 = 0;
-				Xil_Out32(XPAR_IP_AXI_ADC_0_S00_AXI_BASEADDR + 16, 0x00000001);
-			}
-
-
-
 
 
 		bild_send_buffer_SET12(TEST_BUFFER_SIZE_SET12-1, 100);				// вместо CRC
@@ -247,9 +227,9 @@ int UartPsIntrExample_SET12(INTC_SET12 *IntcInstPtr, XUartPs *UartInstPtr,
 		XUARTPS_IXR_OVER | XUARTPS_IXR_TXEMPTY | XUARTPS_IXR_RXFULL |
 		XUARTPS_IXR_RXOVR;
 
-	if (UartInstPtr->Platform == XPLAT_ZYNQ_ULTRA_MP) {
-		IntrMask |= XUARTPS_IXR_RBRK;
-	}
+//	if (UartInstPtr->Platform == XPLAT_ZYNQ_ULTRA_MP) {
+//		IntrMask |= XUARTPS_IXR_RBRK;
+//	}
 
 	XUartPs_SetInterruptMask(UartInstPtr, IntrMask);
 
@@ -355,11 +335,14 @@ void Handler_SET12(void *CallBackRef, u32 Event, unsigned int EventData)
 	/* All of the data has been sent */
 	if (Event == XUARTPS_EVENT_SENT_DATA) {
 		TotalSentCount_SET12 = EventData;
+		bild_send_buffer_SET12(144, TotalReceivedCount_SET12);
 	}
 
 	/* All of the data has been received */
 	if (Event == XUARTPS_EVENT_RECV_DATA) {
 		TotalReceivedCount_SET12 = EventData;
+		count_send = count_send + 1;
+		bild_send_buffer_SET12(146, TotalReceivedCount_SET12++);
 //		XUartPs_Recv(UartInstPtr, RecvBuffer, TEST_BUFFER_SIZE);
 	}
 
@@ -369,6 +352,7 @@ void Handler_SET12(void *CallBackRef, u32 Event, unsigned int EventData)
 	 */
 	if (Event == XUARTPS_EVENT_RECV_TOUT) {
 		TotalReceivedCount_SET12 = EventData;
+		bild_send_buffer_SET12(148, TotalReceivedCount_SET12);
 	}
 
 	/*
@@ -377,7 +361,7 @@ void Handler_SET12(void *CallBackRef, u32 Event, unsigned int EventData)
 	 */
 	if (Event == XUARTPS_EVENT_RECV_ERROR) {
 		TotalReceivedCount_SET12 = EventData;
-		TotalErrorCount_SET12++;
+		bild_send_buffer_SET12(150, TotalReceivedCount_SET12);
 	}
 
 	/*
@@ -387,7 +371,7 @@ void Handler_SET12(void *CallBackRef, u32 Event, unsigned int EventData)
 	 */
 	if (Event == XUARTPS_EVENT_PARE_FRAME_BRKE) {
 		TotalReceivedCount_SET12 = EventData;
-		TotalErrorCount_SET12++;
+		bild_send_buffer_SET12(152, TotalReceivedCount_SET12);
 	}
 
 	/*
@@ -396,7 +380,7 @@ void Handler_SET12(void *CallBackRef, u32 Event, unsigned int EventData)
 	 */
 	if (Event == XUARTPS_EVENT_RECV_ORERR) {
 		TotalReceivedCount_SET12 = EventData;
-		TotalErrorCount_SET12++;
+		bild_send_buffer_SET12(154, TotalReceivedCount_SET12);
 	}
 
 
@@ -428,58 +412,60 @@ static int SetupInterruptSystem_SET12(INTC_SET12 *IntcInstancePtr,
 {
 	int Status;
 
-#ifdef XPAR_INTC_0_DEVICE_ID
-#ifndef TESTAPP_GEN
+//#ifdef XPAR_INTC_0_DEVICE_ID
+//#ifndef TESTAPP_GEN
 	/*
 	 * Initialize the interrupt controller driver so that it's ready to
 	 * use.
 	 */
-	Status = XIntc_Initialize(IntcInstancePtr, INTC_DEVICE_ID);
-	if (Status != XST_SUCCESS) {
-		return XST_FAILURE;
-	}
-#endif
+//	Status = XIntc_Initialize(IntcInstancePtr, INTC_DEVICE_ID_SET12);
+//	if (Status != XST_SUCCESS) {
+//		return XST_FAILURE;
+//	}
+//#endif
 	/*
 	 * Connect the handler that will be called when an interrupt
 	 * for the device occurs, the handler defined above performs the
 	 * specific interrupt processing for the device.
 	 */
-	Status = XIntc_Connect(IntcInstancePtr, UartIntrId,
-		(XInterruptHandler) XUartPs_InterruptHandler, UartInstancePtr);
-	if (Status != XST_SUCCESS) {
-		return XST_FAILURE;
-	}
+//	Status = XIntc_Connect(IntcInstancePtr, UartIntrId,
+//		(XInterruptHandler) XUartPs_InterruptHandler, UartInstancePtr);
+//	if (Status != XST_SUCCESS) {
+//		return XST_FAILURE;
+//	}
 
-#ifndef TESTAPP_GEN
+//#ifndef TESTAPP_GEN
 	/*
 	 * Start the interrupt controller so interrupts are enabled for all
 	 * devices that cause interrupts.
 	 */
-	Status = XIntc_Start(IntcInstancePtr, XIN_REAL_MODE);
-	if (Status != XST_SUCCESS) {
-		return XST_FAILURE;
-	}
-#endif
+//	Status = XIntc_Start(IntcInstancePtr, XIN_REAL_MODE);
+//	if (Status != XST_SUCCESS) {
+//		return XST_FAILURE;
+//	}
+//#endif
 	/*
 	 * Enable the interrupt for uart
 	 */
-	XIntc_Enable(IntcInstancePtr, UartIntrId);
+//	XIntc_Enable(IntcInstancePtr, UartIntrId);
 
-	#ifndef TESTAPP_GEN
+//	#ifndef TESTAPP_GEN
 	/*
 	 * Initialize the exception table.
 	 */
-	Xil_ExceptionInit();
+//	Xil_ExceptionInit();
 
 	/*
 	 * Register the interrupt controller handler with the exception table.
 	 */
-	Xil_ExceptionRegisterHandler(XIL_EXCEPTION_ID_INT,
-				(Xil_ExceptionHandler) XIntc_InterruptHandler,
-				IntcInstancePtr);
-	#endif
-#else
-#ifndef TESTAPP_GEN
+//	Xil_ExceptionRegisterHandler(XIL_EXCEPTION_ID_INT,
+//				(Xil_ExceptionHandler) XIntc_InterruptHandler,
+//				IntcInstancePtr);
+//	#endif
+//#else
+//#ifndef TESTAPP_GEN
+
+
 	XScuGic_Config *IntcConfig; /* Config for interrupt controller */
 
 	/* Initialize the interrupt controller driver */
@@ -501,7 +487,7 @@ static int SetupInterruptSystem_SET12(INTC_SET12 *IntcInstancePtr,
 	Xil_ExceptionRegisterHandler(XIL_EXCEPTION_ID_INT,
 				(Xil_ExceptionHandler) XScuGic_InterruptHandler,
 				IntcInstancePtr);
-#endif
+//#endif
 
 	/*
 	 * Connect a device driver handler that will be called when an
@@ -518,11 +504,11 @@ static int SetupInterruptSystem_SET12(INTC_SET12 *IntcInstancePtr,
 	/* Enable the interrupt for the device */
 	XScuGic_Enable(IntcInstancePtr, UartIntrId);
 
-#endif
-#ifndef TESTAPP_GEN
+//#endif
+//#ifndef TESTAPP_GEN
 	/* Enable interrupts */
 	 Xil_ExceptionEnable();
-#endif
+//#endif
 
 	return XST_SUCCESS;
 }
