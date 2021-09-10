@@ -26,32 +26,32 @@ int initialization_of_project(int x, int y) {
 		    return XST_FAILURE;
 		} //xil_printf("Gpio_0 ok\r\n");
 
-		Status = XGpio_Initialize(&Gpio_1, XPAR_AXI_GPIO_1_DEVICE_ID);
-		if (Status != XST_SUCCESS) {
-			//xil_printf("Gpio_1 Initialization Failed\r\n");
-			return XST_FAILURE;
-		} //xil_printf("Gpio_1 ok\r\n");
-
-		Status = XGpio_Initialize(&Gpio_4, XPAR_AXI_GPIO_4_DEVICE_ID);
-				if (Status != XST_SUCCESS) {
-					//xil_printf("Gpio_1 Initialization Failed\r\n");
-					return XST_FAILURE;
-				} //xil_printf("Gpio_1 ok\r\n");
-		Status = XGpio_Initialize(&Gpio_5, XPAR_AXI_GPIO_5_DEVICE_ID);
-				if (Status != XST_SUCCESS) {
-					//xil_printf("Gpio_1 Initialization Failed\r\n");
-					return XST_FAILURE;
-				} //xil_printf("Gpio_1 ok\r\n");
-		Status = XGpio_Initialize(&Gpio_6, XPAR_AXI_GPIO_6_DEVICE_ID);
-				if (Status != XST_SUCCESS) {
-					//xil_printf("Gpio_1 Initialization Failed\r\n");
-				return XST_FAILURE;
-				} //xil_printf("Gpio_1 ok\r\n");
-		Status = XGpio_Initialize(&Gpio_7, XPAR_AXI_GPIO_7_DEVICE_ID);
-				if (Status != XST_SUCCESS) {
-					//xil_printf("Gpio_1 Initialization Failed\r\n");
-				return XST_FAILURE;
-				} //xil_printf("Gpio_1 ok\r\n");
+//		Status = XGpio_Initialize(&Gpio_1, XPAR_AXI_GPIO_1_DEVICE_ID);
+//		if (Status != XST_SUCCESS) {
+//			//xil_printf("Gpio_1 Initialization Failed\r\n");
+//			return XST_FAILURE;
+//		} //xil_printf("Gpio_1 ok\r\n");
+//
+//		Status = XGpio_Initialize(&Gpio_4, XPAR_AXI_GPIO_4_DEVICE_ID);
+//				if (Status != XST_SUCCESS) {
+//					//xil_printf("Gpio_1 Initialization Failed\r\n");
+//					return XST_FAILURE;
+//				} //xil_printf("Gpio_1 ok\r\n");
+//		Status = XGpio_Initialize(&Gpio_5, XPAR_AXI_GPIO_5_DEVICE_ID);
+//				if (Status != XST_SUCCESS) {
+//					//xil_printf("Gpio_1 Initialization Failed\r\n");
+//					return XST_FAILURE;
+//				} //xil_printf("Gpio_1 ok\r\n");
+//		Status = XGpio_Initialize(&Gpio_6, XPAR_AXI_GPIO_6_DEVICE_ID);
+//				if (Status != XST_SUCCESS) {
+//					//xil_printf("Gpio_1 Initialization Failed\r\n");
+//				return XST_FAILURE;
+//				} //xil_printf("Gpio_1 ok\r\n");
+//		Status = XGpio_Initialize(&Gpio_7, XPAR_AXI_GPIO_7_DEVICE_ID);
+//				if (Status != XST_SUCCESS) {
+//					//xil_printf("Gpio_1 Initialization Failed\r\n");
+//				return XST_FAILURE;
+//				} //xil_printf("Gpio_1 ok\r\n");
 
 		Status = XGpio_Initialize(&Gpio_2, XPAR_AXI_GPIO_2_DEVICE_ID);
 		if (Status != XST_SUCCESS) {
@@ -71,11 +71,11 @@ int initialization_of_project(int x, int y) {
 	  break;
 	case 1:
 
-		Status = XGpio_Initialize(&Gpio_1, XPAR_AXI_GPIO_1_DEVICE_ID);
-		if (Status != XST_SUCCESS) {
-			xil_printf("Gpio_1 Initialization Failed\r\n");
-		    return XST_FAILURE;
-		} xil_printf("Gpio_1 ok\r\n");
+//		Status = XGpio_Initialize(&Gpio_1, XPAR_AXI_GPIO_1_DEVICE_ID);
+//		if (Status != XST_SUCCESS) {
+//			xil_printf("Gpio_1 Initialization Failed\r\n");
+//		    return XST_FAILURE;
+//		} xil_printf("Gpio_1 ok\r\n");
 
 	  break;
 	case 2:

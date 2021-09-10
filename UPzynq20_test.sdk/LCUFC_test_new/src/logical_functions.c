@@ -27,7 +27,7 @@
 int latch_start_PMU = 0;										// защелка для функции загрузки пульта управления ((0) - начальное окно -> прогрес бар -> (1) - основное окно)
 
 	// функция инициализации аппаратного дизайна и проекта
-int initialization_system_design_and_project(int system_design, int project_number){
+void initialization_system_design_and_project(int system_design, int project_number){
 	initialization_input_output(system_design, project_number);
 	initialization_PSGPIO(system_design, project_number);
 
@@ -109,6 +109,7 @@ void filling_in_the_system_status_data(){
 	if (((get_value_digital_input0_8() >> 0) & 1) == 0) {
 		reset_errors_optical_bus(1);
 		reset_errors_adc_channels(1);
+		reset_errors_control_transistor_keys();
 
 		reset_errors_current_system_status();
 	}

@@ -12,7 +12,7 @@
 #define LED_DELAY     		50000000
 #define LED_CHANNEL 		1
 
-int initialization_input_output(int system_design, int project_number);
+void initialization_input_output(int system_design, int project_number);
 
 void get_current_value_digital_input_table();
 u32 get_value_digital_input0_8();

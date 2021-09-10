@@ -62,8 +62,6 @@
 #include "xparameters.h"
 #include "xgpio.h"
 #include "xplatform_info.h"
-//#include "xuartps.h"
-//#include "xil_exception.h"
 #include "xil_printf.h"
 #include "project_parameters.h"
 #include "test_functions.h"
@@ -75,47 +73,25 @@
 #include "encoder.h"
 #include "logical_functions.h"
 #include "PWM_tools.h"
+#include "control_transistor_keys.h"
 
-
-#include "xscugic.h"
-#include "xil_exception.h"
-
-// Parameter definitions
-#define INTC_DEVICE_ID 				XPAR_PS7_SCUGIC_0_DEVICE_ID
-#define INTC_GPIO_INTERRUPT_ID 		XPAR_FABRIC_IP_AXI_PWM_0_VEC_ID
-
-XScuGic INTCInst;
-
-static void BTN_Intr_Handler(void *baseaddr_p);
-static int InterruptSystemSetup(XScuGic *XScuGicInstancePtr);
-static int IntcInitFunction(u16 DeviceId);
-
-int Count;						// общий счеткчик
-int Count_Div = 0;						// общий счеткчик
-int Count_Div2 = 0;
-int Channel_0 = 0;					// счетчик аналоговых сигналов для каналов 0-15
-int Channel_1 = 12000;					// счетчик аналоговых сигналов для каналов 16-31
-int Channel_2 = 0;					// счетчик регистров ШИМ
-int Channel_3 = 5;					// счетчик регистров ШИМ
-u32 PWM = 0;
-int j = 4;
-
-volatile u32 CountInt = 48;
+int Count;								// общий счетчик
+int Count_Div = 0;						// счетчик для процесса инициализации экрана
+int Count_Div2 = 0;						// счетчик формирования посылки RS-485
 
 int latch = 0;
 int latch_start = 0;
-
-int i = 0;
 
 int main(void) {
 
 	initialization_system_design_and_project(0, 0);    		// A0 - SYSTEM_DESIGN, A1 - PROJECT_NUMBER
 	initialization_initial_values();						// считывание начальных значений
 
-	IntcInitFunction(INTC_DEVICE_ID);
+	SetupInterruptSystemPWM();
+	set_start_PWM();
 
 	while (1) {
-		if (Count < 50000000) {
+		if (Count < 100000000) {
 			Count++;
 		} else {
 			if (latch) {
@@ -130,7 +106,19 @@ int main(void) {
 				set_current_value_PSGPIO(7, 1);
 			}
 
-			bild_send_buffer_SET12(144, CountInt);
+			bild_send_buffer_SET12(144, Xil_In32(XPAR_IP_AXI_PWM_0_S00_AXI_BASEADDR));
+			bild_send_buffer_SET12(146, Xil_In32(XPAR_IP_AXI_PWM_0_S00_AXI_BASEADDR+4));
+			bild_send_buffer_SET12(148, get_brightness());
+
+			set_right_control_pulse(update_from_terminal_SET12(16));
+//			set_right_control_pulse(update_from_terminal_SET12(18));
+
+			bild_send_buffer_SET12(150, get_value_acknowledge_error_group(0));
+			bild_send_buffer_SET12(152, get_value_acknowledge_error_group(1));
+
+			bild_send_buffer_SET12(154, get_value_current_error_group(0));
+			bild_send_buffer_SET12(156, get_value_current_error_group(1));
+
 			Count = 0;
 
 			if (loading_control_panel(Count_Div) == 0) {
@@ -180,53 +168,6 @@ int main(void) {
 			terminal_uart_recv_RS485();
 		}
 	}
-}
-
-
-void BTN_Intr_Handler(void *InstancePtr)
-{
-	CountInt++;
-	bild_send_buffer_SET12(146, 15);
-}
-
-int InterruptSystemSetup(XScuGic *XScuGicInstancePtr)
-{
-	Xil_ExceptionRegisterHandler(XIL_EXCEPTION_ID_INT,
-			 	 	 	 	 	 (Xil_ExceptionHandler)XScuGic_InterruptHandler,
-			 	 	 	 	 	 XScuGicInstancePtr);
-	Xil_ExceptionEnable();
-	return XST_SUCCESS;
-
-}
-
-int IntcInitFunction(u16 DeviceId)
-{
-	XScuGic_Config *IntcConfig;
-	int status;
-
-	// Interrupt controller initialisation
-	IntcConfig = XScuGic_LookupConfig(DeviceId);
-	status = XScuGic_CfgInitialize(&INTCInst, IntcConfig, IntcConfig->CpuBaseAddress);
-	if(status != XST_SUCCESS) return XST_FAILURE;
-	// Call to interrupt setup
-	status = InterruptSystemSetup(&INTCInst);
-	if(status != XST_SUCCESS) return XST_FAILURE;
-
-	// Connect GPIO interrupt to handler
-	status = XScuGic_Connect(&INTCInst,
-					  	  	 INTC_GPIO_INTERRUPT_ID,
-					  	  	 (Xil_ExceptionHandler)BTN_Intr_Handler,
-					  	  	 0);
-	if(status != XST_SUCCESS) return XST_FAILURE;
-
-	// Enable GPIO interrupts interrupt
-//	XGpio_InterruptEnable(GpioInstancePtr, 1);
-//	XGpio_InterruptGlobalEnable(GpioInstancePtr);
-
-	// Enable GPIO and timer interrupts in the controller
-	XScuGic_Enable(&INTCInst, INTC_GPIO_INTERRUPT_ID);
-
-	return XST_SUCCESS;
 }
 
 

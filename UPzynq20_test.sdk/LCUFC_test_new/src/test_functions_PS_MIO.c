@@ -23,7 +23,7 @@ int PinPSGPIO47 = 0;
 int PinPSGPIO48 = 0;
 int PinPSGPIO49 = 0;
 
-int initialization_PSGPIO(int system_design, int project_number) {
+void initialization_PSGPIO(int system_design, int project_number) {
 	ConfigPtr = XGpioPs_LookupConfig(XPAR_XGPIOPS_0_DEVICE_ID);
 	XGpioPs_CfgInitialize(&Gpio, ConfigPtr, ConfigPtr->BaseAddr);
 
@@ -38,7 +38,6 @@ int initialization_PSGPIO(int system_design, int project_number) {
 		set_direction_pin_PSGPIO(48, 0);			// Выбираем направление MIO48
 		set_direction_pin_PSGPIO(49, 0);			// Выбираем направление MIO49
 
-	return 0;
 }
 
 void set_output_enable_pin_PSGPIO(int pin, int data){
@@ -57,7 +56,7 @@ u32 get_current_value_PSGPIO (int pin){
 	return XGpioPs_ReadPin(&Gpio, pin);
 }
 
-int read_current_value_PSGPIO(){
+void read_current_value_PSGPIO(){
 	PinPSGPIO46 = get_current_value_PSGPIO(46);
 	PinPSGPIO47 = get_current_value_PSGPIO(47);
 	PinPSGPIO48 = get_current_value_PSGPIO(48);

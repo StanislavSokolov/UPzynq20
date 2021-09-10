@@ -29,7 +29,7 @@ void set_initial_values_control_transistor_keys(){
 		Xil_Out32(XPAR_IP_AXI_PWM_0_S00_AXI_BASEADDR + 22*coef, 0x00000000);				// Закрыть все ключи IP_AXI_PWM (PWMstarting)
 		Xil_Out32(XPAR_IP_AXI_INVERTER_0_S00_AXI_BASEADDR, 0x0000000B);
 
-		Xil_Out32(XPAR_IP_AXI_INVERTER_0_S00_AXI_BASEADDR + 1*coef, 0x0000FFFF);			// Разрешение работы тормозных резисторов
+		Xil_Out32(XPAR_IP_AXI_INVERTER_0_S00_AXI_BASEADDR + 1*coef, 0x00000000);			// Разрешение работы тормозных резисторов
 		Xil_Out32(XPAR_IP_AXI_INVERTER_0_S00_AXI_BASEADDR + 2*coef, 0x00000000);			// маска на выходе Inverter_3lvl_wrapper_0 (MaskChGroup0)
 		Xil_Out32(XPAR_IP_AXI_INVERTER_0_S00_AXI_BASEADDR + 3*coef, 0x00000000);			// маска на выходе Inverter_3lvl_wrapper_0 (MaskChGroup1)
 	//	Xil_Out32(XPAR_IP_AXI_INVERTER_0_S00_AXI_BASEADDR + 4*coef, 0x00000000);			// маска на выходе Inverter_3lvl_wrapper_0 (MaskChGroup2 - резерв)
@@ -41,18 +41,18 @@ void set_initial_values_control_transistor_keys(){
 		Xil_Out32(XPAR_IP_AXI_INVERTER_0_S00_AXI_BASEADDR + 10*coef, 0x00000000);			// время Inverter_3lvl_wrapper_0 (MinTimeGroup0)
 	//	Xil_Out32(XPAR_IP_AXI_INVERTER_0_S00_AXI_BASEADDR + 11*coef, 0x00000000);			// время Inverter_3lvl_wrapper_0 (MinTimeGroup1 - резерв)
 		Xil_Out32(XPAR_IP_AXI_INVERTER_0_S00_AXI_BASEADDR + 12*coef, 0x00000000);			// активация защиты по ответу AckChecker_wrapper_0 (AcknowledgeProtectionEnableGroup0)
-	//	Xil_Out32(XPAR_IP_AXI_INVERTER_0_S00_AXI_BASEADDR + 13*coef, 0x00000000);			// активация защиты по ответу AckChecker_wrapper_0 (AcknowledgeProtectionEnableGroup1 - резерв)
+		Xil_Out32(XPAR_IP_AXI_INVERTER_0_S00_AXI_BASEADDR + 13*coef, 0x00000000);			// активация защиты по ответу AckChecker_wrapper_0 (AcknowledgeProtectionEnableGroup1 - резерв)
 	//	Xil_Out32(XPAR_IP_AXI_INVERTER_0_S00_AXI_BASEADDR + 14*coef, 0x00000000);			// активация защиты по ответу AckChecker_wrapper_0 (AcknowledgeProtectionEnableGroup2 - резерв) - избыточна
-		Xil_Out32(XPAR_IP_AXI_INVERTER_0_S00_AXI_BASEADDR + 15*coef, 0x00000000);			// активация токовой защиты AckChecker_wrapper_0 (CurrentProtectionEnableGroup0)
-	//	Xil_Out32(XPAR_IP_AXI_INVERTER_0_S00_AXI_BASEADDR + 16*coef, 0x00000000);			// активация токовой защиты AckChecker_wrapper_0 (CurrentProtectionEnableGroup1 - резерв)
+		Xil_Out32(XPAR_IP_AXI_INVERTER_0_S00_AXI_BASEADDR + 15*coef, 0x000000FF);			// активация токовой защиты AckChecker_wrapper_0 (CurrentProtectionEnableGroup0)
+		Xil_Out32(XPAR_IP_AXI_INVERTER_0_S00_AXI_BASEADDR + 16*coef, 0x00000000);			// активация токовой защиты AckChecker_wrapper_0 (CurrentProtectionEnableGroup1 - резерв)
 	//	Xil_Out32(XPAR_IP_AXI_INVERTER_0_S00_AXI_BASEADDR + 17*coef, 0x00000000);			// активация токовой защиты AckChecker_wrapper_0 (CurrentProtectionEnableGroup2 - резерв) - избыточна
 		Xil_Out32(XPAR_IP_AXI_INVERTER_0_S00_AXI_BASEADDR + 18*coef, 0x00000000);			// маска защиты по ответу AckChecker_wrapper_0 (MaskAcknowledgeGroup0)
-	//	Xil_Out32(XPAR_IP_AXI_INVERTER_0_S00_AXI_BASEADDR + 19*coef, 0x00000000);			// маска защиты по ответу AckChecker_wrapper_0 (MaskAcknowledgeGroup1 - резерв)
+		Xil_Out32(XPAR_IP_AXI_INVERTER_0_S00_AXI_BASEADDR + 19*coef, 0x00000000);			// маска защиты по ответу AckChecker_wrapper_0 (MaskAcknowledgeGroup1 - резерв)
 	//	Xil_Out32(XPAR_IP_AXI_INVERTER_0_S00_AXI_BASEADDR + 20*coef, 0x00000000);			// маска защиты по ответу AckChecker_wrapper_0 (MaskAcknowledgeGroup2 - резерв) - избыточна
-		Xil_Out32(XPAR_IP_AXI_INVERTER_0_S00_AXI_BASEADDR + 21*coef, 0x00000000);			// маска токовой защиты AckChecker_wrapper_0 (MaskCurrentGroup0)
-	//	Xil_Out32(XPAR_IP_AXI_INVERTER_0_S00_AXI_BASEADDR + 22*coef, 0x00000000);			// маска токовой защиты AckChecker_wrapper_0 (MaskCurrentGroup1 - резерв)
+		Xil_Out32(XPAR_IP_AXI_INVERTER_0_S00_AXI_BASEADDR + 21*coef, 0x000000FF);			// маска токовой защиты AckChecker_wrapper_0 (MaskCurrentGroup0)
+		Xil_Out32(XPAR_IP_AXI_INVERTER_0_S00_AXI_BASEADDR + 22*coef, 0x00000000);			// маска токовой защиты AckChecker_wrapper_0 (MaskCurrentGroup1 - резерв)
 	//	Xil_Out32(XPAR_IP_AXI_INVERTER_0_S00_AXI_BASEADDR + 23*coef, 0x00000000);			// маска токовой защиты AckChecker_wrapper_0 (MaskCurrentGroup2 - резерв) - избыточна
-		Xil_Out32(XPAR_IP_AXI_INVERTER_0_S00_AXI_BASEADDR + 24*coef, 0x00000000);			// время AckChecker_wrapper_0 (AcknowledgeTimeGroup0)
+		Xil_Out32(XPAR_IP_AXI_INVERTER_0_S00_AXI_BASEADDR + 24*coef, 0x000FFFFF);			// время AckChecker_wrapper_0 (AcknowledgeTimeGroup0)
 	//	Xil_Out32(XPAR_IP_AXI_INVERTER_0_S00_AXI_BASEADDR + 25*coef, 0x00000000);			// время AckChecker_wrapper_0 (AcknowledgeTimeGroup1 - резерв) - избыточна
 
 		Xil_Out32(XPAR_IP_AXI_INVERTER_0_S00_AXI_BASEADDR, 0x80000004);					// Error0 <= slv_reg0(0);
@@ -62,14 +62,16 @@ void set_initial_values_control_transistor_keys(){
 																						// start <= slv_reg0(31); изменения вступают в силу после установки этого бита
 
 		for (int i = 0; i < 16; i++) {
-			Xil_Out32(XPAR_IP_AXI_PWM_0_S00_AXI_BASEADDR + i*coef, 0x00000000);			// нулевые значения счетчиков для IP_AXI_PWM (регистры 0-15)
+			Xil_Out32(XPAR_IP_AXI_PWM_0_S00_AXI_BASEADDR + i*coef, 0x000FFFFF+i*0x00100000);			// нулевые значения счетчиков для IP_AXI_PWM (регистры 0-15)
 		}
-
-		Xil_Out32(XPAR_IP_AXI_PWM_0_S00_AXI_BASEADDR + 16*coef, 0x00000000);				// направление пилы для IP_AXI_PWM (PWMdirection)
-		Xil_Out32(XPAR_IP_AXI_PWM_0_S00_AXI_BASEADDR + 17*coef, 0x00000000);				// счетчик пилы для IP_AXI_PWM (PWMcounterMax)
-		Xil_Out32(XPAR_IP_AXI_PWM_0_S00_AXI_BASEADDR + 18*coef, 0x00000000);				// источник ШИМА для IP_AXI_PWM (PWMsource) 0 - ШИМ от генератора IP_AXI_PWM, 1 - ШИМ из регистра, предназначенного для ШИМ контроллера, 2 - прямое управление ключами из соответствующего регистра
+		Xil_Out32(XPAR_IP_AXI_PWM_0_S00_AXI_BASEADDR + 16*coef, 0x0000000F);				// направление пилы для IP_AXI_PWM (PWMdirection)
+		Xil_Out32(XPAR_IP_AXI_PWM_0_S00_AXI_BASEADDR + 17*coef, 0x01000000);				// счетчик пилы для IP_AXI_PWM (PWMcounterMax)
+		Xil_Out32(XPAR_IP_AXI_PWM_0_S00_AXI_BASEADDR + 18*coef, 0x00000002);				// источник ШИМА для IP_AXI_PWM (PWMsource) 0 - ШИМ от генератора IP_AXI_PWM, 1 - ШИМ из регистра, предназначенного для ШИМ контроллера, 2 - прямое управление ключами из соответствующего регистра
 		Xil_Out32(XPAR_IP_AXI_PWM_0_S00_AXI_BASEADDR + 19*coef, 0x00000000);				// ШИМ от контроллера для IP_AXI_PWM (PWMfromCPU) - обнуление задания
-		Xil_Out32(XPAR_IP_AXI_PWM_0_S00_AXI_BASEADDR + 20*coef, 0x00000000);				// прямое управление ключами (PWMrightControl) - обнуление задания
+		Xil_Out32(XPAR_IP_AXI_PWM_0_S00_AXI_BASEADDR + 20*coef, 0x0000FFFF);				// обязательно при прямом управлении
+
+		Xil_Out32(XPAR_IP_AXI_PWM_0_S00_AXI_BASEADDR + 21*coef, 0x00000000);
+//		Xil_Out32(XPAR_IP_AXI_PWM_0_S00_AXI_BASEADDR + 22*coef, 0x00000002);				// прямое управление ключами (PWMrightControl) - обнуление задания
 		//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 }
 
@@ -103,6 +105,7 @@ u32 get_value_min_time_error_group(u32 value){
 		if (value == 2) {
 			return min_time_error_group_2;
 		}
+		return 1;
 }
 
 u32 get_value_acknowledge_error_group(u32 value){
@@ -115,6 +118,7 @@ u32 get_value_acknowledge_error_group(u32 value){
 		if (value == 2) {
 			return acknowledge_error_group_2;
 		}
+		return 1;
 }
 
 u32 get_value_current_error_group(u32 value){
@@ -122,11 +126,12 @@ u32 get_value_current_error_group(u32 value){
 			return current_error_group_0;
 		}
 		if (value == 1) {
-			return current_error_group_0;
-		}
-		if (value == 2) {
 			return current_error_group_1;
 		}
+		if (value == 2) {
+			return current_error_group_2;
+		}
+		return 1;
 }
 
 void set_stop_PWM(){
@@ -143,7 +148,39 @@ void set_stop_PWM(){
 }
 
 void set_start_PWM(){
-//	Xil_Out32(XPAR_IP_AXI_PWM_0_S00_AXI_BASEADDR + 22*coef, 0x00000001);
+	Xil_Out32(XPAR_IP_AXI_PWM_0_S00_AXI_BASEADDR + 22*coef, 0x00000001);
+}
+
+void reset_errors_control_transistor_keys(){
+	Xil_Out32(XPAR_IP_AXI_INVERTER_0_S00_AXI_BASEADDR, 0x8000000C);
+	Xil_Out32(XPAR_IP_AXI_INVERTER_0_S00_AXI_BASEADDR, 0x80000004);
+}
+
+// функция set_right_control_pulse(u32 channels) преобразовывает желаемую комбинацию включения ключей
+// в код для схемы со средней точкой
+// запрещенные комбинации включить нельзя
+void set_right_control_pulse(u32 channels){
+	u32 value = 0;
+	for (int j = 0; j < 16; j = j + 4) {
+		int bits = 0;
+		for (int i = 0; i < 4; i++){
+			bits = (((channels) & (1 << j + i))) >> j | bits;
+		}
+		if ((bits == 1) || (bits == 2) || (bits == 3)) {
+			value = ((2 << j/2) & 0xFFFF) | value;
+		}
+		else if ((bits == 4) || (bits == 8) || (bits == 12)) {
+			value = ((1 << j/2) & 0xFFFF) | value;
+		}
+		else if (bits == 6) {
+			value = ((0 << j/2) & 0xFFFF) | value;
+		}
+		else {
+			value = ((3 << j/2) & 0xFFFF) | value;
+		}
+	}
+	Xil_Out32(XPAR_IP_AXI_INVERTER_0_S00_AXI_BASEADDR + 2*coef, 65535-channels);
+	Xil_Out32(XPAR_IP_AXI_PWM_0_S00_AXI_BASEADDR + 20*coef, value);
 }
 
 

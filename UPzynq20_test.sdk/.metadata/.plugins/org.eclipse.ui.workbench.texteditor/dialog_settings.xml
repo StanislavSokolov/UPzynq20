@@ -2,20 +2,20 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="INTC_PWM_INTERRUPT_ID" key="selection"/>
+		<item value="get_value_min_time_error_group" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
-			<item value="INTC_PWM_INTERRUPT_ID"/>
-			<item value="XPAR_FABRIC_IP_AXI_PWM_0_PWM_INTERRUPT_INTR"/>
-			<item value="i"/>
-			<item value="count_RS485"/>
-			<item value="DataBufPre"/>
-			<item value="CountErrWarnInfo"/>
-			<item value="GroupsRegisters"/>
-			<item value="Xil_ExceptionInit();"/>
+			<item value="00000000"/>
+			<item value="get_value_min_time_error_group"/>
+			<item value="XPAR_PS7_SCUGIC_0_DEVICE_ID"/>
+			<item value="INTC_DEVICE_ID"/>
+			<item value="INTC"/>
+			<item value="XPAR_AXI_GPIO_0_DEVICE_ID"/>
+			<item value="CountInt"/>
+			<item value="Count"/>
 		</list>
 		<list key="replacehistory">
 		</list>
@@ -24,7 +24,7 @@
 		<item value="269" key="DIALOG_WIDTH"/>
 		<item value="1|Tahoma|8.25|0|WINDOWS|1|-11|0|0|0|400|0|0|0|1|0|0|0|0|Tahoma" key="DIALOG_FONT_NAME"/>
 		<item value="373" key="DIALOG_HEIGHT"/>
-		<item value="673" key="DIALOG_X_ORIGIN"/>
-		<item value="215" key="DIALOG_Y_ORIGIN"/>
+		<item value="1176" key="DIALOG_X_ORIGIN"/>
+		<item value="277" key="DIALOG_Y_ORIGIN"/>
 	</section>
 </section>

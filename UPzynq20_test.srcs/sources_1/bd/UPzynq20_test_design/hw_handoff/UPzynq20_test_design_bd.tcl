@@ -715,7 +715,7 @@ proc create_root_design { parentCell } {
   connect_bd_net -net IP_AXI_OpticalBus_0_SYN [get_bd_ports SYN_0] [get_bd_pins IP_AXI_OpticalBus_0/SYN]
   connect_bd_net -net IP_AXI_PWM_0_PWM_OUT [get_bd_pins IP_AXI_PWM_0/PWM_OUT] [get_bd_pins Inverter_3lvl_wrapper_0/PWM]
   connect_bd_net -net IP_AXI_PWM_0_PWM_interrupt [get_bd_pins IP_AXI_PWM_0/PWM_interrupt] [get_bd_pins processing_system7_0/IRQ_F2P]
-  connect_bd_net -net Inverter_3lvl_wrapper_0_ChGroup0 [get_bd_ports ChGroup0_0] [get_bd_pins Inverter_3lvl_wrapper_0/ChGroup0]
+  connect_bd_net -net Inverter_3lvl_wrapper_0_ChGroup0 [get_bd_ports ChGroup0_0] [get_bd_pins AckChecker_wrapper_0/TransmitterGroup0] [get_bd_pins Inverter_3lvl_wrapper_0/ChGroup0]
   connect_bd_net -net Inverter_3lvl_wrapper_0_MinTimeError [get_bd_pins IP_AXI_INVERTER_0/MinTimeErrorGroup0] [get_bd_pins Inverter_3lvl_wrapper_0/MinTimeError]
   connect_bd_net -net ReceiverGroup0_0_1 [get_bd_ports ReceiverGroup0_0] [get_bd_pins AckChecker_wrapper_0/ReceiverGroup0]
   connect_bd_net -net S0_0_1 [get_bd_ports S0] [get_bd_pins IP_AXI_Encoder_0/S0]

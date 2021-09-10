@@ -107,7 +107,6 @@ vcom -work axi_gpio_v2_0_21 -64 -93 \
 
 vcom -work xil_defaultlib -64 -93 \
 "../../../bd/UPzynq20_test_design/ip/UPzynq20_test_design_axi_gpio_0_0_1/sim/UPzynq20_test_design_axi_gpio_0_0.vhd" \
-"../../../bd/UPzynq20_test_design/ip/UPzynq20_test_design_axi_gpio_1_0/sim/UPzynq20_test_design_axi_gpio_1_0.vhd" \
 "../../../bd/UPzynq20_test_design/ip/UPzynq20_test_design_axi_gpio_2_0_1/sim/UPzynq20_test_design_axi_gpio_2_0.vhd" \
 "../../../bd/UPzynq20_test_design/ip/UPzynq20_test_design_axi_gpio_3_0/sim/UPzynq20_test_design_axi_gpio_3_0.vhd" \
 
@@ -119,10 +118,6 @@ vcom -work xil_defaultlib -64 -93 \
 "../../../bd/UPzynq20_test_design/ipshared/afe0/hdl/IP_AXI_LEDS_v1_0_S00_AXI.vhd" \
 "../../../bd/UPzynq20_test_design/ipshared/afe0/hdl/IP_AXI_LEDS_v1_0.vhd" \
 "../../../bd/UPzynq20_test_design/ip/UPzynq20_test_design_IP_AXI_LEDS_0_0/sim/UPzynq20_test_design_IP_AXI_LEDS_0_0.vhd" \
-"../../../bd/UPzynq20_test_design/ip/UPzynq20_test_design_axi_gpio_3_1/sim/UPzynq20_test_design_axi_gpio_3_1.vhd" \
-"../../../bd/UPzynq20_test_design/ip/UPzynq20_test_design_axi_gpio_4_0/sim/UPzynq20_test_design_axi_gpio_4_0.vhd" \
-"../../../bd/UPzynq20_test_design/ip/UPzynq20_test_design_axi_gpio_4_1/sim/UPzynq20_test_design_axi_gpio_4_1.vhd" \
-"../../../bd/UPzynq20_test_design/ip/UPzynq20_test_design_axi_gpio_6_0/sim/UPzynq20_test_design_axi_gpio_6_0.vhd" \
 "../../../bd/UPzynq20_test_design/ipshared/317c/hdl/IP_AXI_Encoder_v1_0_S00_AXI.vhd" \
 "../../../bd/UPzynq20_test_design/ipshared/317c/hdl/IP_AXI_Encoder_v1_0.vhd" \
 "../../../bd/UPzynq20_test_design/ip/UPzynq20_test_design_IP_AXI_Encoder_0_0/sim/UPzynq20_test_design_IP_AXI_Encoder_0_0.vhd" \
@@ -185,7 +180,6 @@ vcom -work xil_defaultlib -64 -93 \
 "../../../bd/UPzynq20_test_design/ipshared/ef58/hdl/IP_AXI_INVERTER_v1_0_S00_AXI.vhd" \
 "../../../bd/UPzynq20_test_design/ipshared/ef58/hdl/IP_AXI_INVERTER_v1_0.vhd" \
 "../../../bd/UPzynq20_test_design/ip/UPzynq20_test_design_IP_AXI_INVERTER_0_0/sim/UPzynq20_test_design_IP_AXI_INVERTER_0_0.vhd" \
-"../../../bd/UPzynq20_test_design/ip/UPzynq20_test_design_IP_AXI_LEDS_0_1/sim/UPzynq20_test_design_IP_AXI_LEDS_0_1.vhd" \
 "../../../bd/UPzynq20_test_design/ip/UPzynq20_test_design_Inverter_3lvl_wrapper_0_1/ipshared/ada7/P0N_3lvl.vhd" \
 "../../../bd/UPzynq20_test_design/ip/UPzynq20_test_design_Inverter_3lvl_wrapper_0_1/ip/Inverter_3lvl_P0N_3lvl_0_5/sim/Inverter_3lvl_P0N_3lvl_0_5.vhd" \
 "../../../bd/UPzynq20_test_design/ip/UPzynq20_test_design_Inverter_3lvl_wrapper_0_1/ip/Inverter_3lvl_P0N_3lvl_0_4/sim/Inverter_3lvl_P0N_3lvl_0_4.vhd" \
@@ -205,8 +199,8 @@ vcom -work xil_defaultlib -64 -93 \
 "../../../bd/UPzynq20_test_design/ipshared/d81a/sim/Inverter_3lvl.vhd" \
 "../../../bd/UPzynq20_test_design/ipshared/d81a/hdl/Inverter_3lvl_wrapper.vhd" \
 "../../../bd/UPzynq20_test_design/ip/UPzynq20_test_design_Inverter_3lvl_wrapper_0_1/sim/UPzynq20_test_design_Inverter_3lvl_wrapper_0_1.vhd" \
-"../../../bd/UPzynq20_test_design/ipshared/476a/hdl/IP_AXI_ADC_v2_0_S00_AXI.vhd" \
-"../../../bd/UPzynq20_test_design/ipshared/476a/hdl/IP_AXI_ADC_v2_0.vhd" \
+"../../../bd/UPzynq20_test_design/ipshared/92fe/hdl/IP_AXI_ADC_v2_0_S00_AXI.vhd" \
+"../../../bd/UPzynq20_test_design/ipshared/92fe/hdl/IP_AXI_ADC_v2_0.vhd" \
 "../../../bd/UPzynq20_test_design/ip/UPzynq20_test_design_IP_AXI_ADC_0_1/sim/UPzynq20_test_design_IP_AXI_ADC_0_1.vhd" \
 
 vlog -work xlconcat_v2_1_3 -64 -incr "+incdir+../../../../UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/ec67/hdl" "+incdir+../../../../UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/8c62/hdl" "+incdir+../../../../UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ip/UPzynq20_test_design_processing_system7_0_0_1" "+incdir+D:/Xilinx/Vivado/2019.1/data/xilinx_vip/include" \

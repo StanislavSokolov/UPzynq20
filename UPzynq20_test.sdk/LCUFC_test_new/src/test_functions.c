@@ -18,70 +18,17 @@ u32 digital_input1_16;
 u32 digital_output0_16;
 u32 digital_output1_16;
 
-int initialization_input_output(int system_design, int project_number) {
-
-	int Status = 0;
+void initialization_input_output(int system_design, int project_number) {
 
 	switch (system_design) {
 	case 0:
 
-		Status = XGpio_Initialize(&Gpio_0, XPAR_AXI_GPIO_0_DEVICE_ID);
-		if (Status != XST_SUCCESS) {
-			//xil_printf("Gpio_0 Initialization Failed\r\n");
-		    return XST_FAILURE;
-		} //xil_printf("Gpio_0 ok\r\n");
-
-		Status = XGpio_Initialize(&Gpio_1, XPAR_AXI_GPIO_1_DEVICE_ID);
-		if (Status != XST_SUCCESS) {
-			//xil_printf("Gpio_1 Initialization Failed\r\n");
-			return XST_FAILURE;
-		} //xil_printf("Gpio_1 ok\r\n");
-
-		Status = XGpio_Initialize(&Gpio_4, XPAR_AXI_GPIO_4_DEVICE_ID);
-				if (Status != XST_SUCCESS) {
-					//xil_printf("Gpio_1 Initialization Failed\r\n");
-					return XST_FAILURE;
-				} //xil_printf("Gpio_1 ok\r\n");
-		Status = XGpio_Initialize(&Gpio_5, XPAR_AXI_GPIO_5_DEVICE_ID);
-				if (Status != XST_SUCCESS) {
-					//xil_printf("Gpio_1 Initialization Failed\r\n");
-					return XST_FAILURE;
-				} //xil_printf("Gpio_1 ok\r\n");
-		Status = XGpio_Initialize(&Gpio_6, XPAR_AXI_GPIO_6_DEVICE_ID);
-				if (Status != XST_SUCCESS) {
-					//xil_printf("Gpio_1 Initialization Failed\r\n");
-				return XST_FAILURE;
-				} //xil_printf("Gpio_1 ok\r\n");
-		Status = XGpio_Initialize(&Gpio_7, XPAR_AXI_GPIO_7_DEVICE_ID);
-				if (Status != XST_SUCCESS) {
-					//xil_printf("Gpio_1 Initialization Failed\r\n");
-				return XST_FAILURE;
-				} //xil_printf("Gpio_1 ok\r\n");
-
-		Status = XGpio_Initialize(&Gpio_2, XPAR_AXI_GPIO_2_DEVICE_ID);
-		if (Status != XST_SUCCESS) {
-			//xil_printf("Gpio_2 Initialization Failed\r\n");
-			return XST_FAILURE;
-		} //xil_printf("Gpio_2 ok\r\n");
-
-		Status = XGpio_Initialize(&Gpio_3, XPAR_AXI_GPIO_3_DEVICE_ID);
-		if (Status != XST_SUCCESS) {
-			//xil_printf("Gpio_3 Initialization Failed\r\n");
-			return XST_FAILURE;
-		} //xil_printf("Gpio_3 ok\r\n");
-
-
-
+		XGpio_Initialize(&Gpio_0, XPAR_AXI_GPIO_0_DEVICE_ID);
+		XGpio_Initialize(&Gpio_2, XPAR_AXI_GPIO_2_DEVICE_ID);
+		XGpio_Initialize(&Gpio_3, XPAR_AXI_GPIO_3_DEVICE_ID);
 
 	  break;
 	case 1:
-
-		Status = XGpio_Initialize(&Gpio_1, XPAR_AXI_GPIO_1_DEVICE_ID);
-		if (Status != XST_SUCCESS) {
-			xil_printf("Gpio_1 Initialization Failed\r\n");
-		    return XST_FAILURE;
-		} xil_printf("Gpio_1 ok\r\n");
-
 	  break;
 	case 2:
 		  break;
@@ -103,6 +50,7 @@ int initialization_input_output(int system_design, int project_number) {
 		default:
 		  break;
 		}
+
 
 }
 
@@ -155,7 +103,7 @@ u32 get_value_digital_input1_16(){
 
 void set_current_value_digital_output_table(){
 	XGpio_DiscreteWrite(&Gpio_0, LED_CHANNEL, 65535-update_from_terminal_SET12(26));
-	XGpio_DiscreteWrite(&Gpio_1, LED_CHANNEL, 65535-update_from_terminal_SET12(28));
+//	XGpio_DiscreteWrite(&Gpio_1, LED_CHANNEL, 65535-update_from_terminal_SET12(28));
 }
 //
 //void update_from_terminal_all_SET12(u8 buffer){
