@@ -114,7 +114,7 @@ void filling_in_the_system_status_data(){
 		reset_errors_current_system_status();
 	}
 	// состояние системы в зависимости от ошибок АЦП
-	if ((get_value_errors_negative_positive_adc(2) == 0) && (get_value_acknowledge_error_group(0) == 0)){
+	if ((get_value_errors_negative_positive_adc(2) == 0) && (get_value_acknowledge_error_group(0)  == 0)){
 		set_array_current_status_int(0, 1);
 		set_array_current_status_int(1, 1);
 	} else {
@@ -126,6 +126,104 @@ void filling_in_the_system_status_data(){
 		set_array_current_status_int(89, 1);
 	} else set_array_current_status_int(89, 0);
 
+	set_array_current_status_bool(33, (get_value_current_error_group(0) >> 0) & 1);
+	set_array_current_status_bool(34, (get_value_current_error_group(0) >> 1) & 1);
+	set_array_current_status_bool(35, (get_value_current_error_group(0) >> 2) & 1);
+	set_array_current_status_bool(36, (get_value_current_error_group(0) >> 3) & 1);
+	set_array_current_status_bool(37, (get_value_current_error_group(0) >> 4) & 1);
+	set_array_current_status_bool(38, (get_value_current_error_group(0) >> 5) & 1);
+	set_array_current_status_bool(39, (get_value_current_error_group(0) >> 6) & 1);
+	set_array_current_status_bool(40, (get_value_current_error_group(0) >> 7) & 1);
+	set_array_current_status_bool(41, (get_value_current_error_group(0) >> 8) & 1);
+	set_array_current_status_bool(42, (get_value_current_error_group(0) >> 9) & 1);
+	set_array_current_status_bool(43, (get_value_current_error_group(0) >> 10) & 1);
+	set_array_current_status_bool(44, (get_value_current_error_group(0) >> 11) & 1);
+	set_array_current_status_bool(45, (get_value_current_error_group(0) >> 12) & 1);
+	set_array_current_status_bool(46, (get_value_current_error_group(0) >> 13) & 1);
+	set_array_current_status_bool(47, (get_value_current_error_group(0) >> 14) & 1);
+	set_array_current_status_bool(48, (get_value_current_error_group(0) >> 15) & 1);
+	set_array_current_status_bool(49, (get_value_current_error_group(1) >> 0) & 1);
+	set_array_current_status_bool(50, (get_value_current_error_group(1) >> 1) & 1);
+	set_array_current_status_bool(51, (get_value_current_error_group(1) >> 2) & 1);
+	set_array_current_status_bool(52, (get_value_current_error_group(1) >> 3) & 1);
+	set_array_current_status_bool(53, (get_value_current_error_group(1) >> 4) & 1);
+	set_array_current_status_bool(54, (get_value_current_error_group(1) >> 5) & 1);
+	set_array_current_status_bool(55, (get_value_current_error_group(1) >> 6) & 1);
+	set_array_current_status_bool(56, (get_value_current_error_group(1) >> 7) & 1);
+	set_array_current_status_bool(57, (get_value_current_error_group(1) >> 8) & 1);
+	set_array_current_status_bool(58, (get_value_current_error_group(1) >> 9) & 1);
+	set_array_current_status_bool(59, (get_value_current_error_group(1) >> 10) & 1);
+	set_array_current_status_bool(60, (get_value_current_error_group(1) >> 11) & 1);
+	set_array_current_status_bool(61, (get_value_current_error_group(1) >> 12) & 1);
+	set_array_current_status_bool(62, (get_value_current_error_group(1) >> 13) & 1);
+	set_array_current_status_bool(63, (get_value_current_error_group(1) >> 14) & 1);
+	set_array_current_status_bool(64, (get_value_current_error_group(1) >> 15) & 1);
+
+	set_array_current_status_bool(65, (get_value_min_time_error_group(0) >> 0) & 1);
+	set_array_current_status_bool(66, (get_value_min_time_error_group(0) >> 1) & 1);
+	set_array_current_status_bool(67, (get_value_min_time_error_group(0) >> 2) & 1);
+	set_array_current_status_bool(68, (get_value_min_time_error_group(0) >> 3) & 1);
+	set_array_current_status_bool(69, (get_value_min_time_error_group(0) >> 4) & 1);
+	set_array_current_status_bool(70, (get_value_min_time_error_group(0) >> 5) & 1);
+	set_array_current_status_bool(71, (get_value_min_time_error_group(0) >> 6) & 1);
+	set_array_current_status_bool(72, (get_value_min_time_error_group(0) >> 7) & 1);
+	set_array_current_status_bool(73, (get_value_min_time_error_group(0) >> 8) & 1);
+	set_array_current_status_bool(74, (get_value_min_time_error_group(0) >> 9) & 1);
+	set_array_current_status_bool(75, (get_value_min_time_error_group(0) >> 10) & 1);
+	set_array_current_status_bool(76, (get_value_min_time_error_group(0) >> 11) & 1);
+	set_array_current_status_bool(77, (get_value_min_time_error_group(0) >> 12) & 1);
+	set_array_current_status_bool(78, (get_value_min_time_error_group(0) >> 13) & 1);
+	set_array_current_status_bool(79, (get_value_min_time_error_group(0) >> 14) & 1);
+	set_array_current_status_bool(80, (get_value_min_time_error_group(0) >> 15) & 1);
+	set_array_current_status_bool(81, (get_value_min_time_error_group(1) >> 0) & 1);
+	set_array_current_status_bool(82, (get_value_min_time_error_group(1) >> 1) & 1);
+	set_array_current_status_bool(83, (get_value_min_time_error_group(1) >> 2) & 1);
+	set_array_current_status_bool(84, (get_value_min_time_error_group(1) >> 3) & 1);
+	set_array_current_status_bool(85, (get_value_min_time_error_group(1) >> 4) & 1);
+	set_array_current_status_bool(86, (get_value_min_time_error_group(1) >> 5) & 1);
+	set_array_current_status_bool(87, (get_value_min_time_error_group(1) >> 6) & 1);
+	set_array_current_status_bool(88, (get_value_min_time_error_group(1) >> 7) & 1);
+	set_array_current_status_bool(89, (get_value_min_time_error_group(1) >> 8) & 1);
+	set_array_current_status_bool(90, (get_value_min_time_error_group(1) >> 9) & 1);
+	set_array_current_status_bool(91, (get_value_min_time_error_group(1) >> 10) & 1);
+	set_array_current_status_bool(92, (get_value_min_time_error_group(1) >> 11) & 1);
+	set_array_current_status_bool(93, (get_value_min_time_error_group(1) >> 12) & 1);
+	set_array_current_status_bool(94, (get_value_min_time_error_group(1) >> 13) & 1);
+	set_array_current_status_bool(95, (get_value_min_time_error_group(1) >> 14) & 1);
+	set_array_current_status_bool(96, (get_value_min_time_error_group(1) >> 15) & 1);
+
+	set_array_current_status_bool(145, (get_value_acknowledge_error_group(0) >> 0) & 1);
+	set_array_current_status_bool(146, (get_value_acknowledge_error_group(0) >> 1) & 1);
+	set_array_current_status_bool(147, (get_value_acknowledge_error_group(0) >> 2) & 1);
+	set_array_current_status_bool(148, (get_value_acknowledge_error_group(0) >> 3) & 1);
+	set_array_current_status_bool(149, (get_value_acknowledge_error_group(0) >> 4) & 1);
+	set_array_current_status_bool(150, (get_value_acknowledge_error_group(0) >> 5) & 1);
+	set_array_current_status_bool(151, (get_value_acknowledge_error_group(0) >> 6) & 1);
+	set_array_current_status_bool(152, (get_value_acknowledge_error_group(0) >> 7) & 1);
+	set_array_current_status_bool(153, (get_value_acknowledge_error_group(0) >> 8) & 1);
+	set_array_current_status_bool(154, (get_value_acknowledge_error_group(0) >> 9) & 1);
+	set_array_current_status_bool(155, (get_value_acknowledge_error_group(0) >> 10) & 1);
+	set_array_current_status_bool(156, (get_value_acknowledge_error_group(0) >> 11) & 1);
+	set_array_current_status_bool(157, (get_value_acknowledge_error_group(0) >> 12) & 1);
+	set_array_current_status_bool(158, (get_value_acknowledge_error_group(0) >> 13) & 1);
+	set_array_current_status_bool(159, (get_value_acknowledge_error_group(0) >> 14) & 1);
+	set_array_current_status_bool(160, (get_value_acknowledge_error_group(0) >> 15) & 1);
+	set_array_current_status_bool(161, (get_value_acknowledge_error_group(1) >> 0) & 1);
+	set_array_current_status_bool(162, (get_value_acknowledge_error_group(1) >> 1) & 1);
+	set_array_current_status_bool(17, (get_value_acknowledge_error_group(1) >> 2) & 1);
+	set_array_current_status_bool(18, (get_value_acknowledge_error_group(1) >> 3) & 1);
+	set_array_current_status_bool(19, (get_value_acknowledge_error_group(1) >> 4) & 1);
+	set_array_current_status_bool(20, (get_value_acknowledge_error_group(1) >> 5) & 1);
+	set_array_current_status_bool(21, (get_value_acknowledge_error_group(1) >> 6) & 1);
+	set_array_current_status_bool(22, (get_value_acknowledge_error_group(1) >> 7) & 1);
+	set_array_current_status_bool(23, (get_value_acknowledge_error_group(1) >> 8) & 1);
+	set_array_current_status_bool(24, (get_value_acknowledge_error_group(1) >> 9) & 1);
+	set_array_current_status_bool(25, (get_value_acknowledge_error_group(1) >> 10) & 1);
+	set_array_current_status_bool(26, (get_value_acknowledge_error_group(1) >> 11) & 1);
+//	set_array_current_status_bool(, (get_value_acknowledge_error_group(1) >> 12) & 1);
+//	set_array_current_status_bool(, (get_value_acknowledge_error_group(1) >> 13) & 1);
+//	set_array_current_status_bool(, (get_value_acknowledge_error_group(1) >> 14) & 1);
+//	set_array_current_status_bool(, (get_value_acknowledge_error_group(1) >> 15) & 1);
 
 //	set_array_current_status_bool(115, (get_value_digital_input1_16() >> 0) & 1);
 //	set_array_current_status_bool(117, (get_value_digital_input1_16() >> 1) & 1);

@@ -59,6 +59,10 @@ void preparing_message_SET12(){
 		inverting_the_signal_count_transmitter_SET12();					// инвертирование сигнала для диагностики
 
 
+		bild_send_buffer_SET12(16, get_value_min_time_error_group(0) | get_value_acknowledge_error_group(0) | get_value_current_error_group(0));
+		bild_send_buffer_SET12(18, get_value_min_time_error_group(1) | get_value_acknowledge_error_group(1) | get_value_current_error_group(1));
+		bild_send_buffer_SET12(20, get_value_min_time_error_group(2) | get_value_acknowledge_error_group(2) | get_value_current_error_group(2));
+
 		bild_send_buffer_SET12(22, get_value_digital_input0_8());
 		bild_send_buffer_SET12(24, get_value_digital_input1_16());
 

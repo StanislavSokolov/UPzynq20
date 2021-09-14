@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
-| Date             : Thu Sep  9 15:37:46 2021
+| Date             : Fri Sep 10 12:19:02 2021
 | Host             : STAS-W10 running 64-bit major release  (build 9200)
 | Command          : report_power -file UPzynq20_test_design_wrapper_power_routed.rpt -pb UPzynq20_test_design_wrapper_power_summary_routed.pb -rpx UPzynq20_test_design_wrapper_power_routed.rpx
 | Design           : UPzynq20_test_design_wrapper
@@ -30,7 +30,7 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 1.809        |
+| Total On-Chip Power (W)  | 1.808        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
 | Dynamic (W)              | 1.661        |
@@ -53,19 +53,19 @@ Table of Contents
 | On-Chip                 | Power (W) | Used     | Available | Utilization (%) |
 +-------------------------+-----------+----------+-----------+-----------------+
 | Clocks                  |     0.012 |        3 |       --- |             --- |
-| Slice Logic             |     0.005 |    19998 |       --- |             --- |
-|   LUT as Logic          |     0.004 |     6587 |     53200 |           12.38 |
+| Slice Logic             |     0.005 |    19994 |       --- |             --- |
+|   LUT as Logic          |     0.004 |     6583 |     53200 |           12.37 |
 |   CARRY4                |    <0.001 |      818 |     13300 |            6.15 |
-|   Register              |    <0.001 |     9490 |    106400 |            8.92 |
+|   Register              |    <0.001 |     9488 |    106400 |            8.92 |
 |   BUFG                  |    <0.001 |        3 |        32 |            9.38 |
 |   F7/F8 Muxes           |    <0.001 |      352 |     53200 |            0.66 |
 |   LUT as Shift Register |    <0.001 |       62 |     17400 |            0.36 |
 |   Others                |     0.000 |      320 |       --- |             --- |
-| Signals                 |     0.006 |    13831 |       --- |             --- |
+| Signals                 |     0.006 |    13830 |       --- |             --- |
 | I/O                     |     0.003 |      104 |       200 |           52.00 |
 | PS7                     |     1.634 |        1 |       --- |             --- |
 | Static Power            |     0.148 |          |           |                 |
-| Total                   |     1.809 |          |           |                 |
+| Total                   |     1.808 |          |           |                 |
 +-------------------------+-----------+----------+-----------+-----------------+
 
 

@@ -158,8 +158,8 @@
   "../../../bd/UPzynq20_test_design/ipshared/d81a/sim/Inverter_3lvl.vhd" \
   "../../../bd/UPzynq20_test_design/ipshared/d81a/hdl/Inverter_3lvl_wrapper.vhd" \
   "../../../bd/UPzynq20_test_design/ip/UPzynq20_test_design_Inverter_3lvl_wrapper_0_1/sim/UPzynq20_test_design_Inverter_3lvl_wrapper_0_1.vhd" \
-  "../../../bd/UPzynq20_test_design/ipshared/92fe/hdl/IP_AXI_ADC_v2_0_S00_AXI.vhd" \
-  "../../../bd/UPzynq20_test_design/ipshared/92fe/hdl/IP_AXI_ADC_v2_0.vhd" \
+  "../../../bd/UPzynq20_test_design/ipshared/5973/hdl/IP_AXI_ADC_v2_0_S00_AXI.vhd" \
+  "../../../bd/UPzynq20_test_design/ipshared/5973/hdl/IP_AXI_ADC_v2_0.vhd" \
   "../../../bd/UPzynq20_test_design/ip/UPzynq20_test_design_IP_AXI_ADC_0_1/sim/UPzynq20_test_design_IP_AXI_ADC_0_1.vhd" \
 -endlib
 -makelib xcelium_lib/xlconcat_v2_1_3 \

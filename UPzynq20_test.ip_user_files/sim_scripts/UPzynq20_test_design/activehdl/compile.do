@@ -199,8 +199,8 @@ vcom -work xil_defaultlib -93 \
 "../../../bd/UPzynq20_test_design/ipshared/d81a/sim/Inverter_3lvl.vhd" \
 "../../../bd/UPzynq20_test_design/ipshared/d81a/hdl/Inverter_3lvl_wrapper.vhd" \
 "../../../bd/UPzynq20_test_design/ip/UPzynq20_test_design_Inverter_3lvl_wrapper_0_1/sim/UPzynq20_test_design_Inverter_3lvl_wrapper_0_1.vhd" \
-"../../../bd/UPzynq20_test_design/ipshared/92fe/hdl/IP_AXI_ADC_v2_0_S00_AXI.vhd" \
-"../../../bd/UPzynq20_test_design/ipshared/92fe/hdl/IP_AXI_ADC_v2_0.vhd" \
+"../../../bd/UPzynq20_test_design/ipshared/5973/hdl/IP_AXI_ADC_v2_0_S00_AXI.vhd" \
+"../../../bd/UPzynq20_test_design/ipshared/5973/hdl/IP_AXI_ADC_v2_0.vhd" \
 "../../../bd/UPzynq20_test_design/ip/UPzynq20_test_design_IP_AXI_ADC_0_1/sim/UPzynq20_test_design_IP_AXI_ADC_0_1.vhd" \
 
 vlog -work xlconcat_v2_1_3  -v2k5 "+incdir+../../../../UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/ec67/hdl" "+incdir+../../../../UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/8c62/hdl" "+incdir+../../../../UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ip/UPzynq20_test_design_processing_system7_0_0_1" "+incdir+D:/Xilinx/Vivado/2019.1/data/xilinx_vip/include" \
