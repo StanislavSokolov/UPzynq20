@@ -105,11 +105,6 @@ void set_current_value_digital_output_table(){
 	XGpio_DiscreteWrite(&Gpio_0, LED_CHANNEL, 65535-update_from_terminal_SET12(26));
 //	XGpio_DiscreteWrite(&Gpio_1, LED_CHANNEL, 65535-update_from_terminal_SET12(28));
 }
-
-void set_current_value_digital_output(u32 data){
-	XGpio_DiscreteWrite(&Gpio_0, LED_CHANNEL, data);
-//	XGpio_DiscreteWrite(&Gpio_1, LED_CHANNEL, 65535-update_from_terminal_SET12(28));
-}
 //
 //void update_from_terminal_all_SET12(u8 buffer){
 //	XGpio_DiscreteWrite(&Gpio_4, LED_CHANNEL, 65535-update_from_terminal_SET12(16));

@@ -19,6 +19,7 @@
 		<item value="false" key="caseSensitive"/>
 		<item value="227191" key="searchFlags"/>
 		<list key="previousPatterns">
+			<item value="set_current_value_digital_output_table"/>
 			<item value="XIntc_Start"/>
 			<item value="preparing_message_RS485"/>
 			<item value="get_array_current_status_bool"/>

@@ -2,20 +2,20 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="get_value_min_time_error_group" key="selection"/>
+		<item value="set_speed_value" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="set_speed_value"/>
+			<item value="set_array_current_status_int(0, 6)"/>
 			<item value="00000000"/>
 			<item value="get_value_min_time_error_group"/>
 			<item value="XPAR_PS7_SCUGIC_0_DEVICE_ID"/>
 			<item value="INTC_DEVICE_ID"/>
 			<item value="INTC"/>
 			<item value="XPAR_AXI_GPIO_0_DEVICE_ID"/>
-			<item value="CountInt"/>
-			<item value="Count"/>
 		</list>
 		<list key="replacehistory">
 		</list>

@@ -27,11 +27,7 @@
 int latch_start_PMU = 0;										// защелка для функции загрузки пульта управления ((0) - начальное окно -> прогрес бар -> (1) - основное окно)
 int counter_for_waiting_for_response_from_MCA = 0;
 int counter_for_pressing_speed_change_button = 0;
-int set_speed_value = 0;
-int set_power_value = 0;
-int MCU = 1;
-
-
+int set speed value = 0;
 
 	// функция инициализации аппаратного дизайна и проекта
 void initialization_system_design_and_project(int system_design, int project_number){
@@ -52,10 +48,7 @@ void initialization_initial_values(){
 	get_current_value_adc_table();								// получить значения АЦП
 	get_current_value_digital_input_table();					// получить текущие значения входов
 	get_current_value_speed_sensor_table();
-//	set_current_value_digital_output_table();					// установить выходы
-
-	set_array_current_status_int(0, 1);
-	set_array_current_status_int(1, 1);
+	set_current_value_digital_output_table();					// установить выходы
 }
 
 	// функция загрузки поста управления
@@ -102,8 +95,7 @@ void get_system_status_data(){
 		get_current_value_digital_input_table();					// получить текущие значения входов (заполняем поля в test_functions.c)
 		get_current_value_speed_sensor_table();						// получить текущие значения с датчика положения (заполняем поля в encoder.c)
 
-
-//		set_current_value_digital_output_table();					// установить выходы
+		set_current_value_digital_output_table();					// установить выходы
 
 		//	u32 status = get_value_errors_adc_table()/65536;
 	//	for (int i = 1; i < 16; i++) {
@@ -116,100 +108,22 @@ void get_system_status_data(){
 // функция заполнения пространства состояний системы
 void filling_in_the_system_status_data(){
 
-	int output = 65535;
-
 	// кнопка квитирование сбрасывает ошибки оптической шины и каналов АЦП
 	if (((get_value_digital_input0_8() >> 0) & 1) == 0) {
 		reset_errors_optical_bus(1);
 		reset_errors_adc_channels(1);
 		reset_errors_control_transistor_keys();
-		reset_errors_current_system_status();
-		MCU = 1;
 
+		reset_errors_current_system_status();
+	}
+	// состояние системы в зависимости от ошибок АЦП
+	if ((get_value_errors_negative_positive_adc(2) == 0) && (get_value_acknowledge_error_group(0)  == 0)){
 		set_array_current_status_int(0, 1);
 		set_array_current_status_int(1, 1);
-	}
-
-	// состояние системы в зависимости от ошибок АЦП и команда на сбор схемы
-	if ((get_value_errors_negative_positive_adc(2) == 0) && (get_value_acknowledge_error_group(0) == 0)){
-		// команда на сбор схемы
-		if (((get_value_digital_input0_8() >> 1) & 1) == 0) {
-			if (get_array_current_status_int(0) == 1) {
-				set_array_current_status_int(0, 4);
-				set_array_current_status_int(1, 1);
-				MCU = 0;
-			}
-		}
-		// ожидание ответа от автомата главного тока
-		if (get_array_current_status_int(0) == 4) {
-			if (counter_for_waiting_for_response_from_MCA < 30) {
-				counter_for_waiting_for_response_from_MCA++;
-				if (((get_value_digital_input0_8() >> 2) & 1) == 0) {
-					set_array_current_status_int(0, 2);
-					set_array_current_status_int(1, 1);
-				}
-			} else {
-				set_array_current_status_int(0, 6);
-				set_array_current_status_int(1, 3);
-				set_array_current_status_bool(392, 1);
-				counter_for_waiting_for_response_from_MCA = 0;
-				MCU = 1;
-			}
-		} else {
-			counter_for_waiting_for_response_from_MCA = 0;
-		}
-		// задание оборотов
-		if ((get_array_current_status_int(0) == 2) || (get_array_current_status_int(0) == 3)) {
-			if (((get_value_digital_input0_8() >> 4) & 1) == 0) {
-				counter_for_pressing_speed_change_button++;
-				if (counter_for_pressing_speed_change_button > 1) {
-					counter_for_pressing_speed_change_button = 0;
-					set_speed_value++;
-				}
-			} else if (((get_value_digital_input0_8() >> 5) & 1) == 0) {
-				counter_for_pressing_speed_change_button++;
-				if (counter_for_pressing_speed_change_button > 1) {
-					counter_for_pressing_speed_change_button = 0;
-					set_speed_value--;
-				}
-			}
-			else counter_for_pressing_speed_change_button = 0;
-
-			if ((get_value_digital_input0_8() >> 2) & 1) {
-				set_array_current_status_int(0, 6);
-				set_array_current_status_int(1, 3);
-				set_array_current_status_bool(114, 1);
-				counter_for_pressing_speed_change_button = 0;
-				set_speed_value = 0;
-				set_power_value = 0;
-				MCU = 1;
-			}
-		}
-
 	} else {
 		set_array_current_status_int(0, 6);
 		set_array_current_status_int(1, 3);
-		MCU = 1;
-		set_speed_value = 0;
-		set_power_value = 0;
 	}
-
-	if (((get_value_digital_input0_8() >> 3) & 1) == 0) {
-		set_array_current_status_int(0, 1);
-		set_array_current_status_int(1, 1);
-		MCU = 1;
-		set_speed_value = 0;
-		set_power_value = 0;
-	}
-
-
-	output = (MCU << 0) & output;
-//	output = ((MCU << 1) & 1) | output;
-
-	set_current_value_digital_output(output);
-	set_array_current_status_int(47, set_power_value);
-	set_array_current_status_int(48, set_speed_value);
-
 	// состояние оптической шины в зависисмости от регистра ошибок этого блока
 	if (get_data_optical_bus(6) != 0) {
 		set_array_current_status_int(89, 1);
@@ -441,9 +355,51 @@ void filling_in_the_system_status_data(){
 	set_array_current_status_bool(547, (get_value_digital_input1_16() >> 5) & 1);
 	set_array_current_status_bool(548, (get_value_digital_input1_16() >> 6) & 1);
 
+	// алгоритм сбора схемы
 
+	// команда на сбор схемы
+	if (((get_value_digital_input0_8() >> 1) & 1) == 0) {
+		if (get_array_current_status_int(0) == 1) {
+			set_array_current_status_int(0, 4);
+			set_array_current_status_int(1, 1);
+			// здесь будет зажигаться соответствующий выход - включение автомата главного тока
+		}
+	}
 
+	if (get_array_current_status_int(0) == 4) {
+		if (counter_for_waiting_for_response_from_MCA < 10) {
+			counter_for_waiting_for_response_from_MCA++;
+			if (((get_value_digital_input0_8() >> 2) & 1) == 0) {
+				set_array_current_status_int(0, 2);
+				set_array_current_status_int(1, 1);
+			}
+		} else {
+			set_array_current_status_int(0, 6);
+			set_array_current_status_int(1, 3);
+			set_array_current_status_bool(114, 1);
+			counter_for_waiting_for_response_from_MCA = 0;
+		}
+	} else {
+		counter_for_waiting_for_response_from_MCA = 0;
+	}
 
+	if ((get_array_current_status_int(0) == 2) || (get_array_current_status_int(0) == 3)) {
+		if ((get_value_digital_input0_8() >> 3) & 1) {
+			counter_for_pressing_speed_change_button++;
+			if (counter_for_pressing_speed_change_button > 1) {
+				counter_for_pressing_speed_change_button = 0;
+				set speed value++;
+			}
+		} else if ((get_value_digital_input0_8() >> 4) & 1) {
+			counter_for_pressing_speed_change_button++;
+			if (counter_for_pressing_speed_change_button > 100000) {
+				counter_for_pressing_speed_change_button = 0;
+				set speed value--;
+			}
+		}
+		else counter_for_pressing_speed_change_button = 0;
+		set_array_current_status_int(47, set speed value);
+	}
 
 
 	// возвращаем все регистры сбросов в ноль, так как это нельзя делать в двух строках подряд - очень быстро для плис
