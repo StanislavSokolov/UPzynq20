@@ -23,11 +23,12 @@ u32 positive_errors = 0;
 u32 generalized_errors = 0;
 
 u32 get_current_value_adc_channel(u32 channel){
-	return Xil_In32(XPAR_IP_AXI_ADC_0_S00_AXI_BASEADDR + channel*4);
+//	return Xil_In32(XPAR_IP_AXI_ADC_0_S00_AXI_BASEADDR + channel*4);
+	return 0;
 }
 
 void set_setpoint_value_adc_channel(u32 channel, u32 data){
-	Xil_Out32(XPAR_IP_AXI_ADC_0_S00_AXI_BASEADDR + channel*4, data);
+//	Xil_Out32(XPAR_IP_AXI_ADC_0_S00_AXI_BASEADDR + channel*4, data);
 }
 
 void get_current_value_adc_table(){
@@ -43,28 +44,29 @@ u32 get_value_adc_channel(u32 channel){
 }
 
 u32 get_value_errors_adc_table(){
-	Xil_Out32(XPAR_IP_AXI_ADC_0_S00_AXI_BASEADDR + 12, 16);
-	return Xil_In32(XPAR_IP_AXI_ADC_0_S00_AXI_BASEADDR + 64);
+//	Xil_Out32(XPAR_IP_AXI_ADC_0_S00_AXI_BASEADDR + 12, 16);
+//	return Xil_In32(XPAR_IP_AXI_ADC_0_S00_AXI_BASEADDR + 64);
+	return 0;
 }
 
 void set_setpoint_value_adc_table(){
-	Xil_Out32(XPAR_IP_AXI_ADC_0_S00_AXI_BASEADDR, 0x00000001);
-	for (int i = 0; i < 16; i++) {
-		Xil_Out32(XPAR_IP_AXI_ADC_0_S00_AXI_BASEADDR + 4, i);
-		Xil_Out32(XPAR_IP_AXI_ADC_0_S00_AXI_BASEADDR + 8, setpoint_channel_down[i]);
-	}
-	for (int i = 0; i < 16; i++) {
-			Xil_Out32(XPAR_IP_AXI_ADC_0_S00_AXI_BASEADDR + 4, i+16);
-			Xil_Out32(XPAR_IP_AXI_ADC_0_S00_AXI_BASEADDR + 8, setpoint_channel_up[i]);
-		}
-	Xil_Out32(XPAR_IP_AXI_ADC_0_S00_AXI_BASEADDR, 0x00000000);
+//	Xil_Out32(XPAR_IP_AXI_ADC_0_S00_AXI_BASEADDR, 0x00000001);
+//	for (int i = 0; i < 16; i++) {
+//		Xil_Out32(XPAR_IP_AXI_ADC_0_S00_AXI_BASEADDR + 4, i);
+//		Xil_Out32(XPAR_IP_AXI_ADC_0_S00_AXI_BASEADDR + 8, setpoint_channel_down[i]);
+//	}
+//	for (int i = 0; i < 16; i++) {
+//			Xil_Out32(XPAR_IP_AXI_ADC_0_S00_AXI_BASEADDR + 4, i+16);
+//			Xil_Out32(XPAR_IP_AXI_ADC_0_S00_AXI_BASEADDR + 8, setpoint_channel_up[i]);
+//		}
+//	Xil_Out32(XPAR_IP_AXI_ADC_0_S00_AXI_BASEADDR, 0x00000000);
 }
 
 void set_reset_error_adc_table(){
-	Xil_Out32(XPAR_IP_AXI_ADC_0_S00_AXI_BASEADDR + 16, 0x00000001);
-	for (int i = 0; i < 100; i++){
-		//
-	}
+//	Xil_Out32(XPAR_IP_AXI_ADC_0_S00_AXI_BASEADDR + 16, 0x00000001);
+//	for (int i = 0; i < 100; i++){
+//		//
+//	}
 }
 
 void get_value_errors_negative_positive_adc_table(){
@@ -86,7 +88,7 @@ u32 get_value_errors_negative_positive_adc(int value){
 }
 
 void reset_errors_adc_channels(u32 data){
-	Xil_Out32(XPAR_IP_AXI_ADC_0_S00_AXI_BASEADDR + 16, data);
+//	Xil_Out32(XPAR_IP_AXI_ADC_0_S00_AXI_BASEADDR + 16, data);
 }
 
 

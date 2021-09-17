@@ -50,14 +50,14 @@ void initialization_system_design_and_project(int system_design, int project_num
 
 	// функция инициализации начальных значений
 void initialization_initial_values(){
-	read_current_value_PSGPIO();								// прочитать свой адрес
-	set_setpoint_value_adc_table();								// записать уставки аналоговых сигналов в МАЗ
+//	read_current_value_PSGPIO();								// прочитать свой адрес
+//	set_setpoint_value_adc_table();								// записать уставки аналоговых сигналов в МАЗ
 
 	set_initial_values_control_transistor_keys();								// записать уставки аналоговых сигналов в МАЗ
 
-	get_current_value_adc_table();								// получить значения АЦП
-	get_current_value_digital_input_table();					// получить текущие значения входов
-	get_current_value_speed_sensor_table();
+//	get_current_value_adc_table();								// получить значения АЦП
+//	get_current_value_digital_input_table();					// получить текущие значения входов
+//	get_current_value_speed_sensor_table();
 //	set_current_value_digital_output_table();					// установить выходы
 
 	set_array_current_status_int(0, 1);

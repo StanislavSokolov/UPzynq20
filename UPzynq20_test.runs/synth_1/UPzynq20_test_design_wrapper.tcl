@@ -36,9 +36,6 @@ set_property ip_cache_permissions {read write} [current_project]
 read_vhdl -library xil_defaultlib D:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/hdl/UPzynq20_test_design_wrapper.vhd
 add_files D:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/UPzynq20_test_design.bd
 set_property used_in_implementation false [get_files -all d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ip/UPzynq20_test_design_processing_system7_0_0_1/UPzynq20_test_design_processing_system7_0_0.xdc]
-set_property used_in_implementation false [get_files -all d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ip/UPzynq20_test_design_axi_gpio_0_0_1/UPzynq20_test_design_axi_gpio_0_0_board.xdc]
-set_property used_in_implementation false [get_files -all d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ip/UPzynq20_test_design_axi_gpio_0_0_1/UPzynq20_test_design_axi_gpio_0_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ip/UPzynq20_test_design_axi_gpio_0_0_1/UPzynq20_test_design_axi_gpio_0_0.xdc]
 set_property used_in_implementation false [get_files -all d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ip/UPzynq20_test_design_axi_gpio_2_0_1/UPzynq20_test_design_axi_gpio_2_0_board.xdc]
 set_property used_in_implementation false [get_files -all d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ip/UPzynq20_test_design_axi_gpio_2_0_1/UPzynq20_test_design_axi_gpio_2_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ip/UPzynq20_test_design_axi_gpio_2_0_1/UPzynq20_test_design_axi_gpio_2_0.xdc]
@@ -47,8 +44,6 @@ set_property used_in_implementation false [get_files -all d:/GITEA/UPzynq20_test
 set_property used_in_implementation false [get_files -all d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ip/UPzynq20_test_design_axi_gpio_3_0/UPzynq20_test_design_axi_gpio_3_0.xdc]
 set_property used_in_implementation false [get_files -all d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ip/UPzynq20_test_design_rst_ps7_0_50M_0_1/UPzynq20_test_design_rst_ps7_0_50M_0_board.xdc]
 set_property used_in_implementation false [get_files -all d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ip/UPzynq20_test_design_rst_ps7_0_50M_0_1/UPzynq20_test_design_rst_ps7_0_50M_0.xdc]
-set_property used_in_implementation false [get_files -all d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ip/UPzynq20_test_design_AckChecker_wrapper_0_0/AckChecker_ooc.xdc]
-set_property used_in_implementation false [get_files -all d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ip/UPzynq20_test_design_Inverter_3lvl_wrapper_0_1/Inverter_3lvl_ooc.xdc]
 set_property used_in_implementation false [get_files -all d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ip/UPzynq20_test_design_auto_pc_0/UPzynq20_test_design_auto_pc_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all D:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/UPzynq20_test_design_ooc.xdc]
 

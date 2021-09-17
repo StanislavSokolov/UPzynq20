@@ -19,7 +19,8 @@ u32 s0_current = 0;
 u32 s0_inv_current = 0;
 
 int get_current_value_speed_sensor_channel(int channel){
-	return Xil_In32(XPAR_IP_AXI_ENCODER_0_S00_AXI_BASEADDR + channel*4);
+//	return Xil_In32(XPAR_IP_AXI_ENCODER_0_S00_AXI_BASEADDR + channel*4);
+	return 0;
 }
 
 void get_current_value_speed_sensor_table(){

@@ -31,41 +31,8 @@
  
  
 /******************************************************************/
-/* Definitions for driver IP_AXI_ADC */
-#define XPAR_IP_AXI_ADC_NUM_INSTANCES 1
-
-/* Definitions for peripheral IP_AXI_ADC_0 */
-#define XPAR_IP_AXI_ADC_0_DEVICE_ID 0
-#define XPAR_IP_AXI_ADC_0_S00_AXI_BASEADDR 0x43C10000
-#define XPAR_IP_AXI_ADC_0_S00_AXI_HIGHADDR 0x43C1FFFF
-
-
-/******************************************************************/
-
-/* Definitions for driver IP_AXI_ENCODER */
-#define XPAR_IP_AXI_ENCODER_NUM_INSTANCES 1
-
-/* Definitions for peripheral IP_AXI_ENCODER_0 */
-#define XPAR_IP_AXI_ENCODER_0_DEVICE_ID 0
-#define XPAR_IP_AXI_ENCODER_0_S00_AXI_BASEADDR 0x43C30000
-#define XPAR_IP_AXI_ENCODER_0_S00_AXI_HIGHADDR 0x43C3FFFF
-
-
-/******************************************************************/
-
-/* Definitions for driver IP_AXI_INVERTER */
-#define XPAR_IP_AXI_INVERTER_NUM_INSTANCES 1
-
-/* Definitions for peripheral IP_AXI_INVERTER_0 */
-#define XPAR_IP_AXI_INVERTER_0_DEVICE_ID 0
-#define XPAR_IP_AXI_INVERTER_0_S00_AXI_BASEADDR 0x43C50000
-#define XPAR_IP_AXI_INVERTER_0_S00_AXI_HIGHADDR 0x43C5FFFF
-
-
-/******************************************************************/
-
 /* Definitions for driver IP_AXI_LEDS */
-#define XPAR_IP_AXI_LEDS_NUM_INSTANCES 1
+#define XPAR_IP_AXI_LEDS_NUM_INSTANCES 2
 
 /* Definitions for peripheral IP_AXI_LEDS_0 */
 #define XPAR_IP_AXI_LEDS_0_DEVICE_ID 0
@@ -73,15 +40,10 @@
 #define XPAR_IP_AXI_LEDS_0_S00_AXI_HIGHADDR 0x43C0FFFF
 
 
-/******************************************************************/
-
-/* Definitions for driver IP_AXI_OPTICALBUS */
-#define XPAR_IP_AXI_OPTICALBUS_NUM_INSTANCES 1
-
-/* Definitions for peripheral IP_AXI_OPTICALBUS_0 */
-#define XPAR_IP_AXI_OPTICALBUS_0_DEVICE_ID 0
-#define XPAR_IP_AXI_OPTICALBUS_0_S00_AXI_BASEADDR 0x43C40000
-#define XPAR_IP_AXI_OPTICALBUS_0_S00_AXI_HIGHADDR 0x43C4FFFF
+/* Definitions for peripheral IP_AXI_LEDS_1 */
+#define XPAR_IP_AXI_LEDS_1_DEVICE_ID 1
+#define XPAR_IP_AXI_LEDS_1_S00_AXI_BASEADDR 0x43C10000
+#define XPAR_IP_AXI_LEDS_1_S00_AXI_HIGHADDR 0x43C1FFFF
 
 
 /******************************************************************/
@@ -271,20 +233,12 @@
 /******************************************************************/
 
 /* Definitions for driver GPIO */
-#define XPAR_XGPIO_NUM_INSTANCES 3
-
-/* Definitions for peripheral AXI_GPIO_0 */
-#define XPAR_AXI_GPIO_0_BASEADDR 0x41200000
-#define XPAR_AXI_GPIO_0_HIGHADDR 0x4120FFFF
-#define XPAR_AXI_GPIO_0_DEVICE_ID 0
-#define XPAR_AXI_GPIO_0_INTERRUPT_PRESENT 1
-#define XPAR_AXI_GPIO_0_IS_DUAL 0
-
+#define XPAR_XGPIO_NUM_INSTANCES 2
 
 /* Definitions for peripheral AXI_GPIO_2 */
 #define XPAR_AXI_GPIO_2_BASEADDR 0x41220000
 #define XPAR_AXI_GPIO_2_HIGHADDR 0x4122FFFF
-#define XPAR_AXI_GPIO_2_DEVICE_ID 1
+#define XPAR_AXI_GPIO_2_DEVICE_ID 0
 #define XPAR_AXI_GPIO_2_INTERRUPT_PRESENT 1
 #define XPAR_AXI_GPIO_2_IS_DUAL 0
 
@@ -292,33 +246,26 @@
 /* Definitions for peripheral AXI_GPIO_3 */
 #define XPAR_AXI_GPIO_3_BASEADDR 0x41230000
 #define XPAR_AXI_GPIO_3_HIGHADDR 0x4123FFFF
-#define XPAR_AXI_GPIO_3_DEVICE_ID 2
+#define XPAR_AXI_GPIO_3_DEVICE_ID 1
 #define XPAR_AXI_GPIO_3_INTERRUPT_PRESENT 1
 #define XPAR_AXI_GPIO_3_IS_DUAL 0
 
 
 /******************************************************************/
 
-/* Canonical definitions for peripheral AXI_GPIO_0 */
-#define XPAR_GPIO_0_BASEADDR 0x41200000
-#define XPAR_GPIO_0_HIGHADDR 0x4120FFFF
-#define XPAR_GPIO_0_DEVICE_ID XPAR_AXI_GPIO_0_DEVICE_ID
+/* Canonical definitions for peripheral AXI_GPIO_2 */
+#define XPAR_GPIO_0_BASEADDR 0x41220000
+#define XPAR_GPIO_0_HIGHADDR 0x4122FFFF
+#define XPAR_GPIO_0_DEVICE_ID XPAR_AXI_GPIO_2_DEVICE_ID
 #define XPAR_GPIO_0_INTERRUPT_PRESENT 1
 #define XPAR_GPIO_0_IS_DUAL 0
 
-/* Canonical definitions for peripheral AXI_GPIO_2 */
-#define XPAR_GPIO_1_BASEADDR 0x41220000
-#define XPAR_GPIO_1_HIGHADDR 0x4122FFFF
-#define XPAR_GPIO_1_DEVICE_ID XPAR_AXI_GPIO_2_DEVICE_ID
+/* Canonical definitions for peripheral AXI_GPIO_3 */
+#define XPAR_GPIO_1_BASEADDR 0x41230000
+#define XPAR_GPIO_1_HIGHADDR 0x4123FFFF
+#define XPAR_GPIO_1_DEVICE_ID XPAR_AXI_GPIO_3_DEVICE_ID
 #define XPAR_GPIO_1_INTERRUPT_PRESENT 1
 #define XPAR_GPIO_1_IS_DUAL 0
-
-/* Canonical definitions for peripheral AXI_GPIO_3 */
-#define XPAR_GPIO_2_BASEADDR 0x41230000
-#define XPAR_GPIO_2_HIGHADDR 0x4123FFFF
-#define XPAR_GPIO_2_DEVICE_ID XPAR_AXI_GPIO_3_DEVICE_ID
-#define XPAR_GPIO_2_INTERRUPT_PRESENT 1
-#define XPAR_GPIO_2_IS_DUAL 0
 
 
 /******************************************************************/
