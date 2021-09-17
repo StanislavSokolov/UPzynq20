@@ -54,6 +54,7 @@ unsigned int crc_RS485;
 
 int mode_RS485 = 0;
 int percentages_RS485 = 0;
+int change_status_waiting = 0;
 
 
 void preparing_message_RS485(u32 device_address, u32 number_function, u32 number_register, u32 number_elements_to_change, u32 number_bytes_transmitted){
@@ -79,9 +80,21 @@ void preparing_message_RS485(u32 device_address, u32 number_function, u32 number
 		}
 //			bild_send_buffer_RS485(7, 7);
 //		bild_send_buffer_RS485(5 + number_register*2, get_array_current_status_bool(number_register));
+		terminal_uart_send_RS485(number_bytes_transmitted+7);
 	}
 
 	if (number_function == 16) {
+		if (change_status_waiting < 10) {
+			if (change_status_waiting == 9) {
+				set_array_current_status_int(0, 1);
+				set_array_current_status_int(1, 1);
+			} else {
+				set_array_current_status_int(0, 0);
+				set_array_current_status_int(1, 0);
+			}
+
+			change_status_waiting++;
+		}
 		int count_byte = 7;
 		///////////////////////////////////////////////////////
 		for (int i = 0; i < 190; i++) {
@@ -93,9 +106,14 @@ void preparing_message_RS485(u32 device_address, u32 number_function, u32 number
 			bild_send_buffer_RS485(i, get_value_adc_channel(channel));
 			channel++;
 		}
+		terminal_uart_send_RS485(number_bytes_transmitted+7);
 	}
 
-	terminal_uart_send_RS485(number_bytes_transmitted+7);
+	if (number_function == 4) {
+		terminal_uart_send_RS485(6);
+	}
+
+
 
 
 
@@ -104,11 +122,11 @@ void preparing_message_RS485(u32 device_address, u32 number_function, u32 number
 void inverting_the_signal_count_transmitter_RS485() {
 	if (bit_RS485 == 0) {
 		set_array_current_status_bool(515, 1);
-		set_array_current_status_bool(541, 1);
+//		set_array_current_status_bool(541, 1);
 		bit_RS485 = 1;
 	} else {
 		set_array_current_status_bool(515, 0);
-		set_array_current_status_bool(541, 0);
+//		set_array_current_status_bool(541, 0);
 		bit_RS485 = 0;
 	}
 

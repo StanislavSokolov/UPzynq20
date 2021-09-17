@@ -17,4 +17,6 @@ int loading_control_panel(int count);
 void get_system_status_data();
 void filling_in_the_system_status_data();
 
+void set_speed_value(u32 data);
+
 #endif /* SRC_LOGICAL_FUNCTIONS_H_ */

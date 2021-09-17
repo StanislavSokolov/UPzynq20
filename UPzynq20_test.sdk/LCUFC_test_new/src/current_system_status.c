@@ -48,6 +48,16 @@ void set_array_current_status_global_errors(int number, int status){
 	Array_current_status_global_errors[number] = status;
 }
 
+///////////////////////////////////////////////////////////
+
+int get_group_registers_errors(int group, int registers){
+	int data = 0;
+	for (int i = 0; i < 16; i++){
+		data = (Array_current_status_bool[group*128 + registers*16 + i] << i) | data;
+	}
+	return data;
+}
+
 //int get_current_state(){
 //	return Current_state;
 //}

@@ -23,4 +23,6 @@ void reset_errors_current_system_status();
 int get_array_current_status_global_errors(int number);
 void set_array_current_status_global_errors(int number, int status);
 
+int get_group_registers_errors(int group, int registers);
+
 #endif /* SRC_CURRENT_SYSTEM_STATUS_H_ */

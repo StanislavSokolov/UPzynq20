@@ -11,7 +11,7 @@
 #include "xil_printf.h"
 #include "test_functions.h"
 
-
+#include "current_system_status.h"
 
 
 /************************** Function Prototypes *****************************/
@@ -51,6 +51,7 @@ int TotalErrorCount_SET12;
 int bit_SET12 = 0;
 volatile int count_send = 0;
 int count_send2 = 0;
+int counter_group_registers_errors = 0;
 
 void preparing_message_SET12(){
 		SendBuffer_SET12[0] = 4;										// определение начала передачи bit0
@@ -92,7 +93,16 @@ void preparing_message_SET12(){
 
 
 		bild_send_buffer_SET12(TEST_BUFFER_SIZE_SET12-1, 100);				// вместо CRC
-
+//		bild_send_buffer_SET12(46, 0);
+//		bild_send_buffer_SET12(50, 1);
+		if (counter_group_registers_errors < 4) {
+			bild_send_buffer_SET12(46, counter_group_registers_errors);
+			for (int i = 0; i < 8; i++) {
+				bild_send_buffer_SET12(48+i*2, get_group_registers_errors(counter_group_registers_errors, i));
+//				bild_send_buffer_SET12(48+i*2, 1);
+			}
+			counter_group_registers_errors++;
+		} else counter_group_registers_errors = 0;
 
 		terminal_uart_send_SET12();
 }

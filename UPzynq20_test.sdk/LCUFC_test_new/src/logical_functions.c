@@ -27,9 +27,15 @@
 int latch_start_PMU = 0;										// защелка для функции загрузки пульта управления ((0) - начальное окно -> прогрес бар -> (1) - основное окно)
 int counter_for_waiting_for_response_from_MCA = 0;
 int counter_for_pressing_speed_change_button = 0;
-int set_speed_value = 0;
-int set_power_value = 0;
+int counter_waiting_of_power_on = 0;
+int counter_waiting_of_power_off = 0;
+u32 speed_value = 0;
+int power_value = 0;
 int MCU = 1;
+
+void set_speed_value(u32 data){
+	speed_value = data;
+}
 
 
 
@@ -119,7 +125,8 @@ void filling_in_the_system_status_data(){
 	int output = 65535;
 
 	// кнопка квитирование сбрасывает ошибки оптической шины и каналов АЦП
-	if (((get_value_digital_input0_8() >> 0) & 1) == 0) {
+	if (((((get_value_digital_input0_8() >> 0) & 1) == 0) || (get_array_current_status_bool(513) == 1)) && (get_array_current_status_int(0) == 6)) {
+//		if (((get_value_digital_input0_8() >> 0) & 1) == 0) {
 		reset_errors_optical_bus(1);
 		reset_errors_adc_channels(1);
 		reset_errors_control_transistor_keys();
@@ -128,21 +135,29 @@ void filling_in_the_system_status_data(){
 
 		set_array_current_status_int(0, 1);
 		set_array_current_status_int(1, 1);
+
 	}
 
 	// состояние системы в зависимости от ошибок АЦП и команда на сбор схемы
 	if ((get_value_errors_negative_positive_adc(2) == 0) && (get_value_acknowledge_error_group(0) == 0)){
-		// команда на сбор схемы
-		if (((get_value_digital_input0_8() >> 1) & 1) == 0) {
-			if (get_array_current_status_int(0) == 1) {
-				set_array_current_status_int(0, 4);
-				set_array_current_status_int(1, 1);
-				MCU = 0;
+		// команда на сбор схемы с кнопки или с пульта
+		if ((MCU == 1) && (counter_waiting_of_power_off < 100)) {
+				counter_waiting_of_power_off++;
+		} else {
+			if ((((get_value_digital_input0_8() >> 1) & 1) == 0) || (get_array_current_status_bool(531) == 1)) {
+				if (get_array_current_status_int(0) == 1) {
+					set_array_current_status_int(0, 4);
+					set_array_current_status_int(1, 1);
+					MCU = 0;
+					counter_waiting_of_power_on = 0;
+				}
 			}
 		}
+
+
 		// ожидание ответа от автомата главного тока
 		if (get_array_current_status_int(0) == 4) {
-			if (counter_for_waiting_for_response_from_MCA < 30) {
+			if (counter_for_waiting_for_response_from_MCA < 20) {
 				counter_for_waiting_for_response_from_MCA++;
 				if (((get_value_digital_input0_8() >> 2) & 1) == 0) {
 					set_array_current_status_int(0, 2);
@@ -164,13 +179,13 @@ void filling_in_the_system_status_data(){
 				counter_for_pressing_speed_change_button++;
 				if (counter_for_pressing_speed_change_button > 1) {
 					counter_for_pressing_speed_change_button = 0;
-					set_speed_value++;
+					speed_value++;
 				}
 			} else if (((get_value_digital_input0_8() >> 5) & 1) == 0) {
 				counter_for_pressing_speed_change_button++;
 				if (counter_for_pressing_speed_change_button > 1) {
 					counter_for_pressing_speed_change_button = 0;
-					set_speed_value--;
+					speed_value--;
 				}
 			}
 			else counter_for_pressing_speed_change_button = 0;
@@ -180,8 +195,8 @@ void filling_in_the_system_status_data(){
 				set_array_current_status_int(1, 3);
 				set_array_current_status_bool(114, 1);
 				counter_for_pressing_speed_change_button = 0;
-				set_speed_value = 0;
-				set_power_value = 0;
+				speed_value = 0;
+				power_value = 0;
 				MCU = 1;
 			}
 		}
@@ -190,25 +205,56 @@ void filling_in_the_system_status_data(){
 		set_array_current_status_int(0, 6);
 		set_array_current_status_int(1, 3);
 		MCU = 1;
-		set_speed_value = 0;
-		set_power_value = 0;
+		speed_value = 0;
+		power_value = 0;
 	}
 
+	// Разбор схемы с кнопки
 	if (((get_value_digital_input0_8() >> 3) & 1) == 0) {
 		set_array_current_status_int(0, 1);
 		set_array_current_status_int(1, 1);
 		MCU = 1;
-		set_speed_value = 0;
-		set_power_value = 0;
+		speed_value = 0;
+		power_value = 0;
+		counter_waiting_of_power_off = 0;
 	}
 
+	// Разбор схемы с пульта
+//	if ((get_array_current_status_int(0) == 2) || (get_array_current_status_int(0) == 3) || (get_array_current_status_int(0) == 4) || (get_array_current_status_int(0) == 5)
+//			|| (get_array_current_status_int(0) == 7) || (get_array_current_status_int(0) == 8) || (get_array_current_status_int(0) == 9) || (get_array_current_status_int(0) == 11)
+//			|| (get_array_current_status_int(0) == 12)) {
+//		if ((get_array_current_status_bool(531) == 0) && (MCU == 0)) {
+//			set_array_current_status_int(0, 1);
+//			set_array_current_status_int(1, 1);
+//			MCU = 1;
+//			set_speed_value = 0;
+//			set_power_value = 0;
+//		}
+//	}
+
+	// Разбор схемы с пульта
+//	if ((MCU == 0) && (counter_waiting_of_power_on < 100)) {
+//		counter_waiting_of_power_on++;
+//	} else {
+//		if ((get_array_current_status_int(0) == 2) || (get_array_current_status_int(0) == 3) || (get_array_current_status_int(0) == 4) || (get_array_current_status_int(0) == 5)
+//				|| (get_array_current_status_int(0) == 7) || (get_array_current_status_int(0) == 8) || (get_array_current_status_int(0) == 9) || (get_array_current_status_int(0) == 11)
+//				|| (get_array_current_status_int(0) == 12)) {
+//			if ((get_array_current_status_bool(531) == 0) && (MCU == 0)) {
+//				set_array_current_status_int(0, 1);
+//				set_array_current_status_int(1, 1);
+//				MCU = 1;
+//				set_speed_value = 0;
+//				set_power_value = 0;
+//			}
+//		}
+//	}
 
 	output = (MCU << 0) & output;
 //	output = ((MCU << 1) & 1) | output;
 
 	set_current_value_digital_output(output);
-	set_array_current_status_int(47, set_power_value);
-	set_array_current_status_int(48, set_speed_value);
+	set_array_current_status_int(45, power_value);
+	set_array_current_status_int(46, speed_value);
 
 	// состояние оптической шины в зависисмости от регистра ошибок этого блока
 	if (get_data_optical_bus(6) != 0) {
@@ -392,32 +438,72 @@ void filling_in_the_system_status_data(){
 	set_array_current_status_bool(256, (get_value_errors_negative_positive_adc(0) >> 13) & 1);
 
 
-	if (((get_value_errors_negative_positive_adc(2) >> 0) & 1) != 0) {
+	if ((((get_value_errors_negative_positive_adc(2) >> 0) & 1) != 0) || (get_array_current_status_bool(392) == 1) || (get_array_current_status_bool(114) == 1)) {
 		set_array_current_status_int(9, 3);
-	} else set_array_current_status_int(9, 0);
+	} else {
+		if ((get_array_current_status_int(0) == 2) || (get_array_current_status_int(0) == 3) || (get_array_current_status_int(0) == 4)) {
+			set_array_current_status_int(9, 1);
+		} else set_array_current_status_int(9, 0);
+	}
+
+	if (((get_value_errors_negative_positive_adc(2) >> 0) & 1) != 0) {
+		set_array_current_status_int(11, 3);
+	} else {
+		if ((get_array_current_status_int(0) == 2) || (get_array_current_status_int(0) == 3) || (get_array_current_status_int(0) == 4)) {
+			set_array_current_status_int(11, 1);
+		} else set_array_current_status_int(11, 0);
+	}
 
 	if ((((get_value_errors_negative_positive_adc(2) >> 12) & 1) != 0) || (((get_value_errors_negative_positive_adc(2) >> 13) & 1) != 0)) {
 		set_array_current_status_int(12, 3);
-	} else set_array_current_status_int(12, 0);
+	} else {
+		if ((get_array_current_status_int(0) == 2) || (get_array_current_status_int(0) == 3) || (get_array_current_status_int(0) == 4)) {
+			set_array_current_status_int(12, 1);
+		} else set_array_current_status_int(12, 0);
+	}
 
 	if (((get_value_errors_negative_positive_adc(2) >> 6) & 1) != 0) {
 		set_array_current_status_int(13, 3);
-	} else set_array_current_status_int(13, 0);
+	} else {
+		if ((get_array_current_status_int(0) == 2) || (get_array_current_status_int(0) == 3) || (get_array_current_status_int(0) == 4)) {
+			set_array_current_status_int(13, 1);
+		} else set_array_current_status_int(13, 0);
+	}
 	if (((get_value_errors_negative_positive_adc(2) >> 7) & 1) != 0) {
 		set_array_current_status_int(14, 3);
-	} else set_array_current_status_int(14, 0);
+	} else {
+		if ((get_array_current_status_int(0) == 2) || (get_array_current_status_int(0) == 3) || (get_array_current_status_int(0) == 4)) {
+			set_array_current_status_int(14, 1);
+		} else set_array_current_status_int(14, 0);
+	}
 	if (((get_value_errors_negative_positive_adc(2) >> 8) & 1) != 0) {
 		set_array_current_status_int(15, 3);
-	} else set_array_current_status_int(15, 0);
+	} else {
+		if ((get_array_current_status_int(0) == 2) || (get_array_current_status_int(0) == 3) || (get_array_current_status_int(0) == 4)) {
+			set_array_current_status_int(15, 1);
+		} else set_array_current_status_int(15, 0);
+	}
 	if (((get_value_errors_negative_positive_adc(2) >> 9) & 1) != 0) {
 		set_array_current_status_int(16, 3);
-	} else set_array_current_status_int(16, 0);
+	} else {
+		if ((get_array_current_status_int(0) == 2) || (get_array_current_status_int(0) == 3) || (get_array_current_status_int(0) == 4)) {
+			set_array_current_status_int(16, 1);
+		} else set_array_current_status_int(16, 0);
+	}
 	if (((get_value_errors_negative_positive_adc(2) >> 10) & 1) != 0) {
 		set_array_current_status_int(17, 3);
-	} else set_array_current_status_int(17, 0);
+	} else {
+		if ((get_array_current_status_int(0) == 2) || (get_array_current_status_int(0) == 3) || (get_array_current_status_int(0) == 4)) {
+			set_array_current_status_int(17, 1);
+		} else set_array_current_status_int(17, 0);
+	}
 	if (((get_value_errors_negative_positive_adc(2) >> 11) & 1) != 0) {
 		set_array_current_status_int(18, 3);
-	} else set_array_current_status_int(18, 0);
+	} else {
+		if ((get_array_current_status_int(0) == 2) || (get_array_current_status_int(0) == 3) || (get_array_current_status_int(0) == 4)) {
+			set_array_current_status_int(18, 1);
+		} else set_array_current_status_int(18, 0);
+	}
 
 
 

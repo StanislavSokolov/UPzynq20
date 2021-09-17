@@ -82,6 +82,10 @@ int Count_Div2 = 0;						// счетчик формирования посылки RS-485
 int latch = 0;
 int latch_start = 0;
 
+int recv_RS485 = 0;
+int Speed_control = 0;
+
+
 int main(void) {
 
 	initialization_system_design_and_project(0, 0);    		// A0 - SYSTEM_DESIGN, A1 - PROJECT_NUMBER
@@ -90,15 +94,55 @@ int main(void) {
 	SetupInterruptSystemPWM();
 	set_start_PWM();
 
+	set_array_current_status_int(0, 0);
+	set_array_current_status_int(1, 0);
+
 	while (1) {
-		if (Count < 100000000) {
+		if (Count < 10000000) {
 			Count++;
+			if ((Count > 3500000) && (recv_RS485 == 0)) {
+				set_current_value_PSGPIO(15, 1);
+				recv_RS485 = 1;
+				terminal_uart_recv_RS485();
+				if ((update_from_terminal_RS485(0) == 2) && (update_from_terminal_RS485(1) == 4) && (update_from_terminal_RS485(2) == 40)) {
+					int ResetErrors = update_from_terminal_RS485(4);
+					int SchemeAssemble = update_from_terminal_RS485(6);
+					int Speed = update_from_terminal_RS485(12);
+					bild_send_buffer_SET12(144, ResetErrors);
+					bild_send_buffer_SET12(146, update_from_terminal_RS485(6));
+					bild_send_buffer_SET12(148, update_from_terminal_RS485(8));
+					bild_send_buffer_SET12(150, update_from_terminal_RS485(10));
+					bild_send_buffer_SET12(152, Speed);
+					bild_send_buffer_SET12(154, update_from_terminal_RS485(14));
+					bild_send_buffer_SET12(156, update_from_terminal_RS485(16));
+					bild_send_buffer_SET12(158, update_from_terminal_RS485(18));
+					bild_send_buffer_SET12(160, update_from_terminal_RS485(20));
+					bild_send_buffer_SET12(162, update_from_terminal_RS485(22));
+					bild_send_buffer_SET12(164, update_from_terminal_RS485(24));
+					bild_send_buffer_SET12(166, update_from_terminal_RS485(26));
+					bild_send_buffer_SET12(168, update_from_terminal_RS485(28));
+					bild_send_buffer_SET12(170, update_from_terminal_RS485(30));
+					bild_send_buffer_SET12(172, update_from_terminal_RS485(32));
+					bild_send_buffer_SET12(174, update_from_terminal_RS485(34));
+
+					set_array_current_status_bool(513, ResetErrors);
+					set_array_current_status_bool(531, SchemeAssemble);
+//					if (Speed_control != Speed) {
+//						set_speed_value(Speed);
+//					}
+					Speed_control = Speed;
+
+
+
+				}
+			}
 		} else {
 			if (latch) {
 				Xil_Out32(XPAR_IP_AXI_LEDS_0_S00_AXI_BASEADDR, 0x00000000);
 				latch = 0;
 				set_current_value_PSGPIO(0, 1);
 				set_current_value_PSGPIO(7, 0);
+
 			} else {
 				Xil_Out32(XPAR_IP_AXI_LEDS_0_S00_AXI_BASEADDR, 0x00000001);
 				latch = 1;
@@ -106,48 +150,70 @@ int main(void) {
 				set_current_value_PSGPIO(7, 1);
 			}
 
-			bild_send_buffer_SET12(144, Xil_In32(XPAR_IP_AXI_PWM_0_S00_AXI_BASEADDR));
-			bild_send_buffer_SET12(146, Xil_In32(XPAR_IP_AXI_PWM_0_S00_AXI_BASEADDR+4));
-			bild_send_buffer_SET12(148, get_brightness());
+
+
+
+
+//			bild_send_buffer_SET12(144, Xil_In32(XPAR_IP_AXI_PWM_0_S00_AXI_BASEADDR));
+//			bild_send_buffer_SET12(146, Xil_In32(XPAR_IP_AXI_PWM_0_S00_AXI_BASEADDR+4));
+//			bild_send_buffer_SET12(148, get_brightness());
 
 			set_right_control_pulse(update_from_terminal_SET12(16));
 
 			Count = 0;
+			recv_RS485 = 0;
 
-			if (loading_control_panel(Count_Div) == 0) {
-				Count_Div++;
-			} else {
-				set_current_value_PSGPIO(15, 1);
+
+//			if (loading_control_panel(Count_Div) == 0) {
+//				Count_Div++;
+//			} else {
+//				set_current_value_PSGPIO(15, 1);
+
 				switch (Count_Div2){
 				case 0:
-					preparing_message_RS485(2, 16, 1, 100, 200);
+					set_array_current_status_bool(544, 1);
+					preparing_message_RS485(2, 15, 533, 16, 2);
 					break;
 				case 1:
-					preparing_message_RS485(2, 15, 513, 16, 2);
+					preparing_message_RS485(2, 16, 1, 100, 200);
 					break;
 				case 2:
-					preparing_message_RS485(2, 15, 1, 256, 32);
+					preparing_message_RS485(2, 15, 513, 48, 6);
 					break;
 				case 3:
-					preparing_message_RS485(2, 15, 113, 256, 32);
+					preparing_message_RS485(2, 15, 1, 256, 32);
 					break;
 				case 4:
-					preparing_message_RS485(2, 15, 225, 256, 32);
+					preparing_message_RS485(2, 15, 113, 256, 32);
 					break;
 				case 5:
+					preparing_message_RS485(2, 15, 225, 256, 32);
+					break;
+				case 6:
 					inverting_the_signal_count_transmitter_RS485();
 					preparing_message_RS485(2, 15, 337, 256, 32);
 					break;
+				case 7:
+//					preparing_message_RS485(2, 4, 188, 16, 0);
+					preparing_message_RS485(2, 4, 1, 20, 0);
+					break;
+
 
 				default:
 					break;
 				}
-				if (Count_Div2 < 5) Count_Div2++; else Count_Div2=0;
 
-			}
+				if (Count_Div2 < 7) Count_Div2++; else Count_Div2=1;
+
+
+
+//			}
+
+
 
 			get_system_status_data();
 			filling_in_the_system_status_data();
+
 
 
 
@@ -155,101 +221,10 @@ int main(void) {
 			latch_start = 1;
 			preparing_message_SET12();
 			terminal_uart_recv_SET12();
-
+//			terminal_uart_recv_RS485();
 			set_current_value_PSGPIO(15, 0);
 
-			terminal_uart_recv_RS485();
+
 		}
 	}
 }
-
-
-
-//Xil_Out32(XPAR_IP_AXI_PWM_0_S00_AXI_BASEADDR + (Channel_2*j), 0x00FFFFFF);
-//Channel_2++;
-//Xil_Out32(XPAR_IP_AXI_PWM_0_S00_AXI_BASEADDR + (Channel_2*j), 0x00EFFFFF);
-//Channel_2++;
-//Xil_Out32(XPAR_IP_AXI_PWM_0_S00_AXI_BASEADDR + (Channel_2*j), 0x00DFFFFF);
-//Channel_2++;
-//Xil_Out32(XPAR_IP_AXI_PWM_0_S00_AXI_BASEADDR + (Channel_2*j), 0x00CFFFFF);
-//Channel_2++;
-//Xil_Out32(XPAR_IP_AXI_PWM_0_S00_AXI_BASEADDR + (Channel_2*j), 0x00BFFFFF);
-//Channel_2++;
-//Xil_Out32(XPAR_IP_AXI_PWM_0_S00_AXI_BASEADDR + (Channel_2*j), 0x00AFFFFF);
-//Channel_2++;
-//Xil_Out32(XPAR_IP_AXI_PWM_0_S00_AXI_BASEADDR + (Channel_2*j), 0x009FFFFF);
-//Channel_2++;
-//Xil_Out32(XPAR_IP_AXI_PWM_0_S00_AXI_BASEADDR + (Channel_2*j), 0x008FFFFF);
-//Channel_2++;
-//
-//Xil_Out32(XPAR_IP_AXI_PWM_0_S00_AXI_BASEADDR + (Channel_2*j), 0x007FFFFF);
-//Channel_2++;
-//Xil_Out32(XPAR_IP_AXI_PWM_0_S00_AXI_BASEADDR + (Channel_2*j), 0x006FFFFF);
-//Channel_2++;
-//Xil_Out32(XPAR_IP_AXI_PWM_0_S00_AXI_BASEADDR + (Channel_2*j), 0x005FFFFF);
-//Channel_2++;
-//Xil_Out32(XPAR_IP_AXI_PWM_0_S00_AXI_BASEADDR + (Channel_2*j), 0x004FFFFF);
-//Channel_2++;
-//Xil_Out32(XPAR_IP_AXI_PWM_0_S00_AXI_BASEADDR + (Channel_2*j), 0x003FFFFF);
-//Channel_2++;
-//Xil_Out32(XPAR_IP_AXI_PWM_0_S00_AXI_BASEADDR + (Channel_2*j), 0x002FFFFF);
-//Channel_2++;
-//Xil_Out32(XPAR_IP_AXI_PWM_0_S00_AXI_BASEADDR + (Channel_2*j), 0x001FFFFF);
-//Channel_2++;
-//Xil_Out32(XPAR_IP_AXI_PWM_0_S00_AXI_BASEADDR + (Channel_2*j), 0x000FFFFF);
-//Channel_2++;
-//
-////			Xil_Out32(XPAR_IP_AXI_PWM_0_S00_AXI_BASEADDR + (Channel_2*j), 0x000FFFFF);
-////						Channel_2++;
-////						Xil_Out32(XPAR_IP_AXI_PWM_0_S00_AXI_BASEADDR + (Channel_2*j), 0x000EFFFF);
-////						Channel_2++;
-////						Xil_Out32(XPAR_IP_AXI_PWM_0_S00_AXI_BASEADDR + (Channel_2*j), 0x000DFFFF);
-////						Channel_2++;
-////						Xil_Out32(XPAR_IP_AXI_PWM_0_S00_AXI_BASEADDR + (Channel_2*j), 0x000CFFFF);
-////						Channel_2++;
-////						Xil_Out32(XPAR_IP_AXI_PWM_0_S00_AXI_BASEADDR + (Channel_2*j), 0x000BFFFF);
-////						Channel_2++;
-////						Xil_Out32(XPAR_IP_AXI_PWM_0_S00_AXI_BASEADDR + (Channel_2*j), 0x000AFFFF);
-////						Channel_2++;
-////						Xil_Out32(XPAR_IP_AXI_PWM_0_S00_AXI_BASEADDR + (Channel_2*j), 0x0009FFFF);
-////						Channel_2++;
-////						Xil_Out32(XPAR_IP_AXI_PWM_0_S00_AXI_BASEADDR + (Channel_2*j), 0x0008FFFF);
-////						Channel_2++;
-////
-////						Xil_Out32(XPAR_IP_AXI_PWM_0_S00_AXI_BASEADDR + (Channel_2*j), 0x0007FFFF);
-////						Channel_2++;
-////						Xil_Out32(XPAR_IP_AXI_PWM_0_S00_AXI_BASEADDR + (Channel_2*j), 0x0006FFFF);
-////						Channel_2++;
-////						Xil_Out32(XPAR_IP_AXI_PWM_0_S00_AXI_BASEADDR + (Channel_2*j), 0x0005FFFF);
-////						Channel_2++;
-////						Xil_Out32(XPAR_IP_AXI_PWM_0_S00_AXI_BASEADDR + (Channel_2*j), 0x0004FFFF);
-////						Channel_2++;
-////						Xil_Out32(XPAR_IP_AXI_PWM_0_S00_AXI_BASEADDR + (Channel_2*j), 0x0003FFFF);
-////						Channel_2++;
-////						Xil_Out32(XPAR_IP_AXI_PWM_0_S00_AXI_BASEADDR + (Channel_2*j), 0x0002FFFF);
-////						Channel_2++;
-////						Xil_Out32(XPAR_IP_AXI_PWM_0_S00_AXI_BASEADDR + (Channel_2*j), 0x0001FFFF);
-////						Channel_2++;
-////						Xil_Out32(XPAR_IP_AXI_PWM_0_S00_AXI_BASEADDR + (Channel_2*j), 0x0000FFFF);
-////						Channel_2++;
-//
-//Xil_Out32(XPAR_IP_AXI_PWM_0_S00_AXI_BASEADDR + (Channel_2*j), 0x00000000);
-//Channel_2++;
-//Xil_Out32(XPAR_IP_AXI_PWM_0_S00_AXI_BASEADDR + (Channel_2*j), 0x01000000);
-//Channel_2++;
-//Xil_Out32(XPAR_IP_AXI_PWM_0_S00_AXI_BASEADDR + (Channel_2*j), 0x00000000);
-//Channel_2++;
-//Xil_Out32(XPAR_IP_AXI_PWM_0_S00_AXI_BASEADDR + (Channel_2*j), 0x00000000);
-//Channel_2++;
-//Xil_Out32(XPAR_IP_AXI_PWM_0_S00_AXI_BASEADDR + (Channel_2*j), PWM);
-//Channel_2++;
-//PWM++;
-//Xil_Out32(XPAR_IP_AXI_PWM_0_S00_AXI_BASEADDR + (Channel_2*j), 0xFFFF0000);
-//Channel_2++;
-//Xil_Out32(XPAR_IP_AXI_PWM_0_S00_AXI_BASEADDR + (Channel_2*j), 0x00000000);
-//Channel_2 = 0;
-//
-//
-
-
-
