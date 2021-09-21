@@ -98,17 +98,17 @@ int main(void) {
 	set_array_current_status_int(1, 0);
 
 	while (1) {
-		if (Count < 100000000) {
+		if (Count < 50000000) {
 			Count++;
 
 		} else {
 			if (latch) {
-				Xil_Out32(XPAR_IP_AXI_LEDS_0_S00_AXI_BASEADDR, 0x00000000);
-				Xil_Out32(XPAR_IP_AXI_LEDS_1_S00_AXI_BASEADDR, 0x00000001);
-				latch = 0;
-			} else {
 				Xil_Out32(XPAR_IP_AXI_LEDS_0_S00_AXI_BASEADDR, 0x00000001);
 				Xil_Out32(XPAR_IP_AXI_LEDS_1_S00_AXI_BASEADDR, 0x00000000);
+				latch = 0;
+			} else {
+				Xil_Out32(XPAR_IP_AXI_LEDS_0_S00_AXI_BASEADDR, 0x00000000);
+				Xil_Out32(XPAR_IP_AXI_LEDS_1_S00_AXI_BASEADDR, 0x00000001);
 				latch = 1;
 			}
 
@@ -122,7 +122,7 @@ int main(void) {
 
 //			set_right_control_pulse(update_from_terminal_SET12(16));
 //
-//			Count = 0;
+			Count = 0;
 //			recv_RS485 = 0;
 //
 //

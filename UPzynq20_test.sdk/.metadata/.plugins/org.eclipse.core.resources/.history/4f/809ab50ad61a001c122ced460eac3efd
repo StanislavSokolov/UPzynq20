@@ -1,0 +1,6 @@
+//arch = zynq; split = false; format = MCS
+the_ROM_image:
+{
+	[bootloader]D:\GITEA\UPzynq20_test\UPzynq20_test.sdk\zynq_fsbl_1\Debug\zynq_fsbl_1.elf
+	D:\GITEA\UPzynq20_test\UPzynq20_test.sdk\UPzynq20_test_design_wrapper_hw_platform_0\UPzynq20_test_design_wrapper.bit
+}
