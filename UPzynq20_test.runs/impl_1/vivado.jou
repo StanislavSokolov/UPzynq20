@@ -2,8 +2,8 @@
 # Vivado v2019.1 (64-bit)
 # SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
 # IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
-# Start of session at: Tue Sep 21 15:15:00 2021
-# Process ID: 19292
+# Start of session at: Mon Sep 27 09:39:56 2021
+# Process ID: 6848
 # Current directory: D:/GITEA/UPzynq20_test/UPzynq20_test.runs/impl_1
 # Command line: vivado.exe -log UPzynq20_test_design_wrapper.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source UPzynq20_test_design_wrapper.tcl -notrace
 # Log file: D:/GITEA/UPzynq20_test/UPzynq20_test.runs/impl_1/UPzynq20_test_design_wrapper.vdi

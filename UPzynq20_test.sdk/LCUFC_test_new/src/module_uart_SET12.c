@@ -349,14 +349,14 @@ void Handler_SET12(void *CallBackRef, u32 Event, unsigned int EventData)
 	/* All of the data has been sent */
 	if (Event == XUARTPS_EVENT_SENT_DATA) {
 		TotalSentCount_SET12 = EventData;
-		bild_send_buffer_SET12(144, TotalReceivedCount_SET12);
+//		bild_send_buffer_SET12(144, TotalReceivedCount_SET12);
 	}
 
 	/* All of the data has been received */
 	if (Event == XUARTPS_EVENT_RECV_DATA) {
 		TotalReceivedCount_SET12 = EventData;
 		count_send = count_send + 1;
-		bild_send_buffer_SET12(146, TotalReceivedCount_SET12++);
+//		bild_send_buffer_SET12(146, TotalReceivedCount_SET12++);
 //		XUartPs_Recv(UartInstPtr, RecvBuffer, TEST_BUFFER_SIZE);
 	}
 
@@ -366,7 +366,7 @@ void Handler_SET12(void *CallBackRef, u32 Event, unsigned int EventData)
 	 */
 	if (Event == XUARTPS_EVENT_RECV_TOUT) {
 		TotalReceivedCount_SET12 = EventData;
-		bild_send_buffer_SET12(148, TotalReceivedCount_SET12);
+//		bild_send_buffer_SET12(148, TotalReceivedCount_SET12);
 	}
 
 	/*
@@ -375,7 +375,7 @@ void Handler_SET12(void *CallBackRef, u32 Event, unsigned int EventData)
 	 */
 	if (Event == XUARTPS_EVENT_RECV_ERROR) {
 		TotalReceivedCount_SET12 = EventData;
-		bild_send_buffer_SET12(150, TotalReceivedCount_SET12);
+//		bild_send_buffer_SET12(150, TotalReceivedCount_SET12);
 	}
 
 	/*
@@ -385,7 +385,7 @@ void Handler_SET12(void *CallBackRef, u32 Event, unsigned int EventData)
 	 */
 	if (Event == XUARTPS_EVENT_PARE_FRAME_BRKE) {
 		TotalReceivedCount_SET12 = EventData;
-		bild_send_buffer_SET12(152, TotalReceivedCount_SET12);
+//		bild_send_buffer_SET12(152, TotalReceivedCount_SET12);
 	}
 
 	/*
@@ -394,7 +394,7 @@ void Handler_SET12(void *CallBackRef, u32 Event, unsigned int EventData)
 	 */
 	if (Event == XUARTPS_EVENT_RECV_ORERR) {
 		TotalReceivedCount_SET12 = EventData;
-		bild_send_buffer_SET12(154, TotalReceivedCount_SET12);
+//		bild_send_buffer_SET12(154, TotalReceivedCount_SET12);
 	}
 
 

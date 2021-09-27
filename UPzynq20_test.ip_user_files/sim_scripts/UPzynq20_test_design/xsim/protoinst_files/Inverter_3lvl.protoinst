@@ -1,9 +1,0 @@
-{
-	"version": "1.0",
-	"modules": {
-		"Inverter_3lvl": {
-			"proto_instances": {
-			}
-		}
-	}
-}

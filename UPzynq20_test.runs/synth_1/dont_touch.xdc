@@ -33,6 +33,36 @@ set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==UPzynq20_test_d
 # IP: bd/UPzynq20_test_design/ip/UPzynq20_test_design_IP_AXI_LEDS_0_1/UPzynq20_test_design_IP_AXI_LEDS_0_1.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==UPzynq20_test_design_IP_AXI_LEDS_0_1 || ORIG_REF_NAME==UPzynq20_test_design_IP_AXI_LEDS_0_1} -quiet] -quiet
 
+# IP: bd/UPzynq20_test_design/ip/UPzynq20_test_design_IP_AXI_SerialBus_0_2/UPzynq20_test_design_IP_AXI_SerialBus_0_2.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==UPzynq20_test_design_IP_AXI_SerialBus_0_2 || ORIG_REF_NAME==UPzynq20_test_design_IP_AXI_SerialBus_0_2} -quiet] -quiet
+
+# IP: bd/UPzynq20_test_design/ip/UPzynq20_test_design_DifferentialSignal_0_0/UPzynq20_test_design_DifferentialSignal_0_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==UPzynq20_test_design_DifferentialSignal_0_0 || ORIG_REF_NAME==UPzynq20_test_design_DifferentialSignal_0_0} -quiet] -quiet
+
+# IP: bd/UPzynq20_test_design/ip/UPzynq20_test_design_DifferentialSignal_1_0/UPzynq20_test_design_DifferentialSignal_1_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==UPzynq20_test_design_DifferentialSignal_1_0 || ORIG_REF_NAME==UPzynq20_test_design_DifferentialSignal_1_0} -quiet] -quiet
+
+# IP: bd/UPzynq20_test_design/ip/UPzynq20_test_design_axi_gpio_0_0_1/UPzynq20_test_design_axi_gpio_0_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==UPzynq20_test_design_axi_gpio_0_0 || ORIG_REF_NAME==UPzynq20_test_design_axi_gpio_0_0} -quiet] -quiet
+
+# IP: bd/UPzynq20_test_design/ip/UPzynq20_test_design_axi_gpio_0_1_1/UPzynq20_test_design_axi_gpio_0_1.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==UPzynq20_test_design_axi_gpio_0_1 || ORIG_REF_NAME==UPzynq20_test_design_axi_gpio_0_1} -quiet] -quiet
+
+# IP: bd/UPzynq20_test_design/ip/UPzynq20_test_design_axi_gpio_1_0/UPzynq20_test_design_axi_gpio_1_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==UPzynq20_test_design_axi_gpio_1_0 || ORIG_REF_NAME==UPzynq20_test_design_axi_gpio_1_0} -quiet] -quiet
+
+# IP: bd/UPzynq20_test_design/ip/UPzynq20_test_design_axi_gpio_0_2_1/UPzynq20_test_design_axi_gpio_0_2.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==UPzynq20_test_design_axi_gpio_0_2 || ORIG_REF_NAME==UPzynq20_test_design_axi_gpio_0_2} -quiet] -quiet
+
+# IP: bd/UPzynq20_test_design/ip/UPzynq20_test_design_IP_AXI_LEDS_1_0/UPzynq20_test_design_IP_AXI_LEDS_1_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==UPzynq20_test_design_IP_AXI_LEDS_1_0 || ORIG_REF_NAME==UPzynq20_test_design_IP_AXI_LEDS_1_0} -quiet] -quiet
+
+# IP: bd/UPzynq20_test_design/ip/UPzynq20_test_design_IP_AXI_LEDS_2_0/UPzynq20_test_design_IP_AXI_LEDS_2_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==UPzynq20_test_design_IP_AXI_LEDS_2_0 || ORIG_REF_NAME==UPzynq20_test_design_IP_AXI_LEDS_2_0} -quiet] -quiet
+
+# IP: bd/UPzynq20_test_design/ip/UPzynq20_test_design_IP_AXI_LEDS_3_0/UPzynq20_test_design_IP_AXI_LEDS_3_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==UPzynq20_test_design_IP_AXI_LEDS_3_0 || ORIG_REF_NAME==UPzynq20_test_design_IP_AXI_LEDS_3_0} -quiet] -quiet
+
 # IP: bd/UPzynq20_test_design/ip/UPzynq20_test_design_auto_pc_0/UPzynq20_test_design_auto_pc_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==UPzynq20_test_design_auto_pc_0 || ORIG_REF_NAME==UPzynq20_test_design_auto_pc_0} -quiet] -quiet
 
@@ -60,6 +90,38 @@ set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {R
 
 # XDC: bd/UPzynq20_test_design/ip/UPzynq20_test_design_rst_ps7_0_50M_0_1/UPzynq20_test_design_rst_ps7_0_50M_0.xdc
 #dup# set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==UPzynq20_test_design_rst_ps7_0_50M_0 || ORIG_REF_NAME==UPzynq20_test_design_rst_ps7_0_50M_0} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
+
+# XDC: bd/UPzynq20_test_design/ip/UPzynq20_test_design_axi_gpio_0_0_1/UPzynq20_test_design_axi_gpio_0_0_board.xdc
+set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==UPzynq20_test_design_axi_gpio_0_0 || ORIG_REF_NAME==UPzynq20_test_design_axi_gpio_0_0} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
+
+# XDC: bd/UPzynq20_test_design/ip/UPzynq20_test_design_axi_gpio_0_0_1/UPzynq20_test_design_axi_gpio_0_0_ooc.xdc
+
+# XDC: bd/UPzynq20_test_design/ip/UPzynq20_test_design_axi_gpio_0_0_1/UPzynq20_test_design_axi_gpio_0_0.xdc
+#dup# set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==UPzynq20_test_design_axi_gpio_0_0 || ORIG_REF_NAME==UPzynq20_test_design_axi_gpio_0_0} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
+
+# XDC: bd/UPzynq20_test_design/ip/UPzynq20_test_design_axi_gpio_0_1_1/UPzynq20_test_design_axi_gpio_0_1_board.xdc
+set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==UPzynq20_test_design_axi_gpio_0_1 || ORIG_REF_NAME==UPzynq20_test_design_axi_gpio_0_1} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
+
+# XDC: bd/UPzynq20_test_design/ip/UPzynq20_test_design_axi_gpio_0_1_1/UPzynq20_test_design_axi_gpio_0_1_ooc.xdc
+
+# XDC: bd/UPzynq20_test_design/ip/UPzynq20_test_design_axi_gpio_0_1_1/UPzynq20_test_design_axi_gpio_0_1.xdc
+#dup# set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==UPzynq20_test_design_axi_gpio_0_1 || ORIG_REF_NAME==UPzynq20_test_design_axi_gpio_0_1} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
+
+# XDC: bd/UPzynq20_test_design/ip/UPzynq20_test_design_axi_gpio_1_0/UPzynq20_test_design_axi_gpio_1_0_board.xdc
+set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==UPzynq20_test_design_axi_gpio_1_0 || ORIG_REF_NAME==UPzynq20_test_design_axi_gpio_1_0} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
+
+# XDC: bd/UPzynq20_test_design/ip/UPzynq20_test_design_axi_gpio_1_0/UPzynq20_test_design_axi_gpio_1_0_ooc.xdc
+
+# XDC: bd/UPzynq20_test_design/ip/UPzynq20_test_design_axi_gpio_1_0/UPzynq20_test_design_axi_gpio_1_0.xdc
+#dup# set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==UPzynq20_test_design_axi_gpio_1_0 || ORIG_REF_NAME==UPzynq20_test_design_axi_gpio_1_0} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
+
+# XDC: bd/UPzynq20_test_design/ip/UPzynq20_test_design_axi_gpio_0_2_1/UPzynq20_test_design_axi_gpio_0_2_board.xdc
+set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==UPzynq20_test_design_axi_gpio_0_2 || ORIG_REF_NAME==UPzynq20_test_design_axi_gpio_0_2} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
+
+# XDC: bd/UPzynq20_test_design/ip/UPzynq20_test_design_axi_gpio_0_2_1/UPzynq20_test_design_axi_gpio_0_2_ooc.xdc
+
+# XDC: bd/UPzynq20_test_design/ip/UPzynq20_test_design_axi_gpio_0_2_1/UPzynq20_test_design_axi_gpio_0_2.xdc
+#dup# set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==UPzynq20_test_design_axi_gpio_0_2 || ORIG_REF_NAME==UPzynq20_test_design_axi_gpio_0_2} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
 
 # XDC: bd/UPzynq20_test_design/ip/UPzynq20_test_design_auto_pc_0/UPzynq20_test_design_auto_pc_0_ooc.xdc
 

@@ -17,8 +17,6 @@ proc create_report { reportName command } {
     send_msg_id runtcl-5 warning "$msg"
   }
 }
-set_param chipscope.maxJobs 2
-set_param xicom.use_bs_reader 1
 create_project -in_memory -part xc7z020clg484-3
 
 set_param project.singleFileAddWarning.threshold 0
@@ -30,7 +28,10 @@ set_property parent.project_path D:/GITEA/UPzynq20_test/UPzynq20_test.xpr [curre
 set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language VHDL [current_project]
-set_property ip_repo_paths d:/GITEA/UPzynq20_test/IP [current_project]
+set_property ip_repo_paths {
+  d:/GITEA/IP_cores/IP_AXI_SerialBus/IP_AXI_SerialBus_1.0
+  d:/GITEA/IP_cores
+} [current_project]
 update_ip_catalog
 set_property ip_output_repo d:/GITEA/UPzynq20_test/UPzynq20_test.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
@@ -45,6 +46,18 @@ set_property used_in_implementation false [get_files -all d:/GITEA/UPzynq20_test
 set_property used_in_implementation false [get_files -all d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ip/UPzynq20_test_design_axi_gpio_3_0/UPzynq20_test_design_axi_gpio_3_0.xdc]
 set_property used_in_implementation false [get_files -all d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ip/UPzynq20_test_design_rst_ps7_0_50M_0_1/UPzynq20_test_design_rst_ps7_0_50M_0_board.xdc]
 set_property used_in_implementation false [get_files -all d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ip/UPzynq20_test_design_rst_ps7_0_50M_0_1/UPzynq20_test_design_rst_ps7_0_50M_0.xdc]
+set_property used_in_implementation false [get_files -all d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ip/UPzynq20_test_design_axi_gpio_0_0_1/UPzynq20_test_design_axi_gpio_0_0_board.xdc]
+set_property used_in_implementation false [get_files -all d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ip/UPzynq20_test_design_axi_gpio_0_0_1/UPzynq20_test_design_axi_gpio_0_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ip/UPzynq20_test_design_axi_gpio_0_0_1/UPzynq20_test_design_axi_gpio_0_0.xdc]
+set_property used_in_implementation false [get_files -all d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ip/UPzynq20_test_design_axi_gpio_0_1_1/UPzynq20_test_design_axi_gpio_0_1_board.xdc]
+set_property used_in_implementation false [get_files -all d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ip/UPzynq20_test_design_axi_gpio_0_1_1/UPzynq20_test_design_axi_gpio_0_1_ooc.xdc]
+set_property used_in_implementation false [get_files -all d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ip/UPzynq20_test_design_axi_gpio_0_1_1/UPzynq20_test_design_axi_gpio_0_1.xdc]
+set_property used_in_implementation false [get_files -all d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ip/UPzynq20_test_design_axi_gpio_1_0/UPzynq20_test_design_axi_gpio_1_0_board.xdc]
+set_property used_in_implementation false [get_files -all d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ip/UPzynq20_test_design_axi_gpio_1_0/UPzynq20_test_design_axi_gpio_1_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ip/UPzynq20_test_design_axi_gpio_1_0/UPzynq20_test_design_axi_gpio_1_0.xdc]
+set_property used_in_implementation false [get_files -all d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ip/UPzynq20_test_design_axi_gpio_0_2_1/UPzynq20_test_design_axi_gpio_0_2_board.xdc]
+set_property used_in_implementation false [get_files -all d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ip/UPzynq20_test_design_axi_gpio_0_2_1/UPzynq20_test_design_axi_gpio_0_2_ooc.xdc]
+set_property used_in_implementation false [get_files -all d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ip/UPzynq20_test_design_axi_gpio_0_2_1/UPzynq20_test_design_axi_gpio_0_2.xdc]
 set_property used_in_implementation false [get_files -all d:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ip/UPzynq20_test_design_auto_pc_0/UPzynq20_test_design_auto_pc_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all D:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/UPzynq20_test_design_ooc.xdc]
 

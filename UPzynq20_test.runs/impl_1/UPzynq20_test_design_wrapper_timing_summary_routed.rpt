@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
-| Date         : Tue Sep 21 15:13:51 2021
+| Date         : Mon Sep 27 09:39:35 2021
 | Host         : STAS-W10 running 64-bit major release  (build 9200)
 | Command      : report_timing_summary -max_paths 10 -file UPzynq20_test_design_wrapper_timing_summary_routed.rpt -pb UPzynq20_test_design_wrapper_timing_summary_routed.pb -rpx UPzynq20_test_design_wrapper_timing_summary_routed.rpx -warn_on_violation
 | Design       : UPzynq20_test_design_wrapper
@@ -53,7 +53,13 @@ Table of Contents
 
 1. checking no_clock
 --------------------
- There are 0 register/latch pins with no clock.
+ There are 16 register/latch pins with no clock driven by root clock pin: UPzynq20_test_design_i/IP_AXI_SerialBus_0/U0/IP_AXI_SerialBus_v1_0_S00_AXI_inst/axi_araddr_reg[2]/Q (HIGH)
+
+ There are 16 register/latch pins with no clock driven by root clock pin: UPzynq20_test_design_i/IP_AXI_SerialBus_0/U0/IP_AXI_SerialBus_v1_0_S00_AXI_inst/axi_araddr_reg[3]/Q (HIGH)
+
+ There are 16 register/latch pins with no clock driven by root clock pin: UPzynq20_test_design_i/IP_AXI_SerialBus_0/U0/IP_AXI_SerialBus_v1_0_S00_AXI_inst/axi_araddr_reg[4]/Q (HIGH)
+
+ There are 16 register/latch pins with no clock driven by root clock pin: UPzynq20_test_design_i/IP_AXI_SerialBus_0/U0/IP_AXI_SerialBus_v1_0_S00_AXI_inst/axi_araddr_reg[5]/Q (HIGH)
 
 
 2. checking constant_clock
@@ -68,21 +74,21 @@ Table of Contents
 
 4. checking unconstrained_internal_endpoints
 --------------------------------------------
- There are 0 pins that are not constrained for maximum delay.
+ There are 16 pins that are not constrained for maximum delay. (HIGH)
 
  There are 0 pins that are not constrained for maximum delay due to constant clock.
 
 
 5. checking no_input_delay
 --------------------------
- There are 4 input ports with no input delay specified. (HIGH)
+ There are 62 input ports with no input delay specified. (HIGH)
 
  There are 0 input ports with no input delay but user has a false path constraint.
 
 
 6. checking no_output_delay
 ---------------------------
- There are 18 ports with no output delay specified. (HIGH)
+ There are 25 ports with no output delay specified. (HIGH)
 
  There are 0 ports with no output delay but user has a false path constraint
 
@@ -127,7 +133,7 @@ Table of Contents
 
     WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
     -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
-     12.080        0.000                      0                 7805        0.084        0.000                      0                 7805        9.230        0.000                       0                  3200  
+     11.867        0.000                      0                11797        0.033        0.000                      0                11797        9.230        0.000                       0                  4947  
 
 
 All user specified timing constraints are met.
@@ -150,7 +156,7 @@ clk_fpga_0  {0.000 10.000}     20.000          50.000
 
 Clock             WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
 -----             -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
-clk_fpga_0         12.080        0.000                      0                 7805        0.084        0.000                      0                 7805        9.230        0.000                       0                  3200  
+clk_fpga_0         11.867        0.000                      0                11797        0.033        0.000                      0                11797        9.230        0.000                       0                  4947  
 
 
 ------------------------------------------------------------------------------------------------
@@ -181,27 +187,287 @@ Path Group    From Clock    To Clock          WNS(ns)      TNS(ns)  TNS Failing 
 From Clock:  clk_fpga_0
   To Clock:  clk_fpga_0
 
-Setup :            0  Failing Endpoints,  Worst Slack       12.080ns,  Total Violation        0.000ns
-Hold  :            0  Failing Endpoints,  Worst Slack        0.084ns,  Total Violation        0.000ns
+Setup :            0  Failing Endpoints,  Worst Slack       11.867ns,  Total Violation        0.000ns
+Hold  :            0  Failing Endpoints,  Worst Slack        0.033ns,  Total Violation        0.000ns
 PW    :            0  Failing Endpoints,  Worst Slack        9.230ns,  Total Violation        0.000ns
 ---------------------------------------------------------------------------------------------------
 
 
 Max Delay Paths
 --------------------------------------------------------------------------------------
-Slack (MET) :             12.080ns  (required time - arrival time)
-  Source:                 UPzynq20_test_design_i/ps7_0_axi_periph/xbar/inst/gen_sasd.crossbar_sasd_0/addr_arbiter_inst/gen_no_arbiter.grant_rnw_reg/C
-                            (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@10.000ns period=20.000ns})
-  Destination:            UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/PWMfromCPU_reg[8]/CE
+Slack (MET) :             11.867ns  (required time - arrival time)
+  Source:                 UPzynq20_test_design_i/processing_system7_0/inst/PS7_i/MAXIGP0ACLK
+                            (rising edge-triggered cell PS7 clocked by clk_fpga_0  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Destination:            UPzynq20_test_design_i/IP_AXI_LEDS_4/U0/IP_AXI_LEDS_v1_0_S00_AXI_inst/slv_reg3_reg[22]/D
                             (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@10.000ns period=20.000ns})
   Path Group:             clk_fpga_0
   Path Type:              Setup (Max at Slow Process Corner)
   Requirement:            20.000ns  (clk_fpga_0 rise@20.000ns - clk_fpga_0 rise@0.000ns)
-  Data Path Delay:        7.342ns  (logic 0.681ns (9.275%)  route 6.661ns (90.725%))
-  Logic Levels:           2  (LUT4=2)
-  Clock Path Skew:        -0.126ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    2.011ns = ( 22.011 - 20.000 ) 
-    Source Clock Delay      (SCD):    2.230ns
+  Data Path Delay:        7.711ns  (logic 0.912ns (11.827%)  route 6.799ns (88.173%))
+  Logic Levels:           0  
+  Clock Path Skew:        -0.122ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    1.971ns = ( 21.971 - 20.000 ) 
+    Source Clock Delay      (SCD):    2.261ns
+    Clock Pessimism Removal (CPR):    0.168ns
+  Clock Uncertainty:      0.302ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.600ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_fpga_0 rise edge)
+                                                      0.000     0.000 r  
+    PS7_X0Y0             PS7                          0.000     0.000 r  UPzynq20_test_design_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
+                         net (fo=1, routed)           0.863     0.863    UPzynq20_test_design_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.079     0.942 r  UPzynq20_test_design_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=4947, routed)        1.319     2.261    UPzynq20_test_design_i/processing_system7_0/inst/M_AXI_GP0_ACLK
+    PS7_X0Y0             PS7                                          r  UPzynq20_test_design_i/processing_system7_0/inst/PS7_i/MAXIGP0ACLK
+  -------------------------------------------------------------------    -------------------
+    PS7_X0Y0             PS7 (Prop_ps7_MAXIGP0ACLK_MAXIGP0WDATA[22])
+                                                      0.912     3.173 r  UPzynq20_test_design_i/processing_system7_0/inst/PS7_i/MAXIGP0WDATA[22]
+                         net (fo=62, routed)          6.799     9.972    UPzynq20_test_design_i/IP_AXI_LEDS_4/U0/IP_AXI_LEDS_v1_0_S00_AXI_inst/s00_axi_wdata[22]
+    SLICE_X32Y58         FDRE                                         r  UPzynq20_test_design_i/IP_AXI_LEDS_4/U0/IP_AXI_LEDS_v1_0_S00_AXI_inst/slv_reg3_reg[22]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_fpga_0 rise edge)
+                                                     20.000    20.000 r  
+    PS7_X0Y0             PS7                          0.000    20.000 r  UPzynq20_test_design_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
+                         net (fo=1, routed)           0.786    20.786    UPzynq20_test_design_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.072    20.858 r  UPzynq20_test_design_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=4947, routed)        1.112    21.971    UPzynq20_test_design_i/IP_AXI_LEDS_4/U0/IP_AXI_LEDS_v1_0_S00_AXI_inst/s00_axi_aclk
+    SLICE_X32Y58         FDRE                                         r  UPzynq20_test_design_i/IP_AXI_LEDS_4/U0/IP_AXI_LEDS_v1_0_S00_AXI_inst/slv_reg3_reg[22]/C
+                         clock pessimism              0.168    22.139    
+                         clock uncertainty           -0.302    21.837    
+    SLICE_X32Y58         FDRE (Setup_fdre_C_D)        0.002    21.839    UPzynq20_test_design_i/IP_AXI_LEDS_4/U0/IP_AXI_LEDS_v1_0_S00_AXI_inst/slv_reg3_reg[22]
+  -------------------------------------------------------------------
+                         required time                         21.839    
+                         arrival time                          -9.972    
+  -------------------------------------------------------------------
+                         slack                                 11.867    
+
+Slack (MET) :             11.879ns  (required time - arrival time)
+  Source:                 UPzynq20_test_design_i/processing_system7_0/inst/PS7_i/MAXIGP0ACLK
+                            (rising edge-triggered cell PS7 clocked by clk_fpga_0  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Destination:            UPzynq20_test_design_i/IP_AXI_LEDS_3/U0/IP_AXI_LEDS_v1_0_S00_AXI_inst/slv_reg2_reg[22]/D
+                            (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Path Group:             clk_fpga_0
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            20.000ns  (clk_fpga_0 rise@20.000ns - clk_fpga_0 rise@0.000ns)
+  Data Path Delay:        7.700ns  (logic 0.912ns (11.844%)  route 6.788ns (88.156%))
+  Logic Levels:           0  
+  Clock Path Skew:        -0.121ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    1.972ns = ( 21.972 - 20.000 ) 
+    Source Clock Delay      (SCD):    2.261ns
+    Clock Pessimism Removal (CPR):    0.168ns
+  Clock Uncertainty:      0.302ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.600ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_fpga_0 rise edge)
+                                                      0.000     0.000 r  
+    PS7_X0Y0             PS7                          0.000     0.000 r  UPzynq20_test_design_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
+                         net (fo=1, routed)           0.863     0.863    UPzynq20_test_design_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.079     0.942 r  UPzynq20_test_design_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=4947, routed)        1.319     2.261    UPzynq20_test_design_i/processing_system7_0/inst/M_AXI_GP0_ACLK
+    PS7_X0Y0             PS7                                          r  UPzynq20_test_design_i/processing_system7_0/inst/PS7_i/MAXIGP0ACLK
+  -------------------------------------------------------------------    -------------------
+    PS7_X0Y0             PS7 (Prop_ps7_MAXIGP0ACLK_MAXIGP0WDATA[22])
+                                                      0.912     3.173 r  UPzynq20_test_design_i/processing_system7_0/inst/PS7_i/MAXIGP0WDATA[22]
+                         net (fo=62, routed)          6.788     9.961    UPzynq20_test_design_i/IP_AXI_LEDS_3/U0/IP_AXI_LEDS_v1_0_S00_AXI_inst/s00_axi_wdata[22]
+    SLICE_X36Y57         FDRE                                         r  UPzynq20_test_design_i/IP_AXI_LEDS_3/U0/IP_AXI_LEDS_v1_0_S00_AXI_inst/slv_reg2_reg[22]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_fpga_0 rise edge)
+                                                     20.000    20.000 r  
+    PS7_X0Y0             PS7                          0.000    20.000 r  UPzynq20_test_design_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
+                         net (fo=1, routed)           0.786    20.786    UPzynq20_test_design_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.072    20.858 r  UPzynq20_test_design_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=4947, routed)        1.113    21.972    UPzynq20_test_design_i/IP_AXI_LEDS_3/U0/IP_AXI_LEDS_v1_0_S00_AXI_inst/s00_axi_aclk
+    SLICE_X36Y57         FDRE                                         r  UPzynq20_test_design_i/IP_AXI_LEDS_3/U0/IP_AXI_LEDS_v1_0_S00_AXI_inst/slv_reg2_reg[22]/C
+                         clock pessimism              0.168    22.140    
+                         clock uncertainty           -0.302    21.838    
+    SLICE_X36Y57         FDRE (Setup_fdre_C_D)        0.002    21.840    UPzynq20_test_design_i/IP_AXI_LEDS_3/U0/IP_AXI_LEDS_v1_0_S00_AXI_inst/slv_reg2_reg[22]
+  -------------------------------------------------------------------
+                         required time                         21.840    
+                         arrival time                          -9.961    
+  -------------------------------------------------------------------
+                         slack                                 11.879    
+
+Slack (MET) :             11.963ns  (required time - arrival time)
+  Source:                 UPzynq20_test_design_i/processing_system7_0/inst/PS7_i/MAXIGP0ACLK
+                            (rising edge-triggered cell PS7 clocked by clk_fpga_0  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Destination:            UPzynq20_test_design_i/IP_AXI_LEDS_4/U0/IP_AXI_LEDS_v1_0_S00_AXI_inst/slv_reg2_reg[22]/D
+                            (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Path Group:             clk_fpga_0
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            20.000ns  (clk_fpga_0 rise@20.000ns - clk_fpga_0 rise@0.000ns)
+  Data Path Delay:        7.591ns  (logic 0.912ns (12.014%)  route 6.679ns (87.986%))
+  Logic Levels:           0  
+  Clock Path Skew:        -0.122ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    1.971ns = ( 21.971 - 20.000 ) 
+    Source Clock Delay      (SCD):    2.261ns
+    Clock Pessimism Removal (CPR):    0.168ns
+  Clock Uncertainty:      0.302ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.600ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_fpga_0 rise edge)
+                                                      0.000     0.000 r  
+    PS7_X0Y0             PS7                          0.000     0.000 r  UPzynq20_test_design_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
+                         net (fo=1, routed)           0.863     0.863    UPzynq20_test_design_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.079     0.942 r  UPzynq20_test_design_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=4947, routed)        1.319     2.261    UPzynq20_test_design_i/processing_system7_0/inst/M_AXI_GP0_ACLK
+    PS7_X0Y0             PS7                                          r  UPzynq20_test_design_i/processing_system7_0/inst/PS7_i/MAXIGP0ACLK
+  -------------------------------------------------------------------    -------------------
+    PS7_X0Y0             PS7 (Prop_ps7_MAXIGP0ACLK_MAXIGP0WDATA[22])
+                                                      0.912     3.173 r  UPzynq20_test_design_i/processing_system7_0/inst/PS7_i/MAXIGP0WDATA[22]
+                         net (fo=62, routed)          6.679     9.853    UPzynq20_test_design_i/IP_AXI_LEDS_4/U0/IP_AXI_LEDS_v1_0_S00_AXI_inst/s00_axi_wdata[22]
+    SLICE_X33Y58         FDRE                                         r  UPzynq20_test_design_i/IP_AXI_LEDS_4/U0/IP_AXI_LEDS_v1_0_S00_AXI_inst/slv_reg2_reg[22]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_fpga_0 rise edge)
+                                                     20.000    20.000 r  
+    PS7_X0Y0             PS7                          0.000    20.000 r  UPzynq20_test_design_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
+                         net (fo=1, routed)           0.786    20.786    UPzynq20_test_design_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.072    20.858 r  UPzynq20_test_design_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=4947, routed)        1.112    21.971    UPzynq20_test_design_i/IP_AXI_LEDS_4/U0/IP_AXI_LEDS_v1_0_S00_AXI_inst/s00_axi_aclk
+    SLICE_X33Y58         FDRE                                         r  UPzynq20_test_design_i/IP_AXI_LEDS_4/U0/IP_AXI_LEDS_v1_0_S00_AXI_inst/slv_reg2_reg[22]/C
+                         clock pessimism              0.168    22.139    
+                         clock uncertainty           -0.302    21.837    
+    SLICE_X33Y58         FDRE (Setup_fdre_C_D)       -0.021    21.816    UPzynq20_test_design_i/IP_AXI_LEDS_4/U0/IP_AXI_LEDS_v1_0_S00_AXI_inst/slv_reg2_reg[22]
+  -------------------------------------------------------------------
+                         required time                         21.816    
+                         arrival time                          -9.853    
+  -------------------------------------------------------------------
+                         slack                                 11.963    
+
+Slack (MET) :             11.974ns  (required time - arrival time)
+  Source:                 UPzynq20_test_design_i/processing_system7_0/inst/PS7_i/MAXIGP0ACLK
+                            (rising edge-triggered cell PS7 clocked by clk_fpga_0  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Destination:            UPzynq20_test_design_i/IP_AXI_LEDS_4/U0/IP_AXI_LEDS_v1_0_S00_AXI_inst/slv_reg0_reg[22]/D
+                            (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Path Group:             clk_fpga_0
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            20.000ns  (clk_fpga_0 rise@20.000ns - clk_fpga_0 rise@0.000ns)
+  Data Path Delay:        7.605ns  (logic 0.912ns (11.992%)  route 6.693ns (88.008%))
+  Logic Levels:           0  
+  Clock Path Skew:        -0.121ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    1.972ns = ( 21.972 - 20.000 ) 
+    Source Clock Delay      (SCD):    2.261ns
+    Clock Pessimism Removal (CPR):    0.168ns
+  Clock Uncertainty:      0.302ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.600ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_fpga_0 rise edge)
+                                                      0.000     0.000 r  
+    PS7_X0Y0             PS7                          0.000     0.000 r  UPzynq20_test_design_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
+                         net (fo=1, routed)           0.863     0.863    UPzynq20_test_design_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.079     0.942 r  UPzynq20_test_design_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=4947, routed)        1.319     2.261    UPzynq20_test_design_i/processing_system7_0/inst/M_AXI_GP0_ACLK
+    PS7_X0Y0             PS7                                          r  UPzynq20_test_design_i/processing_system7_0/inst/PS7_i/MAXIGP0ACLK
+  -------------------------------------------------------------------    -------------------
+    PS7_X0Y0             PS7 (Prop_ps7_MAXIGP0ACLK_MAXIGP0WDATA[22])
+                                                      0.912     3.173 r  UPzynq20_test_design_i/processing_system7_0/inst/PS7_i/MAXIGP0WDATA[22]
+                         net (fo=62, routed)          6.693     9.866    UPzynq20_test_design_i/IP_AXI_LEDS_4/U0/IP_AXI_LEDS_v1_0_S00_AXI_inst/s00_axi_wdata[22]
+    SLICE_X34Y57         FDRE                                         r  UPzynq20_test_design_i/IP_AXI_LEDS_4/U0/IP_AXI_LEDS_v1_0_S00_AXI_inst/slv_reg0_reg[22]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_fpga_0 rise edge)
+                                                     20.000    20.000 r  
+    PS7_X0Y0             PS7                          0.000    20.000 r  UPzynq20_test_design_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
+                         net (fo=1, routed)           0.786    20.786    UPzynq20_test_design_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.072    20.858 r  UPzynq20_test_design_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=4947, routed)        1.113    21.972    UPzynq20_test_design_i/IP_AXI_LEDS_4/U0/IP_AXI_LEDS_v1_0_S00_AXI_inst/s00_axi_aclk
+    SLICE_X34Y57         FDRE                                         r  UPzynq20_test_design_i/IP_AXI_LEDS_4/U0/IP_AXI_LEDS_v1_0_S00_AXI_inst/slv_reg0_reg[22]/C
+                         clock pessimism              0.168    22.140    
+                         clock uncertainty           -0.302    21.838    
+    SLICE_X34Y57         FDRE (Setup_fdre_C_D)        0.002    21.840    UPzynq20_test_design_i/IP_AXI_LEDS_4/U0/IP_AXI_LEDS_v1_0_S00_AXI_inst/slv_reg0_reg[22]
+  -------------------------------------------------------------------
+                         required time                         21.840    
+                         arrival time                          -9.866    
+  -------------------------------------------------------------------
+                         slack                                 11.974    
+
+Slack (MET) :             12.070ns  (required time - arrival time)
+  Source:                 UPzynq20_test_design_i/processing_system7_0/inst/PS7_i/MAXIGP0ACLK
+                            (rising edge-triggered cell PS7 clocked by clk_fpga_0  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Destination:            UPzynq20_test_design_i/IP_AXI_LEDS_4/U0/IP_AXI_LEDS_v1_0_S00_AXI_inst/slv_reg1_reg[22]/D
+                            (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Path Group:             clk_fpga_0
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            20.000ns  (clk_fpga_0 rise@20.000ns - clk_fpga_0 rise@0.000ns)
+  Data Path Delay:        7.485ns  (logic 0.912ns (12.184%)  route 6.573ns (87.816%))
+  Logic Levels:           0  
+  Clock Path Skew:        -0.121ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    1.972ns = ( 21.972 - 20.000 ) 
+    Source Clock Delay      (SCD):    2.261ns
+    Clock Pessimism Removal (CPR):    0.168ns
+  Clock Uncertainty:      0.302ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.600ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_fpga_0 rise edge)
+                                                      0.000     0.000 r  
+    PS7_X0Y0             PS7                          0.000     0.000 r  UPzynq20_test_design_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
+                         net (fo=1, routed)           0.863     0.863    UPzynq20_test_design_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.079     0.942 r  UPzynq20_test_design_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=4947, routed)        1.319     2.261    UPzynq20_test_design_i/processing_system7_0/inst/M_AXI_GP0_ACLK
+    PS7_X0Y0             PS7                                          r  UPzynq20_test_design_i/processing_system7_0/inst/PS7_i/MAXIGP0ACLK
+  -------------------------------------------------------------------    -------------------
+    PS7_X0Y0             PS7 (Prop_ps7_MAXIGP0ACLK_MAXIGP0WDATA[22])
+                                                      0.912     3.173 r  UPzynq20_test_design_i/processing_system7_0/inst/PS7_i/MAXIGP0WDATA[22]
+                         net (fo=62, routed)          6.573     9.746    UPzynq20_test_design_i/IP_AXI_LEDS_4/U0/IP_AXI_LEDS_v1_0_S00_AXI_inst/s00_axi_wdata[22]
+    SLICE_X35Y57         FDRE                                         r  UPzynq20_test_design_i/IP_AXI_LEDS_4/U0/IP_AXI_LEDS_v1_0_S00_AXI_inst/slv_reg1_reg[22]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_fpga_0 rise edge)
+                                                     20.000    20.000 r  
+    PS7_X0Y0             PS7                          0.000    20.000 r  UPzynq20_test_design_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
+                         net (fo=1, routed)           0.786    20.786    UPzynq20_test_design_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.072    20.858 r  UPzynq20_test_design_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=4947, routed)        1.113    21.972    UPzynq20_test_design_i/IP_AXI_LEDS_4/U0/IP_AXI_LEDS_v1_0_S00_AXI_inst/s00_axi_aclk
+    SLICE_X35Y57         FDRE                                         r  UPzynq20_test_design_i/IP_AXI_LEDS_4/U0/IP_AXI_LEDS_v1_0_S00_AXI_inst/slv_reg1_reg[22]/C
+                         clock pessimism              0.168    22.140    
+                         clock uncertainty           -0.302    21.838    
+    SLICE_X35Y57         FDRE (Setup_fdre_C_D)       -0.021    21.817    UPzynq20_test_design_i/IP_AXI_LEDS_4/U0/IP_AXI_LEDS_v1_0_S00_AXI_inst/slv_reg1_reg[22]
+  -------------------------------------------------------------------
+                         required time                         21.817    
+                         arrival time                          -9.746    
+  -------------------------------------------------------------------
+                         slack                                 12.070    
+
+Slack (MET) :             12.105ns  (required time - arrival time)
+  Source:                 UPzynq20_test_design_i/processing_system7_0/inst/PS7_i/MAXIGP0ACLK
+                            (rising edge-triggered cell PS7 clocked by clk_fpga_0  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Destination:            UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/PWMfromCPU_reg[13]/CE
+                            (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Path Group:             clk_fpga_0
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            20.000ns  (clk_fpga_0 rise@20.000ns - clk_fpga_0 rise@0.000ns)
+  Data Path Delay:        7.438ns  (logic 1.027ns (13.807%)  route 6.411ns (86.193%))
+  Logic Levels:           2  (LUT4=1 LUT5=1)
+  Clock Path Skew:        -0.005ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    2.163ns = ( 22.163 - 20.000 ) 
+    Source Clock Delay      (SCD):    2.261ns
     Clock Pessimism Removal (CPR):    0.094ns
   Clock Uncertainty:      0.302ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
     Total System Jitter     (TSJ):    0.071ns
@@ -216,16 +482,17 @@ Slack (MET) :             12.080ns  (required time - arrival time)
     PS7_X0Y0             PS7                          0.000     0.000 r  UPzynq20_test_design_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
                          net (fo=1, routed)           0.863     0.863    UPzynq20_test_design_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.079     0.942 r  UPzynq20_test_design_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
-                         net (fo=3200, routed)        1.288     2.230    UPzynq20_test_design_i/ps7_0_axi_periph/xbar/inst/gen_sasd.crossbar_sasd_0/addr_arbiter_inst/aclk
-    SLICE_X28Y89         FDRE                                         r  UPzynq20_test_design_i/ps7_0_axi_periph/xbar/inst/gen_sasd.crossbar_sasd_0/addr_arbiter_inst/gen_no_arbiter.grant_rnw_reg/C
+                         net (fo=4947, routed)        1.319     2.261    UPzynq20_test_design_i/processing_system7_0/inst/M_AXI_GP0_ACLK
+    PS7_X0Y0             PS7                                          r  UPzynq20_test_design_i/processing_system7_0/inst/PS7_i/MAXIGP0ACLK
   -------------------------------------------------------------------    -------------------
-    SLICE_X28Y89         FDRE (Prop_fdre_C_Q)         0.341     2.571 r  UPzynq20_test_design_i/ps7_0_axi_periph/xbar/inst/gen_sasd.crossbar_sasd_0/addr_arbiter_inst/gen_no_arbiter.grant_rnw_reg/Q
-                         net (fo=35, routed)          1.388     3.959    UPzynq20_test_design_i/ps7_0_axi_periph/xbar/inst/gen_sasd.crossbar_sasd_0/addr_arbiter_inst/gen_no_arbiter.grant_rnw_reg_0
-    SLICE_X31Y83         LUT4 (Prop_lut4_I1_O)        0.101     4.060 f  UPzynq20_test_design_i/ps7_0_axi_periph/xbar/inst/gen_sasd.crossbar_sasd_0/addr_arbiter_inst/m_axi_awvalid[6]_INST_0/O
-                         net (fo=4, routed)           0.695     4.755    UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/s00_axi_awvalid
-    SLICE_X32Y83         LUT4 (Prop_lut4_I3_O)        0.239     4.994 r  UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/PWMstarting[0]_i_1/O
-                         net (fo=650, routed)         4.578     9.572    UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/axi_awready_reg_1
-    SLICE_X63Y64         FDRE                                         r  UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/PWMfromCPU_reg[8]/CE
+    PS7_X0Y0             PS7 (Prop_ps7_MAXIGP0ACLK_MAXIGP0WVALID)
+                                                      0.833     3.094 f  UPzynq20_test_design_i/processing_system7_0/inst/PS7_i/MAXIGP0WVALID
+                         net (fo=17, routed)          1.916     5.010    UPzynq20_test_design_i/ps7_0_axi_periph/xbar/inst/gen_sasd.crossbar_sasd_0/addr_arbiter_inst/s_axi_wvalid[0]
+    SLICE_X41Y70         LUT5 (Prop_lut5_I4_O)        0.097     5.107 f  UPzynq20_test_design_i/ps7_0_axi_periph/xbar/inst/gen_sasd.crossbar_sasd_0/addr_arbiter_inst/m_axi_wvalid[4]_INST_0/O
+                         net (fo=4, routed)           0.292     5.399    UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/s00_axi_wvalid
+    SLICE_X41Y69         LUT4 (Prop_lut4_I2_O)        0.097     5.496 r  UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/PWMstarting[0]_i_1/O
+                         net (fo=650, routed)         4.203     9.699    UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/axi_awready_reg_1
+    SLICE_X64Y100        FDRE                                         r  UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/PWMfromCPU_reg[13]/CE
   -------------------------------------------------------------------    -------------------
 
                          (clock clk_fpga_0 rise edge)
@@ -233,30 +500,30 @@ Slack (MET) :             12.080ns  (required time - arrival time)
     PS7_X0Y0             PS7                          0.000    20.000 r  UPzynq20_test_design_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
                          net (fo=1, routed)           0.786    20.786    UPzynq20_test_design_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.072    20.858 r  UPzynq20_test_design_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
-                         net (fo=3200, routed)        1.152    22.011    UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/s00_axi_aclk
-    SLICE_X63Y64         FDRE                                         r  UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/PWMfromCPU_reg[8]/C
-                         clock pessimism              0.094    22.104    
-                         clock uncertainty           -0.302    21.802    
-    SLICE_X63Y64         FDRE (Setup_fdre_C_CE)      -0.150    21.652    UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/PWMfromCPU_reg[8]
+                         net (fo=4947, routed)        1.304    22.163    UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/s00_axi_aclk
+    SLICE_X64Y100        FDRE                                         r  UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/PWMfromCPU_reg[13]/C
+                         clock pessimism              0.094    22.256    
+                         clock uncertainty           -0.302    21.954    
+    SLICE_X64Y100        FDRE (Setup_fdre_C_CE)      -0.150    21.804    UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/PWMfromCPU_reg[13]
   -------------------------------------------------------------------
-                         required time                         21.652    
-                         arrival time                          -9.572    
+                         required time                         21.804    
+                         arrival time                          -9.699    
   -------------------------------------------------------------------
-                         slack                                 12.080    
+                         slack                                 12.105    
 
-Slack (MET) :             12.080ns  (required time - arrival time)
-  Source:                 UPzynq20_test_design_i/ps7_0_axi_periph/xbar/inst/gen_sasd.crossbar_sasd_0/addr_arbiter_inst/gen_no_arbiter.grant_rnw_reg/C
-                            (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@10.000ns period=20.000ns})
-  Destination:            UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/PWMfromCPU_reg[9]/CE
+Slack (MET) :             12.105ns  (required time - arrival time)
+  Source:                 UPzynq20_test_design_i/processing_system7_0/inst/PS7_i/MAXIGP0ACLK
+                            (rising edge-triggered cell PS7 clocked by clk_fpga_0  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Destination:            UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/PWMfromCPU_reg[14]/CE
                             (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@10.000ns period=20.000ns})
   Path Group:             clk_fpga_0
   Path Type:              Setup (Max at Slow Process Corner)
   Requirement:            20.000ns  (clk_fpga_0 rise@20.000ns - clk_fpga_0 rise@0.000ns)
-  Data Path Delay:        7.342ns  (logic 0.681ns (9.275%)  route 6.661ns (90.725%))
-  Logic Levels:           2  (LUT4=2)
-  Clock Path Skew:        -0.126ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    2.011ns = ( 22.011 - 20.000 ) 
-    Source Clock Delay      (SCD):    2.230ns
+  Data Path Delay:        7.438ns  (logic 1.027ns (13.807%)  route 6.411ns (86.193%))
+  Logic Levels:           2  (LUT4=1 LUT5=1)
+  Clock Path Skew:        -0.005ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    2.163ns = ( 22.163 - 20.000 ) 
+    Source Clock Delay      (SCD):    2.261ns
     Clock Pessimism Removal (CPR):    0.094ns
   Clock Uncertainty:      0.302ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
     Total System Jitter     (TSJ):    0.071ns
@@ -271,16 +538,17 @@ Slack (MET) :             12.080ns  (required time - arrival time)
     PS7_X0Y0             PS7                          0.000     0.000 r  UPzynq20_test_design_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
                          net (fo=1, routed)           0.863     0.863    UPzynq20_test_design_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.079     0.942 r  UPzynq20_test_design_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
-                         net (fo=3200, routed)        1.288     2.230    UPzynq20_test_design_i/ps7_0_axi_periph/xbar/inst/gen_sasd.crossbar_sasd_0/addr_arbiter_inst/aclk
-    SLICE_X28Y89         FDRE                                         r  UPzynq20_test_design_i/ps7_0_axi_periph/xbar/inst/gen_sasd.crossbar_sasd_0/addr_arbiter_inst/gen_no_arbiter.grant_rnw_reg/C
+                         net (fo=4947, routed)        1.319     2.261    UPzynq20_test_design_i/processing_system7_0/inst/M_AXI_GP0_ACLK
+    PS7_X0Y0             PS7                                          r  UPzynq20_test_design_i/processing_system7_0/inst/PS7_i/MAXIGP0ACLK
   -------------------------------------------------------------------    -------------------
-    SLICE_X28Y89         FDRE (Prop_fdre_C_Q)         0.341     2.571 r  UPzynq20_test_design_i/ps7_0_axi_periph/xbar/inst/gen_sasd.crossbar_sasd_0/addr_arbiter_inst/gen_no_arbiter.grant_rnw_reg/Q
-                         net (fo=35, routed)          1.388     3.959    UPzynq20_test_design_i/ps7_0_axi_periph/xbar/inst/gen_sasd.crossbar_sasd_0/addr_arbiter_inst/gen_no_arbiter.grant_rnw_reg_0
-    SLICE_X31Y83         LUT4 (Prop_lut4_I1_O)        0.101     4.060 f  UPzynq20_test_design_i/ps7_0_axi_periph/xbar/inst/gen_sasd.crossbar_sasd_0/addr_arbiter_inst/m_axi_awvalid[6]_INST_0/O
-                         net (fo=4, routed)           0.695     4.755    UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/s00_axi_awvalid
-    SLICE_X32Y83         LUT4 (Prop_lut4_I3_O)        0.239     4.994 r  UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/PWMstarting[0]_i_1/O
-                         net (fo=650, routed)         4.578     9.572    UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/axi_awready_reg_1
-    SLICE_X63Y64         FDRE                                         r  UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/PWMfromCPU_reg[9]/CE
+    PS7_X0Y0             PS7 (Prop_ps7_MAXIGP0ACLK_MAXIGP0WVALID)
+                                                      0.833     3.094 f  UPzynq20_test_design_i/processing_system7_0/inst/PS7_i/MAXIGP0WVALID
+                         net (fo=17, routed)          1.916     5.010    UPzynq20_test_design_i/ps7_0_axi_periph/xbar/inst/gen_sasd.crossbar_sasd_0/addr_arbiter_inst/s_axi_wvalid[0]
+    SLICE_X41Y70         LUT5 (Prop_lut5_I4_O)        0.097     5.107 f  UPzynq20_test_design_i/ps7_0_axi_periph/xbar/inst/gen_sasd.crossbar_sasd_0/addr_arbiter_inst/m_axi_wvalid[4]_INST_0/O
+                         net (fo=4, routed)           0.292     5.399    UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/s00_axi_wvalid
+    SLICE_X41Y69         LUT4 (Prop_lut4_I2_O)        0.097     5.496 r  UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/PWMstarting[0]_i_1/O
+                         net (fo=650, routed)         4.203     9.699    UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/axi_awready_reg_1
+    SLICE_X64Y100        FDRE                                         r  UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/PWMfromCPU_reg[14]/CE
   -------------------------------------------------------------------    -------------------
 
                          (clock clk_fpga_0 rise edge)
@@ -288,30 +556,30 @@ Slack (MET) :             12.080ns  (required time - arrival time)
     PS7_X0Y0             PS7                          0.000    20.000 r  UPzynq20_test_design_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
                          net (fo=1, routed)           0.786    20.786    UPzynq20_test_design_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.072    20.858 r  UPzynq20_test_design_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
-                         net (fo=3200, routed)        1.152    22.011    UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/s00_axi_aclk
-    SLICE_X63Y64         FDRE                                         r  UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/PWMfromCPU_reg[9]/C
-                         clock pessimism              0.094    22.104    
-                         clock uncertainty           -0.302    21.802    
-    SLICE_X63Y64         FDRE (Setup_fdre_C_CE)      -0.150    21.652    UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/PWMfromCPU_reg[9]
+                         net (fo=4947, routed)        1.304    22.163    UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/s00_axi_aclk
+    SLICE_X64Y100        FDRE                                         r  UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/PWMfromCPU_reg[14]/C
+                         clock pessimism              0.094    22.256    
+                         clock uncertainty           -0.302    21.954    
+    SLICE_X64Y100        FDRE (Setup_fdre_C_CE)      -0.150    21.804    UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/PWMfromCPU_reg[14]
   -------------------------------------------------------------------
-                         required time                         21.652    
-                         arrival time                          -9.572    
+                         required time                         21.804    
+                         arrival time                          -9.699    
   -------------------------------------------------------------------
-                         slack                                 12.080    
+                         slack                                 12.105    
 
-Slack (MET) :             12.080ns  (required time - arrival time)
-  Source:                 UPzynq20_test_design_i/ps7_0_axi_periph/xbar/inst/gen_sasd.crossbar_sasd_0/addr_arbiter_inst/gen_no_arbiter.grant_rnw_reg/C
-                            (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@10.000ns period=20.000ns})
-  Destination:            UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/PWMmask_reg[14]/CE
+Slack (MET) :             12.105ns  (required time - arrival time)
+  Source:                 UPzynq20_test_design_i/processing_system7_0/inst/PS7_i/MAXIGP0ACLK
+                            (rising edge-triggered cell PS7 clocked by clk_fpga_0  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Destination:            UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/PWMfromCPU_reg[15]/CE
                             (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@10.000ns period=20.000ns})
   Path Group:             clk_fpga_0
   Path Type:              Setup (Max at Slow Process Corner)
   Requirement:            20.000ns  (clk_fpga_0 rise@20.000ns - clk_fpga_0 rise@0.000ns)
-  Data Path Delay:        7.342ns  (logic 0.681ns (9.275%)  route 6.661ns (90.725%))
-  Logic Levels:           2  (LUT4=2)
-  Clock Path Skew:        -0.126ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    2.011ns = ( 22.011 - 20.000 ) 
-    Source Clock Delay      (SCD):    2.230ns
+  Data Path Delay:        7.438ns  (logic 1.027ns (13.807%)  route 6.411ns (86.193%))
+  Logic Levels:           2  (LUT4=1 LUT5=1)
+  Clock Path Skew:        -0.005ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    2.163ns = ( 22.163 - 20.000 ) 
+    Source Clock Delay      (SCD):    2.261ns
     Clock Pessimism Removal (CPR):    0.094ns
   Clock Uncertainty:      0.302ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
     Total System Jitter     (TSJ):    0.071ns
@@ -326,16 +594,17 @@ Slack (MET) :             12.080ns  (required time - arrival time)
     PS7_X0Y0             PS7                          0.000     0.000 r  UPzynq20_test_design_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
                          net (fo=1, routed)           0.863     0.863    UPzynq20_test_design_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.079     0.942 r  UPzynq20_test_design_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
-                         net (fo=3200, routed)        1.288     2.230    UPzynq20_test_design_i/ps7_0_axi_periph/xbar/inst/gen_sasd.crossbar_sasd_0/addr_arbiter_inst/aclk
-    SLICE_X28Y89         FDRE                                         r  UPzynq20_test_design_i/ps7_0_axi_periph/xbar/inst/gen_sasd.crossbar_sasd_0/addr_arbiter_inst/gen_no_arbiter.grant_rnw_reg/C
+                         net (fo=4947, routed)        1.319     2.261    UPzynq20_test_design_i/processing_system7_0/inst/M_AXI_GP0_ACLK
+    PS7_X0Y0             PS7                                          r  UPzynq20_test_design_i/processing_system7_0/inst/PS7_i/MAXIGP0ACLK
   -------------------------------------------------------------------    -------------------
-    SLICE_X28Y89         FDRE (Prop_fdre_C_Q)         0.341     2.571 r  UPzynq20_test_design_i/ps7_0_axi_periph/xbar/inst/gen_sasd.crossbar_sasd_0/addr_arbiter_inst/gen_no_arbiter.grant_rnw_reg/Q
-                         net (fo=35, routed)          1.388     3.959    UPzynq20_test_design_i/ps7_0_axi_periph/xbar/inst/gen_sasd.crossbar_sasd_0/addr_arbiter_inst/gen_no_arbiter.grant_rnw_reg_0
-    SLICE_X31Y83         LUT4 (Prop_lut4_I1_O)        0.101     4.060 f  UPzynq20_test_design_i/ps7_0_axi_periph/xbar/inst/gen_sasd.crossbar_sasd_0/addr_arbiter_inst/m_axi_awvalid[6]_INST_0/O
-                         net (fo=4, routed)           0.695     4.755    UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/s00_axi_awvalid
-    SLICE_X32Y83         LUT4 (Prop_lut4_I3_O)        0.239     4.994 r  UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/PWMstarting[0]_i_1/O
-                         net (fo=650, routed)         4.578     9.572    UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/axi_awready_reg_1
-    SLICE_X63Y64         FDRE                                         r  UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/PWMmask_reg[14]/CE
+    PS7_X0Y0             PS7 (Prop_ps7_MAXIGP0ACLK_MAXIGP0WVALID)
+                                                      0.833     3.094 f  UPzynq20_test_design_i/processing_system7_0/inst/PS7_i/MAXIGP0WVALID
+                         net (fo=17, routed)          1.916     5.010    UPzynq20_test_design_i/ps7_0_axi_periph/xbar/inst/gen_sasd.crossbar_sasd_0/addr_arbiter_inst/s_axi_wvalid[0]
+    SLICE_X41Y70         LUT5 (Prop_lut5_I4_O)        0.097     5.107 f  UPzynq20_test_design_i/ps7_0_axi_periph/xbar/inst/gen_sasd.crossbar_sasd_0/addr_arbiter_inst/m_axi_wvalid[4]_INST_0/O
+                         net (fo=4, routed)           0.292     5.399    UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/s00_axi_wvalid
+    SLICE_X41Y69         LUT4 (Prop_lut4_I2_O)        0.097     5.496 r  UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/PWMstarting[0]_i_1/O
+                         net (fo=650, routed)         4.203     9.699    UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/axi_awready_reg_1
+    SLICE_X64Y100        FDRE                                         r  UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/PWMfromCPU_reg[15]/CE
   -------------------------------------------------------------------    -------------------
 
                          (clock clk_fpga_0 rise edge)
@@ -343,30 +612,30 @@ Slack (MET) :             12.080ns  (required time - arrival time)
     PS7_X0Y0             PS7                          0.000    20.000 r  UPzynq20_test_design_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
                          net (fo=1, routed)           0.786    20.786    UPzynq20_test_design_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.072    20.858 r  UPzynq20_test_design_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
-                         net (fo=3200, routed)        1.152    22.011    UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/s00_axi_aclk
-    SLICE_X63Y64         FDRE                                         r  UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/PWMmask_reg[14]/C
-                         clock pessimism              0.094    22.104    
-                         clock uncertainty           -0.302    21.802    
-    SLICE_X63Y64         FDRE (Setup_fdre_C_CE)      -0.150    21.652    UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/PWMmask_reg[14]
+                         net (fo=4947, routed)        1.304    22.163    UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/s00_axi_aclk
+    SLICE_X64Y100        FDRE                                         r  UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/PWMfromCPU_reg[15]/C
+                         clock pessimism              0.094    22.256    
+                         clock uncertainty           -0.302    21.954    
+    SLICE_X64Y100        FDRE (Setup_fdre_C_CE)      -0.150    21.804    UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/PWMfromCPU_reg[15]
   -------------------------------------------------------------------
-                         required time                         21.652    
-                         arrival time                          -9.572    
+                         required time                         21.804    
+                         arrival time                          -9.699    
   -------------------------------------------------------------------
-                         slack                                 12.080    
+                         slack                                 12.105    
 
-Slack (MET) :             12.080ns  (required time - arrival time)
-  Source:                 UPzynq20_test_design_i/ps7_0_axi_periph/xbar/inst/gen_sasd.crossbar_sasd_0/addr_arbiter_inst/gen_no_arbiter.grant_rnw_reg/C
-                            (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@10.000ns period=20.000ns})
-  Destination:            UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/PWMmask_reg[9]/CE
+Slack (MET) :             12.105ns  (required time - arrival time)
+  Source:                 UPzynq20_test_design_i/processing_system7_0/inst/PS7_i/MAXIGP0ACLK
+                            (rising edge-triggered cell PS7 clocked by clk_fpga_0  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Destination:            UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/PWMrightControl_reg[11]/CE
                             (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@10.000ns period=20.000ns})
   Path Group:             clk_fpga_0
   Path Type:              Setup (Max at Slow Process Corner)
   Requirement:            20.000ns  (clk_fpga_0 rise@20.000ns - clk_fpga_0 rise@0.000ns)
-  Data Path Delay:        7.342ns  (logic 0.681ns (9.275%)  route 6.661ns (90.725%))
-  Logic Levels:           2  (LUT4=2)
-  Clock Path Skew:        -0.126ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    2.011ns = ( 22.011 - 20.000 ) 
-    Source Clock Delay      (SCD):    2.230ns
+  Data Path Delay:        7.438ns  (logic 1.027ns (13.807%)  route 6.411ns (86.193%))
+  Logic Levels:           2  (LUT4=1 LUT5=1)
+  Clock Path Skew:        -0.005ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    2.163ns = ( 22.163 - 20.000 ) 
+    Source Clock Delay      (SCD):    2.261ns
     Clock Pessimism Removal (CPR):    0.094ns
   Clock Uncertainty:      0.302ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
     Total System Jitter     (TSJ):    0.071ns
@@ -381,16 +650,17 @@ Slack (MET) :             12.080ns  (required time - arrival time)
     PS7_X0Y0             PS7                          0.000     0.000 r  UPzynq20_test_design_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
                          net (fo=1, routed)           0.863     0.863    UPzynq20_test_design_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.079     0.942 r  UPzynq20_test_design_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
-                         net (fo=3200, routed)        1.288     2.230    UPzynq20_test_design_i/ps7_0_axi_periph/xbar/inst/gen_sasd.crossbar_sasd_0/addr_arbiter_inst/aclk
-    SLICE_X28Y89         FDRE                                         r  UPzynq20_test_design_i/ps7_0_axi_periph/xbar/inst/gen_sasd.crossbar_sasd_0/addr_arbiter_inst/gen_no_arbiter.grant_rnw_reg/C
+                         net (fo=4947, routed)        1.319     2.261    UPzynq20_test_design_i/processing_system7_0/inst/M_AXI_GP0_ACLK
+    PS7_X0Y0             PS7                                          r  UPzynq20_test_design_i/processing_system7_0/inst/PS7_i/MAXIGP0ACLK
   -------------------------------------------------------------------    -------------------
-    SLICE_X28Y89         FDRE (Prop_fdre_C_Q)         0.341     2.571 r  UPzynq20_test_design_i/ps7_0_axi_periph/xbar/inst/gen_sasd.crossbar_sasd_0/addr_arbiter_inst/gen_no_arbiter.grant_rnw_reg/Q
-                         net (fo=35, routed)          1.388     3.959    UPzynq20_test_design_i/ps7_0_axi_periph/xbar/inst/gen_sasd.crossbar_sasd_0/addr_arbiter_inst/gen_no_arbiter.grant_rnw_reg_0
-    SLICE_X31Y83         LUT4 (Prop_lut4_I1_O)        0.101     4.060 f  UPzynq20_test_design_i/ps7_0_axi_periph/xbar/inst/gen_sasd.crossbar_sasd_0/addr_arbiter_inst/m_axi_awvalid[6]_INST_0/O
-                         net (fo=4, routed)           0.695     4.755    UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/s00_axi_awvalid
-    SLICE_X32Y83         LUT4 (Prop_lut4_I3_O)        0.239     4.994 r  UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/PWMstarting[0]_i_1/O
-                         net (fo=650, routed)         4.578     9.572    UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/axi_awready_reg_1
-    SLICE_X63Y64         FDRE                                         r  UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/PWMmask_reg[9]/CE
+    PS7_X0Y0             PS7 (Prop_ps7_MAXIGP0ACLK_MAXIGP0WVALID)
+                                                      0.833     3.094 f  UPzynq20_test_design_i/processing_system7_0/inst/PS7_i/MAXIGP0WVALID
+                         net (fo=17, routed)          1.916     5.010    UPzynq20_test_design_i/ps7_0_axi_periph/xbar/inst/gen_sasd.crossbar_sasd_0/addr_arbiter_inst/s_axi_wvalid[0]
+    SLICE_X41Y70         LUT5 (Prop_lut5_I4_O)        0.097     5.107 f  UPzynq20_test_design_i/ps7_0_axi_periph/xbar/inst/gen_sasd.crossbar_sasd_0/addr_arbiter_inst/m_axi_wvalid[4]_INST_0/O
+                         net (fo=4, routed)           0.292     5.399    UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/s00_axi_wvalid
+    SLICE_X41Y69         LUT4 (Prop_lut4_I2_O)        0.097     5.496 r  UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/PWMstarting[0]_i_1/O
+                         net (fo=650, routed)         4.203     9.699    UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/axi_awready_reg_1
+    SLICE_X64Y100        FDRE                                         r  UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/PWMrightControl_reg[11]/CE
   -------------------------------------------------------------------    -------------------
 
                          (clock clk_fpga_0 rise edge)
@@ -398,30 +668,30 @@ Slack (MET) :             12.080ns  (required time - arrival time)
     PS7_X0Y0             PS7                          0.000    20.000 r  UPzynq20_test_design_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
                          net (fo=1, routed)           0.786    20.786    UPzynq20_test_design_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.072    20.858 r  UPzynq20_test_design_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
-                         net (fo=3200, routed)        1.152    22.011    UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/s00_axi_aclk
-    SLICE_X63Y64         FDRE                                         r  UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/PWMmask_reg[9]/C
-                         clock pessimism              0.094    22.104    
-                         clock uncertainty           -0.302    21.802    
-    SLICE_X63Y64         FDRE (Setup_fdre_C_CE)      -0.150    21.652    UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/PWMmask_reg[9]
+                         net (fo=4947, routed)        1.304    22.163    UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/s00_axi_aclk
+    SLICE_X64Y100        FDRE                                         r  UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/PWMrightControl_reg[11]/C
+                         clock pessimism              0.094    22.256    
+                         clock uncertainty           -0.302    21.954    
+    SLICE_X64Y100        FDRE (Setup_fdre_C_CE)      -0.150    21.804    UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/PWMrightControl_reg[11]
   -------------------------------------------------------------------
-                         required time                         21.652    
-                         arrival time                          -9.572    
+                         required time                         21.804    
+                         arrival time                          -9.699    
   -------------------------------------------------------------------
-                         slack                                 12.080    
+                         slack                                 12.105    
 
-Slack (MET) :             12.080ns  (required time - arrival time)
-  Source:                 UPzynq20_test_design_i/ps7_0_axi_periph/xbar/inst/gen_sasd.crossbar_sasd_0/addr_arbiter_inst/gen_no_arbiter.grant_rnw_reg/C
-                            (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@10.000ns period=20.000ns})
-  Destination:            UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/PWMrightControl_reg[5]/CE
+Slack (MET) :             12.105ns  (required time - arrival time)
+  Source:                 UPzynq20_test_design_i/processing_system7_0/inst/PS7_i/MAXIGP0ACLK
+                            (rising edge-triggered cell PS7 clocked by clk_fpga_0  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Destination:            UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/PWMrightControl_reg[14]/CE
                             (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@10.000ns period=20.000ns})
   Path Group:             clk_fpga_0
   Path Type:              Setup (Max at Slow Process Corner)
   Requirement:            20.000ns  (clk_fpga_0 rise@20.000ns - clk_fpga_0 rise@0.000ns)
-  Data Path Delay:        7.342ns  (logic 0.681ns (9.275%)  route 6.661ns (90.725%))
-  Logic Levels:           2  (LUT4=2)
-  Clock Path Skew:        -0.126ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    2.011ns = ( 22.011 - 20.000 ) 
-    Source Clock Delay      (SCD):    2.230ns
+  Data Path Delay:        7.438ns  (logic 1.027ns (13.807%)  route 6.411ns (86.193%))
+  Logic Levels:           2  (LUT4=1 LUT5=1)
+  Clock Path Skew:        -0.005ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    2.163ns = ( 22.163 - 20.000 ) 
+    Source Clock Delay      (SCD):    2.261ns
     Clock Pessimism Removal (CPR):    0.094ns
   Clock Uncertainty:      0.302ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
     Total System Jitter     (TSJ):    0.071ns
@@ -436,71 +706,17 @@ Slack (MET) :             12.080ns  (required time - arrival time)
     PS7_X0Y0             PS7                          0.000     0.000 r  UPzynq20_test_design_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
                          net (fo=1, routed)           0.863     0.863    UPzynq20_test_design_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.079     0.942 r  UPzynq20_test_design_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
-                         net (fo=3200, routed)        1.288     2.230    UPzynq20_test_design_i/ps7_0_axi_periph/xbar/inst/gen_sasd.crossbar_sasd_0/addr_arbiter_inst/aclk
-    SLICE_X28Y89         FDRE                                         r  UPzynq20_test_design_i/ps7_0_axi_periph/xbar/inst/gen_sasd.crossbar_sasd_0/addr_arbiter_inst/gen_no_arbiter.grant_rnw_reg/C
+                         net (fo=4947, routed)        1.319     2.261    UPzynq20_test_design_i/processing_system7_0/inst/M_AXI_GP0_ACLK
+    PS7_X0Y0             PS7                                          r  UPzynq20_test_design_i/processing_system7_0/inst/PS7_i/MAXIGP0ACLK
   -------------------------------------------------------------------    -------------------
-    SLICE_X28Y89         FDRE (Prop_fdre_C_Q)         0.341     2.571 r  UPzynq20_test_design_i/ps7_0_axi_periph/xbar/inst/gen_sasd.crossbar_sasd_0/addr_arbiter_inst/gen_no_arbiter.grant_rnw_reg/Q
-                         net (fo=35, routed)          1.388     3.959    UPzynq20_test_design_i/ps7_0_axi_periph/xbar/inst/gen_sasd.crossbar_sasd_0/addr_arbiter_inst/gen_no_arbiter.grant_rnw_reg_0
-    SLICE_X31Y83         LUT4 (Prop_lut4_I1_O)        0.101     4.060 f  UPzynq20_test_design_i/ps7_0_axi_periph/xbar/inst/gen_sasd.crossbar_sasd_0/addr_arbiter_inst/m_axi_awvalid[6]_INST_0/O
-                         net (fo=4, routed)           0.695     4.755    UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/s00_axi_awvalid
-    SLICE_X32Y83         LUT4 (Prop_lut4_I3_O)        0.239     4.994 r  UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/PWMstarting[0]_i_1/O
-                         net (fo=650, routed)         4.578     9.572    UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/axi_awready_reg_1
-    SLICE_X63Y64         FDRE                                         r  UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/PWMrightControl_reg[5]/CE
-  -------------------------------------------------------------------    -------------------
-
-                         (clock clk_fpga_0 rise edge)
-                                                     20.000    20.000 r  
-    PS7_X0Y0             PS7                          0.000    20.000 r  UPzynq20_test_design_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
-                         net (fo=1, routed)           0.786    20.786    UPzynq20_test_design_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.072    20.858 r  UPzynq20_test_design_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
-                         net (fo=3200, routed)        1.152    22.011    UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/s00_axi_aclk
-    SLICE_X63Y64         FDRE                                         r  UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/PWMrightControl_reg[5]/C
-                         clock pessimism              0.094    22.104    
-                         clock uncertainty           -0.302    21.802    
-    SLICE_X63Y64         FDRE (Setup_fdre_C_CE)      -0.150    21.652    UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/PWMrightControl_reg[5]
-  -------------------------------------------------------------------
-                         required time                         21.652    
-                         arrival time                          -9.572    
-  -------------------------------------------------------------------
-                         slack                                 12.080    
-
-Slack (MET) :             12.080ns  (required time - arrival time)
-  Source:                 UPzynq20_test_design_i/ps7_0_axi_periph/xbar/inst/gen_sasd.crossbar_sasd_0/addr_arbiter_inst/gen_no_arbiter.grant_rnw_reg/C
-                            (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@10.000ns period=20.000ns})
-  Destination:            UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/PWMrightControl_reg[8]/CE
-                            (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@10.000ns period=20.000ns})
-  Path Group:             clk_fpga_0
-  Path Type:              Setup (Max at Slow Process Corner)
-  Requirement:            20.000ns  (clk_fpga_0 rise@20.000ns - clk_fpga_0 rise@0.000ns)
-  Data Path Delay:        7.342ns  (logic 0.681ns (9.275%)  route 6.661ns (90.725%))
-  Logic Levels:           2  (LUT4=2)
-  Clock Path Skew:        -0.126ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    2.011ns = ( 22.011 - 20.000 ) 
-    Source Clock Delay      (SCD):    2.230ns
-    Clock Pessimism Removal (CPR):    0.094ns
-  Clock Uncertainty:      0.302ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter     (TSJ):    0.071ns
-    Total Input Jitter      (TIJ):    0.600ns
-    Discrete Jitter          (DJ):    0.000ns
-    Phase Error              (PE):    0.000ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock clk_fpga_0 rise edge)
-                                                      0.000     0.000 r  
-    PS7_X0Y0             PS7                          0.000     0.000 r  UPzynq20_test_design_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
-                         net (fo=1, routed)           0.863     0.863    UPzynq20_test_design_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.079     0.942 r  UPzynq20_test_design_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
-                         net (fo=3200, routed)        1.288     2.230    UPzynq20_test_design_i/ps7_0_axi_periph/xbar/inst/gen_sasd.crossbar_sasd_0/addr_arbiter_inst/aclk
-    SLICE_X28Y89         FDRE                                         r  UPzynq20_test_design_i/ps7_0_axi_periph/xbar/inst/gen_sasd.crossbar_sasd_0/addr_arbiter_inst/gen_no_arbiter.grant_rnw_reg/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X28Y89         FDRE (Prop_fdre_C_Q)         0.341     2.571 r  UPzynq20_test_design_i/ps7_0_axi_periph/xbar/inst/gen_sasd.crossbar_sasd_0/addr_arbiter_inst/gen_no_arbiter.grant_rnw_reg/Q
-                         net (fo=35, routed)          1.388     3.959    UPzynq20_test_design_i/ps7_0_axi_periph/xbar/inst/gen_sasd.crossbar_sasd_0/addr_arbiter_inst/gen_no_arbiter.grant_rnw_reg_0
-    SLICE_X31Y83         LUT4 (Prop_lut4_I1_O)        0.101     4.060 f  UPzynq20_test_design_i/ps7_0_axi_periph/xbar/inst/gen_sasd.crossbar_sasd_0/addr_arbiter_inst/m_axi_awvalid[6]_INST_0/O
-                         net (fo=4, routed)           0.695     4.755    UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/s00_axi_awvalid
-    SLICE_X32Y83         LUT4 (Prop_lut4_I3_O)        0.239     4.994 r  UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/PWMstarting[0]_i_1/O
-                         net (fo=650, routed)         4.578     9.572    UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/axi_awready_reg_1
-    SLICE_X63Y64         FDRE                                         r  UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/PWMrightControl_reg[8]/CE
+    PS7_X0Y0             PS7 (Prop_ps7_MAXIGP0ACLK_MAXIGP0WVALID)
+                                                      0.833     3.094 f  UPzynq20_test_design_i/processing_system7_0/inst/PS7_i/MAXIGP0WVALID
+                         net (fo=17, routed)          1.916     5.010    UPzynq20_test_design_i/ps7_0_axi_periph/xbar/inst/gen_sasd.crossbar_sasd_0/addr_arbiter_inst/s_axi_wvalid[0]
+    SLICE_X41Y70         LUT5 (Prop_lut5_I4_O)        0.097     5.107 f  UPzynq20_test_design_i/ps7_0_axi_periph/xbar/inst/gen_sasd.crossbar_sasd_0/addr_arbiter_inst/m_axi_wvalid[4]_INST_0/O
+                         net (fo=4, routed)           0.292     5.399    UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/s00_axi_wvalid
+    SLICE_X41Y69         LUT4 (Prop_lut4_I2_O)        0.097     5.496 r  UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/PWMstarting[0]_i_1/O
+                         net (fo=650, routed)         4.203     9.699    UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/axi_awready_reg_1
+    SLICE_X64Y100        FDRE                                         r  UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/PWMrightControl_reg[14]/CE
   -------------------------------------------------------------------    -------------------
 
                          (clock clk_fpga_0 rise edge)
@@ -508,236 +724,16 @@ Slack (MET) :             12.080ns  (required time - arrival time)
     PS7_X0Y0             PS7                          0.000    20.000 r  UPzynq20_test_design_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
                          net (fo=1, routed)           0.786    20.786    UPzynq20_test_design_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.072    20.858 r  UPzynq20_test_design_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
-                         net (fo=3200, routed)        1.152    22.011    UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/s00_axi_aclk
-    SLICE_X63Y64         FDRE                                         r  UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/PWMrightControl_reg[8]/C
-                         clock pessimism              0.094    22.104    
-                         clock uncertainty           -0.302    21.802    
-    SLICE_X63Y64         FDRE (Setup_fdre_C_CE)      -0.150    21.652    UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/PWMrightControl_reg[8]
+                         net (fo=4947, routed)        1.304    22.163    UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/s00_axi_aclk
+    SLICE_X64Y100        FDRE                                         r  UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/PWMrightControl_reg[14]/C
+                         clock pessimism              0.094    22.256    
+                         clock uncertainty           -0.302    21.954    
+    SLICE_X64Y100        FDRE (Setup_fdre_C_CE)      -0.150    21.804    UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/PWMrightControl_reg[14]
   -------------------------------------------------------------------
-                         required time                         21.652    
-                         arrival time                          -9.572    
+                         required time                         21.804    
+                         arrival time                          -9.699    
   -------------------------------------------------------------------
-                         slack                                 12.080    
-
-Slack (MET) :             12.080ns  (required time - arrival time)
-  Source:                 UPzynq20_test_design_i/ps7_0_axi_periph/xbar/inst/gen_sasd.crossbar_sasd_0/addr_arbiter_inst/gen_no_arbiter.grant_rnw_reg/C
-                            (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@10.000ns period=20.000ns})
-  Destination:            UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/PWMrightControl_reg[9]/CE
-                            (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@10.000ns period=20.000ns})
-  Path Group:             clk_fpga_0
-  Path Type:              Setup (Max at Slow Process Corner)
-  Requirement:            20.000ns  (clk_fpga_0 rise@20.000ns - clk_fpga_0 rise@0.000ns)
-  Data Path Delay:        7.342ns  (logic 0.681ns (9.275%)  route 6.661ns (90.725%))
-  Logic Levels:           2  (LUT4=2)
-  Clock Path Skew:        -0.126ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    2.011ns = ( 22.011 - 20.000 ) 
-    Source Clock Delay      (SCD):    2.230ns
-    Clock Pessimism Removal (CPR):    0.094ns
-  Clock Uncertainty:      0.302ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter     (TSJ):    0.071ns
-    Total Input Jitter      (TIJ):    0.600ns
-    Discrete Jitter          (DJ):    0.000ns
-    Phase Error              (PE):    0.000ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock clk_fpga_0 rise edge)
-                                                      0.000     0.000 r  
-    PS7_X0Y0             PS7                          0.000     0.000 r  UPzynq20_test_design_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
-                         net (fo=1, routed)           0.863     0.863    UPzynq20_test_design_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.079     0.942 r  UPzynq20_test_design_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
-                         net (fo=3200, routed)        1.288     2.230    UPzynq20_test_design_i/ps7_0_axi_periph/xbar/inst/gen_sasd.crossbar_sasd_0/addr_arbiter_inst/aclk
-    SLICE_X28Y89         FDRE                                         r  UPzynq20_test_design_i/ps7_0_axi_periph/xbar/inst/gen_sasd.crossbar_sasd_0/addr_arbiter_inst/gen_no_arbiter.grant_rnw_reg/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X28Y89         FDRE (Prop_fdre_C_Q)         0.341     2.571 r  UPzynq20_test_design_i/ps7_0_axi_periph/xbar/inst/gen_sasd.crossbar_sasd_0/addr_arbiter_inst/gen_no_arbiter.grant_rnw_reg/Q
-                         net (fo=35, routed)          1.388     3.959    UPzynq20_test_design_i/ps7_0_axi_periph/xbar/inst/gen_sasd.crossbar_sasd_0/addr_arbiter_inst/gen_no_arbiter.grant_rnw_reg_0
-    SLICE_X31Y83         LUT4 (Prop_lut4_I1_O)        0.101     4.060 f  UPzynq20_test_design_i/ps7_0_axi_periph/xbar/inst/gen_sasd.crossbar_sasd_0/addr_arbiter_inst/m_axi_awvalid[6]_INST_0/O
-                         net (fo=4, routed)           0.695     4.755    UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/s00_axi_awvalid
-    SLICE_X32Y83         LUT4 (Prop_lut4_I3_O)        0.239     4.994 r  UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/PWMstarting[0]_i_1/O
-                         net (fo=650, routed)         4.578     9.572    UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/axi_awready_reg_1
-    SLICE_X63Y64         FDRE                                         r  UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/PWMrightControl_reg[9]/CE
-  -------------------------------------------------------------------    -------------------
-
-                         (clock clk_fpga_0 rise edge)
-                                                     20.000    20.000 r  
-    PS7_X0Y0             PS7                          0.000    20.000 r  UPzynq20_test_design_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
-                         net (fo=1, routed)           0.786    20.786    UPzynq20_test_design_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.072    20.858 r  UPzynq20_test_design_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
-                         net (fo=3200, routed)        1.152    22.011    UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/s00_axi_aclk
-    SLICE_X63Y64         FDRE                                         r  UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/PWMrightControl_reg[9]/C
-                         clock pessimism              0.094    22.104    
-                         clock uncertainty           -0.302    21.802    
-    SLICE_X63Y64         FDRE (Setup_fdre_C_CE)      -0.150    21.652    UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/PWMrightControl_reg[9]
-  -------------------------------------------------------------------
-                         required time                         21.652    
-                         arrival time                          -9.572    
-  -------------------------------------------------------------------
-                         slack                                 12.080    
-
-Slack (MET) :             12.181ns  (required time - arrival time)
-  Source:                 UPzynq20_test_design_i/ps7_0_axi_periph/xbar/inst/gen_sasd.crossbar_sasd_0/addr_arbiter_inst/gen_no_arbiter.grant_rnw_reg/C
-                            (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@10.000ns period=20.000ns})
-  Destination:            UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/PWMsource_reg[11]/CE
-                            (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@10.000ns period=20.000ns})
-  Path Group:             clk_fpga_0
-  Path Type:              Setup (Max at Slow Process Corner)
-  Requirement:            20.000ns  (clk_fpga_0 rise@20.000ns - clk_fpga_0 rise@0.000ns)
-  Data Path Delay:        7.243ns  (logic 0.681ns (9.402%)  route 6.562ns (90.598%))
-  Logic Levels:           2  (LUT4=2)
-  Clock Path Skew:        -0.125ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    2.012ns = ( 22.012 - 20.000 ) 
-    Source Clock Delay      (SCD):    2.230ns
-    Clock Pessimism Removal (CPR):    0.094ns
-  Clock Uncertainty:      0.302ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter     (TSJ):    0.071ns
-    Total Input Jitter      (TIJ):    0.600ns
-    Discrete Jitter          (DJ):    0.000ns
-    Phase Error              (PE):    0.000ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock clk_fpga_0 rise edge)
-                                                      0.000     0.000 r  
-    PS7_X0Y0             PS7                          0.000     0.000 r  UPzynq20_test_design_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
-                         net (fo=1, routed)           0.863     0.863    UPzynq20_test_design_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.079     0.942 r  UPzynq20_test_design_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
-                         net (fo=3200, routed)        1.288     2.230    UPzynq20_test_design_i/ps7_0_axi_periph/xbar/inst/gen_sasd.crossbar_sasd_0/addr_arbiter_inst/aclk
-    SLICE_X28Y89         FDRE                                         r  UPzynq20_test_design_i/ps7_0_axi_periph/xbar/inst/gen_sasd.crossbar_sasd_0/addr_arbiter_inst/gen_no_arbiter.grant_rnw_reg/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X28Y89         FDRE (Prop_fdre_C_Q)         0.341     2.571 r  UPzynq20_test_design_i/ps7_0_axi_periph/xbar/inst/gen_sasd.crossbar_sasd_0/addr_arbiter_inst/gen_no_arbiter.grant_rnw_reg/Q
-                         net (fo=35, routed)          1.388     3.959    UPzynq20_test_design_i/ps7_0_axi_periph/xbar/inst/gen_sasd.crossbar_sasd_0/addr_arbiter_inst/gen_no_arbiter.grant_rnw_reg_0
-    SLICE_X31Y83         LUT4 (Prop_lut4_I1_O)        0.101     4.060 f  UPzynq20_test_design_i/ps7_0_axi_periph/xbar/inst/gen_sasd.crossbar_sasd_0/addr_arbiter_inst/m_axi_awvalid[6]_INST_0/O
-                         net (fo=4, routed)           0.695     4.755    UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/s00_axi_awvalid
-    SLICE_X32Y83         LUT4 (Prop_lut4_I3_O)        0.239     4.994 r  UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/PWMstarting[0]_i_1/O
-                         net (fo=650, routed)         4.479     9.473    UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/axi_awready_reg_1
-    SLICE_X63Y63         FDRE                                         r  UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/PWMsource_reg[11]/CE
-  -------------------------------------------------------------------    -------------------
-
-                         (clock clk_fpga_0 rise edge)
-                                                     20.000    20.000 r  
-    PS7_X0Y0             PS7                          0.000    20.000 r  UPzynq20_test_design_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
-                         net (fo=1, routed)           0.786    20.786    UPzynq20_test_design_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.072    20.858 r  UPzynq20_test_design_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
-                         net (fo=3200, routed)        1.153    22.012    UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/s00_axi_aclk
-    SLICE_X63Y63         FDRE                                         r  UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/PWMsource_reg[11]/C
-                         clock pessimism              0.094    22.105    
-                         clock uncertainty           -0.302    21.803    
-    SLICE_X63Y63         FDRE (Setup_fdre_C_CE)      -0.150    21.653    UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/PWMsource_reg[11]
-  -------------------------------------------------------------------
-                         required time                         21.653    
-                         arrival time                          -9.473    
-  -------------------------------------------------------------------
-                         slack                                 12.181    
-
-Slack (MET) :             12.181ns  (required time - arrival time)
-  Source:                 UPzynq20_test_design_i/ps7_0_axi_periph/xbar/inst/gen_sasd.crossbar_sasd_0/addr_arbiter_inst/gen_no_arbiter.grant_rnw_reg/C
-                            (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@10.000ns period=20.000ns})
-  Destination:            UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/PWMsource_reg[12]/CE
-                            (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@10.000ns period=20.000ns})
-  Path Group:             clk_fpga_0
-  Path Type:              Setup (Max at Slow Process Corner)
-  Requirement:            20.000ns  (clk_fpga_0 rise@20.000ns - clk_fpga_0 rise@0.000ns)
-  Data Path Delay:        7.243ns  (logic 0.681ns (9.402%)  route 6.562ns (90.598%))
-  Logic Levels:           2  (LUT4=2)
-  Clock Path Skew:        -0.125ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    2.012ns = ( 22.012 - 20.000 ) 
-    Source Clock Delay      (SCD):    2.230ns
-    Clock Pessimism Removal (CPR):    0.094ns
-  Clock Uncertainty:      0.302ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter     (TSJ):    0.071ns
-    Total Input Jitter      (TIJ):    0.600ns
-    Discrete Jitter          (DJ):    0.000ns
-    Phase Error              (PE):    0.000ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock clk_fpga_0 rise edge)
-                                                      0.000     0.000 r  
-    PS7_X0Y0             PS7                          0.000     0.000 r  UPzynq20_test_design_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
-                         net (fo=1, routed)           0.863     0.863    UPzynq20_test_design_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.079     0.942 r  UPzynq20_test_design_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
-                         net (fo=3200, routed)        1.288     2.230    UPzynq20_test_design_i/ps7_0_axi_periph/xbar/inst/gen_sasd.crossbar_sasd_0/addr_arbiter_inst/aclk
-    SLICE_X28Y89         FDRE                                         r  UPzynq20_test_design_i/ps7_0_axi_periph/xbar/inst/gen_sasd.crossbar_sasd_0/addr_arbiter_inst/gen_no_arbiter.grant_rnw_reg/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X28Y89         FDRE (Prop_fdre_C_Q)         0.341     2.571 r  UPzynq20_test_design_i/ps7_0_axi_periph/xbar/inst/gen_sasd.crossbar_sasd_0/addr_arbiter_inst/gen_no_arbiter.grant_rnw_reg/Q
-                         net (fo=35, routed)          1.388     3.959    UPzynq20_test_design_i/ps7_0_axi_periph/xbar/inst/gen_sasd.crossbar_sasd_0/addr_arbiter_inst/gen_no_arbiter.grant_rnw_reg_0
-    SLICE_X31Y83         LUT4 (Prop_lut4_I1_O)        0.101     4.060 f  UPzynq20_test_design_i/ps7_0_axi_periph/xbar/inst/gen_sasd.crossbar_sasd_0/addr_arbiter_inst/m_axi_awvalid[6]_INST_0/O
-                         net (fo=4, routed)           0.695     4.755    UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/s00_axi_awvalid
-    SLICE_X32Y83         LUT4 (Prop_lut4_I3_O)        0.239     4.994 r  UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/PWMstarting[0]_i_1/O
-                         net (fo=650, routed)         4.479     9.473    UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/axi_awready_reg_1
-    SLICE_X63Y63         FDRE                                         r  UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/PWMsource_reg[12]/CE
-  -------------------------------------------------------------------    -------------------
-
-                         (clock clk_fpga_0 rise edge)
-                                                     20.000    20.000 r  
-    PS7_X0Y0             PS7                          0.000    20.000 r  UPzynq20_test_design_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
-                         net (fo=1, routed)           0.786    20.786    UPzynq20_test_design_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.072    20.858 r  UPzynq20_test_design_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
-                         net (fo=3200, routed)        1.153    22.012    UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/s00_axi_aclk
-    SLICE_X63Y63         FDRE                                         r  UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/PWMsource_reg[12]/C
-                         clock pessimism              0.094    22.105    
-                         clock uncertainty           -0.302    21.803    
-    SLICE_X63Y63         FDRE (Setup_fdre_C_CE)      -0.150    21.653    UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/PWMsource_reg[12]
-  -------------------------------------------------------------------
-                         required time                         21.653    
-                         arrival time                          -9.473    
-  -------------------------------------------------------------------
-                         slack                                 12.181    
-
-Slack (MET) :             12.181ns  (required time - arrival time)
-  Source:                 UPzynq20_test_design_i/ps7_0_axi_periph/xbar/inst/gen_sasd.crossbar_sasd_0/addr_arbiter_inst/gen_no_arbiter.grant_rnw_reg/C
-                            (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@10.000ns period=20.000ns})
-  Destination:            UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/PWMsource_reg[14]/CE
-                            (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@10.000ns period=20.000ns})
-  Path Group:             clk_fpga_0
-  Path Type:              Setup (Max at Slow Process Corner)
-  Requirement:            20.000ns  (clk_fpga_0 rise@20.000ns - clk_fpga_0 rise@0.000ns)
-  Data Path Delay:        7.243ns  (logic 0.681ns (9.402%)  route 6.562ns (90.598%))
-  Logic Levels:           2  (LUT4=2)
-  Clock Path Skew:        -0.125ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    2.012ns = ( 22.012 - 20.000 ) 
-    Source Clock Delay      (SCD):    2.230ns
-    Clock Pessimism Removal (CPR):    0.094ns
-  Clock Uncertainty:      0.302ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter     (TSJ):    0.071ns
-    Total Input Jitter      (TIJ):    0.600ns
-    Discrete Jitter          (DJ):    0.000ns
-    Phase Error              (PE):    0.000ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock clk_fpga_0 rise edge)
-                                                      0.000     0.000 r  
-    PS7_X0Y0             PS7                          0.000     0.000 r  UPzynq20_test_design_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
-                         net (fo=1, routed)           0.863     0.863    UPzynq20_test_design_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.079     0.942 r  UPzynq20_test_design_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
-                         net (fo=3200, routed)        1.288     2.230    UPzynq20_test_design_i/ps7_0_axi_periph/xbar/inst/gen_sasd.crossbar_sasd_0/addr_arbiter_inst/aclk
-    SLICE_X28Y89         FDRE                                         r  UPzynq20_test_design_i/ps7_0_axi_periph/xbar/inst/gen_sasd.crossbar_sasd_0/addr_arbiter_inst/gen_no_arbiter.grant_rnw_reg/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X28Y89         FDRE (Prop_fdre_C_Q)         0.341     2.571 r  UPzynq20_test_design_i/ps7_0_axi_periph/xbar/inst/gen_sasd.crossbar_sasd_0/addr_arbiter_inst/gen_no_arbiter.grant_rnw_reg/Q
-                         net (fo=35, routed)          1.388     3.959    UPzynq20_test_design_i/ps7_0_axi_periph/xbar/inst/gen_sasd.crossbar_sasd_0/addr_arbiter_inst/gen_no_arbiter.grant_rnw_reg_0
-    SLICE_X31Y83         LUT4 (Prop_lut4_I1_O)        0.101     4.060 f  UPzynq20_test_design_i/ps7_0_axi_periph/xbar/inst/gen_sasd.crossbar_sasd_0/addr_arbiter_inst/m_axi_awvalid[6]_INST_0/O
-                         net (fo=4, routed)           0.695     4.755    UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/s00_axi_awvalid
-    SLICE_X32Y83         LUT4 (Prop_lut4_I3_O)        0.239     4.994 r  UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/PWMstarting[0]_i_1/O
-                         net (fo=650, routed)         4.479     9.473    UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/axi_awready_reg_1
-    SLICE_X63Y63         FDRE                                         r  UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/PWMsource_reg[14]/CE
-  -------------------------------------------------------------------    -------------------
-
-                         (clock clk_fpga_0 rise edge)
-                                                     20.000    20.000 r  
-    PS7_X0Y0             PS7                          0.000    20.000 r  UPzynq20_test_design_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
-                         net (fo=1, routed)           0.786    20.786    UPzynq20_test_design_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.072    20.858 r  UPzynq20_test_design_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
-                         net (fo=3200, routed)        1.153    22.012    UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/s00_axi_aclk
-    SLICE_X63Y63         FDRE                                         r  UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/PWMsource_reg[14]/C
-                         clock pessimism              0.094    22.105    
-                         clock uncertainty           -0.302    21.803    
-    SLICE_X63Y63         FDRE (Setup_fdre_C_CE)      -0.150    21.653    UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/PWMsource_reg[14]
-  -------------------------------------------------------------------
-                         required time                         21.653    
-                         arrival time                          -9.473    
-  -------------------------------------------------------------------
-                         slack                                 12.181    
+                         slack                                 12.105    
 
 
 
@@ -745,111 +741,19 @@ Slack (MET) :             12.181ns  (required time - arrival time)
 
 Min Delay Paths
 --------------------------------------------------------------------------------------
-Slack (MET) :             0.084ns  (arrival time - required time)
-  Source:                 UPzynq20_test_design_i/ps7_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/RD.r_channel_0/r_arid_r_reg[4]/C
+Slack (MET) :             0.033ns  (arrival time - required time)
+  Source:                 UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/slv_reg20_reg[10]/C
                             (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@10.000ns period=20.000ns})
-  Destination:            UPzynq20_test_design_i/ps7_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/RD.r_channel_0/transaction_fifo_0/memory_reg[31][5]_srl32/D
-                            (rising edge-triggered cell SRLC32E clocked by clk_fpga_0  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Destination:            UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/PWMrightControl_reg[10]/D
+                            (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@10.000ns period=20.000ns})
   Path Group:             clk_fpga_0
   Path Type:              Hold (Min at Fast Process Corner)
   Requirement:            0.000ns  (clk_fpga_0 rise@0.000ns - clk_fpga_0 rise@0.000ns)
-  Data Path Delay:        0.230ns  (logic 0.128ns (55.581%)  route 0.102ns (44.419%))
+  Data Path Delay:        0.262ns  (logic 0.141ns (53.818%)  route 0.121ns (46.182%))
   Logic Levels:           0  
-  Clock Path Skew:        0.016ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    1.210ns
-    Source Clock Delay      (SCD):    0.912ns
-    Clock Pessimism Removal (CPR):    0.282ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock clk_fpga_0 rise edge)
-                                                      0.000     0.000 r  
-    PS7_X0Y0             PS7                          0.000     0.000 r  UPzynq20_test_design_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
-                         net (fo=1, routed)           0.310     0.310    UPzynq20_test_design_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.336 r  UPzynq20_test_design_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
-                         net (fo=3200, routed)        0.576     0.912    UPzynq20_test_design_i/ps7_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/RD.r_channel_0/aclk
-    SLICE_X28Y95         FDRE                                         r  UPzynq20_test_design_i/ps7_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/RD.r_channel_0/r_arid_r_reg[4]/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X28Y95         FDRE (Prop_fdre_C_Q)         0.128     1.040 r  UPzynq20_test_design_i/ps7_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/RD.r_channel_0/r_arid_r_reg[4]/Q
-                         net (fo=1, routed)           0.102     1.142    UPzynq20_test_design_i/ps7_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/RD.r_channel_0/transaction_fifo_0/in[5]
-    SLICE_X30Y94         SRLC32E                                      r  UPzynq20_test_design_i/ps7_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/RD.r_channel_0/transaction_fifo_0/memory_reg[31][5]_srl32/D
-  -------------------------------------------------------------------    -------------------
-
-                         (clock clk_fpga_0 rise edge)
-                                                      0.000     0.000 r  
-    PS7_X0Y0             PS7                          0.000     0.000 r  UPzynq20_test_design_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
-                         net (fo=1, routed)           0.337     0.337    UPzynq20_test_design_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     0.366 r  UPzynq20_test_design_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
-                         net (fo=3200, routed)        0.844     1.210    UPzynq20_test_design_i/ps7_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/RD.r_channel_0/transaction_fifo_0/aclk
-    SLICE_X30Y94         SRLC32E                                      r  UPzynq20_test_design_i/ps7_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/RD.r_channel_0/transaction_fifo_0/memory_reg[31][5]_srl32/CLK
-                         clock pessimism             -0.282     0.928    
-    SLICE_X30Y94         SRLC32E (Hold_srlc32e_CLK_D)
-                                                      0.130     1.058    UPzynq20_test_design_i/ps7_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/RD.r_channel_0/transaction_fifo_0/memory_reg[31][5]_srl32
-  -------------------------------------------------------------------
-                         required time                         -1.058    
-                         arrival time                           1.142    
-  -------------------------------------------------------------------
-                         slack                                  0.084    
-
-Slack (MET) :             0.085ns  (arrival time - required time)
-  Source:                 UPzynq20_test_design_i/ps7_0_axi_periph/xbar/inst/gen_sasd.crossbar_sasd_0/reg_slice_r/m_payload_i_reg[1]/C
-                            (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@10.000ns period=20.000ns})
-  Destination:            UPzynq20_test_design_i/ps7_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/RD.r_channel_0/rd_data_fifo_0/memory_reg[31][32]_srl32/D
-                            (rising edge-triggered cell SRLC32E clocked by clk_fpga_0  {rise@0.000ns fall@10.000ns period=20.000ns})
-  Path Group:             clk_fpga_0
-  Path Type:              Hold (Min at Fast Process Corner)
-  Requirement:            0.000ns  (clk_fpga_0 rise@0.000ns - clk_fpga_0 rise@0.000ns)
-  Data Path Delay:        0.303ns  (logic 0.141ns (46.562%)  route 0.162ns (53.437%))
-  Logic Levels:           0  
-  Clock Path Skew:        0.035ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    1.190ns
-    Source Clock Delay      (SCD):    0.891ns
-    Clock Pessimism Removal (CPR):    0.264ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock clk_fpga_0 rise edge)
-                                                      0.000     0.000 r  
-    PS7_X0Y0             PS7                          0.000     0.000 r  UPzynq20_test_design_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
-                         net (fo=1, routed)           0.310     0.310    UPzynq20_test_design_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.336 r  UPzynq20_test_design_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
-                         net (fo=3200, routed)        0.555     0.891    UPzynq20_test_design_i/ps7_0_axi_periph/xbar/inst/gen_sasd.crossbar_sasd_0/reg_slice_r/aclk
-    SLICE_X37Y91         FDRE                                         r  UPzynq20_test_design_i/ps7_0_axi_periph/xbar/inst/gen_sasd.crossbar_sasd_0/reg_slice_r/m_payload_i_reg[1]/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X37Y91         FDRE (Prop_fdre_C_Q)         0.141     1.032 r  UPzynq20_test_design_i/ps7_0_axi_periph/xbar/inst/gen_sasd.crossbar_sasd_0/reg_slice_r/m_payload_i_reg[1]/Q
-                         net (fo=1, routed)           0.162     1.193    UPzynq20_test_design_i/ps7_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/RD.r_channel_0/rd_data_fifo_0/in[32]
-    SLICE_X34Y91         SRLC32E                                      r  UPzynq20_test_design_i/ps7_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/RD.r_channel_0/rd_data_fifo_0/memory_reg[31][32]_srl32/D
-  -------------------------------------------------------------------    -------------------
-
-                         (clock clk_fpga_0 rise edge)
-                                                      0.000     0.000 r  
-    PS7_X0Y0             PS7                          0.000     0.000 r  UPzynq20_test_design_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
-                         net (fo=1, routed)           0.337     0.337    UPzynq20_test_design_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     0.366 r  UPzynq20_test_design_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
-                         net (fo=3200, routed)        0.824     1.190    UPzynq20_test_design_i/ps7_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/RD.r_channel_0/rd_data_fifo_0/aclk
-    SLICE_X34Y91         SRLC32E                                      r  UPzynq20_test_design_i/ps7_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/RD.r_channel_0/rd_data_fifo_0/memory_reg[31][32]_srl32/CLK
-                         clock pessimism             -0.264     0.926    
-    SLICE_X34Y91         SRLC32E (Hold_srlc32e_CLK_D)
-                                                      0.183     1.109    UPzynq20_test_design_i/ps7_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/RD.r_channel_0/rd_data_fifo_0/memory_reg[31][32]_srl32
-  -------------------------------------------------------------------
-                         required time                         -1.109    
-                         arrival time                           1.193    
-  -------------------------------------------------------------------
-                         slack                                  0.085    
-
-Slack (MET) :             0.098ns  (arrival time - required time)
-  Source:                 UPzynq20_test_design_i/ps7_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/SI_REG/aw.aw_pipe/m_payload_i_reg[21]/C
-                            (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@10.000ns period=20.000ns})
-  Destination:            UPzynq20_test_design_i/ps7_0_axi_periph/xbar/inst/gen_sasd.crossbar_sasd_0/addr_arbiter_inst/gen_no_arbiter.m_amesg_i_reg[22]/D
-                            (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@10.000ns period=20.000ns})
-  Path Group:             clk_fpga_0
-  Path Type:              Hold (Min at Fast Process Corner)
-  Requirement:            0.000ns  (clk_fpga_0 rise@0.000ns - clk_fpga_0 rise@0.000ns)
-  Data Path Delay:        0.571ns  (logic 0.246ns (43.068%)  route 0.325ns (56.932%))
-  Logic Levels:           1  (LUT4=1)
-  Clock Path Skew:        0.352ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    1.296ns
-    Source Clock Delay      (SCD):    0.909ns
+  Clock Path Skew:        0.182ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.215ns
+    Source Clock Delay      (SCD):    0.998ns
     Clock Pessimism Removal (CPR):    0.035ns
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
@@ -859,14 +763,12 @@ Slack (MET) :             0.098ns  (arrival time - required time)
     PS7_X0Y0             PS7                          0.000     0.000 r  UPzynq20_test_design_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
                          net (fo=1, routed)           0.310     0.310    UPzynq20_test_design_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.336 r  UPzynq20_test_design_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
-                         net (fo=3200, routed)        0.573     0.909    UPzynq20_test_design_i/ps7_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/SI_REG/aw.aw_pipe/aclk
-    SLICE_X26Y96         FDRE                                         r  UPzynq20_test_design_i/ps7_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/SI_REG/aw.aw_pipe/m_payload_i_reg[21]/C
+                         net (fo=4947, routed)        0.662     0.998    UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/s00_axi_aclk
+    SLICE_X60Y100        FDRE                                         r  UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/slv_reg20_reg[10]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X26Y96         FDRE (Prop_fdre_C_Q)         0.148     1.057 r  UPzynq20_test_design_i/ps7_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/SI_REG/aw.aw_pipe/m_payload_i_reg[21]/Q
-                         net (fo=1, routed)           0.325     1.382    UPzynq20_test_design_i/ps7_0_axi_periph/xbar/inst/gen_sasd.crossbar_sasd_0/addr_arbiter_inst/s_axi_awaddr[21]
-    SLICE_X26Y100        LUT4 (Prop_lut4_I3_O)        0.098     1.480 r  UPzynq20_test_design_i/ps7_0_axi_periph/xbar/inst/gen_sasd.crossbar_sasd_0/addr_arbiter_inst/gen_no_arbiter.m_amesg_i[22]_i_1/O
-                         net (fo=1, routed)           0.000     1.480    UPzynq20_test_design_i/ps7_0_axi_periph/xbar/inst/gen_sasd.crossbar_sasd_0/addr_arbiter_inst/s_amesg[22]
-    SLICE_X26Y100        FDRE                                         r  UPzynq20_test_design_i/ps7_0_axi_periph/xbar/inst/gen_sasd.crossbar_sasd_0/addr_arbiter_inst/gen_no_arbiter.m_amesg_i_reg[22]/D
+    SLICE_X60Y100        FDRE (Prop_fdre_C_Q)         0.141     1.139 r  UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/slv_reg20_reg[10]/Q
+                         net (fo=2, routed)           0.121     1.260    UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/slv_reg20_reg_n_0_[10]
+    SLICE_X61Y99         FDRE                                         r  UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/PWMrightControl_reg[10]/D
   -------------------------------------------------------------------    -------------------
 
                          (clock clk_fpga_0 rise edge)
@@ -874,75 +776,29 @@ Slack (MET) :             0.098ns  (arrival time - required time)
     PS7_X0Y0             PS7                          0.000     0.000 r  UPzynq20_test_design_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
                          net (fo=1, routed)           0.337     0.337    UPzynq20_test_design_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     0.366 r  UPzynq20_test_design_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
-                         net (fo=3200, routed)        0.930     1.296    UPzynq20_test_design_i/ps7_0_axi_periph/xbar/inst/gen_sasd.crossbar_sasd_0/addr_arbiter_inst/aclk
-    SLICE_X26Y100        FDRE                                         r  UPzynq20_test_design_i/ps7_0_axi_periph/xbar/inst/gen_sasd.crossbar_sasd_0/addr_arbiter_inst/gen_no_arbiter.m_amesg_i_reg[22]/C
-                         clock pessimism             -0.035     1.261    
-    SLICE_X26Y100        FDRE (Hold_fdre_C_D)         0.121     1.382    UPzynq20_test_design_i/ps7_0_axi_periph/xbar/inst/gen_sasd.crossbar_sasd_0/addr_arbiter_inst/gen_no_arbiter.m_amesg_i_reg[22]
+                         net (fo=4947, routed)        0.849     1.215    UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/s00_axi_aclk
+    SLICE_X61Y99         FDRE                                         r  UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/PWMrightControl_reg[10]/C
+                         clock pessimism             -0.035     1.180    
+    SLICE_X61Y99         FDRE (Hold_fdre_C_D)         0.047     1.227    UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/PWMrightControl_reg[10]
   -------------------------------------------------------------------
-                         required time                         -1.382    
-                         arrival time                           1.480    
+                         required time                         -1.227    
+                         arrival time                           1.260    
   -------------------------------------------------------------------
-                         slack                                  0.098    
+                         slack                                  0.033    
 
-Slack (MET) :             0.098ns  (arrival time - required time)
-  Source:                 UPzynq20_test_design_i/ps7_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/WR.aw_channel_0/s_awid_r_reg[7]/C
+Slack (MET) :             0.038ns  (arrival time - required time)
+  Source:                 UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/slv_reg9_reg[26]/C
                             (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@10.000ns period=20.000ns})
-  Destination:            UPzynq20_test_design_i/ps7_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/WR.b_channel_0/bid_fifo_0/memory_reg[3][15]_srl4/D
-                            (rising edge-triggered cell SRL16E clocked by clk_fpga_0  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Destination:            UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/slv_reg_buf9_reg[26]/D
+                            (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@10.000ns period=20.000ns})
   Path Group:             clk_fpga_0
   Path Type:              Hold (Min at Fast Process Corner)
   Requirement:            0.000ns  (clk_fpga_0 rise@0.000ns - clk_fpga_0 rise@0.000ns)
-  Data Path Delay:        0.297ns  (logic 0.141ns (47.453%)  route 0.156ns (52.547%))
+  Data Path Delay:        0.291ns  (logic 0.141ns (48.409%)  route 0.150ns (51.591%))
   Logic Levels:           0  
-  Clock Path Skew:        0.016ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    1.296ns
-    Source Clock Delay      (SCD):    0.994ns
-    Clock Pessimism Removal (CPR):    0.286ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock clk_fpga_0 rise edge)
-                                                      0.000     0.000 r  
-    PS7_X0Y0             PS7                          0.000     0.000 r  UPzynq20_test_design_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
-                         net (fo=1, routed)           0.310     0.310    UPzynq20_test_design_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.336 r  UPzynq20_test_design_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
-                         net (fo=3200, routed)        0.658     0.994    UPzynq20_test_design_i/ps7_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/WR.aw_channel_0/aclk
-    SLICE_X28Y103        FDRE                                         r  UPzynq20_test_design_i/ps7_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/WR.aw_channel_0/s_awid_r_reg[7]/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X28Y103        FDRE (Prop_fdre_C_Q)         0.141     1.135 r  UPzynq20_test_design_i/ps7_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/WR.aw_channel_0/s_awid_r_reg[7]/Q
-                         net (fo=1, routed)           0.156     1.291    UPzynq20_test_design_i/ps7_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/WR.b_channel_0/bid_fifo_0/in[11]
-    SLICE_X30Y104        SRL16E                                       r  UPzynq20_test_design_i/ps7_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/WR.b_channel_0/bid_fifo_0/memory_reg[3][15]_srl4/D
-  -------------------------------------------------------------------    -------------------
-
-                         (clock clk_fpga_0 rise edge)
-                                                      0.000     0.000 r  
-    PS7_X0Y0             PS7                          0.000     0.000 r  UPzynq20_test_design_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
-                         net (fo=1, routed)           0.337     0.337    UPzynq20_test_design_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     0.366 r  UPzynq20_test_design_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
-                         net (fo=3200, routed)        0.930     1.296    UPzynq20_test_design_i/ps7_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/WR.b_channel_0/bid_fifo_0/aclk
-    SLICE_X30Y104        SRL16E                                       r  UPzynq20_test_design_i/ps7_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/WR.b_channel_0/bid_fifo_0/memory_reg[3][15]_srl4/CLK
-                         clock pessimism             -0.286     1.010    
-    SLICE_X30Y104        SRL16E (Hold_srl16e_CLK_D)
-                                                      0.183     1.193    UPzynq20_test_design_i/ps7_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/WR.b_channel_0/bid_fifo_0/memory_reg[3][15]_srl4
-  -------------------------------------------------------------------
-                         required time                         -1.193    
-                         arrival time                           1.291    
-  -------------------------------------------------------------------
-                         slack                                  0.098    
-
-Slack (MET) :             0.101ns  (arrival time - required time)
-  Source:                 UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/PWMcounterMax_buf_reg[16]/C
-                            (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@10.000ns period=20.000ns})
-  Destination:            UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/counter_reg[16]/D
-                            (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@10.000ns period=20.000ns})
-  Path Group:             clk_fpga_0
-  Path Type:              Hold (Min at Fast Process Corner)
-  Requirement:            0.000ns  (clk_fpga_0 rise@0.000ns - clk_fpga_0 rise@0.000ns)
-  Data Path Delay:        0.464ns  (logic 0.256ns (55.146%)  route 0.208ns (44.854%))
-  Logic Levels:           2  (CARRY4=1 LUT5=1)
-  Clock Path Skew:        0.258ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    1.171ns
-    Source Clock Delay      (SCD):    0.878ns
+  Clock Path Skew:        0.181ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.187ns
+    Source Clock Delay      (SCD):    0.971ns
     Clock Pessimism Removal (CPR):    0.035ns
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
@@ -952,17 +808,12 @@ Slack (MET) :             0.101ns  (arrival time - required time)
     PS7_X0Y0             PS7                          0.000     0.000 r  UPzynq20_test_design_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
                          net (fo=1, routed)           0.310     0.310    UPzynq20_test_design_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.336 r  UPzynq20_test_design_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
-                         net (fo=3200, routed)        0.542     0.878    UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/s00_axi_aclk
-    SLICE_X48Y74         FDRE                                         r  UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/PWMcounterMax_buf_reg[16]/C
+                         net (fo=4947, routed)        0.635     0.971    UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/s00_axi_aclk
+    SLICE_X53Y100        FDRE                                         r  UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/slv_reg9_reg[26]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X48Y74         FDRE (Prop_fdre_C_Q)         0.141     1.019 r  UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/PWMcounterMax_buf_reg[16]/Q
-                         net (fo=2, routed)           0.208     1.227    UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/PWMcounterMax_buf[16]
-    SLICE_X51Y73         LUT5 (Prop_lut5_I1_O)        0.045     1.272 r  UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/counter[16]_i_5/O
-                         net (fo=1, routed)           0.000     1.272    UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/counter[16]_i_5_n_0
-    SLICE_X51Y73         CARRY4 (Prop_carry4_S[0]_O[0])
-                                                      0.070     1.342 r  UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/counter_reg[16]_i_1/O[0]
-                         net (fo=1, routed)           0.000     1.342    UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/counter_reg[16]_i_1_n_7
-    SLICE_X51Y73         FDRE                                         r  UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/counter_reg[16]/D
+    SLICE_X53Y100        FDRE (Prop_fdre_C_Q)         0.141     1.112 r  UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/slv_reg9_reg[26]/Q
+                         net (fo=2, routed)           0.150     1.262    UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/slv_reg9[26]
+    SLICE_X53Y99         FDRE                                         r  UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/slv_reg_buf9_reg[26]/D
   -------------------------------------------------------------------    -------------------
 
                          (clock clk_fpga_0 rise edge)
@@ -970,171 +821,30 @@ Slack (MET) :             0.101ns  (arrival time - required time)
     PS7_X0Y0             PS7                          0.000     0.000 r  UPzynq20_test_design_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
                          net (fo=1, routed)           0.337     0.337    UPzynq20_test_design_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     0.366 r  UPzynq20_test_design_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
-                         net (fo=3200, routed)        0.805     1.171    UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/s00_axi_aclk
-    SLICE_X51Y73         FDRE                                         r  UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/counter_reg[16]/C
-                         clock pessimism             -0.035     1.136    
-    SLICE_X51Y73         FDRE (Hold_fdre_C_D)         0.105     1.241    UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/counter_reg[16]
+                         net (fo=4947, routed)        0.821     1.187    UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/s00_axi_aclk
+    SLICE_X53Y99         FDRE                                         r  UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/slv_reg_buf9_reg[26]/C
+                         clock pessimism             -0.035     1.152    
+    SLICE_X53Y99         FDRE (Hold_fdre_C_D)         0.072     1.224    UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/slv_reg_buf9_reg[26]
   -------------------------------------------------------------------
-                         required time                         -1.241    
-                         arrival time                           1.342    
+                         required time                         -1.224    
+                         arrival time                           1.262    
   -------------------------------------------------------------------
-                         slack                                  0.101    
+                         slack                                  0.038    
 
-Slack (MET) :             0.103ns  (arrival time - required time)
-  Source:                 UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/PWMfromCPU_reg[9]/C
+Slack (MET) :             0.043ns  (arrival time - required time)
+  Source:                 UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/slv_reg20_reg[13]/C
                             (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@10.000ns period=20.000ns})
-  Destination:            UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/PWM_OUT_reg[9]/D
-                            (rising edge-triggered cell FDSE clocked by clk_fpga_0  {rise@0.000ns fall@10.000ns period=20.000ns})
-  Path Group:             clk_fpga_0
-  Path Type:              Hold (Min at Fast Process Corner)
-  Requirement:            0.000ns  (clk_fpga_0 rise@0.000ns - clk_fpga_0 rise@0.000ns)
-  Data Path Delay:        0.237ns  (logic 0.186ns (78.479%)  route 0.051ns (21.521%))
-  Logic Levels:           1  (LUT6=1)
-  Clock Path Skew:        0.013ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    1.209ns
-    Source Clock Delay      (SCD):    0.911ns
-    Clock Pessimism Removal (CPR):    0.285ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock clk_fpga_0 rise edge)
-                                                      0.000     0.000 r  
-    PS7_X0Y0             PS7                          0.000     0.000 r  UPzynq20_test_design_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
-                         net (fo=1, routed)           0.310     0.310    UPzynq20_test_design_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.336 r  UPzynq20_test_design_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
-                         net (fo=3200, routed)        0.575     0.911    UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/s00_axi_aclk
-    SLICE_X63Y64         FDRE                                         r  UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/PWMfromCPU_reg[9]/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X63Y64         FDRE (Prop_fdre_C_Q)         0.141     1.052 r  UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/PWMfromCPU_reg[9]/Q
-                         net (fo=1, routed)           0.051     1.103    UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/PWMfromCPU[9]
-    SLICE_X62Y64         LUT6 (Prop_lut6_I2_O)        0.045     1.148 r  UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/PWM_OUT[9]_i_1/O
-                         net (fo=1, routed)           0.000     1.148    UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/p_2_in__0[9]
-    SLICE_X62Y64         FDSE                                         r  UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/PWM_OUT_reg[9]/D
-  -------------------------------------------------------------------    -------------------
-
-                         (clock clk_fpga_0 rise edge)
-                                                      0.000     0.000 r  
-    PS7_X0Y0             PS7                          0.000     0.000 r  UPzynq20_test_design_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
-                         net (fo=1, routed)           0.337     0.337    UPzynq20_test_design_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     0.366 r  UPzynq20_test_design_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
-                         net (fo=3200, routed)        0.843     1.209    UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/s00_axi_aclk
-    SLICE_X62Y64         FDSE                                         r  UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/PWM_OUT_reg[9]/C
-                         clock pessimism             -0.285     0.924    
-    SLICE_X62Y64         FDSE (Hold_fdse_C_D)         0.121     1.045    UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/PWM_OUT_reg[9]
-  -------------------------------------------------------------------
-                         required time                         -1.045    
-                         arrival time                           1.148    
-  -------------------------------------------------------------------
-                         slack                                  0.103    
-
-Slack (MET) :             0.105ns  (arrival time - required time)
-  Source:                 UPzynq20_test_design_i/axi_gpio_3/U0/INTR_CTRLR_GEN.INTERRUPT_CONTROL_I/DO_IRPT_INPUT[0].GEN_POS_EDGE_DETECT.irpt_dly2_reg/C
-                            (rising edge-triggered cell FDSE clocked by clk_fpga_0  {rise@0.000ns fall@10.000ns period=20.000ns})
-  Destination:            UPzynq20_test_design_i/axi_gpio_3/U0/INTR_CTRLR_GEN.INTERRUPT_CONTROL_I/GEN_IP_IRPT_STATUS_REG[0].GEN_REG_STATUS.ip_irpt_status_reg_reg[0]/D
+  Destination:            UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/PWMrightControl_reg[13]/D
                             (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@10.000ns period=20.000ns})
   Path Group:             clk_fpga_0
   Path Type:              Hold (Min at Fast Process Corner)
   Requirement:            0.000ns  (clk_fpga_0 rise@0.000ns - clk_fpga_0 rise@0.000ns)
-  Data Path Delay:        0.239ns  (logic 0.186ns (77.822%)  route 0.053ns (22.178%))
-  Logic Levels:           1  (LUT6=1)
-  Clock Path Skew:        0.013ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    1.175ns
-    Source Clock Delay      (SCD):    0.881ns
-    Clock Pessimism Removal (CPR):    0.281ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock clk_fpga_0 rise edge)
-                                                      0.000     0.000 r  
-    PS7_X0Y0             PS7                          0.000     0.000 r  UPzynq20_test_design_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
-                         net (fo=1, routed)           0.310     0.310    UPzynq20_test_design_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.336 r  UPzynq20_test_design_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
-                         net (fo=3200, routed)        0.545     0.881    UPzynq20_test_design_i/axi_gpio_3/U0/INTR_CTRLR_GEN.INTERRUPT_CONTROL_I/s_axi_aclk
-    SLICE_X33Y75         FDSE                                         r  UPzynq20_test_design_i/axi_gpio_3/U0/INTR_CTRLR_GEN.INTERRUPT_CONTROL_I/DO_IRPT_INPUT[0].GEN_POS_EDGE_DETECT.irpt_dly2_reg/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X33Y75         FDSE (Prop_fdse_C_Q)         0.141     1.022 f  UPzynq20_test_design_i/axi_gpio_3/U0/INTR_CTRLR_GEN.INTERRUPT_CONTROL_I/DO_IRPT_INPUT[0].GEN_POS_EDGE_DETECT.irpt_dly2_reg/Q
-                         net (fo=1, routed)           0.053     1.075    UPzynq20_test_design_i/axi_gpio_3/U0/INTR_CTRLR_GEN.INTERRUPT_CONTROL_I/irpt_dly2
-    SLICE_X32Y75         LUT6 (Prop_lut6_I0_O)        0.045     1.120 r  UPzynq20_test_design_i/axi_gpio_3/U0/INTR_CTRLR_GEN.INTERRUPT_CONTROL_I/GEN_IP_IRPT_STATUS_REG[0].GEN_REG_STATUS.ip_irpt_status_reg[0]_i_1/O
-                         net (fo=1, routed)           0.000     1.120    UPzynq20_test_design_i/axi_gpio_3/U0/INTR_CTRLR_GEN.INTERRUPT_CONTROL_I/GEN_IP_IRPT_STATUS_REG[0].GEN_REG_STATUS.ip_irpt_status_reg[0]_i_1_n_0
-    SLICE_X32Y75         FDRE                                         r  UPzynq20_test_design_i/axi_gpio_3/U0/INTR_CTRLR_GEN.INTERRUPT_CONTROL_I/GEN_IP_IRPT_STATUS_REG[0].GEN_REG_STATUS.ip_irpt_status_reg_reg[0]/D
-  -------------------------------------------------------------------    -------------------
-
-                         (clock clk_fpga_0 rise edge)
-                                                      0.000     0.000 r  
-    PS7_X0Y0             PS7                          0.000     0.000 r  UPzynq20_test_design_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
-                         net (fo=1, routed)           0.337     0.337    UPzynq20_test_design_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     0.366 r  UPzynq20_test_design_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
-                         net (fo=3200, routed)        0.809     1.175    UPzynq20_test_design_i/axi_gpio_3/U0/INTR_CTRLR_GEN.INTERRUPT_CONTROL_I/s_axi_aclk
-    SLICE_X32Y75         FDRE                                         r  UPzynq20_test_design_i/axi_gpio_3/U0/INTR_CTRLR_GEN.INTERRUPT_CONTROL_I/GEN_IP_IRPT_STATUS_REG[0].GEN_REG_STATUS.ip_irpt_status_reg_reg[0]/C
-                         clock pessimism             -0.281     0.894    
-    SLICE_X32Y75         FDRE (Hold_fdre_C_D)         0.121     1.015    UPzynq20_test_design_i/axi_gpio_3/U0/INTR_CTRLR_GEN.INTERRUPT_CONTROL_I/GEN_IP_IRPT_STATUS_REG[0].GEN_REG_STATUS.ip_irpt_status_reg_reg[0]
-  -------------------------------------------------------------------
-                         required time                         -1.015    
-                         arrival time                           1.120    
-  -------------------------------------------------------------------
-                         slack                                  0.105    
-
-Slack (MET) :             0.108ns  (arrival time - required time)
-  Source:                 UPzynq20_test_design_i/IP_AXI_LEDS_1/U0/IP_AXI_LEDS_v1_0_S00_AXI_inst/slv_reg3_reg[18]/C
-                            (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@10.000ns period=20.000ns})
-  Destination:            UPzynq20_test_design_i/IP_AXI_LEDS_1/U0/IP_AXI_LEDS_v1_0_S00_AXI_inst/axi_rdata_reg[18]/D
-                            (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@10.000ns period=20.000ns})
-  Path Group:             clk_fpga_0
-  Path Type:              Hold (Min at Fast Process Corner)
-  Requirement:            0.000ns  (clk_fpga_0 rise@0.000ns - clk_fpga_0 rise@0.000ns)
-  Data Path Delay:        0.241ns  (logic 0.186ns (77.176%)  route 0.055ns (22.824%))
-  Logic Levels:           1  (LUT6=1)
-  Clock Path Skew:        0.013ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    1.175ns
-    Source Clock Delay      (SCD):    0.881ns
-    Clock Pessimism Removal (CPR):    0.281ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock clk_fpga_0 rise edge)
-                                                      0.000     0.000 r  
-    PS7_X0Y0             PS7                          0.000     0.000 r  UPzynq20_test_design_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
-                         net (fo=1, routed)           0.310     0.310    UPzynq20_test_design_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.336 r  UPzynq20_test_design_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
-                         net (fo=3200, routed)        0.545     0.881    UPzynq20_test_design_i/IP_AXI_LEDS_1/U0/IP_AXI_LEDS_v1_0_S00_AXI_inst/s00_axi_aclk
-    SLICE_X35Y74         FDRE                                         r  UPzynq20_test_design_i/IP_AXI_LEDS_1/U0/IP_AXI_LEDS_v1_0_S00_AXI_inst/slv_reg3_reg[18]/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X35Y74         FDRE (Prop_fdre_C_Q)         0.141     1.022 r  UPzynq20_test_design_i/IP_AXI_LEDS_1/U0/IP_AXI_LEDS_v1_0_S00_AXI_inst/slv_reg3_reg[18]/Q
-                         net (fo=1, routed)           0.055     1.077    UPzynq20_test_design_i/IP_AXI_LEDS_1/U0/IP_AXI_LEDS_v1_0_S00_AXI_inst/slv_reg3[18]
-    SLICE_X34Y74         LUT6 (Prop_lut6_I2_O)        0.045     1.122 r  UPzynq20_test_design_i/IP_AXI_LEDS_1/U0/IP_AXI_LEDS_v1_0_S00_AXI_inst/axi_rdata[18]_i_1/O
-                         net (fo=1, routed)           0.000     1.122    UPzynq20_test_design_i/IP_AXI_LEDS_1/U0/IP_AXI_LEDS_v1_0_S00_AXI_inst/reg_data_out[18]
-    SLICE_X34Y74         FDRE                                         r  UPzynq20_test_design_i/IP_AXI_LEDS_1/U0/IP_AXI_LEDS_v1_0_S00_AXI_inst/axi_rdata_reg[18]/D
-  -------------------------------------------------------------------    -------------------
-
-                         (clock clk_fpga_0 rise edge)
-                                                      0.000     0.000 r  
-    PS7_X0Y0             PS7                          0.000     0.000 r  UPzynq20_test_design_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
-                         net (fo=1, routed)           0.337     0.337    UPzynq20_test_design_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     0.366 r  UPzynq20_test_design_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
-                         net (fo=3200, routed)        0.809     1.175    UPzynq20_test_design_i/IP_AXI_LEDS_1/U0/IP_AXI_LEDS_v1_0_S00_AXI_inst/s00_axi_aclk
-    SLICE_X34Y74         FDRE                                         r  UPzynq20_test_design_i/IP_AXI_LEDS_1/U0/IP_AXI_LEDS_v1_0_S00_AXI_inst/axi_rdata_reg[18]/C
-                         clock pessimism             -0.281     0.894    
-    SLICE_X34Y74         FDRE (Hold_fdre_C_D)         0.120     1.014    UPzynq20_test_design_i/IP_AXI_LEDS_1/U0/IP_AXI_LEDS_v1_0_S00_AXI_inst/axi_rdata_reg[18]
-  -------------------------------------------------------------------
-                         required time                         -1.014    
-                         arrival time                           1.122    
-  -------------------------------------------------------------------
-                         slack                                  0.108    
-
-Slack (MET) :             0.114ns  (arrival time - required time)
-  Source:                 UPzynq20_test_design_i/ps7_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/WR.aw_channel_0/s_awid_r_reg[1]/C
-                            (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@10.000ns period=20.000ns})
-  Destination:            UPzynq20_test_design_i/ps7_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/WR.b_channel_0/bid_fifo_0/memory_reg[3][9]_srl4/D
-                            (rising edge-triggered cell SRL16E clocked by clk_fpga_0  {rise@0.000ns fall@10.000ns period=20.000ns})
-  Path Group:             clk_fpga_0
-  Path Type:              Hold (Min at Fast Process Corner)
-  Requirement:            0.000ns  (clk_fpga_0 rise@0.000ns - clk_fpga_0 rise@0.000ns)
-  Data Path Delay:        0.239ns  (logic 0.141ns (58.898%)  route 0.098ns (41.102%))
+  Data Path Delay:        0.295ns  (logic 0.141ns (47.872%)  route 0.154ns (52.128%))
   Logic Levels:           0  
-  Clock Path Skew:        0.016ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    1.296ns
-    Source Clock Delay      (SCD):    0.994ns
-    Clock Pessimism Removal (CPR):    0.286ns
+  Clock Path Skew:        0.182ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.215ns
+    Source Clock Delay      (SCD):    0.998ns
+    Clock Pessimism Removal (CPR):    0.035ns
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
@@ -1143,12 +853,12 @@ Slack (MET) :             0.114ns  (arrival time - required time)
     PS7_X0Y0             PS7                          0.000     0.000 r  UPzynq20_test_design_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
                          net (fo=1, routed)           0.310     0.310    UPzynq20_test_design_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.336 r  UPzynq20_test_design_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
-                         net (fo=3200, routed)        0.658     0.994    UPzynq20_test_design_i/ps7_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/WR.aw_channel_0/aclk
-    SLICE_X28Y105        FDRE                                         r  UPzynq20_test_design_i/ps7_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/WR.aw_channel_0/s_awid_r_reg[1]/C
+                         net (fo=4947, routed)        0.662     0.998    UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/s00_axi_aclk
+    SLICE_X60Y100        FDRE                                         r  UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/slv_reg20_reg[13]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X28Y105        FDRE (Prop_fdre_C_Q)         0.141     1.135 r  UPzynq20_test_design_i/ps7_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/WR.aw_channel_0/s_awid_r_reg[1]/Q
-                         net (fo=1, routed)           0.098     1.233    UPzynq20_test_design_i/ps7_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/WR.b_channel_0/bid_fifo_0/in[5]
-    SLICE_X30Y104        SRL16E                                       r  UPzynq20_test_design_i/ps7_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/WR.b_channel_0/bid_fifo_0/memory_reg[3][9]_srl4/D
+    SLICE_X60Y100        FDRE (Prop_fdre_C_Q)         0.141     1.139 r  UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/slv_reg20_reg[13]/Q
+                         net (fo=2, routed)           0.154     1.293    UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/slv_reg20_reg_n_0_[13]
+    SLICE_X61Y99         FDRE                                         r  UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/PWMrightControl_reg[13]/D
   -------------------------------------------------------------------    -------------------
 
                          (clock clk_fpga_0 rise edge)
@@ -1156,31 +866,30 @@ Slack (MET) :             0.114ns  (arrival time - required time)
     PS7_X0Y0             PS7                          0.000     0.000 r  UPzynq20_test_design_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
                          net (fo=1, routed)           0.337     0.337    UPzynq20_test_design_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     0.366 r  UPzynq20_test_design_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
-                         net (fo=3200, routed)        0.930     1.296    UPzynq20_test_design_i/ps7_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/WR.b_channel_0/bid_fifo_0/aclk
-    SLICE_X30Y104        SRL16E                                       r  UPzynq20_test_design_i/ps7_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/WR.b_channel_0/bid_fifo_0/memory_reg[3][9]_srl4/CLK
-                         clock pessimism             -0.286     1.010    
-    SLICE_X30Y104        SRL16E (Hold_srl16e_CLK_D)
-                                                      0.109     1.119    UPzynq20_test_design_i/ps7_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/WR.b_channel_0/bid_fifo_0/memory_reg[3][9]_srl4
+                         net (fo=4947, routed)        0.849     1.215    UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/s00_axi_aclk
+    SLICE_X61Y99         FDRE                                         r  UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/PWMrightControl_reg[13]/C
+                         clock pessimism             -0.035     1.180    
+    SLICE_X61Y99         FDRE (Hold_fdre_C_D)         0.070     1.250    UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/PWMrightControl_reg[13]
   -------------------------------------------------------------------
-                         required time                         -1.119    
-                         arrival time                           1.233    
+                         required time                         -1.250    
+                         arrival time                           1.293    
   -------------------------------------------------------------------
-                         slack                                  0.114    
+                         slack                                  0.043    
 
-Slack (MET) :             0.116ns  (arrival time - required time)
-  Source:                 UPzynq20_test_design_i/ps7_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/RD.r_channel_0/r_arid_r_reg[3]/C
+Slack (MET) :             0.043ns  (arrival time - required time)
+  Source:                 UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/slv_reg9_reg[25]/C
                             (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@10.000ns period=20.000ns})
-  Destination:            UPzynq20_test_design_i/ps7_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/RD.r_channel_0/transaction_fifo_0/memory_reg[31][4]_srl32/D
-                            (rising edge-triggered cell SRLC32E clocked by clk_fpga_0  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Destination:            UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/slv_reg_buf9_reg[25]/D
+                            (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@10.000ns period=20.000ns})
   Path Group:             clk_fpga_0
   Path Type:              Hold (Min at Fast Process Corner)
   Requirement:            0.000ns  (clk_fpga_0 rise@0.000ns - clk_fpga_0 rise@0.000ns)
-  Data Path Delay:        0.184ns  (logic 0.128ns (69.629%)  route 0.056ns (30.371%))
+  Data Path Delay:        0.294ns  (logic 0.141ns (47.944%)  route 0.153ns (52.056%))
   Logic Levels:           0  
-  Clock Path Skew:        0.013ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    1.210ns
-    Source Clock Delay      (SCD):    0.910ns
-    Clock Pessimism Removal (CPR):    0.287ns
+  Clock Path Skew:        0.181ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.187ns
+    Source Clock Delay      (SCD):    0.971ns
+    Clock Pessimism Removal (CPR):    0.035ns
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
@@ -1189,12 +898,12 @@ Slack (MET) :             0.116ns  (arrival time - required time)
     PS7_X0Y0             PS7                          0.000     0.000 r  UPzynq20_test_design_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
                          net (fo=1, routed)           0.310     0.310    UPzynq20_test_design_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.336 r  UPzynq20_test_design_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
-                         net (fo=3200, routed)        0.574     0.910    UPzynq20_test_design_i/ps7_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/RD.r_channel_0/aclk
-    SLICE_X27Y97         FDRE                                         r  UPzynq20_test_design_i/ps7_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/RD.r_channel_0/r_arid_r_reg[3]/C
+                         net (fo=4947, routed)        0.635     0.971    UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/s00_axi_aclk
+    SLICE_X53Y100        FDRE                                         r  UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/slv_reg9_reg[25]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X27Y97         FDRE (Prop_fdre_C_Q)         0.128     1.038 r  UPzynq20_test_design_i/ps7_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/RD.r_channel_0/r_arid_r_reg[3]/Q
-                         net (fo=1, routed)           0.056     1.093    UPzynq20_test_design_i/ps7_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/RD.r_channel_0/transaction_fifo_0/in[4]
-    SLICE_X26Y97         SRLC32E                                      r  UPzynq20_test_design_i/ps7_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/RD.r_channel_0/transaction_fifo_0/memory_reg[31][4]_srl32/D
+    SLICE_X53Y100        FDRE (Prop_fdre_C_Q)         0.141     1.112 r  UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/slv_reg9_reg[25]/Q
+                         net (fo=2, routed)           0.153     1.265    UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/slv_reg9[25]
+    SLICE_X53Y99         FDRE                                         r  UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/slv_reg_buf9_reg[25]/D
   -------------------------------------------------------------------    -------------------
 
                          (clock clk_fpga_0 rise edge)
@@ -1202,16 +911,286 @@ Slack (MET) :             0.116ns  (arrival time - required time)
     PS7_X0Y0             PS7                          0.000     0.000 r  UPzynq20_test_design_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
                          net (fo=1, routed)           0.337     0.337    UPzynq20_test_design_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     0.366 r  UPzynq20_test_design_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
-                         net (fo=3200, routed)        0.844     1.210    UPzynq20_test_design_i/ps7_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/RD.r_channel_0/transaction_fifo_0/aclk
-    SLICE_X26Y97         SRLC32E                                      r  UPzynq20_test_design_i/ps7_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/RD.r_channel_0/transaction_fifo_0/memory_reg[31][4]_srl32/CLK
-                         clock pessimism             -0.287     0.923    
-    SLICE_X26Y97         SRLC32E (Hold_srlc32e_CLK_D)
-                                                      0.055     0.978    UPzynq20_test_design_i/ps7_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/RD.r_channel_0/transaction_fifo_0/memory_reg[31][4]_srl32
+                         net (fo=4947, routed)        0.821     1.187    UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/s00_axi_aclk
+    SLICE_X53Y99         FDRE                                         r  UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/slv_reg_buf9_reg[25]/C
+                         clock pessimism             -0.035     1.152    
+    SLICE_X53Y99         FDRE (Hold_fdre_C_D)         0.070     1.222    UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/slv_reg_buf9_reg[25]
   -------------------------------------------------------------------
-                         required time                         -0.978    
-                         arrival time                           1.093    
+                         required time                         -1.222    
+                         arrival time                           1.265    
   -------------------------------------------------------------------
-                         slack                                  0.116    
+                         slack                                  0.043    
+
+Slack (MET) :             0.056ns  (arrival time - required time)
+  Source:                 UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/slv_reg20_reg[9]/C
+                            (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Destination:            UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/PWMrightControl_reg[9]/D
+                            (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Path Group:             clk_fpga_0
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clk_fpga_0 rise@0.000ns - clk_fpga_0 rise@0.000ns)
+  Data Path Delay:        0.257ns  (logic 0.128ns (49.873%)  route 0.129ns (50.127%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.182ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.215ns
+    Source Clock Delay      (SCD):    0.998ns
+    Clock Pessimism Removal (CPR):    0.035ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_fpga_0 rise edge)
+                                                      0.000     0.000 r  
+    PS7_X0Y0             PS7                          0.000     0.000 r  UPzynq20_test_design_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
+                         net (fo=1, routed)           0.310     0.310    UPzynq20_test_design_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.336 r  UPzynq20_test_design_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=4947, routed)        0.662     0.998    UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/s00_axi_aclk
+    SLICE_X60Y100        FDRE                                         r  UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/slv_reg20_reg[9]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X60Y100        FDRE (Prop_fdre_C_Q)         0.128     1.126 r  UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/slv_reg20_reg[9]/Q
+                         net (fo=2, routed)           0.129     1.255    UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/slv_reg20_reg_n_0_[9]
+    SLICE_X60Y99         FDRE                                         r  UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/PWMrightControl_reg[9]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_fpga_0 rise edge)
+                                                      0.000     0.000 r  
+    PS7_X0Y0             PS7                          0.000     0.000 r  UPzynq20_test_design_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
+                         net (fo=1, routed)           0.337     0.337    UPzynq20_test_design_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     0.366 r  UPzynq20_test_design_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=4947, routed)        0.849     1.215    UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/s00_axi_aclk
+    SLICE_X60Y99         FDRE                                         r  UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/PWMrightControl_reg[9]/C
+                         clock pessimism             -0.035     1.180    
+    SLICE_X60Y99         FDRE (Hold_fdre_C_D)         0.019     1.199    UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/PWMrightControl_reg[9]
+  -------------------------------------------------------------------
+                         required time                         -1.199    
+                         arrival time                           1.255    
+  -------------------------------------------------------------------
+                         slack                                  0.056    
+
+Slack (MET) :             0.065ns  (arrival time - required time)
+  Source:                 UPzynq20_test_design_i/ps7_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/SI_REG/b.b_pipe/m_payload_i_reg[10]/C
+                            (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Destination:            UPzynq20_test_design_i/processing_system7_0/inst/PS7_i/MAXIGP0BID[8]
+                            (rising edge-triggered cell PS7 clocked by clk_fpga_0  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Path Group:             clk_fpga_0
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clk_fpga_0 rise@0.000ns - clk_fpga_0 rise@0.000ns)
+  Data Path Delay:        0.278ns  (logic 0.164ns (58.935%)  route 0.114ns (41.065%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.213ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.240ns
+    Source Clock Delay      (SCD):    0.992ns
+    Clock Pessimism Removal (CPR):    0.035ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_fpga_0 rise edge)
+                                                      0.000     0.000 r  
+    PS7_X0Y0             PS7                          0.000     0.000 r  UPzynq20_test_design_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
+                         net (fo=1, routed)           0.310     0.310    UPzynq20_test_design_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.336 r  UPzynq20_test_design_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=4947, routed)        0.656     0.992    UPzynq20_test_design_i/ps7_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/SI_REG/b.b_pipe/aclk
+    SLICE_X26Y100        FDRE                                         r  UPzynq20_test_design_i/ps7_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/SI_REG/b.b_pipe/m_payload_i_reg[10]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X26Y100        FDRE (Prop_fdre_C_Q)         0.164     1.156 r  UPzynq20_test_design_i/ps7_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/SI_REG/b.b_pipe/m_payload_i_reg[10]/Q
+                         net (fo=1, routed)           0.114     1.270    UPzynq20_test_design_i/processing_system7_0/inst/M_AXI_GP0_BID[8]
+    PS7_X0Y0             PS7                                          r  UPzynq20_test_design_i/processing_system7_0/inst/PS7_i/MAXIGP0BID[8]
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_fpga_0 rise edge)
+                                                      0.000     0.000 r  
+    PS7_X0Y0             PS7                          0.000     0.000 r  UPzynq20_test_design_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
+                         net (fo=1, routed)           0.337     0.337    UPzynq20_test_design_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     0.366 r  UPzynq20_test_design_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=4947, routed)        0.874     1.240    UPzynq20_test_design_i/processing_system7_0/inst/M_AXI_GP0_ACLK
+    PS7_X0Y0             PS7                                          r  UPzynq20_test_design_i/processing_system7_0/inst/PS7_i/MAXIGP0ACLK
+                         clock pessimism             -0.035     1.205    
+    PS7_X0Y0             PS7 (Hold_ps7_MAXIGP0ACLK_MAXIGP0BID[8])
+                                                      0.000     1.205    UPzynq20_test_design_i/processing_system7_0/inst/PS7_i
+  -------------------------------------------------------------------
+                         required time                         -1.205    
+                         arrival time                           1.270    
+  -------------------------------------------------------------------
+                         slack                                  0.065    
+
+Slack (MET) :             0.074ns  (arrival time - required time)
+  Source:                 UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/slv_reg15_reg[25]/C
+                            (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Destination:            UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/slv_reg_buf15_reg[25]/D
+                            (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Path Group:             clk_fpga_0
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clk_fpga_0 rise@0.000ns - clk_fpga_0 rise@0.000ns)
+  Data Path Delay:        0.325ns  (logic 0.141ns (43.382%)  route 0.184ns (56.618%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.181ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.187ns
+    Source Clock Delay      (SCD):    0.971ns
+    Clock Pessimism Removal (CPR):    0.035ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_fpga_0 rise edge)
+                                                      0.000     0.000 r  
+    PS7_X0Y0             PS7                          0.000     0.000 r  UPzynq20_test_design_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
+                         net (fo=1, routed)           0.310     0.310    UPzynq20_test_design_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.336 r  UPzynq20_test_design_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=4947, routed)        0.635     0.971    UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/s00_axi_aclk
+    SLICE_X52Y100        FDRE                                         r  UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/slv_reg15_reg[25]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X52Y100        FDRE (Prop_fdre_C_Q)         0.141     1.112 r  UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/slv_reg15_reg[25]/Q
+                         net (fo=2, routed)           0.184     1.296    UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/slv_reg15[25]
+    SLICE_X52Y99         FDRE                                         r  UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/slv_reg_buf15_reg[25]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_fpga_0 rise edge)
+                                                      0.000     0.000 r  
+    PS7_X0Y0             PS7                          0.000     0.000 r  UPzynq20_test_design_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
+                         net (fo=1, routed)           0.337     0.337    UPzynq20_test_design_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     0.366 r  UPzynq20_test_design_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=4947, routed)        0.821     1.187    UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/s00_axi_aclk
+    SLICE_X52Y99         FDRE                                         r  UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/slv_reg_buf15_reg[25]/C
+                         clock pessimism             -0.035     1.152    
+    SLICE_X52Y99         FDRE (Hold_fdre_C_D)         0.070     1.222    UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/slv_reg_buf15_reg[25]
+  -------------------------------------------------------------------
+                         required time                         -1.222    
+                         arrival time                           1.296    
+  -------------------------------------------------------------------
+                         slack                                  0.074    
+
+Slack (MET) :             0.074ns  (arrival time - required time)
+  Source:                 UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/slv_reg15_reg[31]/C
+                            (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Destination:            UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/slv_reg_buf15_reg[31]/D
+                            (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Path Group:             clk_fpga_0
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clk_fpga_0 rise@0.000ns - clk_fpga_0 rise@0.000ns)
+  Data Path Delay:        0.322ns  (logic 0.141ns (43.744%)  route 0.181ns (56.256%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.182ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.191ns
+    Source Clock Delay      (SCD):    0.974ns
+    Clock Pessimism Removal (CPR):    0.035ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_fpga_0 rise edge)
+                                                      0.000     0.000 r  
+    PS7_X0Y0             PS7                          0.000     0.000 r  UPzynq20_test_design_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
+                         net (fo=1, routed)           0.310     0.310    UPzynq20_test_design_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.336 r  UPzynq20_test_design_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=4947, routed)        0.638     0.974    UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/s00_axi_aclk
+    SLICE_X48Y100        FDRE                                         r  UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/slv_reg15_reg[31]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X48Y100        FDRE (Prop_fdre_C_Q)         0.141     1.115 r  UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/slv_reg15_reg[31]/Q
+                         net (fo=2, routed)           0.181     1.296    UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/slv_reg15[31]
+    SLICE_X49Y99         FDRE                                         r  UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/slv_reg_buf15_reg[31]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_fpga_0 rise edge)
+                                                      0.000     0.000 r  
+    PS7_X0Y0             PS7                          0.000     0.000 r  UPzynq20_test_design_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
+                         net (fo=1, routed)           0.337     0.337    UPzynq20_test_design_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     0.366 r  UPzynq20_test_design_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=4947, routed)        0.825     1.191    UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/s00_axi_aclk
+    SLICE_X49Y99         FDRE                                         r  UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/slv_reg_buf15_reg[31]/C
+                         clock pessimism             -0.035     1.156    
+    SLICE_X49Y99         FDRE (Hold_fdre_C_D)         0.066     1.222    UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/slv_reg_buf15_reg[31]
+  -------------------------------------------------------------------
+                         required time                         -1.222    
+                         arrival time                           1.296    
+  -------------------------------------------------------------------
+                         slack                                  0.074    
+
+Slack (MET) :             0.082ns  (arrival time - required time)
+  Source:                 UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/slv_reg11_reg[31]/C
+                            (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Destination:            UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/slv_reg_buf11_reg[31]/D
+                            (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Path Group:             clk_fpga_0
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clk_fpga_0 rise@0.000ns - clk_fpga_0 rise@0.000ns)
+  Data Path Delay:        0.276ns  (logic 0.148ns (53.711%)  route 0.128ns (46.289%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.181ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.187ns
+    Source Clock Delay      (SCD):    0.971ns
+    Clock Pessimism Removal (CPR):    0.035ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_fpga_0 rise edge)
+                                                      0.000     0.000 r  
+    PS7_X0Y0             PS7                          0.000     0.000 r  UPzynq20_test_design_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
+                         net (fo=1, routed)           0.310     0.310    UPzynq20_test_design_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.336 r  UPzynq20_test_design_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=4947, routed)        0.635     0.971    UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/s00_axi_aclk
+    SLICE_X50Y100        FDRE                                         r  UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/slv_reg11_reg[31]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X50Y100        FDRE (Prop_fdre_C_Q)         0.148     1.119 r  UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/slv_reg11_reg[31]/Q
+                         net (fo=2, routed)           0.128     1.247    UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/slv_reg11[31]
+    SLICE_X51Y98         FDRE                                         r  UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/slv_reg_buf11_reg[31]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_fpga_0 rise edge)
+                                                      0.000     0.000 r  
+    PS7_X0Y0             PS7                          0.000     0.000 r  UPzynq20_test_design_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
+                         net (fo=1, routed)           0.337     0.337    UPzynq20_test_design_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     0.366 r  UPzynq20_test_design_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=4947, routed)        0.821     1.187    UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/s00_axi_aclk
+    SLICE_X51Y98         FDRE                                         r  UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/slv_reg_buf11_reg[31]/C
+                         clock pessimism             -0.035     1.152    
+    SLICE_X51Y98         FDRE (Hold_fdre_C_D)         0.013     1.165    UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/slv_reg_buf11_reg[31]
+  -------------------------------------------------------------------
+                         required time                         -1.165    
+                         arrival time                           1.247    
+  -------------------------------------------------------------------
+                         slack                                  0.082    
+
+Slack (MET) :             0.087ns  (arrival time - required time)
+  Source:                 UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/slv_reg8_reg[25]/C
+                            (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Destination:            UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/slv_reg_buf8_reg[25]/D
+                            (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Path Group:             clk_fpga_0
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clk_fpga_0 rise@0.000ns - clk_fpga_0 rise@0.000ns)
+  Data Path Delay:        0.318ns  (logic 0.164ns (51.497%)  route 0.154ns (48.503%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.185ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.191ns
+    Source Clock Delay      (SCD):    0.971ns
+    Clock Pessimism Removal (CPR):    0.035ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_fpga_0 rise edge)
+                                                      0.000     0.000 r  
+    PS7_X0Y0             PS7                          0.000     0.000 r  UPzynq20_test_design_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
+                         net (fo=1, routed)           0.310     0.310    UPzynq20_test_design_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.336 r  UPzynq20_test_design_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=4947, routed)        0.635     0.971    UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/s00_axi_aclk
+    SLICE_X50Y101        FDRE                                         r  UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/slv_reg8_reg[25]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X50Y101        FDRE (Prop_fdre_C_Q)         0.164     1.135 r  UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/slv_reg8_reg[25]/Q
+                         net (fo=2, routed)           0.154     1.289    UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/slv_reg8[25]
+    SLICE_X49Y99         FDRE                                         r  UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/slv_reg_buf8_reg[25]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_fpga_0 rise edge)
+                                                      0.000     0.000 r  
+    PS7_X0Y0             PS7                          0.000     0.000 r  UPzynq20_test_design_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
+                         net (fo=1, routed)           0.337     0.337    UPzynq20_test_design_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     0.366 r  UPzynq20_test_design_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=4947, routed)        0.825     1.191    UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/s00_axi_aclk
+    SLICE_X49Y99         FDRE                                         r  UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/slv_reg_buf8_reg[25]/C
+                         clock pessimism             -0.035     1.156    
+    SLICE_X49Y99         FDRE (Hold_fdre_C_D)         0.047     1.203    UPzynq20_test_design_i/IP_AXI_PWM_0/U0/IP_AXI_PWM_v1_0_S00_AXI_inst/slv_reg_buf8_reg[25]
+  -------------------------------------------------------------------
+                         required time                         -1.203    
+                         arrival time                           1.289    
+  -------------------------------------------------------------------
+                         slack                                  0.087    
 
 
 
@@ -1226,35 +1205,35 @@ Sources:            { UPzynq20_test_design_i/processing_system7_0/inst/PS7_i/FCL
 
 Check Type        Corner  Lib Pin      Reference Pin  Required(ns)  Actual(ns)  Slack(ns)  Location        Pin
 Min Period        n/a     BUFG/I       n/a            1.592         20.000      18.408     BUFGCTRL_X0Y16  UPzynq20_test_design_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/I
-Min Period        n/a     FDSE/C       n/a            1.000         20.000      19.000     SLICE_X31Y80    UPzynq20_test_design_i/IP_AXI_LEDS_0/U0/IP_AXI_LEDS_v1_0_S00_AXI_inst/aw_en_reg/C
-Min Period        n/a     FDSE/C       n/a            1.000         20.000      19.000     SLICE_X32Y80    UPzynq20_test_design_i/IP_AXI_LEDS_0/U0/IP_AXI_LEDS_v1_0_S00_AXI_inst/axi_araddr_reg[2]/C
-Min Period        n/a     FDSE/C       n/a            1.000         20.000      19.000     SLICE_X32Y80    UPzynq20_test_design_i/IP_AXI_LEDS_0/U0/IP_AXI_LEDS_v1_0_S00_AXI_inst/axi_araddr_reg[3]/C
-Min Period        n/a     FDRE/C       n/a            1.000         20.000      19.000     SLICE_X28Y81    UPzynq20_test_design_i/IP_AXI_LEDS_0/U0/IP_AXI_LEDS_v1_0_S00_AXI_inst/axi_arready_reg/C
-Min Period        n/a     FDRE/C       n/a            1.000         20.000      19.000     SLICE_X33Y81    UPzynq20_test_design_i/IP_AXI_LEDS_1/U0/IP_AXI_LEDS_v1_0_S00_AXI_inst/slv_reg2_reg[24]/C
-Min Period        n/a     FDRE/C       n/a            1.000         20.000      19.000     SLICE_X33Y81    UPzynq20_test_design_i/IP_AXI_LEDS_1/U0/IP_AXI_LEDS_v1_0_S00_AXI_inst/slv_reg2_reg[25]/C
-Min Period        n/a     FDRE/C       n/a            1.000         20.000      19.000     SLICE_X33Y81    UPzynq20_test_design_i/IP_AXI_LEDS_1/U0/IP_AXI_LEDS_v1_0_S00_AXI_inst/slv_reg2_reg[26]/C
-Min Period        n/a     FDRE/C       n/a            1.000         20.000      19.000     SLICE_X33Y81    UPzynq20_test_design_i/IP_AXI_LEDS_1/U0/IP_AXI_LEDS_v1_0_S00_AXI_inst/slv_reg2_reg[27]/C
-Min Period        n/a     FDRE/C       n/a            1.000         20.000      19.000     SLICE_X33Y81    UPzynq20_test_design_i/IP_AXI_LEDS_1/U0/IP_AXI_LEDS_v1_0_S00_AXI_inst/slv_reg2_reg[28]/C
-Low Pulse Width   Slow    SRLC32E/CLK  n/a            0.770         10.000      9.230      SLICE_X34Y91    UPzynq20_test_design_i/ps7_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/RD.r_channel_0/rd_data_fifo_0/memory_reg[31][29]_srl32/CLK
-Low Pulse Width   Slow    SRLC32E/CLK  n/a            0.770         10.000      9.230      SLICE_X34Y91    UPzynq20_test_design_i/ps7_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/RD.r_channel_0/rd_data_fifo_0/memory_reg[31][30]_srl32/CLK
-Low Pulse Width   Slow    SRLC32E/CLK  n/a            0.770         10.000      9.230      SLICE_X34Y91    UPzynq20_test_design_i/ps7_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/RD.r_channel_0/rd_data_fifo_0/memory_reg[31][31]_srl32/CLK
-Low Pulse Width   Slow    SRLC32E/CLK  n/a            0.770         10.000      9.230      SLICE_X34Y91    UPzynq20_test_design_i/ps7_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/RD.r_channel_0/rd_data_fifo_0/memory_reg[31][32]_srl32/CLK
-Low Pulse Width   Slow    SRL16E/CLK   n/a            0.770         10.000      9.230      SLICE_X34Y104   UPzynq20_test_design_i/ps7_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/WR.b_channel_0/bid_fifo_0/memory_reg[3][0]_srl4/CLK
-Low Pulse Width   Slow    SRL16E/CLK   n/a            0.770         10.000      9.230      SLICE_X30Y104   UPzynq20_test_design_i/ps7_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/WR.b_channel_0/bid_fifo_0/memory_reg[3][10]_srl4/CLK
-Low Pulse Width   Slow    SRL16E/CLK   n/a            0.770         10.000      9.230      SLICE_X30Y104   UPzynq20_test_design_i/ps7_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/WR.b_channel_0/bid_fifo_0/memory_reg[3][11]_srl4/CLK
-Low Pulse Width   Slow    SRL16E/CLK   n/a            0.770         10.000      9.230      SLICE_X30Y104   UPzynq20_test_design_i/ps7_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/WR.b_channel_0/bid_fifo_0/memory_reg[3][12]_srl4/CLK
-Low Pulse Width   Slow    SRL16E/CLK   n/a            0.770         10.000      9.230      SLICE_X30Y104   UPzynq20_test_design_i/ps7_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/WR.b_channel_0/bid_fifo_0/memory_reg[3][13]_srl4/CLK
-Low Pulse Width   Slow    SRL16E/CLK   n/a            0.770         10.000      9.230      SLICE_X30Y104   UPzynq20_test_design_i/ps7_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/WR.b_channel_0/bid_fifo_0/memory_reg[3][14]_srl4/CLK
-High Pulse Width  Fast    SRLC32E/CLK  n/a            0.770         10.000      9.230      SLICE_X30Y98    UPzynq20_test_design_i/ps7_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/RD.r_channel_0/transaction_fifo_0/memory_reg[31][9]_srl32/CLK
-High Pulse Width  Fast    SRL16E/CLK   n/a            0.770         10.000      9.230      SLICE_X34Y104   UPzynq20_test_design_i/ps7_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/WR.b_channel_0/bid_fifo_0/memory_reg[3][0]_srl4/CLK
-High Pulse Width  Fast    SRL16E/CLK   n/a            0.770         10.000      9.230      SLICE_X30Y104   UPzynq20_test_design_i/ps7_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/WR.b_channel_0/bid_fifo_0/memory_reg[3][10]_srl4/CLK
-High Pulse Width  Fast    SRL16E/CLK   n/a            0.770         10.000      9.230      SLICE_X30Y104   UPzynq20_test_design_i/ps7_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/WR.b_channel_0/bid_fifo_0/memory_reg[3][11]_srl4/CLK
-High Pulse Width  Fast    SRL16E/CLK   n/a            0.770         10.000      9.230      SLICE_X30Y104   UPzynq20_test_design_i/ps7_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/WR.b_channel_0/bid_fifo_0/memory_reg[3][12]_srl4/CLK
-High Pulse Width  Fast    SRL16E/CLK   n/a            0.770         10.000      9.230      SLICE_X30Y104   UPzynq20_test_design_i/ps7_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/WR.b_channel_0/bid_fifo_0/memory_reg[3][13]_srl4/CLK
-High Pulse Width  Fast    SRL16E/CLK   n/a            0.770         10.000      9.230      SLICE_X30Y104   UPzynq20_test_design_i/ps7_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/WR.b_channel_0/bid_fifo_0/memory_reg[3][14]_srl4/CLK
-High Pulse Width  Fast    SRL16E/CLK   n/a            0.770         10.000      9.230      SLICE_X30Y104   UPzynq20_test_design_i/ps7_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/WR.b_channel_0/bid_fifo_0/memory_reg[3][15]_srl4/CLK
-High Pulse Width  Fast    SRL16E/CLK   n/a            0.770         10.000      9.230      SLICE_X30Y105   UPzynq20_test_design_i/ps7_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/WR.b_channel_0/bid_fifo_0/memory_reg[3][16]_srl4/CLK
-High Pulse Width  Fast    SRL16E/CLK   n/a            0.770         10.000      9.230      SLICE_X30Y105   UPzynq20_test_design_i/ps7_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/WR.b_channel_0/bid_fifo_0/memory_reg[3][17]_srl4/CLK
+Min Period        n/a     FDSE/C       n/a            1.000         20.000      19.000     SLICE_X38Y69    UPzynq20_test_design_i/IP_AXI_LEDS_0/U0/IP_AXI_LEDS_v1_0_S00_AXI_inst/aw_en_reg/C
+Min Period        n/a     FDSE/C       n/a            1.000         20.000      19.000     SLICE_X36Y68    UPzynq20_test_design_i/IP_AXI_LEDS_0/U0/IP_AXI_LEDS_v1_0_S00_AXI_inst/axi_araddr_reg[2]/C
+Min Period        n/a     FDRE/C       n/a            1.000         20.000      19.000     SLICE_X32Y61    UPzynq20_test_design_i/IP_AXI_LEDS_2/U0/IP_AXI_LEDS_v1_0_S00_AXI_inst/slv_reg1_reg[29]/C
+Min Period        n/a     FDRE/C       n/a            1.000         20.000      19.000     SLICE_X41Y51    UPzynq20_test_design_i/IP_AXI_LEDS_2/U0/IP_AXI_LEDS_v1_0_S00_AXI_inst/slv_reg1_reg[2]/C
+Min Period        n/a     FDRE/C       n/a            1.000         20.000      19.000     SLICE_X32Y61    UPzynq20_test_design_i/IP_AXI_LEDS_2/U0/IP_AXI_LEDS_v1_0_S00_AXI_inst/slv_reg1_reg[30]/C
+Min Period        n/a     FDRE/C       n/a            1.000         20.000      19.000     SLICE_X32Y61    UPzynq20_test_design_i/IP_AXI_LEDS_2/U0/IP_AXI_LEDS_v1_0_S00_AXI_inst/slv_reg1_reg[31]/C
+Min Period        n/a     FDRE/C       n/a            1.000         20.000      19.000     SLICE_X41Y51    UPzynq20_test_design_i/IP_AXI_LEDS_2/U0/IP_AXI_LEDS_v1_0_S00_AXI_inst/slv_reg1_reg[3]/C
+Min Period        n/a     FDRE/C       n/a            1.000         20.000      19.000     SLICE_X41Y51    UPzynq20_test_design_i/IP_AXI_LEDS_2/U0/IP_AXI_LEDS_v1_0_S00_AXI_inst/slv_reg1_reg[4]/C
+Min Period        n/a     FDRE/C       n/a            1.000         20.000      19.000     SLICE_X41Y51    UPzynq20_test_design_i/IP_AXI_LEDS_2/U0/IP_AXI_LEDS_v1_0_S00_AXI_inst/slv_reg1_reg[5]/C
+Low Pulse Width   Slow    SRLC32E/CLK  n/a            0.770         10.000      9.230      SLICE_X30Y84    UPzynq20_test_design_i/ps7_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/RD.r_channel_0/rd_data_fifo_0/memory_reg[31][11]_srl32/CLK
+Low Pulse Width   Slow    SRLC32E/CLK  n/a            0.770         10.000      9.230      SLICE_X30Y84    UPzynq20_test_design_i/ps7_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/RD.r_channel_0/rd_data_fifo_0/memory_reg[31][12]_srl32/CLK
+Low Pulse Width   Fast    SRLC32E/CLK  n/a            0.770         10.000      9.230      SLICE_X30Y85    UPzynq20_test_design_i/ps7_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/RD.r_channel_0/rd_data_fifo_0/memory_reg[31][13]_srl32/CLK
+Low Pulse Width   Fast    SRLC32E/CLK  n/a            0.770         10.000      9.230      SLICE_X30Y87    UPzynq20_test_design_i/ps7_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/RD.r_channel_0/rd_data_fifo_0/memory_reg[31][14]_srl32/CLK
+Low Pulse Width   Fast    SRLC32E/CLK  n/a            0.770         10.000      9.230      SLICE_X30Y87    UPzynq20_test_design_i/ps7_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/RD.r_channel_0/rd_data_fifo_0/memory_reg[31][15]_srl32/CLK
+Low Pulse Width   Fast    SRLC32E/CLK  n/a            0.770         10.000      9.230      SLICE_X30Y85    UPzynq20_test_design_i/ps7_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/RD.r_channel_0/rd_data_fifo_0/memory_reg[31][16]_srl32/CLK
+Low Pulse Width   Fast    SRLC32E/CLK  n/a            0.770         10.000      9.230      SLICE_X30Y85    UPzynq20_test_design_i/ps7_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/RD.r_channel_0/rd_data_fifo_0/memory_reg[31][17]_srl32/CLK
+Low Pulse Width   Fast    SRLC32E/CLK  n/a            0.770         10.000      9.230      SLICE_X30Y87    UPzynq20_test_design_i/ps7_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/RD.r_channel_0/rd_data_fifo_0/memory_reg[31][24]_srl32/CLK
+Low Pulse Width   Fast    SRLC32E/CLK  n/a            0.770         10.000      9.230      SLICE_X30Y87    UPzynq20_test_design_i/ps7_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/RD.r_channel_0/rd_data_fifo_0/memory_reg[31][27]_srl32/CLK
+Low Pulse Width   Slow    SRLC32E/CLK  n/a            0.770         10.000      9.230      SLICE_X30Y84    UPzynq20_test_design_i/ps7_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/RD.r_channel_0/rd_data_fifo_0/memory_reg[31][29]_srl32/CLK
+High Pulse Width  Fast    SRLC32E/CLK  n/a            0.770         10.000      9.230      SLICE_X30Y83    UPzynq20_test_design_i/ps7_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/RD.r_channel_0/rd_data_fifo_0/memory_reg[31][10]_srl32/CLK
+High Pulse Width  Fast    SRLC32E/CLK  n/a            0.770         10.000      9.230      SLICE_X30Y83    UPzynq20_test_design_i/ps7_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/RD.r_channel_0/rd_data_fifo_0/memory_reg[31][32]_srl32/CLK
+High Pulse Width  Fast    SRLC32E/CLK  n/a            0.770         10.000      9.230      SLICE_X30Y83    UPzynq20_test_design_i/ps7_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/RD.r_channel_0/rd_data_fifo_0/memory_reg[31][33]_srl32/CLK
+High Pulse Width  Fast    SRLC32E/CLK  n/a            0.770         10.000      9.230      SLICE_X30Y83    UPzynq20_test_design_i/ps7_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/RD.r_channel_0/rd_data_fifo_0/memory_reg[31][8]_srl32/CLK
+High Pulse Width  Fast    SRL16E/CLK   n/a            0.770         10.000      9.230      SLICE_X34Y79    UPzynq20_test_design_i/ps7_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/WR.b_channel_0/bresp_fifo_0/memory_reg[3][0]_srl4/CLK
+High Pulse Width  Fast    SRL16E/CLK   n/a            0.770         10.000      9.230      SLICE_X34Y79    UPzynq20_test_design_i/ps7_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/WR.b_channel_0/bresp_fifo_0/memory_reg[3][1]_srl4/CLK
+High Pulse Width  Slow    SRLC32E/CLK  n/a            0.770         10.000      9.230      SLICE_X34Y85    UPzynq20_test_design_i/ps7_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/RD.r_channel_0/rd_data_fifo_0/memory_reg[31][0]_srl32/CLK
+High Pulse Width  Fast    SRLC32E/CLK  n/a            0.770         10.000      9.230      SLICE_X34Y85    UPzynq20_test_design_i/ps7_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/RD.r_channel_0/rd_data_fifo_0/memory_reg[31][0]_srl32/CLK
+High Pulse Width  Fast    SRLC32E/CLK  n/a            0.770         10.000      9.230      SLICE_X30Y84    UPzynq20_test_design_i/ps7_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/RD.r_channel_0/rd_data_fifo_0/memory_reg[31][11]_srl32/CLK
+High Pulse Width  Fast    SRLC32E/CLK  n/a            0.770         10.000      9.230      SLICE_X30Y84    UPzynq20_test_design_i/ps7_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/RD.r_channel_0/rd_data_fifo_0/memory_reg[31][12]_srl32/CLK
 
 
 
