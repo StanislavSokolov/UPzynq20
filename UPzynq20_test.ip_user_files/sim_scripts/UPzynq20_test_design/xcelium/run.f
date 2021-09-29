@@ -52,21 +52,8 @@
 -makelib xcelium_lib/xil_defaultlib \
   "../../../bd/UPzynq20_test_design/ip/UPzynq20_test_design_processing_system7_0_0_1/sim/UPzynq20_test_design_processing_system7_0_0.v" \
 -endlib
--makelib xcelium_lib/axi_lite_ipif_v3_0_4 \
-  "../../../../UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd" \
--endlib
 -makelib xcelium_lib/lib_cdc_v1_0_2 \
   "../../../../UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd" \
--endlib
--makelib xcelium_lib/interrupt_control_v3_1_4 \
-  "../../../../UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/a040/hdl/interrupt_control_v3_1_vh_rfs.vhd" \
--endlib
--makelib xcelium_lib/axi_gpio_v2_0_21 \
-  "../../../../UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd" \
--endlib
--makelib xcelium_lib/xil_defaultlib \
-  "../../../bd/UPzynq20_test_design/ip/UPzynq20_test_design_axi_gpio_2_0_1/sim/UPzynq20_test_design_axi_gpio_2_0.vhd" \
-  "../../../bd/UPzynq20_test_design/ip/UPzynq20_test_design_axi_gpio_3_0/sim/UPzynq20_test_design_axi_gpio_3_0.vhd" \
 -endlib
 -makelib xcelium_lib/proc_sys_reset_v5_0_13 \
   "../../../../UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/8842/hdl/proc_sys_reset_v5_0_vh_rfs.vhd" \
@@ -80,17 +67,32 @@
   "../../../bd/UPzynq20_test_design/ipshared/c5d2/hdl/IP_AXI_PWM_v1_0.vhd" \
   "../../../bd/UPzynq20_test_design/ip/UPzynq20_test_design_IP_AXI_PWM_0_0/sim/UPzynq20_test_design_IP_AXI_PWM_0_0.vhd" \
   "../../../bd/UPzynq20_test_design/ip/UPzynq20_test_design_IP_AXI_LEDS_0_1/sim/UPzynq20_test_design_IP_AXI_LEDS_0_1.vhd" \
-  "../../../bd/UPzynq20_test_design/ipshared/88b1/hdl/IP_AXI_SerialBus_v1_0_S00_AXI.vhd" \
-  "../../../bd/UPzynq20_test_design/ipshared/88b1/hdl/IP_AXI_SerialBus_v1_0.vhd" \
+  "../../../bd/UPzynq20_test_design/ipshared/05a6/hdl/IP_AXI_SerialBus_v1_0_S00_AXI.vhd" \
+  "../../../bd/UPzynq20_test_design/ipshared/05a6/hdl/IP_AXI_SerialBus_v1_0.vhd" \
   "../../../bd/UPzynq20_test_design/ip/UPzynq20_test_design_IP_AXI_SerialBus_0_2/sim/UPzynq20_test_design_IP_AXI_SerialBus_0_2.vhd" \
   "../../../bd/UPzynq20_test_design/ipshared/bc19/DifferentialSignal.vhd" \
   "../../../bd/UPzynq20_test_design/ip/UPzynq20_test_design_DifferentialSignal_0_0/sim/UPzynq20_test_design_DifferentialSignal_0_0.vhd" \
   "../../../bd/UPzynq20_test_design/ip/UPzynq20_test_design_DifferentialSignal_1_0/sim/UPzynq20_test_design_DifferentialSignal_1_0.vhd" \
+-endlib
+-makelib xcelium_lib/axi_lite_ipif_v3_0_4 \
+  "../../../../UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd" \
+-endlib
+-makelib xcelium_lib/interrupt_control_v3_1_4 \
+  "../../../../UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/a040/hdl/interrupt_control_v3_1_vh_rfs.vhd" \
+-endlib
+-makelib xcelium_lib/axi_gpio_v2_0_21 \
+  "../../../../UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd" \
+-endlib
+-makelib xcelium_lib/xil_defaultlib \
   "../../../bd/UPzynq20_test_design/ip/UPzynq20_test_design_axi_gpio_0_0_1/sim/UPzynq20_test_design_axi_gpio_0_0.vhd" \
   "../../../bd/UPzynq20_test_design/ip/UPzynq20_test_design_axi_gpio_0_1_1/sim/UPzynq20_test_design_axi_gpio_0_1.vhd" \
-  "../../../bd/UPzynq20_test_design/ip/UPzynq20_test_design_axi_gpio_1_0/sim/UPzynq20_test_design_axi_gpio_1_0.vhd" \
   "../../../bd/UPzynq20_test_design/ip/UPzynq20_test_design_axi_gpio_0_2_1/sim/UPzynq20_test_design_axi_gpio_0_2.vhd" \
   "../../../bd/UPzynq20_test_design/ip/UPzynq20_test_design_IP_AXI_LEDS_1_0/sim/UPzynq20_test_design_IP_AXI_LEDS_1_0.vhd" \
+  "../../../bd/UPzynq20_test_design/ip/UPzynq20_test_design_IP_AXI_LEDS_2_0/sim/UPzynq20_test_design_IP_AXI_LEDS_2_0.vhd" \
+  "../../../bd/UPzynq20_test_design/ip/UPzynq20_test_design_IP_AXI_LEDS_3_0/sim/UPzynq20_test_design_IP_AXI_LEDS_3_0.vhd" \
+  "../../../bd/UPzynq20_test_design/ipshared/9da2/hdl/IP_AXI_ParallelBus_v1_0_S00_AXI.vhd" \
+  "../../../bd/UPzynq20_test_design/ipshared/9da2/hdl/IP_AXI_ParallelBus_v1_0.vhd" \
+  "../../../bd/UPzynq20_test_design/ip/UPzynq20_test_design_IP_AXI_ParallelBus_0_1/sim/UPzynq20_test_design_IP_AXI_ParallelBus_0_1.vhd" \
 -endlib
 -makelib xcelium_lib/axi_protocol_converter_v2_1_19 \
   "../../../../UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v" \

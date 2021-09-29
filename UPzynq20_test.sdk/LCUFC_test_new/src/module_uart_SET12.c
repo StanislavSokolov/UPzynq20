@@ -69,9 +69,9 @@ void preparing_message_SET12(){
 
 		bild_send_buffer_SET12(30, get_value_errors_negative_positive_adc(2));
 
-		for (int i = 0; i<16; i++) {
-			bild_send_buffer_SET12(112+i*2, get_value_adc_channel(i));	// заполнение АЦП
-		}
+//		for (int i = 0; i<16; i++) {
+//			bild_send_buffer_SET12(112+i*2, get_value_adc_channel(i));	// заполнение АЦП
+//		}
 
 		// тестовые функции
 //		for (int i = 0; i<16; i++) {

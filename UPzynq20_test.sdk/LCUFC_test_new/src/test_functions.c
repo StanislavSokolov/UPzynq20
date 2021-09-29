@@ -23,9 +23,9 @@ void initialization_input_output(int system_design, int project_number) {
 	switch (system_design) {
 	case 0:
 
-//		XGpio_Initialize(&Gpio_0, XPAR_AXI_GPIO_0_DEVICE_ID);
-		XGpio_Initialize(&Gpio_2, XPAR_AXI_GPIO_2_DEVICE_ID);
-		XGpio_Initialize(&Gpio_3, XPAR_AXI_GPIO_3_DEVICE_ID);
+////		XGpio_Initialize(&Gpio_0, XPAR_AXI_GPIO_0_DEVICE_ID);
+//		XGpio_Initialize(&Gpio_2, XPAR_AXI_GPIO_2_DEVICE_ID);
+//		XGpio_Initialize(&Gpio_3, XPAR_AXI_GPIO_3_DEVICE_ID);
 
 	  break;
 	case 1:
@@ -33,10 +33,10 @@ void initialization_input_output(int system_design, int project_number) {
 				XGpio_Initialize(&Gpio_0, XPAR_AXI_GPIO_0_DEVICE_ID);
 				XGpio_Initialize(&Gpio_1, XPAR_AXI_GPIO_1_DEVICE_ID);
 
-				XGpio_Initialize(&Gpio_2, XPAR_AXI_GPIO_2_DEVICE_ID);
-				XGpio_Initialize(&Gpio_3, XPAR_AXI_GPIO_3_DEVICE_ID);
-
-				XGpio_Initialize(&Gpio_4, XPAR_AXI_GPIO_4_DEVICE_ID);
+//				XGpio_Initialize(&Gpio_2, XPAR_AXI_GPIO_2_DEVICE_ID);
+//				XGpio_Initialize(&Gpio_3, XPAR_AXI_GPIO_3_DEVICE_ID);
+//
+//				XGpio_Initialize(&Gpio_4, XPAR_AXI_GPIO_4_DEVICE_ID);
 				XGpio_Initialize(&Gpio_5, XPAR_AXI_GPIO_5_DEVICE_ID);
 	  break;
 	case 2:
