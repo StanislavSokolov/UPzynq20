@@ -1,7 +1,7 @@
 --Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
---Date        : Wed Sep 29 14:50:33 2021
+--Date        : Thu Oct  7 16:31:23 2021
 --Host        : STAS-W10 running 64-bit major release  (build 9200)
 --Command     : generate_target UPzynq20_test_design_wrapper.bd
 --Design      : UPzynq20_test_design_wrapper
@@ -14,6 +14,7 @@ use UNISIM.VCOMPONENTS.ALL;
 entity UPzynq20_test_design_wrapper is
   port (
     AcknowledgeBus_0 : in STD_LOGIC;
+    AsyncLine_0 : out STD_LOGIC;
     ChGroup0_0 : out STD_LOGIC_VECTOR ( 15 downto 0 );
     ClkBus_0 : out STD_LOGIC;
     DDR_addr : inout STD_LOGIC_VECTOR ( 14 downto 0 );
@@ -33,7 +34,9 @@ entity UPzynq20_test_design_wrapper is
     DDR_we_n : inout STD_LOGIC;
     DataBus_0 : inout STD_LOGIC_VECTOR ( 15 downto 0 );
     Data_In_1 : in STD_LOGIC;
+    DivClk_0 : out STD_LOGIC;
     EnableBus_0 : out STD_LOGIC;
+    Er0 : in STD_LOGIC;
     FIXED_IO_ddr_vrn : inout STD_LOGIC;
     FIXED_IO_ddr_vrp : inout STD_LOGIC;
     FIXED_IO_mio : inout STD_LOGIC_VECTOR ( 53 downto 0 );
@@ -42,15 +45,13 @@ entity UPzynq20_test_design_wrapper is
     FIXED_IO_ps_srstb : inout STD_LOGIC;
     LEDS_0 : out STD_LOGIC;
     LEDS_1 : out STD_LOGIC;
-    LEDS_2 : out STD_LOGIC;
-    LEDS_3 : out STD_LOGIC;
-    LEDS_4 : out STD_LOGIC;
+    LoadMode : out STD_LOGIC;
     OUT_put_0 : out STD_LOGIC;
     OUT_put_1 : out STD_LOGIC;
     OUT_put_Dif_0 : out STD_LOGIC;
     OUT_put_Dif_1 : out STD_LOGIC;
     gpio_rtl_0_tri_i : in STD_LOGIC_VECTOR ( 15 downto 0 );
-    gpio_rtl_1_tri_i : in STD_LOGIC_VECTOR ( 15 downto 0 );
+    gpio_rtl_1_tri_i : in STD_LOGIC_VECTOR ( 14 downto 0 );
     gpio_rtl_5_tri_i : in STD_LOGIC_VECTOR ( 8 downto 0 )
   );
 end UPzynq20_test_design_wrapper;
@@ -61,24 +62,15 @@ architecture STRUCTURE of UPzynq20_test_design_wrapper is
     LEDS_0 : out STD_LOGIC;
     ChGroup0_0 : out STD_LOGIC_VECTOR ( 15 downto 0 );
     LEDS_1 : out STD_LOGIC;
-    Data_In_1 : in STD_LOGIC;
-    OUT_put_0 : out STD_LOGIC;
-    OUT_put_Dif_0 : out STD_LOGIC;
-    OUT_put_1 : out STD_LOGIC;
-    OUT_put_Dif_1 : out STD_LOGIC;
-    LEDS_2 : out STD_LOGIC;
-    LEDS_3 : out STD_LOGIC;
-    LEDS_4 : out STD_LOGIC;
+    LoadMode : out STD_LOGIC;
     AcknowledgeBus_0 : in STD_LOGIC;
     DataBus_0 : inout STD_LOGIC_VECTOR ( 15 downto 0 );
     ClkBus_0 : out STD_LOGIC;
     EnableBus_0 : out STD_LOGIC;
-    FIXED_IO_mio : inout STD_LOGIC_VECTOR ( 53 downto 0 );
-    FIXED_IO_ddr_vrn : inout STD_LOGIC;
-    FIXED_IO_ddr_vrp : inout STD_LOGIC;
-    FIXED_IO_ps_srstb : inout STD_LOGIC;
-    FIXED_IO_ps_clk : inout STD_LOGIC;
-    FIXED_IO_ps_porb : inout STD_LOGIC;
+    Er0 : in STD_LOGIC;
+    DivClk_0 : out STD_LOGIC;
+    AsyncLine_0 : out STD_LOGIC;
+    gpio_rtl_5_tri_i : in STD_LOGIC_VECTOR ( 8 downto 0 );
     DDR_cas_n : inout STD_LOGIC;
     DDR_cke : inout STD_LOGIC;
     DDR_ck_n : inout STD_LOGIC;
@@ -94,15 +86,26 @@ architecture STRUCTURE of UPzynq20_test_design_wrapper is
     DDR_dq : inout STD_LOGIC_VECTOR ( 31 downto 0 );
     DDR_dqs_n : inout STD_LOGIC_VECTOR ( 3 downto 0 );
     DDR_dqs_p : inout STD_LOGIC_VECTOR ( 3 downto 0 );
-    gpio_rtl_5_tri_i : in STD_LOGIC_VECTOR ( 8 downto 0 );
+    FIXED_IO_mio : inout STD_LOGIC_VECTOR ( 53 downto 0 );
+    FIXED_IO_ddr_vrn : inout STD_LOGIC;
+    FIXED_IO_ddr_vrp : inout STD_LOGIC;
+    FIXED_IO_ps_srstb : inout STD_LOGIC;
+    FIXED_IO_ps_clk : inout STD_LOGIC;
+    FIXED_IO_ps_porb : inout STD_LOGIC;
     gpio_rtl_0_tri_i : in STD_LOGIC_VECTOR ( 15 downto 0 );
-    gpio_rtl_1_tri_i : in STD_LOGIC_VECTOR ( 15 downto 0 )
+    gpio_rtl_1_tri_i : in STD_LOGIC_VECTOR ( 14 downto 0 );
+    Data_In_1 : in STD_LOGIC;
+    OUT_put_0 : out STD_LOGIC;
+    OUT_put_Dif_0 : out STD_LOGIC;
+    OUT_put_1 : out STD_LOGIC;
+    OUT_put_Dif_1 : out STD_LOGIC
   );
   end component UPzynq20_test_design;
 begin
 UPzynq20_test_design_i: component UPzynq20_test_design
      port map (
       AcknowledgeBus_0 => AcknowledgeBus_0,
+      AsyncLine_0 => AsyncLine_0,
       ChGroup0_0(15 downto 0) => ChGroup0_0(15 downto 0),
       ClkBus_0 => ClkBus_0,
       DDR_addr(14 downto 0) => DDR_addr(14 downto 0),
@@ -122,7 +125,9 @@ UPzynq20_test_design_i: component UPzynq20_test_design
       DDR_we_n => DDR_we_n,
       DataBus_0(15 downto 0) => DataBus_0(15 downto 0),
       Data_In_1 => Data_In_1,
+      DivClk_0 => DivClk_0,
       EnableBus_0 => EnableBus_0,
+      Er0 => Er0,
       FIXED_IO_ddr_vrn => FIXED_IO_ddr_vrn,
       FIXED_IO_ddr_vrp => FIXED_IO_ddr_vrp,
       FIXED_IO_mio(53 downto 0) => FIXED_IO_mio(53 downto 0),
@@ -131,15 +136,13 @@ UPzynq20_test_design_i: component UPzynq20_test_design
       FIXED_IO_ps_srstb => FIXED_IO_ps_srstb,
       LEDS_0 => LEDS_0,
       LEDS_1 => LEDS_1,
-      LEDS_2 => LEDS_2,
-      LEDS_3 => LEDS_3,
-      LEDS_4 => LEDS_4,
+      LoadMode => LoadMode,
       OUT_put_0 => OUT_put_0,
       OUT_put_1 => OUT_put_1,
       OUT_put_Dif_0 => OUT_put_Dif_0,
       OUT_put_Dif_1 => OUT_put_Dif_1,
       gpio_rtl_0_tri_i(15 downto 0) => gpio_rtl_0_tri_i(15 downto 0),
-      gpio_rtl_1_tri_i(15 downto 0) => gpio_rtl_1_tri_i(15 downto 0),
+      gpio_rtl_1_tri_i(14 downto 0) => gpio_rtl_1_tri_i(14 downto 0),
       gpio_rtl_5_tri_i(8 downto 0) => gpio_rtl_5_tri_i(8 downto 0)
     );
 end STRUCTURE;

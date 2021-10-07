@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
-| Date         : Wed Sep 29 16:55:22 2021
+| Date         : Thu Oct  7 15:36:25 2021
 | Host         : STAS-W10 running 64-bit major release  (build 9200)
 | Command      : report_methodology -file UPzynq20_test_design_wrapper_methodology_drc_routed.rpt -pb UPzynq20_test_design_wrapper_methodology_drc_routed.pb -rpx UPzynq20_test_design_wrapper_methodology_drc_routed.rpx
 | Design       : UPzynq20_test_design_wrapper
@@ -23,12 +23,12 @@ Table of Contents
           Floorplan: design_1
       Design limits: <entire design considered>
              Max violations: <unlimited>
-             Violations found: 130
+             Violations found: 101
 +-----------+----------+-------------------------------+------------+
 | Rule      | Severity | Description                   | Violations |
 +-----------+----------+-------------------------------+------------+
-| TIMING-18 | Warning  | Missing input or output delay | 86         |
-| TIMING-20 | Warning  | Non-clocked latch             | 44         |
+| TIMING-18 | Warning  | Missing input or output delay | 85         |
+| TIMING-20 | Warning  | Non-clocked latch             | 16         |
 +-----------+----------+-------------------------------+------------+
 
 2. REPORT DETAILS
@@ -235,97 +235,97 @@ Related violations: <none>
 
 TIMING-18#41 Warning
 Missing input or output delay  
-An input delay is missing on gpio_rtl_1_tri_i[15] relative to clock(s) clk_fpga_0
+An input delay is missing on gpio_rtl_1_tri_i[1] relative to clock(s) clk_fpga_0
 Related violations: <none>
 
 TIMING-18#42 Warning
 Missing input or output delay  
-An input delay is missing on gpio_rtl_1_tri_i[1] relative to clock(s) clk_fpga_0
+An input delay is missing on gpio_rtl_1_tri_i[2] relative to clock(s) clk_fpga_0
 Related violations: <none>
 
 TIMING-18#43 Warning
 Missing input or output delay  
-An input delay is missing on gpio_rtl_1_tri_i[2] relative to clock(s) clk_fpga_0
+An input delay is missing on gpio_rtl_1_tri_i[3] relative to clock(s) clk_fpga_0
 Related violations: <none>
 
 TIMING-18#44 Warning
 Missing input or output delay  
-An input delay is missing on gpio_rtl_1_tri_i[3] relative to clock(s) clk_fpga_0
+An input delay is missing on gpio_rtl_1_tri_i[4] relative to clock(s) clk_fpga_0
 Related violations: <none>
 
 TIMING-18#45 Warning
 Missing input or output delay  
-An input delay is missing on gpio_rtl_1_tri_i[4] relative to clock(s) clk_fpga_0
+An input delay is missing on gpio_rtl_1_tri_i[5] relative to clock(s) clk_fpga_0
 Related violations: <none>
 
 TIMING-18#46 Warning
 Missing input or output delay  
-An input delay is missing on gpio_rtl_1_tri_i[5] relative to clock(s) clk_fpga_0
+An input delay is missing on gpio_rtl_1_tri_i[6] relative to clock(s) clk_fpga_0
 Related violations: <none>
 
 TIMING-18#47 Warning
 Missing input or output delay  
-An input delay is missing on gpio_rtl_1_tri_i[6] relative to clock(s) clk_fpga_0
+An input delay is missing on gpio_rtl_1_tri_i[7] relative to clock(s) clk_fpga_0
 Related violations: <none>
 
 TIMING-18#48 Warning
 Missing input or output delay  
-An input delay is missing on gpio_rtl_1_tri_i[7] relative to clock(s) clk_fpga_0
+An input delay is missing on gpio_rtl_1_tri_i[8] relative to clock(s) clk_fpga_0
 Related violations: <none>
 
 TIMING-18#49 Warning
 Missing input or output delay  
-An input delay is missing on gpio_rtl_1_tri_i[8] relative to clock(s) clk_fpga_0
+An input delay is missing on gpio_rtl_1_tri_i[9] relative to clock(s) clk_fpga_0
 Related violations: <none>
 
 TIMING-18#50 Warning
 Missing input or output delay  
-An input delay is missing on gpio_rtl_1_tri_i[9] relative to clock(s) clk_fpga_0
+An input delay is missing on gpio_rtl_5_tri_i[0] relative to clock(s) clk_fpga_0
 Related violations: <none>
 
 TIMING-18#51 Warning
 Missing input or output delay  
-An input delay is missing on gpio_rtl_5_tri_i[0] relative to clock(s) clk_fpga_0
+An input delay is missing on gpio_rtl_5_tri_i[1] relative to clock(s) clk_fpga_0
 Related violations: <none>
 
 TIMING-18#52 Warning
 Missing input or output delay  
-An input delay is missing on gpio_rtl_5_tri_i[1] relative to clock(s) clk_fpga_0
+An input delay is missing on gpio_rtl_5_tri_i[2] relative to clock(s) clk_fpga_0
 Related violations: <none>
 
 TIMING-18#53 Warning
 Missing input or output delay  
-An input delay is missing on gpio_rtl_5_tri_i[2] relative to clock(s) clk_fpga_0
+An input delay is missing on gpio_rtl_5_tri_i[3] relative to clock(s) clk_fpga_0
 Related violations: <none>
 
 TIMING-18#54 Warning
 Missing input or output delay  
-An input delay is missing on gpio_rtl_5_tri_i[3] relative to clock(s) clk_fpga_0
+An input delay is missing on gpio_rtl_5_tri_i[4] relative to clock(s) clk_fpga_0
 Related violations: <none>
 
 TIMING-18#55 Warning
 Missing input or output delay  
-An input delay is missing on gpio_rtl_5_tri_i[4] relative to clock(s) clk_fpga_0
+An input delay is missing on gpio_rtl_5_tri_i[5] relative to clock(s) clk_fpga_0
 Related violations: <none>
 
 TIMING-18#56 Warning
 Missing input or output delay  
-An input delay is missing on gpio_rtl_5_tri_i[5] relative to clock(s) clk_fpga_0
+An input delay is missing on gpio_rtl_5_tri_i[6] relative to clock(s) clk_fpga_0
 Related violations: <none>
 
 TIMING-18#57 Warning
 Missing input or output delay  
-An input delay is missing on gpio_rtl_5_tri_i[6] relative to clock(s) clk_fpga_0
+An input delay is missing on gpio_rtl_5_tri_i[7] relative to clock(s) clk_fpga_0
 Related violations: <none>
 
 TIMING-18#58 Warning
 Missing input or output delay  
-An input delay is missing on gpio_rtl_5_tri_i[7] relative to clock(s) clk_fpga_0
+An input delay is missing on gpio_rtl_5_tri_i[8] relative to clock(s) clk_fpga_0
 Related violations: <none>
 
 TIMING-18#59 Warning
 Missing input or output delay  
-An input delay is missing on gpio_rtl_5_tri_i[8] relative to clock(s) clk_fpga_0
+An output delay is missing on AsyncLine_0 relative to clock(s) clk_fpga_0
 Related violations: <none>
 
 TIMING-18#60 Warning
@@ -415,270 +415,125 @@ Related violations: <none>
 
 TIMING-18#77 Warning
 Missing input or output delay  
-An output delay is missing on EnableBus_0 relative to clock(s) clk_fpga_0
+An output delay is missing on DivClk_0 relative to clock(s) clk_fpga_0
 Related violations: <none>
 
 TIMING-18#78 Warning
 Missing input or output delay  
-An output delay is missing on LEDS_0 relative to clock(s) clk_fpga_0
+An output delay is missing on EnableBus_0 relative to clock(s) clk_fpga_0
 Related violations: <none>
 
 TIMING-18#79 Warning
 Missing input or output delay  
-An output delay is missing on LEDS_1 relative to clock(s) clk_fpga_0
+An output delay is missing on LEDS_0 relative to clock(s) clk_fpga_0
 Related violations: <none>
 
 TIMING-18#80 Warning
 Missing input or output delay  
-An output delay is missing on LEDS_2 relative to clock(s) clk_fpga_0
+An output delay is missing on LEDS_1 relative to clock(s) clk_fpga_0
 Related violations: <none>
 
 TIMING-18#81 Warning
 Missing input or output delay  
-An output delay is missing on LEDS_3 relative to clock(s) clk_fpga_0
+An output delay is missing on LoadMode relative to clock(s) clk_fpga_0
 Related violations: <none>
 
 TIMING-18#82 Warning
 Missing input or output delay  
-An output delay is missing on LEDS_4 relative to clock(s) clk_fpga_0
+An output delay is missing on OUT_put_0 relative to clock(s) clk_fpga_0
 Related violations: <none>
 
 TIMING-18#83 Warning
 Missing input or output delay  
-An output delay is missing on OUT_put_0 relative to clock(s) clk_fpga_0
+An output delay is missing on OUT_put_1 relative to clock(s) clk_fpga_0
 Related violations: <none>
 
 TIMING-18#84 Warning
 Missing input or output delay  
-An output delay is missing on OUT_put_1 relative to clock(s) clk_fpga_0
-Related violations: <none>
-
-TIMING-18#85 Warning
-Missing input or output delay  
 An output delay is missing on OUT_put_Dif_0 relative to clock(s) clk_fpga_0
 Related violations: <none>
 
-TIMING-18#86 Warning
+TIMING-18#85 Warning
 Missing input or output delay  
 An output delay is missing on OUT_put_Dif_1 relative to clock(s) clk_fpga_0
 Related violations: <none>
 
 TIMING-20#1 Warning
 Non-clocked latch  
-The latch UPzynq20_test_design_i/IP_AXI_ParallelBus_0/U0/IP_AXI_ParallelBus_v1_0_S00_AXI_inst/reg_data_out_reg[10] cannot be properly analyzed as its control pin UPzynq20_test_design_i/IP_AXI_ParallelBus_0/U0/IP_AXI_ParallelBus_v1_0_S00_AXI_inst/reg_data_out_reg[10]/G is not reached by a timing clock
+The latch UPzynq20_test_design_i/IP_AXI_SerialBus_0/U0/IP_AXI_SerialBus_v1_0_S00_AXI_inst/reg_data_out_reg[16] cannot be properly analyzed as its control pin UPzynq20_test_design_i/IP_AXI_SerialBus_0/U0/IP_AXI_SerialBus_v1_0_S00_AXI_inst/reg_data_out_reg[16]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#2 Warning
 Non-clocked latch  
-The latch UPzynq20_test_design_i/IP_AXI_ParallelBus_0/U0/IP_AXI_ParallelBus_v1_0_S00_AXI_inst/reg_data_out_reg[11] cannot be properly analyzed as its control pin UPzynq20_test_design_i/IP_AXI_ParallelBus_0/U0/IP_AXI_ParallelBus_v1_0_S00_AXI_inst/reg_data_out_reg[11]/G is not reached by a timing clock
+The latch UPzynq20_test_design_i/IP_AXI_SerialBus_0/U0/IP_AXI_SerialBus_v1_0_S00_AXI_inst/reg_data_out_reg[17] cannot be properly analyzed as its control pin UPzynq20_test_design_i/IP_AXI_SerialBus_0/U0/IP_AXI_SerialBus_v1_0_S00_AXI_inst/reg_data_out_reg[17]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#3 Warning
 Non-clocked latch  
-The latch UPzynq20_test_design_i/IP_AXI_ParallelBus_0/U0/IP_AXI_ParallelBus_v1_0_S00_AXI_inst/reg_data_out_reg[12] cannot be properly analyzed as its control pin UPzynq20_test_design_i/IP_AXI_ParallelBus_0/U0/IP_AXI_ParallelBus_v1_0_S00_AXI_inst/reg_data_out_reg[12]/G is not reached by a timing clock
+The latch UPzynq20_test_design_i/IP_AXI_SerialBus_0/U0/IP_AXI_SerialBus_v1_0_S00_AXI_inst/reg_data_out_reg[18] cannot be properly analyzed as its control pin UPzynq20_test_design_i/IP_AXI_SerialBus_0/U0/IP_AXI_SerialBus_v1_0_S00_AXI_inst/reg_data_out_reg[18]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#4 Warning
 Non-clocked latch  
-The latch UPzynq20_test_design_i/IP_AXI_ParallelBus_0/U0/IP_AXI_ParallelBus_v1_0_S00_AXI_inst/reg_data_out_reg[13] cannot be properly analyzed as its control pin UPzynq20_test_design_i/IP_AXI_ParallelBus_0/U0/IP_AXI_ParallelBus_v1_0_S00_AXI_inst/reg_data_out_reg[13]/G is not reached by a timing clock
+The latch UPzynq20_test_design_i/IP_AXI_SerialBus_0/U0/IP_AXI_SerialBus_v1_0_S00_AXI_inst/reg_data_out_reg[19] cannot be properly analyzed as its control pin UPzynq20_test_design_i/IP_AXI_SerialBus_0/U0/IP_AXI_SerialBus_v1_0_S00_AXI_inst/reg_data_out_reg[19]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#5 Warning
 Non-clocked latch  
-The latch UPzynq20_test_design_i/IP_AXI_ParallelBus_0/U0/IP_AXI_ParallelBus_v1_0_S00_AXI_inst/reg_data_out_reg[14] cannot be properly analyzed as its control pin UPzynq20_test_design_i/IP_AXI_ParallelBus_0/U0/IP_AXI_ParallelBus_v1_0_S00_AXI_inst/reg_data_out_reg[14]/G is not reached by a timing clock
+The latch UPzynq20_test_design_i/IP_AXI_SerialBus_0/U0/IP_AXI_SerialBus_v1_0_S00_AXI_inst/reg_data_out_reg[20] cannot be properly analyzed as its control pin UPzynq20_test_design_i/IP_AXI_SerialBus_0/U0/IP_AXI_SerialBus_v1_0_S00_AXI_inst/reg_data_out_reg[20]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#6 Warning
 Non-clocked latch  
-The latch UPzynq20_test_design_i/IP_AXI_ParallelBus_0/U0/IP_AXI_ParallelBus_v1_0_S00_AXI_inst/reg_data_out_reg[15] cannot be properly analyzed as its control pin UPzynq20_test_design_i/IP_AXI_ParallelBus_0/U0/IP_AXI_ParallelBus_v1_0_S00_AXI_inst/reg_data_out_reg[15]/G is not reached by a timing clock
+The latch UPzynq20_test_design_i/IP_AXI_SerialBus_0/U0/IP_AXI_SerialBus_v1_0_S00_AXI_inst/reg_data_out_reg[21] cannot be properly analyzed as its control pin UPzynq20_test_design_i/IP_AXI_SerialBus_0/U0/IP_AXI_SerialBus_v1_0_S00_AXI_inst/reg_data_out_reg[21]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#7 Warning
 Non-clocked latch  
-The latch UPzynq20_test_design_i/IP_AXI_ParallelBus_0/U0/IP_AXI_ParallelBus_v1_0_S00_AXI_inst/reg_data_out_reg[16] cannot be properly analyzed as its control pin UPzynq20_test_design_i/IP_AXI_ParallelBus_0/U0/IP_AXI_ParallelBus_v1_0_S00_AXI_inst/reg_data_out_reg[16]/G is not reached by a timing clock
+The latch UPzynq20_test_design_i/IP_AXI_SerialBus_0/U0/IP_AXI_SerialBus_v1_0_S00_AXI_inst/reg_data_out_reg[22] cannot be properly analyzed as its control pin UPzynq20_test_design_i/IP_AXI_SerialBus_0/U0/IP_AXI_SerialBus_v1_0_S00_AXI_inst/reg_data_out_reg[22]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#8 Warning
 Non-clocked latch  
-The latch UPzynq20_test_design_i/IP_AXI_ParallelBus_0/U0/IP_AXI_ParallelBus_v1_0_S00_AXI_inst/reg_data_out_reg[17] cannot be properly analyzed as its control pin UPzynq20_test_design_i/IP_AXI_ParallelBus_0/U0/IP_AXI_ParallelBus_v1_0_S00_AXI_inst/reg_data_out_reg[17]/G is not reached by a timing clock
+The latch UPzynq20_test_design_i/IP_AXI_SerialBus_0/U0/IP_AXI_SerialBus_v1_0_S00_AXI_inst/reg_data_out_reg[23] cannot be properly analyzed as its control pin UPzynq20_test_design_i/IP_AXI_SerialBus_0/U0/IP_AXI_SerialBus_v1_0_S00_AXI_inst/reg_data_out_reg[23]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#9 Warning
 Non-clocked latch  
-The latch UPzynq20_test_design_i/IP_AXI_ParallelBus_0/U0/IP_AXI_ParallelBus_v1_0_S00_AXI_inst/reg_data_out_reg[18] cannot be properly analyzed as its control pin UPzynq20_test_design_i/IP_AXI_ParallelBus_0/U0/IP_AXI_ParallelBus_v1_0_S00_AXI_inst/reg_data_out_reg[18]/G is not reached by a timing clock
+The latch UPzynq20_test_design_i/IP_AXI_SerialBus_0/U0/IP_AXI_SerialBus_v1_0_S00_AXI_inst/reg_data_out_reg[24] cannot be properly analyzed as its control pin UPzynq20_test_design_i/IP_AXI_SerialBus_0/U0/IP_AXI_SerialBus_v1_0_S00_AXI_inst/reg_data_out_reg[24]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#10 Warning
 Non-clocked latch  
-The latch UPzynq20_test_design_i/IP_AXI_ParallelBus_0/U0/IP_AXI_ParallelBus_v1_0_S00_AXI_inst/reg_data_out_reg[19] cannot be properly analyzed as its control pin UPzynq20_test_design_i/IP_AXI_ParallelBus_0/U0/IP_AXI_ParallelBus_v1_0_S00_AXI_inst/reg_data_out_reg[19]/G is not reached by a timing clock
+The latch UPzynq20_test_design_i/IP_AXI_SerialBus_0/U0/IP_AXI_SerialBus_v1_0_S00_AXI_inst/reg_data_out_reg[25] cannot be properly analyzed as its control pin UPzynq20_test_design_i/IP_AXI_SerialBus_0/U0/IP_AXI_SerialBus_v1_0_S00_AXI_inst/reg_data_out_reg[25]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#11 Warning
 Non-clocked latch  
-The latch UPzynq20_test_design_i/IP_AXI_ParallelBus_0/U0/IP_AXI_ParallelBus_v1_0_S00_AXI_inst/reg_data_out_reg[20] cannot be properly analyzed as its control pin UPzynq20_test_design_i/IP_AXI_ParallelBus_0/U0/IP_AXI_ParallelBus_v1_0_S00_AXI_inst/reg_data_out_reg[20]/G is not reached by a timing clock
+The latch UPzynq20_test_design_i/IP_AXI_SerialBus_0/U0/IP_AXI_SerialBus_v1_0_S00_AXI_inst/reg_data_out_reg[26] cannot be properly analyzed as its control pin UPzynq20_test_design_i/IP_AXI_SerialBus_0/U0/IP_AXI_SerialBus_v1_0_S00_AXI_inst/reg_data_out_reg[26]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#12 Warning
 Non-clocked latch  
-The latch UPzynq20_test_design_i/IP_AXI_ParallelBus_0/U0/IP_AXI_ParallelBus_v1_0_S00_AXI_inst/reg_data_out_reg[21] cannot be properly analyzed as its control pin UPzynq20_test_design_i/IP_AXI_ParallelBus_0/U0/IP_AXI_ParallelBus_v1_0_S00_AXI_inst/reg_data_out_reg[21]/G is not reached by a timing clock
+The latch UPzynq20_test_design_i/IP_AXI_SerialBus_0/U0/IP_AXI_SerialBus_v1_0_S00_AXI_inst/reg_data_out_reg[27] cannot be properly analyzed as its control pin UPzynq20_test_design_i/IP_AXI_SerialBus_0/U0/IP_AXI_SerialBus_v1_0_S00_AXI_inst/reg_data_out_reg[27]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#13 Warning
 Non-clocked latch  
-The latch UPzynq20_test_design_i/IP_AXI_ParallelBus_0/U0/IP_AXI_ParallelBus_v1_0_S00_AXI_inst/reg_data_out_reg[22] cannot be properly analyzed as its control pin UPzynq20_test_design_i/IP_AXI_ParallelBus_0/U0/IP_AXI_ParallelBus_v1_0_S00_AXI_inst/reg_data_out_reg[22]/G is not reached by a timing clock
+The latch UPzynq20_test_design_i/IP_AXI_SerialBus_0/U0/IP_AXI_SerialBus_v1_0_S00_AXI_inst/reg_data_out_reg[28] cannot be properly analyzed as its control pin UPzynq20_test_design_i/IP_AXI_SerialBus_0/U0/IP_AXI_SerialBus_v1_0_S00_AXI_inst/reg_data_out_reg[28]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#14 Warning
 Non-clocked latch  
-The latch UPzynq20_test_design_i/IP_AXI_ParallelBus_0/U0/IP_AXI_ParallelBus_v1_0_S00_AXI_inst/reg_data_out_reg[23] cannot be properly analyzed as its control pin UPzynq20_test_design_i/IP_AXI_ParallelBus_0/U0/IP_AXI_ParallelBus_v1_0_S00_AXI_inst/reg_data_out_reg[23]/G is not reached by a timing clock
+The latch UPzynq20_test_design_i/IP_AXI_SerialBus_0/U0/IP_AXI_SerialBus_v1_0_S00_AXI_inst/reg_data_out_reg[29] cannot be properly analyzed as its control pin UPzynq20_test_design_i/IP_AXI_SerialBus_0/U0/IP_AXI_SerialBus_v1_0_S00_AXI_inst/reg_data_out_reg[29]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#15 Warning
 Non-clocked latch  
-The latch UPzynq20_test_design_i/IP_AXI_ParallelBus_0/U0/IP_AXI_ParallelBus_v1_0_S00_AXI_inst/reg_data_out_reg[24] cannot be properly analyzed as its control pin UPzynq20_test_design_i/IP_AXI_ParallelBus_0/U0/IP_AXI_ParallelBus_v1_0_S00_AXI_inst/reg_data_out_reg[24]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#16 Warning
-Non-clocked latch  
-The latch UPzynq20_test_design_i/IP_AXI_ParallelBus_0/U0/IP_AXI_ParallelBus_v1_0_S00_AXI_inst/reg_data_out_reg[25] cannot be properly analyzed as its control pin UPzynq20_test_design_i/IP_AXI_ParallelBus_0/U0/IP_AXI_ParallelBus_v1_0_S00_AXI_inst/reg_data_out_reg[25]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#17 Warning
-Non-clocked latch  
-The latch UPzynq20_test_design_i/IP_AXI_ParallelBus_0/U0/IP_AXI_ParallelBus_v1_0_S00_AXI_inst/reg_data_out_reg[26] cannot be properly analyzed as its control pin UPzynq20_test_design_i/IP_AXI_ParallelBus_0/U0/IP_AXI_ParallelBus_v1_0_S00_AXI_inst/reg_data_out_reg[26]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#18 Warning
-Non-clocked latch  
-The latch UPzynq20_test_design_i/IP_AXI_ParallelBus_0/U0/IP_AXI_ParallelBus_v1_0_S00_AXI_inst/reg_data_out_reg[27] cannot be properly analyzed as its control pin UPzynq20_test_design_i/IP_AXI_ParallelBus_0/U0/IP_AXI_ParallelBus_v1_0_S00_AXI_inst/reg_data_out_reg[27]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#19 Warning
-Non-clocked latch  
-The latch UPzynq20_test_design_i/IP_AXI_ParallelBus_0/U0/IP_AXI_ParallelBus_v1_0_S00_AXI_inst/reg_data_out_reg[28] cannot be properly analyzed as its control pin UPzynq20_test_design_i/IP_AXI_ParallelBus_0/U0/IP_AXI_ParallelBus_v1_0_S00_AXI_inst/reg_data_out_reg[28]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#20 Warning
-Non-clocked latch  
-The latch UPzynq20_test_design_i/IP_AXI_ParallelBus_0/U0/IP_AXI_ParallelBus_v1_0_S00_AXI_inst/reg_data_out_reg[29] cannot be properly analyzed as its control pin UPzynq20_test_design_i/IP_AXI_ParallelBus_0/U0/IP_AXI_ParallelBus_v1_0_S00_AXI_inst/reg_data_out_reg[29]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#21 Warning
-Non-clocked latch  
-The latch UPzynq20_test_design_i/IP_AXI_ParallelBus_0/U0/IP_AXI_ParallelBus_v1_0_S00_AXI_inst/reg_data_out_reg[30] cannot be properly analyzed as its control pin UPzynq20_test_design_i/IP_AXI_ParallelBus_0/U0/IP_AXI_ParallelBus_v1_0_S00_AXI_inst/reg_data_out_reg[30]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#22 Warning
-Non-clocked latch  
-The latch UPzynq20_test_design_i/IP_AXI_ParallelBus_0/U0/IP_AXI_ParallelBus_v1_0_S00_AXI_inst/reg_data_out_reg[31] cannot be properly analyzed as its control pin UPzynq20_test_design_i/IP_AXI_ParallelBus_0/U0/IP_AXI_ParallelBus_v1_0_S00_AXI_inst/reg_data_out_reg[31]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#23 Warning
-Non-clocked latch  
-The latch UPzynq20_test_design_i/IP_AXI_ParallelBus_0/U0/IP_AXI_ParallelBus_v1_0_S00_AXI_inst/reg_data_out_reg[4] cannot be properly analyzed as its control pin UPzynq20_test_design_i/IP_AXI_ParallelBus_0/U0/IP_AXI_ParallelBus_v1_0_S00_AXI_inst/reg_data_out_reg[4]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#24 Warning
-Non-clocked latch  
-The latch UPzynq20_test_design_i/IP_AXI_ParallelBus_0/U0/IP_AXI_ParallelBus_v1_0_S00_AXI_inst/reg_data_out_reg[5] cannot be properly analyzed as its control pin UPzynq20_test_design_i/IP_AXI_ParallelBus_0/U0/IP_AXI_ParallelBus_v1_0_S00_AXI_inst/reg_data_out_reg[5]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#25 Warning
-Non-clocked latch  
-The latch UPzynq20_test_design_i/IP_AXI_ParallelBus_0/U0/IP_AXI_ParallelBus_v1_0_S00_AXI_inst/reg_data_out_reg[6] cannot be properly analyzed as its control pin UPzynq20_test_design_i/IP_AXI_ParallelBus_0/U0/IP_AXI_ParallelBus_v1_0_S00_AXI_inst/reg_data_out_reg[6]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#26 Warning
-Non-clocked latch  
-The latch UPzynq20_test_design_i/IP_AXI_ParallelBus_0/U0/IP_AXI_ParallelBus_v1_0_S00_AXI_inst/reg_data_out_reg[7] cannot be properly analyzed as its control pin UPzynq20_test_design_i/IP_AXI_ParallelBus_0/U0/IP_AXI_ParallelBus_v1_0_S00_AXI_inst/reg_data_out_reg[7]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#27 Warning
-Non-clocked latch  
-The latch UPzynq20_test_design_i/IP_AXI_ParallelBus_0/U0/IP_AXI_ParallelBus_v1_0_S00_AXI_inst/reg_data_out_reg[8] cannot be properly analyzed as its control pin UPzynq20_test_design_i/IP_AXI_ParallelBus_0/U0/IP_AXI_ParallelBus_v1_0_S00_AXI_inst/reg_data_out_reg[8]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#28 Warning
-Non-clocked latch  
-The latch UPzynq20_test_design_i/IP_AXI_ParallelBus_0/U0/IP_AXI_ParallelBus_v1_0_S00_AXI_inst/reg_data_out_reg[9] cannot be properly analyzed as its control pin UPzynq20_test_design_i/IP_AXI_ParallelBus_0/U0/IP_AXI_ParallelBus_v1_0_S00_AXI_inst/reg_data_out_reg[9]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#29 Warning
-Non-clocked latch  
-The latch UPzynq20_test_design_i/IP_AXI_SerialBus_0/U0/IP_AXI_SerialBus_v1_0_S00_AXI_inst/reg_data_out_reg[16] cannot be properly analyzed as its control pin UPzynq20_test_design_i/IP_AXI_SerialBus_0/U0/IP_AXI_SerialBus_v1_0_S00_AXI_inst/reg_data_out_reg[16]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#30 Warning
-Non-clocked latch  
-The latch UPzynq20_test_design_i/IP_AXI_SerialBus_0/U0/IP_AXI_SerialBus_v1_0_S00_AXI_inst/reg_data_out_reg[17] cannot be properly analyzed as its control pin UPzynq20_test_design_i/IP_AXI_SerialBus_0/U0/IP_AXI_SerialBus_v1_0_S00_AXI_inst/reg_data_out_reg[17]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#31 Warning
-Non-clocked latch  
-The latch UPzynq20_test_design_i/IP_AXI_SerialBus_0/U0/IP_AXI_SerialBus_v1_0_S00_AXI_inst/reg_data_out_reg[18] cannot be properly analyzed as its control pin UPzynq20_test_design_i/IP_AXI_SerialBus_0/U0/IP_AXI_SerialBus_v1_0_S00_AXI_inst/reg_data_out_reg[18]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#32 Warning
-Non-clocked latch  
-The latch UPzynq20_test_design_i/IP_AXI_SerialBus_0/U0/IP_AXI_SerialBus_v1_0_S00_AXI_inst/reg_data_out_reg[19] cannot be properly analyzed as its control pin UPzynq20_test_design_i/IP_AXI_SerialBus_0/U0/IP_AXI_SerialBus_v1_0_S00_AXI_inst/reg_data_out_reg[19]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#33 Warning
-Non-clocked latch  
-The latch UPzynq20_test_design_i/IP_AXI_SerialBus_0/U0/IP_AXI_SerialBus_v1_0_S00_AXI_inst/reg_data_out_reg[20] cannot be properly analyzed as its control pin UPzynq20_test_design_i/IP_AXI_SerialBus_0/U0/IP_AXI_SerialBus_v1_0_S00_AXI_inst/reg_data_out_reg[20]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#34 Warning
-Non-clocked latch  
-The latch UPzynq20_test_design_i/IP_AXI_SerialBus_0/U0/IP_AXI_SerialBus_v1_0_S00_AXI_inst/reg_data_out_reg[21] cannot be properly analyzed as its control pin UPzynq20_test_design_i/IP_AXI_SerialBus_0/U0/IP_AXI_SerialBus_v1_0_S00_AXI_inst/reg_data_out_reg[21]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#35 Warning
-Non-clocked latch  
-The latch UPzynq20_test_design_i/IP_AXI_SerialBus_0/U0/IP_AXI_SerialBus_v1_0_S00_AXI_inst/reg_data_out_reg[22] cannot be properly analyzed as its control pin UPzynq20_test_design_i/IP_AXI_SerialBus_0/U0/IP_AXI_SerialBus_v1_0_S00_AXI_inst/reg_data_out_reg[22]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#36 Warning
-Non-clocked latch  
-The latch UPzynq20_test_design_i/IP_AXI_SerialBus_0/U0/IP_AXI_SerialBus_v1_0_S00_AXI_inst/reg_data_out_reg[23] cannot be properly analyzed as its control pin UPzynq20_test_design_i/IP_AXI_SerialBus_0/U0/IP_AXI_SerialBus_v1_0_S00_AXI_inst/reg_data_out_reg[23]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#37 Warning
-Non-clocked latch  
-The latch UPzynq20_test_design_i/IP_AXI_SerialBus_0/U0/IP_AXI_SerialBus_v1_0_S00_AXI_inst/reg_data_out_reg[24] cannot be properly analyzed as its control pin UPzynq20_test_design_i/IP_AXI_SerialBus_0/U0/IP_AXI_SerialBus_v1_0_S00_AXI_inst/reg_data_out_reg[24]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#38 Warning
-Non-clocked latch  
-The latch UPzynq20_test_design_i/IP_AXI_SerialBus_0/U0/IP_AXI_SerialBus_v1_0_S00_AXI_inst/reg_data_out_reg[25] cannot be properly analyzed as its control pin UPzynq20_test_design_i/IP_AXI_SerialBus_0/U0/IP_AXI_SerialBus_v1_0_S00_AXI_inst/reg_data_out_reg[25]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#39 Warning
-Non-clocked latch  
-The latch UPzynq20_test_design_i/IP_AXI_SerialBus_0/U0/IP_AXI_SerialBus_v1_0_S00_AXI_inst/reg_data_out_reg[26] cannot be properly analyzed as its control pin UPzynq20_test_design_i/IP_AXI_SerialBus_0/U0/IP_AXI_SerialBus_v1_0_S00_AXI_inst/reg_data_out_reg[26]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#40 Warning
-Non-clocked latch  
-The latch UPzynq20_test_design_i/IP_AXI_SerialBus_0/U0/IP_AXI_SerialBus_v1_0_S00_AXI_inst/reg_data_out_reg[27] cannot be properly analyzed as its control pin UPzynq20_test_design_i/IP_AXI_SerialBus_0/U0/IP_AXI_SerialBus_v1_0_S00_AXI_inst/reg_data_out_reg[27]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#41 Warning
-Non-clocked latch  
-The latch UPzynq20_test_design_i/IP_AXI_SerialBus_0/U0/IP_AXI_SerialBus_v1_0_S00_AXI_inst/reg_data_out_reg[28] cannot be properly analyzed as its control pin UPzynq20_test_design_i/IP_AXI_SerialBus_0/U0/IP_AXI_SerialBus_v1_0_S00_AXI_inst/reg_data_out_reg[28]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#42 Warning
-Non-clocked latch  
-The latch UPzynq20_test_design_i/IP_AXI_SerialBus_0/U0/IP_AXI_SerialBus_v1_0_S00_AXI_inst/reg_data_out_reg[29] cannot be properly analyzed as its control pin UPzynq20_test_design_i/IP_AXI_SerialBus_0/U0/IP_AXI_SerialBus_v1_0_S00_AXI_inst/reg_data_out_reg[29]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#43 Warning
-Non-clocked latch  
 The latch UPzynq20_test_design_i/IP_AXI_SerialBus_0/U0/IP_AXI_SerialBus_v1_0_S00_AXI_inst/reg_data_out_reg[30] cannot be properly analyzed as its control pin UPzynq20_test_design_i/IP_AXI_SerialBus_0/U0/IP_AXI_SerialBus_v1_0_S00_AXI_inst/reg_data_out_reg[30]/G is not reached by a timing clock
 Related violations: <none>
 
-TIMING-20#44 Warning
+TIMING-20#16 Warning
 Non-clocked latch  
 The latch UPzynq20_test_design_i/IP_AXI_SerialBus_0/U0/IP_AXI_SerialBus_v1_0_S00_AXI_inst/reg_data_out_reg[31] cannot be properly analyzed as its control pin UPzynq20_test_design_i/IP_AXI_SerialBus_0/U0/IP_AXI_SerialBus_v1_0_S00_AXI_inst/reg_data_out_reg[31]/G is not reached by a timing clock
 Related violations: <none>

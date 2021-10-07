@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Delete 3 resources" deleteContents="false" description="Delete 3 resources" element1="/LCUFC_test_new/bootimage/BOOT.bin" element2="/LCUFC_test_new/bootimage/BOOT.mcs" element3="/LCUFC_test_new/bootimage/LCUFC_test_new.bif" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="3" stamp="1633497515346"/>
+</session>

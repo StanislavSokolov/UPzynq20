@@ -27,15 +27,6 @@ set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==UPzynq20_test_d
 # IP: bd/UPzynq20_test_design/ip/UPzynq20_test_design_IP_AXI_LEDS_0_1/UPzynq20_test_design_IP_AXI_LEDS_0_1.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==UPzynq20_test_design_IP_AXI_LEDS_0_1 || ORIG_REF_NAME==UPzynq20_test_design_IP_AXI_LEDS_0_1} -quiet] -quiet
 
-# IP: bd/UPzynq20_test_design/ip/UPzynq20_test_design_IP_AXI_SerialBus_0_2/UPzynq20_test_design_IP_AXI_SerialBus_0_2.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==UPzynq20_test_design_IP_AXI_SerialBus_0_2 || ORIG_REF_NAME==UPzynq20_test_design_IP_AXI_SerialBus_0_2} -quiet] -quiet
-
-# IP: bd/UPzynq20_test_design/ip/UPzynq20_test_design_DifferentialSignal_0_0/UPzynq20_test_design_DifferentialSignal_0_0.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==UPzynq20_test_design_DifferentialSignal_0_0 || ORIG_REF_NAME==UPzynq20_test_design_DifferentialSignal_0_0} -quiet] -quiet
-
-# IP: bd/UPzynq20_test_design/ip/UPzynq20_test_design_DifferentialSignal_1_0/UPzynq20_test_design_DifferentialSignal_1_0.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==UPzynq20_test_design_DifferentialSignal_1_0 || ORIG_REF_NAME==UPzynq20_test_design_DifferentialSignal_1_0} -quiet] -quiet
-
 # IP: bd/UPzynq20_test_design/ip/UPzynq20_test_design_axi_gpio_0_0_1/UPzynq20_test_design_axi_gpio_0_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==UPzynq20_test_design_axi_gpio_0_0 || ORIG_REF_NAME==UPzynq20_test_design_axi_gpio_0_0} -quiet] -quiet
 
@@ -48,14 +39,20 @@ set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==UPzynq20_test_d
 # IP: bd/UPzynq20_test_design/ip/UPzynq20_test_design_IP_AXI_LEDS_1_0/UPzynq20_test_design_IP_AXI_LEDS_1_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==UPzynq20_test_design_IP_AXI_LEDS_1_0 || ORIG_REF_NAME==UPzynq20_test_design_IP_AXI_LEDS_1_0} -quiet] -quiet
 
-# IP: bd/UPzynq20_test_design/ip/UPzynq20_test_design_IP_AXI_LEDS_2_0/UPzynq20_test_design_IP_AXI_LEDS_2_0.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==UPzynq20_test_design_IP_AXI_LEDS_2_0 || ORIG_REF_NAME==UPzynq20_test_design_IP_AXI_LEDS_2_0} -quiet] -quiet
-
-# IP: bd/UPzynq20_test_design/ip/UPzynq20_test_design_IP_AXI_LEDS_3_0/UPzynq20_test_design_IP_AXI_LEDS_3_0.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==UPzynq20_test_design_IP_AXI_LEDS_3_0 || ORIG_REF_NAME==UPzynq20_test_design_IP_AXI_LEDS_3_0} -quiet] -quiet
-
 # IP: bd/UPzynq20_test_design/ip/UPzynq20_test_design_IP_AXI_ParallelBus_0_1/UPzynq20_test_design_IP_AXI_ParallelBus_0_1.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==UPzynq20_test_design_IP_AXI_ParallelBus_0_1 || ORIG_REF_NAME==UPzynq20_test_design_IP_AXI_ParallelBus_0_1} -quiet] -quiet
+
+# IP: bd/UPzynq20_test_design/ip/UPzynq20_test_design_IP_AXI_LedController_0_0/UPzynq20_test_design_IP_AXI_LedController_0_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==UPzynq20_test_design_IP_AXI_LedController_0_0 || ORIG_REF_NAME==UPzynq20_test_design_IP_AXI_LedController_0_0} -quiet] -quiet
+
+# IP: bd/UPzynq20_test_design/ip/UPzynq20_test_design_IP_AXI_SerialBus_0_0/UPzynq20_test_design_IP_AXI_SerialBus_0_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==UPzynq20_test_design_IP_AXI_SerialBus_0_0 || ORIG_REF_NAME==UPzynq20_test_design_IP_AXI_SerialBus_0_0} -quiet] -quiet
+
+# IP: bd/UPzynq20_test_design/ip/UPzynq20_test_design_DifferentialSignal_0_0/UPzynq20_test_design_DifferentialSignal_0_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==UPzynq20_test_design_DifferentialSignal_0_0 || ORIG_REF_NAME==UPzynq20_test_design_DifferentialSignal_0_0} -quiet] -quiet
+
+# IP: bd/UPzynq20_test_design/ip/UPzynq20_test_design_DifferentialSignal_0_1/UPzynq20_test_design_DifferentialSignal_0_1.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==UPzynq20_test_design_DifferentialSignal_0_1 || ORIG_REF_NAME==UPzynq20_test_design_DifferentialSignal_0_1} -quiet] -quiet
 
 # IP: bd/UPzynq20_test_design/ip/UPzynq20_test_design_auto_pc_0/UPzynq20_test_design_auto_pc_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==UPzynq20_test_design_auto_pc_0 || ORIG_REF_NAME==UPzynq20_test_design_auto_pc_0} -quiet] -quiet

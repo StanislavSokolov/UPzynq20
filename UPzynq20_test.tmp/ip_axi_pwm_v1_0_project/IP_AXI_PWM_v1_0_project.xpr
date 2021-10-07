@@ -6,7 +6,7 @@
 <Project Version="7" Minor="40" Path="d:/gitea/upzynq20_test/upzynq20_test.tmp/ip_axi_pwm_v1_0_project/IP_AXI_PWM_v1_0_project.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
-    <Option Name="Id" Val="215f1178b8954662ad8a6bb7a1f5af74"/>
+    <Option Name="Id" Val="7ae357fed1364a068b9679b6d9ef0118"/>
     <Option Name="Part" Val="xc7z020clg484-3"/>
     <Option Name="CompiledLibDir" Val="$PCACHEDIR/compile_simlib"/>
     <Option Name="CompiledLibDirXSim" Val=""/>
@@ -23,8 +23,8 @@
     <Option Name="ActiveSimSet" Val="sim_1"/>
     <Option Name="DefaultLib" Val="xil_defaultlib"/>
     <Option Name="ProjectType" Val="Default"/>
-    <Option Name="IPRepoPath" Val="$PPRDIR/../../../../GITEA/IP_cores/IP_AXI_SerialBus_1.0"/>
-    <Option Name="IPRepoPath" Val="$PPRDIR/../../../../GITEA/UPzynq20_test/IP"/>
+    <Option Name="IPRepoPath" Val="$PPRDIR/../../../../GITEA/IP_cores/IP_AXI_ParallelBus/IP_AXI_ParallelBus_1.0"/>
+    <Option Name="IPRepoPath" Val="$PPRDIR/../../../../GITEA/IP_cores/IP_AXI_SerialBus/IP_AXI_SerialBus_1.0"/>
     <Option Name="IPRepoPath" Val="$PPRDIR/../../../../GITEA/IP_cores"/>
     <Option Name="IPOutputRepo" Val="$PCACHEDIR/ip"/>
     <Option Name="IPCachePermission" Val="read"/>
@@ -64,27 +64,27 @@
   <FileSets Version="1" Minor="31">
     <FileSet Name="sources_1" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
       <Filter Type="Srcs"/>
-      <File Path="$PPRDIR/../../../../GITEA/UPzynq20_test/IP/IP_AXI_PWM/IP_AXI_PWM_1.0/hdl/IP_AXI_PWM_v1_0_S00_AXI.vhd">
+      <File Path="$PPRDIR/../../../../GITEA/IP_cores/IP_AXI_PWM/IP_AXI_PWM_1.0/hdl/IP_AXI_PWM_v1_0_S00_AXI.vhd">
         <FileInfo>
           <Attr Name="Library" Val=""/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/../../../../GITEA/UPzynq20_test/IP/IP_AXI_PWM/IP_AXI_PWM_1.0/hdl/IP_AXI_PWM_v1_0.vhd">
+      <File Path="$PPRDIR/../../../../GITEA/IP_cores/IP_AXI_PWM/IP_AXI_PWM_1.0/hdl/IP_AXI_PWM_v1_0.vhd">
         <FileInfo>
           <Attr Name="Library" Val=""/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/../../../../GITEA/UPzynq20_test/IP/IP_AXI_PWM/IP_AXI_PWM_1.0/component.xml">
+      <File Path="$PPRDIR/../../../../GITEA/IP_cores/IP_AXI_PWM/IP_AXI_PWM_1.0/component.xml">
         <FileInfo SFType="IPXACT"/>
       </File>
       <Config>
         <Option Name="DesignMode" Val="RTL"/>
         <Option Name="TopModule" Val="IP_AXI_PWM_v1_0"/>
-        <Option Name="TopRTLFile" Val="$PPRDIR/../../../../GITEA/UPzynq20_test/IP/IP_AXI_PWM/IP_AXI_PWM_1.0/hdl/IP_AXI_PWM_v1_0.vhd"/>
+        <Option Name="TopRTLFile" Val="$PPRDIR/../../../../GITEA/IP_cores/IP_AXI_PWM/IP_AXI_PWM_1.0/hdl/IP_AXI_PWM_v1_0.vhd"/>
       </Config>
     </FileSet>
     <FileSet Name="constrs_1" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">

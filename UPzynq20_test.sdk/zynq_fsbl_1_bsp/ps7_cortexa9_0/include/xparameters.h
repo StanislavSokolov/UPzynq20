@@ -32,7 +32,7 @@
  
 /******************************************************************/
 /* Definitions for driver IP_AXI_LEDS */
-#define XPAR_IP_AXI_LEDS_NUM_INSTANCES 5
+#define XPAR_IP_AXI_LEDS_NUM_INSTANCES 3
 
 /* Definitions for peripheral IP_AXI_LEDS_0 */
 #define XPAR_IP_AXI_LEDS_0_DEVICE_ID 0
@@ -52,16 +52,15 @@
 #define XPAR_IP_AXI_LEDS_2_S00_AXI_HIGHADDR 0x43C4FFFF
 
 
-/* Definitions for peripheral IP_AXI_LEDS_3 */
-#define XPAR_IP_AXI_LEDS_3_DEVICE_ID 3
-#define XPAR_IP_AXI_LEDS_3_S00_AXI_BASEADDR 0x43C50000
-#define XPAR_IP_AXI_LEDS_3_S00_AXI_HIGHADDR 0x43C5FFFF
+/******************************************************************/
 
+/* Definitions for driver IP_AXI_LEDCONTROLLER */
+#define XPAR_IP_AXI_LEDCONTROLLER_NUM_INSTANCES 1
 
-/* Definitions for peripheral IP_AXI_LEDS_4 */
-#define XPAR_IP_AXI_LEDS_4_DEVICE_ID 4
-#define XPAR_IP_AXI_LEDS_4_S00_AXI_BASEADDR 0x43C60000
-#define XPAR_IP_AXI_LEDS_4_S00_AXI_HIGHADDR 0x43C6FFFF
+/* Definitions for peripheral IP_AXI_LEDCONTROLLER_0 */
+#define XPAR_IP_AXI_LEDCONTROLLER_0_DEVICE_ID 0
+#define XPAR_IP_AXI_LEDCONTROLLER_0_S00_AXI_BASEADDR 0x43C80000
+#define XPAR_IP_AXI_LEDCONTROLLER_0_S00_AXI_HIGHADDR 0x43C8FFFF
 
 
 /******************************************************************/

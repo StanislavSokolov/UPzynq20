@@ -581,11 +581,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Wed Sep 29 11:50:34 UTC 2021</spirit:value>
+            <spirit:value>Thu Oct 07 10:35:49 UTC 2021</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:665c7089</spirit:value>
+            <spirit:value>9:94c65d4e</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -596,7 +596,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:665c7089</spirit:value>
+            <spirit:value>9:94c65d4e</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -612,11 +612,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Wed Sep 29 11:50:34 UTC 2021</spirit:value>
+            <spirit:value>Thu Oct 07 10:35:49 UTC 2021</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:665c7089</spirit:value>
+            <spirit:value>9:94c65d4e</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -632,11 +632,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Wed Sep 29 11:50:34 UTC 2021</spirit:value>
+            <spirit:value>Thu Oct 07 10:35:49 UTC 2021</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:b624af3a</spirit:value>
+            <spirit:value>9:44be82fd</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -652,11 +652,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Wed Sep 29 11:50:34 UTC 2021</spirit:value>
+            <spirit:value>Thu Oct 07 10:35:49 UTC 2021</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:b624af3a</spirit:value>
+            <spirit:value>9:44be82fd</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1072,11 +1072,11 @@
     <spirit:fileSet>
       <spirit:name>xilinx_vhdlsynthesis_view_fileset</spirit:name>
       <spirit:file>
-        <spirit:name>../../ipshared/9da2/hdl/IP_AXI_ParallelBus_v1_0_S00_AXI.vhd</spirit:name>
+        <spirit:name>../../ipshared/3ab1/hdl/IP_AXI_ParallelBus_v1_0_S00_AXI.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/9da2/hdl/IP_AXI_ParallelBus_v1_0.vhd</spirit:name>
+        <spirit:name>../../ipshared/3ab1/hdl/IP_AXI_ParallelBus_v1_0.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
     </spirit:fileSet>
@@ -1091,11 +1091,11 @@
     <spirit:fileSet>
       <spirit:name>xilinx_vhdlbehavioralsimulation_view_fileset</spirit:name>
       <spirit:file>
-        <spirit:name>../../ipshared/9da2/hdl/IP_AXI_ParallelBus_v1_0_S00_AXI.vhd</spirit:name>
+        <spirit:name>../../ipshared/3ab1/hdl/IP_AXI_ParallelBus_v1_0_S00_AXI.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/9da2/hdl/IP_AXI_ParallelBus_v1_0.vhd</spirit:name>
+        <spirit:name>../../ipshared/3ab1/hdl/IP_AXI_ParallelBus_v1_0.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
     </spirit:fileSet>
@@ -1168,7 +1168,7 @@
   <spirit:vendorExtensions>
     <xilinx:coreExtensions>
       <xilinx:displayName>IP_AXI_ParallelBus_v1.0</xilinx:displayName>
-      <xilinx:coreRevision>10</xilinx:coreRevision>
+      <xilinx:coreRevision>16</xilinx:coreRevision>
       <xilinx:tags>
         <xilinx:tag xilinx:name="ui.data.coregen.dd@6184763_ARCHIVE_LOCATION">d:/GITEA/IP_cores/IP_AXI_ParallelBus/IP_AXI_ParallelBus_1.0</xilinx:tag>
         <xilinx:tag xilinx:name="ui.data.coregen.dd@4a13c3c7_ARCHIVE_LOCATION">d:/GITEA/IP_cores/IP_AXI_ParallelBus/IP_AXI_ParallelBus_1.0</xilinx:tag>
@@ -1237,6 +1237,45 @@
         <xilinx:tag xilinx:name="ui.data.coregen.dd@77f3610f_ARCHIVE_LOCATION">d:/GITEA/IP_cores/IP_AXI_ParallelBus/IP_AXI_ParallelBus_1.0</xilinx:tag>
         <xilinx:tag xilinx:name="ui.data.coregen.dd@128631c4_ARCHIVE_LOCATION">d:/GITEA/IP_cores/IP_AXI_ParallelBus/IP_AXI_ParallelBus_1.0</xilinx:tag>
         <xilinx:tag xilinx:name="ui.data.coregen.dd@26a36774_ARCHIVE_LOCATION">d:/GITEA/IP_cores/IP_AXI_ParallelBus/IP_AXI_ParallelBus_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6a5af47b_ARCHIVE_LOCATION">d:/GITEA/IP_cores/IP_AXI_ParallelBus/IP_AXI_ParallelBus_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4c9fa81d_ARCHIVE_LOCATION">d:/GITEA/IP_cores/IP_AXI_ParallelBus/IP_AXI_ParallelBus_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2b0ca5b4_ARCHIVE_LOCATION">d:/GITEA/IP_cores/IP_AXI_ParallelBus/IP_AXI_ParallelBus_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1fa5e070_ARCHIVE_LOCATION">d:/GITEA/IP_cores/IP_AXI_ParallelBus/IP_AXI_ParallelBus_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7a7f38a9_ARCHIVE_LOCATION">d:/GITEA/IP_cores/IP_AXI_ParallelBus/IP_AXI_ParallelBus_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@442978f3_ARCHIVE_LOCATION">d:/GITEA/IP_cores/IP_AXI_ParallelBus/IP_AXI_ParallelBus_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@16ab6b6b_ARCHIVE_LOCATION">d:/GITEA/IP_cores/IP_AXI_ParallelBus/IP_AXI_ParallelBus_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1d639f3e_ARCHIVE_LOCATION">d:/GITEA/IP_cores/IP_AXI_ParallelBus/IP_AXI_ParallelBus_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@503d1676_ARCHIVE_LOCATION">d:/GITEA/IP_cores/IP_AXI_ParallelBus/IP_AXI_ParallelBus_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@559964e6_ARCHIVE_LOCATION">d:/GITEA/IP_cores/IP_AXI_ParallelBus/IP_AXI_ParallelBus_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7c1dbe83_ARCHIVE_LOCATION">d:/GITEA/IP_cores/IP_AXI_ParallelBus/IP_AXI_ParallelBus_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@12af043e_ARCHIVE_LOCATION">d:/GITEA/IP_cores/IP_AXI_ParallelBus/IP_AXI_ParallelBus_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@e722a76_ARCHIVE_LOCATION">d:/GITEA/IP_cores/IP_AXI_ParallelBus/IP_AXI_ParallelBus_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@53c59363_ARCHIVE_LOCATION">d:/GITEA/IP_cores/IP_AXI_ParallelBus/IP_AXI_ParallelBus_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1649fa60_ARCHIVE_LOCATION">d:/GITEA/IP_cores/IP_AXI_ParallelBus/IP_AXI_ParallelBus_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4af36d52_ARCHIVE_LOCATION">d:/GITEA/IP_cores/IP_AXI_ParallelBus/IP_AXI_ParallelBus_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2d0d19b7_ARCHIVE_LOCATION">d:/GITEA/IP_cores/IP_AXI_ParallelBus/IP_AXI_ParallelBus_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5d1318e9_ARCHIVE_LOCATION">d:/GITEA/IP_cores/IP_AXI_ParallelBus/IP_AXI_ParallelBus_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5f6c5aa9_ARCHIVE_LOCATION">d:/GITEA/IP_cores/IP_AXI_ParallelBus/IP_AXI_ParallelBus_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@46b8cfca_ARCHIVE_LOCATION">d:/GITEA/IP_cores/IP_AXI_ParallelBus/IP_AXI_ParallelBus_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4ac81ba8_ARCHIVE_LOCATION">d:/GITEA/IP_cores/IP_AXI_ParallelBus/IP_AXI_ParallelBus_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5de2e5d9_ARCHIVE_LOCATION">d:/GITEA/IP_cores/IP_AXI_ParallelBus/IP_AXI_ParallelBus_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@61930a61_ARCHIVE_LOCATION">d:/GITEA/IP_cores/IP_AXI_ParallelBus/IP_AXI_ParallelBus_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@15ac23ae_ARCHIVE_LOCATION">d:/GITEA/IP_cores/IP_AXI_ParallelBus/IP_AXI_ParallelBus_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@15ecb581_ARCHIVE_LOCATION">d:/GITEA/IP_cores/IP_AXI_ParallelBus/IP_AXI_ParallelBus_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7d42e20a_ARCHIVE_LOCATION">d:/GITEA/IP_cores/IP_AXI_ParallelBus/IP_AXI_ParallelBus_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3e22b9f_ARCHIVE_LOCATION">d:/GITEA/IP_cores/IP_AXI_ParallelBus/IP_AXI_ParallelBus_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7b9b8574_ARCHIVE_LOCATION">d:/GITEA/IP_cores/IP_AXI_ParallelBus/IP_AXI_ParallelBus_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1dd526c7_ARCHIVE_LOCATION">d:/GITEA/IP_cores/IP_AXI_ParallelBus/IP_AXI_ParallelBus_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5de647bf_ARCHIVE_LOCATION">d:/GITEA/IP_cores/IP_AXI_ParallelBus/IP_AXI_ParallelBus_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@53d9b3a4_ARCHIVE_LOCATION">d:/GITEA/IP_cores/IP_AXI_ParallelBus/IP_AXI_ParallelBus_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@29819a49_ARCHIVE_LOCATION">d:/GITEA/IP_cores/IP_AXI_ParallelBus/IP_AXI_ParallelBus_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6b10fe3_ARCHIVE_LOCATION">d:/GITEA/IP_cores/IP_AXI_ParallelBus/IP_AXI_ParallelBus_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4a0e8ba7_ARCHIVE_LOCATION">d:/GITEA/IP_cores/IP_AXI_ParallelBus/IP_AXI_ParallelBus_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1e52f6e5_ARCHIVE_LOCATION">d:/GITEA/IP_cores/IP_AXI_ParallelBus/IP_AXI_ParallelBus_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3612909b_ARCHIVE_LOCATION">d:/GITEA/IP_cores/IP_AXI_ParallelBus/IP_AXI_ParallelBus_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7348dee7_ARCHIVE_LOCATION">d:/GITEA/IP_cores/IP_AXI_ParallelBus/IP_AXI_ParallelBus_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@34870e06_ARCHIVE_LOCATION">d:/GITEA/IP_cores/IP_AXI_ParallelBus/IP_AXI_ParallelBus_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@707f82a_ARCHIVE_LOCATION">d:/GITEA/IP_cores/IP_AXI_ParallelBus/IP_AXI_ParallelBus_1.0</xilinx:tag>
       </xilinx:tags>
       <xilinx:configElementInfos>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S00_AXI.ADDR_WIDTH" xilinx:valueSource="auto" xilinx:valuePermission="bd"/>
@@ -1271,7 +1310,7 @@
       <xilinx:xilinxVersion>2019.1</xilinx:xilinxVersion>
       <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="0312d308"/>
       <xilinx:checksum xilinx:scope="memoryMaps" xilinx:value="ed1368d5"/>
-      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="79912e09"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="795e0e48"/>
       <xilinx:checksum xilinx:scope="ports" xilinx:value="68ce234b"/>
       <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="a0a6f17f"/>
       <xilinx:checksum xilinx:scope="parameters" xilinx:value="e5312a00"/>
