@@ -1,7 +1,7 @@
 --Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
---Date        : Thu Oct  7 16:31:23 2021
+--Date        : Thu Oct 14 11:11:05 2021
 --Host        : STAS-W10 running 64-bit major release  (build 9200)
 --Command     : generate_target UPzynq20_test_design_wrapper.bd
 --Design      : UPzynq20_test_design_wrapper
@@ -70,6 +70,11 @@ architecture STRUCTURE of UPzynq20_test_design_wrapper is
     Er0 : in STD_LOGIC;
     DivClk_0 : out STD_LOGIC;
     AsyncLine_0 : out STD_LOGIC;
+    Data_In_1 : in STD_LOGIC;
+    OUT_put_0 : out STD_LOGIC;
+    OUT_put_Dif_0 : out STD_LOGIC;
+    OUT_put_1 : out STD_LOGIC;
+    OUT_put_Dif_1 : out STD_LOGIC;
     gpio_rtl_5_tri_i : in STD_LOGIC_VECTOR ( 8 downto 0 );
     DDR_cas_n : inout STD_LOGIC;
     DDR_cke : inout STD_LOGIC;
@@ -86,19 +91,14 @@ architecture STRUCTURE of UPzynq20_test_design_wrapper is
     DDR_dq : inout STD_LOGIC_VECTOR ( 31 downto 0 );
     DDR_dqs_n : inout STD_LOGIC_VECTOR ( 3 downto 0 );
     DDR_dqs_p : inout STD_LOGIC_VECTOR ( 3 downto 0 );
+    gpio_rtl_0_tri_i : in STD_LOGIC_VECTOR ( 15 downto 0 );
+    gpio_rtl_1_tri_i : in STD_LOGIC_VECTOR ( 14 downto 0 );
     FIXED_IO_mio : inout STD_LOGIC_VECTOR ( 53 downto 0 );
     FIXED_IO_ddr_vrn : inout STD_LOGIC;
     FIXED_IO_ddr_vrp : inout STD_LOGIC;
     FIXED_IO_ps_srstb : inout STD_LOGIC;
     FIXED_IO_ps_clk : inout STD_LOGIC;
-    FIXED_IO_ps_porb : inout STD_LOGIC;
-    gpio_rtl_0_tri_i : in STD_LOGIC_VECTOR ( 15 downto 0 );
-    gpio_rtl_1_tri_i : in STD_LOGIC_VECTOR ( 14 downto 0 );
-    Data_In_1 : in STD_LOGIC;
-    OUT_put_0 : out STD_LOGIC;
-    OUT_put_Dif_0 : out STD_LOGIC;
-    OUT_put_1 : out STD_LOGIC;
-    OUT_put_Dif_1 : out STD_LOGIC
+    FIXED_IO_ps_porb : inout STD_LOGIC
   );
   end component UPzynq20_test_design;
 begin

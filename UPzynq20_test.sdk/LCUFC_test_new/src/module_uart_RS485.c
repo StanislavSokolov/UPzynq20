@@ -173,7 +173,7 @@ u32 terminal_uart_recv_RS485() {
 	return XUartPs_Recv(&UartPs_RS485, RecvBuffer_RS485, TEST_BUFFER_SIZE_RS485);
 }
 
-void initialization_UART_RS485(){
+void initializationUARTRS485(){
 	UartPsIntrExample_RS485(&InterruptController_RS485, &UartPs_RS485,
 			UART_DEVICE_ID_RS485, UART_INT_IRQ_ID_RS485);
 }

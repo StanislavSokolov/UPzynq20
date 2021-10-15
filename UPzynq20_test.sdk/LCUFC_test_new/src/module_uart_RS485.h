@@ -33,7 +33,7 @@
 #define XUARTPS_DFT_BAUDRATE_RS485  57600U   /* Default baud rate */
 //int bit_RS485 = 0;
 
-void initialization_UART_RS485();
+void initializationUARTRS485();
 
 int function_test_CountInt_RS485();
 

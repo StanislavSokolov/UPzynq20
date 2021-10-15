@@ -146,7 +146,7 @@ u32 terminal_uart_recv_SET12() {
 	return XUartPs_Recv(&UartPs_SET12, RecvBuffer_SET12, TEST_BUFFER_SIZE_SET12);
 }
 
-void initialization_UART_SET12(){
+void initializationUARTSET12(){
 	UartPsIntrExample_SET12(&InterruptController_SET12, &UartPs_SET12,
 			UART_DEVICE_ID_SET12, UART_INT_IRQ_ID_SET12);
 }

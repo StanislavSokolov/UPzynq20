@@ -10,7 +10,8 @@
 
 #include "xparameters.h"
 
-void initialization_system_design_and_project(int system_design, int project_number);
+void delayedStart(u32 count1, u32 count2);
+void initializationSystemDesignAndProject(int systemDesign, int projectNumber);
 void initialization_initial_values();
 int loading_control_panel(int count);
 

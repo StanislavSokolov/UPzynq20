@@ -37,21 +37,31 @@ void set_speed_value(u32 data){
 	speed_value = data;
 }
 
+void delayedStart(u32 count1, u32 count2){
+	u32 delayedStartCount = 0;
+	while (delayedStartCount < count1) {
+		for (int i = 0; i < count2; i++)
+		{
+			if (i == 5) delayedStartCount++;
+		}
+	}
+}
+
 
 
 	// функция инициализации аппаратного дизайна и проекта
-void initialization_system_design_and_project(int system_design, int project_number){
-	initialization_input_output(system_design, project_number);
-	initialization_PSGPIO(system_design, project_number);
+void initializationSystemDesignAndProject(int systemDesign, int projectNumber){
+	initializationInputOutput(systemDesign, projectNumber);
+	initializationPSGPIO(systemDesign, projectNumber);
 
-	initialization_UART_SET12(); 		// инициализируем UART
-	initialization_UART_RS485(); 		// инициализируем UART-RS485
+	initializationUARTSET12(); 		// инициализируем UART
+	initializationUARTRS485(); 		// инициализируем UART-RS485
 }
 
 	// функция инициализации начальных значений
 void initialization_initial_values(){
 //	read_current_value_PSGPIO();								// прочитать свой адрес
-//	set_setpoint_value_adc_table();								// записать уставки аналоговых сигналов в МАЗ
+	set_setpoint_value_adc_table();								// записать уставки аналоговых сигналов в МАЗ
 
 	set_initial_values_control_transistor_keys();								// записать уставки аналоговых сигналов в МАЗ
 

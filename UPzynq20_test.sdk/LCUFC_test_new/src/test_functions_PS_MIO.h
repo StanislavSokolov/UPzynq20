@@ -9,7 +9,7 @@
 #define SRC_TEST_FUNCTIONS_PS_MIO_H_
 
 
-void initialization_PSGPIO(int system_design, int project_number);
+void initializationPSGPIO(int systemDesign, int projectNumber);
 
 void set_output_enable_pin_PSGPIO(int pin, int data);
 void set_direction_pin_PSGPIO(int pin, int data);

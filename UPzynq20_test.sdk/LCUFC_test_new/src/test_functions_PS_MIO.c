@@ -23,7 +23,7 @@ int PinPSGPIO47 = 0;
 int PinPSGPIO48 = 0;
 int PinPSGPIO49 = 0;
 
-void initialization_PSGPIO(int system_design, int project_number) {
+void initializationPSGPIO(int systemDesign, int projectNumber) {
 	ConfigPtr = XGpioPs_LookupConfig(XPAR_XGPIOPS_0_DEVICE_ID);
 	XGpioPs_CfgInitialize(&Gpio, ConfigPtr, ConfigPtr->BaseAddr);
 

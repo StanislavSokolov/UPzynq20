@@ -127,8 +127,8 @@ vcom -work xil_defaultlib -93 \
 "../../../bd/UPzynq20_test_design/ipshared/90e6/hdl/IP_AXI_LedController_v1_0_S00_AXI.vhd" \
 "../../../bd/UPzynq20_test_design/ipshared/90e6/hdl/IP_AXI_LedController_v1_0.vhd" \
 "../../../bd/UPzynq20_test_design/ip/UPzynq20_test_design_IP_AXI_LedController_0_0/sim/UPzynq20_test_design_IP_AXI_LedController_0_0.vhd" \
-"../../../bd/UPzynq20_test_design/ipshared/708b/hdl/IP_AXI_SerialBus_v1_0_S00_AXI.vhd" \
-"../../../bd/UPzynq20_test_design/ipshared/708b/hdl/IP_AXI_SerialBus_v1_0.vhd" \
+"../../../bd/UPzynq20_test_design/ipshared/aec8/hdl/IP_AXI_SerialBus_v1_0_S00_AXI.vhd" \
+"../../../bd/UPzynq20_test_design/ipshared/aec8/hdl/IP_AXI_SerialBus_v1_0.vhd" \
 "../../../bd/UPzynq20_test_design/ip/UPzynq20_test_design_IP_AXI_SerialBus_0_0/sim/UPzynq20_test_design_IP_AXI_SerialBus_0_0.vhd" \
 "../../../bd/UPzynq20_test_design/ipshared/bc19/DifferentialSignal.vhd" \
 "../../../bd/UPzynq20_test_design/ip/UPzynq20_test_design_DifferentialSignal_0_0/sim/UPzynq20_test_design_DifferentialSignal_0_0.vhd" \
