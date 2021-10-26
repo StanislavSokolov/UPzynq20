@@ -15,8 +15,8 @@ u32 adc_channel[] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
 //u32 adc_channel[15];
 u32 load_resistances[] = {2500, 1000, 1000, 1000, 2500, 1000, 1000, 1000, 2500, 1000, 1000, 1000, 2500, 1000, 1000, 1000}; // â ìÎì
 u32 sensor_coefficients[] = {1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000};
-u32 setpoint_channel_up[] = {2250, 3000, 3000, 3000, 3000, 3000, 3000, 3000, 3000, 3000, 3000, 3000, 3000, 3000, 3000, 3000};
-u32 setpoint_channel_down[] = {1500, 1500, 1500, 1500, 1500, 1500, 1500, 1500, 1500, 1500, 1500, 1500, 1500, 1500, 1500, 1500};
+u32 setpoint_channel_up[] = {3000, 3000, 3000, 3000, 3000, 3000, 1000, 1000, 3000, 3000, 3000, 3000, 3000, 3000, 3000, 3000};
+u32 setpoint_channel_down[] = {2500, 2500, 2500, 2500, 1500, 1500, 1500, 1500, 1500, 1500, 1500, 1500, 1500, 2500, 1500, 2500};
 
 u32 negative_errors = 0;
 u32 positive_errors = 0;
@@ -51,7 +51,7 @@ u32 get_value_errors_adc_table(){
 	return 0;
 }
 
-void set_setpoint_value_adc_table(){
+void setInitialValuesAdc(){
 	Xil_Out32(XPAR_IP_AXI_SERIALBUS_0_S00_AXI_BASEADDR+16, 0);
 	for (int i = 0; i < 16; i++) {
 		while (Xil_In32(XPAR_IP_AXI_SERIALBUS_0_S00_AXI_BASEADDR+40) == 1){

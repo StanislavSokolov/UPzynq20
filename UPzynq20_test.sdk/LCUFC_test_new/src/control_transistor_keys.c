@@ -25,7 +25,7 @@ u32 current_error_group_2 = 0;
 
 int coef = 4;
 
-void set_initial_values_control_transistor_keys(){
+void setInitialValuesControlTransistorKeys(){
 		Xil_Out32(XPAR_IP_AXI_PWM_0_S00_AXI_BASEADDR + 22*coef, 0x00000000);				// Закрыть все ключи IP_AXI_PWM (PWMstarting)
 //		Xil_Out32(XPAR_IP_AXI_INVERTER_0_S00_AXI_BASEADDR, 0x0000000B);
 
@@ -134,7 +134,7 @@ u32 get_value_current_error_group(u32 value){
 		return 1;
 }
 
-void set_stop_PWM(){
+void setStopPWM(){
 	Xil_Out32(XPAR_IP_AXI_PWM_0_S00_AXI_BASEADDR + 22*coef, 0x00000000);		// остановить ШИМ
 //	Xil_Out32(XPAR_IP_AXI_INVERTER_0_S00_AXI_BASEADDR, 0x0000000B);
 
@@ -147,7 +147,7 @@ void set_stop_PWM(){
 		Xil_Out32(XPAR_IP_AXI_PWM_0_S00_AXI_BASEADDR + 17*coef, 0x00000000);				// счетчик пилы для IP_AXI_PWM (PWMcounterMax)
 }
 
-void set_start_PWM(){
+void setStartPWM(){
 	Xil_Out32(XPAR_IP_AXI_PWM_0_S00_AXI_BASEADDR + 22*coef, 0x00000001);
 }
 

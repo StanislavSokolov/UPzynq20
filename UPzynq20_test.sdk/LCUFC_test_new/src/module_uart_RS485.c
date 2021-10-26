@@ -86,11 +86,11 @@ void preparing_message_RS485(u32 device_address, u32 number_function, u32 number
 	if (number_function == 16) {
 		if (change_status_waiting < 10) {
 			if (change_status_waiting == 9) {
-				set_array_current_status_int(0, 1);
-				set_array_current_status_int(1, 1);
+				setArrayCurrentStatusInt(0, 1);
+				setArrayCurrentStatusInt(1, 1);
 			} else {
-				set_array_current_status_int(0, 0);
-				set_array_current_status_int(1, 0);
+				setArrayCurrentStatusInt(0, 0);
+				setArrayCurrentStatusInt(1, 0);
 			}
 
 			change_status_waiting++;

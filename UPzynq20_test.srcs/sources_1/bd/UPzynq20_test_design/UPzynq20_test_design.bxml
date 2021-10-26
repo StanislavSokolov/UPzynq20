@@ -2,10 +2,10 @@
 <Root MajorVersion="0" MinorVersion="37">
   <CompositeFile CompositeFileTopName="UPzynq20_test_design" CanBeSetAsTop="true" CanDisplayChildGraph="true">
     <Description>Composite Fileset</Description>
-    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1634195466"/>
-    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1634195466"/>
-    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1634195466"/>
-    <Generation Name="HW_HANDOFF" State="GENERATED" Timestamp="1634195466"/>
+    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1635253198"/>
+    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1635253198"/>
+    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1635253198"/>
+    <Generation Name="HW_HANDOFF" State="GENERATED" Timestamp="1635253198"/>
     <FileCollection Name="SOURCES" Type="SOURCES">
       <File Name="ip\UPzynq20_test_design_xbar_0\UPzynq20_test_design_xbar_0.xci" Type="IP">
         <Instance HierarchyPath="ps7_0_axi_periph/xbar"/>
@@ -95,14 +95,6 @@
         <UsedIn Val="IMPLEMENTATION"/>
         <UsedIn Val="SIMULATION"/>
       </File>
-      <File Name="ip\UPzynq20_test_design_IP_AXI_ParallelBus_0_1\UPzynq20_test_design_IP_AXI_ParallelBus_0_1.xci" Type="IP">
-        <Instance HierarchyPath="IP_AXI_ParallelBus_0"/>
-        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
-        <Library Name="xil_defaultlib"/>
-        <UsedIn Val="SYNTHESIS"/>
-        <UsedIn Val="IMPLEMENTATION"/>
-        <UsedIn Val="SIMULATION"/>
-      </File>
       <File Name="ip\UPzynq20_test_design_IP_AXI_LedController_0_0\UPzynq20_test_design_IP_AXI_LedController_0_0.xci" Type="IP">
         <Instance HierarchyPath="IP_AXI_LedController_0"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
@@ -129,6 +121,14 @@
       </File>
       <File Name="ip\UPzynq20_test_design_DifferentialSignal_0_1\UPzynq20_test_design_DifferentialSignal_0_1.xci" Type="IP">
         <Instance HierarchyPath="DifferentialSignal_1"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\UPzynq20_test_design_IP_AXI_ParallelBus_0_2\UPzynq20_test_design_IP_AXI_ParallelBus_0_2.xci" Type="IP">
+        <Instance HierarchyPath="IP_AXI_ParallelBus_0"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>

@@ -74,6 +74,7 @@
 #include "logical_functions.h"
 #include "PWM_tools.h"
 #include "control_transistor_keys.h"
+#include "parallel_bus.h"
 
 int Count;								// общий счетчик
 int Count_Div = 0;						// счетчик дл€ процесса инициализации экрана
@@ -90,34 +91,29 @@ int channel = 0;
 
 int main(void) {
 
-	initializationSystemDesignAndProject(1, 1);    		// A0 - SYSTEM_DESIGN, A1 - PROJECT_NUMBER
-	delayedStart(100000, 100);								// в это врем€ происходит загрузка периферийных устройств
-	initialization_initial_values();						// считывание начальных значений
+//	Xil_Out32(XPAR_IP_AXI_LEDS_2_S00_AXI_BASEADDR, 0x00000000);
+	initializationSystemDesignAndProject(1, 1);    										// A0 - SYSTEM_DESIGN, A1 - PROJECT_NUMBER
+	initializationInitialValues();														// считывание начальных значений
+	delayedStart(100000, 500);															// в это врем€ происходит загрузка периферийных устройств
+	Xil_Out32(XPAR_IP_AXI_LEDS_2_S00_AXI_BASEADDR, 0x00000001);							// режим LoadMode
+	delayedStart(100000, 10000);														// в это врем€ происходит загрузка периферийных устройств
 
-	SetupInterruptSystemPWM();
-	set_start_PWM();
+	setupInterruptSystemPWM();
+	setStartPWM();
 
-	set_array_current_status_int(0, 0);
-	set_array_current_status_int(1, 0);
+	setArrayCurrentStatusInt(0, 0);
+	setArrayCurrentStatusInt(1, 0);
 
-	Xil_Out32(XPAR_IP_AXI_LEDS_2_S00_AXI_BASEADDR, 0x00000001);						// режим LoadMode
-	Xil_Out32(XPAR_IP_AXI_LEDCONTROLLER_0_S00_AXI_BASEADDR, 255);					// количество устройств в корзине (фактически имеет отношение только к частоте мигани€ светодиодов)
-	Xil_Out32(XPAR_IP_AXI_LEDCONTROLLER_0_S00_AXI_BASEADDR+4, 1);					// 1 - инициализаци€ завершена, 0 - периферийные устройства не проинициализированы
+
+	Xil_Out32(XPAR_IP_AXI_LEDCONTROLLER_0_S00_AXI_BASEADDR, 255);						// количество устройств в корзине (фактически имеет отношение только к частоте мигани€ светодиодов)
+	Xil_Out32(XPAR_IP_AXI_LEDCONTROLLER_0_S00_AXI_BASEADDR+4, 1);						// 1 - инициализаци€ завершена, 0 - периферийные устройства не проинициализированы
 
 	while (Count < 1000000000) {
 		Count++;
 	}
 	Count = 0;
 
-	// настройка таймингов дл€ параллельной шины
-	Xil_Out32(XPAR_IP_AXI_PARALLELBUS_0_S00_AXI_BASEADDR+16, 3);				// до enable = 0
-	Xil_Out32(XPAR_IP_AXI_PARALLELBUS_0_S00_AXI_BASEADDR+20, 18);				// до Acknow = 0
-	Xil_Out32(XPAR_IP_AXI_PARALLELBUS_0_S00_AXI_BASEADDR+24, 3);				// до clk = 0
-	Xil_Out32(XPAR_IP_AXI_PARALLELBUS_0_S00_AXI_BASEADDR+28, 25);				// до Acknow = 1
-	Xil_Out32(XPAR_IP_AXI_PARALLELBUS_0_S00_AXI_BASEADDR+32, 12);				// до Acknow = 0
-	Xil_Out32(XPAR_IP_AXI_PARALLELBUS_0_S00_AXI_BASEADDR+36, 3);				// до завершени€
-	// общее врем€ одной транзакции дл€ параллельной шины 1,28 мксек
-	// общее врем€ одной транзакции дл€ сериальной шины шины 142 мксек
+	writeDataToParallelBus();
 
 	while (Count < 1000000000) {
 			Count++;
@@ -148,14 +144,9 @@ int main(void) {
 							Xil_Out32(XPAR_IP_AXI_LEDS_0_S00_AXI_BASEADDR, 0x00000001);
 							latch = 0;
 
-							Xil_Out32(XPAR_IP_AXI_PARALLELBUS_0_S00_AXI_BASEADDR, 0);
-							Xil_Out32(XPAR_IP_AXI_PARALLELBUS_0_S00_AXI_BASEADDR+4, 8);
-							Xil_Out32(XPAR_IP_AXI_PARALLELBUS_0_S00_AXI_BASEADDR+8, channel);
-							Xil_Out32(XPAR_IP_AXI_PARALLELBUS_0_S00_AXI_BASEADDR+12, 1);
-
 							Xil_Out32(XPAR_IP_AXI_SERIALBUS_0_S00_AXI_BASEADDR, 0);
 							Xil_Out32(XPAR_IP_AXI_SERIALBUS_0_S00_AXI_BASEADDR+4, 8);
-							Xil_Out32(XPAR_IP_AXI_SERIALBUS_0_S00_AXI_BASEADDR+8, 9);
+							Xil_Out32(XPAR_IP_AXI_SERIALBUS_0_S00_AXI_BASEADDR+8, 8);
 							Xil_Out32(XPAR_IP_AXI_SERIALBUS_0_S00_AXI_BASEADDR+12, 0);
 							Xil_Out32(XPAR_IP_AXI_SERIALBUS_0_S00_AXI_BASEADDR+16, 1);
 
@@ -164,11 +155,6 @@ int main(void) {
 
 							Xil_Out32(XPAR_IP_AXI_LEDS_0_S00_AXI_BASEADDR, 0x00000000);
 							latch = 1;
-							Xil_Out32(XPAR_IP_AXI_PARALLELBUS_0_S00_AXI_BASEADDR+12, 0);
-							bild_send_buffer_SET12(144, Xil_In32(XPAR_IP_AXI_PARALLELBUS_0_S00_AXI_BASEADDR));
-							bild_send_buffer_SET12(146, Xil_In32(XPAR_IP_AXI_PARALLELBUS_0_S00_AXI_BASEADDR+4));
-							bild_send_buffer_SET12(148, Xil_In32(XPAR_IP_AXI_PARALLELBUS_0_S00_AXI_BASEADDR+8));
-							bild_send_buffer_SET12(150, Xil_In32(XPAR_IP_AXI_PARALLELBUS_0_S00_AXI_BASEADDR+12));
 
 											bild_send_buffer_SET12(154, Xil_In32(XPAR_IP_AXI_SERIALBUS_0_S00_AXI_BASEADDR));
 											bild_send_buffer_SET12(156, Xil_In32(XPAR_IP_AXI_SERIALBUS_0_S00_AXI_BASEADDR+4));
@@ -180,20 +166,18 @@ int main(void) {
 											bild_send_buffer_SET12(168, Xil_In32(XPAR_IP_AXI_SERIALBUS_0_S00_AXI_BASEADDR+28));
 											bild_send_buffer_SET12(170, Xil_In32(XPAR_IP_AXI_SERIALBUS_0_S00_AXI_BASEADDR+32));
 											bild_send_buffer_SET12(172, Xil_In32(XPAR_IP_AXI_SERIALBUS_0_S00_AXI_BASEADDR+36));
-
+//
 							Xil_Out32(XPAR_IP_AXI_SERIALBUS_0_S00_AXI_BASEADDR+16, 0);
-//							bild_send_buffer_SET12(158, Xil_In32(XPAR_IP_AXI_SERIALBUS_0_S00_AXI_BASEADDR+16));
 
-							if (Xil_In32(XPAR_IP_AXI_PARALLELBUS_0_S00_AXI_BASEADDR) == 0) {
-								bild_send_buffer_SET12(112+channel*2, Xil_In32(XPAR_IP_AXI_PARALLELBUS_0_S00_AXI_BASEADDR+8));
+							for (int i = 0; i < 16; i++) {
+								bild_send_buffer_SET12(112+i*2, (Xil_In32(XPAR_IP_AXI_PARALLELBUS_0_S00_AXI_BASEADDR+i*4) & 4095));
 							}
+//							bild_send_buffer_SET12(112, (Xil_In32(XPAR_IP_AXI_PARALLELBUS_0_S00_AXI_BASEADDR+4) & 4095));
+//							bild_send_buffer_SET12(114, (Xil_In32(XPAR_IP_AXI_PARALLELBUS_0_S00_AXI_BASEADDR+4) & 4095));
+//							bild_send_buffer_SET12(116, (Xil_In32(XPAR_IP_AXI_PARALLELBUS_0_S00_AXI_BASEADDR+8) & 4095));
+								bild_send_buffer_SET12(144, Xil_In32(XPAR_IP_AXI_PARALLELBUS_0_S00_AXI_BASEADDR+60*4));
+								bild_send_buffer_SET12(146, Xil_In32(XPAR_IP_AXI_PARALLELBUS_0_S00_AXI_BASEADDR+61*4));
 
-
-							if (channel < 15) {
-								channel++;
-								} else {
-									channel = 0;
-								}
 						}
 
 
@@ -202,7 +186,7 @@ int main(void) {
 //			прерывание от PWM
 //			bild_send_buffer_SET12(152, Xil_In32(XPAR_IP_AXI_PWM_0_S00_AXI_BASEADDR));
 //			bild_send_buffer_SET12(154, Xil_In32(XPAR_IP_AXI_PWM_0_S00_AXI_BASEADDR+4));
-//			bild_send_buffer_SET12(156, get_brightness());
+//			bild_send_buffer_SET12(156, getBrightness());
 
 
 

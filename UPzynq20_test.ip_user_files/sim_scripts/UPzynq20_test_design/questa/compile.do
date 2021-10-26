@@ -121,9 +121,6 @@ vcom -work xil_defaultlib -64 -93 \
 "../../../bd/UPzynq20_test_design/ip/UPzynq20_test_design_axi_gpio_0_1_1/sim/UPzynq20_test_design_axi_gpio_0_1.vhd" \
 "../../../bd/UPzynq20_test_design/ip/UPzynq20_test_design_axi_gpio_0_2_1/sim/UPzynq20_test_design_axi_gpio_0_2.vhd" \
 "../../../bd/UPzynq20_test_design/ip/UPzynq20_test_design_IP_AXI_LEDS_1_0/sim/UPzynq20_test_design_IP_AXI_LEDS_1_0.vhd" \
-"../../../bd/UPzynq20_test_design/ipshared/3ab1/hdl/IP_AXI_ParallelBus_v1_0_S00_AXI.vhd" \
-"../../../bd/UPzynq20_test_design/ipshared/3ab1/hdl/IP_AXI_ParallelBus_v1_0.vhd" \
-"../../../bd/UPzynq20_test_design/ip/UPzynq20_test_design_IP_AXI_ParallelBus_0_1/sim/UPzynq20_test_design_IP_AXI_ParallelBus_0_1.vhd" \
 "../../../bd/UPzynq20_test_design/ipshared/90e6/hdl/IP_AXI_LedController_v1_0_S00_AXI.vhd" \
 "../../../bd/UPzynq20_test_design/ipshared/90e6/hdl/IP_AXI_LedController_v1_0.vhd" \
 "../../../bd/UPzynq20_test_design/ip/UPzynq20_test_design_IP_AXI_LedController_0_0/sim/UPzynq20_test_design_IP_AXI_LedController_0_0.vhd" \
@@ -133,6 +130,9 @@ vcom -work xil_defaultlib -64 -93 \
 "../../../bd/UPzynq20_test_design/ipshared/bc19/DifferentialSignal.vhd" \
 "../../../bd/UPzynq20_test_design/ip/UPzynq20_test_design_DifferentialSignal_0_0/sim/UPzynq20_test_design_DifferentialSignal_0_0.vhd" \
 "../../../bd/UPzynq20_test_design/ip/UPzynq20_test_design_DifferentialSignal_0_1/sim/UPzynq20_test_design_DifferentialSignal_0_1.vhd" \
+"../../../bd/UPzynq20_test_design/ipshared/5ed9/hdl/IP_AXI_ParallelBus_v2_0_S00_AXI.vhd" \
+"../../../bd/UPzynq20_test_design/ipshared/5ed9/hdl/IP_AXI_ParallelBus_v2_0.vhd" \
+"../../../bd/UPzynq20_test_design/ip/UPzynq20_test_design_IP_AXI_ParallelBus_0_2/sim/UPzynq20_test_design_IP_AXI_ParallelBus_0_2.vhd" \
 
 vlog -work axi_protocol_converter_v2_1_19 -64 "+incdir+../../../../UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/ec67/hdl" "+incdir+../../../../UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/8c62/hdl" "+incdir+../../../../UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ip/UPzynq20_test_design_processing_system7_0_0_1" "+incdir+D:/Xilinx/Vivado/2019.1/data/xilinx_vip/include" \
 "../../../../UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v" \

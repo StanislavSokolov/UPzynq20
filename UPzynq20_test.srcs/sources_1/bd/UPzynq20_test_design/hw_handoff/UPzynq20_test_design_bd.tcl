@@ -206,7 +206,7 @@ proc create_root_design { parentCell } {
   set IP_AXI_PWM_0 [ create_bd_cell -type ip -vlnv setcorp:user:IP_AXI_PWM:1.0 IP_AXI_PWM_0 ]
 
   # Create instance: IP_AXI_ParallelBus_0, and set properties
-  set IP_AXI_ParallelBus_0 [ create_bd_cell -type ip -vlnv setcorp:user:IP_AXI_ParallelBus:1.0 IP_AXI_ParallelBus_0 ]
+  set IP_AXI_ParallelBus_0 [ create_bd_cell -type ip -vlnv setcorp:user:IP_AXI_ParallelBus:2.0 IP_AXI_ParallelBus_0 ]
 
   # Create instance: IP_AXI_SerialBus_0, and set properties
   set IP_AXI_SerialBus_0 [ create_bd_cell -type ip -vlnv setcorp:user:IP_AXI_SerialBus:1.0 IP_AXI_SerialBus_0 ]
@@ -649,11 +649,11 @@ proc create_root_design { parentCell } {
   connect_bd_intf_net -intf_net ps7_0_axi_periph_M02_AXI [get_bd_intf_pins IP_AXI_LedController_0/S00_AXI] [get_bd_intf_pins ps7_0_axi_periph/M02_AXI]
   connect_bd_intf_net -intf_net ps7_0_axi_periph_M03_AXI [get_bd_intf_pins IP_AXI_SerialBus_0/S00_AXI] [get_bd_intf_pins ps7_0_axi_periph/M03_AXI]
   connect_bd_intf_net -intf_net ps7_0_axi_periph_M04_AXI [get_bd_intf_pins IP_AXI_PWM_0/S00_AXI] [get_bd_intf_pins ps7_0_axi_periph/M04_AXI]
+  connect_bd_intf_net -intf_net ps7_0_axi_periph_M05_AXI [get_bd_intf_pins IP_AXI_ParallelBus_0/S00_AXI] [get_bd_intf_pins ps7_0_axi_periph/M05_AXI]
   connect_bd_intf_net -intf_net ps7_0_axi_periph_M06_AXI [get_bd_intf_pins axi_gpio_0/S_AXI] [get_bd_intf_pins ps7_0_axi_periph/M06_AXI]
   connect_bd_intf_net -intf_net ps7_0_axi_periph_M07_AXI [get_bd_intf_pins axi_gpio_1/S_AXI] [get_bd_intf_pins ps7_0_axi_periph/M07_AXI]
   connect_bd_intf_net -intf_net ps7_0_axi_periph_M09_AXI [get_bd_intf_pins axi_gpio_5/S_AXI] [get_bd_intf_pins ps7_0_axi_periph/M09_AXI]
   connect_bd_intf_net -intf_net ps7_0_axi_periph_M10_AXI [get_bd_intf_pins IP_AXI_LEDS_2/S00_AXI] [get_bd_intf_pins ps7_0_axi_periph/M10_AXI]
-  connect_bd_intf_net -intf_net ps7_0_axi_periph_M13_AXI [get_bd_intf_pins IP_AXI_ParallelBus_0/S00_AXI] [get_bd_intf_pins ps7_0_axi_periph/M13_AXI]
 
   # Create port connections
   connect_bd_net -net AcknowledgeBus_0_1 [get_bd_ports AcknowledgeBus_0] [get_bd_pins IP_AXI_ParallelBus_0/AcknowledgeBus]
@@ -686,7 +686,7 @@ proc create_root_design { parentCell } {
   create_bd_addr_seg -range 0x00010000 -offset 0x43C40000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs IP_AXI_LEDS_2/S00_AXI/S00_AXI_reg] SEG_IP_AXI_LEDS_2_S00_AXI_reg
   create_bd_addr_seg -range 0x00010000 -offset 0x43C80000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs IP_AXI_LedController_0/S00_AXI/S00_AXI_reg] SEG_IP_AXI_LedController_0_S00_AXI_reg
   create_bd_addr_seg -range 0x00010000 -offset 0x43C20000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs IP_AXI_PWM_0/S00_AXI/S00_AXI_reg] SEG_IP_AXI_PWM_0_S00_AXI_reg
-  create_bd_addr_seg -range 0x00010000 -offset 0x43C70000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs IP_AXI_ParallelBus_0/S00_AXI/S00_AXI_reg] SEG_IP_AXI_ParallelBus_0_S00_AXI_reg
+  create_bd_addr_seg -range 0x00010000 -offset 0x43C50000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs IP_AXI_ParallelBus_0/S00_AXI/S00_AXI_reg] SEG_IP_AXI_ParallelBus_0_S00_AXI_reg
   create_bd_addr_seg -range 0x00010000 -offset 0x43C30000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs IP_AXI_SerialBus_0/S00_AXI/S00_AXI_reg] SEG_IP_AXI_SerialBus_0_S00_AXI_reg
   create_bd_addr_seg -range 0x00010000 -offset 0x41200000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs axi_gpio_0/S_AXI/Reg] SEG_axi_gpio_0_Reg
   create_bd_addr_seg -range 0x00010000 -offset 0x41210000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs axi_gpio_1/S_AXI/Reg] SEG_axi_gpio_1_Reg

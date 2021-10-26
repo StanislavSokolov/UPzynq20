@@ -6,7 +6,7 @@
 <Project Version="7" Minor="40" Path="d:/gitea/upzynq20_test/upzynq20_test.tmp/ip_axi_parallelbus_v1_0_project/IP_AXI_ParallelBus_v1_0_project.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
-    <Option Name="Id" Val="48b269f67b9847b48a35244aa2b55905"/>
+    <Option Name="Id" Val="a2ac9d432d3342a1a43652128abd9fa4"/>
     <Option Name="Part" Val="xc7z020clg484-3"/>
     <Option Name="CompiledLibDir" Val="$PCACHEDIR/compile_simlib"/>
     <Option Name="CompiledLibDirXSim" Val=""/>
@@ -23,6 +23,8 @@
     <Option Name="ActiveSimSet" Val="sim_1"/>
     <Option Name="DefaultLib" Val="xil_defaultlib"/>
     <Option Name="ProjectType" Val="Default"/>
+    <Option Name="IPRepoPath" Val="$PPRDIR/../../../../GITEA/IP_cores/IP_AXI_ParallelBus/IP_AXI_ParallelBus_2.0"/>
+    <Option Name="IPRepoPath" Val="$PPRDIR/../../../../GITEA/IP_cores/IP_AXI_ParallelBus/IP_AXI_ParallelBus_2.0"/>
     <Option Name="IPRepoPath" Val="$PPRDIR/../../../../GITEA/IP_cores"/>
     <Option Name="IPOutputRepo" Val="$PCACHEDIR/ip"/>
     <Option Name="IPCachePermission" Val="read"/>

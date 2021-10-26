@@ -29,7 +29,10 @@ set_property parent.project_path D:/GITEA/UPzynq20_test/UPzynq20_test.xpr [curre
 set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language VHDL [current_project]
-set_property ip_repo_paths d:/GITEA/IP_cores [current_project]
+set_property ip_repo_paths {
+  d:/GITEA/IP_cores/IP_AXI_ParallelBus/IP_AXI_ParallelBus_2.0
+  d:/GITEA/IP_cores
+} [current_project]
 update_ip_catalog
 set_property ip_output_repo d:/GITEA/UPzynq20_test/UPzynq20_test.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]

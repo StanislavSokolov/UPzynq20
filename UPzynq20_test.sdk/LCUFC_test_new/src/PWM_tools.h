@@ -13,8 +13,8 @@
 #define INTC_HANDLER                   XScuGic_InterruptHandler
 #define INTC_DEVICE_ID_PWM             XPAR_PS7_SCUGIC_0_DEVICE_ID
 
-void PWM_interrupt(void);
-int SetupInterruptSystemPWM();
-u32 get_brightness();
+void interruptPWM(void);
+int setupInterruptSystemPWM();
+u32 getBrightness();
 
 #endif /* SRC_PWM_TOOLS_H_ */

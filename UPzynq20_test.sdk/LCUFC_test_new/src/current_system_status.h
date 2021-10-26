@@ -16,7 +16,7 @@ int get_array_current_status_bool(int number);
 void set_array_current_status_bool(int number, int status);
 
 int get_array_current_status_int(int number);
-void set_array_current_status_int(int number, int status);
+void setArrayCurrentStatusInt(int number, int status);
 
 void reset_errors_current_system_status();
 

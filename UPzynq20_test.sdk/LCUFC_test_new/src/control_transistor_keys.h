@@ -10,7 +10,7 @@
 
 #include "xplatform_info.h"
 
-void set_initial_values_control_transistor_keys();
+void setInitialValuesControlTransistorKeys();
 void get_value_min_time_error_group_table();
 void get_value_acknowledge_error_group_table();
 void get_value_current_error_group_table();
@@ -18,8 +18,8 @@ u32 get_value_min_time_error_group(u32 value);
 u32 get_value_acknowledge_error_group(u32 value);
 u32 get_value_current_error_group(u32 value);
 
-void set_stop_PWM();
-void set_start_PWM();
+void setStopPWM();
+void setStartPWM();
 
 void reset_errors_control_transistor_keys();
 

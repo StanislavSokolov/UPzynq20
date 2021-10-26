@@ -19,12 +19,12 @@ volatile u32 brightness;
 /* The Instance of the Interrupt Controller Driver */
 static INTC_PWM InterruptController_PWM;
 
-void PWM_interrupt(void)
+void interruptPWM(void)
 {
 	brightness++;
 }
 
-int SetupInterruptSystemPWM()
+int setupInterruptSystemPWM()
 {
 	int result;
 	INTC_PWM *IntcInstancePtr = &InterruptController_PWM;
@@ -51,7 +51,7 @@ int SetupInterruptSystemPWM()
      /* Connect the interrupt handler that will be called when an
       *       * interrupt occurs for the device. */
      result = XScuGic_Connect(IntcInstancePtr, INTC_PWM_INTERRUPT_ID,
-    		 (Xil_ExceptionHandler) PWM_interrupt, 0);
+    		 (Xil_ExceptionHandler) interruptPWM, 0);
      if (result != XST_SUCCESS)
      {
     	 return result;
@@ -71,7 +71,7 @@ int SetupInterruptSystemPWM()
 
 }
 
-u32 get_brightness(){
+u32 getBrightness(){
 	return brightness;
 }
 

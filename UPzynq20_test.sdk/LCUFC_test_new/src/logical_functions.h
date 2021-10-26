@@ -12,7 +12,7 @@
 
 void delayedStart(u32 count1, u32 count2);
 void initializationSystemDesignAndProject(int systemDesign, int projectNumber);
-void initialization_initial_values();
+void initializationInitialValues();
 int loading_control_panel(int count);
 
 void get_system_status_data();

@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
-| Date             : Thu Oct 14 10:16:22 2021
+| Date             : Tue Oct 26 16:04:34 2021
 | Host             : STAS-W10 running 64-bit major release  (build 9200)
 | Command          : report_power -file UPzynq20_test_design_wrapper_power_routed.rpt -pb UPzynq20_test_design_wrapper_power_summary_routed.pb -rpx UPzynq20_test_design_wrapper_power_routed.rpx
 | Design           : UPzynq20_test_design_wrapper
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 1.806        |
+| Total On-Chip Power (W)  | 1.803        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 1.659        |
+| Dynamic (W)              | 1.656        |
 | Device Static (W)        | 0.148        |
 | Effective TJA (C/W)      | 11.5         |
 | Max Ambient (C)          | 79.2         |
@@ -49,23 +49,24 @@ Table of Contents
 1.1 On-Chip Components
 ----------------------
 
-+-------------------------+-----------+----------+-----------+-----------------+
-| On-Chip                 | Power (W) | Used     | Available | Utilization (%) |
-+-------------------------+-----------+----------+-----------+-----------------+
-| Clocks                  |     0.009 |        3 |       --- |             --- |
-| Slice Logic             |     0.003 |    10105 |       --- |             --- |
-|   LUT as Logic          |     0.003 |     3010 |     53200 |            5.66 |
-|   CARRY4                |    <0.001 |      192 |     13300 |            1.44 |
-|   Register              |    <0.001 |     5677 |    106400 |            5.34 |
-|   F7/F8 Muxes           |    <0.001 |      327 |     53200 |            0.61 |
-|   LUT as Shift Register |    <0.001 |       62 |     17400 |            0.36 |
-|   Others                |     0.000 |      235 |       --- |             --- |
-| Signals                 |     0.005 |     7772 |       --- |             --- |
-| I/O                     |     0.004 |       85 |       200 |           42.50 |
-| PS7                     |     1.638 |        1 |       --- |             --- |
-| Static Power            |     0.148 |          |           |                 |
-| Total                   |     1.806 |          |           |                 |
-+-------------------------+-----------+----------+-----------+-----------------+
++--------------------------+-----------+----------+-----------+-----------------+
+| On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
++--------------------------+-----------+----------+-----------+-----------------+
+| Clocks                   |     0.008 |        3 |       --- |             --- |
+| Slice Logic              |     0.003 |    10257 |       --- |             --- |
+|   LUT as Logic           |     0.002 |     3057 |     53200 |            5.75 |
+|   CARRY4                 |    <0.001 |      199 |     13300 |            1.50 |
+|   Register               |    <0.001 |     5829 |    106400 |            5.48 |
+|   F7/F8 Muxes            |    <0.001 |      251 |     53200 |            0.47 |
+|   LUT as Shift Register  |    <0.001 |       62 |     17400 |            0.36 |
+|   Others                 |     0.000 |      235 |       --- |             --- |
+|   LUT as Distributed RAM |     0.000 |       12 |     17400 |            0.07 |
+| Signals                  |     0.004 |     8080 |       --- |             --- |
+| I/O                      |     0.003 |       85 |       200 |           42.50 |
+| PS7                      |     1.638 |        1 |       --- |             --- |
+| Static Power             |     0.148 |          |           |                 |
+| Total                    |     1.803 |          |           |                 |
++--------------------------+-----------+----------+-----------+-----------------+
 
 
 1.2 Power Supply Summary
@@ -74,7 +75,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.033 |       0.017 |      0.016 |
+| Vccint    |       1.000 |     0.030 |       0.014 |      0.016 |
 | Vccaux    |       1.800 |     0.016 |       0.000 |      0.016 |
 | Vcco33    |       3.300 |     0.002 |       0.001 |      0.001 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
@@ -87,7 +88,7 @@ Table of Contents
 | MGTAVcc   |       1.000 |     0.000 |       0.000 |      0.000 |
 | MGTAVtt   |       1.200 |     0.000 |       0.000 |      0.000 |
 | MGTVccaux |       1.800 |     0.000 |       0.000 |      0.000 |
-| Vccpint   |       1.000 |     0.851 |       0.820 |      0.032 |
+| Vccpint   |       1.000 |     0.851 |       0.820 |      0.031 |
 | Vccpaux   |       1.800 |     0.062 |       0.051 |      0.010 |
 | Vccpll    |       1.800 |     0.021 |       0.018 |      0.003 |
 | Vcco_ddr  |       1.500 |     0.459 |       0.457 |      0.002 |
@@ -150,12 +151,12 @@ Table of Contents
 +------------------------------+-----------+
 | Name                         | Power (W) |
 +------------------------------+-----------+
-| UPzynq20_test_design_wrapper |     1.659 |
-|   UPzynq20_test_design_i     |     1.656 |
-|     IP_AXI_PWM_0             |     0.005 |
-|       U0                     |     0.005 |
-|     IP_AXI_ParallelBus_0     |     0.005 |
+| UPzynq20_test_design_wrapper |     1.656 |
+|   UPzynq20_test_design_i     |     1.653 |
+|     IP_AXI_PWM_0             |     0.004 |
 |       U0                     |     0.004 |
+|     IP_AXI_ParallelBus_0     |     0.003 |
+|       U0                     |     0.003 |
 |     IP_AXI_SerialBus_0       |     0.001 |
 |       U0                     |     0.001 |
 |     processing_system7_0     |     1.640 |

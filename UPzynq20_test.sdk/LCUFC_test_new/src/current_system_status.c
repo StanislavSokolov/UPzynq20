@@ -26,7 +26,7 @@ int get_array_current_status_int(int number){
 	return Array_current_status_int[number];
 }
 
-void set_array_current_status_int(int number, int status){
+void setArrayCurrentStatusInt(int number, int status){
 	Array_current_status_int[number] = status;
 }
 
