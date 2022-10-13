@@ -108,9 +108,9 @@ int main(void) {
 					int ResetErrors = update_from_terminal_RS485(4);
 					int SchemeAssemble = update_from_terminal_RS485(6);
 					int Speed = update_from_terminal_RS485(12);
-					bild_send_buffer_SET12(144, ResetErrors);
-					bild_send_buffer_SET12(146, update_from_terminal_RS485(6));
-					bild_send_buffer_SET12(148, update_from_terminal_RS485(8));
+//					bild_send_buffer_SET12(144, ResetErrors);
+//					bild_send_buffer_SET12(146, update_from_terminal_RS485(6));
+//					bild_send_buffer_SET12(148, update_from_terminal_RS485(8));
 					bild_send_buffer_SET12(150, update_from_terminal_RS485(10));
 					bild_send_buffer_SET12(152, Speed);
 					bild_send_buffer_SET12(154, update_from_terminal_RS485(14));
@@ -154,9 +154,9 @@ int main(void) {
 
 
 
-//			bild_send_buffer_SET12(144, Xil_In32(XPAR_IP_AXI_PWM_0_S00_AXI_BASEADDR));
-//			bild_send_buffer_SET12(146, Xil_In32(XPAR_IP_AXI_PWM_0_S00_AXI_BASEADDR+4));
-//			bild_send_buffer_SET12(148, get_brightness());
+			bild_send_buffer_SET12(144, Xil_In32(XPAR_IP_AXI_PWM_0_S00_AXI_BASEADDR));
+			bild_send_buffer_SET12(146, Xil_In32(XPAR_IP_AXI_PWM_0_S00_AXI_BASEADDR+4));
+			bild_send_buffer_SET12(148, get_brightness());
 
 			set_right_control_pulse(update_from_terminal_SET12(16));
 
