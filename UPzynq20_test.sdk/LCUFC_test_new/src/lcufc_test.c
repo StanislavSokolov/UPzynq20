@@ -97,8 +97,10 @@ int main(void) {
 	set_array_current_status_int(0, 0);
 	set_array_current_status_int(1, 0);
 
+	// 100000000 - 1 сек
+
 	while (1) {
-		if (Count < 10000000) {
+		if (Count < 100000000) {
 			Count++;
 			if ((Count > 3500000) && (recv_RS485 == 0)) {
 				set_current_value_PSGPIO(15, 1);
@@ -111,19 +113,19 @@ int main(void) {
 //					bild_send_buffer_SET12(144, ResetErrors);
 //					bild_send_buffer_SET12(146, update_from_terminal_RS485(6));
 //					bild_send_buffer_SET12(148, update_from_terminal_RS485(8));
-					bild_send_buffer_SET12(150, update_from_terminal_RS485(10));
-					bild_send_buffer_SET12(152, Speed);
-					bild_send_buffer_SET12(154, update_from_terminal_RS485(14));
-					bild_send_buffer_SET12(156, update_from_terminal_RS485(16));
-					bild_send_buffer_SET12(158, update_from_terminal_RS485(18));
-					bild_send_buffer_SET12(160, update_from_terminal_RS485(20));
-					bild_send_buffer_SET12(162, update_from_terminal_RS485(22));
-					bild_send_buffer_SET12(164, update_from_terminal_RS485(24));
-					bild_send_buffer_SET12(166, update_from_terminal_RS485(26));
-					bild_send_buffer_SET12(168, update_from_terminal_RS485(28));
-					bild_send_buffer_SET12(170, update_from_terminal_RS485(30));
-					bild_send_buffer_SET12(172, update_from_terminal_RS485(32));
-					bild_send_buffer_SET12(174, update_from_terminal_RS485(34));
+//					bild_send_buffer_SET12(150, update_from_terminal_RS485(10));
+//					bild_send_buffer_SET12(152, Speed);
+//					bild_send_buffer_SET12(154, update_from_terminal_RS485(14));
+//					bild_send_buffer_SET12(156, update_from_terminal_RS485(16));
+//					bild_send_buffer_SET12(158, update_from_terminal_RS485(18));
+//					bild_send_buffer_SET12(160, update_from_terminal_RS485(20));
+//					bild_send_buffer_SET12(162, update_from_terminal_RS485(22));
+//					bild_send_buffer_SET12(164, update_from_terminal_RS485(24));
+//					bild_send_buffer_SET12(166, update_from_terminal_RS485(26));
+//					bild_send_buffer_SET12(168, update_from_terminal_RS485(28));
+//					bild_send_buffer_SET12(170, update_from_terminal_RS485(30));
+//					bild_send_buffer_SET12(172, update_from_terminal_RS485(32));
+//					bild_send_buffer_SET12(174, update_from_terminal_RS485(34));
 
 					set_array_current_status_bool(513, ResetErrors);
 					set_array_current_status_bool(531, SchemeAssemble);
@@ -154,11 +156,12 @@ int main(void) {
 
 
 
-			bild_send_buffer_SET12(144, Xil_In32(XPAR_IP_AXI_PWM_0_S00_AXI_BASEADDR));
-			bild_send_buffer_SET12(146, Xil_In32(XPAR_IP_AXI_PWM_0_S00_AXI_BASEADDR+4));
-			bild_send_buffer_SET12(148, get_brightness());
+//			bild_send_buffer_SET12(144, Xil_In32(XPAR_IP_AXI_PWM_0_S00_AXI_BASEADDR));
+//			bild_send_buffer_SET12(146, Xil_In32(XPAR_IP_AXI_PWM_0_S00_AXI_BASEADDR+4));
+//			bild_send_buffer_SET12(148, get_brightness());
 
 			set_right_control_pulse(update_from_terminal_SET12(16));
+//			set_right_control_pulse(254);
 
 			Count = 0;
 			recv_RS485 = 0;
@@ -169,41 +172,41 @@ int main(void) {
 //			} else {
 //				set_current_value_PSGPIO(15, 1);
 
-				switch (Count_Div2){
-				case 0:
-					set_array_current_status_bool(544, 1);
-					preparing_message_RS485(2, 15, 533, 16, 2);
-					break;
-				case 1:
-					preparing_message_RS485(2, 16, 1, 100, 200);
-					break;
-				case 2:
-					preparing_message_RS485(2, 15, 513, 48, 6);
-					break;
-				case 3:
-					preparing_message_RS485(2, 15, 1, 256, 32);
-					break;
-				case 4:
-					preparing_message_RS485(2, 15, 113, 256, 32);
-					break;
-				case 5:
-					preparing_message_RS485(2, 15, 225, 256, 32);
-					break;
-				case 6:
-					inverting_the_signal_count_transmitter_RS485();
-					preparing_message_RS485(2, 15, 337, 256, 32);
-					break;
-				case 7:
-//					preparing_message_RS485(2, 4, 188, 16, 0);
-					preparing_message_RS485(2, 4, 1, 20, 0);
-					break;
-
-
-				default:
-					break;
-				}
-
-				if (Count_Div2 < 7) Count_Div2++; else Count_Div2=1;
+//				switch (Count_Div2){
+//				case 0:
+//					set_array_current_status_bool(544, 1);
+//					preparing_message_RS485(2, 15, 533, 16, 2);
+//					break;
+//				case 1:
+//					preparing_message_RS485(2, 16, 1, 100, 200);
+//					break;
+//				case 2:
+//					preparing_message_RS485(2, 15, 513, 48, 6);
+//					break;
+//				case 3:
+//					preparing_message_RS485(2, 15, 1, 256, 32);
+//					break;
+//				case 4:
+//					preparing_message_RS485(2, 15, 113, 256, 32);
+//					break;
+//				case 5:
+//					preparing_message_RS485(2, 15, 225, 256, 32);
+//					break;
+//				case 6:
+//					inverting_the_signal_count_transmitter_RS485();
+//					preparing_message_RS485(2, 15, 337, 256, 32);
+//					break;
+//				case 7:
+////					preparing_message_RS485(2, 4, 188, 16, 0);
+//					preparing_message_RS485(2, 4, 1, 20, 0);
+//					break;
+//
+//
+//				default:
+//					break;
+//				}
+//
+//				if (Count_Div2 < 7) Count_Div2++; else Count_Div2=1;
 
 
 

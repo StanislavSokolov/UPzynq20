@@ -19,6 +19,8 @@
 		<item value="false" key="caseSensitive"/>
 		<item value="227191" key="searchFlags"/>
 		<list key="previousPatterns">
+			<item value="initialization_system_design_and_project"/>
+			<item value="initialization_UART_SET12"/>
 			<item value="terminal_uart_recv_RS485"/>
 			<item value="set_current_value_digital_output_table"/>
 			<item value="XIntc_Start"/>

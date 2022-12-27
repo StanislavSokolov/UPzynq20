@@ -45,11 +45,11 @@ static u8 RecvBuffer_SET12[TEST_BUFFER_SIZE_SET12];	/* Buffer for Receiving Data
  * The following counters are used to determine when the entire buffer has
  * been sent and received.
  */
-volatile int TotalReceivedCount_SET12;
+volatile int TotalReceivedCount_SET12 = 5;
 volatile int TotalSentCount_SET12;
 int TotalErrorCount_SET12;
 int bit_SET12 = 0;
-volatile int count_send = 0;
+volatile int count_send = 5;
 int count_send2 = 0;
 int counter_group_registers_errors = 0;
 
@@ -59,19 +59,21 @@ void preparing_message_SET12(){
 
 		inverting_the_signal_count_transmitter_SET12();					// инвертирование сигнала для диагностики
 
+//		bild_send_buffer_SET12(144, count_send);
+//		bild_send_buffer_SET12(16, get_value_min_time_error_group(0) | get_value_acknowledge_error_group(0) | get_value_current_error_group(0));
+//		bild_send_buffer_SET12(18, get_value_min_time_error_group(1) | get_value_acknowledge_error_group(1) | get_value_current_error_group(1));
+//		bild_send_buffer_SET12(20, get_value_min_time_error_group(2) | get_value_acknowledge_error_group(2) | get_value_current_error_group(2));
 
-		bild_send_buffer_SET12(16, get_value_min_time_error_group(0) | get_value_acknowledge_error_group(0) | get_value_current_error_group(0));
-		bild_send_buffer_SET12(18, get_value_min_time_error_group(1) | get_value_acknowledge_error_group(1) | get_value_current_error_group(1));
-		bild_send_buffer_SET12(20, get_value_min_time_error_group(2) | get_value_acknowledge_error_group(2) | get_value_current_error_group(2));
+		bild_send_buffer_SET12(8, count_send);
 
 		bild_send_buffer_SET12(22, get_value_digital_input0_8());
 		bild_send_buffer_SET12(24, get_value_digital_input1_16());
 
 		bild_send_buffer_SET12(30, get_value_errors_negative_positive_adc(2));
 
-		for (int i = 0; i<16; i++) {
-			bild_send_buffer_SET12(112+i*2, get_value_adc_channel(i));	// заполнение АЦП
-		}
+//		for (int i = 0; i<16; i++) {
+//			bild_send_buffer_SET12(112+i*2, get_value_adc_channel(i));	// заполнение АЦП
+//		}
 
 		// тестовые функции
 //		for (int i = 0; i<16; i++) {
@@ -91,18 +93,19 @@ void preparing_message_SET12(){
 //
 //		}
 
+//		SendBuffer_SET12[TEST_BUFFER_SIZE_SET12-1] = 100;
 
 		bild_send_buffer_SET12(TEST_BUFFER_SIZE_SET12-1, 100);				// вместо CRC
 //		bild_send_buffer_SET12(46, 0);
 //		bild_send_buffer_SET12(50, 1);
-		if (counter_group_registers_errors < 4) {
-			bild_send_buffer_SET12(46, counter_group_registers_errors);
-			for (int i = 0; i < 8; i++) {
-				bild_send_buffer_SET12(48+i*2, get_group_registers_errors(counter_group_registers_errors, i));
-//				bild_send_buffer_SET12(48+i*2, 1);
-			}
-			counter_group_registers_errors++;
-		} else counter_group_registers_errors = 0;
+//		if (counter_group_registers_errors < 4) {
+//			bild_send_buffer_SET12(46, counter_group_registers_errors);
+//			for (int i = 0; i < 8; i++) {
+//				bild_send_buffer_SET12(48+i*2, get_group_registers_errors(counter_group_registers_errors, i));
+////				bild_send_buffer_SET12(48+i*2, 1);
+//			}
+//			counter_group_registers_errors++;
+//		} else counter_group_registers_errors = 0;
 
 		terminal_uart_send_SET12();
 }
@@ -122,10 +125,16 @@ void inverting_the_signal_count_transmitter_SET12() {
 
 }
 
+//void bild_send_buffer_SET12(u32 address, u32 data){
+//	u32 high_bits = data/256;
+//	SendBuffer_SET12[address] = data - high_bits*256;
+//	SendBuffer_SET12[address+1] = high_bits;
+//}
+
 void bild_send_buffer_SET12(u32 address, u32 data){
-	u32 high_bits = data/256;
-	SendBuffer_SET12[address] = data - high_bits*256;
-	SendBuffer_SET12[address+1] = high_bits;
+		u32 high_bits = data/256;
+		SendBuffer_SET12[address] = data - high_bits*256;
+		SendBuffer_SET12[address+1] = high_bits;
 }
 
 u32 update_from_terminal_SET12(u32 address){
@@ -133,13 +142,11 @@ u32 update_from_terminal_SET12(u32 address){
 }
 
 void terminal_uart_send_SET12() {
-
-	XUartPs_Send(&UartPs_SET12, SendBuffer_SET12, TEST_BUFFER_SIZE_SET12);
-
-	     while(UartPs_SET12.SendBuffer.RemainingBytes!=0)
-	     {
-	    	 XUartPs_Send(&UartPs_SET12, UartPs_SET12.SendBuffer.NextBytePtr, UartPs_SET12.SendBuffer.RemainingBytes);
-	     }
+		XUartPs_Send(&UartPs_SET12, SendBuffer_SET12, TEST_BUFFER_SIZE_SET12);
+//	     while(UartPs_SET12.SendBuffer.RemainingBytes!=0)
+//	     {
+//	    	 XUartPs_Send(&UartPs_SET12, UartPs_SET12.SendBuffer.NextBytePtr, UartPs_SET12.SendBuffer.RemainingBytes);
+//	     }
 }
 
 u32 terminal_uart_recv_SET12() {
@@ -188,12 +195,6 @@ int UartPsIntrExample_SET12(INTC_SET12 *IntcInstPtr, XUartPs *UartInstPtr,
 	u32 IntrMask;
 //	int BadByteCount = 0;
 
-//	if (XGetPlatform_Info() == XPLAT_ZYNQ_ULTRA_MP) {
-//#ifdef XPAR_XUARTPS_1_DEVICE_ID
-//		DeviceId = XPAR_XUARTPS_1_DEVICE_ID;
-//#endif
-//	}
-
 	/*
 	 * Initialize the UART driver so that it's ready to use
 	 * Look up the configuration in the config table, then initialize it.
@@ -241,6 +242,9 @@ int UartPsIntrExample_SET12(INTC_SET12 *IntcInstPtr, XUartPs *UartInstPtr,
 		XUARTPS_IXR_OVER | XUARTPS_IXR_TXEMPTY | XUARTPS_IXR_RXFULL |
 		XUARTPS_IXR_RXOVR;
 
+//	IntrMask = 0x00003FFFU;
+//	IntrMask = 0x00000000U;
+
 //	if (UartInstPtr->Platform == XPLAT_ZYNQ_ULTRA_MP) {
 //		IntrMask |= XUARTPS_IXR_RBRK;
 //	}
@@ -249,7 +253,6 @@ int UartPsIntrExample_SET12(INTC_SET12 *IntcInstPtr, XUartPs *UartInstPtr,
 
 
 	XUartPs_SetOperMode(UartInstPtr, XUARTPS_OPER_MODE_NORMAL);
-//	XUartPs_SetOperMode(UartInstPtr, XUARTPS_OPER_MODE_LOCAL_LOOP);
 
 	/*
 	 * Set the receiver timeout. If it is not set, and the last few bytes
@@ -260,6 +263,7 @@ int UartPsIntrExample_SET12(INTC_SET12 *IntcInstPtr, XUartPs *UartInstPtr,
 	 * Increase the time out value if baud rate is high, decrease it if
 	 * baud rate is low.
 	 */
+//	XUartPs_SetRecvTimeout(UartInstPtr, 163);
 	XUartPs_SetRecvTimeout(UartInstPtr, 8);
 //	xil_printf("point one\r\n");
 
@@ -346,17 +350,20 @@ int UartPsIntrExample_SET12(INTC_SET12 *IntcInstPtr, XUartPs *UartInstPtr,
 ***************************************************************************/
 void Handler_SET12(void *CallBackRef, u32 Event, unsigned int EventData)
 {
+	count_send = count_send + 1;
+	bild_send_buffer_SET12(8, count_send);
 	/* All of the data has been sent */
 	if (Event == XUARTPS_EVENT_SENT_DATA) {
-		TotalSentCount_SET12 = EventData;
-		bild_send_buffer_SET12(144, TotalReceivedCount_SET12);
+		TotalReceivedCount_SET12 = EventData;
+		TotalReceivedCount_SET12 = TotalReceivedCount_SET12 + 1;
+		bild_send_buffer_SET12(10, TotalReceivedCount_SET12);
 	}
 
 	/* All of the data has been received */
 	if (Event == XUARTPS_EVENT_RECV_DATA) {
-		TotalReceivedCount_SET12 = EventData;
-		count_send = count_send + 1;
-		bild_send_buffer_SET12(146, TotalReceivedCount_SET12++);
+		TotalReceivedCount_SET12 = TotalReceivedCount_SET12 + 1;
+//		count_send = count_send + 1;
+		bild_send_buffer_SET12(12, TotalReceivedCount_SET12);
 //		XUartPs_Recv(UartInstPtr, RecvBuffer, TEST_BUFFER_SIZE);
 	}
 
@@ -365,8 +372,9 @@ void Handler_SET12(void *CallBackRef, u32 Event, unsigned int EventData)
 	 * timeout just indicates the data stopped for 8 character times
 	 */
 	if (Event == XUARTPS_EVENT_RECV_TOUT) {
-		TotalReceivedCount_SET12 = EventData;
-		bild_send_buffer_SET12(148, TotalReceivedCount_SET12);
+//		TotalReceivedCount_SET12 = EventData;
+		TotalReceivedCount_SET12 = TotalReceivedCount_SET12 + 1;
+		bild_send_buffer_SET12(14, TotalReceivedCount_SET12);
 	}
 
 	/*
@@ -374,8 +382,9 @@ void Handler_SET12(void *CallBackRef, u32 Event, unsigned int EventData)
 	 * what kind of errors occurred
 	 */
 	if (Event == XUARTPS_EVENT_RECV_ERROR) {
-		TotalReceivedCount_SET12 = EventData;
-		bild_send_buffer_SET12(150, TotalReceivedCount_SET12);
+//		TotalReceivedCount_SET12 = EventData;
+		TotalReceivedCount_SET12 = TotalReceivedCount_SET12 + 1;
+		bild_send_buffer_SET12(16, TotalReceivedCount_SET12);
 	}
 
 	/*
@@ -384,8 +393,9 @@ void Handler_SET12(void *CallBackRef, u32 Event, unsigned int EventData)
 	 * MP.
 	 */
 	if (Event == XUARTPS_EVENT_PARE_FRAME_BRKE) {
-		TotalReceivedCount_SET12 = EventData;
-		bild_send_buffer_SET12(152, TotalReceivedCount_SET12);
+//		TotalReceivedCount_SET12 = EventData;
+		TotalReceivedCount_SET12 = TotalReceivedCount_SET12 + 1;
+		bild_send_buffer_SET12(18, TotalReceivedCount_SET12);
 	}
 
 	/*
@@ -393,8 +403,9 @@ void Handler_SET12(void *CallBackRef, u32 Event, unsigned int EventData)
 	 * what kind of errors occurred. Specific to Zynq Ultrascale+ MP.
 	 */
 	if (Event == XUARTPS_EVENT_RECV_ORERR) {
-		TotalReceivedCount_SET12 = EventData;
-		bild_send_buffer_SET12(154, TotalReceivedCount_SET12);
+//		TotalReceivedCount_SET12 = EventData;
+		TotalReceivedCount_SET12 = TotalReceivedCount_SET12 + 1;
+		bild_send_buffer_SET12(20, TotalReceivedCount_SET12);
 	}
 
 

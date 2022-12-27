@@ -2,19 +2,34 @@
 # Vivado v2019.1 (64-bit)
 # SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
 # IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
-# Start of session at: Mon Apr 26 08:13:29 2021
-# Process ID: 13996
-# Current directory: D:/GITEA/UPzynq20_test
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent15276 D:\GITEA\UPzynq20_test\UPzynq20_test.xpr
-# Log file: D:/GITEA/UPzynq20_test/vivado.log
-# Journal file: D:/GITEA/UPzynq20_test\vivado.jou
+# Start of session at: Mon Dec 26 17:06:04 2022
+# Process ID: 12912
+# Current directory: D:/GITEA/GitHub/ES/UPzynq20
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent8420 D:\GITEA\GitHub\ES\UPzynq20\UPzynq20_test.xpr
+# Log file: D:/GITEA/GitHub/ES/UPzynq20/vivado.log
+# Journal file: D:/GITEA/GitHub/ES/UPzynq20\vivado.jou
 #-----------------------------------------------------------
 start_gui
-open_project D:/GITEA/UPzynq20_test/UPzynq20_test.xpr
+open_project D:/GITEA/GitHub/ES/UPzynq20/UPzynq20_test.xpr
 update_compile_order -fileset sources_1
-launch_sdk -workspace D:/GITEA/UPzynq20_test/UPzynq20_test.sdk -hwspec D:/GITEA/UPzynq20_test/UPzynq20_test.sdk/UPzynq20_test_design_wrapper.hdf
-open_bd_design {D:/GITEA/UPzynq20_test/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/UPzynq20_test_design.bd}
-ipx::edit_ip_in_project -upgrade true -name IP_AXI_LEDS_v1_0_project -directory D:/GITEA/UPzynq20_test/UPzynq20_test.tmp/IP_AXI_LEDS_v1_0_project d:/GITEA/UPzynq20_test/IP/IP_AXI_LEDS/IP_AXI_LEDS_1.0/component.xml
-update_compile_order -fileset sources_1
-current_project UPzynq20_test
-close_project
+reset_run impl_1
+launch_runs impl_1 -jobs 4
+wait_on_run impl_1
+open_bd_design {D:/GITEA/GitHub/ES/UPzynq20/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/UPzynq20_test_design.bd}
+set_property location {3.5 2329 378} [get_bd_cells Inverter_3lvl_wrapper_0]
+set_property location {3 1599 890} [get_bd_cells AckChecker_wrapper_0]
+set_property location {3 1694 -148} [get_bd_cells AckChecker_wrapper_0]
+set_property location {4 2395 753} [get_bd_cells AckChecker_wrapper_0]
+set_property location {4 2346 -94} [get_bd_cells AckChecker_wrapper_0]
+set_property location {4 2392 806} [get_bd_cells AckChecker_wrapper_0]
+set_property location {3 1538 -168} [get_bd_cells AckChecker_wrapper_0]
+regenerate_bd_layout
+save_bd_design
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+open_run impl_1
+close_design
+report_ip_status -name ip_status 
+file copy -force D:/GITEA/GitHub/ES/UPzynq20/UPzynq20_test.runs/impl_1/UPzynq20_test_design_wrapper.sysdef D:/GITEA/GitHub/ES/UPzynq20/UPzynq20_test.sdk/UPzynq20_test_design_wrapper.hdf
+
+launch_sdk -workspace D:/GITEA/GitHub/ES/UPzynq20/UPzynq20_test.sdk -hwspec D:/GITEA/GitHub/ES/UPzynq20/UPzynq20_test.sdk/UPzynq20_test_design_wrapper.hdf

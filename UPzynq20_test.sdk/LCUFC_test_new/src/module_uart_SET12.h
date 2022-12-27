@@ -35,7 +35,7 @@
  * The following constant controls the length of the buffers to be sent
  * and received with the UART,
  */
-#define TEST_BUFFER_SIZE_SET12	200
+#define TEST_BUFFER_SIZE_SET12	62
 #define XUARTPS_DFT_BAUDRATE_SET12  115200U   /* Default baud rate */
 
 void initialization_UART_SET12();
