@@ -2,20 +2,20 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="set_speed_value" key="selection"/>
+		<item value="ModeRegister" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="ModeRegister"/>
+			<item value="statusF"/>
+			<item value="statusCount"/>
 			<item value="set_speed_value"/>
 			<item value="set_array_current_status_int(0, 1);"/>
 			<item value="392"/>
 			<item value="set_array_current_status_bool(392, 1);"/>
 			<item value="recv_RS485"/>
-			<item value="terminal_uart_recv_RS485"/>
-			<item value="set_array_current_status_int(0, 6)"/>
-			<item value="00000000"/>
 		</list>
 		<list key="replacehistory">
 		</list>

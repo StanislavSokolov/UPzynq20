@@ -12,4 +12,5 @@ rst -processor
 targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Platform Cable USB II 0000171646f001"} -index 0
 dow D:/GITEA/UPzynq20_test/UPzynq20_test.sdk/LCUFC_test_new/Release/LCUFC_test_new.elf
 configparams force-mem-access 0
-bpadd -addr &main
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Platform Cable USB II 0000171646f001"} -index 0
+con

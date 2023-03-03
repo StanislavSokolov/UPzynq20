@@ -2,8 +2,8 @@
 # Vivado v2019.1 (64-bit)
 # SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
 # IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
-# Start of session at: Fri Mar  3 10:20:49 2023
-# Process ID: 4568
+# Start of session at: Fri Mar  3 11:24:58 2023
+# Process ID: 13512
 # Current directory: D:/GITEA/GitHub/ES/UPzynq20/UPzynq20_test.runs/synth_1
 # Command line: vivado.exe -log UPzynq20_test_design_wrapper.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source UPzynq20_test_design_wrapper.tcl
 # Log file: D:/GITEA/GitHub/ES/UPzynq20/UPzynq20_test.runs/synth_1/UPzynq20_test_design_wrapper.vds
@@ -19,9 +19,9 @@ Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
 INFO: [Device 21-403] Loading part xc7z020clg484-3
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 14008 
+INFO: Helper process launched with PID 10800 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 854.758 ; gain = 177.117
+Starting RTL Elaboration : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 853.121 ; gain = 177.215
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'UPzynq20_test_design_wrapper' [D:/GITEA/GitHub/ES/UPzynq20/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/hdl/UPzynq20_test_design_wrapper.vhd:73]
 INFO: [Synth 8-3491] module 'UPzynq20_test_design' declared at 'D:/GITEA/GitHub/ES/UPzynq20/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/synth/UPzynq20_test_design.vhd:4606' bound to instance 'UPzynq20_test_design_i' of component 'UPzynq20_test_design' [D:/GITEA/GitHub/ES/UPzynq20/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/hdl/UPzynq20_test_design_wrapper.vhd:133]
@@ -1131,8 +1131,8 @@ INFO: [Common 17-14] Message 'Synth 8-6014' appears 100 times and further instan
 INFO: [Synth 8-256] done synthesizing module 'GPIO_Core__parameterized1' (97#1) [d:/GITEA/GitHub/ES/UPzynq20/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:178]
 INFO: [Synth 8-256] done synthesizing module 'axi_gpio__parameterized3' (97#1) [d:/GITEA/GitHub/ES/UPzynq20/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:1351]
 INFO: [Synth 8-256] done synthesizing module 'UPzynq20_test_design_axi_gpio_3_0' (98#1) [d:/GITEA/GitHub/ES/UPzynq20/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ip/UPzynq20_test_design_axi_gpio_3_0/synth/UPzynq20_test_design_axi_gpio_3_0.vhd:85]
-INFO: [Synth 8-6157] synthesizing module 'UPzynq20_test_design_processing_system7_0_0' [d:/GITEA/GitHub/ES/UPzynq20/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ip/UPzynq20_test_design_processing_system7_0_0_1/synth/UPzynq20_test_design_processing_system7_0_0.v:60]
-INFO: [Synth 8-6157] synthesizing module 'processing_system7_v5_5_processing_system7' [d:/GITEA/GitHub/ES/UPzynq20/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ip/UPzynq20_test_design_processing_system7_0_0_1/hdl/verilog/processing_system7_v5_5_processing_system7.v:162]
+INFO: [Synth 8-6157] synthesizing module 'UPzynq20_test_design_processing_system7_0_0' [d:/GITEA/GitHub/ES/UPzynq20/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ip/UPzynq20_test_design_processing_system7_0_0_1/synth/UPzynq20_test_design_processing_system7_0_0.v:57]
+INFO: [Synth 8-6157] synthesizing module 'processing_system7_v5_5_processing_system7' [d:/GITEA/GitHub/ES/UPzynq20/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ip/UPzynq20_test_design_processing_system7_0_0_1/hdl/verilog/processing_system7_v5_5_processing_system7.v:156]
 	Parameter C_USE_DEFAULT_ACP_USER_VAL bound to: 0 - type: integer 
 	Parameter C_S_AXI_ACP_ARUSER_VAL bound to: 31 - type: integer 
 	Parameter C_S_AXI_ACP_AWUSER_VAL bound to: 31 - type: integer 
@@ -1189,17 +1189,17 @@ INFO: [Synth 8-6157] synthesizing module 'processing_system7_v5_5_processing_sys
 	Parameter C_USE_S_AXI_ACP bound to: 0 - type: integer 
 	Parameter C_GP0_EN_MODIFIABLE_TXN bound to: 1 - type: integer 
 	Parameter C_GP1_EN_MODIFIABLE_TXN bound to: 1 - type: integer 
-INFO: [Synth 8-5534] Detected attribute (* keep = "true" *) [d:/GITEA/GitHub/ES/UPzynq20/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ip/UPzynq20_test_design_processing_system7_0_0_1/hdl/verilog/processing_system7_v5_5_processing_system7.v:1348]
-INFO: [Synth 8-5534] Detected attribute (* keep = "true" *) [d:/GITEA/GitHub/ES/UPzynq20/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ip/UPzynq20_test_design_processing_system7_0_0_1/hdl/verilog/processing_system7_v5_5_processing_system7.v:1349]
+INFO: [Synth 8-5534] Detected attribute (* keep = "true" *) [d:/GITEA/GitHub/ES/UPzynq20/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ip/UPzynq20_test_design_processing_system7_0_0_1/hdl/verilog/processing_system7_v5_5_processing_system7.v:1342]
+INFO: [Synth 8-5534] Detected attribute (* keep = "true" *) [d:/GITEA/GitHub/ES/UPzynq20/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ip/UPzynq20_test_design_processing_system7_0_0_1/hdl/verilog/processing_system7_v5_5_processing_system7.v:1343]
 INFO: [Synth 8-6157] synthesizing module 'BUFG' [D:/Xilinx/Vivado/2019.1/scripts/rt/data/unisim_comp.v:1075]
 INFO: [Synth 8-6155] done synthesizing module 'BUFG' (99#1) [D:/Xilinx/Vivado/2019.1/scripts/rt/data/unisim_comp.v:1075]
 INFO: [Synth 8-6157] synthesizing module 'BIBUF' [D:/Xilinx/Vivado/2019.1/scripts/rt/data/unisim_comp.v:722]
 INFO: [Synth 8-6155] done synthesizing module 'BIBUF' (100#1) [D:/Xilinx/Vivado/2019.1/scripts/rt/data/unisim_comp.v:722]
 INFO: [Synth 8-6157] synthesizing module 'PS7' [D:/Xilinx/Vivado/2019.1/scripts/rt/data/unisim_comp.v:61707]
 INFO: [Synth 8-6155] done synthesizing module 'PS7' (101#1) [D:/Xilinx/Vivado/2019.1/scripts/rt/data/unisim_comp.v:61707]
-INFO: [Synth 8-6155] done synthesizing module 'processing_system7_v5_5_processing_system7' (102#1) [d:/GITEA/GitHub/ES/UPzynq20/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ip/UPzynq20_test_design_processing_system7_0_0_1/hdl/verilog/processing_system7_v5_5_processing_system7.v:162]
-WARNING: [Synth 8-7023] instance 'inst' of module 'processing_system7_v5_5_processing_system7' has 685 connections declared, but only 672 given [d:/GITEA/GitHub/ES/UPzynq20/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ip/UPzynq20_test_design_processing_system7_0_0_1/synth/UPzynq20_test_design_processing_system7_0_0.v:318]
-INFO: [Synth 8-6155] done synthesizing module 'UPzynq20_test_design_processing_system7_0_0' (103#1) [d:/GITEA/GitHub/ES/UPzynq20/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ip/UPzynq20_test_design_processing_system7_0_0_1/synth/UPzynq20_test_design_processing_system7_0_0.v:60]
+INFO: [Synth 8-6155] done synthesizing module 'processing_system7_v5_5_processing_system7' (102#1) [d:/GITEA/GitHub/ES/UPzynq20/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ip/UPzynq20_test_design_processing_system7_0_0_1/hdl/verilog/processing_system7_v5_5_processing_system7.v:156]
+WARNING: [Synth 8-7023] instance 'inst' of module 'processing_system7_v5_5_processing_system7' has 685 connections declared, but only 672 given [d:/GITEA/GitHub/ES/UPzynq20/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ip/UPzynq20_test_design_processing_system7_0_0_1/synth/UPzynq20_test_design_processing_system7_0_0.v:314]
+INFO: [Synth 8-6155] done synthesizing module 'UPzynq20_test_design_processing_system7_0_0' (103#1) [d:/GITEA/GitHub/ES/UPzynq20/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ip/UPzynq20_test_design_processing_system7_0_0_1/synth/UPzynq20_test_design_processing_system7_0_0.v:57]
 INFO: [Synth 8-638] synthesizing module 'UPzynq20_test_design_ps7_0_axi_periph_0' [D:/GITEA/GitHub/ES/UPzynq20/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/synth/UPzynq20_test_design.vhd:2321]
 INFO: [Synth 8-638] synthesizing module 'm00_couplers_imp_6SK2AP' [D:/GITEA/GitHub/ES/UPzynq20/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/synth/UPzynq20_test_design.vhd:57]
 INFO: [Synth 8-256] done synthesizing module 'm00_couplers_imp_6SK2AP' (104#1) [D:/GITEA/GitHub/ES/UPzynq20/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/synth/UPzynq20_test_design.vhd:57]
@@ -1232,7 +1232,7 @@ INFO: [Synth 8-256] done synthesizing module 'm13_couplers_imp_MTH0FC' (117#1) [
 INFO: [Synth 8-638] synthesizing module 'm14_couplers_imp_1S4MXQO' [D:/GITEA/GitHub/ES/UPzynq20/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/synth/UPzynq20_test_design.vhd:1585]
 INFO: [Synth 8-256] done synthesizing module 'm14_couplers_imp_1S4MXQO' (118#1) [D:/GITEA/GitHub/ES/UPzynq20/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/synth/UPzynq20_test_design.vhd:1585]
 INFO: [Synth 8-638] synthesizing module 's00_couplers_imp_1COS8BN' [D:/GITEA/GitHub/ES/UPzynq20/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/synth/UPzynq20_test_design.vhd:1715]
-INFO: [Synth 8-6157] synthesizing module 'UPzynq20_test_design_auto_pc_0' [d:/GITEA/GitHub/ES/UPzynq20/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ip/UPzynq20_test_design_auto_pc_0/synth/UPzynq20_test_design_auto_pc_0.v:58]
+INFO: [Synth 8-6157] synthesizing module 'UPzynq20_test_design_auto_pc_0' [d:/GITEA/GitHub/ES/UPzynq20/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ip/UPzynq20_test_design_auto_pc_0/synth/UPzynq20_test_design_auto_pc_0.v:57]
 INFO: [Synth 8-6157] synthesizing module 'axi_protocol_converter_v2_1_19_axi_protocol_converter' [d:/GITEA/GitHub/ES/UPzynq20/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v:4808]
 	Parameter C_FAMILY bound to: zynq - type: string 
 	Parameter C_M_AXI_PROTOCOL bound to: 2 - type: integer 
@@ -2001,9 +2001,9 @@ INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_19_axi_re
 WARNING: [Synth 8-7023] instance 'MI_REG' of module 'axi_register_slice_v2_1_19_axi_register_slice' has 93 connections declared, but only 92 given [d:/GITEA/GitHub/ES/UPzynq20/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v:4647]
 INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_19_b2s' (133#1) [d:/GITEA/GitHub/ES/UPzynq20/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v:4226]
 INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_19_axi_protocol_converter' (134#1) [d:/GITEA/GitHub/ES/UPzynq20/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v:4808]
-INFO: [Synth 8-6155] done synthesizing module 'UPzynq20_test_design_auto_pc_0' (135#1) [d:/GITEA/GitHub/ES/UPzynq20/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ip/UPzynq20_test_design_auto_pc_0/synth/UPzynq20_test_design_auto_pc_0.v:58]
+INFO: [Synth 8-6155] done synthesizing module 'UPzynq20_test_design_auto_pc_0' (135#1) [d:/GITEA/GitHub/ES/UPzynq20/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ip/UPzynq20_test_design_auto_pc_0/synth/UPzynq20_test_design_auto_pc_0.v:57]
 INFO: [Synth 8-256] done synthesizing module 's00_couplers_imp_1COS8BN' (136#1) [D:/GITEA/GitHub/ES/UPzynq20/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/synth/UPzynq20_test_design.vhd:1715]
-INFO: [Synth 8-6157] synthesizing module 'UPzynq20_test_design_xbar_0' [d:/GITEA/GitHub/ES/UPzynq20/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ip/UPzynq20_test_design_xbar_0/synth/UPzynq20_test_design_xbar_0.v:60]
+INFO: [Synth 8-6157] synthesizing module 'UPzynq20_test_design_xbar_0' [d:/GITEA/GitHub/ES/UPzynq20/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ip/UPzynq20_test_design_xbar_0/synth/UPzynq20_test_design_xbar_0.v:57]
 INFO: [Synth 8-6157] synthesizing module 'axi_crossbar_v2_1_20_axi_crossbar' [d:/GITEA/GitHub/ES/UPzynq20/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/ace7/hdl/axi_crossbar_v2_1_vl_rfs.v:4884]
 	Parameter C_FAMILY bound to: zynq - type: string 
 	Parameter C_NUM_SLAVE_SLOTS bound to: 1 - type: integer 
@@ -2258,7 +2258,7 @@ INFO: [Synth 8-6157] synthesizing module 'generic_baseblocks_v2_1_0_mux_enc__par
 INFO: [Synth 8-6155] done synthesizing module 'generic_baseblocks_v2_1_0_mux_enc__parameterized2' (143#1) [d:/GITEA/GitHub/ES/UPzynq20/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/b752/hdl/generic_baseblocks_v2_1_vl_rfs.v:2452]
 INFO: [Synth 8-6155] done synthesizing module 'axi_crossbar_v2_1_20_crossbar_sasd' (144#1) [d:/GITEA/GitHub/ES/UPzynq20/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/ace7/hdl/axi_crossbar_v2_1_vl_rfs.v:1240]
 INFO: [Synth 8-6155] done synthesizing module 'axi_crossbar_v2_1_20_axi_crossbar' (145#1) [d:/GITEA/GitHub/ES/UPzynq20/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ipshared/ace7/hdl/axi_crossbar_v2_1_vl_rfs.v:4884]
-INFO: [Synth 8-6155] done synthesizing module 'UPzynq20_test_design_xbar_0' (146#1) [d:/GITEA/GitHub/ES/UPzynq20/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ip/UPzynq20_test_design_xbar_0/synth/UPzynq20_test_design_xbar_0.v:60]
+INFO: [Synth 8-6155] done synthesizing module 'UPzynq20_test_design_xbar_0' (146#1) [d:/GITEA/GitHub/ES/UPzynq20/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ip/UPzynq20_test_design_xbar_0/synth/UPzynq20_test_design_xbar_0.v:57]
 INFO: [Synth 8-256] done synthesizing module 'UPzynq20_test_design_ps7_0_axi_periph_0' (147#1) [D:/GITEA/GitHub/ES/UPzynq20/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/synth/UPzynq20_test_design.vhd:2321]
 INFO: [Synth 8-638] synthesizing module 'UPzynq20_test_design_rst_ps7_0_50M_0' [d:/GITEA/GitHub/ES/UPzynq20/UPzynq20_test.srcs/sources_1/bd/UPzynq20_test_design/ip/UPzynq20_test_design_rst_ps7_0_50M_0_1/synth/UPzynq20_test_design_rst_ps7_0_50M_0.vhd:74]
 	Parameter C_FAMILY bound to: zynq - type: string 
@@ -2472,7 +2472,7 @@ WARNING: [Synth 8-3331] design axi_crossbar_v2_1_20_axi_crossbar has unconnected
 WARNING: [Synth 8-3331] design axi_crossbar_v2_1_20_axi_crossbar has unconnected port s_axi_awcache[0]
 INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:46 ; elapsed = 00:00:50 . Memory (MB): peak = 1135.926 ; gain = 458.285
+Finished RTL Elaboration : Time (s): cpu = 00:00:44 ; elapsed = 00:00:46 . Memory (MB): peak = 1135.703 ; gain = 459.797
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -2485,10 +2485,10 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:47 ; elapsed = 00:00:52 . Memory (MB): peak = 1135.926 ; gain = 458.285
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:45 ; elapsed = 00:00:48 . Memory (MB): peak = 1135.703 ; gain = 459.797
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:47 ; elapsed = 00:00:52 . Memory (MB): peak = 1135.926 ; gain = 458.285
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:45 ; elapsed = 00:00:48 . Memory (MB): peak = 1135.703 ; gain = 459.797
 ---------------------------------------------------------------------------------
 INFO: [Netlist 29-17] Analyzing 253 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -2526,22 +2526,22 @@ INFO: [Project 1-236] Implementation specific constraints were found while readi
 Resolution: To avoid this warning, move constraints listed in [.Xil/UPzynq20_test_design_wrapper_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.011 . Memory (MB): peak = 1232.645 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.008 . Memory (MB): peak = 1211.051 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 253 instances were transformed.
   FDR => FDRE: 252 instances
   SRL16 => SRL16E: 1 instances
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.217 . Memory (MB): peak = 1232.645 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.192 . Memory (MB): peak = 1211.051 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:01:02 ; elapsed = 00:01:08 . Memory (MB): peak = 1232.645 ; gain = 555.004
+Finished Constraint Validation : Time (s): cpu = 00:00:59 ; elapsed = 00:01:02 . Memory (MB): peak = 1211.051 ; gain = 535.145
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z020clg484-3
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:01:02 ; elapsed = 00:01:09 . Memory (MB): peak = 1232.645 ; gain = 555.004
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:59 ; elapsed = 00:01:02 . Memory (MB): peak = 1211.051 ; gain = 535.145
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -2627,7 +2627,7 @@ Applied set_property DONT_TOUCH = true for UPzynq20_test_design_i/IP_AXI_ADC_0. 
 Applied set_property DONT_TOUCH = true for UPzynq20_test_design_i/xlconcat_0. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for UPzynq20_test_design_i/ps7_0_axi_periph/s00_couplers/auto_pc. (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:01:03 ; elapsed = 00:01:09 . Memory (MB): peak = 1232.645 ; gain = 555.004
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:01:00 ; elapsed = 00:01:02 . Memory (MB): peak = 1211.051 ; gain = 535.145
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'acknowledge_reg' in module 'AckCheckerConcept'
 INFO: [Synth 8-5545] ROM "a0_sign" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
@@ -2707,7 +2707,7 @@ INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'axi_protocol_converter_v2_1_19_b2s_rd_cmd_fsm'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:01:10 ; elapsed = 00:01:17 . Memory (MB): peak = 1232.645 ; gain = 555.004
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:01:07 ; elapsed = 00:01:10 . Memory (MB): peak = 1211.051 ; gain = 535.145
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -4407,7 +4407,7 @@ INFO: [Synth 8-3333] propagating constant 0 across sequential element (UPzynq20_
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (UPzynq20_test_design_i/i_2/IP_AXI_INVERTER_0/\U0/IP_AXI_INVERTER_v1_0_S00_AXI_inst /\axi_bresp_reg[1] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (UPzynq20_test_design_i/i_0/IP_AXI_OpticalBus_0/\U0/i_10 /\U0/IP_AXI_OpticalBus_v1_0_S00_AXI_inst/CountDivCLK_reg[7] )
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:55 ; elapsed = 00:02:03 . Memory (MB): peak = 1232.645 ; gain = 555.004
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:46 ; elapsed = 00:01:50 . Memory (MB): peak = 1211.051 ; gain = 535.145
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -4422,13 +4422,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:02:05 ; elapsed = 00:02:13 . Memory (MB): peak = 1270.938 ; gain = 593.297
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:54 ; elapsed = 00:01:59 . Memory (MB): peak = 1269.957 ; gain = 594.051
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:02:10 ; elapsed = 00:02:18 . Memory (MB): peak = 1344.051 ; gain = 666.410
+Finished Timing Optimization : Time (s): cpu = 00:01:59 ; elapsed = 00:02:04 . Memory (MB): peak = 1343.691 ; gain = 667.785
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -4443,7 +4443,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:02:20 ; elapsed = 00:02:29 . Memory (MB): peak = 1351.547 ; gain = 673.906
+Finished Technology Mapping : Time (s): cpu = 00:02:09 ; elapsed = 00:02:14 . Memory (MB): peak = 1351.215 ; gain = 675.309
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -4568,7 +4568,7 @@ INFO: [Common 17-14] Message 'Synth 8-5365' appears 100 times and further instan
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:02:23 ; elapsed = 00:02:32 . Memory (MB): peak = 1352.363 ; gain = 674.723
+Finished IO Insertion : Time (s): cpu = 00:02:12 ; elapsed = 00:02:17 . Memory (MB): peak = 1351.215 ; gain = 675.309
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -4581,7 +4581,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:02:23 ; elapsed = 00:02:32 . Memory (MB): peak = 1352.363 ; gain = 674.723
+Finished Renaming Generated Instances : Time (s): cpu = 00:02:12 ; elapsed = 00:02:17 . Memory (MB): peak = 1351.215 ; gain = 675.309
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -4593,25 +4593,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:02:25 ; elapsed = 00:02:34 . Memory (MB): peak = 1352.363 ; gain = 674.723
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:02:14 ; elapsed = 00:02:19 . Memory (MB): peak = 1351.215 ; gain = 675.309
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:02:25 ; elapsed = 00:02:34 . Memory (MB): peak = 1352.363 ; gain = 674.723
+Finished Renaming Generated Ports : Time (s): cpu = 00:02:14 ; elapsed = 00:02:19 . Memory (MB): peak = 1351.215 ; gain = 675.309
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:02:26 ; elapsed = 00:02:35 . Memory (MB): peak = 1352.363 ; gain = 674.723
+Finished Handling Custom Attributes : Time (s): cpu = 00:02:15 ; elapsed = 00:02:20 . Memory (MB): peak = 1351.215 ; gain = 675.309
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:02:26 ; elapsed = 00:02:35 . Memory (MB): peak = 1352.363 ; gain = 674.723
+Finished Renaming Generated Nets : Time (s): cpu = 00:02:15 ; elapsed = 00:02:20 . Memory (MB): peak = 1351.215 ; gain = 675.309
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -4871,17 +4871,17 @@ Report Instance Areas:
 |198   |            U0                                     |BusBlock16OUT                                                  |    16|
 +------+---------------------------------------------------+---------------------------------------------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:02:26 ; elapsed = 00:02:35 . Memory (MB): peak = 1352.363 ; gain = 674.723
+Finished Writing Synthesis Report : Time (s): cpu = 00:02:15 ; elapsed = 00:02:20 . Memory (MB): peak = 1351.215 ; gain = 675.309
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 15 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:01:28 ; elapsed = 00:02:22 . Memory (MB): peak = 1352.363 ; gain = 578.004
-Synthesis Optimization Complete : Time (s): cpu = 00:02:26 ; elapsed = 00:02:35 . Memory (MB): peak = 1352.363 ; gain = 674.723
+Synthesis Optimization Runtime : Time (s): cpu = 00:01:20 ; elapsed = 00:02:10 . Memory (MB): peak = 1351.215 ; gain = 599.961
+Synthesis Optimization Complete : Time (s): cpu = 00:02:15 ; elapsed = 00:02:20 . Memory (MB): peak = 1351.215 ; gain = 675.309
 INFO: [Project 1-571] Translating synthesized netlist
 INFO: [Netlist 29-17] Analyzing 1374 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 1370.535 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 1364.168 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 204 instances were transformed.
   FDR => FDRE: 168 instances
@@ -4891,10 +4891,10 @@ INFO: [Project 1-111] Unisim Transformation Summary:
 INFO: [Common 17-83] Releasing license: Synthesis
 1064 Infos, 298 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:02:37 ; elapsed = 00:02:49 . Memory (MB): peak = 1370.535 ; gain = 976.434
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.006 . Memory (MB): peak = 1370.535 ; gain = 0.000
+synth_design: Time (s): cpu = 00:02:24 ; elapsed = 00:02:31 . Memory (MB): peak = 1364.168 ; gain = 970.191
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 1364.168 ; gain = 0.000
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
 INFO: [Common 17-1381] The checkpoint 'D:/GITEA/GitHub/ES/UPzynq20/UPzynq20_test.runs/synth_1/UPzynq20_test_design_wrapper.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file UPzynq20_test_design_wrapper_utilization_synth.rpt -pb UPzynq20_test_design_wrapper_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Fri Mar  3 10:23:50 2023...
+INFO: [Common 17-206] Exiting Vivado at Fri Mar  3 11:27:41 2023...
