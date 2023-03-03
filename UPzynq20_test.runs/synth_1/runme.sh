@@ -24,7 +24,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='D:/GITEA/UPzynq20_test/UPzynq20_test.runs/synth_1'
+HD_PWD='D:/GITEA/GitHub/ES/UPzynq20/UPzynq20_test.runs/synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log
